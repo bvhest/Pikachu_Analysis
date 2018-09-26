@@ -1,5 +1,5 @@
 #
-# read & filter 
+# read & analyse and export channel-asset configuration.
 #
 # BHE, 20-09-2018
 #
