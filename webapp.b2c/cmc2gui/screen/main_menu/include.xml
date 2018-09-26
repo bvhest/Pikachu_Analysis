@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:cinclude="http://apache.org/cocoon/include/1.0">
+  <cinclude:include src="cocoon:/pages/pages.xml"/>
+</root>

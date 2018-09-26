@@ -1,0 +1,6 @@
+<store>
+	<content><i:include xmlns:i="http://apache.org/cocoon/include/1.0" src="${cocoon.parameters.content}"/></content>
+	<placeholders/>
+	<relations><i:include xmlns:i="http://apache.org/cocoon/include/1.0" src="${cocoon.parameters.relations}"/></relations>
+	<metadata/>
+</store>

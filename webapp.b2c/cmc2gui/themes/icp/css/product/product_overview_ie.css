@@ -1,0 +1,5 @@
+#icp_view_overview .icp_prd_ov_assets div.asset,
+#icp_view_overview .icp_prd_ov_accessories div.asset {
+	display: inline !important;
+	height: 185px;
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:resources>
+    <!-- the sql resource provides a central place to edit database details -->
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC"/>
+        <map:parameter name="clob-encoding" value="UTF-8"/>
+      </map:transform>
+    </map:resource>
+  </map:resources>
+
+  <map:components>
+    <map:generators>
+      <map:generator label="content" logger="sitemap.generator.hssf"
+                     name="xls" pool-max="${hssf-generator.pool-max}"
+                     src="org.apache.cocoon.generation.HSSFGenerator"/>
+    </map:generators>
+    <map:transformers default="xslt">
+      <map:transformer logger="sitemap.transformer.xslt" name="xslt" pool-max="${xslt-transformer.pool-max}" src="org.apache.cocoon.transformation.TraxTransformer">
+        <use-request-parameters>true</use-request-parameters>
+        <use-session-parameters>false</use-session-parameters>
+        <use-cookie-parameters>false</use-cookie-parameters>
+        <xslt-processor-role>org.apache.excalibur.xml.xslt.XSLTProcessor/xalan</xslt-processor-role>
+        <check-includes>true</check-includes>
+      </map:transformer>
+      <map:transformer logger="sitemap.transformer.xalan" name="xslt-saxon" pool-grow="2" pool-max="32" pool-min="8" src="org.apache.cocoon.transformation.TraxTransformer">
+        <use-request-parameters>true</use-request-parameters>
+        <use-session-parameters>false</use-session-parameters>
+        <use-cookie-parameters>false</use-cookie-parameters>
+        <use-browser-capabilities-db>false</use-browser-capabilities-db>
+        <xslt-processor-role>org.apache.excalibur.xml.xslt.XSLTProcessor/saxon</xslt-processor-role>
+        <check-includes>true</check-includes>
+      </map:transformer>
+      <!--map:transformer name="dump" logger="sitemap.transformer.dump" src="com.philips.cocoon.transformation.DumpTransformer"/-->
+    </map:transformers>
+  </map:components>
+  <!-- -->
+  <map:pipelines>
+    <!-- -->
+    <map:component-configurations>
+      <global-variables>
+        <ct>DerivedCategorization</ct>
+      </global-variables>
+    </map:component-configurations>
+    <!-- -->
+    <map:pipeline type="noncaching">
+      <map:match pattern="derivedcategorization_import_go.xml">
+        <!-- catalog def not needed for this gui load -->
+        <!--map:act type="copy-source" src="cocoon:/create_catalog_definition">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/report_create_catalog_def_{request-param:doctimestamp}.xml"/>
+        </map:act-->
+        <!-- -->
+        <map:act type="copy-source" src="cocoon:/do_import">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/report_do_import_{request-param:doctimestamp}.xml"/>
+        </map:act>
+        <!-- -->
+        <map:act type="copy-source" src="cocoon:/generate_include_file">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/jobs_include_{request-param:doctimestamp}.xml"/>
+        </map:act>
+        <!-- -->
+        <map:act type="copy-source" src="cocoon:/move_upload_file">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/report_move_upload_file_{request-param:doctimestamp}.xml"/>
+        </map:act>
+        <!-- -->
+        <map:generate src="{cmc2:gdir}/{global:ct}/temp/report_do_import_{request-param:doctimestamp}.xml"/>
+        <map:serialize type="xhtml"/>
+      </map:match>
+      <!-- -->
+      <!--map:match pattern="create_catalog_definition">
+        <map:generate src="{cmc2:svcURL}/common/get/catalog_definition/none/LocalizationCatalog"/>
+        <map:transform type="xslt-saxon" src="create_catalog_def.xslt">
+          <map:parameter name="store_dir" value="{cmc2:gdir}/catalog_definition/inbox"/>
+          <map:parameter name="doctimestamp" value="{request-param:doctimestamp}"/>
+          <map:parameter name="filename" value="{request-param:filename}"/>
+          <map:parameter name="ct_dir" value="{cmc2:gdir}/{global:ct}/temp/upload"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:serialize type="xml"/>
+      </map:match-->
+      <!-- -->
+      <map:match pattern="do_import">
+        <map:generate src="{cmc2:gdir}/{global:ct}/temp/upload/{request-param:filename}.xml"/>
+        <!--map:transform type="dump"><map:parameter name="logfile" value="{cmc2:gdir}/temp/temp/dump.derivedcategorization30.xml"/></map:transform-->
+        <map:transform type="xslt-saxon" src="write_project_files.xslt">
+          <map:parameter name="inbox_dir" value="{cmc2:gdir}/{global:ct}/inbox"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:transform type="xslt-saxon" src="handle_results.xslt">
+          <map:parameter name="upload_dir" value="{cmc2:gdir}/{global:ct}/temp/upload"/>
+          <map:parameter name="processed_dir" value="{cmc2:gdir}/{global:ct}/processed"/>
+          <map:parameter name="ct" value="{global:ct}"/>
+          <map:parameter name="gui_url" value="{global:gui_url}"/>
+          <map:parameter name="serverName" value="{request:serverName}"/>
+          <map:parameter name="serverPort" value="{request:serverPort}"/>
+          <map:parameter name="sitemapURIPrefix" value="{request:sitemapURIPrefix}"/>
+          <map:parameter name="include_file" value="{cmc2:gdir}/{global:ct}/temp/jobs_include_{request-param:doctimestamp}.xml"/>
+          <map:parameter name="scheduleid" value="{request-param:scheduleid}"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:transform type="xslt-saxon" src="result.xslt"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="generate_include_file">
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform type="xslt-saxon" src="sql_getschedule_id.xsl"/>
+        <map:call resource="sql"/>
+        <map:transform type="xslt-saxon" src="generate_include_file.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="move_upload_file">
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform type="xslt-saxon" src="move_upload_file.xslt">
+          <map:parameter name="upload_dir" value="{cmc2:gdir}/{global:ct}/temp/upload"/>
+          <map:parameter name="processed_dir" value="{cmc2:gdir}/{global:ct}/processed"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

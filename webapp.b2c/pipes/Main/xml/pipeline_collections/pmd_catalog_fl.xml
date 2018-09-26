@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+   | Specifies a collection of pipelines
+   | Each pipeline entry should have either a name or scheduleId attribute by which the 
+   | pipeline information is looked up in the database.
+   | 
+   | For content types:
+   | - The scheduleId attribute is use to match id column of the content_type_schedule table.
+   |
+   | For channels:
+   | - The name attribute is used to match the name column of the channels table.
+   | - The scheduleId attribute is used to match the id column of the channels table.
+   |
+   | The type attribute is mandatory and may be either 'contentType' or 'channel'.
+   -->
+
+<!-- 
+  Jobs to run for creating placeholders in a FASTLANE run.
+-->
+<pipelines>
+  <!-- CMC2ExportMasterCatalog -->
+  <pipeline type="channel" name="CMC2ExportMasterCatalogFL"/>
+  <!-- catalog_definition -->
+  <pipeline type="contentType" scheduleId="7001"/>
+  <!-- RefreshMV -->
+  <!-- pipeline type="contentType" scheduleId="7003"/ -->
+</pipelines>

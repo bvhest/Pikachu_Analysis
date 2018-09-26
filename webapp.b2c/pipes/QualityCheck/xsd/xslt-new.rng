@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rng:grammar xmlns:rng="http://relaxng.org/ns/structure/1.0" ns="http://www.w3.org/1999/XSL/Transform" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+		A Schema for XSLT - Don Box (http://www.develop.com/dbox)
+		Thanks to Curt Arnold for catching some errors along the way.
+	</a:documentation>
+	<!-- internal types -->
+	<!-- literal result element attributes -->
+	<!--rng:optional>
+		<rng:attribute name="version">
+			<rng:ref name="string"/>
+		</rng:attribute>
+	</rng:optional>
+	<rng:optional>
+		<rng:attribute name="extension-element-prefixes">
+			<rng:ref name="string"/>
+		</rng:attribute>
+	</rng:optional>
+	<rng:optional>
+		<rng:attribute name="exclude-result-prefixes">
+			<rng:ref name="string"/>
+		</rng:attribute>
+	</rng:optional>
+	<rng:optional>
+		<rng:attribute name="use-attribute-sets">
+			<rng:list>
+				<rng:ref name="QName"/>
+			</rng:list>
+		</rng:attribute>
+	</rng:optional>
+	<rng:define name="apply-imports"/>
+	<rng:start combine="choice">
+		<rng:zeroOrMore>
+			<rng:choice>
+				<rng:element name="with-param">
+					<rng:element name="instruction"/>
+					<rng:element>
+						<rng:anyName/>
+						<rng:text/>
+					</rng:element>
+					<rng:attribute name="name">
+						<rng:ref name="QName"/>
+					</rng:attribute>
+					<rng:optional>
+						<rng:attribute name="select">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																								
+																							</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+				</rng:element>
+				<rng:element name="sort">
+					<rng:optional>
+						<rng:attribute name="select" a0:defaultValue="." xmlns:a0="http://relaxng.org/ns/compatibility/annotations/1.0">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																									
+																																								</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="lang">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																								
+																																							</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="data-type" a1:defaultValue="text" xmlns:a1="http://relaxng.org/ns/compatibility/annotations/1.0">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																								
+																																							</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="order" a2:defaultValue="ascending" xmlns:a2="http://relaxng.org/ns/compatibility/annotations/1.0">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																								
+																																							</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="case-order">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																								
+																																							</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+				</rng:element>
+			</rng:choice>
+		</rng:zeroOrMore>
+		<rng:optional>
+			<rng:attribute name="select" a3:defaultValue="node()" xmlns:a3="http://relaxng.org/ns/compatibility/annotations/1.0">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																								
+																							</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:optional>
+		<rng:optional>
+			<rng:attribute name="mode">
+				<rng:ref name="QName"/>
+			</rng:attribute>
+		</rng:optional>
+	</rng:start>
+	<rng:define name="apply-templates">
+		<rng:element name="apply-templates">
+			<rng:zeroOrMore>
+				<rng:choice>
+					<rng:element name="with-param">
+						<rng:element name="instruction"/>
+						<rng:element>
+							<rng:anyName/>
+							<rng:text/>
+						</rng:element>
+						<rng:attribute name="name">
+							<rng:ref name="QName"/>
+						</rng:attribute>
+						<rng:optional>
+							<rng:attribute name="select">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																								
+																							</a:documentation>
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+					</rng:element>
+					<rng:element name="sort">
+						<rng:optional>
+							<rng:attribute name="select" a0:defaultValue="." xmlns:a0="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																									
+																																								</a:documentation>
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="lang">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																								
+																																							</a:documentation>
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="data-type" a1:defaultValue="text" xmlns:a1="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																								
+																																							</a:documentation>
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="order" a2:defaultValue="ascending" xmlns:a2="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																								
+																																							</a:documentation>
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="case-order">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																								
+																																							</a:documentation>
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+					</rng:element>
+				</rng:choice>
+			</rng:zeroOrMore>
+			<rng:optional>
+				<rng:attribute name="select" a3:defaultValue="node()" xmlns:a3="http://relaxng.org/ns/compatibility/annotations/1.0">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																								
+																							</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="mode">
+					<rng:ref name="QName"/>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:zeroOrMore>
+			<rng:element name="with-param">
+				<rng:element name="instruction"/>
+				<rng:element>
+					<rng:anyName/>
+					<rng:text/>
+				</rng:element>
+				<rng:attribute name="name">
+					<rng:ref name="QName"/>
+				</rng:attribute>
+				<rng:optional>
+					<rng:attribute name="select">
+						<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																		
+																																	</a:documentation>
+						<rng:ref name="string"/>
+					</rng:attribute>
+				</rng:optional>
+			</rng:element>
+		</rng:zeroOrMore>
+		<rng:attribute name="name">
+			<rng:ref name="QName"/>
+		</rng:attribute>
+	</rng:start>
+	<rng:define name="call-template">
+		<rng:element name="call-template">
+			<rng:zeroOrMore>
+				<rng:element name="with-param">
+					<rng:element name="instruction"/>
+					<rng:element>
+						<rng:anyName/>
+						<rng:text/>
+					</rng:element>
+					<rng:attribute name="name">
+						<rng:ref name="QName"/>
+					</rng:attribute>
+					<rng:optional>
+						<rng:attribute name="select">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																		
+																																	</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+				</rng:element>
+			</rng:zeroOrMore>
+			<rng:attribute name="name">
+				<rng:ref name="QName"/>
+			</rng:attribute>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:ref name="apply-imports"/>
+	</rng:start>
+	<rng:define name="apply-imports">
+		<rng:element name="apply-imports">
+			<rng:ref name="apply-imports"/>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:element name="instruction"/>
+		<rng:element>
+			<rng:anyName/>
+			<rng:text/>
+		</rng:element>
+		<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+			<rng:choice>
+				<rng:value>default</rng:value>
+				<rng:value>preserve</rng:value>
+			</rng:choice>
+		</rng:attribute>
+		<rng:zeroOrMore>
+			<rng:element name="sort">
+				<rng:optional>
+					<rng:attribute name="select" a0:defaultValue="." xmlns:a0="http://relaxng.org/ns/compatibility/annotations/1.0">
+						<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																		
+																																	</a:documentation>
+						<rng:ref name="string"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="lang">
+						<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																	
+																																</a:documentation>
+						<rng:ref name="string"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="data-type" a1:defaultValue="text" xmlns:a1="http://relaxng.org/ns/compatibility/annotations/1.0">
+						<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																	
+																																</a:documentation>
+						<rng:ref name="string"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="order" a2:defaultValue="ascending" xmlns:a2="http://relaxng.org/ns/compatibility/annotations/1.0">
+						<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																	
+																																</a:documentation>
+						<rng:ref name="string"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="case-order">
+						<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																	
+																																</a:documentation>
+						<rng:ref name="string"/>
+					</rng:attribute>
+				</rng:optional>
+			</rng:element>
+		</rng:zeroOrMore>
+		<rng:attribute name="select">
+			<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																	
+																</a:documentation>
+			<rng:ref name="string"/>
+		</rng:attribute>
+	</rng:start>
+	<rng:define name="for-each">
+		<rng:element name="for-each">
+			<rng:element name="instruction"/>
+			<rng:element>
+				<rng:anyName/>
+				<rng:text/>
+			</rng:element>
+			<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+				<rng:choice>
+					<rng:value>default</rng:value>
+					<rng:value>preserve</rng:value>
+				</rng:choice>
+			</rng:attribute>
+			<rng:zeroOrMore>
+				<rng:element name="sort">
+					<rng:optional>
+						<rng:attribute name="select" a0:defaultValue="." xmlns:a0="http://relaxng.org/ns/compatibility/annotations/1.0">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																		
+																																	</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="lang">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																	
+																																</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="data-type" a1:defaultValue="text" xmlns:a1="http://relaxng.org/ns/compatibility/annotations/1.0">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																	
+																																</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="order" a2:defaultValue="ascending" xmlns:a2="http://relaxng.org/ns/compatibility/annotations/1.0">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																	
+																																</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="case-order">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																	
+																																</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+				</rng:element>
+			</rng:zeroOrMore>
+			<rng:attribute name="select">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																	
+																</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:attribute name="select">
+			<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																					
+																																				</a:documentation>
+			<rng:ref name="string"/>
+		</rng:attribute>
+		<rng:optional>
+			<rng:attribute name="disable-output-escaping" a4:defaultValue="no" xmlns:a4="http://relaxng.org/ns/compatibility/annotations/1.0">
+				<rng:choice>
+					<rng:value>yes</rng:value>
+					<rng:value>no</rng:value>
+				</rng:choice>
+			</rng:attribute>
+		</rng:optional>
+	</rng:start>
+	<rng:define name="value-of">
+		<rng:element name="value-of">
+			<rng:attribute name="select">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																																					
+																																				</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+			<rng:optional>
+				<rng:attribute name="disable-output-escaping" a4:defaultValue="no" xmlns:a4="http://relaxng.org/ns/compatibility/annotations/1.0">
+					<rng:choice>
+						<rng:value>yes</rng:value>
+						<rng:value>no</rng:value>
+					</rng:choice>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:attribute name="select">
+			<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																						
+																					</a:documentation>
+			<rng:ref name="string"/>
+		</rng:attribute>
+	</rng:start>
+	<rng:define name="copy-of">
+		<rng:element name="copy-of">
+			<rng:attribute name="select">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																						
+																					</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:optional>
+			<rng:attribute name="level" a6:defaultValue="single" xmlns:a6="http://relaxng.org/ns/compatibility/annotations/1.0">
+				<rng:choice>
+					<rng:value>single</rng:value>
+					<rng:value>multiple</rng:value>
+					<rng:value>any</rng:value>
+				</rng:choice>
+			</rng:attribute>
+		</rng:optional>
+		<rng:optional>
+			<rng:attribute name="count">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:optional>
+		<rng:optional>
+			<rng:attribute name="from">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:optional>
+		<rng:optional>
+			<rng:attribute name="value">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																															
+																														</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:optional>
+		<rng:optional>
+			<rng:attribute name="format" a7:defaultValue="1" xmlns:a7="http://relaxng.org/ns/compatibility/annotations/1.0">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:optional>
+		<rng:optional>
+			<rng:attribute name="lang">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:optional>
+		<rng:optional>
+			<rng:attribute name="letter-value">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:optional>
+		<rng:optional>
+			<rng:attribute name="grouping-separator">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:optional>
+		<rng:optional>
+			<rng:attribute name="grouping-size">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:optional>
+	</rng:start>
+	<rng:define name="number">
+		<rng:element name="number">
+			<rng:optional>
+				<rng:attribute name="level" a6:defaultValue="single" xmlns:a6="http://relaxng.org/ns/compatibility/annotations/1.0">
+					<rng:choice>
+						<rng:value>single</rng:value>
+						<rng:value>multiple</rng:value>
+						<rng:value>any</rng:value>
+					</rng:choice>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="count">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="from">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="value">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																															
+																														</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="format" a7:defaultValue="1" xmlns:a7="http://relaxng.org/ns/compatibility/annotations/1.0">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="lang">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="letter-value">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="grouping-separator">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="grouping-size">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																														
+																													</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:oneOrMore>
+			<rng:element name="when">
+				<rng:element name="instruction"/>
+				<rng:element>
+					<rng:anyName/>
+					<rng:text/>
+				</rng:element>
+				<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+					<rng:choice>
+						<rng:value>default</rng:value>
+						<rng:value>preserve</rng:value>
+					</rng:choice>
+				</rng:attribute>
+				<rng:optional>
+					<rng:attribute name="test">
+						<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																													
+																												</a:documentation>
+						<rng:ref name="string"/>
+					</rng:attribute>
+				</rng:optional>
+			</rng:element>
+		</rng:oneOrMore>
+		<rng:optional>
+			<rng:element name="otherwise">
+				<rng:element name="instruction"/>
+				<rng:element>
+					<rng:anyName/>
+					<rng:text/>
+				</rng:element>
+				<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+					<rng:choice>
+						<rng:value>default</rng:value>
+						<rng:value>preserve</rng:value>
+					</rng:choice>
+				</rng:attribute>
+			</rng:element>
+		</rng:optional>
+	</rng:start>
+	<rng:define name="choose">
+		<rng:element name="choose">
+			<rng:oneOrMore>
+				<rng:element name="when">
+					<rng:element name="instruction"/>
+					<rng:element>
+						<rng:anyName/>
+						<rng:text/>
+					</rng:element>
+					<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+						<rng:choice>
+							<rng:value>default</rng:value>
+							<rng:value>preserve</rng:value>
+						</rng:choice>
+					</rng:attribute>
+					<rng:optional>
+						<rng:attribute name="test">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+																													
+																												</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:optional>
+				</rng:element>
+			</rng:oneOrMore>
+			<rng:optional>
+				<rng:element name="otherwise">
+					<rng:element name="instruction"/>
+					<rng:element>
+						<rng:anyName/>
+						<rng:text/>
+					</rng:element>
+					<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+						<rng:choice>
+							<rng:value>default</rng:value>
+							<rng:value>preserve</rng:value>
+						</rng:choice>
+					</rng:attribute>
+				</rng:element>
+			</rng:optional>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:element name="if">
+			<rng:element name="instruction"/>
+			<rng:element>
+				<rng:anyName/>
+				<rng:text/>
+			</rng:element>
+			<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+				<rng:choice>
+					<rng:value>default</rng:value>
+					<rng:value>preserve</rng:value>
+				</rng:choice>
+			</rng:attribute>
+			<rng:optional>
+				<rng:attribute name="test">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+										
+									</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:start>
+	<rng:start combine="choice">
+		<rng:optional>
+			<rng:attribute name="disable-output-escaping" a8:defaultValue="no" xmlns:a8="http://relaxng.org/ns/compatibility/annotations/1.0">
+				<rng:choice>
+					<rng:value>yes</rng:value>
+					<rng:value>no</rng:value>
+				</rng:choice>
+			</rng:attribute>
+		</rng:optional>
+	</rng:start>
+	<rng:define name="text">
+		<rng:element name="text">
+			<rng:optional>
+				<rng:attribute name="disable-output-escaping" a8:defaultValue="no" xmlns:a8="http://relaxng.org/ns/compatibility/annotations/1.0">
+					<rng:choice>
+						<rng:value>yes</rng:value>
+						<rng:value>no</rng:value>
+					</rng:choice>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:element name="instruction"/>
+		<rng:element>
+			<rng:anyName/>
+			<rng:text/>
+		</rng:element>
+		<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+			<rng:choice>
+				<rng:value>default</rng:value>
+				<rng:value>preserve</rng:value>
+			</rng:choice>
+		</rng:attribute>
+		<rng:optional>
+			<rng:attribute name="use-attribute-sets">
+				<rng:list>
+					<rng:ref name="QName"/>
+				</rng:list>
+			</rng:attribute>
+		</rng:optional>
+	</rng:start>
+	<rng:define name="copy">
+		<rng:element name="copy">
+			<rng:element name="instruction"/>
+			<rng:element>
+				<rng:anyName/>
+				<rng:text/>
+			</rng:element>
+			<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+				<rng:choice>
+					<rng:value>default</rng:value>
+					<rng:value>preserve</rng:value>
+				</rng:choice>
+			</rng:attribute>
+			<rng:optional>
+				<rng:attribute name="use-attribute-sets">
+					<rng:list>
+						<rng:ref name="QName"/>
+					</rng:list>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:ref name="variable"/>
+	</rng:start>
+	<rng:define name="variable">
+		<rng:element name="variable">
+			<rng:element name="instruction"/>
+			<rng:element>
+				<rng:anyName/>
+				<rng:text/>
+			</rng:element>
+			<rng:attribute name="name">
+				<rng:ref name="QName"/>
+			</rng:attribute>
+			<rng:optional>
+				<rng:attribute name="select">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+						
+					</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:element name="instruction"/>
+		<rng:element>
+			<rng:anyName/>
+			<rng:text/>
+		</rng:element>
+		<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+			<rng:choice>
+				<rng:value>default</rng:value>
+				<rng:value>preserve</rng:value>
+			</rng:choice>
+		</rng:attribute>
+		<rng:optional>
+			<rng:attribute name="terminate" a5:defaultValue="no" xmlns:a5="http://relaxng.org/ns/compatibility/annotations/1.0">
+				<rng:choice>
+					<rng:value>yes</rng:value>
+					<rng:value>no</rng:value>
+				</rng:choice>
+			</rng:attribute>
+		</rng:optional>
+	</rng:start>
+	<rng:define name="message">
+		<rng:element name="message">
+			<rng:element name="instruction"/>
+			<rng:element>
+				<rng:anyName/>
+				<rng:text/>
+			</rng:element>
+			<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+				<rng:choice>
+					<rng:value>default</rng:value>
+					<rng:value>preserve</rng:value>
+				</rng:choice>
+			</rng:attribute>
+			<rng:optional>
+				<rng:attribute name="terminate" a5:defaultValue="no" xmlns:a5="http://relaxng.org/ns/compatibility/annotations/1.0">
+					<rng:choice>
+						<rng:value>yes</rng:value>
+						<rng:value>no</rng:value>
+					</rng:choice>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:element name="fallback">
+			<rng:element name="instruction"/>
+			<rng:element>
+				<rng:anyName/>
+				<rng:text/>
+			</rng:element>
+			<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+				<rng:choice>
+					<rng:value>default</rng:value>
+					<rng:value>preserve</rng:value>
+				</rng:choice>
+			</rng:attribute>
+		</rng:element>
+	</rng:start>
+	<rng:start combine="choice">
+		<rng:element name="comment">
+			<rng:element name="char-instruction"/>
+			<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+				<rng:choice>
+					<rng:value>default</rng:value>
+					<rng:value>preserve</rng:value>
+				</rng:choice>
+			</rng:attribute>
+		</rng:element>
+	</rng:start>
+	<rng:start combine="choice">
+		<rng:element name="char-instruction"/>
+		<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+			<rng:choice>
+				<rng:value>default</rng:value>
+				<rng:value>preserve</rng:value>
+			</rng:choice>
+		</rng:attribute>
+		<rng:attribute name="name">
+			<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+											
+										</a:documentation>
+			<rng:ref name="string"/>
+		</rng:attribute>
+	</rng:start>
+	<rng:define name="processing-instruction">
+		<rng:element name="processing-instruction">
+			<rng:element name="char-instruction"/>
+			<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+				<rng:choice>
+					<rng:value>default</rng:value>
+					<rng:value>preserve</rng:value>
+				</rng:choice>
+			</rng:attribute>
+			<rng:attribute name="name">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+											
+										</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:element name="char-instruction"/>
+		<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+			<rng:choice>
+				<rng:value>default</rng:value>
+				<rng:value>preserve</rng:value>
+			</rng:choice>
+		</rng:attribute>
+		<rng:attribute name="name">
+			<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+											
+										</a:documentation>
+			<rng:ref name="string"/>
+		</rng:attribute>
+		<rng:optional>
+			<rng:attribute name="namespace">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+					
+				</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+		</rng:optional>
+	</rng:start>
+	<rng:define name="attribute">
+		<rng:element name="attribute">
+			<rng:element name="char-instruction"/>
+			<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+				<rng:choice>
+					<rng:value>default</rng:value>
+					<rng:value>preserve</rng:value>
+				</rng:choice>
+			</rng:attribute>
+			<rng:attribute name="name">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+											
+										</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+			<rng:optional>
+				<rng:attribute name="namespace">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+					
+				</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:define>
+	<rng:start combine="choice">
+		<rng:element name="element">
+			<rng:element name="instruction"/>
+			<rng:element>
+				<rng:anyName/>
+				<rng:text/>
+			</rng:element>
+			<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+				<rng:choice>
+					<rng:value>default</rng:value>
+					<rng:value>preserve</rng:value>
+				</rng:choice>
+			</rng:attribute>
+			<rng:attribute name="name">
+				<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+														
+													</a:documentation>
+				<rng:ref name="string"/>
+			</rng:attribute>
+			<rng:optional>
+				<rng:attribute name="namespace">
+					<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+														
+													</a:documentation>
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="use-attribute-sets">
+					<rng:list>
+						<rng:ref name="QName"/>
+					</rng:list>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:start-->
+	
+	
+	<rng:start>
+		<rng:element name="stylesheet">
+			<rng:zeroOrMore>
+				<rng:element name="import">
+					<rng:attribute name="href">
+						<rng:ref name="anyURI"/>
+					</rng:attribute>
+				</rng:element>
+			</rng:zeroOrMore>
+			<rng:zeroOrMore>
+				<rng:choice>
+					<rng:element name="include">
+						<rng:attribute name="href">
+							<rng:ref name="anyURI"/>
+						</rng:attribute>
+					</rng:element>
+					<rng:element name="strip-space">
+						<rng:attribute name="elements">
+							<rng:list>
+								<rng:ref name="QName"/>
+							</rng:list>
+						</rng:attribute>
+					</rng:element>
+					<rng:element name="preserve-space">
+						<rng:attribute name="elements">
+							<rng:list>
+								<rng:ref name="QName"/>
+							</rng:list>
+						</rng:attribute>
+					</rng:element>
+					<rng:element name="output">
+						<rng:optional>
+							<rng:attribute name="method">
+								<rng:ref name="QName"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="version">
+								<rng:ref name="NMTOKEN"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="encoding">
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="omit-xml-declaration">
+								<rng:choice>
+									<rng:value>yes</rng:value>
+									<rng:value>no</rng:value>
+								</rng:choice>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="standalone">
+								<rng:choice>
+									<rng:value>yes</rng:value>
+									<rng:value>no</rng:value>
+								</rng:choice>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="doctype-public">
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="doctype-system">
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="cdata-section-elements">
+								<rng:list>
+									<rng:ref name="QName"/>
+								</rng:list>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="indent">
+								<rng:choice>
+									<rng:value>yes</rng:value>
+									<rng:value>no</rng:value>
+								</rng:choice>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="media-type">
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+					</rng:element>
+					<rng:element name="key">
+						<rng:attribute name="name">
+							<rng:ref name="QName"/>
+						</rng:attribute>
+						<rng:attribute name="match">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+							
+						</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+						<rng:attribute name="use">
+							<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+							
+						</a:documentation>
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:element>
+					<rng:element name="decimal-format">
+						<rng:optional>
+							<rng:attribute name="name">
+								<rng:ref name="QName"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="decimal-separator" a9:defaultValue="." xmlns:a9="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<rng:ref name="string"/>
+								<!--rng:param name="minLength">1</rng:param>
+								<rng:param name="maxLength">1</rng:param-->
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="grouping-separator" a10:defaultValue="," xmlns:a10="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<rng:ref name="string"/>
+								<!--rng:param name="minLength">1</rng:param>
+								<rng:param name="maxLength">1</rng:param-->
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="infinity" a11:defaultValue="Infinity" xmlns:a11="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="minus-sign" a12:defaultValue="-" xmlns:a12="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<rng:ref name="string"/>
+								<!--rng:param name="minLength">1</rng:param>
+								<rng:param name="maxLength">1</rng:param-->
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="NaN" a13:defaultValue="NaN" xmlns:a13="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="percent" a14:defaultValue="%" xmlns:a14="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<rng:ref name="string"/>
+								<!--rng:param name="minLength">1</rng:param>
+								<rng:param name="maxLength">1</rng:param-->
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="per-mille" a15:defaultValue="‰" xmlns:a15="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<rng:ref name="string"/>
+								<!--rng:param name="minLength">1</rng:param>
+								<rng:param name="maxLength">1</rng:param-->
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="zero-digit" a16:defaultValue="0" xmlns:a16="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<rng:ref name="string"/>
+								<!--rng:param name="minLength">1</rng:param>
+								<rng:param name="maxLength">1</rng:param-->
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="digit" a17:defaultValue="#" xmlns:a17="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<rng:ref name="string"/>
+								<!--rng:param name="minLength">1</rng:param>
+								<rng:param name="maxLength">1</rng:param-->
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="pattern-separator" a18:defaultValue=";" xmlns:a18="http://relaxng.org/ns/compatibility/annotations/1.0">
+								<rng:ref name="string"/>
+								<!--rng:param name="minLength">1</rng:param>
+								<rng:param name="maxLength">1</rng:param-->
+							</rng:attribute>
+						</rng:optional>
+					</rng:element>
+					<rng:element name="attribute-set">
+						<rng:zeroOrMore>
+							<rng:element name="char-instruction"/>
+							<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+								<rng:choice>
+									<rng:value>default</rng:value>
+									<rng:value>preserve</rng:value>
+								</rng:choice>
+							</rng:attribute>
+							<rng:attribute name="name">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+											
+										</a:documentation>
+								<rng:ref name="string"/>
+							</rng:attribute>
+							<rng:optional>
+								<rng:attribute name="namespace">
+									<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+									
+								</a:documentation>
+									<rng:ref name="string"/>
+								</rng:attribute>
+							</rng:optional>
+						</rng:zeroOrMore>
+						<rng:attribute name="name">
+							<rng:ref name="QName"/>
+						</rng:attribute>
+						<rng:optional>
+							<rng:attribute name="use-attribute-sets">
+								<rng:list>
+									<rng:ref name="QName"/>
+								</rng:list>
+							</rng:attribute>
+						</rng:optional>
+					</rng:element>
+					<rng:element name="variable">
+						<rng:element name="instruction"/>
+						<rng:element>
+							<rng:anyName/>
+							<rng:text/>
+						</rng:element>
+						<rng:attribute name="name">
+							<rng:ref name="QName"/>
+						</rng:attribute>
+						<rng:optional>
+							<rng:attribute name="select">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+								
+							</a:documentation>
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+					</rng:element>
+					<rng:element name="param">
+						<rng:element name="instruction"/>
+						<rng:element>
+							<rng:anyName/>
+							<rng:text/>
+						</rng:element>
+						<rng:attribute name="name">
+							<rng:ref name="QName"/>
+						</rng:attribute>
+						<rng:optional>
+							<rng:attribute name="select">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+								
+							</a:documentation>
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+					</rng:element>
+					<rng:element name="template">
+						<rng:element name="instruction"/>
+						<rng:element>
+							<rng:anyName/>
+							<rng:text/>
+						</rng:element>
+						<rng:attribute name="space" ns="http://www.w3.org/XML/1998/namespace">
+							<rng:choice>
+								<rng:value>default</rng:value>
+								<rng:value>preserve</rng:value>
+							</rng:choice>
+						</rng:attribute>
+						<rng:element name="param">
+							<rng:element name="instruction"/>
+							<rng:element>
+								<rng:anyName/>
+								<rng:text/>
+							</rng:element>
+							<rng:attribute name="name">
+								<rng:ref name="QName"/>
+							</rng:attribute>
+							<rng:optional>
+								<rng:attribute name="select">
+									<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+											
+										</a:documentation>
+									<rng:ref name="string"/>
+								</rng:attribute>
+							</rng:optional>
+						</rng:element>
+						<rng:optional>
+							<rng:attribute name="match">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+										
+									</a:documentation>
+								<rng:ref name="string"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="name">
+								<rng:ref name="QName"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="priority">
+								<a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+													
+												</a:documentation>
+								<rng:ref name="decimal"/>
+							</rng:attribute>
+						</rng:optional>
+						<rng:optional>
+							<rng:attribute name="mode">
+								<rng:ref name="QName"/>
+							</rng:attribute>
+						</rng:optional>
+					</rng:element>
+					<rng:element name="namespace-alias">
+						<rng:attribute name="stylesheet-prefix">
+							<rng:ref name="string"/>
+						</rng:attribute>
+						<rng:attribute name="result-prefix">
+							<rng:ref name="string"/>
+						</rng:attribute>
+					</rng:element>
+					<rng:element>
+						<rng:anyName/>
+						<rng:text/>
+					</rng:element>
+				</rng:choice>
+			</rng:zeroOrMore>
+			<rng:attribute name="version">
+				<rng:ref name="string"/>
+			</rng:attribute>
+			<rng:optional>
+				<rng:attribute name="extension-element-prefixes">
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="exclude-result-prefixes">
+					<rng:ref name="string"/>
+				</rng:attribute>
+			</rng:optional>
+			<rng:optional>
+				<rng:attribute name="use-attribute-sets">
+					<rng:list>
+						<rng:ref name="QName"/>
+					</rng:list>
+				</rng:attribute>
+			</rng:optional>
+		</rng:element>
+	</rng:start>
+</rng:grammar>

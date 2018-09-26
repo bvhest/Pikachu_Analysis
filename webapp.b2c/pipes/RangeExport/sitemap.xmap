@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <map:components>
+    <map:transformers default="xslt">
+      <map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer"/>
+      <map:transformer name="sendmail" src="org.apache.cocoon.mail.transformation.SendMailTransformer">
+        <smtphost>nlvg020.gdc1.ce.philips.com</smtphost>
+        <smtpport>25</smtpport>
+      </map:transformer>
+    </map:transformers>
+    <map:serializers default="html">
+      <map:serializer logger="sitemap.serializer.html" mime-type="text/html" name="html" pool-max="${html-serializer.pool-max}" src="org.apache.cocoon.serialization.HTMLSerializer">
+        <encoding>UTF-8</encoding>
+        <indent>no</indent>
+      </map:serializer>
+    </map:serializers>
+    <map:actions>
+      <map:action name="synced-copy-source" src="org.apache.cocoon.acting.SyncedCopySourceAction"/>
+    </map:actions>
+    <!--
+	<map:readers default="resource">
+	  <map:reader name="exec" src="org.apache.cocoon.reading.ShellScriptExecute"/>
+	</map:readers>
+  -->
+  </map:components>
+
+  <map:resources>
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC"/>
+        <map:parameter name="clob-encoding" value="UTF-8"/>
+      </map:transform>
+    </map:resource>
+  </map:resources>
+
+  <map:pipelines>
+    <!-- -->
+    <map:pipeline name="{global:channel}" type="noncaching">
+      <map:match pattern="runPipeline">
+        <!-- This is the starting point of the pipeline. A lock is requested to prevent this pipeline from running multiple times in parallel.
+        When a lock cannot be acquired, an error message is shown. If a lock can be acquired, run exportStart -->
+        <map:act type="synced-copy-source" src="cocoon:/exportStart">
+          <map:parameter name="lockName" value="{global:channel}"/>
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/import.xml"/>
+          <map:generate src="{global:gdir}{global:ldir}temp/import.xml"/>
+          <map:serialize type="xml"/>
+        </map:act>
+        <map:generate src="../common/xml/locked.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="exportStart">
+        <!-- Set Start Time.of this channel-->
+        <map:act type="copy-source" src="cocoon:/runsql_setstarttime">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetStartTime.xml"/>
+        </map:act>
+        <!-- Call the Main Export.-->
+        <map:act type="copy-source" src="cocoon:/exportMain">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportExportMain.xml"/>
+        </map:act>
+ 
+        <!-- Set End Time of this channel-->
+        <map:act type="copy-source" src="cocoon:/runsql_setendtime">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetEndTime.xml"/>
+        </map:act>
+        <!-- Show result -->
+        <map:act type="copy-source" src="cocoon:/runsql_gettimings">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportGetTimings.xml"/>
+        </map:act>
+        <map:generate src="{global:gdir}{global:ldir}temp/ReportGetTimings.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- set Start / End Time -->
+      <map:match pattern="runsql_*">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:transform type="xslt-saxon" src="../common/xsl/sql_{1}.xsl">
+          <map:parameter name="channel" value="{global:channel}"/>
+           <map:parameter name="run_id" value="{request-param:runId}"/>
+           <map:parameter name="run_mode" value="{request-param:runmode}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="exportMain">
+        <!-- Clean temp -->
+        <map:act type="copy-source" src="cocoon:/deleteDirectoryContents.temp.1">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/deleteTempFilesReport.xml"/>
+        </map:act>
+        <!-- Clean outbox -->
+        <map:act type="copy-source" src="cocoon:/deleteDirectoryContents.outbox.1">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/deleteOutboxFilesReport.xml"/>
+        </map:act>
+        <!-- Loop over locales -->
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:transform src="xsl/sql_getlocales.xsl">
+          <map:parameter name="channel" value="{global:channel}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <!-- transform output to get include statements to exportSub-->
+        <map:transform type="xslt-saxon" src="xsl/ll2include.xsl">
+          <map:parameter name="master" value="{request-param:master}"/>
+        </map:transform>
+        <!-- execute the includes-->
+        <map:transform type="include"/>
+        <!-- generate report -->
+        <map:transform type="xslt-saxon" src="../common/xsl/makereport.xsl">
+          <map:parameter name="channel" value="{global:channel}"/>
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}"/>
+          <map:parameter name="exportdate" value="{date:yyyyMMdd}T{date:hhmmss}"/>
+        </map:transform>
+        <!-- write to disk -->
+        <map:transform type="write-source"/>
+        <!-- Archive  -->
+        <map:transform type="xslt-saxon" src="xsl/sql_gettimestamp.xsl">
+          <map:parameter name="channel" value="{global:channel}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:transform type="xslt-saxon" src="xsl/include_archive.xsl"/>
+        <map:transform type="cinclude"/>
+        
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--
+        {1} run timestamp
+        {2} locale
+      -->
+      <map:match pattern="exportLocale.*.*">
+        <!-- export per locale -->
+        <map:act type="copy-source" src="cocoon:/setFlags.{1}.{2}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/setFlagsReport_{1}_{2}.xml"/>
+        </map:act>
+        <!-- -->
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:masterlocale}"/>
+           <map:when test="yes">
+            <map:act type="copy-source" src="cocoon:/retrieveContent.{1}.{2}">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{global:channel}_RangeExport_{1}_MASTER_{2}.xml"/>
+            </map:act>       
+            <map:act type="copy-source" src="cocoon:/genReport.{1}.{2}">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/exportReport_{1}_MASTER_{2}.xml"/>
+            </map:act>            
+            <map:generate src="{global:gdir}{global:ldir}temp/exportReport_{1}_MASTER_{2}.xml"/>            
+          </map:when>
+          <map:otherwise>
+            <map:act type="copy-source" src="cocoon:/retrieveContent.{1}.{2}">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{global:channel}_RangeExport_{1}_{2}.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="cocoon:/genReport.{1}.{2}">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/exportReport_{1}_{2}.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="cocoon:/updateTransmitTimestamp.{1}.{2}">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/updateTransmitTimestampReport_{1}_{2}.xml"/>
+            </map:act>            
+            <map:generate src="{global:gdir}{global:ldir}temp/exportReport_{1}_{2}.xml"/>
+          </map:otherwise>
+        </map:select>
+        <!-- -->
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="setFlags.*.*">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:transform type="xslt-saxon" src="xsl/sql_setFlags.xsl">
+          <map:parameter name="exportdate" value="{1}"/>
+          <map:parameter name="locale" value="{2}"/>
+          <map:parameter name="channel" value="{global:channel}"/>
+          <map:parameter name="fullexport" value="{request-param:fullexport}"/>          
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- 
+        {1} timestamp
+        {2} locale
+        
+        Request params:
+        master        yes|no  Export master content. {2} will then be 'MASTER'
+        masterlocale  yes|no  Export master-locale content
+        CCR           yes|no  Indicates this is the CCR Range Export
+      -->
+      <map:match pattern="retrieveContent.*.*">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:transform type="xslt-saxon" src="xsl/sql_retrieveContent.xsl">
+          <map:parameter name="locale" value="{2}"/>
+          <map:parameter name="channel" value="{global:channel}"/>
+          <map:parameter name="masterlocale" value="{request-param:masterlocale}"/>
+          <map:parameter name="master" value="{request-param:master}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:CCR}"/>
+          <map:when test="yes"/>
+          <map:otherwise>                  
+            <map:transform type="xslt-saxon" src="xsl/RangeExport.xsl">
+              <map:parameter name="exportdate" value="{1}"/>
+              <map:parameter name="locale" value="{2}"/>
+              <map:parameter name="channel" value="{global:channel}"/>
+              <map:parameter name="masterlocale" value="{request-param:masterlocale}"/>
+            </map:transform>
+            <map:transform type="xslt-saxon" src="xsl/sql_retrieveProductContent.xsl">
+              <map:parameter name="locale" value="{2}"/>
+              <map:parameter name="channel" value="{global:channel}"/>
+              <map:parameter name="masterlocale" value="{request-param:masterlocale}"/>
+              <map:parameter name="master" value="{request-param:master}"/>
+            </map:transform>        
+            <map:call resource="sql"/>
+            <map:transform type="xslt-saxon" src="xsl/EnrichRangeExport.xsl">
+              <map:parameter name="exportdate" value="{1}"/>
+              <map:parameter name="locale" value="{2}"/>
+              <map:parameter name="channel" value="{global:channel}"/>
+              <map:parameter name="doctypesfilepath" value="{cmc2:xmlDir}/doctype_attributes.xml"/>
+              <map:parameter name="masterlocale" value="{request-param:masterlocale}"/>
+              <map:parameter name="master" value="{request-param:master}"/>          
+            </map:transform>
+            <map:transform type="xslt-saxon" src="xsl/ConvertAssets.xsl">
+              <map:parameter name="asset-syndication" value="{request-param:asset-syndication}"/>
+              <map:parameter name="broker-level" value="{request-param:broker-level}"/>
+              <map:parameter name="doctypesfilepath" value="{cmc2:xmlDir}/doctype_attributes.xml"/>
+            </map:transform>
+          </map:otherwise>
+        </map:select>
+        <map:select type="resource-exists">
+          <map:when test="xsl/PostProcess_{global:channel}.xsl">
+            <map:transform type="xslt-saxon" src="xsl/PostProcess_{global:channel}.xsl">
+              <map:parameter name="exportdate" value="{1}"/>
+              <map:parameter name="locale" value="{2}"/>
+            </map:transform>
+          </map:when>
+          <map:otherwise>
+            <map:transform type="xslt-saxon" src="xsl/PostProcess.xsl"/>
+          </map:otherwise>
+        </map:select>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="testconvert">
+        <map:generate src="{global:gdir}{global:ldir}outbox/FSSRange_RangeText_20080728T1147_nl_NL.xml"/>
+        <map:transform src="xsl/x.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="updateTransmitTimestamp.*.*">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:transform src="xsl/sql_updatetransmittimestamp.xsl">
+          <map:parameter name="exportdate" value="{1}"/>
+          <map:parameter name="locale" value="{2}"/>
+          <map:parameter name="channel" value="{global:channel}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="genReport.*.*">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:transform src="../common/xsl/sql_genreport.xsl">
+          <map:parameter name="exportdate" value="{1}"/>
+          <map:parameter name="locale" value="{2}"/>
+          <map:parameter name="channel" value="{global:channel}"/>
+        </map:transform>
+        <!-- Run db queries -->
+        <map:call resource="sql"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="deleteDirectoryContents.*.*">
+        <!-- Delete all files in {1} to a level of {2} -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}{1}">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd HH:mm"/>
+          <map:parameter name="depth" value="{2}"/>
+          <map:parameter name="include" value=".*"/>
+        </map:generate>
+        <!-- Delete all files -->
+        <map:transform src="../common/xsl/dir2shell_delete.xsl">
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}{1}"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      
+      <!-- Archive -->
+       <map:match pattern="archive.*">
+        <map:act type="copy-source" src="cocoon:/archiveFiles.{1}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportArchiveFiles.xml"/>
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/createCONTENTREADY.{1}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportCreateContentReady.xml"/>
+        </map:act>
+        <map:generate src="{global:gdir}{global:ldir}temp/ReportArchiveFiles.xml"/>
+        <map:serialize type="xml"/>
+       </map:match>
+       
+      <map:match pattern="archiveFiles.*">
+        <!-- Archive files that contain at least one <Node> -->
+        <map:generate type="xpathdirectory" src="{global:gdir}{global:ldir}outbox" label="step1">
+          <map:parameter name="xpath" value="/node()[local-name()='Nodes']/node()[local-name()='Node']"/>
+          <map:parameter name="xmlFiles" value=".*\.xml"/>
+          <map:parameter name="include" value=".*\.xml"/>
+        </map:generate>
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:FSS}"/>
+          <map:when test="yes">
+              <map:transform src="xsl/archive.xsl" type="xslt-saxon">
+                <map:parameter name="sourceDir" value="{global:gdir}{global:ldir}outbox"/>
+				<map:parameter name="targetDir" value="{global:gdir}{global:ldir}archive"/>
+              </map:transform>
+          </map:when>
+          <map:otherwise>  
+              <map:transform src="xsl/archive.xsl" type="xslt-saxon">
+                <map:parameter name="sourceDir" value="{global:gdir}{global:ldir}outbox"/>
+                <map:parameter name="targetDir" value="{global:gdir}{global:ldir}archive/{1}"/>
+              </map:transform>
+          </map:otherwise>
+        </map:select>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+       <!-- Create CONTENT-READY file -->
+      <map:match pattern="createCONTENTREADY.*">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:select type="resource-exists">
+          <map:when test="{global:gdir}{global:ldir}archive/{1}">
+            <map:act type="copy-source" src="../common/xml/empty.xml">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}archive/{1}/CONTENT-READY"/>
+            </map:act>
+          </map:when>
+          <map:otherwise/>
+        </map:select>
+        <map:serialize type="xml"/>        
+      </map:match>
+      <!-- -->                 
+      
+      <!--map:handle-errors when="always">
+        <map:select type="exception">
+          <map:when test="not-found">
+            <map:generate type="exception"/>
+            <map:transform type="xslt-saxon" src="../common/xsl/exception2html_write.xsl">
+              <map:parameter name="contextPath" value="{request:contextPath}"/>
+              <map:parameter name="realPath" value="{realpath:}"/>
+              <map:parameter name="dir" value="{global:gdir}"/>
+              <map:parameter name="pageTitle" value="Resource not found"/>
+            </map:transform>
+            <map:transform type="write-source"/>
+            <map:serialize type="xml"/>
+          </map:when>
+          <map:when test="invalid-continuation">
+            <map:generate type="exception"/>
+            <map:transform type="xslt-saxon" src="../common/xsl/exception2html_write.xsl">
+              <map:parameter name="contextPath" value="{request:contextPath}"/>
+              <map:parameter name="realPath" value="{realpath:}"/>
+              <map:parameter name="dir" value="{global:gdir}"/>
+              <map:parameter name="pageTitle" value="Invalid Continuation"/>
+            </map:transform>
+            <map:transform type="write-source"/>
+            <map:serialize type="xml"/>
+          </map:when>
+          <map:otherwise>
+            <map:generate type="exception"/>
+            <map:transform type="xslt-saxon" src="../common/xsl/exception2html_write.xsl">
+              <map:parameter name="contextPath" value="{request:contextPath}"/>
+              <map:parameter name="realPath" value="{realpath:}"/>
+              <map:parameter name="dir" value="{global:gdir}"/>
+            </map:transform>
+            <map:transform type="write-source"/>
+            <map:serialize type="xml"/>
+          </map:otherwise>
+        </map:select>
+      </map:handle-errors-->
+    </map:pipeline>
+  </map:pipelines>
+  <!-- -->
+  <map:views>
+    <map:view name="step1" from-label="step1">
+      <map:serialize type="xml"/>
+    </map:view>
+  </map:views>
+  <!-- -->
+</map:sitemap>

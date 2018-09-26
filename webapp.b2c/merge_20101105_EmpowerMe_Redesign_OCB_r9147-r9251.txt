@@ -1,0 +1,38 @@
+Command: Merging revisions 9146-9251 of http://pww.svn.gdc1.ce.philips.com/svn/PikaChu/branches/20101105_EmpowerMe_Redesign_OCB/webapp into C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp, respecting ancestry  
+Merging r9147 through r9251: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp  
+Tree conflict: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\deployment\database\08_1_update_pms_alerts.pks  
+Tree conflict: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\deployment\database\06_update_secondary_relations.prc  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\pipes\PikaEmeExportSDL\xsl\sql_selectOCTLRecords.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\pipes\RangeExport\xsl\PostProcess_AtgRange.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\sitemap.xmap  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\AtgLightingFamilies\convertProducts.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\AtgProducts\convertProducts.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\pipes\CareAtgExport\xsl\sql_getlocales.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgExport\xsl\convertProducts.xsl  
+Tree conflict: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgMerchandise  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\service\batch\localised\xsl\sql_selectbatches.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\service\batch\import\sitemap.xmap  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\service\batch\translation\sitemap.xmap  
+Conflicted: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\service\batch\translation\xsl\sql_createbatches.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\service\batch\translation\xsl\sql_selectbatches.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\service\store\xsl\exportTranslationStore.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\service\store\xsl\store.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\service\store\xsl\importTranslationStore.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\xml\doctype_attributes.xml  
+Tree conflict: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\UAP\xsl\dir2archiveInboxFiles.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMS\sitemap.xmap  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT_Translated\PMT_Translated_PikachuB2C\xsl\getRelatedLocalesForEntry.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT_Translated\PMT_Translated_PikachuB2C\xsl\create_entry_records.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT_Translated\PMT_Translated_PikachuB2C\xsl\includeRelatedLocalesOnEntry.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\AssetList\xsl\include_dir2process.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMA\xsl\compareContent.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMA\xsl\create_entry_records_for_deletions.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMA\xsl\sql_getExistingContent.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMA\xsl\create_entry_records.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\sitemap.xmap  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2gui\screen\pikachu_search_post\query.xslt  
+Updated: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2gui\screen\pikachu_status_post\query.xslt  
+Tree conflict: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2gui\themes\stylePikachuB2B_P1.css  
+Tree conflict: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp\cmc2gui\themes\stylePikachuB2C_P1.css  
+Completed: C:\cocoon-pikachu-2.1.9\build\MERGE\20110127_Merge_20101115_20101105_20100426\webapp  
+Warning!: One or more files are in a conflicted state.  

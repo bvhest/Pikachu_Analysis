@@ -1,0 +1,61 @@
+			<map:match pattern="process/marketing_text/master_global/*">
+				<map:generate src="cocoon:/get/marketing_raw/master_global/{1}"/>
+				<map:transform src="xsl/process.xsl"/>
+				<map:call resource="sql-store">
+					<map:parameter name="ct" value="marketing_text"/>
+					<map:parameter name="l" value="master_global"/>
+					<map:parameter name="o" value="{1}"/>
+				</map:call>
+				<map:serialize type="xml"/>
+			</map:match>
+			
+			<!-- or <map:match type="regexp" pattern="process/marketing_text/(aa_AA|bb_BB|cc_CC)/(*.)"> 
+				 which of course also means changing the pipeline as in the above {1} = aa_AA|bb_BB|cc_CC
+				 and {2} the object_id. See http://wiki.apache.org/cocoon/Matcher -->
+			<map:match pattern="process/marketing_text/fr_FR/*">
+				<map:generate src="cocoon:/get/marketing_text/master_global/{1}"/>
+				<!-- secondary inputs -->
+				<map:transform src="xsl/get-feature-images.xsl"/>
+				<map:transform type="include"/>
+				<map:transform src="xsl/cleanup-sql-get.xsl"/>
+				<!-- actual processing -->
+				<map:transform src="xsl/localise.xsl">
+					<map:parameter name="country" value="{2}"/>  
+				</map:transform>
+				<map:transform src="xsl/translate.xsl">
+					<map:parameter name="language" value="{1}"/>  
+				</map:transform>
+				<!-- the store -->
+				<map:call resource="sql-store">
+					<map:parameter name="ct" value="marketing_text"/>
+					<map:parameter name="l" value="fr_FR"/>
+					<map:parameter name="o" value="{1}"/>
+				</map:call>
+				<map:serialize type="xml"/>
+			</map:match>
+			
+			<map:match pattern="process/marketing_text/*_*/*">
+				<map:generate src="cocoon:/get/marketing_raw/master_global/{3}"/>
+				<!-- secondary inputs -->
+				<map:transform src="xsl/get-feature-images.xsl"/>
+				<map:transform type="include"/>
+				<map:transform src="xsl/cleanup-sql-get.xsl"/>
+				<!-- actual processing -->
+				<map:transform src="xsl/process.xsl"/>
+				<map:transform src="xsl/localise.xsl">
+					<map:parameter name="country" value="{2}"/>  
+				</map:transform>
+				<map:transform src="xsl/translate.xsl">
+					<map:parameter name="language" value="{1}"/>  
+				</map:transform>
+				<!-- the store -->
+				<map:call resource="sql-store">
+					<map:parameter name="ct" value="marketing_text"/>
+					<map:parameter name="l" value="{1}_{2}"/>
+					<map:parameter name="o" value="{3}"/>
+				</map:call>
+				<map:serialize type="xml"/>
+			</map:match>
+			
+			
+			

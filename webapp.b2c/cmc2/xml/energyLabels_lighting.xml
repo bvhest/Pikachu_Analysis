@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EnergyLabels>
+	<EnergyLabel code="EC_EU_11" energyClass="Europe" energyValue="A++" ranking="17"/>
+	<EnergyLabel code="EC_EU_12" energyClass="Europe" energyValue="A+" ranking="16"/>
+	<EnergyLabel code="EC_EU_13" energyClass="Europe" energyValue="A" ranking="15"/>
+	<EnergyLabel code="EC_EU_14" energyClass="Europe" energyValue="B" ranking="14"/>
+	<EnergyLabel code="EC_EU_15" energyClass="Europe" energyValue="C" ranking="13"/>
+	<EnergyLabel code="EC_EU_16" energyClass="Europe" energyValue="D" ranking="12"/>
+	<EnergyLabel code="EC_EU_17" energyClass="Europe" energyValue="E" ranking="11"/>  
+	
+</EnergyLabels>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <ws:element xmlns:ws="http://apache.org/cocoon/webservice/1.0" soapAction="" endpoint="http://130.144.133.200:53000/MDMSearchRecords/Config1?style=document HTTP/1.1">
+
+
+  </ws:element>
+</root>

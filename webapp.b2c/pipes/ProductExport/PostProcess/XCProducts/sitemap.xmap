@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <map:components>
+    <map:transformers default="xslt">
+      <map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer" />
+    </map:transformers>
+    <map:actions>
+      <map:action name="synced-copy-source" src="org.apache.cocoon.acting.SyncedCopySourceAction" />
+    </map:actions>
+  </map:components>
+  <!-- -->
+  <map:resources>
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC" />
+        <map:parameter name="clob-encoding" value="UTF-8" />
+      </map:transform>
+    </map:resource>
+  </map:resources>
+  <map:pipelines>
+
+    <map:component-configurations>
+      <global-variables>
+        <channel>ProductExport.XCProducts</channel>
+        <ldir>XCProducts/</ldir>
+      </global-variables>
+    </map:component-configurations>
+
+    <map:pipeline type="noncaching">
+      <map:match pattern="run">
+        <map:generate type="directory" src="../../{global:gdir}{global:ldir}outbox">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="include" value="^PhilipsCatalog.*\.xml" />
+        </map:generate>
+        <map:transform type="xslt-saxon" src="xsl/dir2splitFile.xsl">
+          <map:parameter name="destDir" value="../../{global:gdir}{global:ldir}outbox" />
+          <map:parameter name="sourceDir" value="../../{global:gdir}{global:ldir}outbox" />
+        </map:transform>
+        <map:transform type="include" />
+        <map:transform type="shell" />
+        <map:serialize type="xml" />
+      </map:match>
+      <!-- 
+        {1} Channel
+        {2} 'ProductExport'
+        {3} ts
+        {4} locale
+      -->
+      <map:match pattern="splitFile/*_*_*_*.xml">
+        <map:generate src="../../{global:gdir}{global:ldir}outbox/{1}_{2}_{3}_{4}.xml" />
+        <map:transform type="xslt-saxon" src="xsl/xUCDMsplit.xsl">
+          <map:parameter name="dir" value="../../{global:gdir}{global:ldir}outbox" />
+          <map:parameter name="prefix" value="{1}_{2}_{3}_{4}" />
+          <map:parameter name="postfix" value="" />
+          <map:parameter name="batch-size" value="500" />
+        </map:transform>
+        <map:transform type="write-source" />
+        <map:serialize type="xml" />
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <ws:element xmlns:ws="http://apache.org/cocoon/webservice/1.0" soapAction="http://www.philips.com/wsdl/HelloService.wsdl/echo" endpoint="http://127.0.0.1:8888/soapsrv/HelloService">
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Body>
+        <echo xmlns="http://www.philips.com/wsdl/HelloService.wsdl">
+          <Any>
+            <root>hello消費者聯絡與支援</root>
+          </Any>
+        </echo>
+      </soap:Body>
+    </soap:Envelope>
+  </ws:element>
+ 
+</root>

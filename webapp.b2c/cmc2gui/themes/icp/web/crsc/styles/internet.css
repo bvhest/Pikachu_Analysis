@@ -1,0 +1,227 @@
+/*  Philips internet stylesheet. Only values that need to be overruled are defined here
+ *   Version: 4.5.1
+ *   Build: 2
+ *   Date: February 18, 2009
+ *
+ *  Structure of document:
+ *  1. Internet layout styles
+ *    1a. Header
+ *    1b. Body
+ *    1c. Footer
+ *    1d. Various
+ */
+
+/* Global styles */
+#icp_content_website {
+	background-color: #F0F0F2;
+}
+
+/* 1a. Styles related to header */
+#icp_content_website #p-header {
+	width:100%;
+	min-width:986px;
+	padding-bottom:9px;
+	background: url(../images/header_bg_tile.gif) repeat-x left bottom #FFF;
+}
+#icp_content_website #p-header-wrapper {
+	background-color:#FFF;
+	padding:0px 13px;
+	width:986px;
+	widt\h:960px;
+	height:75px;
+	margin:auto;
+	text-align:left;
+}
+#icp_content_website #p-mainlogo {
+	float:left;
+	margin:17px 0px 0px 0px;
+	display:inline;  /* IE Doubled Float-Margin Bug */
+}
+#icp_content_website #p-header-wrapper .p-ls-wrapper-2 {
+	font-size:90%;
+	margin:13px 0px 8px 0px;
+	float:right;
+	display:inline;  /* IE Doubled Float-Margin Bug */
+}
+#icp_content_website #p-header-features {
+	float:right;
+	clear:right;
+	width:700px;
+}
+#icp_content_website #p-header-myphilips {
+	float:right;
+	line-height:21px;
+	font-size:100%;
+	display:inline;   /* IE Doubled Float-Margin Bug */
+	width:400px;
+	text-align:right;
+}
+#icp_content_website #p-header-search {
+	float:right;
+	height:21px;
+	width:244px; /* 245 */
+	font-size:90%;
+	display:inline;	 /*IE Doubled Float-Margin Bug */
+	position:relative;
+	margin:0px 0px 0px 20px;
+	z-index:1010;
+}
+/* START: Styles only for  Win IE 5-5.5 */
+#icp_content_website #p-header-search input.p-searchfield {
+	height:21px;				
+	line-height:150%;
+	padding:0px 5px;
+	width:210px;					
+}
+/* END: Styles only for  Win IE 5-5.5 */
+#icp_content_website #p-header-search input.p-searchfield {
+	font-size:100%;
+	border:1px solid #c5c7d1;
+	margin:0;
+	heigh\t: auto;
+	line-heigh\t:120%;
+	paddin\g:3px 5px 4px 5px;
+	widt\h:198px;				
+}
+#icp_content_website #p-header-search input.p-searchsubmit {
+	margin:2px 0px 0px 5px;
+	vertical-align:middle;
+}
+/* Generic Search and Warning */
+#icp_content_website #p-header-search fieldset	{
+	margin:0; 
+	padding:0; 
+	border:0 solid;
+}
+#icp_content_website #p-header-search fieldset label	{display:none}
+#icp_content_website #p-header-warning-search{
+	position:absolute;
+	right:0px;
+	top:33px;
+	display:none;
+}
+#icp_content_website #p-header-warning-search div {
+	position:relative;	
+	background-color:#ffdbd1;
+	border-color:#f3a995;
+	border-style:solid;
+	border-width:1px 0;
+	margin:0 1px;
+}
+#icp_content_website #p-header-warning-search strong {
+	font-size:120%;
+	padding:7px;
+	color:#990033;
+	border-color:#f3a995;
+	border-style:solid;
+	border-width:0 1px;
+	display:block;
+	margin:0 -1px;
+	white-space:nowrap;
+}
+
+/* Search As You Type */
+#icp_content_website #p-search-sayt{
+	position:absolute;				
+	width: 210px; /* IE bordermodel */
+	widt\h:208px; 
+	z-index:1020;
+	display:none;
+}
+
+/* Navigation */
+#icp_content_website #p-headernav {
+	width:100%;
+	height:20px;
+	min-width:986px;
+	background: url(../images/header_nav_bg_tile.gif) repeat-x left top #F9F9F9;
+}
+#icp_content_website #p-headernav-wrapper {
+	margin:auto;
+	text-align:left;
+	width:986px;
+}
+#icp_content_website #p-headernav #p-headernav-wrapper  {
+	height:20px;
+}
+#icp_content_website #p-headernav-innerwrapper {
+	margin:0px 13px;
+	width:960px;
+	z-index:1000;
+	position:relative;
+}
+#icp_content_website #p-headernav-wrapper #p-navigator {
+	top:20px;
+	left:10px;
+	right:10px;
+}
+#icp_content_website #p-headernav  #p-headernav-wrapper #p-navigator {
+	top:0px;
+	left:auto;
+	right:auto;
+}
+/* 1b. Styles related to body */
+#icp_content_website #p-body {
+	width:100%;
+}
+#icp_content_website #p-body-wrapper {
+	width:986px;
+	background: url(../images/body_outerwrapper_bg_tile.gif) repeat-y left top;
+	margin:auto;
+	text-align:left;
+}
+
+#icp_content_website #p-body-innerwrapper{
+	background: url(../images/body_innerwrapper_bg.gif) no-repeat left top;
+	width:960px; 
+	padding:2px 13px 0px 13px;
+}
+
+#icp_content_website #p-body-content {
+	width:960px;
+	text-align:left;
+}
+
+#icp_content_website #p-body-bottomwrapper {
+	background:#EDEEF0 url(../images/body_bottomwrapper_bg.gif) no-repeat left top;
+	height:15px;
+	margin:0px;
+	width:986px;
+}
+
+/* 1c. Styles related to footer */
+#icp_content_website #p-footer{
+	width:100%;
+}
+#icp_content_website #p-footer-wrapper{
+	width:950px;
+	margin:auto;
+	text-align:center;
+	color:#888B9C;
+	font-size:90%;
+	position:relative;
+}
+#icp_content_website #p-stockquotes {
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+#icp_content_website #p-footer-brandpromise {
+	position:absolute;
+	right:0px;
+	top:0px;
+}
+
+/* 1d. Various styles */
+#icp_content_website .p-content-grid {		/* Previous set at global css, including bottom border*/
+	border-spacing:0px;
+	border-width:0px;
+}
+
+/* homepage */
+#icp_content_website .p-homepage-richcontent {
+	position:relative;
+	margin-top:-1px;
+	margin-bottom:-2px;
+	width:960px;
+}

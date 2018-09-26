@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><static_text xmlns:gmr="http://www.gnome.org/gnumeric/v7" xmlns:doc="http://www.relate4u.com/xsl/documentation" xmlns:ws="http://apache.org/cocoon/source/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="static_text_file_locale.xsd"><doc:asset><doc:author><doc:name>Pikachu</doc:name><doc:company>Philips, Eindhoven</doc:company><doc:email>pikachu.b2b.support@philips.com</doc:email></doc:author><doc:description>
+                  Static text file for Philips Lighting product brochures XSL-FO stylesheet.
+                  This file contains translated static text fields which are not available in the product XML files.
+                  Last updated: 2011-03-01T11:02:32.338+01:00</doc:description><doc:language>ko_KR</doc:language><doc:document-type>PMT</doc:document-type></doc:asset><fields><field id="date_change">변경될 수 있는 데이터</field><field id="copyright_royal">Koninklijke Philips Electronics N.V.</field><field id="copyright_text">All rights reserved.<br/>
+<br/>
+사양은 예고 없이 변경될 수 있습니다. 상표는 Koninklijke Philips Electronics N.V. 또는 해당 소유자의 자산입니다.<br/>
+<br/>
+<b>www.philips.com/lighting</b></field><field id="dimensionaldrawing">치수 도면</field><field id="photometricdata">광도계의 데이터</field><field id="month_1">1월</field><field id="month_2">2월</field><field id="month_3">3월</field><field id="month_4">4월</field><field id="month_5">5월</field><field id="month_6">6월</field><field id="month_7">7월</field><field id="month_8">8월</field><field id="month_9">9월</field><field id="month_10">10월</field><field id="month_11">11월</field><field id="month_12">12월</field><field id="productdata">제품 데이터</field><field id="warningssafety">안전 및 주의사항</field></fields></static_text>

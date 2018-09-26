@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <ws:element xmlns:ws="http://apache.org/cocoon/webservice/1.0" soapAction="" endpoint="http://130.144.133.200:53000/MDMSearchRecords/Config1?style=document HTTP/1.1">
+    <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <SOAP-ENV:Body>
+        <pns:searchRecords xmlns:pns="urn:MDMSearchRecordsVi">
+          <ns1:query xmlns:ns1="urn:MDMSearchRecordsVi" xmlns:pns="urn:com.sap.ws.types.search">
+            <pns:recordCriteria>
+              <pns:dataElementCriteria>
+                <pns:fieldCode>Code</pns:fieldCode>
+                <pns:logicOperator/>
+                <pns:simpleValueCriteria>
+                  <pns:expressionOperator>EQUAL</pns:expressionOperator>
+                  <pns:unit/>
+                  <pns:value>LissiBrand</pns:value>
+                </pns:simpleValueCriteria>
+                <pns:taxonomyFieldCode/>
+              </pns:dataElementCriteria>
+              <pns:keywordCriteria>
+                <pns:expressionOperator/>
+                <pns:unit/>
+                <pns:value/>
+              </pns:keywordCriteria>
+              <pns:logicOperator/>
+              <pns:recordIdentifierCriteria>
+                <pns:externalId/>
+                <pns:recordId>0</pns:recordId>
+              </pns:recordIdentifierCriteria>
+              <pns:tableCode>Brand</pns:tableCode>
+            </pns:recordCriteria>
+            <pns:resultDefinition>
+              <pns:fieldDefinition>
+                <pns:fieldCode/>
+                <pns:loadAllAttributes>false</pns:loadAllAttributes>
+                <pns:lookupLevel>0</pns:lookupLevel>
+              </pns:fieldDefinition>
+              <pns:fieldListType>ALL</pns:fieldListType>
+              <pns:languageFilter/>
+              <pns:pageNumber>0</pns:pageNumber>
+              <pns:pageSize>-1</pns:pageSize>
+              <pns:retrieveRemoteKeys>
+                <pns:retrieveRemoteKeys>false</pns:retrieveRemoteKeys>
+              </pns:retrieveRemoteKeys>
+              <pns:sortDefinition/>
+              <pns:tableCode>Brand</pns:tableCode>
+            </pns:resultDefinition>
+          </ns1:query>
+          <ns2:repositoryInformation xmlns:ns2="urn:MDMSearchRecordsVi" xmlns:pns="urn:com.sap.ws.types.generic">
+            <pns:dataLang>English [US]</pns:dataLang>
+            <pns:repositoryName>Philips_NEW</pns:repositoryName>
+            <pns:repositoryPort>2750</pns:repositoryPort>
+            <pns:schemaLang>English [US]</pns:schemaLang>
+            <pns:serverName>localhost</pns:serverName>
+          </ns2:repositoryInformation>
+          <ns3:configurationData xmlns:ns3="urn:MDMSearchRecordsVi" xmlns:pns="urn:com.sap.ws.types.generic">
+            <pns:element>
+              <pns:key/>
+              <pns:value/>
+            </pns:element>
+          </ns3:configurationData>
+        </pns:searchRecords>
+      </SOAP-ENV:Body>
+    </SOAP-ENV:Envelope>
+  </ws:element>
+</root>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageconfigs>
+	<imageconfig>
+		<doctype>PBP</doctype>
+		<action>scale</action>
+		<convertstring>convert %1 -resize 1200x750 %2</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>CLP</doctype>
+		<action>scale</action>
+		<convertstring>convert %1 -resize 1200x750 %2</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>RTP</doctype>
+		<action>scale</action>
+		<convertstring>convert %1 -resize 1200x750 %2</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>GAP</doctype>
+		<action>scale</action>
+		<convertstring>convert %1 -resize 300x300 %2</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>SLO</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LPD</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LGU</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LPI</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LPW</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LSP</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+
+<!-- development: for new image types in photometric section. -->
+<imageconfig>
+	<doctype>LCB</doctype>
+	<action>eps2pdf</action>
+	<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+</imageconfig>
+<imageconfig>
+	<doctype>LSQ</doctype>
+	<action>eps2pdf</action>
+	<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+</imageconfig>
+<imageconfig>
+	<doctype>LWD</doctype>
+	<action>eps2pdf</action>
+	<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+</imageconfig>
+
+
+	<imageconfig>
+		<doctype>LRU</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LCV</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>GVR</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LAS</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LBD</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LCD</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LQE</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LUF</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LUG</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LUT</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LCC</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LLT</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>
+	<imageconfig>
+		<doctype>LPC</doctype>
+		<action>eps2pdf</action>
+		<convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+	</imageconfig>	
+</imageconfigs>

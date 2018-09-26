@@ -1,0 +1,20 @@
+<catalog-log ct="${cocoon.parameters.ct}" l="${cocoon.parameters.l}" o="${cocoon.parameters.o}">
+	<content>
+		<sql:execute-query xmlns:sql="http://apache.org/cocoon/SQL/2.0">
+			<sql:query>
+select * 
+from octl, octl_store	
+where (octl.CONTENT_TYPE = 'catalog_definition' or
+octl.CONTENT_TYPE = 'catalog_configuration') and
+octl.LOCALISATION = 'none' and
+octl.OBJECT_ID = '${cocoon.parameters.o}' and
+octl.CONTENT_TYPE = octl_store.CONTENT_TYPE and
+octl.LOCALISATION = octl_store.LOCALISATION and
+octl.OBJECT_ID = octl_store.OBJECT_ID and
+octl.MASTERLASTMODIFIED_TS = octl_store.MASTERLASTMODIFIED_TS and
+octl.LASTMODIFIED_TS = octl_store.LASTMODIFIED_TS
+			</sql:query>
+		</sql:execute-query>
+	</content>
+	<relations/>
+</catalog-log>

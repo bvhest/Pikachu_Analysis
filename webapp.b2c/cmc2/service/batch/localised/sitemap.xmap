@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+    <!-- GLOBAL variables
+          {cmc2:gdir}      This is the top level of the data directory struture. Each ct has its own "archive","inbox","outbox","temp" and "log" sub-directories  
+          {cmc2:xmlDir}    This is the directory containing common xml documents
+          {cmc2:xslDir}    this directory contains "common" and "ct" specific xslt transform documents
+    -->  
+
+  <map:resources>
+    <!-- the sql resource provides a central place to edit database details -->
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC"/>
+        <map:parameter name="clob-encoding" value="UTF-8"/>
+      </map:transform>
+    </map:resource>
+  </map:resources>
+  
+  <map:components>
+    <map:selectors default="parameter">
+      <map:selector name="threads-selector" src="org.apache.cocoon.selection.RegexpRequestParameterSelector">
+        <pattern name="gt-one">^[2-9]|\d\d+$</pattern>
+        <parameter-name>threads</parameter-name>
+      </map:selector>
+    </map:selectors>
+  </map:components>
+  
+  <map:pipelines>
+    <map:pipeline type="noncaching">
+    
+      <!--+
+          | Group documents based on ct localisation then invoke batching pipelines to sub-divide documents into batches
+          | Input parameters: {1} = ct  
+          | Output Document: Result of writing the report document to file
+          +-->
+      <map:match pattern="createBatches/*">
+        <!-- get localisations for content Type-->
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform src="xsl/sql_getctl.xsl">
+          <map:parameter name="ct" value="{1}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:transform type="xslt-saxon" src="xsl/include_ctl2createBatches.xsl">
+          <map:parameter name="timestamp" value="{2}"/>
+        </map:transform>
+        <!-- Execute the includes-->
+        <map:transform type="cinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!--+
+          | {1} = content type
+          | {2} = timestamp
+          +-->
+      <map:match pattern="processBatches/*/*">
+        <!-- get localisations for content Type-->
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform src="xsl/sql_getctl.xsl">
+          <map:parameter name="ct" value="{1}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:transform type="xslt-saxon" src="xsl/include_ctl2processBatches.xsl">
+          <map:parameter name="timestamp" value="{2}"/>
+        </map:transform>
+        <!-- Execute the includes-->
+        <map:transform type="cinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>      
+
+      <!--+
+          | Create batches by updating batch_number in octl table to split processing into a more manageble size
+          |
+          | Input parameters:
+          |   {1} = content type
+          |   {2} = locale
+          | 
+          | Output Document: Result of sql statements to update octl table with batch_number              
+          +-->        
+      <map:match pattern="createBatches/*/*">
+        <!-- Idenfity and batch octls, ordering on MASTERLASTMODIFIED DESC -->
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform src="xsl/sql_createbatches.xsl">
+          <map:parameter name="batchsize" value="500"/>
+          <map:parameter name="ct" value="{1}"/>                
+          <map:parameter name="l" value="{2}"/>
+          <map:parameter name="reload" value="{request-param:reload}"/>
+          <map:parameter name="runmode" value="{request-param:runmode}"/>
+          <map:parameter name="run_id" value="{request-param:runId}"/>		  
+          <map:parameter name="schedule_id" value="{request-param:schedule_id}"/>
+          <map:parameter name="translation_filter" value="{request-param:translation_filter}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:serialize type="xml"/>
+      </map:match>        
+
+      <!--+
+          | Process batches for ctl
+          |
+          | Input parameters:
+          |   {1} = content type
+          |   {2} = locale
+          |   {3} = timestamp
+          |
+          | TEST: http://localhost:8888/cmc2/service/batch/localised/processBatches/PP_Log/none/20121129110000
+          +-->    
+      <map:match pattern="processBatches/*/*/*">
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform src="xsl/sql_selectbatches.xsl">
+          <map:parameter name="ct" value="{1}"/>
+          <map:parameter name="l" value="{2}"/>
+          <map:parameter name="reload" value="{request-param:reload}"/>                 
+          <map:parameter name="runmode" value="{request-param:runmode}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:transform type="xslt-saxon" src="xsl/include_ctl2createEntryRecords.xsl">
+          <map:parameter name="timestamp" value="{3}"/>          
+          <map:parameter name="use-request-parameters" value="true"/>
+        </map:transform>
+        <map:transform type="cinclude" />      
+        <!-- process the entry record -->
+        <map:transform type="xslt-saxon" src="xsl/process_ctlEntryRecords.xsl">
+          <map:parameter name="timestamp" value="{4}"/>
+          <map:parameter name="ct" value="{1}"/>          
+          <map:parameter name="ctURL" value="{cmc2:ctURL}"/>     
+          <map:parameter name="storeURL" value="{request-param:storeURL}"/>
+        </map:transform>             
+        <map:transform type="cinclude"/>           
+        <map:serialize type="xml"/>  
+      </map:match>
+      <!--
+        Input parameters: {1} = ct, {2} l, {3} timestamp, {4} batch number
+      -->
+      <map:match pattern="createEntryRecords/*/*/*/*">
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform src="xsl/sql_select_entry_records.xsl">
+          <map:parameter name="ct" value="{1}"/>
+          <map:parameter name="l" value="{2}"/>
+          <map:parameter name="ts" value="{3}"/>
+          <map:parameter name="dir" value="{cmc2:gdir}/{1}/outbox"/>
+          <map:parameter name="batchnumber" value="{4}"/>
+          <map:parameter name="reload" value="{request-param:reload}"/>
+          <map:parameter name="runmode" value="{request-param:runmode}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+
+        <map:transform type="xslt-saxon" src="xsl/include_octl2process.xsl">
+          <map:parameter name="ctURL" value="{cmc2:ctURL}/"/>
+        </map:transform>
+        <map:transform type="cinclude"/>
+        <map:transform src="{cmc2:xslDir}/common/cleanup-sql.xsl"/>
+        <map:transform type="xslt-saxon" src="{cmc2:xslDir}/common/writeEntry.xsl">
+          <map:parameter name="dir" value="{cmc2:gdir}/{1}"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <!--+
+          | Create batches per locale and process batch contents in parallel.
+          |
+          | {1} content type
+          |
+          | Request params:
+          |   threads - The number of parallel process that may be used.
+          |   callback - [Optional] The pipeline to call to process each locale.
+          |              If callback is empty processBatches/{ct}/{locale}/{ts} will be called. 
+          |   
+          | E.g. processParallelBatches/PMT_Translated?threads=4&callback=cocoon://cmc2/content_type/PMT_Translated/import/20091116160000
+          | The actual callback will be
+          |   cocoon://cmc2/content_type/PMT_Translated/import/20091116160000/nl_NL
+          +-->
+      <map:match pattern="processParallelBatches/*">
+        <map:act type="copy-source" src="cocoon:/createBatchFiles/{1}">
+          <map:parameter name="dest" value="{cmc2:gdir}/{1}/temp/ReportCreateBatchFiles.xml"/>
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/processBatchFiles/{1}">
+          <map:parameter name="dest" value="{cmc2:gdir}/{1}/temp/ReportProcessBatchFiles.xml"/>
+        </map:act>
+        <map:generate src="{cmc2:gdir}/{1}/temp/ReportProcessBatchFiles.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <!--+
+          | Create batch files with includes for a number of locales to process in parallel
+          |
+          | {1} content type
+          |
+          | Request parameters:
+          |   threads - The number of parallel process that may be used.
+          |   callback - [Optional] The pipeline to call to process each locale.
+          |              If callback is empty processBatches/{ct}/{locale}/{ts} will be called. 
+          |
+          | E.g. createBatchFiles/PMT_Translated?threads=4&callback=cocoon://cmc2/content_type/PMT_Translated/import/20091116160000
+          | The actual callback will be
+          |   cocoon://cmc2/content_type/PMT_Translated/import/20091116160000/nl_NL
+          +-->
+      <map:match pattern="createBatchFiles/*">
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform src="xsl/sql_getctl.xsl">
+          <map:parameter name="ct" value="{1}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:transform type="xslt-saxon" src="xsl/writeBatchFiles.xsl">
+          <map:parameter name="threads" value="{request-param:threads}"/>
+          <map:parameter name="content-type" value="{1}"/>
+          <map:parameter name="target-dir" value="{cmc2:gdir}/{1}/temp"/>
+          <map:parameter name="prefix" value="batch."/>
+          <map:parameter name="process" value="{request-param:callback}"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <!--+
+          | Process batch files with includes.
+          |
+          | {1} content type
+          +-->
+      <map:match pattern="processBatchFiles/*">
+        <map:generate type="directory" src="{cmc2:gdir}/{1}/temp">
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value="batch\..*\.xml"/>
+        </map:generate>
+        <map:transform type="xslt-saxon" src="xsl/include_dir2processBatchFiles.xsl">
+          <map:parameter name="dir" value="{cmc2:gdir}/{1}/temp"/>
+        </map:transform>
+        <map:transform type="include"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <!--+
+          | Process batch file with includes in parallel.
+          |
+          | {1} path to batch file
+          +-->
+      <map:match pattern="processBatchFile/**">
+        <map:generate src="{1}"/>
+        <map:select type="threads-selector">
+          <map:when test="gt-one">
+            <map:transform type="include">
+              <map:parameter name="parallel" value="true"/>
+            </map:transform>
+          </map:when>
+          <map:otherwise>
+            <map:transform type="include">
+              <map:parameter name="parallel" value="false"/>
+            </map:transform>
+          </map:otherwise>
+        </map:select>
+        <map:serialize type="xml"/>
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

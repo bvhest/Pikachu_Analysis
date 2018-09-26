@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:resources>
+    <!-- the sql resource provides a central place to edit database details -->
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC" />
+        <map:parameter name="clob-encoding" value="UTF-8" />
+      </map:transform>
+    </map:resource>
+  </map:resources>
+
+  <map:components>
+    <map:transformers default="xslt">
+      <map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer" />
+    </map:transformers>
+    <map:actions>
+      <map:action name="synced-copy-source" src="org.apache.cocoon.acting.SyncedCopySourceAction" />
+    </map:actions>
+    <map:selectors default="parameter">
+      <map:selector name="threads-selector" src="org.apache.cocoon.selection.RegexpRequestParameterSelector">
+        <pattern name="gt-one">^[2-9]|\d\d+$</pattern>
+        <parameter-name>threads</parameter-name>
+      </map:selector>
+    </map:selectors>
+  </map:components>
+
+  <!--
+    Export catalog based data.
+    
+    The pipeline should be called with the dot notation CatalogExport.{channel-name}, e.g. CatalogExport.CatalogExportFamily.
+    Two stylesheets can be overridden for the channel by providing the stylesheet with the channel name
+    appended to the basename:
+    - sql_selectCatalogs.xsl (e.g. sql_selectCatalogsCatalogExportFamily.xsl)
+    - sql_getCatalogObjects.xsl (e.g. sql_selectgetCatalogObjectsCatalogExportFamily.xsl)
+    - write_catalog.xsl (e.g. write_catalogCatalogExportFamily.xsl) Default here is write_xUCDM_Catalog.xsl
+    
+    Request parameters:
+     full    - When 'true' do a full export.
+     threads - The number of concurrent threads that may be used.
+     outbox  - The outbox (relative to {global:gdir}) where the export files are to be stored.
+               Default is the channel's outbox.
+  -->
+  <map:pipelines>
+    <!--- -->
+    <map:component-configurations>
+      <global-variables>
+        <!-- 
+        <ldir>CatalogExportLightingProf/</ldir>
+        <channel>CatalogExportLightingProf</channel>
+        -->
+        <batch-prefix>batch.</batch-prefix>
+      </global-variables>
+    </map:component-configurations>
+
+    <map:pipeline name="{global:channel}" type="noncaching">
+      <map:match pattern="runPipeline">
+        <!--
+          This is the starting point of the pipeline. A lock is requested to prevent this pipeline from running multiple
+          times in parallel. When a lock cannot be acquired, an error message is shown. If a lock can be acquired, run
+          exportMain
+        -->
+        <map:act type="synced-copy-source" src="cocoon:/exportStart.{date:yyyyMMddHHmmss}">
+          <map:parameter name="lockName" value="{global:channel}" />
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/report.xml" />
+          <map:generate src="{global:gdir}{global:ldir}temp/report.xml" />
+          <map:serialize type="xml" />
+        </map:act>
+        <map:generate src="../common/xml/locked.xml" />
+        <map:serialize type="xml" />
+      </map:match>
+      <!--+ 
+          | {1} timestamp 
+          | 
+          | Request parameters: 
+          | batchSize - max number of products per batch. 
+          | threads - Number of threads to use for processing batches concurrently. 
+          | full - When 'true' export all products for the channel. 
+          +-->
+      <map:match pattern="exportStart.*">
+        <!-- Set Start Time.of this channel-->
+        <map:act type="copy-source" src="cocoon:/runsql_setstarttime">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetStartTime.xml" />
+        </map:act>
+        <!-- Delete previous temp files -->
+        <map:act type="copy-source" src="cocoon:/deleteTempFiles">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetStartTime.xml" />
+        </map:act>
+        <!-- Do the export -->
+        <map:act type="copy-source" src="cocoon:/exportCatalogs.{1}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportExportCatalogs.xml" />
+        </map:act>
+        <!-- Process concurrent batches if multiple threads are used -->
+        <map:select type="threads-selector">
+          <map:when test="gt-one">
+            <map:act type="copy-source" src="cocoon:/processBatches.{1}">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportProcessBatches.xml" />
+            </map:act>
+          </map:when>
+        </map:select>
+        <!-- Archive files -->
+        <map:act type="copy-source" src="cocoon:/archiveFiles">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportArchiveFiles.xml" />
+        </map:act>
+        <!-- Process created catalog(s) if requested -->
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:runcatalog}"/>
+          <map:when test="true">
+            <map:act type="copy-source" src="{cmc2:svcURL}/processControl/runProcess/catalog_definition">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportRunProcess_catalog_definition.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="{cmc2:svcURL}/processControl/runProcess/catalog_log">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportRunProcess_catalog_log.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="{cmc2:svcURL}/processControl/runProcess/RefreshMV">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportRunProcess_RefreshMV.xml"/>
+            </map:act>
+          </map:when>
+        </map:select>
+        <!-- Set End Time of this channel-->
+        <map:act type="copy-source" src="cocoon:/runsql_setendtime">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetEndTime.xml" />
+        </map:act>
+        <!-- Show result -->
+        <map:act type="copy-source" src="cocoon:/runsql_gettimings">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportGetTimings.xml" />
+        </map:act>
+        <map:select type="threads-selector">
+          <map:when test="gt-one">
+            <map:aggregate element="root">
+              <map:part src="{global:gdir}{global:ldir}temp/ReportExportCatalogs.xml" />
+              <map:part src="{global:gdir}{global:ldir}temp/ReportProcessBatches.xml" />
+              <map:part src="{global:gdir}{global:ldir}temp/ReportArchiveFiles.xml" />
+              <map:part src="{global:gdir}{global:ldir}temp/ReportGetTimings.xml" />
+            </map:aggregate>
+          </map:when>
+          <map:otherwise>
+            <map:aggregate element="root">
+              <map:part src="{global:gdir}{global:ldir}temp/ReportExportCatalogs.xml" />
+              <map:part src="{global:gdir}{global:ldir}temp/ReportArchiveFiles.xml" />
+              <map:part src="{global:gdir}{global:ldir}temp/ReportGetTimings.xml" />
+            </map:aggregate>
+          </map:otherwise>
+        </map:select>
+        <map:transform type="xslt-saxon" src="../common/xsl/makereport.xsl">
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}"/>
+          <map:parameter name="exportdate" value="{1}"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!-- Set Start / End Time -->
+      <map:match pattern="runsql_*">
+        <map:generate src="../common/xml/empty.xml" />
+        <map:transform type="xslt-saxon" src="../common/xsl/{global:db}sql_{1}.xsl">
+          <map:parameter name="channel" value="{global:channel}" />
+           <map:parameter name="run_id" value="{request-param:runId}"/>
+           <map:parameter name="run_mode" value="{request-param:runmode}"/>
+        </map:transform>
+        <map:call resource="sql" />
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--+
+          | {1} timestamp
+          +-->
+      <map:match pattern="exportCatalogs.*">
+        <map:generate src="../common/xml/empty.xml" />
+        
+        <map:select type="resource-exists">
+          <map:when test="xsl/sql_selectCatalogs{global:channel}.xsl">
+            <map:transform type="xslt-saxon" src="xsl/sql_selectCatalogs{global:channel}.xsl">
+              <map:parameter name="full" value="{request-param:full}" />
+              <map:parameter name="channel" value="{global:channel}" />
+            </map:transform>
+          </map:when>
+          <map:otherwise>
+            <map:transform type="xslt-saxon" src="xsl/sql_selectCatalogs.xsl">
+              <map:parameter name="full" value="{request-param:full}" />
+              <map:parameter name="channel" value="{global:channel}" />
+           </map:transform>
+          </map:otherwise>
+        </map:select>
+        <map:call resource="sql" />
+        <map:transform type="xslt-saxon" src="xsl/include2processBatches.xsl">
+          <map:parameter name="channel" value="{global:channel}" />
+          <map:parameter name="ts" value="{1}" />
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}temp" />
+          <map:parameter name="prefix" value="{global:batch-prefix}" />
+          <map:parameter name="threads" value="{request-param:threads}" />
+        </map:transform>
+        <map:select type="threads-selector">
+          <map:when test="gt-one">
+            <map:transform type="write-source" />
+          </map:when>
+          <map:otherwise>
+            <map:transform type="include" />
+          </map:otherwise>
+        </map:select>
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--+
+          | {1} timestamp
+          | {2} catalog id
+          |
+          | Request params:
+          | full - export all products in the catalog
+          +-->
+      <map:match pattern="exportCatalog.*.*">
+        <map:generate src="../common/xml/empty.xml" />
+
+        <map:select type="resource-exists">
+          <map:when test="xsl/sql_getCatalogObjects{global:channel}.xsl">
+            <map:transform type="xslt-saxon" src="xsl/sql_getCatalogObjects{global:channel}.xsl">
+              <map:parameter name="catalog-id" value="{2}" />
+              <map:parameter name="ts" value="{1}" />
+              <map:parameter name="channel" value="{global:channel}" />
+              <map:parameter name="full" value="{request-param:full}" />
+            </map:transform>
+          </map:when>
+          <map:otherwise>
+            <map:transform type="xslt-saxon" src="xsl/sql_getCatalogObjects.xsl">
+              <map:parameter name="catalog-id" value="{2}" />
+              <map:parameter name="ts" value="{1}" />
+              <map:parameter name="channel" value="{global:channel}" />
+              <map:parameter name="full" value="{request-param:full}" />
+            </map:transform>
+          </map:otherwise>
+        </map:select>
+ 
+        <map:call resource="sql" />
+
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:outbox}"/>
+          <map:when test="">
+            <map:select type="resource-exists">
+              <map:when test="xsl/write_catalog{global:channel}.xsl">
+                <!-- Write channel specific catalog -->
+                <map:transform type="xslt-saxon" src="xsl/write_catalog{global:channel}.xsl">
+                  <map:parameter name="channel" value="{global:channel}" />
+                  <map:parameter name="ts" value="{1}" />
+                  <map:parameter name="dir" value="{global:gdir}{global:ldir}outbox" />
+                </map:transform>
+              </map:when>
+              <map:otherwise>
+                <!-- Write xUCDM catalog -->
+                <map:transform type="xslt-saxon" src="xsl/write_xUCDM_Catalog.xsl">
+                  <map:parameter name="channel" value="{global:channel}" />
+                  <map:parameter name="ts" value="{1}" />
+                  <map:parameter name="dir" value="{global:gdir}{global:ldir}outbox" />
+                </map:transform>
+              </map:otherwise>
+            </map:select>
+          </map:when>
+          <map:otherwise>
+            <map:select type="resource-exists">
+              <map:when test="xsl/write_catalog{global:channel}.xsl">
+                <!-- Write channel specific catalog -->
+                <map:transform type="xslt-saxon" src="xsl/write_catalog{global:channel}.xsl">
+                  <map:parameter name="channel" value="{global:channel}" />
+                  <map:parameter name="ts" value="{1}" />
+                  <map:parameter name="dir" value="{global:gdir}{request-param:outbox}" />
+                </map:transform>
+              </map:when>
+              <map:otherwise>
+                <!-- Write xUCDM catalog -->
+                <map:transform type="xslt-saxon" src="xsl/write_xUCDM_Catalog.xsl">
+                  <map:parameter name="channel" value="{global:channel}" />
+                  <map:parameter name="ts" value="{1}" />
+                  <map:parameter name="dir" value="{global:gdir}{request-param:outbox}" />
+                </map:transform>
+              </map:otherwise>
+            </map:select>
+          </map:otherwise>
+        </map:select>
+        <map:transform type="write-source" />
+       
+        <!-- Update lasttransmit on CLE for this catalog -->
+        <map:transform type="xslt-saxon" src="xsl/sql_updateCLE.xsl">
+          <map:parameter name="ts" value="{1}"/>
+          <map:parameter name="catalog-id" value="{2}"/>
+          <map:parameter name="channel" value="{global:channel}"/>
+        </map:transform>
+        <map:call resource="sql" />
+        
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--+
+          | {1} timestamp 
+          | 
+          | Process batch files that were created for parallel processing.
+          +-->
+      <map:match pattern="processBatches.*">
+        <map:generate type="directory" src="{global:gdir}{global:ldir}temp">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="sort" value="name" />
+          <map:parameter name="include" value="{global:batch-prefix}.*" />
+        </map:generate>
+        <map:transform src="../common/xsl/dir2include_processBatches.xsl">
+          <map:parameter name="process" value="cocoon:/processBatchFile" />
+        </map:transform>
+        <map:transform type="include">
+          <map:parameter name="parallel" value="true"/>
+        </map:transform>
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--+ 
+          | Process a batch file with includes in parallel 
+          | 
+          | {1} path to batch file 
+          +-->
+      <map:match pattern="processBatchFile/**">
+        <map:generate src="{global:gdir}{global:ldir}{1}" />
+        <map:transform type="include">
+          <map:parameter name="parallel" value="true" />
+        </map:transform>
+        <map:serialize type="xml" />
+      </map:match>
+
+      <map:match pattern="archiveFiles">
+        <map:generate type="directory" src="{global:gdir}{global:ldir}outbox">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="include" value=".*" />
+        </map:generate>
+        <!-- Move files to archive -->
+        <map:transform src="xsl/dir2shell_move.xsl">
+          <map:parameter name="sourceDir" value="{global:gdir}{global:ldir}outbox" />
+          <map:parameter name="targetDir" value="{global:gdir}{global:ldir}archive" />
+        </map:transform>
+        <map:transform type="shell" />
+        <map:serialize type="xml" />
+      </map:match>
+
+      <map:match pattern="deleteTempFiles">
+        <!-- Delete all files in temp directory -->
+        <!-- Retrieve all files in temp directory -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}temp">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="include" value=".*" />
+        </map:generate>
+        <!-- Delete all files -->
+        <map:transform src="../common/xsl/dir2shell_delete.xsl">
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}temp" />
+        </map:transform>
+        <map:transform type="shell" />
+        <map:serialize type="xml" />
+      </map:match>
+
+    </map:pipeline>
+  </map:pipelines>
+  <!-- -->
+</map:sitemap>

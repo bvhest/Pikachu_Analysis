@@ -1,0 +1,387 @@
+<?xml version="1.0"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+	<map:components>
+		<map:transformers default="xslt">
+			<map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer"/>
+		</map:transformers>		
+		<map:actions>
+			<map:action name="synced-copy-source" src="org.apache.cocoon.acting.SyncedCopySourceAction"/>
+		</map:actions>
+	</map:components>
+	
+	<map:pipelines>
+		<!--- -->
+		<map:component-configurations>
+			<global-variables>
+				<ldir>GatherMasterStats/</ldir>
+				<channel>GatherMasterStats</channel>
+			</global-variables>
+		</map:component-configurations>
+		<!--- -->
+		<map:pipeline name="{global:channel}" type="noncaching">
+			<map:match pattern="runPipeline">
+				<!-- This is the starting point of the pipeline. A lock is requested to prevent this pipeline from running multiple times in parallel.
+				When a lock cannot be acquired, an error message is shown. If a lock can be acquired, run exportMain -->
+				<map:act type="synced-copy-source" src="cocoon:/exportStart">
+					<map:parameter name="lockName" value="{global:channel}"/>
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/import.xml"/>
+					<map:generate src="{global:gdir}{global:ldir}temp/import.xml"/>
+					<map:serialize type="xml"/>
+				</map:act>
+				<map:generate src="../common/xml/locked.xml"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="exportStart">
+				<!-- Set Start Time.of this channel-->
+				<map:act type="copy-source" src="cocoon:/runsql_setstarttime">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetStartTime.xml"/>
+				</map:act>
+				<!-- Call the Main Export.-->
+				<map:act type="copy-source" src="cocoon:/exportMain">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportExportMain.xml"/>
+				</map:act>
+				<!-- Set End Time of this channel-->
+				<map:act type="copy-source" src="cocoon:/runsql_setendtime">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetEndTime.xml"/>
+				</map:act>
+				<!-- Show result -->
+				<map:act type="copy-source" src="cocoon:/runsql_gettimings">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportGetTimings.xml"/>
+				</map:act>
+				<map:generate src="{global:gdir}{global:ldir}temp/ReportGetTimings.xml"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- set Start / End Time -->
+			<map:match pattern="runsql_*">
+				<map:generate src="../common/xml/empty.xml"/>
+				<map:transform type="xslt-saxon" src="../common/xsl/{global:db}sql_{1}.xsl">
+					<map:parameter name="channel" value="{global:channel}"/>
+              <map:parameter name="run_id" value="{request-param:runId}"/>
+              <map:parameter name="run_mode" value="{request-param:runmode}"/>
+				</map:transform>
+				<!-- Run db queries -->
+				<map:transform type="sql">
+					<map:parameter name="use-connection" value="oracleDbCMC"/>
+					<map:parameter name="clob-encoding" value="UTF-8"/>
+				</map:transform>
+				<!-- -->
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="exportMain">
+				<!-- Delete all files in the temp directory. Write the results of this action to a report.-->
+				<map:act type="copy-source" src="cocoon:/deleteTempFiles">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportDeleteTmpFilesReport.xml"/>
+				</map:act>
+				<map:act type="copy-source" src="cocoon:/deleteOutboxFiles">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportDeleteOutboxFilesReport.xml"/>
+				</map:act>
+				<map:generate src="../common/xml/empty.xml" label="step1"/>
+				<!-- transform output to get include statemanets to exportSub-->
+				<map:transform type="xslt-saxon" src="xsl/ll2include.xsl" label="step2"/>
+				<!-- excecute the includes-->
+				<map:transform type="cinclude" label="step4"/>
+				<!-- generate report -->
+				<map:transform type="xslt-saxon" src="../common/xsl/makereport.xsl" label="step4">
+					<map:parameter name="channel" value="{global:channel}"/>
+					<map:parameter name="dir" value="{global:gdir}{global:ldir}"/>
+					<map:parameter name="exportdate" value="{date:yyyyMMdd}T{date:hhmmss}"/>
+				</map:transform>				
+				<!-- write to disk -->
+				<map:transform type="write-source" label="step5"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="exportSub.*.*.*">
+				<map:act type="copy-source" src="cocoon:/selectProducts.{1}">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportProductStatus_{1}.xml"/>
+				</map:act>
+				<!-- -->
+				<map:act type="copy-source" src="cocoon:/createLoadBatches.{1}">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/createLoadBatches_{1}.xml"/>
+				</map:act>
+				<!-- -->
+				<map:act type="copy-source" src="cocoon:/handleLoadBatches.{1}">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/handleLoadBatches_{1}.xml"/>
+				</map:act>
+				<!-- Aggregate the batches -->
+				<map:act type="copy-source" src="cocoon:/aggregateBatches.{1}">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/all_{1}.xml"/>
+				</map:act>			
+				<!-- -->
+				<map:act type="copy-source" src="cocoon:/handleProductBatches.{1}">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/allReuse_{1}.xml"/>
+				</map:act>
+				<!-- -->
+				<map:act type="copy-source" src="cocoon:/updateExportDate.{1}.{2}.{3}">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportUpdateExportDate_{1}_{2}_{3}.xml"/>
+				</map:act>
+				<!-- -->
+				<map:generate src="{global:gdir}{global:ldir}temp/ReportProductStatus_{1}.xml"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<map:match pattern="selectProducts.*">
+				<map:generate src="../common/xml/empty.xml"/>
+				<map:transform type="xslt-saxon" src="xsl/{global:db}sql_getmasterproducts.xsl"/>
+				<!-- Run db queries -->
+				<map:transform type="sql">
+					<map:parameter name="use-connection" value="oracleDbCMC"/>
+					<map:parameter name="clob-encoding" value="UTF-8"/>
+				</map:transform>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- step 1 - get the batches per subcat -->
+			<map:match pattern="createLoadBatches.*">
+				<map:generate src="{global:gdir}{global:ldir}temp/ReportProductStatus_{1}.xml" label="step1"/>
+				<map:transform type="xslt-saxon" src="xsl/masterproducts2batches.xsl" label="step2">
+					<map:parameter name="exportdate" value="{1}"/>
+					<map:parameter name="batchsize" value="300"/>					
+					<map:parameter name="dir" value="{global:gdir}{global:ldir}temp/"/>
+				</map:transform>
+				<!-- write it-->
+				<map:transform type="write-source" label="step3"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- step 2 - handle the batches -->
+			<map:match pattern="handleLoadBatches.*">
+				<!-- Retrieve all product files from inbox -->
+				<map:generate type="directory" src="{global:gdir}{global:ldir}temp" label="step1">
+					<map:parameter name="depth" value="1"/>
+					<map:parameter name="include" value="batch\.{1}\..*\.xml"/>
+					<map:parameter name="sort" value="lastmodified"/>
+					<map:parameter name="reverse" value="false"/>					
+				</map:generate>
+				<map:transform src="xsl/dir2pipeline.xsl" label="step2"/>
+				<map:transform type="cinclude" label="step3"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="batch.*.*.xml">
+				<map:act type="copy-source" src="cocoon:/batchsub.{1}.{2}.xml">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/tbatch.{1}.{2}.xml"/>
+				</map:act>
+				<!-- -->
+				<map:generate src="{global:gdir}{global:ldir}outbox/tbatch.{1}.{2}.xml" label="step1"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="batchsub.*.*.xml">
+				<map:act type="copy-source" src="cocoon:/batchget.{1}.{2}.xml">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/productdata.{1}.{2}.xml"/>
+				</map:act>
+				<!-- -->
+				<map:generate src="{global:gdir}{global:ldir}temp/productdata.{1}.{2}.xml" label="step1"/>
+				<!-- transform output-->
+				<map:transform type="xslt-saxon" src="xsl/gatherstats.xsl" label="step3">
+					<map:parameter name="channel" value="{global:channel}"/>
+				</map:transform>
+				<!--map:transform type="xslt-saxon" src="xsl/sql_saveProducts.xsl" label="step4">
+					<map:parameter name="channel" value="{global:channel}"/>
+				</map:transform>		
+				<map:transform type="sql" label="step5" >
+					<map:parameter name="use-connection" value="oracleDbCMC"/>
+					<map:parameter name="clob-encoding" value="UTF-8"/>
+				</map:transform-->				
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->	
+			<map:match pattern="batchget.*.*.xml">
+			<!-- batchsub.20070302T1410.1.xml -->
+				<map:generate src="{global:gdir}{global:ldir}temp/batch.{1}.{2}.xml" label="step1"/>
+				<!-- Run db queries -->
+				<map:transform type="sql" label="step2" >
+					<map:parameter name="use-connection" value="oracleDbCMC"/>
+					<map:parameter name="clob-encoding" value="UTF-8"/>
+				</map:transform>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->	
+			<map:match pattern="handleProductBatches.*">
+				<!-- Retrieve all product files from inbox -->
+				<map:generate type="directory" src="{global:gdir}{global:ldir}temp" label="step1">
+					<map:parameter name="depth" value="1"/>
+					<map:parameter name="include" value="productdata\.{1}\..*\.xml"/>
+					<map:parameter name="sort" value="lastmodified"/>
+					<map:parameter name="reverse" value="false"/>					
+				</map:generate>
+				<map:transform src="xsl/dir2pipeline.xsl" label="step2"/>
+				<map:transform type="cinclude" label="step3"/>
+				<map:transform type="stx" src="xsl/filterProductData.stx" label="step4"/>
+				<map:transform type="xslt-saxon" src="xsl/gatherReuseStats.xsl" label="step5">
+					<map:parameter name="exportdate" value="{1}"/>
+				</map:transform>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="productdata.*.*.xml">
+				<map:generate src="{global:gdir}{global:ldir}temp/productdata.{1}.{2}.xml" label="step1"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="testFilterProductData">
+				<!-- Retrieve all product files from temp -->
+				<map:generate src="xsl/testAggData.xml" label="step1"/>
+				<map:transform type="stx" src="xsl/filterProductData.stx" label="step2"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="testFilteredProductData">
+				<!-- Retrieve all product files from temp -->
+				<map:generate src="xsl/testFilteredProductData.xml" label="step1"/>
+				<map:transform type="xslt-saxon" src="xsl/gatherReuseStats.xsl" label="step2"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="aggregateBatches.*">
+				<!-- Retrieve all product files from temp -->
+				<map:generate type="directory" src="{global:gdir}{global:ldir}outbox" label="step1">
+					<map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm"/>
+					<map:parameter name="depth" value="1"/>
+					<map:parameter name="include" value="tbatch.*\.xml"/>
+					<map:parameter name="sort" value="lastmodified"/>
+					<map:parameter name="reverse" value="false"/>					
+				</map:generate>
+				<map:transform src="xsl/dir2include.xsl" label="step2">
+					<map:parameter name="dir" value="{global:gdir}{global:ldir}outbox/"/>
+				</map:transform>
+				<map:transform type="include" label="step3"/>
+				<map:transform type="stx" src="xsl/aggregateProducts.stx" label="step4"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="updateExportDate.*.*.*">
+				<map:generate src="../common/xml/empty.xml"/>
+				<map:transform src="xsl/{global:db}sql_updatetransmitdate.xsl">
+					<map:parameter name="exportdate" value="{1}"/>
+					<map:parameter name="country" value="{2}"/>
+					<map:parameter name="locale" value="{3}"/>
+					<map:parameter name="channel" value="{global:channel}"/>
+				</map:transform>
+				<!-- Run db queries -->
+				<map:transform type="sql">
+					<map:parameter name="use-connection" value="oracleDbCMC"/>
+					<map:parameter name="clob-encoding" value="UTF-8"/>
+				</map:transform>
+				<!-- -->
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="archiveFiles">
+				<!-- Archive all files in inbox -->
+				<!-- Retrieve all files in inbox -->
+				<map:generate type="directory" src="{global:gdir}{global:ldir}outbox">
+					<map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm"/>
+					<map:parameter name="depth" value="1"/>
+					<map:parameter name="include" value=".*"/>
+				</map:generate>
+				<!-- Move files to archive -->
+				<map:transform src="../common/xsl/dir2shell_move.xsl">
+					<map:parameter name="sourceDir" value="{global:gdir}{global:ldir}outbox"/>
+					<map:parameter name="targetDir" value="{global:gdir}{global:ldir}archive"/>
+				</map:transform>
+				<map:transform type="shell"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="deleteTempFiles">
+				<!-- Delete all files in temp directory -->
+				<!-- Retrieve all files in temp directory -->
+				<map:generate type="directory" src="{global:gdir}{global:ldir}temp">
+					<map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm"/>
+					<map:parameter name="depth" value="1"/>
+					<map:parameter name="include" value=".*"/>
+				</map:generate>
+				<!-- Delete all files -->
+				<map:transform src="../common/xsl/dir2shell_delete.xsl">
+					<map:parameter name="dir" value="{global:gdir}{global:ldir}temp"/>
+				</map:transform>
+				<map:transform type="shell" />
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="deleteOutboxFiles">
+				<!-- Delete all files in temp directory -->
+				<!-- Retrieve all files in temp directory -->
+				<map:generate type="directory" src="{global:gdir}{global:ldir}outbox">
+					<map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm"/>
+					<map:parameter name="depth" value="1"/>
+					<map:parameter name="include" value=".*"/>
+				</map:generate>
+				<!-- Delete all files -->
+				<map:transform src="../common/xsl/dir2shell_delete.xsl">
+					<map:parameter name="dir" value="{global:gdir}{global:ldir}outbox"/>
+				</map:transform>
+				<map:transform type="shell" />
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="testPipeline">
+				<map:act type="copy-source" src="cocoon:/restoreTestFiles">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/RestoreTestFilesReport.xml"/>
+				</map:act>
+				<!-- -->
+				<map:act type="copy-source" src="cocoon:/runPipeline">
+					<map:parameter name="dest" value="{global:gdir}{global:ldir}temp/runPipeline.xml"/>
+				</map:act>
+				<map:generate src="{global:gdir}{global:ldir}temp/runPipeline.xml"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="restoreTestFiles">
+				<!-- Move files from testdata to inbox -->
+				<!-- Retrieve all files in testdata -->
+				<map:generate type="directory" src="{global:gdir}{global:ldir}testdata">
+					<map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm"/>
+					<map:parameter name="depth" value="1"/>
+					<map:parameter name="include" value=".*"/>
+				</map:generate>
+				<!-- Move files to inbox  -->
+				<map:transform src="../common/xsl/dir2shell_move.xsl">
+					<map:parameter name="sourceDir" value="{global:gdir}{global:ldir}testdata"/>
+					<map:parameter name="targetDir" value="{global:gdir}{global:ldir}inbox"/>
+				</map:transform>
+				<map:transform type="shell"/>
+				<map:serialize type="xml"/>
+			</map:match>
+			<!-- -->
+			<map:match pattern="deleteArchiveFiles">
+				<!-- Delete all files in {global:gdir}{global:ldir}temp directory -->
+				<!-- Retrieve all files in {global:gdir}{global:ldir}temp directory -->
+				<map:generate type="directory" src="{global:gdir}{global:ldir}archive">
+					<map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm"/>
+					<map:parameter name="depth" value="1"/>
+					<map:parameter name="include" value=".*"/>
+				</map:generate>
+				<!-- Delete all files -->
+				<map:transform src="../common/xsl/dir2shell_delete.xsl">
+					<map:parameter name="dir" value="{global:gdir}{global:ldir}archive"/>
+				</map:transform>
+				<map:transform type="shell" />
+				<map:serialize type="xml"/>
+			</map:match>
+		</map:pipeline>
+	</map:pipelines>
+	<!-- -->
+	<map:views>
+		<map:view name="step1" from-label="step1">
+			<map:serialize type="xml"/>
+		</map:view>
+		<map:view name="step2" from-label="step2">
+			<map:serialize type="xml"/>
+		</map:view>
+		<map:view name="step3" from-label="step3">
+			<map:serialize type="xml"/>
+		</map:view>
+		<map:view name="step4" from-label="step4">
+			<map:serialize type="xml"/>
+		</map:view>
+		<map:view name="step5" from-label="step5">
+			<map:serialize type="xml"/>
+		</map:view>
+		<map:view name="step6" from-label="step6">
+			<map:serialize type="xml"/>
+		</map:view>
+	</map:views>
+	<!-- -->
+</map:sitemap>

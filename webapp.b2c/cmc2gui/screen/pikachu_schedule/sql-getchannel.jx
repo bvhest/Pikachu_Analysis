@@ -1,0 +1,5 @@
+<sql:execute-query xmlns:sql="http://apache.org/cocoon/SQL/2.0">
+	<sql:query>
+select concat('cocoon:/${cocoon.parameters.gui_url}xml/cron.xml?job=${cocoon.parameters.loc}&amp;pipe=',pipeline) as cron_entry from channels where location='${cocoon.parameters.loc}'
+	</sql:query>
+</sql:execute-query>

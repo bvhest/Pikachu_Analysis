@@ -1,0 +1,223 @@
+<Templates>
+  <ProjectDetails>
+    <AutoApprove>0</AutoApprove>
+    <ProjectForApproved/>
+    <ProjectForQA>templateQAproject</ProjectForQA>
+    <ProjectForImageSets>CreateImagesets</ProjectForImageSets>
+  </ProjectDetails>
+  <keys>
+    <key>
+      <keyname>ScreenFill</keyname>
+      <templateassets>
+        <templateasset>
+          <doctype>PUW</doctype>
+          <imageVariables>
+            <imageVariable name="targetImage">
+              <part type="CTN"/>
+              <part type="literal">__F</part>
+              <part type="literal">global-001</part>
+            </imageVariable>
+            <imageVariable name="fillImage">
+              <part type="valueForKey">ScreenFill</part>
+              <part type="literal">FILL</part>
+              <part type="valueForKey">AspectRatio</part>
+              <part type="literal">global-001</part>
+            </imageVariable>
+            <imageVariable name="auraImage">
+              <part type="valueForKey">ScreenFill</part>
+              <part type="literal">FILL</part>
+              <part type="valueForKey">AspectRatio</part>
+              <part type="valueForKey">AmbilightSystem</part>
+              <part type="literal">global-001</part>
+            </imageVariable>
+            <imageVariable name="derivedImage">
+              <part type="CTN"/>
+              <part type="literal">PUW</part>
+              <part type="literal">global-001</part>
+            </imageVariable>
+          </imageVariables>
+          <preconditions>
+            <precondition type="exist" testfor="imageVariable">targetImage</precondition>
+          </preconditions>
+          <checks>
+            <check type="pathExist" testfor="imagepath" needskey="">
+              <doctype>__F</doctype>
+              <append>/screen</append>
+            </check>
+            <check type="pathExist" testfor="imagepath" needskey="AmbilightSystem">
+              <!-- only if product (ctn) has key = 'AmblightSystem' -->
+              <doctype>__F</doctype>
+              <append>/clipping_path</append>
+            </check>
+            <check type="exist" testfor="imageVariable" needskey="">fillImage</check>
+            <check type="exist" testfor="imageVariable" needskey="AmbilightSystem">auraImage</check>
+          </checks>
+          <variables>
+            <variable elementname="CalcQuad" needskey="">
+              <attributes>
+                <attribute name="variablename" value="quad"/>
+                <attribute name="path" value="screen"/>
+                <attribute name="image" imageVariable="targetImage"/>
+                <attribute name="sourcePath" value=""/>
+                <attribute name="sourceImage" value=""/>
+                <attribute name="targetPath" value=""/>
+                <attribute name="targetImage" value=""/>
+              </attributes>
+            </variable>
+            <variable elementname="CalcTransformedQuad" needskey="AmbilightSystem">
+              <!-- only if product (ctn) has key = 'AmblightSystem' -->
+              <attributes>
+                <attribute name="variablename" value="ambiquad"/>
+                <attribute name="image" imageVariable="targetImage"/>
+                <attribute name="sourceImage" imageVariable="auraImage"/>
+                <!-- is auraImage variable, see above -->
+                <attribute name="sourcePath" value="screen"/>
+                <attribute name="targetImage" imageVariable="targetImage"/>
+                <!-- is targetImage variable, see above -->
+                <attribute name="targetPath" value="screen"/>
+              </attributes>
+            </variable>
+          </variables>
+          <Url>
+            <environment>
+              <id>Production</id>
+              <imageserver>http://image.philips.com/is/image</imageserver>
+              <account>PhilipsConsumer</account>
+              <Normal>
+                <segment needskey="">qlt=74&amp;op_usm=1,0.8,1,0&amp;$object=$_account/$_targetImage&amp;opac=0&amp;$pathName=screen&amp;$fillImage=$_account/$_fillImage</segment>
+                <segment needskey="AmbilightSystem">&amp;$pathClip=clipping_path&amp;$ambiimage=$_account/$_fillImage</segment>
+                <segment needskey="">&amp;layer=0&amp;src=$object$</segment>
+                <segment needskey="AmbilightSystem">&amp;layer=1&amp;src=$ambiimage$&amp;perspective=$$ambiquad$$</segment>
+                <segment needskey="">&amp;layer=3&amp;src=$fillImage$&amp;perspective=$$quad$$</segment>
+                <segment needskey="AmbilightSystem">&amp;layer=2&amp;src=is{$object$}&amp;clipPathE=$pathClip$</segment>
+              </Normal>
+              <Fail>
+                <segment needskey="">layer=0&amp;src=$_account/$_targetImage</segment>
+              </Fail>
+            </environment>
+            <environment>
+              <id>Staging</id>
+              <imageserver>http://test-g2.scene7.com/is/image</imageserver>
+              <account>benco</account>
+              <Normal>
+                <segment needskey="">qlt=74&amp;op_usm=1,0.8,1,0&amp;$object=$_account/$_targetImage&amp;opac=0&amp;$pathName=screen&amp;$fillImage=$_account/$_fillImage</segment>
+                <segment needskey="AmbilightSystem">&amp;$pathClip=clipping_path&amp;$ambiimage=$_account/$_fillImage</segment>
+                <segment needskey="">&amp;layer=0&amp;src=$object$</segment>
+                <segment needskey="AmbilightSystem">&amp;layer=1&amp;src=$ambiimage$&amp;perspective=$$ambiquad$$</segment>
+                <segment needskey="">&amp;layer=3&amp;src=$fillImage$&amp;perspective=$$quad$$</segment>
+                <segment needskey="AmbilightSystem">&amp;layer=2&amp;src=is{$object$}&amp;clipPathE=$pathClip$</segment>
+              </Normal>
+              <Fail>
+                <segment needskey="">layer=0&amp;src=$_account/$_targetImage</segment>
+              </Fail>
+            </environment>
+          </Url>
+        </templateasset>
+        <templateasset>
+          <doctype>PPW</doctype>
+          <imageVariables>
+            <imageVariable name="targetImage">
+              <part type="CTN"/>
+              <part type="literal">RFT</part>
+              <part type="literal">global-001</part>
+            </imageVariable>
+            <imageVariable name="fillImage">
+              <part type="valueForKey">ScreenFill</part>
+              <part type="literal">FILL</part>
+              <part type="valueForKey">AspectRatio</part>
+              <part type="literal">global-001</part>
+            </imageVariable>
+            <imageVariable name="auraImage">
+              <part type="valueForKey">ScreenFill</part>
+              <part type="literal">FILL</part>
+              <part type="valueForKey">AspectRatio</part>
+              <part type="valueForKey">AmbilightSystem</part>
+              <part type="literal">global-001</part>
+            </imageVariable>
+            <imageVariable name="derivedImage">
+              <part type="CTN"/>
+              <part type="literal">PPW</part>
+              <part type="literal">global-001</part>
+            </imageVariable>
+          </imageVariables>
+          <preconditions>
+            <precondition type="exist" testfor="imageVariable">targetImage</precondition>
+          </preconditions>
+          <checks>
+            <check type="pathExist" testfor="imagepath" needskey="">
+              <doctype>RFT</doctype>
+              <append>/screen</append>
+            </check>
+            <check type="pathExist" testfor="imagepath" needskey="AmbilightSystem">
+              <!-- only if product (ctn) has key = 'AmblightSystem' -->
+              <doctype>RFT</doctype>
+              <append>/clipping_path</append>
+            </check>
+            <check type="exist" testfor="imageVariable" needskey="">fillImage</check>
+            <check type="exist" testfor="imageVariable" needskey="AmbilightSystem">auraImage</check>
+          </checks>
+          <variables>
+            <variable elementname="CalcQuad" needskey="">
+              <attributes>
+                <attribute name="variablename" value="quad"/>
+                <attribute name="path" value="screen"/>
+                <attribute name="image" imageVariable="targetImage"/>
+                <attribute name="sourcePath" value=""/>
+                <attribute name="sourceImage" value=""/>
+                <attribute name="targetPath" value=""/>
+                <attribute name="targetImage" value=""/>
+              </attributes>
+            </variable>
+            <variable elementname="CalcTransformedQuad" needskey="AmbilightSystem">
+              <!-- only if product (ctn) has key = 'AmblightSystem' -->
+              <attributes>
+                <attribute name="variablename" value="ambiquad"/>
+                <attribute name="image" imageVariable="targetImage"/>
+                <attribute name="sourceImage" imageVariable="auraImage"/>
+                <!-- is auraImage variable, see above -->
+                <attribute name="sourcePath" value="screen"/>
+                <attribute name="targetImage" imageVariable="targetImage"/>
+                <!-- is targetImage variable, see above -->
+                <attribute name="targetPath" value="screen"/>
+              </attributes>
+            </variable>
+          </variables>
+          <Url>
+            <environment>
+              <id>Production</id>
+              <imageserver>http://image.philips.com/is/image</imageserver>
+              <account>PhilipsConsumer</account>
+              <Normal>
+                <segment needskey="">qlt=74&amp;op_usm=1,0.8,1,0&amp;$object=$_account/$_targetImage&amp;opac=0&amp;$pathName=screen&amp;$fillImage=$_account/$_fillImage</segment>
+                <segment needskey="AmbilightSystem">&amp;$pathClip=clipping_path&amp;$ambiimage=$_account/$_fillImage</segment>
+                <segment needskey="">&amp;layer=0&amp;src=$object$</segment>
+                <segment needskey="AmbilightSystem">&amp;layer=1&amp;src=$ambiimage$&amp;perspective=$$ambiquad$$</segment>
+                <segment needskey="">&amp;layer=3&amp;src=$fillImage$&amp;perspective=$$quad$$</segment>
+                <segment needskey="AmbilightSystem">&amp;layer=2&amp;src=is{$object$}&amp;clipPathE=$pathClip$</segment>
+              </Normal>
+              <Fail>
+                <segment needskey="">layer=0&amp;src=$_account/$_targetImage</segment>
+              </Fail>
+            </environment>
+            <environment>
+              <id>Staging</id>
+              <imageserver>http://test-g2.scene7.com/is/image</imageserver>
+              <account>benco</account>
+              <Normal>
+                <segment needskey="">qlt=74&amp;op_usm=1,0.8,1,0&amp;$object=$_account/$_targetImage&amp;opac=0&amp;$pathName=screen&amp;$fillImage=$_account/$_fillImage</segment>
+                <segment needskey="AmbilightSystem">&amp;$pathClip=clipping_path&amp;$ambiimage=$_account/$_fillImage</segment>
+                <segment needskey="">&amp;layer=0&amp;src=$object$</segment>
+                <segment needskey="AmbilightSystem">&amp;layer=1&amp;src=$ambiimage$&amp;perspective=$$ambiquad$$</segment>
+                <segment needskey="">&amp;layer=3&amp;src=$fillImage$&amp;perspective=$$quad$$</segment>
+                <segment needskey="AmbilightSystem">&amp;layer=2&amp;src=is{$object$}&amp;clipPathE=$pathClip$</segment>
+              </Normal>
+              <Fail>
+                <segment needskey="">layer=0&amp;src=$_account/$_targetImage</segment>
+              </Fail>
+            </environment>
+          </Url>
+        </templateasset>
+      </templateassets>
+    </key>
+  </keys>
+</Templates>

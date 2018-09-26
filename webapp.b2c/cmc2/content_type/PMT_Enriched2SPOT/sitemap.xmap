@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  
+  <map:pipelines>
+
+    <map:component-configurations>
+      <global-variables>
+        <ct>PMT_Enriched2SPOT</ct>
+      </global-variables>
+    </map:component-configurations>
+  
+    <map:pipeline type="noncaching">
+      <!-- Here is the main pipeline that executes the batch processing. 
+        In invoking the pipeline the execution timestamp is passed as a parameter along with ct.
+        Input parameters: {1} = timestamp
+        Output Document: ?
+      -->
+      <map:match pattern="runMain/*">
+        <!-- prepare batches and write to file -->
+        <map:act type="copy-source" src="{cmc2:svcURL}/batch/localised/createBatches/{global:ct}">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/createBatches_report.xml"/>
+        </map:act>
+        <!-- read batchfiles and process -->
+        <!--map:act type="copy-source" src="{cmc2:svcURL}/batch/localised/processBatches/{global:ct}/{1}"-->
+        <map:act type="copy-source" src="{cmc2:svcURL}/store/spot/batch/localised/processBatches/{global:ct}/{1}">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+        </map:act>          
+        <map:act type="copy-source" src="{cmc2:svcURL}/processControl/archiveFiles/outbox/{global:ct}">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/archive_report.xml"/>
+        </map:act>        
+        <map:generate src="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>        
+        <map:serialize type="xml"/>  
+      </map:match>
+      
+      <!-- -->
+      <map:match pattern="process/*/*/**">
+      <!-- {1} localisation {2} timestamp {3} objectId -->      
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <!-- create an entry record for the target octl -->
+        <map:transform src="{cmc2:xslDir}/common/create_entry_record.xsl">
+          <map:parameter name="o" value="{3}"/>
+          <map:parameter name="ct" value="{global:ct}"/>
+          <map:parameter name="l" value="{1}"/>
+          <map:parameter name="ts" value="{2}"/>
+        </map:transform>
+        <!-- include the content from the source octl -->
+        <map:transform src="xsl/include_content.xsl">
+          <map:parameter name="svcURL" value="{cmc2:svcURL}/"/>
+          <map:parameter name="o" value="{3}"/>
+          <map:parameter name="ct" value="PMT_Enriched"/>
+          <map:parameter name="l" value="master_global"/>
+        </map:transform>
+        <map:transform type="include"/>
+        <!-- the actual processing -->
+        <map:transform src="xsl/process_entries.xsl"/><!--cleanup-->
+        <map:transform src="{cmc2:xslDir}/common/categorizeSPOTProduct.xsl" />
+        <map:transform src="{cmc2:xslDir}/common/PMT2Spot.xsl"><!--Parse to spot needed data-->
+          <map:parameter name="keyvalue" value="true"/>
+          <map:parameter name="product" value="true"/>
+          <map:parameter name="asset" value="true"/>
+          <map:parameter name="svcURL" value="{cmc2:cocoonServer}/cmc2"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

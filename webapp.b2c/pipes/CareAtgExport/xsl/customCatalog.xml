@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN" "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+  <header>
+    <name>DCS Custom Catalog - for philips support</name>
+    <author>Support Project Development Team</author>
+    <version></version>
+    <description>
+      This file contains additions/modifications to ATG's custom catalog to cater for data specific to Philip's requirements.
+    </description>
+  </header>
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--           catalog             -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+
+    <item-descriptor name="catalog" item-cache-size="100">
+    
+	<table name="ph_catalog" type="auxiliary" id-column-name="catalog_id">
+		<property name="catalogType" item-type="catalog-type" column-name="catalog_type" category-resource="categoryBasics" display-name="Catalog Type"/>
+	</table>
+	<table name="ph_catalog_trs" type="multi" id-column-name="catalog_id" multi-column-name="catalog_locale_id">	
+		<property name="translations" data-type="map" component-item-type="catalog-translation" column-name="catalog_translation_id" category-resource="categoryBasics" />
+	</table>
+
+    </item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--    catalog-translation        -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+
+    <item-descriptor name="catalog-translation">
+
+	<table name="ph_catalog_tr" type="primary" id-column-name="catalog_translation_id">
+		<property name="id" data-type="string" column-name="catalog_translation_id" />
+		<property name="displayName" data-type="string" column-name="display_name" required="true" />
+	</table>
+    </item-descriptor>
+
+    <!--//////////////////-->
+    <!--                  -->
+    <!--   Catalog Type   -->
+    <!--                  -->
+    <!--//////////////////-->
+
+    <item-descriptor name="catalog-type"  display-name="Catalog Type" display-property="id" >
+
+	<table name="ph_catalog_type" type="primary" id-column-name="catalog_type">
+            <property name="id" data-type="string" column-name="catalog_type" />
+	</table>
+
+    </item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--          category             -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+
+    <item-descriptor name="category" item-cache-size="5000">
+
+	<table name="ph_category" type="auxiliary" id-column-name="category_id">
+	</table>
+	<table name="ph_category_trs" type="multi" id-column-name="category_id" multi-column-name="catalog_locale_id">
+		<property name="translations" data-type="map" component-item-type="category-translation" column-name="category_translation_id" category-resource="categoryBasics" />
+	</table>
+
+    </item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--    category-translation       -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+
+    <item-descriptor name="category-translation">
+	
+	<table name="ph_category_tr" type="primary" id-column-name="category_translation_id">
+		<property name="id" data-type="string" column-name="category_translation_id" />
+		<property name="displayName" data-type="string" column-name="display_name" required="true" />
+	</table>
+
+    </item-descriptor>
+    
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--          product           -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+
+    <item-descriptor name="product" display-property="id" item-cache-size="25000" display-name="Product" >
+     
+	    <table name="ph_product" type="primary" id-column-name="product_id">
+	        <property name="ctn" data-type="string" column-name="ctn" display-name="Commercial Type Number (CTN)"/>
+	        <property name="catalog" item-type="catalog" column-name="catalog_id" display-name="Catalog"/>
+			<property name="supraFeature" data-type="string" column-name="supra_feature" />
+			<property name="subBrandCode" data-type="string" column-name="sub_brand_code" />
+			<property name="restrictedInd" data-type="string" column-name="restricted_ind" />
+			<property name="brandCode" data-type="string" column-name="brand_code" />
+			<property name="brandName" data-type="string" column-name="brand_name" />
+			<property name="refurbished" data-type="string" column-name="refurbished" />
+			<property name="chassis" data-type="string" column-name="chassis" />
+	    </table>
+	    <table name="ph_product_trs" type="multi" id-column-name="product_id" multi-column-name="catalog_locale_id">
+	        <property name="translations" data-type="map" component-item-type="product-translation" column-name="product_translation_id" expert="true"/>
+	    </table>
+
+		<property name="translation" property-type="com.philips.repository.properties.Localiser" writable="false" expert="true">
+			<attribute name="translationsProperty" value="translations" />
+			<attribute name="translationItem" value="product-translation" />
+			<attribute name="catalogLocale" value="locale" />
+		</property>
+		<!-- this new object follows the csChapter design pattern with and object asset associated to the item. -->
+       <table name="ph_product_olee_chapter_list" type="multi" id-column-name="product_id" multi-column-name="catalog_locale_id">
+            <property name="oleeChapterList" data-type="map" component-item-type="olee-chapter-list" column-name="olee_chapter_list_id"  expert="true"/>
+        </table>
+
+			<!-- from product mapped to document then to document-language-translation then to asset -->
+			<!-- select all document assets for a product = ? and language = ? -->
+		<table name="ph_product_document_map" type="multi" id-column-name="product_id" multi-column-name="document_type">
+			<property name="documentMap" data-type="map" component-item-type="document" column-name="document_id"  required="true"/>
+		</table>
+		
+			<!-- from product mapped to software then to software-language-translation then to software-version then to asset -->
+			<!-- select all software assets for a product = ? and language = ? and max version-->		
+		<table name="ph_product_software_map" type="multi" id-column-name="product_id" multi-column-name="document_type">
+		    <property name="softwareMap" data-type="map" component-item-type="software" column-name="software_id" required="true"/>
+		</table>
+
+		  <!-- Identical to consumer site -->
+        <table name="ph_product_asset_map" type="multi" id-column-name="product_id" multi-column-name="document_type">
+            <property name="assetMap" data-type="map" component-item-type="assetList" column-name="asset_list_id" />
+        </table>
+    </item-descriptor>
+   
+  
+
+    <!--///////////////////////////////-->
+    <!--                              			 -->
+    <!--    product-translation  	            -->
+    <!--                               			-->
+    <!--///////////////////////////////-->
+
+    <item-descriptor name="product-translation" display-property="id" item-cache-size="25000"   >
+	<table name="ph_product_tr" type="primary" id-column-name="product_translation_id">
+	    <property name="id" data-type="string" column-name="product_translation_id" />
+	    <property name="displayName" data-type="string" column-name="display_name" required="true" display-name="Product Name"/>
+	</table>
+
+    </item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--          LATEST UPDATES       -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+
+     <item-descriptor name="latestUpdates">
+
+	<table name="ph_latest_update" type="primary" id-column-name="update_id">
+		<property name="product_Id" data-type="string" column-name="product_id"/>
+		<property name="sequenceNum" data-type="int" column-name="sequence_num" />
+		<property name="updateType" data-type="string" column-name="update_type" />
+		<property name="updateItemId" data-type="string" column-name="update_item_id" />
+		<property name="publishDate" data-type="date" column-name="publish_date" />
+	</table>
+  
+     </item-descriptor>
+    
+    <!--///////////////////////////////-->
+    <!--                               	-->
+    <!--   document	                	-->
+    <!--                               	-->
+    <!--///////////////////////////////-->
+    <item-descriptor name="document" cache-mode="simple">
+		<table name="ph_document" type="primary" id-column-names="document_id" >          
+            <property name="document_id" data-type="string" column-name="document_id" />
+            <property name="ctn" data-type="string" column-name="ctn" />
+            <property name="doctype" data-type="string" column-name="doctype" />
+            <property name="lastUpdateDate" data-type="string" column-name="last_update_date" />
+		</table>
+		<table name="ph_document_lang_trs" type="multi" id-column-name="document_id" multi-column-name="language">
+            <property name="translations" data-type="map" queryable="true" readable="true" component-item-type="document-lang-translation" column-name="document_lang_trans_id" expert="true"/>
+		</table>
+	    <property name="translation" property-type="com.philips.repository.properties.Localiser" writable="false" expert="true">
+	        <attribute name="translationsProperty" value="translations" />
+	        <attribute name="translationItem" value="document-lang-translation" />
+	        <attribute name="language" value="language" />
+	    </property>
+	</item-descriptor>
+    <!--///////////////////////////////-->
+    <!--                               	-->
+    <!--   document-lang-translation        	-->
+    <!--                               	-->
+    <!--///////////////////////////////-->
+    <item-descriptor name="document-lang-translation" cache-mode="simple">
+		<table name="ph_document_lang_tr" type="primary" id-column-name="document_lang_trans_id">
+		    <property name="id" data-type="string" column-name="document_lang_trans_id" />
+		     <property name="language" data-type="string" column-name="language" />
+		</table>
+		<table name="ph_dlt_assets" multi-column-name="sequence_number" type="multi" id-column-name="asset_list_id">
+            <property name="assets" display-name="Assets" data-type="set" readable="true" column-name="asset_id" component-item-type="asset" />
+         </table>
+	</item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--    software                   -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+    <item-descriptor name="software">
+      <table name="ph_software" type="primary" id-column-names="software_id" >          
+            <property name="softwareId" data-type="String" column-name="software_id" />
+             <property name="ctn" data-type="string" column-name="ctn" />
+            <property name="doctype" data-type="string" column-name="doctype" />
+            <property name="lastUpdateDate" data-type="string" column-name="last_update_date" />
+      </table>
+      <table name="ph_software_lang_trs" type="multi" id-column-names="software_id" multi-column-name="language">
+            <property name="translations" data-type="map" queryable="true" readable="true" component-item-type="software-lang-translation" 
+            column-name="software_translation_id" expert="true"/>
+      </table>
+	    <property name="translation" property-type="com.philips.repository.properties.Localiser" writable="false" expert="true">
+	        <attribute name="translationsProperty" value="translations" />
+	        <attribute name="translationItem" value="software-lang-translation" />
+	        <attribute name="language" value="language" />
+	    </property>
+    </item-descriptor>
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--    software-lang-translation       -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+    <item-descriptor name="software-lang-translation">
+        <table name="ph_software_tr" type="primary" id-column-name="software_translation_id"  >
+                <property name="softwareTranslationId" data-type="string" column-name="software_translation_id"/>      
+				<property name="releaseNotes" data-type="string" column-name="release_notes" />
+				<property name="comments" column-names="comments" data-type="array" component-data-type="string"/>
+				<property name="language" data-type="string" column-name="language" />
+        </table>
+		<table name="ph_software_assets" multi-column-name="sequence_number" type="multi" id-column-name="asset_list_id">
+            <property name="assets" display-name="Assets" data-type="set" readable="true" column-name="asset_id" component-item-type="asset" />
+        </table>
+    </item-descriptor>
+ 
+    <!--///////////////////////////////-->
+    <!--                            			   -->
+    <!--    document-type      			    -->
+    <!--                            			   -->
+    <!--///////////////////////////////-->
+
+    <item-descriptor name="document-type" display-property="id">
+	
+	<table name="ph_document_type" type="primary" id-column-name="document_type">
+		<property name="id" data-type="string" column-name="document_type"/>
+		<property name="applicationArea" data-type="string" column-name="application_area" />
+		<property name="fileTypes" data-type="string" column-name="file_types" />
+		<property name="parent" data-type="string" column-name="parent" />
+		<property name="eulaIndicator" data-type="string" column-name="eula_indicator" />
+		<property name="highlightIndicator" data-type="string" column-name="highlight_indicator" />
+		<property name="docTypePublished" data-type="string" column-name="doc_type_published" />
+		<property name="restrictedIndicator" data-type="string" column-name="restricted_indicator" />
+	</table>
+    <table name="ph_document_type_trs" type="multi" id-column-name="document_type" multi-column-name="locale_id">
+        <property name="translations" data-type="map" component-item-type="document-type-translation" column-name="doc_type_translation_id" expert="true"/>
+    </table>
+
+        <property name="translation" property-type="com.philips.repository.properties.Localiser" writable="false" expert="true">
+            <attribute name="translationsProperty" value="translations" />
+            <attribute name="translationItem" value="document-type-translation" />
+            <attribute name="catalogLocale" value="locale" />
+        </property>
+
+    </item-descriptor>
+    <!--///////////////////////////////-->
+    <!--                            			   -->
+    <!--    document-type-translation      	   -->
+    <!--                            			   -->
+    <!--///////////////////////////////-->
+
+	<item-descriptor name="document-type-translation" cache-mode="simple" >
+		<table name="ph_document_type_tr" type="primary" id-column-name="doc_type_translation_id">
+		    <property name="docTypeTransId" data-type="string" column-name="doc_type_translation_id" />
+		    <property name="description" data-type="string" column-name="description" required="true" display-name="Decsription" />
+			<property name="longDescription" data-type="string" column-name="long_description" required="true" display-name="Long Decsription" />
+		</table>
+	</item-descriptor>
+	
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--    cookie-dct                 -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+ 
+ 	<item-descriptor name="cookie-dct" cache-mode="simple" >
+ 	
+ 		<table name="ph_cookie_dct" type="primary" id-column-names="cookie_name,document_id">
+ 			<property name="cookieName" data-type="string" column-name="cookie_name" />
+ 			<property name="documentId" data-type="string" column-name="document_id" />
+ 			<property name="cookieType" data-type="string" column-name="cookie_type" /> 
+ 		</table> 
+ 		
+ 	</item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                          				     -->
+    <!--     assetList 		                  	-->
+    <!--                               			-->
+    <!--///////////////////////////////-->
+
+	<item-descriptor name="assetList" display-property="id" display-name="Asset List" last-modified-property="lastModifiedDate" item-cache-size="100">
+       	<attribute name="updateLastModified" value="true" />   	 	
+    	<table name="ph_asset_list" type="primary" id-column-name="asset_list_id">
+     	<property name="id" column-name="asset_list_id" data-type="string">
+        	<attribute name="references" value="true" data-type="boolean" />
+      	</property>
+      	<property name="lastModifiedDate" data-type="timestamp" column-name="last_mod_date" category-resource="categoryInfo">
+        	<attribute name="uiwritable" value="false" />
+       	<attribute name="propertySortPriority" value="-7" />
+     	</property>
+      	</table>        
+        <table name="ph_asset_list_assets" multi-column-name="sequence_number" type="multi" id-column-name="asset_list_id">
+            <property name="assets" display-name="Assets" data-type="set" readable="true" column-name="asset_id" component-item-type="asset" />
+        </table>
+    </item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                   			            -->
+    <!--     asset	 		                  	-->
+    <!--                               			-->
+    <!--///////////////////////////////-->
+  
+  <item-descriptor name="asset" display-property="id" display-name="Asset" last-modified-property="lastModifiedDate" item-cache-size="2000">
+    <attribute name="updateLastModified" value="true" />
+      <table name="ph_asset" type="primary" id-column-name="asset_id">
+      <property name="id" data-type="string" column-name="asset_id" required="true" display-name="Asset Id"/>
+      <property name="locale" item-type="locale" column-name="locale_id" required="false" display-name="Locale"/>
+      <property name="documentType" column-name="document_type" item-type="document-type" required="true" display-name="Document type" />
+      <property name="version" data-type="string" column-name="version" required="false" display-name="Version"/>
+      <property name="mimeType" data-type="string" column-name="mime_type" required="true" display-name="Mime type"/>
+      <property name="fileSize" data-type="string" column-name="file_size" required="true" display-name="File size"/>
+      <property name="externalURL" data-type="string" column-name="external_url" required="true" display-name="External asset URL"/>
+      <property name="internalURL" data-type="string" column-name="internal_url" required="false" display-name="Internal asset URL"/>
+	  <property name="imagingServerId" data-type="string" column-name="imaging_server_id" required="false" display-name="Imaging Server Id"/>
+       <property name="lastModifiedDate" data-type="timestamp" column-name="last_mod_date" category-resource="categoryInfo">
+        <attribute name="uiwritable" value="false" />
+        <attribute name="propertySortPriority" value="-7" />
+      </property>
+    <!-- downloadSize converted to human-readable format -->
+	<property name="convertedFileSize" property-type="com.philips.repository.properties.HumanReadableFileSize" writable="false" queryable="false" data-type="string">
+         <attribute name="rawSize" value="fileSize" />
+    </property>
+    </table>
+ </item-descriptor>
+  
+	
+    <!--///////////////////////////////-->
+    <!--                          				     -->
+    <!--    ctn-leftnav      		          -->
+    <!--                       			        -->
+    <!--///////////////////////////////-->
+
+    <item-descriptor name="ctnLeftNav">
+	
+	<table name="ph_ctn_leftnav" type="primary" id-column-name="leftnav_id" >		
+		<property name="productId" data-type="string" column-name="product_id" />
+		<property name="leftNavId" data-type="string" column-name="leftnav_id" />		
+	</table>
+
+	<table name="ph_leftnav" type="auxiliary" id-column-name="leftnav_id" >		
+		<property name="leftNavLink" data-type="string" column-name="leftnav_link" />
+		<property name="sortOrder" data-type="string" column-name="sort_order" />
+	</table>
+
+	<table name="ph_leftnav_trs" type="multi" id-column-name="leftnav_id" multi-column-name="locale_id" >
+		<property name="translations" data-type="map" component-data-type="string" readable="true" column-name="leftnav_translation_id" expert="true"/>				
+	</table>
+
+    <property name="translation" property-type="com.philips.repository.properties.Localiser" writable="false" expert="true">
+        <attribute name="translationsProperty" value="translations" />
+        <attribute name="translationItem" value="leftnav-translation" />
+        <attribute name="catalogLocale" value="locale" />
+    </property>
+	
+    </item-descriptor>
+    
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--    ctn-leftnav-translation    -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+
+    <item-descriptor name="leftnav-translation" item-cache-size="25000"   >
+	
+	<table name="ph_leftnav_tr" type="primary" id-column-name="leftnav_translation_id">
+	    <property name="translationId" data-type="string" column-name="leftnav_translation_id" />
+	    <property name="leftNavName" data-type="string" column-name="leftnav_name" required="true" display-name="Decsription" />
+	</table>
+
+    </item-descriptor>
+
+
+    <!--///////////////////////////////-->
+    <!--                                                              -->
+    <!--    leftnav-doctype                               -->
+    <!--                                                              -->
+    <!--///////////////////////////////-->
+
+    <item-descriptor name="leftnav-doctype" display-property="id">
+	
+	<table name="ph_leftnav_doctype" type="primary" id-column-names="leftnav_id,document_type" >		
+		<property name="id" data-type="string" column-name="leftnav_id" />
+		<property name="documentType" data-type="string" column-name="document_type" />
+	</table>
+    </item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--             country           -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+    
+    <item-descriptor name="country" display-property="id" item-cache-size="200"  >
+
+	<table name="ph_country" type="primary" id-column-name="country_id">
+            <property name="id" data-type="string" column-name="country_id" />
+		<property name="languageDescriptor" data-type="string" column-name="language_descriptor" />
+            <property name="name" display-name="Name" data-type="string" column-name="name" required="true" />
+	</table>
+
+    </item-descriptor>
+	
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--             language          -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+    
+    <item-descriptor name="language" display-name="Language" display-property="id" item-cache-size="200">
+
+        <table name="ph_language" type="primary" id-column-name="language_code2">
+            <property name="id" data-type="string" column-name="language_code2" />
+            <property name="languageDescriptor" data-type="string" column-name="language_descriptor" />
+            <property name="name" display-name="Name" data-type="string" column-name="name" required="true" />
+        </table>
+
+    </item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--     language-conversion       -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+    
+    <item-descriptor name="language-conversion" display-property="id" item-cache-size="200">
+
+        <table name="ph_language_conversion" type="primary" id-column-name="country_id">
+            <property name="id" data-type="string" column-name="country_id" />
+            <property name="languageCode3" data-type="string" column-name="language_code3" />
+            <property name="languageCode2" data-type="string" column-name="language_code2" />
+        </table>
+
+    </item-descriptor>
+
+    <!--/////////////////////-->
+    <!--                     -->
+    <!--       locale        -->
+    <!--                     -->
+    <!--/////////////////////-->
+    
+    <item-descriptor name="locale" display-property="id" item-cache-size="200" >
+
+	<table name="ph_locale" type="primary" id-column-name="locale_id">
+            <property name="id" data-type="string" column-name="locale_id" />
+            <property name="languageCode2" item-type="language" column-name="language_code2" required="true" />
+            <property name="countryId" item-type="country" column-name="country_id" required="true" />
+        </table>
+
+    </item-descriptor>
+
+    <!--/////////////////////-->
+    <!--                     -->
+    <!--   catalog-locale    -->
+    <!--                     -->
+    <!--/////////////////////-->
+
+    <item-descriptor name="catalog-locale" display-property="id" item-cache-size="200"  display-name="Catalog Locale" >
+
+	<table name="ph_catalog_locale" type="primary" id-column-name="catalog_locale_id">
+            <property name="id" data-type="string" column-name="catalog_locale_id" />
+            <property name="locale" item-type="locale" column-name="locale_id" required="true" />
+            <property name="catalog" item-type="catalog" column-name="catalog_id" required="true" />
+        </table>
+
+    </item-descriptor>
+  
+      <!--///////////////////////////////-->
+    <!--                               -->
+    <!--    olee-chapter-list    -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+    
+    <item-descriptor name="olee-chapter-list" cache-mode="simple">
+    
+		<table name="ph_olee_chapter_list" type="primary" id-column-names="olee_chapter_list_id" >          
+            <property name="id" data-type="string" column-name="olee_chapter_list_id" />
+            <property name="lastUpdateDate" data-type="string" column-name="last_update_date" />
+		</table>
+	   <table name="ph_olee_chapter_list_chapters" type="multi" id-column-names="olee_chapter_list_id" multi-column-name="sequence_num" >
+		<property name="oleeChapters" data-type="list"  component-item-type="olee-item" column-names="olee_chapter_id" />
+	   </table>		
+
+  </item-descriptor>
+
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--    olee-chapter          -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+    
+    <item-descriptor name="olee-chapter" cache-mode="simple">
+		<table name="ph_olee_chapter" type="primary" id-column-names="olee_chapter_id" >          
+            <property name="id" data-type="string" column-name="olee_chapter_id" />
+            <property name="displayName" data-type="string" column-name="display_name" />
+            <property name="lastUpdateDate" data-type="string" column-name="last_update_date" />
+		</table>
+		
+	   <table name="ph_olee_item_list" type="multi" id-column-names="olee_item_list_id" multi-column-name="sequence_num" >
+		<property name="oleeItemList" data-type="list"  component-item-type="olee-item" column-names="olee_item_id" />
+	   </table>		
+
+  </item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--    olee-item              -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+  
+    <item-descriptor name="olee-item">
+      
+      <table name="ph_olee_item" type="primary" id-column-names="olee_item_id" >          
+            <property name="id" data-type="String" column-name="olee_item_id" />
+            <property name="lastUpdateDate" data-type="string" column-name="last_update_date" />
+      </table>
+      <table name="ph_olee_item_lang_trs" type="multi" id-column-names="olee_item_id" multi-column-name="language">
+            <property name="translations" data-type="map" queryable="true" readable="true" component-data-type="string" 
+            column-names="olee_item_translation_id" hidden="false" expert="false" required="false" writable="true"/>
+      </table>
+	    <property name="translation" property-type="com.philips.repository.properties.Localiser" writable="false" expert="true">
+	        <attribute name="translationsProperty" value="translations" />
+	        <attribute name="translationItem" value="olee-item-lang-translation" />
+	        <attribute name="language" value="language" />
+	    </property>
+ 		<table name="ph_olee_ilt_assets" multi-column-name="sequence_number" type="multi" id-column-name="asset_list_id">
+            <property name="assets" display-name="Assets" data-type="set" readable="true" column-name="asset_id" component-item-type="asset" />
+         </table>
+    </item-descriptor>
+
+    <!--///////////////////////////////-->
+    <!--                               -->
+    <!--    olee-item-translation  -->
+    <!--                               -->
+    <!--///////////////////////////////-->
+ 	
+  <item-descriptor name="olee-item-lang-translation">
+		<table name="ph_document_lang_tr" type="primary" id-column-name="olee_item_lang_trans_id">
+		    <property name="id" data-type="string" column-name="olee_item_lang_trans_id" />
+		    <property name="head" data-type="string" column-name="head" />
+		    <property name="body" data-type="string" column-name="body" />
+		</table>
+	  
+		  
+    </item-descriptor>
+    
+    
+  
+</gsa-template>

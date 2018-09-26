@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+		targetNamespace="http://www.w3.org/1999/XSL/Transform" 
+		elementFormDefault="qualified" 
+		version="April 15, 2000">
+	<annotation>
+		<documentation>A Schema for XSLT - Don Box (http://www.develop.com/dbox)</documentation>
+		<documentation>Thanks to Curt Arnold for catching some errors along the way.</documentation>
+	</annotation>
+	<!-- internal types -->
+	<simpleType name="CDATA">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="avt">
+		<annotation>
+			<documentation source="http://www.w3.org/TR/xslt#attribute-value-templates"/>
+		</annotation>
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="pattern">
+		<annotation>
+			<documentation source="http://www.w3.org/TR/xslt#patterns"/>
+		</annotation>
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="expr">
+		<annotation>
+			<documentation source="http://www.w3.org/TR/xslt#section-Expressions"/>
+		</annotation>
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="single-multiple-any">
+		<restriction base="NMTOKEN">
+			<enumeration value="single"/>
+			<enumeration value="multiple"/>
+			<enumeration value="any"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="XPathNumber">
+		<annotation>
+			<documentation source="http://www.w3.org/TR/xpath#NT-Number"/>
+		</annotation>
+		<restriction base="decimal"/>
+	</simpleType>
+	<simpleType name="char">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="1"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="yesno">
+		<restriction base="NMTOKEN">
+			<enumeration value="yes"/>
+			<enumeration value="no"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="QNames">
+		<list itemType="QName"/>
+	</simpleType>
+	<!-- literal result element attributes -->
+	<attribute name="version" type="xsl:CDATA"/>
+	<attribute name="extension-element-prefixes" type="xsl:CDATA"/>
+	<attribute name="exclude-result-prefixes" type="xsl:CDATA"/>
+	<attribute name="use-attribute-sets" type="xsl:QNames"/>
+	<!-- exemplars for the equiv classes -->
+	<element name="instruction" abstract="true"/>
+	<element name="char-instruction" abstract="true" substitutionGroup="instruction"/>
+	<complexType name="char-template" mixed="true">
+		<sequence>
+			<element ref="xsl:char-instruction"/>
+		</sequence>
+	</complexType>
+	<complexType name="template" mixed="true">
+		<sequence>
+			<element ref="xsl:instruction"/>
+			<any namespace="##other"/>
+		</sequence>
+	</complexType>
+	<complexType name="variable-definition">
+		<complexContent>
+			<extension base="xsl:template">
+				<attribute name="name" type="QName" use="required"/>
+				<attribute name="select" type="xsl:expr"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="char-template-with-space">
+		<complexContent>
+			<extension base="xsl:char-template">
+				<attribute ref="xml:space"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="template-with-space">
+		<complexContent>
+			<extension base="xsl:template">
+				<attribute ref="xml:space"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="named-template">
+		<complexContent>
+			<extension base="xsl:template-with-space">
+				<sequence>
+					<element name="param" type="xsl:variable-definition"/>
+				</sequence>
+				<attribute name="match" type="xsl:pattern"/>
+				<attribute name="name" type="QName"/>
+				<attribute name="priority" type="xsl:XPathNumber"/>
+				<attribute name="mode" type="QName"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="conditional-template">
+		<complexContent>
+			<extension base="xsl:template-with-space">
+				<attribute name="test" type="xsl:expr"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="import-or-include">
+		<attribute name="href" type="anyURI" use="required"/>
+	</complexType>
+	<complexType name="sort">
+		<attribute name="select" type="xsl:expr" default="."/>
+		<attribute name="lang" type="xsl:avt"/>
+		<attribute name="data-type" type="xsl:avt" default="text"/>
+		<attribute name="order" type="xsl:avt" default="ascending"/>
+		<attribute name="case-order" type="xsl:avt"/>
+	</complexType>
+	<complexType name="for-each">
+		<complexContent>
+			<extension base="xsl:template-with-space">
+				<sequence>
+					<element name="sort" type="xsl:sort" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attribute name="select" type="xsl:expr" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="choose">
+		<sequence>
+			<element name="when" type="xsl:conditional-template" maxOccurs="unbounded"/>
+			<element name="otherwise" type="xsl:template-with-space" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="call-template">
+		<sequence>
+			<element name="with-param" type="variable-definition" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="name" type="QName" use="required"/>
+	</complexType>
+	<complexType name="apply-templates">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="with-param" type="variable-definition"/>
+			<element name="sort" type="xsl:sort"/>
+		</choice>
+		<attribute name="select" type="xsl:expr" default="node()"/>
+		<attribute name="mode" type="QName"/>
+	</complexType>
+	<complexType name="copy">
+		<complexContent>
+			<extension base="xsl:template-with-space">
+				<attribute name="use-attribute-sets" type="xsl:QNames"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="copy-of">
+		<attribute name="select" type="xsl:expr" use="required"/>
+	</complexType>
+	<complexType name="value-of">
+		<complexContent>
+			<extension base="xsl:copy-of">
+				<attribute name="disable-output-escaping" type="xsl:yesno" default="no"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="message">
+		<complexContent>
+			<extension base="xsl:template-with-space">
+				<attribute name="terminate" type="xsl:yesno" default="no"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="apply-imports"/>
+	<complexType name="number">
+		<attribute name="level" type="xsl:single-multiple-any" default="single"/>
+		<attribute name="count" type="xsl:pattern"/>
+		<attribute name="from" type="xsl:pattern"/>
+		<attribute name="value" type="xsl:expr"/>
+		<attribute name="format" type="xsl:avt" default="1"/>
+		<attribute name="lang" type="xsl:avt"/>
+		<attribute name="letter-value" type="xsl:avt"/>
+		<attribute name="grouping-separator" type="xsl:avt"/>
+		<attribute name="grouping-size" type="xsl:avt"/>
+	</complexType>
+	<complexType name="text">
+		<attribute name="disable-output-escaping" type="xsl:yesno" default="no"/>
+	</complexType>
+	<complexType name="processing-instruction">
+		<complexContent>
+			<extension base="xsl:char-template-with-space">
+				<attribute name="name" type="xsl:avt" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="attribute">
+		<complexContent>
+			<extension base="xsl:processing-instruction">
+				<attribute name="namespace" type="xsl:avt"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="element">
+		<complexContent>
+			<extension base="xsl:template-with-space">
+				<attribute name="name" type="xsl:avt" use="required"/>
+				<attribute name="namespace" type="xsl:avt"/>
+				<attribute name="use-attribute-sets" type="xsl:QNames"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="preserve-or-strip-space">
+		<attribute name="elements" type="xsl:QNames" use="required"/>
+	</complexType>
+	<complexType name="output">
+		<attribute name="method" type="QName"/>
+		<attribute name="version" type="NMTOKEN"/>
+		<attribute name="encoding" type="xsl:CDATA"/>
+		<attribute name="omit-xml-declaration" type="xsl:yesno"/>
+		<attribute name="standalone" type="xsl:yesno"/>
+		<attribute name="doctype-public" type="string"/>
+		<attribute name="doctype-system" type="string"/>
+		<attribute name="cdata-section-elements" type="xsl:QNames"/>
+		<attribute name="indent" type="xsl:yesno"/>
+		<attribute name="media-type" type="xsl:CDATA"/>
+	</complexType>
+	<complexType name="key">
+		<attribute name="name" type="QName" use="required"/>
+		<attribute name="match" type="xsl:pattern" use="required"/>
+		<attribute name="use" type="xsl:expr" use="required"/>
+	</complexType>
+	<complexType name="decimal-format">
+		<attribute name="name" type="QName"/>
+		<attribute name="decimal-separator" type="xsl:char" default="."/>
+		<attribute name="grouping-separator" type="xsl:char" default=","/>
+		<attribute name="infinity" type="xsl:CDATA" default="Infinity"/>
+		<attribute name="minus-sign" type="xsl:char" default="-"/>
+		<attribute name="NaN" type="xsl:CDATA" default="NaN"/>
+		<attribute name="percent" type="xsl:char" default="%"/>
+		<attribute name="per-mille" type="xsl:char" default="&#x2030;"/>
+		<attribute name="zero-digit" type="xsl:char" default="0"/>
+		<attribute name="digit" type="xsl:char" default="#"/>
+		<attribute name="pattern-separator" type="xsl:char" default=";"/>
+	</complexType>
+	<complexType name="attribute-set">
+		<sequence>
+			<element ref="xsl:attribute" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="name" type="QName" use="required"/>
+		<attribute name="use-attribute-sets" type="xsl:QNames"/>
+	</complexType>
+	<complexType name="namespace-alias">
+		<attribute name="stylesheet-prefix" type="xsl:CDATA" use="required"/>
+		<attribute name="result-prefix" type="xsl:CDATA" use="required"/>
+	</complexType>
+	<element name="apply-templates" type="xsl:apply-templates" substitutionGroup="char-instruction"/>
+	<element name="call-template" type="xsl:call-template" substitutionGroup="char-instruction"/>
+	<element name="apply-imports" type="xsl:apply-imports" substitutionGroup="char-instruction"/>
+	<element name="for-each" type="xsl:for-each" substitutionGroup="char-instruction"/>
+	<element name="value-of" type="xsl:value-of" substitutionGroup="char-instruction"/>
+	<element name="copy-of" type="xsl:copy-of" substitutionGroup="char-instruction"/>
+	<element name="number" type="xsl:number" substitutionGroup="char-instruction"/>
+	<element name="choose" type="xsl:choose" substitutionGroup="char-instruction"/>
+	<element name="if" type="xsl:conditional-template" substitutionGroup="char-instruction"/>
+	<element name="text" type="xsl:text" substitutionGroup="char-instruction"/>
+	<element name="copy" type="xsl:copy" substitutionGroup="char-instruction"/>
+	<element name="variable" type="variable-definition" substitutionGroup="char-instruction"/>
+	<element name="message" type="xsl:message" substitutionGroup="char-instruction"/>
+	<element name="fallback" type="xsl:template-with-space" substitutionGroup="char-instruction"/>
+	<element name="comment" type="xsl:char-template-with-space" substitutionGroup="instruction"/>
+	<element name="processing-instruction" type="xsl:processing-instruction" substitutionGroup="instruction"/>
+	<element name="attribute" type="xsl:attribute" substitutionGroup="instruction"/>
+	<element name="element" type="xsl:element" substitutionGroup="instruction"/>
+	<complexType name="stylesheet">
+		<sequence>
+			<element name="import" type="xsl:import-or-include" minOccurs="0" maxOccurs="unbounded"/>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element name="include" type="import-or-include"/>
+				<element name="strip-space" type="preserve-or-strip-space"/>
+				<element name="preserve-space" type="preserve-or-strip-space"/>
+				<element name="output" type="xsl:output"/>
+				<element name="key" type="xsl:key"/>
+				<element name="decimal-format" type="xsl:decimal-format"/>
+				<element name="attribute-set" type="xsl:attribute-set"/>
+				<element name="variable" type="variable-definition"/>
+				<element name="param" type="variable-definition"/>
+				<element name="template" type="xsl:named-template"/>
+				<element name="namespace-alias" type="xsl:namespace-alias"/>
+				<any namespace="##other"/>
+			</choice>
+		</sequence>
+		<attribute name="version" type="string" use="required"/>
+		<attribute name="extension-element-prefixes" type="string"/>
+		<attribute name="exclude-result-prefixes" type="string"/>
+		<attribute name="use-attribute-sets" type="xsl:QNames"/>
+	</complexType>
+	<element name="stylesheet" type="xsl:stylesheet"/>
+	<element name="transform" type="xsl:stylesheet"/>
+</schema>

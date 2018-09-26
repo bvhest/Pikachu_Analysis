@@ -1,0 +1,29 @@
+<xsl:stylesheet version="2.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:param name="path"/>
+
+  <xsl:template match="entry">
+    <xsl:variable name="ct" select="@ct"/>
+    <xsl:variable name="o" select="@o"/>
+    <sync>
+      <depends>
+      <xsl:for-each select="tokenize(@depends, ' ')">
+      <i:include src="{$path}/{$ct}/{.}/{$o}.xml" xmlns:i="http://apache.org/cocoon/include/1.0">
+        <i:fallback><error/></i:fallback>
+      </i:include>
+      </xsl:for-each>
+      </depends>
+      <xsl:copy>
+        <xsl:apply-templates select="@*|node()"/>
+      </xsl:copy>
+    </sync>
+  </xsl:template>
+
+  <xsl:template match="@*|node()">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()"/>
+    </xsl:copy>
+  </xsl:template>
+ 
+</xsl:stylesheet>

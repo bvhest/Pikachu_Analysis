@@ -1,0 +1,30 @@
+#logger {
+	font-size: 8pt;
+	position: absolute;
+	z-index: 2500;
+	width: 275px;
+	height: 400px;
+	top: 100px;
+	right: 5px;
+	background-color: #aaa;
+	overflow: scroll;
+}
+
+#logger .title {
+	background: #888;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px 0px;
+}
+
+#logger p {
+	margin: 0px 0px 3px;
+	border-width: 0px 0px 1px;
+	border-style: solid;
+	border-color: #000;
+}
+
+.logger_transparent {
+	opacity: .2;
+	filter: alpha(opacity=20);
+}

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+
+  <map:components>
+    <map:serializers>
+      <map:serializer logger="sitemap.serializer.xml" mime-type="text/xml" name="xml-indented" src="org.apache.cocoon.serialization.XMLSerializer">
+        <encoding>UTF-8</encoding>
+        <indent>yes</indent>
+      </map:serializer>
+    </map:serializers>
+  </map:components>
+
+  <map:resources>
+    <!-- the sql resource provides a central place to edit database details -->
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC"/>
+        <map:parameter name="clob-encoding" value="UTF-8"/>
+      </map:transform>
+    </map:resource>
+  </map:resources>
+
+  <map:pipelines>
+    <map:component-configurations>
+      <global-variables>
+        <ct>FMT</ct>
+        <objectkeys-config-file>objectkeys_config.xml</objectkeys-config-file>
+      </global-variables>
+    </map:component-configurations>
+
+    <map:pipeline type="noncaching">
+      <!--+
+          | Here is the main pipeline that executes the batch processing.
+          | In invoking the pipeline the execution timestamp is passed as a parameter along with ct.
+          | Input parameters:
+          |  {1} = timestamp
+          +-->
+      <map:match pattern="runMain/*">
+        <map:act type="copy-source" src="cocoon:/resetInvalidFlags/{1}">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/resetInvalidFlags_report.xml"/>
+        </map:act>
+        <map:select type="resource-exists">
+          <map:when test="{cmc2:gdir}/{global:ct}/inbox/reload.xml">
+            <map:act type="copy-source" src="{cmc2:svcURL}/batch/localised/createBatches/{global:ct}?reload=true">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/createBatches_report.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="{cmc2:svcURL}/store/save/batch/localised/processParallelBatches/{global:ct}?reload=true&amp;storeURL={cmc2:svcURL}/store/saveSecEntryFile">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="{cmc2:svcURL}/processControl/archiveFiles/inbox/{global:ct}">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/archive_report.xml"/>
+            </map:act>
+          </map:when>
+          <map:otherwise>
+            <map:act type="copy-source" src="{cmc2:svcURL}/batch/localised/createBatches/{global:ct}">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/createBatches_report.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="{cmc2:svcURL}/batch/localised/processParallelBatches/{global:ct}?storeURL={cmc2:svcURL}/store/saveSecEntryFile">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="{cmc2:svcURL}/processControl/archiveFiles/inbox/{global:ct}">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/archive_report.xml"/>
+            </map:act>
+            <!-- 
+            <map:act type="copy-source" src="cocoon:/performanceStats/{1}">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/performanceStats.xml"/>
+            </map:act>
+            -->            
+          </map:otherwise>
+        </map:select>
+        <map:aggregate element="reports">
+          <map:part src="{cmc2:gdir}/{global:ct}/temp/resetInvalidFlags_report.xml"/>
+          <map:part src="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+          <!-- map:part src="{cmc2:gdir}/{global:ct}/temp/performanceStats.xml"/ -->
+        </map:aggregate>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match pattern="performanceStats/*">
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform src="xsl/sql_getCounts.xsl">
+          <map:parameter name="ts" value="{1}"/>
+        </map:transform>        
+        <map:call resource="sql"/>
+        <map:transform src="xsl/performanceStats.xsl">
+          <map:parameter name="ts" value="{1}"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>          
+
+      <map:match pattern="resetInvalidFlags/*">
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform src="xsl/sql_resetInvalidFlags.xsl">
+          <map:parameter name="ts" value="{1}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:serialize type="xml"/>
+      </map:match>      
+
+      <!--+
+          | {1} localisation
+          | {2} timestamp
+          | {3} object id
+          +-->
+      <map:match pattern="process/*/*/**">
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <!-- create an entry record for the target octl -->
+        <map:transform src="{cmc2:xslDir}/common/create_entry_record.xsl">
+          <map:parameter name="o" value="{3}"/>
+          <map:parameter name="ct" value="{global:ct}"/>
+          <map:parameter name="l" value="{1}"/>
+          <map:parameter name="ts" value="{2}"/>
+          <map:parameter name="reload" value="{request-param:reload}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        
+        <!-- include the content from the source octl -->
+        <map:transform src="xsl/include_content.xsl">
+          <map:parameter name="svcURL" value="{cmc2:svcURL}/"/>
+          <map:parameter name="o" value="{3}"/>
+          <map:parameter name="primary-ct" value="FMT_Translated"/>
+          <map:parameter name="l" value="{1}"/>
+          <map:parameter name="master-assets-from" value="{request-param:masterAssetsFrom}"/>
+        </map:transform>
+        <map:transform type="include"/>
+        
+        <map:transform type="xslt-saxon" src="xsl/convert.xsl">
+          <map:parameter name="master-assets-from" value="{request-param:masterAssetsFrom}"/>
+        </map:transform>     
+        
+        <!-- Include secondaries --> 
+        <map:transform src="xsl/sql_include_secondary_content.xsl">
+          <map:parameter name="master-assets-from" value="{request-param:masterAssetsFrom}"/>
+          <map:parameter name="objectkeys-config-file" value="{cmc2:xmlDir}/{global:objectkeys-config-file}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+
+        <map:transform type="xslt-saxon" src="xsl/convertSecondaryContent.xsl"/>
+        <!-- Add asset captions -->
+        <map:transform type="xslt-saxon" src="xsl/assetCaptions.xsl"/>
+
+        <!-- The normal processing -->
+        <map:transform src="xsl/process_entries.xsl">
+          <map:parameter name="reload" value="{request-param:reload}"/>
+        </map:transform>
+        <map:transform src="xsl/secondaryDerivation.xsl"/>                
+
+        <map:serialize type="xml"/>
+      </map:match>              
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

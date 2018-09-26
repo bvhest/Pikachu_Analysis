@@ -1,0 +1,42 @@
+#icp_product_video_player {
+	background-color:transparent;
+	position: relative;
+	top: 120px;
+	left: 32px;
+	width:920px;
+	text-align:left;
+	z-index:200;
+}
+
+#icp_product_video_player .icp_product_video_player_hlp {
+	background-color:white;
+	border:1px solid #E0E0E8;
+	width:920px;
+	text-align:center;
+}
+
+#icp_product_video_player .icp_product_video_player_hlp p {
+	background:transparent url(../../web/assets/img/tmp_moviePlayer_close.png) no-repeat scroll right center;
+	cursor:pointer;
+	margin:4px 4px 0 0;
+	text-align:right;
+	line-height: 18px;
+}
+#icp_product_video_player .icp_product_video_player_hlp p a {
+	color:#888B9C;
+	font-weight:bold;
+	margin-right:20px;
+}
+
+#icp_product_video_player object {
+	outline-style: none;
+}
+
+.icp_prd_vid_player_website {
+	margin-bottom: -559px;
+}
+
+.icp_prd_vid_player_shop {
+	margin-bottom: -559px;
+	top: 58px !important;
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               xmlns:joost="http://joost.sf.net/extension"
+               output-encoding="UTF-8"
+               pass-through="none"
+               version="1.0"
+               xmlns:dir="http://apache.org/cocoon/directory/2.0"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:fn="http://www.w3.org/2003/11/xpath-functions">
+  <stx:param name="dir"/>
+  <stx:param name="prefix"/>
+  <stx:param name="timestamp19"/>
+  <!--  -->
+  <stx:template match="dir:directory">
+    <stx:variable name="timestamp14" select="translate($timestamp19,'-:T','')"/>
+      <source:write xmlns:source="http://apache.org/cocoon/source/1.0">
+        <source:source>
+          <stx:value-of select="$dir"/>
+          <stx:value-of select="$prefix"/>
+          <stx:value-of select="'_'"/>
+          <stx:value-of select="$timestamp14"/>
+          <stx:value-of select="'_input.xml'"/>
+        </source:source>
+        <source:fragment>
+          <Products DocTimeStamp="{$timestamp19}">
+            <stx:process-children />
+          </Products>
+        </source:fragment>
+      </source:write>
+  </stx:template>
+  <!--  -->
+  <stx:template match="dir:file|dir:xpath"><stx:process-children /></stx:template>
+  <!--  -->
+  <stx:template match="Product">
+    <Product>
+      <stx:process-attributes/>
+      <stx:process-children/>
+    </Product>
+  </stx:template>
+  <!--  -->
+  <stx:template match="Product/CTN|Product/MarketingStatus|Product/NamingString/MasterBrand/BrandCode">
+    <stx:copy><stx:value-of select = "."/></stx:copy>
+  </stx:template>
+  <!--  -->
+  <stx:template match="Product/ProductDivision">
+    <stx:copy><stx:process-children/></stx:copy>
+  </stx:template>
+    <!--  -->
+  <stx:template match="Product/ProductDivision/*">
+    <stx:copy><stx:value-of select = "."/></stx:copy>
+  </stx:template>
+  <!--  -->
+  <stx:template match="ProductType">      
+    <stx:copy><stx:value-of select = "."/></stx:copy>
+  </stx:template>
+  <!--  -->  
+  <stx:template match="Product/@IsAccessory|Product/@lastModified|Product/@masterLastModified">
+    <stx:copy/>
+  </stx:template>  
+  <!--  -->  
+  <stx:template match="Product/@IsMaster">
+    <stx:attribute name="IsMaster" select="'true'"/>
+  </stx:template>
+      
+
+<!--?xml version="1.0"?>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sql="http://apache.org/cocoon/SQL/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dir="http://apache.org/cocoon/directory/2.0" exclude-result-prefixes="sql xsl source dir">
+  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+  <xsl:param name="dir"></xsl:param>
+  <xsl:param name="prefix"></xsl:param>
+  <xsl:template match="/dir:directory">
+    <xsl:variable name="now" select="substring(xs:string(current-dateTime()),1,19)"/>
+    <xsl:variable name="snow" select="translate($now,'-:T','')"/>
+    <xsl:if test="dir:file/dir:xpath/Product">
+      <source:write xmlns:source="http://apache.org/cocoon/source/1.0">
+        <source:source>
+          <xsl:value-of select="concat($dir,$prefix,'_',$snow,'_input.xml')"/>
+        </source:source>
+        <source:fragment>
+          <Products DocTimeStamp="{$now}">
+            <xsl:apply-templates select="dir:file/dir:xpath/Product"/>
+          </Products>
+        </source:fragment>
+      </source:write>
+    </xsl:if>
+  </xsl:template>
+  <xsl:template match="Product">
+    <xsl:copy>
+      <xsl:copy-of select="@IsMaster"/>
+      <xsl:copy-of select="@IsAccessory"/>
+      <xsl:copy-of select="@lastModified="/>
+      <xsl:copy-of select="@masterLastModified"/>
+      <xsl:copy-of select="CTN"/>
+      <xsl:copy-of select="MarketingStatus"/>
+      <xsl:copy-of select="ProductDivision"/>
+      <xsl:copy-of select="NamingString/MasterBrand/BrandCode"/>
+    </xsl:copy>
+  </xsl:template-->
+  <!-- -->
+</stx:transform>

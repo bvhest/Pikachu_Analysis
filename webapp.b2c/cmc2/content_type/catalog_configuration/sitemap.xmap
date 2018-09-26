@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+	
+	<map:resources>
+		<!-- the sql resource provides a central place to edit database details -->
+		<map:resource name="sql">
+			<map:transform type="sql">
+				<map:parameter name="use-connection" value="oracleDbCMC"/>
+				<map:parameter name="clob-encoding" value="UTF-8"/>
+			</map:transform>
+		</map:resource>
+	</map:resources>
+	
+	<map:pipelines>
+	
+		<map:component-configurations>
+			<global-variables>
+				<ct>catalog_configuration</ct>
+			</global-variables>
+		</map:component-configurations>
+	
+		<map:pipeline type="noncaching">
+		
+			
+			<!-- Here is the main pipeline that exeutes the batch processing. 
+			In invoking the pipeline the execution timestamp is passed as a parameter along with ct.
+				Input parameters: {1} = timestamp
+				Output Document: Result of writing the report document to file
+			-->
+			<map:match pattern="runMain/*">
+			
+				<map:act type="copy-source" src="{cmc2:svcURL}/store/importExec/batch/import/processFiles/{global:ct}/{1}">
+					<map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+				</map:act>					
+				<map:act type="copy-source" src="{cmc2:svcURL}/processControl/archiveFiles/inbox/{global:ct}">
+					<map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/archive_report.xml"/>
+				</map:act>
+				
+				<map:generate src="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>	
+				<map:serialize type="xml"/>	
+			</map:match>						
+
+		</map:pipeline>
+	</map:pipelines>
+</map:sitemap>

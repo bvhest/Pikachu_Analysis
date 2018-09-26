@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<h:request xmlns:h="http://apache.org/cocoon/request/2.0" target="/pikachu2/xml/pikachu_log_scan.xml" sitemap="pikachu_log_scan.xml" source="">
+  <h:requestHeaders>
+    <h:header name="Host">localhost:8888</h:header>
+    <h:header name="User-Agent">Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4</h:header>
+    <h:header name="Accept">text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5</h:header>
+    <h:header name="Accept-Language">en-us,en;q=0.5</h:header>
+    <h:header name="Accept-Encoding">gzip,deflate</h:header>
+    <h:header name="Accept-Charset">ISO-8859-1,utf-8;q=0.7,*;q=0.7</h:header>
+    <h:header name="keep-alive">300</h:header>
+    <h:header name="Connection">keep-alive</h:header>
+    <h:header name="Referer">http://localhost:8888/pikachu2/section/import/pikachu_log_scan_request/TranslationImport/logs</h:header>
+    <h:header name="Cookie">JSESSIONID=2238bp69jokhj</h:header>
+    <h:header name="Content-Type">multipart/form-data; boundary=---------------------------1836063542977</h:header>
+    <h:header name="Content-Length">249</h:header>
+  </h:requestHeaders>
+  <h:requestParameters>
+    <h:parameter name="locale">
+      <h:value>de_DE</h:value>
+    </h:parameter>
+    <h:parameter name="CTN">
+      <h:value>WACS7000/05</h:value>
+    </h:parameter>
+  </h:requestParameters>
+  <h:configurationParameters/>
+</h:request>

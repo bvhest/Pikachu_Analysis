@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" 
+               xmlns:joost="http://joost.sf.net/extension"
+			   output-encoding="UTF-8"
+			   pass-through="all"
+               version="1.0">
+  <stx:param name="dir"/>
+  <stx:param name="filestem"/>
+  <stx:param name="dot">.batch_0.</stx:param>
+  <stx:param name="ext">.xml</stx:param>
+  <stx:variable name="version"/>
+  <stx:variable name="docTimestamp"/>
+  <!--  -->
+  <stx:template match="ProductsMsg">
+    <stx:assign name="docTimestamp" select="@docTimestamp"/>
+    <stx:assign name="version" select="@version"/>
+    <root>
+      <stx:process-children/>
+    </root>
+  </stx:template>
+  <!--  -->
+  <stx:template match="CTN">
+    <source:write xmlns:source="http://apache.org/cocoon/source/1.0">
+      <source:source>
+        <stx:value-of select="$dir"/>
+        <stx:value-of select="$filestem"/>
+        <stx:value-of select="$dot"/>        
+        <stx:value-of select="translate(.,'/','_')"/>
+        <stx:value-of select="$ext"/>
+      </source:source>
+      <source:fragment>
+		    <ProductsMsg>
+          <stx:attribute name="docTimestamp" select="$docTimestamp"/>
+          <stx:attribute name="version" select="$version"/>
+          <Product>          
+            <CTN><stx:value-of select="."/></CTN>
+      			<stx:process-siblings/>
+          </Product>
+    		</ProductsMsg>
+      </source:fragment>
+    </source:write>
+  </stx:template>
+  <!--  -->
+</stx:transform>

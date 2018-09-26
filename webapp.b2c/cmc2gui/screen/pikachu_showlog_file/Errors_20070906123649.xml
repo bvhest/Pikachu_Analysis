@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<errors-report xmlns:source="http://apache.org/cocoon/source/1.0" xmlns:sql="http://apache.org/cocoon/SQL/2.0" xmlns:dir="http://apache.org/cocoon/directory/2.0" pipeline="TranslationImport" reportId="20070906123649">
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:42">
+    <CTN>386/00B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:42">
+    <CTN>389/00B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:42">
+    <CTN>CR1220/00B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:42">
+    <CTN>CR1616/00B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:42">
+    <CTN>CR1620/00B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:42">
+    <CTN>CR2025/01B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:42">
+    <CTN>CR2430/00B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:42">
+    <CTN>LR6-P10/00M</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Захранва уреди с голяма консумация
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:44">
+    <CTN>LR03-P10/00M</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Захранва уреди с голяма консумация
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:47">
+    <CTN>357/01B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:47">
+    <CTN>377/01B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:47">
+    <CTN>CR2016/01B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:47">
+    <CTN>CR2032/01B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Химична технология за енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-02T11:51:22">
+    <CTN>3R12/01B</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Технология за генериране на енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-02T11:51:22">
+    <CTN>6F22/01S</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Технология за генериране на енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-02T11:51:23">
+    <CTN>R03-P4/01S</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Технология за генериране на енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-02T11:51:23">
+    <CTN>R14-P2/01S</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Технология за генериране на енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-02T11:51:23">
+    <CTN>R20-P2/01S</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Технология за генериране на енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-02T11:51:23">
+    <CTN>R20-P4/01S</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Технология за генериране на енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-02T11:51:23">
+    <CTN>R6-P12/01C</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Технология за генериране на енергия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Гарантирана трайност на батериите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>SBA220/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <DescriptorName>
+					Преносима система високоговорители
+				</DescriptorName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Съхранява и защитава високоговорителя
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Идеална за портативна апаратура
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>SBA290/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <DescriptorName>
+					Преносима система високоговорители
+				</DescriptorName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Идеална за портативна апаратура
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Съхранява и защитава високоговорителя
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:50">
+    <CTN>SHM2000/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Оптимизира улавянето на гласа
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Микрофон с насочена чувствителност
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-07T05:26:29">
+    <CTN>SHM3300/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="50" maxLength="39">
+      <FeatureShortDescription>
+					Висококачествени звукови характеристики
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Оптимизира улавянето на гласа
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Микрофон за потискане на шума
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Оптимизира удобството на носене
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:46">
+    <CTN>SWA2523W/10</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:46">
+    <CTN>SWA6310/10</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Твърд проводник от 99,97% OFC
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:46">
+    <CTN>SWV6350/10</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Твърд проводник от 99,97% OFC
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SWV3533/10</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SWV3818/10</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>SWA3552/10</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>SWA3564/10</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>SWV3536/10</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>SWV3567/10</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					24-каратови позлатени съединители
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:41">
+    <CTN>SBCHP1000/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Гарантира чисто предаване на звука
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Повишават качеството на звука
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Оптимизира удобството на носене
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Осигурява ергономично пасване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Осигурява удобно място за съхраняване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Намалява заплитането на кабелите
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:47">
+    <CTN>SHG8010/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="50" maxLength="39">
+      <FeatureShortDescription>
+					Сензационна система за звукови вибрации
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Мощни мембрани за високоговорителите
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Удобни слушалки за поставяне в ушите
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Позволява да се използва веднага
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Съхранява и защитава слушалките
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>SHC1300/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Увеличава удобството при носене
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Позволява да се използва веднага
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>SHC2000/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Увеличава удобството при носене
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="50" maxLength="39">
+      <FeatureShortDescription>
+					Предотвратява забележимите изкривявания
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Може да се движите без кабели
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>SHP2500/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <DescriptorName>
+					Слушалки телевизор за закрито с кабел
+				</DescriptorName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Страхотни за използване с телевизор
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Просто регулиране на силата на звука
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>SHP8900/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Гарантира чисто предаване на звука
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Увеличава удобството при носене
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Лесно регулируема лента за глава
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Намалява заплитането на кабелите
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="50" maxLength="39">
+      <FeatureShortDescription>
+					Уникален механизъм с фиксиране на кабел
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Приложена е чантичка за съхранение
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:44">
+    <CTN>190C6FS/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Време на реакция за превключване 8 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					SXGA, разд. способност 1280 x 1024
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Изображение, еднакво с отпечатките
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Допълва вашия домашен интериор
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					По-ниски разходи за използване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Захранване, вградено в монитора
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Автонастройка с едно докосване
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:47">
+    <CTN>230WP7NS/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Регулиране на височината и ъгъла
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					По-ниски разходи за използване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					WUXGA, широк формат 1920 x 1200
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Най-широк зрителен ъгъл (178°)
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Високоскоростно USB2.0 решение
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>170A7FS/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					По-ниски разходи за използване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					С отговорно отношение към средата
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					SXGA, разд. способност 1280 x 1024
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Време на реакция за превключване 8 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Изображение, еднакво с отпечатките
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>170B7CG/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					По-ниски разходи за използване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Без точкови дефекти съгласно ISO
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Време за реакция (вкл.-изкл.)5 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					SXGA, разд. способност 1280 x 1024
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Настройване на зрителния ъгъл
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>170P7EG/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Без точкови дефекти съгласно ISO
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					SXGA, разд. способност 1280 x 1024
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Време за реакция (вкл.-изкл.)5 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Автоматична настройка на яркостта
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Високоскоростно USB2.0 решение
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>170P7ES/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Без точкови дефекти съгласно ISO
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					SXGA, разд. способност 1280 x 1024
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Време за реакция (вкл.-изкл.)5 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Автоматична настройка на яркостта
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Високоскоростно USB2.0 решение
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>200P7ES/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="50" maxLength="39">
+      <FeatureShortDescription>
+					UXGA, разделителна способност 1600x1200
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Най-широк зрителен ъгъл (178°)
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="49" maxLength="39">
+      <FeatureShortDescription>
+					Време на реакция за превключване 16 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Високоскоростно USB2.0 решение
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>200P7MG/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					За медицински уреди (EN/IEC 60601-1)
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="50" maxLength="39">
+      <FeatureShortDescription>
+					UXGA, разделителна способност 1600x1200
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Най-широк зрителен ъгъл (178°)
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="49" maxLength="39">
+      <FeatureShortDescription>
+					Време на реакция за превключване 16 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Високоскоростно USB2.0 решение
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>200WB7ES/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="49" maxLength="39">
+      <FeatureShortDescription>
+					Широкоекранен формат 1680 x 1050 WSXGA
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Време на реакция за превключване 8 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="50" maxLength="39">
+      <FeatureShortDescription>
+					Настройте идеалния за вас зрителен ъгъл
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Вижте повече, направете повече
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>170S7FB/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="72" maxLength="65">
+      <WOW>
+			Работните параметри и удобството ви гарантират максимални приходи
+		</WOW>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					По-ниски разходи за използване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					С отговорно отношение към средата
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					SXGA, разд. способност 1280 x 1024
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Време за реакция (вкл.-изкл.)5 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Изображение, еднакво с отпечатките
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Захранване, вградено в монитора
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>170S7FG/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="72" maxLength="65">
+      <WOW>
+			Работните параметри и удобството ви гарантират максимални приходи
+		</WOW>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					По-ниски разходи за използване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					С отговорно отношение към средата
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					SXGA, разд. способност 1280 x 1024
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Време за реакция (вкл.-изкл.)5 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Изображение, еднакво с отпечатките
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Захранване, вградено в монитора
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:49">
+    <CTN>170S7FS/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="72" maxLength="65">
+      <WOW>
+			Работните параметри и удобството ви гарантират максимални приходи
+		</WOW>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="74" maxLength="65">
+      <KeyBenefitAreaName>
+				Най-добро решение по отнош. на цена за придобиване и експлоатация
+			</KeyBenefitAreaName>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Управление на активи на Philips
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					По-ниски разходи за използване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					С отговорно отношение към средата
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					SXGA, разд. способност 1280 x 1024
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Време за реакция (вкл.-изкл.)5 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <FeatureShortDescription>
+					Изображение, еднакво с отпечатките
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Захранване, вградено в монитора
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-09T12:28:36">
+    <CTN>170X7FB/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Подобрение на дисплея SmartImage
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Време за реакция (вкл.-изкл.)5 ms
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Без точкови дефекти съгласно ISO
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					DVI-D вход и поддръжка на HDCP
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Органи за управление SmartTouch
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Захранване, вградено в монитора
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:46">
+    <CTN>MMS321/05</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Реалистично усещане за събуфър
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					чуйте най-дълбоките и най-богати баси
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:47">
+    <CTN>MMS321/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Реалистично усещане за събуфър
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					чуйте най-дълбоките и най-богати баси
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SPA1300/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					За по-дълбоки и по-богати баси
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SPA3200/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					за по-дълбоки и по-богати баси
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-27T10:00:27">
+    <CTN>SPA2200/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					за по-дълбоки и по-богати баси
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:43">
+    <CTN>SPC600NC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Снимки с разд. способност SVGA
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Въртящ се обектив за лесно насочване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="29" maxLength="20">
+      <UnitOfMeasureSymbol>
+						кадъра в секунда
+					</UnitOfMeasureSymbol>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:47">
+    <CTN>SPC500NC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Разделителна способност Super VGA
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Автоматично оптимизиране на картината
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Въртящ се обектив за лесно насочване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Черно покритие и елегантна линия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="29" maxLength="20">
+      <UnitOfMeasureSymbol>
+						кадъра в секунда
+					</UnitOfMeasureSymbol>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SPC210NC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="50" maxLength="39">
+      <FeatureShortDescription>
+					VGA разделителна способност на снимките
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Автоматично оптимизиране на картината
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Въртящ се обектив за лесно насочване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Съвместима с всякакъв софтуер
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="29" maxLength="20">
+      <UnitOfMeasureSymbol>
+						кадъра в секунда
+					</UnitOfMeasureSymbol>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SPC215NC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="50" maxLength="39">
+      <FeatureShortDescription>
+					VGA разделителна способност на снимките
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Автоматично оптимизиране на картината
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Въртящ се обектив за лесно насочване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Слушалки тип "тапа" с микрофон
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Съвместима с всякакъв софтуер
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="29" maxLength="20">
+      <UnitOfMeasureSymbol>
+						кадъра в секунда
+					</UnitOfMeasureSymbol>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SPC315NC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Има мултимедийна слушалка с микрофон
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="50" maxLength="39">
+      <FeatureShortDescription>
+					VGA разделителна способност на снимките
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Автоматично оптимизиране на картината
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Въртящ се обектив за лесно насочване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Съвместима с всякакъв софтуер
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="29" maxLength="20">
+      <UnitOfMeasureSymbol>
+						кадъра в секунда
+					</UnitOfMeasureSymbol>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SPC505NC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Разделителна способност Super VGA
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="48" maxLength="39">
+      <FeatureShortDescription>
+					Автоматично оптимизиране на картината
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Въртящ се обектив за лесно насочване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Има мултимедийна слушалка с микрофон
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="43" maxLength="39">
+      <FeatureShortDescription>
+					Черно покритие и елегантна линия
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="29" maxLength="20">
+      <UnitOfMeasureSymbol>
+						кадъра в секунда
+					</UnitOfMeasureSymbol>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SPC650NC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Добавете най-висококачествено видео
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Въртящ се обектив за лесно насочване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Разделителна способност Super VGA
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Предлага удобно място за съхранение
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="29" maxLength="20">
+      <UnitOfMeasureSymbol>
+						кадъра в секунда
+					</UnitOfMeasureSymbol>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SPC710NC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Добавете най-висококачествено видео
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Автоматично следене на лицето
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Въртящ се обектив за лесно насочване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Разделителна способност Super VGA
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="29" maxLength="20">
+      <UnitOfMeasureSymbol>
+						кадъра в секунда
+					</UnitOfMeasureSymbol>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SPC715NC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Има мултимедийна слушалка с микрофон
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Добавете най-висококачествено видео
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Автоматично следене на лицето
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="47" maxLength="39">
+      <FeatureShortDescription>
+					Въртящ се обектив за лесно насочване
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="44" maxLength="39">
+      <FeatureShortDescription>
+					Разделителна способност Super VGA
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="29" maxLength="20">
+      <UnitOfMeasureSymbol>
+						кадъра в секунда
+					</UnitOfMeasureSymbol>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-07-26T17:48:48">
+    <CTN>SPC900NC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Автоматично следене на лицето
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="46" maxLength="39">
+      <FeatureShortDescription>
+					Добавете най-висококачествено видео
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="29" maxLength="20">
+      <UnitOfMeasureSymbol>
+						кадъра в секунда
+					</UnitOfMeasureSymbol>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-01T17:23:36">
+    <CTN>SPD2412FM/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Двуслойно устройство за +R и -R
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Капацитет на съхранение 8,5 GB
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="40" maxLength="39">
+      <FeatureShortDescription>
+					Най-високо качество на записа
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Защита от изпразване на буфера
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-22T09:24:51">
+    <CTN>SPD5220CC/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Здрав корпус от алуминий и гума
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Навиващ се USB захранващ кабел
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-22T15:02:49">
+    <CTN>SPD2412BM/00</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="42" maxLength="39">
+      <FeatureShortDescription>
+					Двуслойно устройство за +R и -R
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Капацитет на съхранение 8,5 GB
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Защита от изпразване на буфера
+				</FeatureShortDescription>
+    </error>
+  </Product>
+  <Product xmlns:cinclude="http://apache.org/cocoon/include/1.0" Brand="PHI" Division="CE" IsAccessory="false" IsMaster="false" Locale="bg_BG" Status="Marketing Released" lastModified="2007-09-06T12:36:32" masterLastModified="2007-08-24T23:17:00">
+    <CTN>AX2500/02</CTN>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="41" maxLength="39">
+      <FeatureShortDescription>
+					Възпроизвежда CD, CD-R и CD-RW
+				</FeatureShortDescription>
+    </error>
+    <error xmlns:xs="http://www.w3.org/2001/XMLSchema" actualLength="45" maxLength="39">
+      <AccessoryByPackedName>
+				СТЕРЕО СЛУШАЛКИ ЗА ПОСТАВЯНЕ В УШИТЕ
+			</AccessoryByPackedName>
+    </error>
+  </Product>
+</errors-report>

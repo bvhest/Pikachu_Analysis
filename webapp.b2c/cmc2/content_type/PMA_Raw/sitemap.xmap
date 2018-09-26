@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <map:resources>
+    <!-- the sql resource provides a central place to edit database details -->
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC"/>
+        <map:parameter name="clob-encoding" value="UTF-8"/>
+      </map:transform>
+    </map:resource>
+  </map:resources>
+  <map:pipelines>
+  <!-- -->
+    <map:component-configurations>
+      <global-variables>
+        <ct>PMA_Raw</ct>
+      </global-variables>
+    </map:component-configurations>
+    <!-- -->
+    <map:pipeline type="noncaching">
+      <!-- Here is the main pipeline that exeutes the batch processing.
+      In invoking the pipeline the execution timestamp is passed as a parameter along with ct.
+        Input parameters: {1} = timestamp
+        Output Document: Result of writing the report document to file
+      -->
+      <map:match pattern="runMain/*">
+        <!-- remove older entries of the full exports from the inbox. -->
+        <map:act type="copy-source" src="cocoon:/cleanInbox">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/cleanInbox_report.xml"/>
+        </map:act>
+        
+        <map:act type="copy-source" src="cocoon:/PostProcess/batch/import/processFiles/{global:ct}/{1}?includefilepattern=alaTest&amp;ts={1}&amp;createPlaceholder=y">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/processAwardFiles_report.xml"/>
+        </map:act>
+        <!-- Create ObjectAssetList inbox files -->
+        <map:act type="copy-source" src="{cmc2:svcURL}/batch/import/splitFiles/{global:ct}/{1}?usestx=no&amp;filestem=alaTest&amp;target-ct=ObjectAssetList">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/createObjectAssetListInboxFiles_report.xml"/>
+        </map:act>
+        <!-- -->
+        <map:act type="copy-source" src="{cmc2:svcURL}/processControl/archiveFiles/inbox/{global:ct}">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/archive_report.xml"/>
+        </map:act>
+        <!-- -->
+        <map:aggregate  element="reports">
+          <map:part src="{cmc2:gdir}/{global:ct}/temp/processAwardFiles_report.xml"/>
+          <map:part src="{cmc2:gdir}/{global:ct}/temp/createObjectAssetListInboxFiles_report.xml"/>
+        </map:aggregate>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="cleanInbox">
+        <map:generate type="directory" src="{cmc2:gdir}/{global:ct}/inbox">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd HH:mm:ss"/>
+          <map:parameter name="sort" value="lastmodified"/>
+          <map:parameter name="reverse" value="false"/>
+          <map:parameter name="depth" value="1"/>
+        </map:generate>
+        <map:transform type="xslt-saxon" src="xsl/dir2shell_keepmostrecent.xsl">
+          <map:parameter name="dir" value="{cmc2:gdir}/{global:ct}/inbox"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--
+         | TEST: http://localhost:8888/cmc2/content_type/PMA_Raw/PostProcess/batch/import/processFiles/PMA_Raw/20120621140000?includefilepattern=alaTest&ts=20120621140000&createPlaceholder=y&schedule_id=335
+         |       http://localhost:8888/cmc2/service/batch/import/processFiles/PMA_Raw/20120621140000?includefilepattern=alaTest&ts=20120621140000&createPlaceholder=y&schedule_id=335
+         |-->
+      <map:match pattern="PostProcess/**">
+        <map:generate src="{cmc2:svcURL}/{1}"/>
+        <map:transform src="{cmc2:xslDir}/common/include_writeSource2process.xsl">
+          <map:parameter name="process" value="cocoon:/PostProcessEntryFile"/>
+        </map:transform>
+        <map:transform type="cinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- 
+         | TEST: url= http://localhost:8888/etc
+         |-->
+      <map:match pattern="PostProcessEntryFile/**">
+        <map:generate src="{1}"/>
+        <!-- get existing content and relations -->
+        <map:transform src="xsl/sql_getExistingContent.xsl">
+          <map:parameter name="ct" value="{global:ct}"/>
+          <map:parameter name="l" value="none"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:transform src="xsl/filterInvalidCTNs.xsl"/>
+        <!-- do deletions -->
+        <map:transform type="xslt-saxon" src="xsl/create_entry_records_for_deletions.xsl">
+          <map:parameter name="ct" value="{global:ct}"/>
+          <map:parameter name="l" value="none"/>
+          <map:parameter name="ts" value="{request-param:ts}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <!-- do delta comparison (work out what's missing, what's changed -->
+        <map:transform type="xslt-saxon" src="xsl/compareContent.xsl"/>
+        <!-- work out secondaries for changed (amended or missing) content -->
+        <map:transform src="xsl/secondaryDerivation.xsl">
+          <map:parameter name="ct" value="{global:ct}"/>
+          <map:parameter name="l" value="none"/>
+        </map:transform>
+        <map:transform src="{cmc2:xslDir}/common/placeholders_relations.xsl"/>
+        <map:call resource="sql"/>
+        <!-- invalidate octl if secondary relations can not be created-->
+        <map:transform src="xsl/validate_store_outputs.xsl"/>
+        <map:transform src="{cmc2:xslDir}/common/cleanup-sql.xsl"/>
+        <!-- Save file -->
+        <map:transform type="xslt-saxon" src="{cmc2:xslDir}/common/writeEntry.xsl">
+          <map:parameter name="dir" value="{cmc2:gdir}/{global:ct}"/>
+          <map:parameter name="prefix" value="p_"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+         <!-- write file to store -->
+        <map:transform src="{cmc2:xslDir}/common/include_writeSource2process.xsl">
+          <map:parameter name="process" value="{cmc2:svcURL}/store/saveEntryFile"/>
+          <!-- create placeholder, as there is not a PMA catalog -->
+          <map:parameter name="createPlaceholder" value="y"/>
+        </map:transform>
+        <map:transform type="cinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

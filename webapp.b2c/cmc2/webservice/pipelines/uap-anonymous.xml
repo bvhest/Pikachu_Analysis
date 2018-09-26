@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<octl xmlns:sql="http://apache.org/cocoon/SQL/2.0">
+  <sql:rowset>
+    <sql:row>
+      <sql:data>
+        <AuthorisationProfile DocTimeStamp="2010-05-07T13:10:34" masterLastModified="2010-05-07T13:10:34.0000000+02:00">
+          <User status="Active">
+            <Name>Anonymous</Name>
+            <CodeID>anonymous</CodeID>
+            <Organisation>Philips Consumer Lifestyle</Organisation>
+            <Email></Email>
+            <PersonalSite />
+            <IMNRC />
+            <ProfilePicture />
+          </User>
+          <Authorisations/>
+          <Portfolio/>
+        </AuthorisationProfile>
+      </sql:data>
+    </sql:row>
+  </sql:rowset>
+</octl>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageconfigs>
+  <imageconfig>
+    <doctype>CLP</doctype>
+    <doctype>RTP</doctype>
+    <action>scale</action>
+    <convertstring>convert %1 -resize 1200x750 %2</convertstring>
+  </imageconfig>
+  <imageconfig target="family">
+    <doctype>PBP</doctype>
+    <action>scale</action>
+    <convertstring>convert %1 -resize 1200x750 %2</convertstring>
+  </imageconfig>  
+  <imageconfig target="product">
+    <doctype>PDP</doctype>
+    <doctype>D1P</doctype>
+    <doctype>D2P</doctype>
+    <doctype>D3P</doctype>
+    <doctype>D4P</doctype>
+    <doctype>D5P</doctype>
+    <action>scale</action>
+    <convertstring>convert %1 -resize 1200x750 %2</convertstring>
+  </imageconfig>
+  <imageconfig>
+    <doctype>GAP</doctype>
+    <action>scale</action>
+    <convertstring>convert %1 -resize 300x300 %2</convertstring>
+  </imageconfig>
+  <imageconfig>
+    <doctype>GVR</doctype>
+    <doctype>LAS</doctype>
+    <doctype>LBD</doctype>
+    <doctype>LCC</doctype>
+    <doctype>LCD</doctype>
+    <doctype>LCV</doctype>
+    <doctype>LLT</doctype>
+    <doctype>LPC</doctype>
+    <doctype>LPD</doctype>
+    <doctype>LPI</doctype>
+    <doctype>LPW</doctype>
+    <doctype>LQE</doctype>
+    <doctype>LRU</doctype>
+    <doctype>LSP</doctype>
+    <doctype>LUF</doctype>
+    <doctype>LUG</doctype>
+    <doctype>LUT</doctype>
+    <doctype>SLO</doctype>
+    <action>eps2pdf</action>
+    <convertstring>gs -q -dCompatibilityLevel=1.4 -dAutoRotatePages=/None -dPDFSETTINGS=/printer -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dEPSCrop -sOutputFile=%2 -c.setpdfwrite -f %1</convertstring>
+  </imageconfig>
+</imageconfigs>

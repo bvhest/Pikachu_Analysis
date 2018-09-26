@@ -1,0 +1,13 @@
+--deprecated--
+
+<?xml version="1.0" encoding="UTF-8"?>
+<entry xmlns:jx="http://apache.org/cocoon/templates/jx/1.0"
+  o="${cocoon.parameters.o}" 
+  ct="${cocoon.parameters.ct}" 
+  l="${cocoon.parameters.l}" 
+  ts="${cocoon.parameters.ts}" 
+  valid="true" >
+	<result>OK</result>
+	<content/>
+	<octl-attributes/>
+</entry>

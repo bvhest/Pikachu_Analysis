@@ -1,0 +1,20 @@
+#icp_view_overview .icp_pck_ov_title {
+	font-size: 200%;
+	text-align: right;
+	margin: 10px 6px;
+	color: #5E5E80;
+}
+
+#icp_view_overview .icp_pck_ov_texts table {
+	width: 960px;;
+}
+
+#icp_view_overview .icp_pck_ov_texts table td {
+	vertical-align: top;
+}
+
+#icp_view_overview .icp_pck_ov_texts .left {
+	width: 50%;
+}
+#icp_view_overview .icp_pck_ov_texts .right {
+}

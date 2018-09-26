@@ -1,0 +1,67 @@
+<countries>
+	<country code="AR" name="Argentina" emea="0" />
+	<country code="AU" name="Australia" emea="0" />
+	<country code="AT" name="Austria" emea="1" />
+	<country code="BE" name="Belgium" emea="1" />
+	<country code="BR" name="Brazil" emea="0" />
+	<country code="BG" name="Bulgaria" emea="1" />
+	<country code="CA" name="Canada" emea="0" />
+	<country code="CL" name="Chile" emea="0" />
+	<country code="CN" name="China" emea="0" />
+	<country code="CO" name="Colombia" emea="0" />
+	<country code="HR" name="Croatia" emea="1" />
+	<country code="CZ" name="Czech" emea="1" />
+	<country code="DK" name="Danmark" emea="1" />
+	<country code="EE" name="Estonia" emea="1" />
+	<country code="FI" name="Finland" emea="1" />
+	<country code="FR" name="France" emea="1" />
+	<country code="DE" name="Germany" emea="1" />
+	<country code="AA" name="Global" emea="0" />
+	<country code="GB" name="Great Brittan" emea="1" />
+	<country code="GR" name="Greece" emea="1" />
+	<country code="HK" name="Hong Kong" emea="0" />
+	<country code="HU" name="Hungary" emea="1" />
+	<country code="IN" name="India" emea="0" />
+	<country code="ID" name="Indonesia" emea="0" />
+	<country code="IE" name="Ireland" emea="1" />
+	<country code="IL" name="Israel" emea="1" />
+	<country code="IT" name="Italy" emea="1" />
+	<country code="JP" name="Japan" emea="0" />
+	<country code="KZ" name="Kazakhstan" emea="0" />
+	<country code="KR" name="Korea" emea="0" />
+	<country code="LV" name="Latvia" emea="1" />
+	<country code="LT" name="Lithuania" emea="1" />
+	<country code="MY" name="Malaysia" emea="0" />
+	<country code="MX" name="Mexico" emea="0" />
+	<country code="RW" name="Middle East" emea="1" />
+	<country code="NZ" name="New Zealand" emea="0" />
+	<country code="NO" name="Norway" emea="1" />
+	<country code="PK" name="Pakistan" emea="0" />
+	<country code="PA" name="Paraguay" emea="0" />
+	<country code="IR" name="Persia" emea="0" />
+	<country code="PE" name="Peru" emea="0" />
+	<country code="PH" name="Philippines" emea="0" />
+	<country code="PL" name="Poland" emea="1" />
+	<country code="PT" name="Portugal" emea="1" />
+	<country code="RO" name="Romania" emea="1" />
+	<country code="RU" name="Russia" emea="0" />
+	<country code="SA" name="Saudi Arabia" emea="1" />
+	<country code="RS" name="Serbia" emea="1" />
+	<country code="SG" name="Singapore" emea="0" />
+	<country code="SK" name="Slovakia" emea="1" />
+	<country code="SI" name="Slovenia" emea="1" />
+	<country code="ZA" name="South Africa" emea="1" />
+	<country code="ES" name="Spain" emea="1" />
+	<country code="SE" name="Sweden" emea="1" />
+	<country code="CH" name="Switzerland" emea="1" />
+	<country code="TW" name="Taiwan" emea="0" />
+	<country code="TH" name="Thailand" emea="0" />
+	<country code="NL" name="The Netherlands" emea="1" />
+	<country code="TR" name="Turky" emea="1" />
+	<country code="UA" name="Ukraine" emea="1" />
+	<country code="AE" name="United Arab Emirates" emea="1" />
+	<country code="US" name="United States" emea="0" />
+	<country code="UY" name="Uruguay" emea="0" />
+	<country code="VE" name="Venezuela" emea="0" />
+	<country code="VN" name="Vietnam" emea="0" />
+</countries>

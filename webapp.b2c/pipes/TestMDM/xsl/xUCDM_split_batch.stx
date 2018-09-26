@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" xmlns:joost="http://joost.sf.net/extension" xmlns:sql="http://apache.org/cocoon/SQL/2.0" output-encoding="UTF-8" pass-through="all" version="1.0" exclude-result-prefixes="sql joost">
+  <stx:param name="xslt"/>
+  <stx:param name="exportDate">2007-10-10T10:10:10</stx:param>
+  <!--  -->
+  <stx:template match="/Products">
+    <ProductsMsg version="1.0" docTimestamp="{$exportDate}">
+      <stx:process-children/>
+    </ProductsMsg>
+  </stx:template>
+  <!--  -->
+  <stx:template match="/Products/sql:rowset">
+    <stx:process-children/>
+  </stx:template>
+  <!--  -->
+  <stx:template match="/Products/sql:rowset/sql:row">
+     <stx:process-self filter-method="http://www.w3.org/1999/XSL/Transform" filter-src="url($xslt)"/>
+  </stx:template>
+  <!--  -->
+</stx:transform>

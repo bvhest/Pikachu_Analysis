@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:components>
+    <map:transformers default="xslt-saxon">
+      <map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer"/>
+    </map:transformers>
+    <map:actions>
+      <map:action name="synced-copy-source" src="org.apache.cocoon.acting.SyncedCopySourceAction"/>
+    </map:actions>
+  </map:components>
+
+  <map:pipelines>
+    <map:pipeline name="common-export" type="noncaching">
+      
+      <!--
+        Perform a delta on two directories, removing files from one of the directories that are identical.
+        Files in the source and cache dir must have identical names. 
+        
+        Request parameters:
+          dir       The directory with the source XML files.
+                    Files in this directory that are identical to their counterpart in the cacheDir will be deleted.
+          cacheDir  The directory with the cached XML files.
+          deltaXsl  The XSL stylesheet to apply before comparing the data.
+                    The XML structure that this stylesheet is applied to is
+                    <delta-compare>
+                      <source>
+                        XML source from directory specified with dir parameter
+                      </source>
+                      <cache>
+                        XML source from directory specified with cacheDir parameter
+                      </cache>
+                    </delta-compare>
+                    
+                    The stylesheet *must* keep this structure intact and modify only content inside the source and cached elements.
+      -->
+      <map:match pattern="deltaExport">
+        <map:generate type="directory" src="{request-param:dir}">
+          <map:parameter name="include" value=".*\.xml"/>
+        </map:generate>
+        <map:transform src="xsl/delta-export-dir2include-compare.xsl">
+          <map:parameter name="source-dir" value="{request-param:dir}"/>
+          <map:parameter name="cache-dir" value="{request-param:cacheDir}"/>
+          <map:parameter name="call" value="cocoon:/deltaExportCompare"/>
+        </map:transform>
+        <map:transform type="include"/>
+        <map:transform src="xsl/delta-export-report.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <!--
+        Compare two XML files.
+        
+        Request parameters:
+        source  File path to source XML
+        cache   File path to cached XML
+      -->
+      <map:match pattern="deltaExportCompare">
+        <map:select type="resource-exists">
+          <map:when test="{request-param:cache}">
+            <map:aggregate element="delta-compare">
+              <map:part src="{request-param:source}"/>
+              <map:part src="{request-param:cache}"/>
+            </map:aggregate>
+          </map:when>
+          <map:otherwise>
+            <map:aggregate element="delta-compare">
+              <map:part src="{request-param:source}"/>
+            </map:aggregate>
+          </map:otherwise>
+        </map:select>
+        <map:transform src="xsl/delta-export-include-content.xsl">
+          <map:parameter name="source" value="{request-param:source}"/>
+        </map:transform>
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:deltaXsl}"/>
+          <map:when test="">
+            <map:transform src="xsl/prepareDeltaExport.xsl"/>
+          </map:when>
+          <map:otherwise>
+            <map:transform src="{request-param:deltaXsl}"/>
+          </map:otherwise>
+        </map:select>
+        <map:transform src="xsl/delta-export-compare.xsl">
+          <map:parameter name="source" value="{request-param:source}"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+    </map:pipeline>
+  </map:pipelines>
+
+  <map:views>
+    <map:view name="stepX" from-label="stepX">
+      <map:serialize type="xml"/>
+    </map:view>
+  </map:views>
+
+</map:sitemap>

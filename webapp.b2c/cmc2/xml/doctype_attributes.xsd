@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="doctypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="doctype" type="type-doctype" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="DocTimeStamp" type="xs:dateTime"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="type-doctype">
+    <xs:attribute name="code" type="type-assettype"/>
+    <xs:attribute name="master" type="type-assettype" use="optional"/>
+    <xs:attribute name="suffix" type="type-suffix" use="required"/>
+    <xs:attribute name="language" type="type-language" use="optional"/>
+    <xs:attribute name="description" type="type-description" use="optional"/>
+    <xs:attribute name="Scene7" type="type-yesno" use="optional"/>
+    <xs:attribute name="Scene7Lighting" type="type-yesno" use="optional"/>
+    <xs:attribute name="Scene7Videos" type="type-yesno" use="optional"/>
+    <xs:attribute name="secureURL" type="type-yesno" use="optional"/>
+    <xs:attribute name="S7URL" type="type-yesno" use="optional"/>
+    <xs:attribute name="S7Content" type="type-yesno" use="optional"/>
+    <xs:attribute name="FSS" type="type-yesno" use="optional"/>
+    <xs:attribute name="FSSAssets" type="type-yesno" use="optional"/>
+    <xs:attribute name="ATG" type="type-yesno" use="optional"/>
+    <xs:attribute name="CQ5" type="type-yesno" use="optional"/>
+    <xs:attribute name="ATGAssets" type="type-yesno" use="optional"/>
+    <xs:attribute name="ATG_PCT" type="type-yesno" use="optional"/>
+    <xs:attribute name="AtgLightingProducts" type="type-yesno" use="optional"/>
+    <xs:attribute name="AtgLightingFamilies" type="type-yesno" use="optional"/>    
+    <xs:attribute name="LightingProducts2CQ" type="type-yesno" use="optional"/>
+    <xs:attribute name="Families2CQ" type="type-yesno" use="optional"/>    
+    <xs:attribute name="SefairaProducts" type="type-yesno" use="optional"/>
+    <xs:attribute name="LightingRendering" type="type-yesno" use="optional"/>
+    <xs:attribute name="BrightcoveAssets" type="type-yesno" use="optional"/>
+    <xs:attribute name="FlixMediaAssets" type="type-yesno" use="optional"/>
+    <xs:attribute name="FlixMediaProducts" type="type-yesno" use="optional"/>
+    <xs:attribute name="EtailDetailProducts" type="type-yesno" use="optional"/>
+    <xs:attribute name="CliplisterProducts" type="type-yesno" use="optional"/>
+    <xs:attribute name="StdBroker" type="type-yesno" use="optional"/>
+    <xs:attribute name="SyndicationL1" type="type-yesno" use="optional"/>
+    <xs:attribute name="SyndicationL2" type="type-yesno" use="optional"/>
+    <xs:attribute name="SyndicationL3" type="type-yesno" use="optional"/>
+    <xs:attribute name="SyndicationL4" type="type-yesno" use="optional"/>
+    <xs:attribute name="SyndicationL5" type="type-yesno" use="optional"/>
+    <xs:attribute name="SyndicationL3Assets" type="type-yesno" use="optional"/>
+    <xs:attribute name="SyndicationL4Assets" type="type-yesno" use="optional"/>
+    <xs:attribute name="SyndicationL5Assets" type="type-yesno" use="optional"/>
+    <xs:attribute name="ZPI" type="type-yesno" use="optional"/>
+    <xs:attribute name="ZPD" type="type-yesno" use="optional"/>
+    <xs:attribute name="ZAI" type="type-yesno" use="optional"/>
+    <xs:attribute name="ValueCampaign" type="type-yesno" use="optional"/>
+    <xs:attribute name="Thumbnail" type="type-assettype" use="optional"/>
+    <xs:attribute name="Preview" type="type-assettype" use="optional"/>
+    <xs:attribute name="Medium" type="type-assettype" use="optional"/>
+    <xs:attribute name="ICEcat" type="type-assettype" use="optional"/> 
+    <xs:attribute name="IceCatRichContent" type="type-assettype" use="optional"/>
+    <xs:attribute name="WebcollageProducts" type="type-assettype" use="optional"/>
+    <xs:attribute name="WebcollageAssets" type="type-assettype" use="optional"/>
+    <xs:attribute name="XCProducts" type="type-yesno" use="optional"/>
+    <xs:attribute name="ETLProducts" type="type-yesno" use="optional"/>
+	<xs:attribute name="AutomotiveProductsExport" type="type-yesno" use="optional"/>
+	<xs:attribute name="MMDProductExport" type="type-yesno" use="optional"/>
+    </xs:complexType>
+  
+  <xs:simpleType name="type-assettype">
+    <xs:restriction base="xs:string">
+      <xs:length value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="type-yesno">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="yes"/>
+      <xs:enumeration value="no"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="type-suffix">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([a-z0-9]+(,[a-z0-9]+)*)?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="type-language">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="type-description">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+</xs:schema>

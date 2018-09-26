@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="static_text">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:any namespace="http://www.relate4u.com/xsl/documentation" processContents="skip"/>
+				<xs:element ref="language_specific"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="language_specific">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="fields"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="fields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="field"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="field">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element maxOccurs="1" ref="any"/>
+				<xs:element maxOccurs="unbounded" ref="language"/>
+			</xs:choice>
+			<xs:attribute name="default" type="xs:NCName" use="optional"/>
+			<xs:attribute name="id" type="xs:NCName" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="language">
+		<xs:complexType mixed="true">
+			<xs:group ref="markup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:attribute name="id" type="xs:NCName" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="any">
+		<xs:complexType mixed="true">
+			<xs:group ref="markup" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<!-- inline markup elements -->
+	<xs:group name="markup">
+		<xs:choice>
+			<xs:element ref="b"/>
+			<xs:element ref="br"/>
+		</xs:choice>
+	</xs:group>
+	<xs:element name="br"/>
+	<xs:element name="b">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+</xs:schema>

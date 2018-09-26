@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <tables>
+    <table name="PMS_PRODUCTS" columns="CTN,SAP_DATE,CR_DATE,MASTER_DATE,LAUNCH_DATE,EDCOPY_DATE,SIGNING_DATE,LASTMODIFIED_TS,MARKETINGCLASS,SEARCHTEXT,NAMINGSTRINGSHORT,OWNER,PMTVERSION,THUMBNAILURL,PREVIEWURL,MEDIUMIMAGEURL,DELETED_FLAG"
+           where-clause="(ctn like 'FC%' or ctn like '%PFL%') and nvl(deleted_flag, 0) = 0"/>
+    <table name="PMS_ALERTS" columns="CTN,COLUMNID,COMPLETE_FLAG,COLUMNTYPE,DESCRIPTION,RANK,T0,T1,T2,T3,T4,DESCRIPTION_ON_ERROR,RANK_GROUP,SORT_ORDER,PUBLICATION_STATUS,DELETED_FLAG"
+           where-clause="ctn like 'FC%' or ctn like '%PFL%'"/>
+    <table name="PMS_CATEGORIES" columns="CTN,GCS_LEVEL,GCS_CATEGORY_CODE,GCS_CATEGORY_NAME" 
+           where-clause="ctn like 'FC%' or ctn like '%PFL%'"/>
+  </tables>
+</config>

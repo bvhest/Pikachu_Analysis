@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations locale="de_DE">
+<Phrase code="3000039">
+<Name>Zentimeter</Name>
+<Symbol>cm</Symbol>
+</Phrase>
+<Phrase code="3000047">
+<Name>Zoll</Name>
+<Symbol>Zoll</Symbol>
+</Phrase>
+<Phrase code="3000049">
+<Name>Kilogramm</Name>
+<Symbol>kg</Symbol>
+</Phrase>
+<Phrase code="3000068">
+<Name>Pfund</Name>
+<Symbol>lb</Symbol>
+</Phrase>
+<Phrase code="CH4000342">
+<Name>Verpackungsmaße</Name>
+</Phrase>
+<Phrase code="IT4001441">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase code="IT4001439">
+<Name>Breite</Name>
+</Phrase>
+<Phrase code="IT4001443">
+<Name>Tiefe</Name>
+</Phrase>
+<Phrase code="IT4001445">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase code="IT4001447">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase code="IT4001451">
+<Name>EAN</Name>
+</Phrase>
+<Phrase code="IT4001453">
+<Name>Anzahl der enthaltenen Produkte</Name>
+</Phrase>
+<Phrase code="LDIT9990001">
+<Name>Ursprungsland</Name>
+</Phrase>
+<Phrase code="LDIT9990002">
+<Name>Harmonisierter Systemcode</Name>
+</Phrase>
+<Phrase code="CH4000343">
+<Name>Außenkarton</Name>
+</Phrase>
+<Phrase code="IT4001456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase code="IT4001458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase code="IT4001460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase code="IT4001464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase code="IT4001468">
+<Name>EAN</Name>
+</Phrase>
+<Phrase code="IT4001471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase code="CH4000344">
+<Name>Innenkarton</Name>
+</Phrase>
+<Phrase code="IT4001487">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase code="IT4001472">
+<Name>Länge</Name>
+</Phrase>
+<Phrase code="IT4001474">
+<Name>Breite</Name>
+</Phrase>
+<Phrase code="IT4001476">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase code="IT4001480">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase code="IT4001486">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="CH4000345">
+<Name>Innenkarton 2</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT4001503">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT4001488">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT4001490">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT4001492">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT4001496">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT4001502">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="CH7710LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7710LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7710LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7710LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7710LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7710LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7710LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7710LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7710LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7710LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7710LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7710LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7711LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7711LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7711LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7711LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7711LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7711LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7711LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7711LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7711LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7711LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7711LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7711LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7712LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7712LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7712LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7712LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7712LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7712LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7712LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7712LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7712LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7712LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7712LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7712LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7713LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7713LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7713LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7713LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7713LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7713LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7713LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7713LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7713LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7713LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7713LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7713LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7714LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7714LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7714LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7714LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7714LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7714LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7714LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7714LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7714LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7714LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7714LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7714LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7715LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7715LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7715LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7715LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7715LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7715LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7715LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7715LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7715LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7715LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7715LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7715LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7716LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7716LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7716LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7716LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7716LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7716LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7716LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7716LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7716LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7716LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7716LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7716LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7717LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7717LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7717LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7717LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7717LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7717LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7717LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7717LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7717LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7717LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7717LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7717LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7718LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7718LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7718LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7718LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7718LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7718LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7718LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7718LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7718LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7718LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7718LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7718LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7719LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7719LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7719LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7719LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7719LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7719LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7719LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7719LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7719LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7719LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7719LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7719LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7723LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7723LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7723LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7723LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7723LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7723LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7723LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7723LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7723LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7723LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7723LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7723LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7724LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7724LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7724LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7724LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7724LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7724LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7724LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7724LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7724LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7724LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7724LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7724LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7728LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7728LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7728LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7728LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7728LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7728LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7728LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7728LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7728LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7728LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7728LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7728LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7730LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7730LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7730LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7730LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7730LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7730LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7730LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7730LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7730LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7730LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7730LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7730LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7731LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7731LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7731LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7731LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7731LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7731LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7731LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7731LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7731LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7731LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7731LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7731LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7732LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7732LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7732LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7732LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7732LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7732LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7732LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7732LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7732LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7732LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7732LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7732LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7740LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7740LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7740LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7740LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7740LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7740LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7740LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7740LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7740LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7740LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7740LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7740LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7741LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7741LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7741LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7741LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7741LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7741LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7741LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7741LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7741LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7741LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7741LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7741LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7745LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7745LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7745LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7745LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7745LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7745LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7745LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7745LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7745LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7745LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7745LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7745LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7788LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7788LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7788LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7788LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7788LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7788LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7788LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7788LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7788LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7788LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7788LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7788LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH7790LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT7790LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT7790LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT7790LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT7790LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT7790LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT7790LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT7790LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT7790LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT7790LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT7790LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT7790LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH8841LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT8841LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT8841LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT8841LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT8841LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT8841LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT8841LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT8841LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT8841LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT8841LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT8841LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT8841LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH8845LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT8845LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT8845LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT8845LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT8845LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT8845LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT8845LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT8845LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT8845LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT8845LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT8845LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT8845LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH8815LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT8815LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT8815LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT8815LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT8815LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT8815LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT8815LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT8815LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT8815LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT8815LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT8815LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT8815LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH8831LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT8831LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT8831LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT8831LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT8831LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT8831LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT8831LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT8831LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT8831LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT8831LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT8831LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT8831LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+<Phrase code="CH8811LU">
+<Name>Ladeeinheit</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001487" code="IT8811LU471">
+<Name>Anzahl der Verbraucherverpackungen</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001472" code="IT8811LU456">
+<Name>Länge</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001474" code="IT8811LU458">
+<Name>Breite</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001476" code="IT8811LU460">
+<Name>Höhe</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001480" code="IT8811LU464">
+<Name>Bruttogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001445" code="IT8811LU462">
+<Name>Nettogewicht</Name>
+</Phrase>
+<Phrase takenFromAlias="IT4001486" code="IT8811LU000">
+<Name>GTIN/EAN</Name>
+</Phrase>
+<Phrase code="IT8811LU001">
+<Name>Typ</Name>
+</Phrase>
+<Phrase code="IT8811LU467">
+<Name>Anzahl der Handelsartikel pro Stapelschicht</Name>
+</Phrase>
+<Phrase code="IT8811LU465">
+<Name>Anzahl der Stapelschichten pro Einheit</Name>
+</Phrase>
+<Phrase code="IT8811LU466">
+<Name>Anzahl der Außenkartons pro Schicht</Name>
+</Phrase>
+</Translations>

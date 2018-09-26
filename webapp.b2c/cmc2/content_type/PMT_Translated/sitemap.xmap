@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <map:pipelines>
+    <map:component-configurations>
+      <global-variables>
+        <ct>PMT_Translated</ct>
+      </global-variables>
+    </map:component-configurations>
+    <!-- -->
+    <map:pipeline type="noncaching">
+      <map:match pattern="**">
+        <map:mount check-reload="yes" src="{global:ct}_{cmc2:pubSystemId}/sitemap.xmap" uri-prefix="" />
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

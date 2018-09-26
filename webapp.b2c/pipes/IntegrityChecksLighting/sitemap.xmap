@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+   <map:components>
+    <map:transformers default="xslt">
+      <map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer"/>
+      <map:transformer name="sendmail" src="org.apache.cocoon.mail.transformation.SendMailTransformer">
+        <smtphost>nlvg020.gdc1.ce.philips.com</smtphost>
+        <smtpport>25</smtpport>
+      </map:transformer>
+    </map:transformers>
+    <map:actions>
+      <map:action name="synced-copy-source" src="org.apache.cocoon.acting.SyncedCopySourceAction"/>
+    </map:actions>
+    <map:readers default="resource">
+      <map:reader name="exec" src="org.apache.cocoon.reading.ShellScriptExecute"/>
+    </map:readers>   
+  </map:components>
+  
+   <map:resources>
+      <!-- the sql resource provides a central place to edit database details -->
+      <map:resource name="sql">
+         <map:transform type="sql">
+            <map:parameter name="use-connection" value="oracleDbCMC"/>
+            <map:parameter name="clob-encoding" value="UTF-8"/>
+         </map:transform>
+      </map:resource>
+      <map:resource name="atgsql">
+         <map:transform type="sql">
+            <map:parameter name="use-connection" value="oracleDbATG"/>
+            <map:parameter name="clob-encoding" value="UTF-8"/>
+         </map:transform>
+      </map:resource>
+      <map:resource name="prismasql">
+         <map:transform type="sql">
+            <map:parameter name="use-connection" value="SQLServerDbPRISMA"/>
+         </map:transform>
+      </map:resource>
+   </map:resources>
+   <!-- -->
+
+   <!-- Create the new channel:
+SET DEFINE OFF;
+Insert into CHANNELS
+   (ID, NAME, LOCALE, LOCATION, TYPE, PIPELINE, MACHINEAFFINITY, STARTEXEC, ENDEXEC, CATALOG, RESULTCODE, SEQUENCE)
+ Values
+   ('2999', 'IntegrityChecksLighting', 'none', 'IntegrityChecksLighting', 'export', 'pipes/IntegrityChecksLighting', 'all(EXP)', TO_DATE('04/21/2011 10:51:49', 'MM/DD/YYYY HH24:MI:SS'), TO_DATE('04/21/2011 10:51:54', 'MM/DD/YYYY HH24:MI:SS'), 'n/a', NULL, 2999);
+COMMIT;
+    -->
+   <!-- -->
+   <map:pipelines>
+    <!-- -->
+    <!-- recipient of the report -->
+    <map:component-configurations>
+      <global-variables>
+        <ldir>IntegrityChecksLighting/</ldir>
+        <channel>IntegrityChecksLighting</channel>
+        <emailRecipient>b2bsupport@philips.com</emailRecipient>
+      </global-variables>
+    </map:component-configurations>
+    <!-- -->
+    <map:pipeline name="{global:channel}" type="noncaching">
+      <!-- main pipeline 
+         +-->
+      <map:match pattern="runPipeline">
+        <!-- This is the starting point of the pipeline. A lock is requested to prevent this pipeline from running multiple times in parallel.
+             When a lock cannot be acquired, an error message is shown. If a lock can be acquired, run exportMain -->
+        <map:act type="synced-copy-source" src="cocoon:/exportStart">
+          <map:parameter name="lockName" value="{global:channel}"/>
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}logs/log_{global:channel}.xml"/>
+          <map:generate src="{global:gdir}{global:ldir}temp/import.xml"/>
+          <map:serialize type="xml"/>
+        </map:act>
+        <map:generate src="../common/xml/locked.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="exportStart">
+        <!-- Set Start Time.of this channel-->
+        <map:act type="copy-source" src="cocoon:/runsql_setstarttime">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetStartTime.xml"/>
+        </map:act>
+         <map:act type="copy-source" src="cocoon:/createReport">
+            <map:parameter name="dest" value="{cmc2:gdir}/{global:channel}/temp/htmlReport.html" />
+         </map:act>
+         <map:act type="copy-source" src="cocoon:/createAttachement">
+            <map:parameter name="dest" value="{cmc2:gdir}/{global:channel}/temp/csvReport.dat" />
+         </map:act>
+         <map:act type="copy-source" src="cocoon:/sendReport">
+            <map:parameter name="dest" value="{cmc2:gdir}/{global:channel}/temp/log_sendMail.xml" />
+         </map:act>
+        <!-- Set End Time of this channel-->
+        <map:act type="copy-source" src="cocoon:/runsql_setendtime">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetEndTime.xml"/>
+        </map:act>
+        <!-- Show result -->
+        <map:act type="copy-source" src="cocoon:/runsql_gettimings">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportGetTimings.xml"/>
+        </map:act>
+        <map:generate src="{global:gdir}{global:ldir}temp/ReportGetTimings.xml"/>
+        <map:serialize type="xml"/>        
+      </map:match>
+      <!-- set Start / End Time -->
+      <map:match pattern="runsql_*">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:transform type="xslt-saxon" src="../common/xsl/sql_{1}.xsl">
+          <map:parameter name="channel" value="{global:channel}"/>
+           <map:parameter name="run_id" value="{request-param:runId}"/>
+           <map:parameter name="run_mode" value="{request-param:runmode}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- Generates the e-mail, including the product and family reports.
+         +-->   
+      <map:match pattern="sendReport">
+        <map:generate src="xsl/empty.xml"/>
+        <map:transform type="xslt-saxon" src="xsl/sendReportAsEmail.xsl">
+          <map:parameter name="sender"    value="{cmc2:emailSender}"/>
+          <map:parameter name="recipient" value="{global:emailRecipient}"/>
+          <map:parameter name="recipient2" value="pikachu.b2b.support@philips.com"/>
+          <map:parameter name="path2file" value="{cmc2:gdir}/{global:channel}/temp/csvReport.dat"/>
+        </map:transform>
+        <map:transform type="sendmail"/>
+        <map:serialize type="xml"/>        
+      </map:match>
+      <!-- Aggregate the separate reports into one report.
+         +-->
+      <map:match pattern="createReport">
+         <map:act type="copy-source" src="cocoon:/createProductReport">
+            <map:parameter name="dest" value="{cmc2:gdir}/{global:channel}/temp/productReport.html" />
+         </map:act>
+         <map:act type="copy-source" src="cocoon:/createFamilyReport">
+            <map:parameter name="dest" value="{cmc2:gdir}/{global:channel}/temp/familyReport.html" />
+         </map:act>
+         
+         <map:aggregate element="reports">
+           <map:part src="{cmc2:gdir}/{global:channel}/temp/productReport.html"/>
+           <map:part src="{cmc2:gdir}/{global:channel}/temp/familyReport.html"/>
+         </map:aggregate>
+         <map:transform type="xslt-saxon" src="xsl/convert2html.xsl"/>
+         <map:serialize type="xml"/>        
+      </map:match>
+      <!-- -->   
+      <map:match pattern="createAttachement">
+         <map:generate src="{cmc2:gdir}/{global:channel}/temp/htmlReport.html"/>
+         <map:transform type="xslt-saxon" src="xsl/convert2csv.xsl"/>
+         <map:serialize type="text"/>
+      </map:match>
+      <!-- Generates product report.
+         +-->   
+      <map:match pattern="createProductReport">
+         <map:generate src="xsl/empty.xml"/>
+
+         <map:transform type="xslt-saxon" src="xsl/sql_productList.xsl"/>
+         <map:call resource="sql"/>
+
+         <map:transform type="xslt-saxon" src="xsl/sql_atgProductList.xsl"/>
+         <map:call resource="atgsql"/>
+
+         <map:transform type="xslt-saxon" src="xsl/sql_prismaProductList.xsl"/>
+         <map:call resource="prismasql"/>
+
+         <map:transform type="xslt-saxon" src="xsl/convert_productList.xsl"/>
+         <map:serialize type="xml"/>
+      </map:match>
+      <!-- Generates family report.
+         +-->   
+      <map:match pattern="createFamilyReport">
+         <map:generate src="xsl/empty.xml"/>
+
+         <map:transform type="xslt-saxon" src="xsl/sql_familyList.xsl"/>
+         <map:call resource="sql"/>
+
+         <map:transform type="xslt-saxon" src="xsl/sql_atgFamilyList.xsl"/>
+         <map:call resource="atgsql"/>
+
+         <map:transform type="xslt-saxon" src="xsl/sql_prismaFamilyList.xsl"/>
+         <map:call resource="prismasql"/>
+
+         <map:transform type="xslt-saxon" src="xsl/convert_familyList.xsl"/>
+         <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->   
+      <map:match pattern="getBody">
+         <map:generate src="{cmc2:gdir}/{global:channel}/temp/htmlReport.html"/>
+         <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->   
+      <map:match pattern="getAttachment">
+         <map:generate src="{cmc2:gdir}/{global:channel}/temp/csvReport.dat"/>
+         <map:serialize type="text"/>
+      </map:match>
+    <!-- -->   
+   </map:pipeline>
+    <!-- -->   
+  </map:pipelines>
+  <!-- -->
+</map:sitemap>

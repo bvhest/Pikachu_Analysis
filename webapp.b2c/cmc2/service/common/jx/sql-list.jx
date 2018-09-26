@@ -1,0 +1,8 @@
+<sql:execute-query xmlns:sql="http://apache.org/cocoon/SQL/2.0">
+	<sql:query>
+select * from ${cocoon.parameters.table}
+<jx:if test="${cocoon.parameters.where.length()>0}" xmlns:jx="http://apache.org/cocoon/templates/jx/1.0">
+  where ${cocoon.parameters.where}
+</jx:if>
+	</sql:query>
+</sql:execute-query>

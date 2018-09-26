@@ -1,0 +1,382 @@
+<?xml version="1.0"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:resources>
+    <!-- the sql resource provides a central place to edit database details -->
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC" />
+        <map:parameter name="clob-encoding" value="UTF-8" />
+      </map:transform>
+    </map:resource>
+  </map:resources>
+
+  <map:components>
+    <map:transformers default="xslt-saxon">
+      <map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer" />
+      <map:transformer name="tee" logger="sitemap.transformer.tee" src="com.philips.cocoon.transformation.TeeTransformer"/>
+    </map:transformers>
+    <map:actions>
+      <map:action name="synced-copy-source" src="org.apache.cocoon.acting.SyncedCopySourceAction" />
+    </map:actions>
+    <map:selectors default="parameter">
+      <map:selector name="threads-selector" src="org.apache.cocoon.selection.RegexpRequestParameterSelector">
+        <pattern name="gt-one">^[2-9]|\d\d+$</pattern>
+        <parameter-name>threads</parameter-name>
+      </map:selector>
+    </map:selectors>
+  </map:components>
+
+  <!-- 
+    Export ObjectKeys for CCR.
+    By default only data that was modified since the last run will be processed.
+    When all object keys from that data have been extracted they will be compared to previously
+    exported keys. Only modified or new keys will be included in the export.
+    
+    De object keys are extracted from the content type specified by request param sourceCT.
+    The extraction is defined in a condifuration file objectkeys_config.xml. This file is converted
+    to a stylesheet dynamically which is then applied to the OCTLs from the specified content type.
+    This is all done in batches which may run in parallel.
+    It results in a temporary objectkeys file per batch.
+    As a final step the batch results are merged into one file which is compared to the cache that contains
+    all objectkeys that have ever been exported.
+    
+    Request parameters:
+    sourceCT  - The content type to examine.
+    full      - if "true" examine all data instead of only modified data.
+    useCache  - if "false", do not compare with previous export, but export all extracted object keys.
+    batchSize - max number of products per batch.
+    threads   - Number of threads to use for processing batches concurrently.
+  -->
+  <map:pipelines>
+    <map:component-configurations>
+      <global-variables>
+        <!-- ldir and channel are automatically filled. Uncomment only for testing -->
+        <!-- 
+        <ldir>ObjectKeysProducts/</ldir>
+        <channel>ObjectKeysProducts</channel>
+        -->
+        <batch-prefix>batch.</batch-prefix>
+        <dynamic-stylesheet-file>extractObjectKeys.xsl</dynamic-stylesheet-file>
+        <config-file>objectkeys_config.xml</config-file>
+      </global-variables>
+    </map:component-configurations>
+
+    <map:pipeline name="{global:channel}" type="noncaching">
+      <map:match pattern="runPipeline">
+        <!--
+          This is the starting point of the pipeline. A lock is requested to prevent this pipeline from running multiple
+          times in parallel. When a lock cannot be acquired, an error message is shown. If a lock can be acquired, run
+          exportMain
+        -->
+        <map:act type="synced-copy-source" src="cocoon:/exportStart.{date:yyyyMMddHHmmss}">
+          <map:parameter name="lockName" value="{global:channel}" />
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/report.xml" />
+          <map:generate src="{global:gdir}{global:ldir}temp/report.xml" />
+          <map:serialize type="xml" />
+        </map:act>
+        <map:generate src="../common/xml/locked.xml" />
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--+ 
+          | {1} timestamp 
+          +-->
+      <map:match pattern="exportStart.*">
+        <!-- Set Start Time.of this channel-->
+        <map:act type="copy-source" src="cocoon:/runsql_setstarttime">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetStartTime.xml" />
+        </map:act>
+        <!-- Delete previous temp files -->
+        <map:act type="copy-source" src="cocoon:/deleteTempFiles">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetStartTime.xml" />
+        </map:act>
+        <!-- Recreate the stylesheet (if necessary) -->
+        <map:act type="copy-source" src="cocoon:/updateExtractionStylesheet">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportUpdateStylesheet.xml" />
+        </map:act>
+        <!-- Process batches -->
+        <map:act type="copy-source" src="cocoon:/processBatches.{1}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportProcessBatches.xml" />
+        </map:act>
+        <!-- Merge the batch results -->
+        <map:act type="copy-source" src="cocoon:/mergeBatchResults.{1}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportMergeBatchResults.xml" />
+        </map:act>
+        <!-- Create delta -->
+        <map:act type="copy-source" src="cocoon:/createDelta.{1}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportCreateDelta.xml" />
+        </map:act>
+        <!-- Update the CLE records -->
+        <map:act type="copy-source" src="cocoon:/updateCLE.{1}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportUpdateCLE.xml"/>
+        </map:act>        
+        <!-- Archive files -->
+        <!--
+        <map:act type="copy-source" src="cocoon:/archiveFiles">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportArchiveFiles.xml" />
+        </map:act>
+        -->
+        <!-- Cleanup outbox files -->
+        <map:act type="copy-source" src="cocoon:/deleteOutbox">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportDeleteOutbox.xml" />
+        </map:act>
+        <!-- Set End Time of this channel-->
+        <map:act type="copy-source" src="cocoon:/runsql_setendtime">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetEndTime.xml" />
+        </map:act>
+        <!-- Show result -->
+        <map:act type="copy-source" src="cocoon:/runsql_gettimings">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportGetTimings.xml" />
+        </map:act>
+        <map:aggregate element="root">
+          <map:part src="{global:gdir}{global:ldir}temp/ReportUpdateStylesheet.xml" />
+          <map:part src="{global:gdir}{global:ldir}temp/ReportMergeBatchResults.xml" />
+          <map:part src="{global:gdir}{global:ldir}temp/ReportCreateDelta.xml" />
+          <map:part src="{global:gdir}{global:ldir}temp/ReportUpdateCLE.xml" />
+          <map:part src="{global:gdir}{global:ldir}temp/ReportGetTimings.xml" />
+        </map:aggregate>
+        <map:transform src="xsl/writeContents.xsl">
+          <map:parameter name="file" value="{global:gdir}{global:ldir}logs/Report_{1}.xml"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <!--+
+          | Process batches of objects that need reprocessing.
+          | As a result there will be one file per batch in the outbox, named objectkeys.{ts}.{batchnum}.xml
+          |
+          | {1} timestamp
+          +-->
+      <map:match pattern="processBatches.*">
+        <map:generate src="../common/xml/empty.xml" />
+        
+        <map:transform src="xsl/sql_selectObjects.xsl">
+          <map:parameter name="channel" value="{global:channel}" />
+          <map:parameter name="sourceCT" value="{request-param:sourceCT}" />
+          <map:parameter name="full" value="{request-param:full}" />
+        </map:transform>
+        <map:call resource="sql" />
+
+        <map:transform src="xsl/include2processBatches.xsl">
+          <map:parameter name="channel" value="{global:channel}" />
+          <map:parameter name="ts" value="{1}" />
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}temp" />
+          <map:parameter name="prefix" value="{global:batch-prefix}" />
+          <map:parameter name="threads" value="{request-param:threads}" />
+          <map:parameter name="batch-size" value="{request-param:batchSize}" />
+          <map:parameter name="sourceCT" value="{request-param:sourceCT}" />
+        </map:transform>
+        
+        <!-- Save the current contents because it will be lost in the following steps -->
+        <map:transform type="tee">
+          <map:parameter name="file" value="file:{cmc2:gdir}/{global:ldir}temp/ReportPreProcessBatches.xml"/>
+        </map:transform>
+
+        <map:select type="threads-selector">
+          <map:when test="gt-one">
+            <!-- Write batch files -->
+            <map:transform type="write-source"/>
+            <map:transform src="{cmc2:xslDir}/common/include_writeSource2process.xsl">
+              <map:parameter name="process" value="cocoon:/processBatchFile"/>
+            </map:transform>
+            <map:transform type="include"/>
+          </map:when>
+          <map:otherwise>
+            <map:transform type="include"/>
+          </map:otherwise>
+        </map:select>
+        
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <!--+ 
+          | Process a batch file with includes in parallel 
+          | 
+          | {1} path to batch file 
+          +-->
+      <map:match pattern="processBatchFile/**">
+        <map:generate src="{1}" />
+        <map:transform type="include">
+          <map:parameter name="parallel" value="true" />
+        </map:transform>
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--+
+          | Process a batch.
+          | The result is a file in the outbox, named objectkeys.{ts}.{batchnum}.xml
+          | 
+          | {1} timestamp 
+          | {2} source content type
+          | {3} batch number
+          +-->
+      <map:match pattern="processBatch.*.*.*">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:transform src="xsl/sql_getObjects.xsl">
+          <map:parameter name="channel" value="{global:channel}"/>
+          <map:parameter name="content-type" value="{2}"/>
+          <map:parameter name="batch-num" value="{3}"/>
+          <map:parameter name="batch-size" value="{request-param:batchSize}"/>
+          <map:parameter name="full" value="{request-param:full}"/>
+        </map:transform>
+        <map:call resource="sql" />
+        
+        <map:transform src="{global:gdir}{global:ldir}cache/{global:dynamic-stylesheet-file}"/>
+        <map:transform src="xsl/filterObjectKeys.xsl"/>
+        <map:transform src="xsl/writeContents.xsl">
+          <map:parameter name="file" value="{global:gdir}{global:ldir}outbox/objectkeys.{1}.{3}.xml"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--+
+          | Merge the batch results from the outbox into one file, named objectkeys.{ts}.xml.
+          |
+          | {1} timestamp
+          +-->
+      <map:match pattern="mergeBatchResults.*">
+        <map:generate type="xpathdirectory" src="{global:gdir}{global:ldir}outbox" label="step1">
+          <map:parameter name="xpath" value="/ObjectKeys"/>
+          <map:parameter name="include" value="objectkeys\.{1}\.\d+\.xml"/>
+        </map:generate>
+        <map:transform src="xsl/mergeObjectKeys.xsl"/>
+        <map:transform src="xsl/writeContents.xsl">
+          <map:parameter name="file" value="{global:gdir}{global:ldir}outbox/objectkeys.{1}.xml"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <!--+
+          | Create a delta file from the batch results and the cached object keys.
+          |
+          | {1} timestamp
+          +-->
+      <map:match pattern="createDelta.*">
+        <map:select type="resource-exists">
+          <map:when test="{global:gdir}{global:ldir}cache/objectkeys.xml">
+            <map:select type="parameter">
+              <map:parameter name="parameter-selector-test" value="{request-param:useCache}"/>
+              <map:when test="false">
+                <map:generate src="{global:gdir}{global:ldir}outbox/objectkeys.{1}.xml"/>
+              </map:when>
+              <map:otherwise>
+                <map:aggregate element="root">
+                  <map:part src="{global:gdir}{global:ldir}outbox/objectkeys.{1}.xml"/>
+                  <map:part src="{global:gdir}{global:ldir}cache/objectkeys.xml"/>
+                </map:aggregate>
+              </map:otherwise>
+            </map:select>
+          </map:when>
+          <map:otherwise>
+            <map:generate src="{global:gdir}{global:ldir}outbox/objectkeys.{1}.xml"/>
+          </map:otherwise>
+        </map:select>
+        <map:transform src="xsl/createDelta.xsl">
+          <map:parameter name="delta-path" value="{global:gdir}{global:ldir}archive/ObjectKeys.{1}.xml"/>
+          <map:parameter name="cache-path" value="{global:gdir}{global:ldir}cache/objectkeys.xml"/>
+          <map:parameter name="config-path" value="{cmc2:xmlDir}/objectkeys_config.xml"/>
+          <map:parameter name="timestamp" value="{1}"/>
+          <map:parameter name="system" value="{cmc2:pubSystemId}"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <!--+
+          | {1} timestamp
+          +-->
+      <map:match pattern="updateCLE.*">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:transform type="xslt-saxon" src="xsl/sql_updateCLE.xsl">
+          <map:parameter name="timestamp" value="{1}"/>
+          <map:parameter name="channel" value="{global:channel}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match pattern="deleteOutbox">
+        <!-- Delete all files the outbox directory -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}outbox">
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value=".*"/>
+        </map:generate>
+        <!-- Delete all files -->
+        <map:transform src="../common/xsl/dir2shell_delete.xsl">
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}outbox"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Delete all files in temp directory -->
+      <map:match pattern="deleteTempFiles">
+        <!-- Retrieve all files in temp directory -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}temp">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="include" value=".*" />
+        </map:generate>
+        <!-- Delete all files -->
+        <map:transform src="../common/xsl/dir2shell_delete.xsl">
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}temp" />
+        </map:transform>
+        <map:transform type="shell" />
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--+
+          | Recreate the stylesheet if the config file has been modified
+          | after the last time the stylesheet was generated.
+          +-->      
+      <map:match pattern="updateExtractionStylesheet">
+        <map:aggregate element="root">
+          <map:part src="cocoon:/fileInfo/{cmc2:xmlDir}/{global:config-file}"/>
+          <map:part src="cocoon:/fileInfo/{global:gdir}{global:ldir}cache/{global:dynamic-stylesheet-file}"/>
+        </map:aggregate>
+        <map:transform src="xsl/dir2includeGenerateExtractionStylesheet.xsl">
+          <map:parameter name="config-file-name" value="{global:config-file}"/>
+          <map:parameter name="stylesheet-file-name" value="{global:dynamic-stylesheet-file}"/>
+        </map:transform>
+        <map:transform type="include"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <map:match pattern="generateExtractionStylesheet">
+        <map:generate src="{cmc2:xmlDir}/{global:config-file}"/>
+        <map:transform src="xsl/generateExtractionStylesheet.xsl">
+          <map:parameter name="target-file" value="{global:gdir}{global:ldir}cache/{global:dynamic-stylesheet-file}"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <map:match pattern="fileInfo/**/*.*">
+        <map:generate type="directory" src="{1}">
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss"/>
+          <map:parameter name="include" value="{2}"/>
+        </map:generate>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Set Start / End Time -->
+      <map:match pattern="runsql_*">
+        <map:generate src="../common/xml/empty.xml" />
+        <map:transform src="../common/xsl/{global:db}sql_{1}.xsl">
+          <map:parameter name="channel" value="{global:channel}" />
+           <map:parameter name="run_id" value="{request-param:runId}"/>
+           <map:parameter name="run_mode" value="{request-param:runmode}"/>
+        </map:transform>
+        <map:call resource="sql" />
+        <map:serialize type="xml" />
+      </map:match>
+
+    </map:pipeline>
+  </map:pipelines>
+  <!-- -->
+</map:sitemap>

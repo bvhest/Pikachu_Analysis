@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+	
+	<map:views>
+		<map:view name="content" from-label="content">
+			<map:serialize type="xml"/>
+		</map:view>
+		
+		<map:view name="html" from-label="xml">
+			<map:transform src="xsl/rowset2html.xsl"/>
+			<map:serialize type="html"/>
+		</map:view>
+	</map:views>
+	
+	<map:resources>
+		<map:resource name="sql">
+			<map:transform type="sql">
+				<map:parameter name="use-connection" value="oracleDbCMC"/>
+				<map:parameter name="clob-encoding" value="UTF-8"/>
+			</map:transform>
+		</map:resource>
+	</map:resources>
+	
+	<map:pipelines>
+		<map:pipeline type="noncaching">
+		  <map:match pattern="">
+		    <map:read src="form.html"/>
+		  </map:match> 
+		  
+		  <map:match pattern="content_type_definition">
+		  <!-- 
+		       e.g. Content_Type_Definition?content-type=PMT_Enriched&description=Import&secondary-derivation=0&reference-name=PMT_Enr&localisation=locales&input-content-type=PMT_Raw&input-localisation=same&offset-days=365
+		     -->
+		    <map:generate src="jx/sql-getLocales.jx"/>
+			<map:call resource="sql"/>  
+			<map:transform type="xslt-saxon" src="xsl/createCTDs.xsl">
+				<map:parameter name="dir" value="{cmc2:gdir}/content_type_definition"/>
+				<map:parameter name="description" value="{request-param:description}"/>
+				<map:parameter name="content_type" value="{request-param:content-type}"/>
+				<map:parameter name="description" value="{request-param:description}"/>
+				<map:parameter name="secondary_derivation" value="{request-param:secondary-derivation}"/>
+				<map:parameter name="reference_name" value="{request-param:reference-name}"/>
+				<map:parameter name="localisation" value="{request-param:localisation}"/>
+				<map:parameter name="input_content_type" value="{request-param:input-content-type}"/>
+				<map:parameter name="input_localisation" value="{request-param:input-localisation}"/>
+				<map:parameter name="offset_days" value="{request-param:offset-days}"/>        
+			</map:transform>
+			<map:transform type="write-source"/>
+			<map:transform type="xslt-saxon" src="xsl/createCTCatDefs.xsl">
+				<map:parameter name="localisation" value="{request-param:localisation}"/>
+			</map:transform>
+			<map:serialize type="xml"/>
+		  </map:match> 
+			
+		</map:pipeline>
+	</map:pipelines>
+</map:sitemap>

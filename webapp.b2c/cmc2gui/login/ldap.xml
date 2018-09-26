@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="ldap.xsl" type="text/xsl"?>
+
+<?cocoon-process type="ldap"?>
+<?cocoon-process type="xslt"?>
+<page>
+
+ <ldap-defs>
+  <ldap-server name="searchlight">
+   <initializer>com.sun.jndi.ldap.LdapCtxFactory</initializer>
+   <ldap-serverurl>ldap://ldap.bigfoot.com/</ldap-serverurl>
+  </ldap-server>
+ </ldap-defs>
+
+ <ldap-query server="searchlight" ldap-searchbase="c=US">
+    sn=smith*
+ </ldap-query>
+
+</page>

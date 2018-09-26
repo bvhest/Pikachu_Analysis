@@ -1,0 +1,19 @@
+<groups>
+<group type="Image"  report="y" category="Product Photos" subcategory="standardProductPhotograph" path="AssetList/Asset[ResourceType=('RTP','TLP')]" MCI="1" Key="1" Other="1" Accessory="1"/>
+<group type="Image"  report="y" category="Product Photos" subcategory="frontProductPhotograph" path="AssetList/Asset[ResourceType=('_FP','FTP')]" MCI="1" Key="1" Other="1" Accessory="0"/>
+<group type="Image"  report="y" category="Product Photos" subcategory="mainInUsePhotograph" path="AssetList/Asset[ResourceType=('MI1')]" MCI="1" Key="0" Other="0" Accessory="0"/>
+<group type="Image"  report="y" category="Product Photos" subcategory="GAL" path="AssetList/Asset[ResourceType=('PWL','TRP','UWL','RCP','DPP','D1P','D2P','D3P','D4P','D5P','PA1','TSL','APP','A1P','A2P','A3P','A4P','A5P','UPL','U1P','U2P','U3P','U4P','U5P','CO_','COP')]" MCI="2" Key="2" Other="1" Accessory="0"/>
+<group type="Image"  report="n" category="Misc" subcategory="productVideoActivation" path="AssetList/Asset[ResourceType=('PMB')]" MCI="1" Key="1" Other="0" Accessory="0"/>
+<group type="Image"  report="n" category="Misc" subcategory="featureVideoActivation" path="AssetList/Asset[ResourceType=('FMB')]" MCI="1" Key="0" Other="0" Accessory="0"/>
+<group type="Image"  report="y" category="Feature Images" subcategory="featureImage" path="ObjectAssetList/Object/Asset[ResourceType=('FIM')]" MCI="4" Key="4" Other="1" Accessory="0"/>
+<group type="Text"  report="n" category="Misc" subcategory="KBA" path="KeyBenefitArea" MCI="2" Key="2" Other="1" Accessory="0"/>
+<group type="Text"  report="y" category="Feature Glossary" subcategory="featureGlossary" path="KeyBenefitArea/Feature/FeatureGlossary" MCI="4" Key="4" Other="1" Accessory="0"/>
+<group type="Text"  report="y" category="commercialSpecs" subcategory="commercialSpecs" path="CSChapter/CSItem" MCI="8" Key="8" Other="4" Accessory="0"/>
+<group type="Logo"  report="n" category="Misc" subcategory="masterBrandLogo" path="AssetList/Asset[ResourceType=('BRP')]" MCI="1" Key="1" Other="1" Accessory="1"/>
+<group type="Video"  report="y" category="Product Videos" subcategory="productVideo" path="AssetList/Asset[ResourceType=('PRM')]" MCI="1" Key="1" Other="0" Accessory="0"/>
+<group type="Video"  report="y" category="Feature Videos" subcategory="featureVideo" path="ObjectAssetList/Object/Asset[ResourceType=('FML')]" MCI="1" Key="0" Other="0" Accessory="0"/>
+<group type="Video"  report="y" category="Product 360" subcategory="product360" path="AssetList/Asset[ResourceType=('PRV','P3D')]" MCI="1" Key="1" Other="0" Accessory="0"/>
+<group type="Download"  report="n" category="Downloads" subcategory="GlobalProductLeaflet" path="AssetList/Asset[ResourceType=('GLL')]" MCI="1" Key="1" Other="1" Accessory="1"/>
+<group type="Download"  report="n" category="Downloads" subcategory="LocaleProductLeaflet" path="AssetList/Asset[ResourceType=('PSS')]" MCI="1" Key="1" Other="1" Accessory="1"/>
+<group type="Download"  report="n" category="Downloads" subcategory="UserManual" path="AssetList/Asset[ResourceType=('DFU')]" MCI="1" Key="1" Other="1" Accessory="1"/>
+</groups>

@@ -1,0 +1,6 @@
+/*
+	Print stylesheet for product shop view
+*/
+#icp_content_shop #dr_productTabs dd {
+	display: block !important;
+}

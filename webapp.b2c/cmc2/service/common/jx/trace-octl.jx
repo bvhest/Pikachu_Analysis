@@ -1,0 +1,15 @@
+<sql:execute-query xmlns:sql="http://apache.org/cocoon/SQL/2.0">
+<sql:query>
+select level, output_content_type, output_localisation, output_object_id, input_content_type, input_localisation, input_object_id
+from octl_relations
+connect by 
+	prior input_content_type = output_content_type and 
+	prior input_localisation = output_localisation and 
+	prior input_object_id = output_object_id 
+start with 
+	output_content_type = '${cocoon.parameters.ct}' and 
+	output_localisation = '${cocoon.parameters.l}' and 
+	output_object_id='${cocoon.parameters.o}' and
+	issecondary = 0
+</sql:query>
+</sql:execute-query>

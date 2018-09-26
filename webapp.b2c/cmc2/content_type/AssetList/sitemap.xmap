@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <map:resources>
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC"/>
+        <map:parameter name="clob-encoding" value="UTF-8"/>
+      </map:transform>
+    </map:resource>
+  </map:resources>
+  <!--+
+      | Request parameters
+      | 
+      | tableLoad=y   set when ASSET_LISTS table is to be loaded via ASSET_LISTs_EXT external table and merg sql.
+      |
+      | delta: OPTIONAL
+      |        When equal to 'assets' the inbox file is regarded as containing only modified assets for a
+      |        product. The inbox assets and cahched assets are merged before further processing.
+      |
+      |        Any other value will regard the inbox file as a full asset feed with the products having
+      |        all their assets listed.
+      | limit: OPTIONAL
+      |        When set to an integer(!) value, the value is used to indicate the number of files to move from the inbox
+      |        to the work folder.
+      +-->
+  <map:pipelines>
+    <map:component-configurations>
+      <global-variables>
+        <ct>AssetList</ct>
+      </global-variables>
+    </map:component-configurations>
+    <map:pipeline type="noncaching">
+      <map:match pattern="runMain/*">
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:runmode}"/>
+          <map:when test="FASTLANE">
+            <map:act type="copy-source" src="cocoon:/cleanInboxOnStart/work">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/cleanInboxOnStart_report.xml"/>
+            </map:act>
+            <!--
+              Move limit files from inbox to working folder (/work).
+              All subsequent actions will use the work folder as their source where appropriate.
+            -->
+            <map:act type="copy-source" src="cocoon:/moveInboxFilesToWorkFolder">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/moveInboxFilesToWorkFolder_report.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="cocoon:/splitFiles/{global:ct}/{1}/work">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/splitFiles_report.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="cocoon:/preFilterAssetListFiles/work">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/preFilterAssetListFiles.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="{cmc2:svcURL}/batch/import/createBatches/{global:ct}/{1}?sourcedir={cmc2:gdir}/{global:ct}/work">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/createBatches_report.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="{cmc2:svcURL}/store/deltaSave/batch/import/processBatches/{global:ct}/{1}?createPlaceholder=y">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="cocoon:/archiveFiles/work">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/archive_report.xml"/>
+            </map:act>
+          </map:when>
+          <map:otherwise>
+            <map:act type="copy-source" src="cocoon:/cleanInboxOnStart/inbox">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/cleanInboxOnStart_report.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="cocoon:/splitFiles/{global:ct}/{1}/inbox">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/splitFiles_report.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="cocoon:/preFilterAssetListFiles/inbox">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/preFilterAssetListFiles.xml"/>
+            </map:act>
+            <map:act type="copy-source" src="{cmc2:svcURL}/batch/import/createBatches/{global:ct}/{1}?fileFilter=.*batch_.*\.xml$">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/createBatches_report.xml"/>
+            </map:act>
+
+            <map:act type="copy-source" src="cocoon:/PostProcess/batch/import/processBatches/{global:ct}/{1}">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+            </map:act>
+
+            <map:act type="copy-source" src="cocoon:/archiveFiles/inbox">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/archive_report.xml"/>
+            </map:act>
+          </map:otherwise>
+        </map:select>
+        <map:generate src="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match pattern="PostProcess/**">
+        <map:generate src="{cmc2:svcURL}/{1}"/>
+        <map:transform src="{cmc2:xslDir}/common/include_writeSource2process.xsl">
+          <map:parameter name="process" value="cocoon:/PostProcessEntryFile"/>
+        </map:transform>
+        <map:transform type="cinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="PostProcessEntryFile/**">
+        <map:generate src="{1}"/>
+        <map:transform type="xslt-saxon" src="xsl/include2transformXML.xsl">
+          <map:parameter name="filename" value="{1}"/>
+          <map:parameter name="storeurl" value="{cmc2:svcURL}/store/deltaSaveEntryFile/"/>
+          <!--map:parameter name="storeurl" value="{cmc2:svcURL}/store/saveEntryFile/"/-->
+          <!--map:parameter name="storeurl" value=""/-->
+        </map:transform>
+        <map:transform type="cinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>	
+      <!-- -->
+      <map:match pattern="JustLoadTable">
+        <map:generate type="directory" src="{cmc2:gdir}/{global:ct}/temp_save">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd HH:mm"/>
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value="batch_..............entry.*"/>
+        </map:generate>
+        <map:transform type="xslt-saxon" src="xsl/includeTableLoad.xsl">
+          <map:parameter name="path" value="{cmc2:gdir}/{global:ct}"/>
+        </map:transform>
+        <map:transform type="cinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+     <!-- -->
+      <map:match pattern="JustLoadXML">
+        <map:act type="copy-source" src="cocoon:/JustLoadXML_sub">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/archiveFiles/inbox">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/archive_report.xml"/>
+        </map:act>
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="JustLoadXML_sub">
+        <map:generate type="directory" src="{cmc2:gdir}/{global:ct}/temp_save">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd HH:mm"/>
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value="batch_..............entry.*"/>
+        </map:generate>
+        <map:transform type="xslt-saxon" src="xsl/includeXMLLoad.xsl">
+          <map:parameter name="path" value="{cmc2:gdir}/{global:ct}"/>
+          <map:parameter name="storeurl" value="{cmc2:svcURL}/store/deltaSaveEntryFile/"/>
+          <!--map:parameter name="storeurl" value="{cmc2:svcURL}/store/saveEntryFile/"/-->
+          <!--map:parameter name="storeurl" value="nostore"/-->
+        </map:transform>
+        <map:transform type="cinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+     <!-- -->
+	
+    <!-- -->
+      <map:match pattern="transformXMLToExternalTable/**">
+        <map:act type="copy-source" src="cocoon:/transformXMLToExternalTable_sub/{1}">
+          <map:parameter name="dest" value="{cmc2:oradata_extDir}/assetLists/{request-param:destination}"/>
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/writeLog/{1}">
+          <map:parameter name="dest" value="{1}.done"/>
+        </map:act>
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>	
+	<!-- -->
+      <map:match pattern="transformXMLToExternalTable_sub/**">
+        <map:generate src="{1}"/>
+        <map:transform type="xslt-saxon" src="xsl/transformXMLToExternalTable.xsl">
+          <map:parameter name="contentType" value="{global:ct}"/>
+        </map:transform>
+        <!-- serialize as .dat external table file -->
+        <map:serialize type="text"/>
+      </map:match>
+	  <!-- -->
+    <map:match pattern="writeLog/**">
+      <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+      <map:serialize type="xml"/>
+    </map:match>
+    
+      <map:match pattern="mergeExternalTable/*">
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <map:transform src="xsl/mergeExternalTable.xsl">
+          <map:parameter name="ts" value="{1}"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:serialize type="xml"/>
+      </map:match>
+	  <!-- -->
+      <!--
+        Remove any split files from a previous run
+        {1} directory to clean
+      -->
+      <map:match pattern="cleanInboxOnStart/*">
+        <map:generate type="directory" src="{cmc2:gdir}/{global:ct}/{1}">
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value=".*batch_.*\.xml$"/>
+        </map:generate>
+        <map:transform type="xslt-saxon" src="xsl/dir2shell_delete.xsl">
+          <map:parameter name="sourceDir" value="{cmc2:gdir}/{global:ct}/{1}"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <!-- Process one file that was created in the splitFiles stage -->
+      <map:match pattern="process/*/*/**">
+        <!-- {1} batchnumber {2} timestamp {3} filename -->
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:runmode}"/>
+          <map:when test="FASTLANE">
+            <map:generate src="{cmc2:gdir}/{global:ct}/work/{3}"/>
+          </map:when>
+          <map:otherwise>
+            <map:generate src="{cmc2:gdir}/{global:ct}/inbox/{3}"/>
+          </map:otherwise>
+        </map:select>
+        <map:transform type="xslt-saxon" src="xsl/create_entry_records.xsl">
+          <map:parameter name="ct" value="{global:ct}"/>
+          <map:parameter name="l" value="none"/>
+          <map:parameter name="batchnumber" value="{1}"/>
+          <map:parameter name="ts" value="{2}"/>
+          <map:parameter name="dir" value="{cmc2:gdir}/{global:ct}/cache"/>
+        </map:transform>
+        <map:call resource="sql"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--
+        {1} source folder
+      -->
+      <map:match pattern="preFilterAssetListFiles/*">
+        <map:generate type="directory" src="{cmc2:gdir}/{global:ct}/{1}">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm"/>
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value=".*batch_.*\.xml$"/>
+        </map:generate>
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:delta}"/>
+          <map:when test="assets">
+            <map:transform type="xslt-saxon" src="xsl/include_dir2process_delta.xsl">
+              <map:parameter name="process" value="mergeFiles"/>
+              <map:parameter name="output-folder" value="{1}"/>
+            </map:transform>
+          </map:when>
+          <map:otherwise>
+            <map:transform type="xslt-saxon" src="xsl/include_dir2process.xsl">
+              <map:parameter name="process" value="filterFile/{1}"/>
+              <map:parameter name="sourceDir" value="{cmc2:gdir}/{global:ct}/{1}"/>
+              <map:parameter name="targetDir" value="{cmc2:gdir}/{global:ct}/processed"/>
+            </map:transform>
+          </map:otherwise>
+        </map:select>
+        <map:transform type="cinclude"/>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--
+        Used for delta assets processing.
+        Merges specified files with what is in the cache.
+        
+        {1} = work folder (inbox | work)
+        {2} = space separated list of files to merge (size >= 1)
+       -->
+      <map:match pattern="mergeFiles/*/**">
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <!-- read the files to merge into a new document -->
+        <map:transform src="xsl/prepareMerge.xsl">
+          <map:parameter name="files" value="{2}"/>
+          <map:parameter name="source-folder" value="{cmc2:gdir}/{global:ct}/{1}"/>
+          <map:parameter name="cache-folder" value="{cmc2:gdir}/{global:ct}/cache"/>
+        </map:transform>
+        <map:transform type="cinclude"/>
+        <map:transform type="shell"/>
+        <map:transform src="xsl/merge.xsl"/>
+        <map:transform src="xsl/cleanup-forCompare.xsl"/>
+        <map:transform src="xsl/compareContent.xsl"/>
+        <map:transform src="xsl/processCompareResult.xsl">
+          <map:parameter name="source" value="{cmc2:gdir}/{global:ct}/{1}/"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:transform src="xsl/cleanup-afterCompare.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- 
+        Read a file and return the empty XML file if it doesn't exist.
+        {1} Full file path
+      -->
+      <map:match pattern="readFile/**">
+        <map:select type="resource-exists">
+          <map:when test="{1}">
+            <map:generate src="{1}"/>
+          </map:when>
+          <map:otherwise>
+            <!-- leave file it will be moved to cache during archive-->
+            <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+          </map:otherwise>
+        </map:select>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--
+        Merge one product message file from a source folder with the cached file
+        {1} source folder (relative to ct dir)
+        {2} file prefix
+        {3} batch string
+        {4} file name
+        {5} file extension
+      -->
+      <map:match pattern="filterFile/*/*.*.*.*">
+        <map:select type="resource-exists">
+          <map:when test="{cmc2:gdir}/{global:ct}/cache/{4}.{5}">
+            <map:aggregate element="AssetsToCompare">
+              <map:part src="{cmc2:gdir}/{global:ct}/{1}/{2}.{3}.{4}.{5}"/>
+              <map:part src="{cmc2:gdir}/{global:ct}/cache/{4}.{5}"/>
+            </map:aggregate>
+            <map:select type="parameter">
+              <map:parameter name="parameter-selector-test" value="{request-param:delta}"/>
+              <map:when test="assets">
+                <map:transform type="xslt-saxon" src="xsl/mergeAssets.xsl"/>
+              </map:when>
+            </map:select>
+            <map:transform src="xsl/prepare-forCompare.xsl"/>
+            <map:transform src="xsl/cleanup-forCompare.xsl"/>
+            <map:transform src="xsl/compareContent.xsl"/>
+            <map:transform src="xsl/processCompareResult.xsl">
+              <map:parameter name="source" value="{cmc2:gdir}/{global:ct}/{1}/{2}.{3}."/>
+            </map:transform>
+            <!-- Removes inbox identical to cached content -->
+            <map:transform type="shell"/>
+            <map:transform src="xsl/cleanup-afterCompare.xsl"/>
+          </map:when>
+          <map:otherwise>
+            <!-- leave file it will be moved to cache during archive-->
+            <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+          </map:otherwise>
+        </map:select>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--
+        Archive files from a source folder to the cache based on the results from process batches.
+        If any of the locales for a product report an error the source file for that product is
+        moved to teh failed directory.
+        
+        {1} source folder (relative to ct dir)
+      -->
+      <map:match pattern="archiveFiles/*">
+        <map:aggregate element="root">
+          <map:part src="cocoon:/readProcessBatchesResults"/>
+          <map:part src="cocoon:/readDir/{1}"/>
+        </map:aggregate>
+        <!-- Move the files -->
+        <map:transform type="xslt-saxon" src="xsl/processBatchesResults2shell_archive.xsl">
+          <map:parameter name="sourceDir" value="{cmc2:gdir}/{global:ct}/{1}"/>
+          <map:parameter name="cacheDir" value="{cmc2:gdir}/{global:ct}/cache"/>
+          <map:parameter name="errorDir" value="{cmc2:gdir}/{global:ct}/failed"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match pattern="readProcessBatchesResults">
+        <map:generate src="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+        <map:transform src="xsl/clean_batch_results.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match pattern="readDir/**">
+        <map:generate type="directory" src="{cmc2:gdir}/{global:ct}/{1}">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd HH:mm"/>
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value=".*"/>
+        </map:generate>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!--  -->
+      <map:match pattern="moveInboxFilesToWorkFolder">
+        <map:generate type="directory" src="{cmc2:gdir}/{global:ct}/inbox">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd HH:mm"/>
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value=".*\.xml$"/>
+          <map:parameter name="sort" value="lastmodified"/>
+        </map:generate>
+        <!-- Move limit files to work folder for fastlane processing -->
+        <map:transform src="xsl/dir2shell_move.xsl">
+          <map:parameter name="sourceDir" value="../{global:gdir}{global:ct}/inbox"/>
+          <map:parameter name="targetDir" value="../{global:gdir}{global:ct}/work"/>
+          <map:parameter name="limit" value="{request-param:limit}"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!--+
+          | {1} = content type
+          | {2} = timestamp
+          | {3} = work folder (work | inbox)
+          +-->
+      <map:match pattern="splitFiles/*/*/*">
+        <!-- Perform the split -->
+        <map:act type="copy-source" src="cocoon:/splitFilesSub/{1}/{2}/{3}">
+          <map:parameter name="dest" value="{cmc2:gdir}/{1}/temp/splitFilesSub_report.xml"/>
+        </map:act>
+        <!-- Move the original files to the processed folder -->
+        <map:generate type="directory" src="{cmc2:gdir}/{1}/{3}">
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value="^(fl|P4C|L4B)_.*\.xml$"/>
+          <map:parameter name="exclude" value=".*batch_.*\.xml$"/>
+        </map:generate>
+        <map:transform src="xsl/dir2shell_move.xsl">
+          <map:parameter name="sourceDir" value="{cmc2:gdir}/{1}/{3}"/>
+          <map:parameter name="targetDir" value="{cmc2:gdir}/{1}/processed"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--
+        {1} = content_type
+        {2} = timestamp
+        {3} = work folder (work | inbox)
+      -->
+      <map:match pattern="splitFilesSub/*/*/*">
+        <map:generate type="directory" src="{cmc2:gdir}/{1}/{3}">
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value="^(fl|P4C|L4B)_.*\.xml$"/>
+        </map:generate>
+        <map:transform type="xslt-saxon" src="xsl/include_dir2splitFiles.xsl">
+          <map:parameter name="ct" value="{1}"/>
+          <map:parameter name="timestamp" value="{2}"/>
+          <map:parameter name="work-folder" value="{3}"/>
+        </map:transform>
+        <map:transform type="cinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--
+        {1} = ct
+        {2} = timestamp
+        {3} = filename
+        {4} = fileextension
+        {5} = work folder (work | inbox)
+      -->
+      <map:match pattern="splitFile/*/*/**.*/*">
+        <map:generate src="{cmc2:gdir}/{1}/{5}/{3}.{4}"/>
+        <map:transform type="stx" src="xsl/splitFiles.stx">
+          <map:parameter name="dir" value="{cmc2:gdir}/{1}/outbox/"/>
+          <map:parameter name="filestem" value="{3}"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:transform src="{cmc2:xslDir}/common/shell_moveWriteSourceFile.xsl">
+          <map:parameter name="targetDir" value="{cmc2:gdir}/{1}/{5}"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

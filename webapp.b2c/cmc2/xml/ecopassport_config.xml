@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Ecopassport>
+<GreenFocalAreas>
+	<!-- Green Focal area : Energy -->
+    <GreenFocalArea>
+        <GreenFocalAreaName>Energy</GreenFocalAreaName>
+        <GreenFocalArea_Position>1</GreenFocalArea_Position>
+        <GreenFocalAreaAttributes>        
+				<!--- start Power-->
+				<GreenFocalAreaAttributeSequence>
+					<GreenFocalAreaAttributeName>Power</GreenFocalAreaAttributeName>
+					<GreenFocalAreaAttributeSequencePriority>1</GreenFocalAreaAttributeSequencePriority>
+					<GreenFocalAreaAttribute>
+						<GreenFocalAreaAttributeCode>Power</GreenFocalAreaAttributeCode>
+						<GreenFocalAreaAttributePriority>1</GreenFocalAreaAttributePriority>
+						<CSItemCodeMapping>IT4029051</CSItemCodeMapping>
+						<UseCSItemLabel>false</UseCSItemLabel>
+						<EcoPassportAttributeName>Power</EcoPassportAttributeName>
+						<FAAttributeValueType>v</FAAttributeValueType>						
+					</GreenFocalAreaAttribute>
+				</GreenFocalAreaAttributeSequence>	
+
+				<!--- start Luminous Efficacy -->
+				<GreenFocalAreaAttributeSequence>
+					<GreenFocalAreaAttributeName>Luminous Efficacy</GreenFocalAreaAttributeName>
+					<GreenFocalAreaAttributeSequencePriority>2</GreenFocalAreaAttributeSequencePriority>
+					<GreenFocalAreaAttribute>
+						<GreenFocalAreaAttributeCode>Luminous_Efficacy</GreenFocalAreaAttributeCode>
+						<GreenFocalAreaAttributePriority>1</GreenFocalAreaAttributePriority>
+						<CSItemCodeMapping>IT4026408</CSItemCodeMapping>
+						<UseCSItemLabel>true</UseCSItemLabel>
+						<EcoPassportAttributeName>Luminous Efficacy</EcoPassportAttributeName>
+						<FAAttributeValueType>v</FAAttributeValueType>						
+					</GreenFocalAreaAttribute>
+				</GreenFocalAreaAttributeSequence>
+				
+				<!--- start Dimmablity -->
+				<GreenFocalAreaAttributeSequence>
+					<GreenFocalAreaAttributeName>Dimmablity</GreenFocalAreaAttributeName>
+					<GreenFocalAreaAttributeSequencePriority>3</GreenFocalAreaAttributeSequencePriority>
+					<GreenFocalAreaAttribute>
+						<GreenFocalAreaAttributeCode>Dimmablity</GreenFocalAreaAttributeCode>
+						<GreenFocalAreaAttributePriority>1</GreenFocalAreaAttributePriority>
+						<CSItemCodeMapping>IT4029279</CSItemCodeMapping>
+						<UseCSItemLabel>true</UseCSItemLabel>
+						<EcoPassportAttributeName>Dimmablity</EcoPassportAttributeName>
+						<FAAttributeValueType>v</FAAttributeValueType>
+					</GreenFocalAreaAttribute>
+				</GreenFocalAreaAttributeSequence>				
+			</GreenFocalAreaAttributes>
+		</GreenFocalArea>
+		
+		<!-- Green Focal area : Substances -->
+		<GreenFocalArea>
+			<GreenFocalAreaName>Substances</GreenFocalAreaName>
+			<GreenFocalArea_Position>2</GreenFocalArea_Position>
+			<GreenFocalAreaAttributes> 
+				<!--- start Energy Label -->
+				<GreenFocalAreaAttributeSequence>
+					<GreenFocalAreaAttributeName>Mercury Content</GreenFocalAreaAttributeName>
+					<GreenFocalAreaAttributeSequencePriority>1</GreenFocalAreaAttributeSequencePriority>
+					<GreenFocalAreaAttribute>
+						<GreenFocalAreaAttributeCode>Mercury_Content</GreenFocalAreaAttributeCode>
+						<GreenFocalAreaAttributePriority>1</GreenFocalAreaAttributePriority>
+						<CSItemCodeMapping>IT4026404</CSItemCodeMapping>
+						<UseCSItemLabel>false</UseCSItemLabel>
+						<EcoPassportAttributeName>Mercury Content</EcoPassportAttributeName>
+						<FAAttributeValueType>v</FAAttributeValueType>
+					</GreenFocalAreaAttribute>
+				</GreenFocalAreaAttributeSequence>								
+			</GreenFocalAreaAttributes>
+		</GreenFocalArea>
+		
+		<!-- Green Focal area : Weight -->
+		<GreenFocalArea>
+			<GreenFocalAreaName>Weight</GreenFocalAreaName>
+			<GreenFocalArea_Position>3</GreenFocalArea_Position>
+			<GreenFocalAreaAttributes>							   				
+			</GreenFocalAreaAttributes>
+		</GreenFocalArea>
+		
+		<!-- Green Focal area : Recyclability-->
+		<GreenFocalArea>
+			<GreenFocalAreaName>Recycling</GreenFocalAreaName>
+			<GreenFocalArea_Position>4</GreenFocalArea_Position>
+			<GreenFocalAreaAttributes>
+				<!--- start Lumen maintanance factor 
+				<GreenFocalAreaAttributeSequence>					
+					<GreenFocalAreaAttributeName>Lumen maintanance factor</GreenFocalAreaAttributeName>
+					<GreenFocalAreaAttributeSequencePriority>1</GreenFocalAreaAttributeSequencePriority>
+					<GreenFocalAreaAttribute>
+						<GreenFocalAreaAttributeCode>Lumen_maintanance_factor</GreenFocalAreaAttributeCode>
+						<GreenFocalAreaAttributePriority>1</GreenFocalAreaAttributePriority>
+						<CSItemCodeMapping>IT4029193</CSItemCodeMapping>
+						<UseCSItemLabel>true</UseCSItemLabel>
+						<EcoPassportAttributeName>Lumen maintanance factor</EcoPassportAttributeName>
+						<FAAttributeValueType>v</FAAttributeValueType>
+					</GreenFocalAreaAttribute>
+				</GreenFocalAreaAttributeSequence>	-->			
+			</GreenFocalAreaAttributes>
+		</GreenFocalArea>
+
+		<!-- Green Focal area : Lifetime -->
+		<GreenFocalArea>
+			<GreenFocalAreaName>Reliability</GreenFocalAreaName>
+			<GreenFocalArea_Position>6</GreenFocalArea_Position>
+			<GreenFocalAreaAttributes>
+				<!--- start Rated Lifetime -->
+				<GreenFocalAreaAttributeSequence>
+					<GreenFocalAreaAttributeName>Rated Lifetime</GreenFocalAreaAttributeName>
+					<GreenFocalAreaAttributeSequencePriority>1</GreenFocalAreaAttributeSequencePriority>
+					<GreenFocalAreaAttribute>
+						<GreenFocalAreaAttributeCode>Rated_Lifetime</GreenFocalAreaAttributeCode>
+						<GreenFocalAreaAttributePriority>1</GreenFocalAreaAttributePriority>
+						<CSItemCodeMapping>IT4029167</CSItemCodeMapping>
+						<UseCSItemLabel>false</UseCSItemLabel>
+						<EcoPassportAttributeName>Rated Lifetime</EcoPassportAttributeName>
+						<FAAttributeValueType>v</FAAttributeValueType>
+					</GreenFocalAreaAttribute>
+				</GreenFocalAreaAttributeSequence>
+				
+				<!--- start Number of switchcycles -->
+				<GreenFocalAreaAttributeSequence>
+					<GreenFocalAreaAttributeName>Number of switchcycles</GreenFocalAreaAttributeName>
+					<GreenFocalAreaAttributeSequencePriority>2</GreenFocalAreaAttributeSequencePriority>
+					<GreenFocalAreaAttribute>
+						<GreenFocalAreaAttributeCode>Number_of_switchcycles</GreenFocalAreaAttributeCode>
+						<GreenFocalAreaAttributePriority>1</GreenFocalAreaAttributePriority>
+						<CSItemCodeMapping>IT4029171</CSItemCodeMapping>
+						<UseCSItemLabel>false</UseCSItemLabel>
+						<EcoPassportAttributeName>Number of switchcycles</EcoPassportAttributeName>
+						<FAAttributeValueType>v</FAAttributeValueType>
+					</GreenFocalAreaAttribute>
+				</GreenFocalAreaAttributeSequence>				
+			</GreenFocalAreaAttributes>
+		</GreenFocalArea>
+	</GreenFocalAreas>
+
+<!-- Green Awards -->
+
+<GreenAwards>		
+	<GreenAwardSequence>
+		<GreenAwardSequenceName>EnergyLabel</GreenAwardSequenceName>
+		<GreenAwardSequencePosition>2</GreenAwardSequencePosition>		
+		<GreenAward>
+			<GreenAwardCode>Energy_Efficiency_Label</GreenAwardCode>
+			<GreenAwardName>EnergyLabel</GreenAwardName>
+			<AwardCodeMapping>IT4026378</AwardCodeMapping>			
+			<GreenAwardPriority>1</GreenAwardPriority>
+		</GreenAward>		
+	</GreenAwardSequence>	
+</GreenAwards>
+</Ecopassport>
+

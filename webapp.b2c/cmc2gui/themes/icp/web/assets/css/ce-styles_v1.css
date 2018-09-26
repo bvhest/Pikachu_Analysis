@@ -1,0 +1,392 @@
+/* In Page Navigation (ipn) */
+#icp_content_website #p-ipn {
+	padding:8px 9px 0 10px;
+}
+#icp_content_website #p-ipn-context-nav {
+	float:left;
+	width:180px;
+}
+#icp_content_website #p-ipn-filter-keys {
+	float:left;
+	overflow:hidden;
+	padding-left:10px;
+	padding-bottom:5px;
+	position:relative;
+	top:-1px;
+	width:740px;
+}
+/* IE6 Only */
+* html #icp_content_website #p-ipn-filter-keys {top:-9px;padding-bottom:0}
+/* IE7 Only */
+*:first-child+html #icp_content_website #p-ipn-filter-keys {top:-5px;padding-bottom:0}
+
+#icp_content_website #p-ipn-filter-keys .p-ipn-filter-item {
+	float:left;
+	text-align:center;
+	width:120px;
+}
+#icp_content_website #p-ipn-filter-keys .p-ipn-filter-item a {color:#5d6678;}
+#icp_content_website #p-ipn-filter-keys .p-img-wrapper {
+	text-align:center;
+	width:120px;
+}
+#icp_content_website #p-ipn-filter-keys p {
+	color:#666;
+	font-size:10px;
+	line-height:110%;
+	margin:0;
+	padding:3px 5px 0;
+}
+#icp_content_website #p-ipn-filter-keys p.p-view-more {
+	float:left;
+	padding-top:73px;
+	margin-left:20px;
+	width:auto;
+}
+#icp_content_website #p-ipn-filter-keys p.p-view-more a.p-view-more {
+	background:url(../img/arrow_blue_normal.gif) no-repeat scroll right center;
+	padding-right:8px;
+}
+/* below: temporary styles so that we can display top 3 products in the filter keys section. remove this when this is no longer required. Phase 2, I think */
+#icp_content_website #p-ipn-filter-keys .p-top3 {clear:left}
+#icp_content_website #p-ipn-filter-keys .p-top3-wrapper {
+	float:left;
+	text-align:center;
+	width:120px;
+}
+#icp_content_website #p-ipn-filter-keys  img {width:70px;height:70px}
+#icp_content_website #p-ipn-filter-keys .p-top3 a {
+	color:#5D6678;
+	font-size:10px;
+}
+#icp_content_website #p-ipn-filter-keys .p-top3-wrapper p {
+	line-height:110%;
+}
+#icp_content_website #p-ipn-filter-keys div.p-view-more {
+	float:left;
+	margin-left:20px;
+	padding-top:70px;
+}
+#icp_content_website #p-ipn-filter-keys div.p-view-more p {width:auto}
+#icp_content_website #p-ipn-filter-keys div a.p-view-more {
+	background:url(../img/arrow_blue_normal.gif) no-repeat scroll right center;
+	padding-right:8px
+}
+/* above: temporary styles so that we can display top 3 products in the filter keys section. remove this when this is no longer required. Phase 2, I think */
+
+#icp_content_website #p-hrp-msg a.p-view-more {
+	background:url(../img/arrow_blue_normal.gif) no-repeat scroll right center;
+	padding-right:8px
+}
+#icp_content_website #p-ipn a.p-view-more {
+	color:#06c;
+	font-weight:bold;
+	font-size:10px;
+}
+/* co-branding logo. This overwrites the gmm.css version */
+#icp_content_website #p-ipn-co-branding {
+	float:right;
+	width:200px;
+}
+#icp_content_website #p-ipn-co-branding img.p-co-branding {
+	float:right;
+	height:50px;
+	margin:0 10px 0 0;
+	width:90px;
+}
+
+/* Highest Ranking Product (p-hrp) */
+#icp_content_website #p-hrp {padding-bottom:10px;}
+#icp_content_website #p-hrp-img {
+	float:left;
+	overflow:hidden;
+	padding:18px 0 0 55px;
+	width:442px;
+}
+#icp_content_website #p-hrp-msg {
+	float:left;
+	margin:18px 0 0;
+	width:350px;
+}
+#icp_content_website #p-hrp .p-without-cobranding {
+	padding-top:16px;	
+}
+#icp_content_website #p-hrp h3 {padding:0}
+#icp_content_website #p-hrp h4 {margin-top:20px}
+#icp_content_website #p-hrp p {margin:0}
+#icp_content_website #p-hrp a.learnMore {margin-top:10px}
+#icp_content_website #p-hrp #buy1 {
+	margin-top:20px;
+	width:1px;
+}
+
+/* Rich Content Block (p-rcb) */
+#icp_content_website #p-rcb {}
+
+/* Category Tools section */
+#icp_content_website #p-category-tools {
+	background:transparent url(../img/tmp_bg_grey_flare.gif) no-repeat top center;
+	margin-top:9px;
+	padding-top:10px;
+}
+#icp_content_website #p-category-tools p {margin:0;color:#989aa9;line-height:110%;margin-top:2px;}
+#icp_content_website #p-category-tools .p-top-row, 
+#icp_content_website #p-category-tools .p-btm-row {
+	clear:both;
+	width:100%
+}
+#icp_content_website #p-category-tools .p-btm-row {border-top:1px solid #dee0e3;}
+#icp_content_website #p-category-tools .p-col-25, 
+#icp_content_website #p-category-tools .p-col-50 {float:left}
+#icp_content_website #p-category-tools .p-col-25 {width:240px}
+#icp_content_website #p-category-tools .p-col-50 {width:480px}
+#icp_content_website #p-category-tools h4 {color:#252F47;margin:0;font-size:12px}
+#icp_content_website #p-category-tools h4.p-decision {color:#252F47}
+#icp_content_website #p-category-tools a {
+	color:#06c;
+	display:block;
+	font-size:11px
+}
+#icp_content_website #p-category-tools .p-top-row .p-top3,
+#icp_content_website #p-category-tools .p-top-row .p-col-25, 
+#icp_content_website #p-category-tools .p-top-row .p-col-50 {
+	background:transparent url(../img/tmp_p-hub-article-divider-top.gif) no-repeat scroll right center;
+	height:180px;
+}
+#icp_content_website #p-category-tools .p-btm-row .p-col-25, 
+#icp_content_website #p-category-tools .p-btm-row .p-col-50 {
+	background:transparent url(../img/tmp_p-hub-article-divider-bottom.gif) no-repeat scroll right center;
+	height:120px;
+}
+#icp_content_website #p-category-tools .p-btm-row .p-col-last, 
+#icp_content_website #p-category-tools .p-top-row .p-col-last,
+#icp_content_website #p-category-tools .p-top3 .p-col-last {background:none;clear:right}
+#icp_content_website #p-category-tools .p-col-50 .p-img-wrapper, 
+#icp_content_website #p-category-tools .p-col-50 .p-msg-wrapper {
+	float:left;
+	overflow:hidden;
+}
+#icp_content_website #p-category-tools .p-top-row .p-col-50 .p-img-wrapper {
+	padding-top:80px;
+	text-align:center;
+	width:200px;
+}
+#icp_content_website #p-category-tools .p-top-row .p-col-50 .p-msg-wrapper {
+	padding-top:65px;
+	width:235px;
+}
+#icp_content_website #p-category-tools .p-btm-row .p-col-50 .p-img-wrapper {
+	padding-top:25px;
+	text-align:center;
+	width:200px;
+}
+#icp_content_website #p-category-tools .p-btm-row .p-col-50 .p-msg-wrapper {
+	padding-top:15px;
+	width:235px;
+}
+#icp_content_website #p-category-tools .p-top-row .p-col-25 .p-img-wrapper {
+	padding-top:25px;
+	text-align:center;
+	width:200px;
+}
+#icp_content_website #p-category-tools .p-top-row .p-col-25 .p-msg-wrapper {
+	padding:15px 0 15px 30px;
+	width:170px;
+}
+#icp_content_website #p-category-tools .p-top3 {
+	float:left;
+	padding-left:25px;
+	width:440px;
+}
+#icp_content_website #p-category-tools .p-top3 h3 {font-size:12px;margin:4px 0 11px 0; color:#252F47;}
+#icp_content_website #p-category-tools .p-top3 a {color:#5D6678;font-size:10px;}
+#icp_content_website #p-category-tools .p-top3 .p-top3-wrapper {
+	float:left;
+	text-align:center;
+	width:140px;
+}
+#icp_content_website #p-category-tools .p-top3 .p-top3-wrapper p {
+	padding:0 5px;
+}
+#icp_content_website #p-category-tools p.p-view-more {margin-top:5px}
+#icp_content_website #p-category-tools span.p-blue-arrow {
+	background: url(../img/arrow_blue_normal.gif) no-repeat scroll right center;
+	padding-left:4px;
+}
+
+/* Generic tool (p-generic-tools) */
+#icp_content_website #p-generic-tools {
+	background:transparent url(../img/tmp_bg_generic-tools-tile.gif) repeat-x top left;
+	height:115px;
+	font-size:11px;
+	width:960px;
+	overflow:hidden;
+}
+#icp_content_website #p-generic-tools p {margin:0}
+#icp_content_website #p-generic-tools p.header {
+	color:#000;
+	font-weight:bold;
+}
+#icp_content_website #p-generic-tools p.content {
+	color:#999faa;
+	padding:5px 15px 5px 0;
+}
+#icp_content_website #p-generic-tools .p-generic-tools-item {
+	background:transparent url(../img/tmp_bg_generic-tools-separator.gif) no-repeat top right;
+	float:left;
+	height:115px;
+	overflow:hidden;
+	padding:15px 0 0 30px;
+	width:290px;
+} 
+#icp_content_website #p-generic-tools .p-generic-tools-item.p-col-last {background:none;clear:right}
+#icp_content_website #p-generic-tools .p-generic-tools-item.pi_NewsLetterRegister_v2 .txtbox {
+	float:left;
+	margin:2px 10px 0 0;
+	width:160px
+}
+#icp_content_website #p-generic-tools .p-generic-tools-item.pi_NewsLetterRegister_v2 .privacypolicy {
+	clear:both;
+	display:block;
+	position:relative;
+	top:5px
+}
+#icp_content_website #p-generic-tools #buy2 {margin-right:15px;position:relative;top:0;left:0;padding-top:27px;}
+#icp_content_website #p-generic-tools .p-generic-tools-item .detail {
+	float:left;
+	width:149px;	
+}
+/* SEO Links (p-seo-links) */
+#icp_content_website #p-seo-links
+{
+	overflow:hidden; 
+	background:#F4F5F6;
+}
+#icp_content_website #p-seo-links .p-seo-links-item {
+	float:left;
+	overflow:hidden;
+	padding:15px 0 10px 30px;
+	width: 210px;
+}
+#icp_content_website #p-seo-links p {margin:0;}
+#icp_content_website #p-seo-links p.header {
+	color:#000;
+	font-weight:bold;
+	margin:0px;
+}
+#icp_content_website #p-seo-links p a {
+	font-size:10px;
+}
+/* Overwrite crsc style so bar along bottom of page has grey area rather than white that */
+#icp_content_website #p-body-bottomwrapper {
+	background:#EDEEF0 url(../img/body_bottomwrapper_bg_cin1.gif) no-repeat
+}
+
+#icp_content_website .p-grey-breaker {
+	background:#fff url(../img/tmp_greyBar.gif) no-repeat top left;
+	height:10px;
+}
+#icp_content_website .p-bold-font {
+	font-weight:bold;
+}
+#icp_content_website div.p-title-wrapper {
+	float:left;
+	width:500px
+}
+#icp_content_website #articlepage{
+ margin-top: 0px;
+}
+/* For Serie pages */
+#icp_content_website #grid-1col-row2 { padding:10px 15px 0 15px; }
+#icp_content_website #product_light { display:block; margin-top:0px;}
+#icp_content_website #grid-1col-row2 .p-without-cobranding {
+	padding-top:23px;	
+}
+#icp_content_website #grid-1col-row2 .p-with-cobranding {
+	padding-top:71px;	
+}
+#icp_content_website #seriedescription dl {
+	margin-top:0px
+}
+#icp_content_website #serieimg {
+	float:left;
+	margin:0 20px 0 10px;
+	overflow:hidden;
+	width:460px;
+}
+#icp_content_website #seriedescription { float:left; width:400px; }
+#icp_content_website #seriedescription h3 { font-size: 220%; }
+#icp_content_website #seriedescription dt { color:#992C96; }
+#icp_content_website #seriedescription dd {
+	color:#000;
+	margin:0;
+	padding:0;
+}
+#icp_content_website #seriedescription p.p-view-more a.p-view-more {
+	background:url(../img/arrow_blue_normal.gif) no-repeat scroll right center;
+	padding-right:8px;
+}
+#icp_content_website ul.featurehighlights {
+	list-style-type: none;
+	margin:0px;
+	padding:0px;
+}
+#icp_content_website ul.featurehighlights li {
+	background: url(/crsc/images/navlevel04-on.gif) no-repeat 0 50%;
+	padding: 0px 0 0px 8px;
+	width:275px;
+}
+#icp_content_website ul.featurehighlights li img { float:right; }
+#icp_content_website #seriefeatures {margin:0 0px 10px 0; padding-top:0px;}
+#icp_content_website #seriefeatures .feature {float:left; width:283px; margin:10px 0px 10px 0px;}
+#icp_content_website #seriefeatures .article2 {margin-left:35px;}
+#icp_content_website #seriefeatures .feature img { text-align:center; margin:0 auto; }
+#icp_content_website #grid-1col-row2 #p-category-tools { margin-top:0px; background:none; padding-top:5px;}
+#icp_content_website #serie-topbrand {overflow:hidden; position:absolute; }
+#icp_content_website #category-list { background:#f4f5f6; padding:15px 30px; overflow:hidden; height:100%;  }
+#icp_content_website #category-list span { color:#5d6678; font-weight:700; }
+#icp_content_website #category-list div a { font-size:11px; }
+#icp_content_website #category-list div.product-categories { float:left; width:480px;}
+#icp_content_website #category-list div.product-series { float:left; }
+#icp_content_website #p-serieslisting-separator {
+	background:transparent url(../img/tmp_bg_grey_flare.gif) no-repeat top center;
+	margin-top:0px;
+	padding-top:10px;
+}
+#icp_content_website #p-serieslisting-separator-wide {
+	background:transparent url(../img/bg_grey_wide_flare.gif) no-repeat top center;
+	margin-top:10px;
+	padding-top:10px;
+}
+#icp_content_website #glossary-popuplayer {
+	background:transparent url(../img/bg_formlayer_dropshadow.png) no-repeat;
+	background-position:0 5px;
+	padding:0 15px 3px;
+	position:absolute;
+	width:370px;
+	top:230px;
+	left:350px;
+}
+/* IE6 hack: give popup layer a background color rather than png dropshadow */
+* html #icp_content_website #glossary-popuplayer {
+	background-image:none;
+	padding:0px;
+	border:1px solid #A49A9A;
+	top:150px;
+	left:300px;
+}
+#icp_content_website #glossary-popuplayer div p { margin: 0 10px 10px 10px; }
+#icp_content_website #seriefeatures a.showall {
+	background:transparent url(../img/arrow_blue_normal.gif) no-repeat top left;
+	background-position:0 50%;
+	padding-left:10px;
+	font-weight: 700;
+	margin:0 0 10px 0;
+}
+#icp_content_website #seriefeatures a.showall.vselected {
+	background:transparent url(../img/arrow_blue_down.gif) no-repeat;
+	background-position:0 50%;
+}
+/* End: For Serie pages */
+
+#icp_content_website #avent-toolkit { padding:10px 0px; overflow:hidden; height:100%;  }

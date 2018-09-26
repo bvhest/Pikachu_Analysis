@@ -1,0 +1,2912 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>nly91888</Author>
+  <LastAuthor>Freek Segers</LastAuthor>
+  <Created>2007-08-24T14:18:42Z</Created>
+  <LastSaved>2007-11-22T07:39:10Z</LastSaved>
+  <Company>Philips</Company>
+  <Version>11.8132</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>5190</WindowHeight>
+  <WindowWidth>19125</WindowWidth>
+  <WindowTopX>-15</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <ActiveSheet>3</ActiveSheet>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Verdana" x:Family="Swiss" ss:Bold="1"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s22">
+   <Alignment ss:Vertical="Top"/>
+   <Borders/>
+   <Font ss:FontName="Verdana" x:Family="Swiss" ss:Bold="1"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s23">
+   <Alignment ss:Vertical="Bottom"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss" ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="s24">
+   <Alignment ss:Vertical="Top"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s25">
+   <Alignment ss:Vertical="Bottom"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s26">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s27">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s28">
+   <Borders/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s29">
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s30">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s31">
+   <Alignment ss:Vertical="Top"/>
+   <Borders/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s32">
+   <Alignment ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="Verdana" x:Family="Swiss" ss:Italic="1"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s33">
+   <Alignment ss:Vertical="Top"/>
+   <Borders/>
+   <Font x:Family="Swiss" ss:Bold="1"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s34">
+   <Alignment ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:Italic="1"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s35">
+   <Alignment ss:Vertical="Top"/>
+   <Borders/>
+   <Font x:Family="Swiss"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s36">
+   <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+   <Font/>
+  </Style>
+  <Style ss:ID="s37">
+   <Alignment ss:Vertical="Bottom"/>
+  </Style>
+  <Style ss:ID="s38">
+   <Alignment ss:Vertical="Top"/>
+   <Borders/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+   <Interior/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="s39">
+   <Alignment ss:Vertical="Center"/>
+   <Font/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Tabnames">
+  <Table ss:ExpandedColumnCount="27" ss:ExpandedRowCount="34" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:Width="105"/>
+   <Column ss:Width="161.25"/>
+   <Column ss:Width="162.75"/>
+   <Column ss:Width="241.5"/>
+   <Column ss:Width="112.5"/>
+   <Column ss:Width="210"/>
+   <Column ss:Width="161.25"/>
+   <Column ss:Width="185.25"/>
+   <Column ss:Width="201"/>
+   <Column ss:Width="216.75"/>
+   <Column ss:Width="246.75"/>
+   <Column ss:Width="161.25"/>
+   <Column ss:Width="186"/>
+   <Column ss:Width="194.25"/>
+   <Column ss:Width="195"/>
+   <Column ss:Width="171"/>
+   <Column ss:Width="207.75"/>
+   <Column ss:Width="147"/>
+   <Column ss:Width="221.25"/>
+   <Column ss:Width="216.75"/>
+   <Column ss:Width="201"/>
+   <Column ss:Width="154.5"/>
+   <Column ss:Width="168"/>
+   <Column ss:Width="180"/>
+   <Column ss:Width="153.75"/>
+   <Column ss:Width="161.25"/>
+   <Column ss:Width="217.5"/>
+   <Row>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Name</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">English</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">French</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Russian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Simplified Chinese</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Dutch</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Portugese (Brazil)</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">German</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Italian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Bulgarian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Czech</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Danish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Greek</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Latin Spanish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Spanish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Finnish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Hungarian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Korean</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Norwegian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Polish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Portugese</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Romanian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Slovak</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Swedish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Thailand</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Turkish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Traditional Chinese</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">220WS8FS</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Widescreen Monitor</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Moniteur 16/9</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Широкоэкранный монитор</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">宽屏幕显示器</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Breedbeeldmonitor</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Monitor widescreen</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Breitbild-Monitor</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Monitor Widescreen</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Широкоекранен монитор</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Širokoúhlý monitor</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Widescreen-skærm</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Οθόνη widescreen</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Monitor panorámico</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Monitor panorámico</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Laajakuvanäyttö</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Szélesképernyős monitor</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">와이드스크린 모니터</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Widescreen-skjerm</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Monitor panoramiczny</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Widescreen Monitor</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Monitor cu ecran lat</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Širokouhlý monitor</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Widescreen-skärm</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">จอไวด์สกรีน</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Geniş Ekran Monitör</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">闊熒幕顯示器</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Accessories</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV with Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Плоский ТВ с подсветкой Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">流光溢彩平板电视</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV met Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV com Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat-TV mit Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV con Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Плосък телевизор с Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Plochý televizor vybavený technologií Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV med Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV με Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV con Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV con Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ambilight-laajakuvatelevisio</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Síkképernyős TV Ambilight-tal</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">엠비라이트 평면 TV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat-TV med Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Płaski telewizor z Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">TV plano com Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV cu Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Plochý TV s Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Platt-TV med Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV ที่มี Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Flat TV ve Ambilight</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">擁有 Ambilight 幻變環迴燈光設計的 Flat TV</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Ambisound_HTS6600</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Theater with Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Cinéma Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Домашний кинотеатр с Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ambisound 家庭影院</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Theatre met Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home cinema com Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Entertainment mit Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistema Home Theater con Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Система за домашно кино с Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Domácí kino s&#160;technologií Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Theater med Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Cinema με Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Theater con DVD y Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Cine en casa con Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Kotiteatteri, jossa on Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Házimozi Ambisound funkcióval</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">앰비사운드 홈시어터</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hjemmekino med Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zestaw kina domowego z Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Cinema em Casa DVD com Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Theater cu Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Domáce kino s Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hemmabiosystem med Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">โฮมเธียเตอร์พร้อมด้วย Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ambisound özellikli Ev Sineması</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">備有 Ambisound 功能的家庭影院系統</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Ambisound_HTS8100</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Theater with Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Cinéma Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Домашний кинотеатр с Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ambisound 家庭影院</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Theatre met Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home cinema com Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Entertainment mit Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistema Home Theater con Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Система за домашно кино с Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Domácí kino s&#160;technologií Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Theater med Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Cinema με Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Theater con DVD y Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Cine en casa con Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Kotiteatteri, jossa on Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Házimozi Ambisound funkcióval</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">앰비사운드 홈시어터</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hjemmekino med Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zestaw kina domowego z Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Cinema em Casa DVD com Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Home Theater cu Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Domáce kino s Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hemmabiosystem med Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">โฮมเธียเตอร์พร้อมด้วย Ambisound</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ambisound özellikli Ev Sineması</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">備有 Ambisound 功能的家庭影院系統</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">amBX</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">arcitec</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Babycare</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">BluRay</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray Disc Drive</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lecteur de disques Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Дисковод Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">蓝光光盘驱动</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray Disc-station</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Unidade de disco Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray-Disc-Laufwerk</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Unità Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Дисково устройство Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mechanika Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray-diskdrev</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Μονάδα δίσκου Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Unidad de disco Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Unidad de Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray-levyasema</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray Disc meghajtó</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray Disc 드라이브</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray-stasjon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Napęd Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray Disc Drive</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Unitate Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Disková mechanika Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray Disc-enhet</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">ไดรฟ์ Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray Disk Sürücüsü</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Blu-ray 光碟機</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Dect_Black</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT Phone</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Téléphone DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Телефон DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT 电话</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-telefoon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefone DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-Telef.</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefono DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT телефон</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefon DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Τηλέφωνο DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Teléfono DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Teléfono DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-puhelin</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT 전화</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefon DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT Phone</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefon DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefón DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">โทรศัพท์ DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT Telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT 電話</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Dect_White</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT Phone</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Téléphone DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Телефон DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT 电话</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-telefoon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefone DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-Telef.</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefono DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT телефон</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefon DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Τηλέφωνο DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Teléfono DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Teléfono DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-puhelin</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT 전화</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefon DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT Phone</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefon DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefón DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">โทรศัพท์ DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT Telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DECT 電話</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Digital_Photoframe</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Flat_TV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">TVHD</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">HDTV</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">HDR</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hard Disk Recorder</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Enregistreur avec disque dur</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Рекордер с жестким диском</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">硬盘刻录机</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Recorder met harde schijf</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Gravador de disco rígido</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Festplatten-Recorder</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Recorder con hard disk</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Рекордер с твърд диск</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Rekordér s&#160;pevným diskem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Harddiskoptager</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hard Disk Recorder</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Grabadora de disco duro</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Grabador de disco duro</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Kiintolevytallennin</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Merevlemezes felvevő</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">하드 디스크 레코더</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Harddiskopptaker</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Nagrywarka z dyskiem twardym</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hard Disk Recorder</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Recorder cu hard disk</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Rekordér s pevným diskom</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hårddiskinspelare</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">เครื่องบันทึกฮาร์ดดิสก์</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sabit Disk Kaydedici</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">硬碟錄影機</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Household</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">household_vacuum</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Ipod_Docking</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Docking Entertainment System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Station d'accueil pour baladeur</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Cистема развлечений с док-станцией</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">底座式娱乐系统</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Basisstation voor entertainmentsysteem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Docking Entertainment System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Docking-Entertainment-System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Docking-Entertainment-System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Докинг система за забавления</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Dokovací systém zábavy</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Docking-underholdningssystem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Σύνδεση συστήματος ψυχαγωγίας</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistema de entretenimiento c/ plataf</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistema de entretenimiento con base</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Viihdejärjestelmätelakka</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Szórakoztatórendszer dokkolóegységgel</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">도킹 엔터테인먼트 시스템</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Underholdningssystem med dokkingstasjon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zestaw audiowizualny ze stacją dokującą</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistemas de entretenimento com base</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistem cu staţie de andocare</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Dokovací zábavný systém</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Dockningssystem för underhållning</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">ระบบเชื่อมต่อความบันเทิง</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bağlantı Eğlence Sistemi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">擴充機座娛樂系統</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">LookHotEveryDay</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Garmentcare</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">MCM700</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Micro Audio System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Microchaîne</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Микроаудиосистема</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">微型音响系统</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Micro audiosysteem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Micro System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Audio-Mikrosystem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistema audio micro</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Микро аудиосистема</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mikrosystém</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mikrolydsystem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ηχοσύστημα Μicro</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Microsistema de audio</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Microcadenas</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mikrosarja</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mikro-audiorendszer</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">마이크로 오디오 시스템</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mikro audiosystem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mikrowieża Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistema Áudio Micro</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Microsistem audio</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mikrosystém</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mikrosystem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">ระบบเสียง Micro</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mikro Ses Sistemi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">微型音響系統</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Micro_Theater</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">MCD908</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">PersonalCare</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Personal care</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Perfectgift</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Looking for a gift?</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Portable_DVD</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Portable DVD Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lecteur de DVD portable</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Портативный DVD плеер</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">便携式 DVD 播放机</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Draagbare DVD-speler</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DVD Player Portátil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Tragbare DVD-Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lettore DVD portatile</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Портативен DVD плеър</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Přenosný DVD přehrávač</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bærbar DVD-afspiller</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Φορητό DVD Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Reproductor de DVD portátil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Reproductor de DVD portátil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Kannettava DVD-soitin</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hordozható DVD-lejátszó</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">휴대용 DVD 플레이어</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bærbar DVD-spiller</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Przenośny odtwarzacz DVD</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Leitor de DVD portátil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">DVD player portabil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prenosný DVD prehrávač</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bärbar DVD-spelare</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">เครื่องเล่น DVD แบบพกพา</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Portatif DVD Çalar</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">便攜式 DVD 機</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Prestigo</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Universal Remote Control</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Télécommande universelle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Универсальный пульт ДУ</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">通用遥控器</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Universele afstandsbediening</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Controle remoto universal</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Universal-Fernbedienung</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telecomando universale</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Универсално дистанционно управление</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Univerzální dálkové ovládání</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Universel fjernbetjening</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Τηλεχειριστήριο παγκόσμιας χρήσης</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Control remoto universal</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Mando a distancia universal</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Yleiskaukosäädin</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Univerzális távvezérlő</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">범용 리모콘</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Universell fjernkontroll</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Uniwersalny pilot</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telecomando Universal</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telecomandă universală</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Univerzálne diaľkové ovládanie</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Universalfjärrkontroll</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">รีโมทคอนโทรลอเนกประสงค์</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Evrensel Uzaktan Kumanda</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">萬能遙控器</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">SA6045</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Portable Audio Video Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lecteur audio vidéo portable</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Портативный видео/аудио плеер</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">便携式音频视频播放机</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Draagbare audio/videospeler</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Audio/Video Player portátil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Tragbarer Audio-/Video-Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lettore audio/video portatile</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Портативен аудио/видео плейър</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Přenosný audio video přehrávač</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bærbar lyd-/videoafspiller</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Φορητό Audio Video Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Reproductor de audio y video portátil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Reproductor de audio y vídeo portátil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Kannettava ääni- ja videosoitin</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hordozható audio- és videolejátszó</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">휴대용 오디오/비디오 플레이어</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bærbar audio-/video-spiller</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Przenośny odtwarzacz audio-wideo</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Portable Audio Video Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Player audio/video portabil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prenosný audio/video prehrávač</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bärbar ljud-/videospelare</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">เครื่องเล่นเพลงและวิดีโอแบบพกพา</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Taşınabilir Ses/Video Oynatıcı</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">便攜式影音播放機</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">SA9345</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Portable Audio Video Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lecteur audio vidéo portable</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Портативный видео/аудио плеер</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">便携式音频视频播放机</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Draagbare audio/videospeler</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Audio/Video Player portátil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Tragbarer Audio-/Video-Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lettore audio/video portatile</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Портативен аудио/видео плейър</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Přenosný audio video přehrávač</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bærbar lyd-/videoafspiller</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Φορητό Audio Video Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Reproductor de audio y video portátil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Reproductor de audio y vídeo portátil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Kannettava ääni- ja videosoitin</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hordozható audio- és videolejátszó</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">휴대용 오디오/비디오 플레이어</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bærbar audio-/video-spiller</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Przenośny odtwarzacz audio-wideo</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Portable Audio Video Player</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Player audio/video portabil</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prenosný audio/video prehrávač</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bärbar ljud-/videospelare</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">เครื่องเล่นเพลงและวิดีโอแบบพกพา</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Taşınabilir Ses/Video Oynatıcı</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">便攜式影音播放機</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">Shaving</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Swarovski</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">VOIP321</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/DECT Phone</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Téléphone Internet/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Телефон DECT с подключением к Интернету</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">互联网/DECT 电话</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/DECT-telefoon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefone para Internet/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet-/DECT-Telef.</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefono Internet/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Телефон Интернет/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet / telefon DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/τηλέφωνο DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Teléfono Internet/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/Teléfono DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/ DECT-puhelin</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/DECT telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">인터넷/DECT 전화</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internett-/DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefon internetowy/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet / Telefone DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/Telefon DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internetový/DECT telefón</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet-/DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">โทรศัพท์อินเตอร์เน็ต/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/DECT Telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">網絡／DECT 電話</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">VOIP841</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/DECT Phone</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Téléphone Internet/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Телефон DECT с подключением к Интернету</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">互联网/DECT 电话</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/DECT-telefoon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefone para Internet/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet-/DECT-Telef.</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefono Internet/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Телефон Интернет/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet / telefon DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/τηλέφωνο DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Teléfono Internet/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/Teléfono DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/ DECT-puhelin</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/DECT telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">인터넷/DECT 전화</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internett-/DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Telefon internetowy/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet / Telefone DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/Telefon DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internetový/DECT telefón</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet-/DECT-telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">โทรศัพท์อินเตอร์เน็ต/DECT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Internet/DECT Telefon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">網絡／DECT 電話</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">WACS7000</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Wireless Music System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Streamium Music System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Беспр. муз. система</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">无线音乐系统</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Wireless Music System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistema sem fio de músicas</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Wireless Music System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Wireless Music System</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Безжична музикална станция</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bezdrátový hudební systém</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Trådløst musiksystem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ασύρματο μουσικό σύστημα</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistema de música inalámbrico</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistema de música inalámbrico</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Langaton äänentoistojärjestelmä</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Vezeték nélküli zenerendszer</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">무선 음악 시스템</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Trådløst musikksystem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zestaw muzyczny Wi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistema de som sem fios</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sistem muzical wireless</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bezdrôtový hudobný systém</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Trådlöst musiksystem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">ระบบเพลงแบบไร้สาย</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Kablosuz Müzik Sistemi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">無線音樂系統</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">wardrobecare</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Webcams</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webcam</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webcam</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Веб-камера</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">网络摄像机</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webcam</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webcam</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webcam</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webcam</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Уеб камера</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webová kamera</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webcam</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webcam</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Cámara Web</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webcam</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">WWW-kamera</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webkamera</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">웹캠</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Web-kamera</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Kamera internetowa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webcam</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Cameră Web</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webová kamera</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Webbkamera</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">เว็บแคม</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Web kamerası</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">電腦鏡頭</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="TextElement_1">
+  <Table ss:ExpandedColumnCount="30" ss:ExpandedRowCount="29" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:Width="107.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="75.75"/>
+   <Column ss:Width="50.25"/>
+   <Column ss:Width="161.25"/>
+   <Column ss:Width="162.75"/>
+   <Column ss:Width="241.5"/>
+   <Column ss:Width="112.5"/>
+   <Column ss:Width="210"/>
+   <Column ss:Width="161.25"/>
+   <Column ss:Width="185.25"/>
+   <Column ss:Width="201"/>
+   <Column ss:Width="216.75"/>
+   <Column ss:Width="246.75"/>
+   <Column ss:Width="161.25"/>
+   <Column ss:Width="186"/>
+   <Column ss:Width="194.25"/>
+   <Column ss:Width="195"/>
+   <Column ss:Width="171"/>
+   <Column ss:Width="207.75"/>
+   <Column ss:Width="147"/>
+   <Column ss:Width="221.25"/>
+   <Column ss:Width="216.75"/>
+   <Column ss:Width="201"/>
+   <Column ss:Width="154.5"/>
+   <Column ss:Width="168"/>
+   <Column ss:Width="180"/>
+   <Column ss:Width="153.75"/>
+   <Column ss:Width="161.25"/>
+   <Column ss:Width="217.5"/>
+   <Column ss:Width="56.25"/>
+   <Row ss:StyleID="s21">
+    <Cell><Data ss:Type="String">Name</Data></Cell>
+    <Cell><Data ss:Type="String">Color</Data></Cell>
+    <Cell><Data ss:Type="String">fontsize</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">English</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">French</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Russian</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Simplified Chinese</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Dutch</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Portugese (Brazil)</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">German</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Italian</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Bulgarian</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Czech</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Danish</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Greek</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Latin Spanish</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Spanish</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Finnish</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Hungarian</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Korean</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Norwegian</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Polish</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Portugese</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Romanian</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Slovak</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Swedish</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Thailand</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Turkish</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Traditional Chinese</Data></Cell>
+   </Row>
+   <Row ss:Height="25.5" ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">220WS8FS</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Do more, see more!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">En faire plus, en voir plus&#160;!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Больше возможностей и больше впечатлений!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">功能更多，品质更高！</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Meer doen, meer zien!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Produza mais, veja mais!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Prodktiver sein, bessere Bildquali.!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Vedere di più per produrre di più</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Вършете повече, виждайте повече</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Více vidíte, více uděláte!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Gør mere, se mere!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Κάντε περισσότερα, δείτε περισσότερα!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Puedes ver y hacer más</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Disfruta más</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Tee enemmän, näe enemmän!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Több lehetőség, szebb látvány!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">기능은 더 다양하게, 화면은 더 넓게!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Gjør mer, se mer!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Więcej funkcji to więcej możliwości!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Do more, see more!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Realizaţi mai multe, vedeţi mai multe!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Urobte viac, pozrite si viac!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Gör mer, se mer!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">ใช้งานได้มากกว่า เห็นภาพได้ชันเจนกว่าที่เคย!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Daha fazla iş çıkarın, daha fazla görün!</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">功能更強、畫面更大！</Data></Cell>
+   </Row>
+   <Row ss:Height="38.25" ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Ambilight</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight makes super heroes more super</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight rend les super-héros encore plus super</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">С Ambilight супергерои еще супергероичнее</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">流光溢彩令效果更加精彩非凡</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Met Ambilight worden superhelden nóg heldhaftiger</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">O Ambilight dá mais superpoderes aos super-heróis</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mit Ambilight sehen Superhelden noch besser aus</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight, prestazioni superiori</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight прави супергероите още по-супер</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Díky technologii Ambilight jsou superhrdinové ještě více super</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight gør superhelte mere super</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Το Ambilight κάνει τους σούπερ ήρωες ακόμα πιο σούπερ</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Superhéroes más súper que nunca con Ambilight</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Superhéroes más súper que nunca con Ambilight</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight ja supersankari on vielä superimpi</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Az Ambilight a szuperhősöket még szuperebbé teszi</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">엠비라이트, 실제보다 더욱 생생한 느낌</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight gjør superheltene enda flottere</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Dzięki Ambilight superbohaterowie stają się jeszcze bardziej super</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight makes super heroes more super</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight face supereroii şi mai grandioşi</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Vďaka Ambilight budú vaši super hrdinovia ešte dokonalejší</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight gör superhjältar mer super</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight ทำให้ซุเปอร์ฮีโร่เป็นมากกว่าซุเปอร์</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight, süper kahramanları daha da büyük kahramanlar haline getirir</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambilight 幻變環迴燈光可令超級英雄變得更無所不能</Data></Cell>
+   </Row>
+   <Row ss:Height="25.5" ss:StyleID="s25">
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Ambisound_HTS6600</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Sound that embraces you</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound&#160;: immergez-vous dans le son</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - звук, захватывающий слушателя</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - 让您心醉的动人音效</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - geluid waar u in opgaat</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Som envolvente</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Sound, der Sie umarmt</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Il suono che ti avvolge</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - звук, който ви обгръща</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - zvuk, který vás obejme</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Lyd, der omfavner dig</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Ήχος που σας περιβάλλει</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound: sonido que te envuelve</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound: el sonido que te envuelve</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Ääni ympäröi sinut</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Átölel a hangja</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">앰비사운드 - 놀랍도록 생생한 사운드</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound – lyd som omfavner deg</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound — dźwięk, który Cię otacza</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Som que o envolve</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Sunetul care vă învăluie</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Zvuk, ktorý vás obklopí</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound – ljud som omsluter dig</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - เสียงที่โอบล้อมตัวคุณ</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Sizi saran ses</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - 環繞著你的音效</Data></Cell>
+   </Row>
+   <Row ss:Height="25.5" ss:StyleID="s25">
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Ambisound_HTS8100</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Sound that embraces you</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound&#160;: immergez-vous dans le son</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - звук, захватывающий слушателя</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - 让您心醉的动人音效</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - geluid waar u in opgaat</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Som envolvente</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Sound, der Sie umarmt</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Il suono che ti avvolge</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - звук, който ви обгръща</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - zvuk, který vás obejme</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Lyd, der omfavner dig</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Ήχος που σας περιβάλλει</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound: sonido que te envuelve</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound: el sonido que te envuelve</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Ääni ympäröi sinut</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Átölel a hangja</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">앰비사운드 - 놀랍도록 생생한 사운드</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound – lyd som omfavner deg</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound — dźwięk, który Cię otacza</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Som que o envolve</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Sunetul care vă învăluie</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Zvuk, ktorý vás obklopí</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound – ljud som omsluter dig</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - เสียงที่โอบล้อมตัวคุณ</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - Sizi saran ses</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ambisound - 環繞著你的音效</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">See, hear and feel the game</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Voyez, entendez et ressentez plus intensément le jeu </Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Видеть, слышать и чувствовать игру</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">See, hear and feel the game</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Zie, hoor en voel de game</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Veja, ouça e sinta o jogo</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Erleben, erfühlen und hören Sie Spiele</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Vedi, ascolta e vivi il gioco</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">See, hear and feel the game</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Vidění, poslech a pocit ze hry</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Se, hør, og føl spillet</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Δείτε, ακούστε και αισθανθείτε το παιχνίδι</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Podrás ver, escuchar y sentir el juego</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Podrás ver, escuchar y sentir el juego</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Näe, kuule ja tunne peli</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">See, hear and feel the game</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">See, hear and feel the game</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Se, hør og føl spillet</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">See, hear and feel the game</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Veja, ouça e sinta o jogo</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Vedeţi, auziţi şi simţiţi jocul</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">See, hear and feel the game</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">Se, hör och känn spelet</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">See, hear and feel the game</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">See, hear and feel the game</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">See, hear and feel the game</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">BluRay</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">蓝光光盘</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Disco Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-Ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Δίσκος Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Disco Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray-levy</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray-plate</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Płyta Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Disk Blu-ray</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray-skiva</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disc</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray Disk</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Blu-ray 光碟</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Dect_Black</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Cordless DECT Phone</Data></Cell>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Dect_White</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Cordless DECT Phone</Data></Cell>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Digital_Photoframe</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Cadre photo numérique Philips</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Цифровая фоторамка Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digitale PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Digital PhotoFrame™ di Philips</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">PHILIPS Digital PhotoFrame</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Philips Digital PhotoFrame</Data></Cell>
+   </Row>
+   <Row ss:Height="25.5" ss:StyleID="s25">
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Flat_TV</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Pump up your picture quality</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Boostez la qualité de votre image.</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Поднимите качество изображения</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">增进画面质量</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Verhoog uw beeldkwaliteit</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Aumente a qualidade da imagem</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Verbessern Sie Ihre Bildqualität</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Migliora la qualità dell'immagine</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Напомпайте качеството на картината си</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Pozvedněte kvalitu svého obrazu</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Gør din billedkvalitet bedre</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Βελτιώστε την ποιότητα της εικόνας</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Mejora la calidad de tus imágenes</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Aumenta la calidad de imagen</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Paranna kuvanlaatua</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">A képminőség további javítása</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">사진의 품질 높이기</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Forbedre bildekvaliteten</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Lepsza jakość obrazu</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Pump up your picture quality</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Îmbunătăţiţi calitatea imaginii</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Fascinujúca kvalita obrazu</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Förbättra bildkvaliteten</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Pump up your picture quality</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">Görüntü kalitenizi artırın</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">大幅提升畫質</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">HDR</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Hard Disk Recorder</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Enregistreur avec disque dur</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Рекордер с жестким диском</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">硬盘刻录机</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Recorder met harde schijf</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Gravador de disco rígido</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Festplatten-Recorder</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Recorder con hard disk</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Рекордер с твърд диск</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Rekordér s&#160;pevným diskem</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Harddiskoptager</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Hard Disk Recorder</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Grabadora de disco duro</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Grabador de disco duro</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Kiintolevytallennin</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Merevlemezes felvevő</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">하드 디스크 레코더</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Harddiskopptaker</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Nagrywarka z dyskiem twardym</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Hard Disk Recorder</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Recorder cu hard disk</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Rekordér s pevným diskom</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Hårddiskinspelare</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">เครื่องบันทึกฮาร์ดดิสก์</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Sabit Disk Kaydedici</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">硬碟錄影機</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">household_vacuum</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Ipod_Docking</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Docking Entertainment System</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Station d'accueil pour baladeur</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Cистема развлечений с док-станцией</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">底座式娱乐系统</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Basisstation voor entertainmentsysteem</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Docking Entertainment System</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Docking-Entertainment-System</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Docking-Entertainment-System</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Докинг система за забавления</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Dokovací systém zábavy</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Docking-underholdningssystem</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Σύνδεση συστήματος ψυχαγωγίας</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Sistema de entretenimiento c/ plataf</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Sistema de entretenimiento con base</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Viihdejärjestelmätelakka</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Szórakoztatórendszer dokkolóegységgel</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">도킹 엔터테인먼트 시스템</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Underholdningssystem med dokkingstasjon</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Zestaw audiowizualny ze stacją dokującą</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Sistemas de entretenimento com base</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Sistem cu staţie de andocare</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Dokovací zábavný systém</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Dockningssystem för underhållning</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">ระบบเชื่อมต่อความบันเทิง</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Bağlantı Eğlence Sistemi</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">擴充機座娛樂系統</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">LookHotEveryDay</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">MCM700</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Micro Audio System</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Microchaîne</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Микроаудиосистема</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">微型音响系统</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Micro audiosysteem</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Micro System</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Audio-Mikrosystem</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Sistema audio micro</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Микро аудиосистема</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mikrosystém</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mikrolydsystem</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ηχοσύστημα Μicro</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Microsistema de audio</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Microcadenas</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mikrosarja</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mikro-audiorendszer</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">마이크로 오디오 시스템</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mikro audiosystem</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mikrowieża Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Sistema Áudio Micro</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Microsistem audio</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mikrosystém</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mikrosystem</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">ระบบเสียง Micro</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mikro Ses Sistemi</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">微型音響系統</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Micro_Theater</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Pure sound in a refined design</Data></Cell>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+   </Row>
+   <Row ss:StyleID="s30">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Perfectgift</Data></Cell>
+    <Cell><Data ss:Type="String">0x005AFF</Data></Cell>
+    <Cell><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Looking for the right gift?</Data></Cell>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+   </Row>
+   <Row ss:StyleID="s30">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">PersonalCare</Data></Cell>
+    <Cell><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Easy ways to look and feel great</Data></Cell>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s31"/>
+   </Row>
+   <Row ss:Height="38.25" ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Portable_DVD</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Enjoy your favorite movies on the go</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Regardez vos films préférés, où et quand vous en avez envie.</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Смотрите любимые фильмы во время поездок</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">随时随地欣赏您喜爱的影片</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Geniet onderweg van uw favoriete films</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Curta seus filmes favoritos em qualquer lugar</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">DVD-Lieblingsfilme unterwegs genießen</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Goditi i tuoi film preferiti ovunque ti trovi</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Наслаждавайте се на любимите си филми в движение</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Vychutnejte si oblíbené filmy na cestách</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Nyd dine yndlingsfilm, når du er på farten</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Απολαύστε τις αγαπημένες σας ταινίες εν κινήσει</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Disfruta de las películas favoritas vayas donde vayas</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Disfruta de tus películas favoritas allá donde vayas</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Nauti matkoilla suosikkielokuvistasi</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Élvezze útközben is kedvenc moziját</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">내가 좋아하는 음악을 어디에서나</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Nyt favorittfilmene på farten</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Oglądaj swoje ulubione filmy w drodze</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Desfrute dos seus filmes de DVD preferidos em movimento</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Bucuraţi-vă de filmele preferate, la drum</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Vychutnajte si svoje obľúbené filmy na cestách</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Njut av dina favoritfilmer på resan</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">เพลิดเพลินกับภาพยนตร์เรื่องโปรดของคุณในระหว่างเดินทาง</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">En sevdiğiniz filmlerin keyfini yolda da çıkarın</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">隨時隨地享受喜歡的電影</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Prestigo</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Universal Remote Control</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Télécommande universelle</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Универсальный пульт ДУ</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">通用遥控器</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Universele afstandsbediening</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Controle remoto universal</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Universal-Fernbedienung</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Telecomando universale</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Универсално дистанционно управление</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Univerzální dálkové ovládání</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Universel fjernbetjening</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Τηλεχειριστήριο παγκόσμιας χρήσης</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Control remoto universal</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Mando a distancia universal</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Yleiskaukosäädin</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Univerzális távvezérlő</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">범용 리모콘</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Universell fjernkontroll</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Uniwersalny pilot</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Telecomando Universal</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Telecomandă universală</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Univerzálne diaľkové ovládanie</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Universalfjärrkontroll</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">รีโมทคอนโทรลอเนกประสงค์</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Evrensel Uzaktan Kumanda</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">萬能遙控器</Data></Cell>
+   </Row>
+   <Row ss:Height="25.5" ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">SA6045</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Your video on the move</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Vos vidéos où que vous soyez</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Просмотр видео в пути</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">视频随身播</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Geniet onderweg van video's</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Seu vídeo, aonde quer que você vá</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Videogenuss unterwegs</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">I tuoi video sempre con te</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Вашето видео в движение</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Vaše video na cestách</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Din video på farten</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Βίντεο εν κινήσει</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Video vayas donde vayas</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Vídeos en cualquier parte</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Katsele videoita liikkuessasi</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Az Ön videója útközben</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">이동하며 즐기는 비디오</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Film på farten</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Filmy zawsze pod ręką</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Vídeos em movimento</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Videoclipurile preferate, la drum</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Vaše video v pohybe</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Video i farten</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">ชมวิดีโอได้ในขณะเดินทาง</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Yolda video izleyin</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">隨時隨地觀賞影片</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">SA9345</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Straightforward control</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Contrôle aisé</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Самое простое управление</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">清晰直接的控制</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Eenvoudige bediening</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Controle direto</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Intuitive Steuerung</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Facile da usare</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Опростено управление</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Jednoduché ovládání</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Enkel betjening</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Άμεσος έλεγχος</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Control fácil de usar</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Control fácil de utilizar</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Helppokäyttöinen ohjaus</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Könnyen áttekinthető kezelés</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">간편한 컨트롤</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Direkte kontroll</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Prosta obsługa</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Controlo simples</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Control simplu</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Priame ovládanie</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Enkel kontroll</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">ควบคุมง่าย</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Basit kontrol</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">簡單控制</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Swarovski</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Active Crystals</Data></Cell>
+   </Row>
+   <Row ss:Height="25.5" ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">VOIP321</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">A dual phone for all your calls</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Un téléphone mixte pour tous vos appels</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Телефон двойного назначения для всех звонков</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">双频电话方便您的全部呼叫</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Een 2-in-1 telefoon voor al uw oproepen</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Um telefone que atende a todas as suas necessidades</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ein Dual-Telefon für alle Anrufe</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Un dual phone per tutte le tue chiamate</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Един телефон с двойна функция за всичките ви разговори</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Duální telefon pro všechny hovory</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">En dobbelttelefon til alle dine opkald</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Τηλέφωνο τύπου dual για όλες σας τις κλήσεις</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Un teléfono dual para todas tus llamadas</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Teléfono dual para todas tus llamadas</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Kaksoispuhelin kaikkiin puheluihin</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Kettős telefon az összes híváshoz</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">모든 통화를 듀얼 전화기로</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Én dobbelttelefon til alle samtalene</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Zestaw telefonów do wszystkich rozmów telefonicznych</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">A dual phone for all your calls</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Un telefon dual pentru toate apelurile dvs.</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Duálny telefón pre všetky vaše hovory</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">En dubbel telefon för alla dina samtal</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Dual phone สำหรับทุกสายสนทนาของคุณ</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Tüm aramalarınız için ikili bir telefon</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">可滿足所有通話需要的兩用電話</Data></Cell>
+   </Row>
+   <Row ss:Height="25.5" ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">VOIP841</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">A dual phone for all your calls</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Un téléphone mixte pour tous vos appels</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Телефон двойного назначения для всех звонков</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">双频电话方便您的全部呼叫</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Een 2-in-1 telefoon voor al uw oproepen</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Um telefone que atende a todas as suas necessidades</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Ein Dual-Telefon für alle Anrufe</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Un dual phone per tutte le tue chiamate</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Един телефон с двойна функция за всичките ви разговори</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Duální telefon pro všechny hovory</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">En dobbelttelefon til alle dine opkald</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Τηλέφωνο τύπου dual για όλες σας τις κλήσεις</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Un teléfono dual para todas tus llamadas</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Teléfono dual para todas tus llamadas</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Kaksoispuhelin kaikkiin puheluihin</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Kettős telefon az összes híváshoz</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">모든 통화를 듀얼 전화기로</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Én dobbelttelefon til alle samtalene</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Zestaw telefonów do wszystkich rozmów telefonicznych</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">A dual phone for all your calls</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Un telefon dual pentru toate apelurile dvs.</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Duálny telefón pre všetky vaše hovory</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">En dubbel telefon för alla dina samtal</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Dual phone สำหรับทุกสายสนทนาของคุณ</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Tüm aramalarınız için ikili bir telefon</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">可滿足所有通話需要的兩用電話</Data></Cell>
+   </Row>
+   <Row ss:Height="25.5" ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">WACS7000</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Enhance your music experience now</Data></Cell>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+    <Cell ss:StyleID="s27"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">wardrobecare</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s29"/>
+   </Row>
+   <Row ss:Height="25.5" ss:StyleID="s25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Webcams</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0x00A7BC</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Communicate in a more natural way</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Communiquez de façon plus naturelle</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Более естественное общение</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">更自然的沟通方式</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Communiceren op een natuurlijke manier</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Comunique-se de forma mais natural</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Kommunizieren Sie auf natürlicherem Weg</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Comunica con maggiore naturalezza</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Общувайте по-естествено</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Komunikujte přirozenějším způsobem</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Kommuniker på en mere naturlig måde</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Επικοινωνήστε με πιο φυσικό τρόπο</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Comunícate de una manera más natural</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Comunícate de forma más natural</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Luonnollisempaan kommunikointia</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Természetesebb kommunikáció</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">대화하는 듯 자연스러운 통화음</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Kommuniser på en mer naturlig måte</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Bardziej naturalny sposób komunikacji</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Communicate in a more natural way</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Comunicare într-un mod mai natural</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Komunikujte prirodzenejším spôsobom</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Kommunicera på ett naturligare sätt</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">สื่อสารด้วยวิธีธรรมชาติมากขึ้น</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Daha doğal bir yolla iletişim kurun</Data></Cell>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">以更自然的方式進行通訊</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <Sorting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Sort>Name</Sort>
+  </Sorting>
+ </Worksheet>
+ <Worksheet ss:Name="TextElement_2">
+  <Table ss:ExpandedColumnCount="29" ss:ExpandedRowCount="24" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s37">
+   <Column ss:StyleID="s37" ss:Width="105"/>
+   <Column ss:StyleID="s37" ss:Width="53.25"/>
+   <Column ss:StyleID="s37" ss:Width="50.25"/>
+   <Column ss:StyleID="s37" ss:Width="209.25"/>
+   <Column ss:StyleID="s37" ss:Width="180.75"/>
+   <Column ss:StyleID="s37" ss:Width="197.25"/>
+   <Column ss:StyleID="s37" ss:Width="172.5"/>
+   <Column ss:StyleID="s37" ss:Width="146.25"/>
+   <Column ss:StyleID="s37" ss:Width="153"/>
+   <Column ss:StyleID="s37" ss:Width="176.25"/>
+   <Column ss:StyleID="s37" ss:Width="202.5"/>
+   <Column ss:StyleID="s37" ss:Width="172.5"/>
+   <Column ss:StyleID="s37" ss:Width="186"/>
+   <Column ss:StyleID="s37" ss:Width="172.5"/>
+   <Column ss:StyleID="s37" ss:Width="149.25"/>
+   <Column ss:StyleID="s37" ss:Width="139.5"/>
+   <Column ss:StyleID="s37" ss:Width="135"/>
+   <Column ss:StyleID="s37" ss:Width="150.75"/>
+   <Column ss:StyleID="s37" ss:Width="172.5" ss:Span="1"/>
+   <Column ss:Index="21" ss:StyleID="s37" ss:Width="143.25"/>
+   <Column ss:StyleID="s37" ss:Width="172.5"/>
+   <Column ss:StyleID="s37" ss:Width="216.75"/>
+   <Column ss:StyleID="s37" ss:Width="202.5"/>
+   <Column ss:StyleID="s37" ss:Width="172.5"/>
+   <Column ss:StyleID="s37" ss:Width="153.75"/>
+   <Column ss:StyleID="s37" ss:Width="153"/>
+   <Column ss:StyleID="s37" ss:Width="172.5"/>
+   <Column ss:StyleID="s37" ss:Width="153"/>
+   <Row>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Name</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Color</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">fontsize</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">English</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">French</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Russian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Simplified Chinese</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Dutch</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Portugese (Brazil)</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">German</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Italian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Bulgarian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Czech</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Danish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Greek</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Latin Spanish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Spanish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Finnish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Hungarian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Korean</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Norwegian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Polish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Portugese</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Romanian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Slovak</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Swedish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Thailand</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Turkish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Traditional Chinese</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">220WS8FS</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Designed for maximum productivity</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Conçu pour une productivité maximale</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Максимальная производительность</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">为带来最高效率而设计</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ontworpen voor maximale productiviteit</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Projetado para o máximo em produtividade</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Für maximale Produktivität</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Progettato per la massima produttività</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Конструиран за максимална производителност</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Určeno pro maximální produktivitu</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Udviklet til maksimal produktivitet</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Σχεδίαση για μέγιστη παραγωγικότητα</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Diseñado para alcanzar el máximo rendimiento</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Diseñado para lograr la máxima productividad</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Maksimituottavuus</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">A maximális hatékonyságra tervezve</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">최상의 생산성을 실현하는 디자인</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Utformet for maksimal produktivitet</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zaprojektowany z myślą o największej wydajności</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Concebido para o máximo de produtividade</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Conceput pentru productivitate maximă</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Navrhnuté pre maximálnu produktivitu</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Utformad för maximal produktivitet</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">ออกแบบเพื่อให้ได้ประสิทธิภาพสูงสุด</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Maksimum verim için tasarlanmış</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">為最高效率而設計</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Ambilight</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Ambisound_HTS6600</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Ambisound_HTS8100</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">amBX</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">with amBX PC gaming Peripherals</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">avec les périphériques de jeu amBX pour PC</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">с новой игровой периферией с amBX для ПК.</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">with amBX PC gaming Peripherals</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">met amBX-randapparatuur voor PC-games</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">com periféricos de jogos amBX para PC</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">mit dem amBX-PC-Spielezubehör</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">con Periferiche amBX per giochi per PC</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">with amBX PC gaming Peripherals</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Periferní zař. amBX pro hraní PC her</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">med amBX-tilbehør til PC-spil</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">Με Περιφερειακά παιχνιδιών amBX για PC</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">con los periféricos amBX para juegos de PC</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">con los periféricos amBX para juegos de PC</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">amBX-oheislaitteilla PC-peleihin</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">with amBX PC gaming Peripherals</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">with amBX PC gaming Peripherals</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">med amBX-utstyr for PC-spilling</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">with amBX PC gaming Peripherals</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">com periféricos de jogos amBX para PC</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Cu Periferice pentru jocuri pe PC amBX</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">with amBX PC gaming Peripherals</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">med amBX-tillbehör för datorspel</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">ด้วยอุปกรณ์ต่อพ่วงสำหรับการเล่นเกมส์พีซี amBX</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">with amBX PC gaming Peripherals</Data></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">搭配 amBX PC 電玩週邊設備</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">BluRay</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Witness the latest technology</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Technologie de pointe</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Говорит о современности технологии</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">感受最先进的技术</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Een voorproefje van de nieuwste technologie</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Veja a tecnologia de última geração</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Erleben Sie neueste Technologie</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prova le tecnologie più innovative</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Станете свидетели на най-новите технологии</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Důkaz nejmodernější technologie</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Oplev den nyeste teknologi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Γίνετε μάρτυρες της πλέον σύγχρονης τεχνολογίας</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Vive lo último en tecnología</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Experimenta lo último en tecnología</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Uusinta tekniikkaa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Tapasztalja meg a legújabb technológiát</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">최신 기술을 직접 경험하십시오</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Opplev den nyeste teknologien</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Wypróbuj najnowszą technologię</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Testemunhe a mais recente tecnologia</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Descoperiţi cea mai recentă tehnologie</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Buďte svedkom najnovšej technológie</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Se den senaste tekniken</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">พบกับเทคโนโลยีใหม่ล่าสุด</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">En son teknolojiye şahit olun</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">見證最先進的技術</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Dect_Black</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Unrivalled speech transmission, convenience and design</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Dect_White</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Unrivalled speech transmission, convenience and design</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Digital_Photoframe</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Toutes les photos ont une histoire</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">У каждой фотографии своя история</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Elke foto vertelt uw verhaal</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Jedes Bild erzählt Ihre Geschichte</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ogni foto racconta la tua storia</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hvert billede fortæller din historie</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Μια εικόνα είναι χίλιες λέξεις</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Cada foto es un recuerdo</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Cada foto es un recuerdo</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Jokainen kuva kertoo tarinan</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hvert bilde forteller om deg</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">A sua história por detrás de cada imagem</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Varje bild berättar en historia</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Özel günler için ideal armağan</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Every picture tells your story</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Flat_TV</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Get ready for the future</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Préparez-vous pour l'avenir</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Рассчитан на использование в будущем</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">蓄势待发</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Bereid u voor op de toekomst</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Prepare-se para o futuro</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Machen Sie sich bereit für die Zukunft</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Preparati al futuro</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Напомпайте качеството на картината си</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Připravte se na budoucnost.</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Gør dig klar til fremtiden</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Ετοιμαστείτε για το μέλλον</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Prepárate para el futuro</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Prepárate para el futuro</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Ole valmis tulevaan uuteen</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Álljon készen a jövőre</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">미래를 위한 준비</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Gjør deg klar for fremtiden</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Przygotuj się na przyszłe rozwiązania</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Prepare-se para o futuro</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Pregăteşte-te pentru viitor</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Pripravte sa na budúcnosť</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Gör dig redo för framtiden</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">เตรียมตัวคุณให้พร้อมรับอนาคต</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Geleceğe hazırlanın</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">準備迎接未來</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">HDR</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Simplicity in recording &amp; playback</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Simplicité d'enregistrement et de lecture</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Простота записи и воспроизведения</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">录制和播放的简单体验</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Eenvoudig opnemen en afspelen</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Simplicidade para gravar e reproduzir</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Einfachheit Aufnahme &amp; Wiedergabe</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Semplicità nella registrazione e nella riproduzione</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Опростени запис и възпроизвеждане</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Snadné nahrávání i přehrávání</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Enkel optagelse og afspilning</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Απλότητα εγγραφής και αναπαραγωγής</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Simplicidad para grabar y reproducir</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sencillez para grabar y reproducir</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Helppo tallennus ja toisto</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Egyszerűen kezelhető felvétel és lejátszás</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">간단한 녹화 및 재생 방식</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Enkelt opptak og avspilling</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Proste nagrywanie i odtwarzanie</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Simplicidade de gravação e reprodução</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Simplitate la înregistrare şi redare</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Jednoduchosť pri nahrávaní a prehrávaní</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Enkel inspelning och uppspelning</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">บันทึกและเล่นได้ง่ายดาย</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Kayıt ve oynatmada kolaylık</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">錄製與播放一樣簡便</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Ipod_Docking</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Enjoy iPod music in Hi-Fi sound quality</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Profitez de la musique de votre iPod en qualité audio hi-fi.</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Слушайте музыку iPod с качеством звучания Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">享受 Hi-Fi 音质的 iPod 音乐</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Muziek op uw iPod beluisteren in HiFi-kwaliteit</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Curta as músicas do seu iPod com qualidade de som Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Genießen Sie iPod-Musik in HiFi-Soundqualität</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ascolta la musica del tuo iPod con qualità audio Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Слушайте музика от iPod с Hi-Fi качество на звука</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Vychutnejte si hudbu v&#160;zařízení iPod v&#160;kvalitě zvuku Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Nyd iPod-musik i hi-fi lyd-kvalitet</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Απολαύστε μουσική iPod με ποιότητα ήχου Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Disfruta de la música de tu iPod con sonido Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Disfruta de la música del iPod con sonido Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Nauti iPod-musiikista hifilaatuisena</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">iPod zenehallgatás Hi-Fi hangminőségben</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hi-Fi 음질의 iPod 음악 감상</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Nyt iPod-musikken med Hi-Fi-lydkvalitet</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Słuchaj muzyki z odtwarzacza iPod w wysokiej jakości Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Desfrute da música do seu iPod em qualidade de som Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ascultaţi melodiile preferate de pe iPod, la calitate Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Vychutnajte si hudbu z prehrávača iPod v kvalite Hi-Fi zvuku</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Upplev iPod-musik med Hi-Fi-ljudkvalitet</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">เพลิดเพลินไปกับเสียงเพลงจาก iPod ในคุณภาพเสียงระดับ Hi-Fi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">iPod müziğin keyfini Hi-Fi ses kalitesi ile çıkarın</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">以 Hi-Fi 音質享受 iPod 音樂</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">MCM700</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Pure sound in a refined design</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Son limpide et design raffiné</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Чистый звук и совершенный дизайн</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">精美的设计蕴含纯净的音色</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zuiver geluid in een verfijnd ontwerp</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Pureza de som em um design moderno</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Reiner Sound im eleganten Design</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Audio perfetto e design raffinato</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Изчистен звук от съвършен дизайн</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Čistý zvuk v&#160;dokonalém designu</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ren lyd i forbedret design</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Καθαρός ήχος σε εκλεπτυσμένο σχεδιασμό</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sonido puro con un diseño elegante</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sonido puro con un diseño refinado</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Puhdas ääni ja hienostunut muotoilu</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Tiszta hang átgondolt kivitelben</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">유려한 디자인에서 나오는 원음 그대로의 사운드</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ren lyd i et raffinert design</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Czysty dźwięk i dopracowana konstrukcja</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Som puro num design elegante</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sunet pur şi design rafinat</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Čistý zvuk a kultivovaný dizajn</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Äkta ljud med raffinerad design</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">เสียงที่ใสชัดเจนในการออกแบบที่ใหม่ล่าสุด</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zarif tasarım ve pürüzsüz ses</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">集優雅設計與純淨音色於一身</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s34"><Data ss:Type="String">Micro_Theater</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Satisfy all your audio needs</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Perfectgift</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">0x005AFF</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">We have some great ideas for everyone</Data></Cell>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+    <Cell ss:StyleID="s35"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Portable_DVD</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Let the magic of movies and music come to life</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Donnez vie à la magie de la musique et du cinéma.</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Волшебство фильмов и музыки оживает</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">让生活充满电影和音乐的魅力</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Laat de magie van films en muziek tot leven komen</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Deixe que a magia dos filmes e da música se torne realidade</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lassen Sie sich von Filmen und Musik verzaubern</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Tutta la magia della musica e dei film prende vita</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Нека оживее магията на киното и музиката</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Nechte ožít kouzlo filmů a hudby</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lad filmens og musikkens magi komme til live</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ζωντανέψτε τη μαγεία των ταινιών και της μουσικής</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Deja que la magia de las películas y el sonido cobren vida</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">La música y las películas cobrarán vida</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Elokuvien ja musiikin taika herää eloon</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Engedje be életébe a filmek és a zene varázslatát</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">마법처럼 내 앞에 펼쳐지는 영화와 음악 세상</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">La film- og musikkmagien bli levende</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Uwolnij magię muzyki i filmów</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Let the magic of movies and music come to life</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lăsaţi magia filmelor şi a muzicii să prindă viaţă</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Nechajte ožiť kúzlo filmov a hudby</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Låt magin i filmerna och musiken bli levande</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">ให้เวทมนตร์ของภาพยนตร์และเสียงเพลงมีชีวิต</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bırakın filmlerin ve müziğin büyüsü hayatınıza girsin</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">令影音魔力活靈活現</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Prestigo</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - One remote to replace all</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo&#160;: une seule télécommande pour remplir toutes les fonctions</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - один пульт ДУ для всех устройств</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - 全能遥控器</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - één afstandsbediening die alle andere vervangt</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - Um único controle para tudo</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - Eine Fernbed. ersetzt alle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - Un telecomando che sostituisce tutti gli altri</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - Едно дистанционно, което да замени всички останали</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - jedno dálkové ovládání nahradí všechna ostatní</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - én fjernbetjening erstatter alle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - Ένα τηλεχειριστήριο για όλα</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo: un solo control remoto que reemplaza a todos</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo: mando a distancia universal</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - Yksi kaukosäädin kaikkeen käyttöön</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo – egy távvezérlő az összes feladatra</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">프레스티고 - 하나의 리모콘으로 모든 기기를 내 마음대로!</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo – én fjernkontroll som erstatter alle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo — jeden pilot zapewnia obsługę wszystkich urządzeń</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - One remote to replace all</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - Telecomanda universală</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - Jedno diaľkové ovládanie, ktoré nahradí všetky ostatné</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - En fjärrkontroll ersätter alla</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - รีโมทหนึ่งเดียวที่ใช้แทนทุกอย่าง</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - Tüm uzaktan kumandaların yerine tek bir tane</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Prestigo - 一個遙控，取代所有</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">SA6045</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Experience music and video - anytime, anyplace</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">La musique et les films à tout moment et en tout lieu</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Воспроизведение музыки и видео в любое время, в любом месте</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">随时随地享受音乐和视频</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ga op in muziek en video's - overal en altijd</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Curta música e vídeo - a qualquer hora, em qualquer lugar</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Erleben Sie Musik und Video - jederzeit, überall</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Vivi la musica e i video quando e dove vuoi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Радвайте се на музика и видео - по всяко време, на всяко място</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zážitek z&#160;hudby a videa – kdykoliv a kdekoliv</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Oplev musik og video - når som helst og hvor som helst</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Απολαύστε μουσική και βίντεο - πάντα, παντού</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Disfruta de música y video en todo momento y lugar</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Disfruta de música y vídeo, donde y cuando quieras</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Nauti musiikista ja videoista - milloin ja missä tahansa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zenehallgatás és a videózás – bárhol és bármikor</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">언제, 어디서나 즐기는 음악과 비디오</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lytt til musikk og se film – når som helst og hvor som helst</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ciesz się muzyką i filmami — zawsze i wszędzie</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Desfrute de música e de vídeo - quando e onde quiser</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bucuraţi-vă de muzică şi filme - oriunde şi oricând</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Užívajte si hudbu a video - kedykoľvek a kdekoľvek</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Upplev musik och video – när och var som helst</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">สัมผัสประสบการณ์ในการฟังเพลงและชมวิดีโอได้ทุกที่ทุกเวลา</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Her zaman, her yerde müzik ve video keyfi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">隨時隨地享受影音體驗</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">SA9345</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Experience music and video - anytime, anyplace</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">La musique et les films à tout moment et en tout lieu</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Воспроизведение музыки и видео в любое время, в любом месте</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">随时随地享受音乐和视频</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ga op in muziek en video's - overal en altijd</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Curta música e vídeo - a qualquer hora, em qualquer lugar</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Erleben Sie Musik und Video - jederzeit, überall</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Vivi la musica e i video quando e dove vuoi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Радвайте се на музика и видео - по всяко време, на всяко място</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zážitek z&#160;hudby a videa – kdykoliv a kdekoliv</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Oplev musik og video - når som helst og hvor som helst</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Απολαύστε μουσική και βίντεο - πάντα, παντού</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Disfruta de música y video en todo momento y lugar</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Disfruta de música y vídeo, donde y cuando quieras</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Nauti musiikista ja videoista - milloin ja missä tahansa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Zenehallgatás és a videózás – bárhol és bármikor</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">언제, 어디서나 즐기는 음악과 비디오</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Lytt til musikk og se film – når som helst og hvor som helst</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Ciesz się muzyką i filmami — zawsze i wszędzie</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Desfrute de música e de vídeo - quando e onde quiser</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bucuraţi-vă de muzică şi filme - oriunde şi oricând</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Užívajte si hudbu a video - kedykoľvek a kdekoľvek</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Upplev musik och video – när och var som helst</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">สัมผัสประสบการณ์ในการฟังเพลงและชมวิดีโอได้ทุกที่ทุกเวลา</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Her zaman, her yerde müzik ve video keyfi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">隨時隨地享受影音體驗</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Swarovski</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secrets that sparkle</Data></Cell>
+    <Cell ss:StyleID="s39"><Data ss:Type="String">Conservez vos secrets avec éclat</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Тайны, которые сверкают</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">闪亮动人的秘密</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sprankelende geheimen</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Segredos cintilantes</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Geheimnisse die funkeln</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secrets that sparkle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secrets that sparkle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Jiskřící tajemství</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hemmeligheder, der stråler</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Μυστικα που λαμπυριζουν</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secretos resplandecientes</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secrets that sparkle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secretos resplandecientes</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secrets that sparkle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Sparkle의 비밀</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Hemmeligheter som glitrer</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Tajemnice, które błyszczą</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Segredos cintilantes</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secrets that sparkle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secrets that sparkle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secrets that sparkle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Secrets that sparkle</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Parildayan sirlar</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">閃耀的秘密</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">VOIP321</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Use Skype freely anywhere in your house</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Utilisez Skype en toute liberté, aux quatre coins de la maison.</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Свободное использование Skype во всем доме</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">在家中任何位置随意使用 Skype</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Gebruik Skype overal in huis</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Use o Skype livremente em todos os cômodos de sua casa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Skype zu Hause überall verwenden</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Usa Skype liberamente, in qualsiasi punto della casa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Удобно използване на Skype навсякъде у дома ви</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Používejte systém Skype volně kdekoliv v&#160;domácnosti</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Brug Skype frit overalt i huset</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Χρησιμοποιήστε το Skype δωρεάν οπουδήποτε στο σπίτι</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Usa Skype en cualquier lugar de la casa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Usa Skype gratis en cualquier lugar de la casa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Käytä Skypeä vapaasti kaikkialla kotonasi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">A Skype használata bárhol a lakásban</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">집안 어디에서나 Skype와 함께</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bruk Skype over hele huset</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Rozmawiaj przez Skype — za darmo i w każdym miejscu w domu</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Use Skype freely anywhere in your house</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Folosiţi Skype fără restricţii oriunde în casă</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Používajte Skype bez obmedzení kdekoľvek v dome</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Använd Skype var som helst i huset</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">ใช้ Skype ได้อย่างอิสระจากทุกที่ในบ้านของคุณ</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Skype uygulamasını evinizin her yerinden serbestçe kullanın</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">在家中任何角落隨意使用 Skype</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">VOIP841</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Use Skype freely anywhere in your house</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Utilisez Skype en toute liberté, aux quatre coins de la maison.</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Свободное использование Skype во всем доме</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">在家中任何位置随意使用 Skype</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Gebruik Skype overal in huis</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Use o Skype livremente em todos os cômodos de sua casa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Skype zu Hause überall verwenden</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Usa Skype liberamente, in qualsiasi punto della casa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Удобно използване на Skype навсякъде у дома ви</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Používejte systém Skype volně kdekoliv v&#160;domácnosti</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Brug Skype frit overalt i huset</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Χρησιμοποιήστε το Skype δωρεάν οπουδήποτε στο σπίτι</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Usa Skype en cualquier lugar de la casa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Usa Skype gratis en cualquier lugar de la casa</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Käytä Skypeä vapaasti kaikkialla kotonasi</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">A Skype használata bárhol a lakásban</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">집안 어디에서나 Skype와 함께</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Bruk Skype over hele huset</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Rozmawiaj przez Skype — za darmo i w każdym miejscu w domu</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Use Skype freely anywhere in your house</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Folosiţi Skype fără restricţii oriunde în casă</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Používajte Skype bez obmedzení kdekoľvek v dome</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Använd Skype var som helst i huset</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">ใช้ Skype ได้อย่างอิสระจากทุกที่ในบ้านของคุณ</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Skype uygulamasını evinizin her yerinden serbestçe kullanın</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">在家中任何角落隨意使用 Skype</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Webcams</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">0x000000</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="TextElement_3">
+  <Table ss:ExpandedColumnCount="29" ss:ExpandedRowCount="2" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:Width="60.75"/>
+   <Column ss:Width="52.5"/>
+   <Column ss:Width="50.25"/>
+   <Column ss:Width="104.25"/>
+   <Column ss:Width="38.25"/>
+   <Column ss:Width="42"/>
+   <Column ss:Width="96.75"/>
+   <Column ss:Width="32.25"/>
+   <Column ss:Width="91.5"/>
+   <Column ss:Width="43.5"/>
+   <Column ss:Width="35.25"/>
+   <Column ss:Width="51.75"/>
+   <Column ss:Width="34.5"/>
+   <Column ss:Width="37.5"/>
+   <Column ss:Width="33.75"/>
+   <Column ss:Width="71.25"/>
+   <Column ss:Width="43.5"/>
+   <Column ss:Width="39.75"/>
+   <Column ss:Width="54.75"/>
+   <Column ss:Width="39.75"/>
+   <Column ss:Width="57"/>
+   <Column ss:Width="34.5"/>
+   <Column ss:Width="53.25"/>
+   <Column ss:Width="54"/>
+   <Column ss:Width="37.5"/>
+   <Column ss:Width="45.75"/>
+   <Column ss:Width="47.25"/>
+   <Column ss:Width="39.75"/>
+   <Column ss:Width="99.75"/>
+   <Row>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Name</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Color</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">fontsize</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">English</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">French</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Russian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Simplified Chinese</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Dutch</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Portugese (Brazil)</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">German</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Italian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Bulgarian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Czech</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Danish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Greek</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Latin Spanish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Spanish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Finnish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Hungarian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Korean</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Norwegian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Polish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Portugese</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Romanian</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Slovak</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Swedish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Thailand</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Turkish</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">Traditional Chinese</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Perfectgift</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">0xFFFFFF</Data></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">Discover great gifts</Data></Cell>
+    <Cell ss:StyleID="s36"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>13</ActiveRow>
+     <ActiveCol>3</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

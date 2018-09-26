@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This document specifies all translated attributes and should be used by all pipelines that need work on translated attributes -->
+<!-- Per translated attribute the following attributes need to be specified:
+	* name: xUCDM element name
+	* path: xUCDM element path
+	* key: unique three letter code to define translated attribute
+	* codeXPath: relative XPath expression that can be used to retrieve the corresponding code for this translated attribute
+	
+	The metaAttributes specified per translated attribute contains attributes which are directly included in the translation export
+-->
+<root>
+  <translatedAttribute name="ProductName" path="ProductName" key="PNA" codeXPath="../CTN">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="BrandString" path="NamingString/BrandString" key="BS1" codeXPath="../../CTN">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="BrandString2" path="NamingString/BrandString2" key="BST" codeXPath="../../CTN">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="DescriptorName" path="NamingString/Descriptor/DescriptorName" key="DNA" codeXPath="../DescriptorCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="52"/>
+  </translatedAttribute>
+  <translatedAttribute name="VersionElementName" path="NamingString/VersionElement1/VersionElementName" key="VEN" codeXPath="../VersionElementCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="VersionElementName" path="NamingString/VersionElement2/VersionElementName" key="VEN" codeXPath="../VersionElementCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="VersionElementName" path="NamingString/VersionElement3/VersionElementName" key="VEN" codeXPath="../VersionElementCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="VersionElementName" path="NamingString/VersionElement4/VersionElementName" key="VEN" codeXPath="../VersionElementCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="VersionString" path="NamingString/VersionString" key="VST" codeXPath="../../CTN">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="164"/>
+  </translatedAttribute>
+  <translatedAttribute name="BrandedFeatureString" path="NamingString/BrandedFeatureString" key="BFS" codeXPath="../../CTN">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="DescriptorBrandedFeatureString" path="NamingString/DescriptorBrandedFeatureString" key="DBF" codeXPath="../../CTN">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="130"/>
+  </translatedAttribute>
+  <!-- Deprecated -->
+  <!--
+  <translatedAttribute name="SupraFeatureName" path="SupraFeature/SupraFeatureName" key="SFN" codeXPath="../SupraFeatureCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  -->
+  <translatedAttribute name="WOW" path="WOW" key="WOW" codeXPath="../CTN">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="65" cpyw="yes"/>
+  </translatedAttribute>
+  <translatedAttribute name="SubWOW" path="SubWOW" key="SOW" codeXPath="../CTN">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="78" cpyw="yes"/>
+  </translatedAttribute>
+  <translatedAttribute name="MarketingTextHeader" path="MarketingTextHeader" key="MTH" codeXPath="../CTN">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="585" cpyw="yes"/>
+  </translatedAttribute>
+  <translatedAttribute name="KeyBenefitAreaName" path="KeyBenefitArea/KeyBenefitAreaName" key="KBN" codeXPath="../KeyBenefitAreaCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="65" cpyw="yes"/>
+  </translatedAttribute>
+  <translatedAttribute name="FeatureName" path="KeyBenefitArea/Feature/FeatureName" key="FNA" codeXPath="../FeatureCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="FeatureShortDescription" path="KeyBenefitArea/Feature/FeatureShortDescription" key="FSD" codeXPath="../FeatureCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="FeatureLongDescription" path="KeyBenefitArea/Feature/FeatureLongDescription" key="FLD" codeXPath="../FeatureCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="780"/>
+  </translatedAttribute>
+  <translatedAttribute name="FeatureGlossary" path="KeyBenefitArea/Feature/FeatureGlossary" key="FGL" codeXPath="../FeatureCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="780"/>
+  </translatedAttribute>
+  <translatedAttribute name="CSChapterName" path="CSChapter/CSChapterName" key="CSN" codeXPath="../CSChapterCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="CSItemName" path="CSChapter/CSItem/CSItemName" key="CIN" codeXPath="../CSItemCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="260"/>
+  </translatedAttribute>
+  <translatedAttribute name="CSValueName" path="CSChapter/CSItem/CSValue/CSValueName" key="CVN" codeXPath="../CSValueCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="260"/>
+  </translatedAttribute>  
+  <translatedAttribute name="CSItemDescription" path="CSChapter/CSItem/CSItemDescription" key="CID" codeXPath="../CSItemCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="780"/>
+  </translatedAttribute>
+  <translatedAttribute name="CSValueDescription" path="CSChapter/CSItem/CSValue/CSValueDescription" key="CVD" codeXPath="../CSValueCode">    
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="780"/>
+  </translatedAttribute>
+  <translatedAttribute name="CSValueDisplayName" path="CSChapter/CSItem/CSValue/CSValueDisplayName" key="CVDN" codeXPath="../CSValueCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="260"/>
+  </translatedAttribute>
+  <translatedAttribute name="UnitOfMeasureName" path="CSChapter/CSItem/UnitOfMeasureName" key="UOM" codeXPath="../UnitOfMeasureCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="UnitOfMeasureSymbol" path="CSChapter/CSItem/UnitOfMeasureSymbol" key="UOS" codeXPath="../UnitOfMeasureCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="20"/>
+  </translatedAttribute>
+    <translatedAttribute name="Glossary" path="FeatureCompareGroups/FeatureCompareGroup/Glossary" key="FCG" codeXPath="../@code">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="780"/>
+  </translatedAttribute>
+    <translatedAttribute name="DisclaimerName" path="Disclaimer/DisclaimerName" key="DIM" codeXPath="../DisclaimerCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="390"/>
+  </translatedAttribute>
+  <translatedAttribute name="DisclaimerText" path="Disclaimers/Disclaimer/DisclaimerText" key="DIT" codeXPath="../@code">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="390"/>
+  </translatedAttribute>
+  <translatedAttribute name="AccessoryByPackedName" path="AccessoryByPacked/AccessoryByPackedName" key="APN" codeXPath="../AccessoryByPackedCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="AwardName" path="Award/AwardName" key="AWN" codeXPath="../AwardCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="270"/>
+  </translatedAttribute>
+  <translatedAttribute name="AwardPlace" path="Award/AwardPlace" key="AWP" codeXPath="../AwardCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="52"/>
+  </translatedAttribute>
+  <translatedAttribute name="AwardDescription" path="Award/AwardDescription" key="AWD" codeXPath="../AwardCode">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="650"/>
+  </translatedAttribute>
+  <translatedAttribute name="AwardAcknowledgement" path="Award/AwardAcknowledgement" key="AWK" codeXPath="../AwardCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="800"/>
+  </translatedAttribute>
+  <translatedAttribute name="AwardVerdict" path="Award/AwardVerdict" key="AWV" codeXPath="../AwardCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="800"/>
+  </translatedAttribute>
+  <translatedAttribute name="TestPros" path="Award/TestPros" key="AWTP" codeXPath="../AwardCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="350"/>
+  </translatedAttribute>
+  <translatedAttribute name="TestCons" path="Award/TestCons" key="AWTC" codeXPath="../AwardCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="350"/>
+  </translatedAttribute>
+  <translatedAttribute name="AwardText" path="Award/AwardText" key="AWT" codeXPath="../AwardCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="200"/>
+  </translatedAttribute>
+  <translatedAttribute name="Title" path="Award/Title" key="AWTI" codeXPath="../AwardCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="350"/>
+  </translatedAttribute>
+  <translatedAttribute name="NavigationGroupName" path="NavigationGroup/NavigationGroupName" key="NGN" codeXPath="../NavigationGroupCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="NavigationAttributeName" path="NavigationGroup/NavigationAttribute/NavigationAttributeName" key="NGA" codeXPath="../NavigationAttributeCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="260"/>
+  </translatedAttribute>
+  <translatedAttribute name="NavigationValueName" path="NavigationGroup/NavigationAttribute/NavigationValue/NavigationValueName" key="NGV" codeXPath="../NavigationValueCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="260"/>
+  </translatedAttribute>
+  <translatedAttribute name="CatalogName" path="Catalog/CatalogName" key="" codeXPath=".">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="39"/>
+  </translatedAttribute>    
+  <translatedAttribute name="GroupName" path="Catalog/FixedCategorisation/Group/GroupName" key="" codeXPath="../GroupCode">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="GroupSeoName" path="Catalog/FixedCategorisation/Group/GroupSeoName" key="GSEON" codeXPath="../GroupCode">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="CategoryName" path="Catalog/FixedCategorisation/Group/Category/CategoryName" key="" codeXPath="../CategoryCode">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="CategorySeoName" path="Catalog/FixedCategorisation/Group/Category/CategorySeoName" key="CSEON" codeXPath="../CategoryCode">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="SubCategoryName" path="Catalog/FixedCategorisation/Group/Category/SubCategory/SubCategoryName " key="" codeXPath="../SubCategoryCode">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="39"/>
+  </translatedAttribute>
+  <translatedAttribute name="SubCategorySeoName" path="Catalog/FixedCategorisation/Group/Category/SubCategory/SubCategorySeoName " key="SCSEON" codeXPath="../SubCategoryCode">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="65"/>
+  </translatedAttribute>  
+  <translatedAttribute name="ItemText" path="PackagingText/PackagingTextItem/ItemText" key="PTI" codeXPath="../@code">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor"/>
+  </translatedAttribute>
+  <translatedAttribute name="ItemText" path="PackagingText/PackagingTextItem/ItemText" key="PTI" codeXPath="../@code" itemDescription="WOW">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" cpyw="yes"/>
+  </translatedAttribute>  
+  <translatedAttribute name="ItemText" path="PackagingText/PackagingTextItem/ItemText" key="PTI" codeXPath="../@code" itemDescription="SubWOW">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" cpyw="yes"/>
+  </translatedAttribute>    
+  <translatedAttribute name="ItemText" path="PackagingText/PackagingTextItem/ItemText" key="PTI" codeXPath="../@code" itemDescription="Key benefit area">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" cpyw="yes"/>
+  </translatedAttribute>     
+  <translatedAttribute name="Head" path="RichTexts/RichText/Item/Head" key="RTH" codeXPath="../@code">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="400"/>
+  </translatedAttribute>
+  <translatedAttribute name="Body" path="RichTexts/RichText/Item/Body" key="RTB" codeXPath="../@code">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="1950"/>
+  </translatedAttribute>
+  <translatedAttribute name="Text" path="RichTexts/RichText/Item/BulletList/BulletItem/Text" key="RTI" codeXPath="concat(../../../@code,'_',count(../preceding-sibling::*))">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="800"/>
+  </translatedAttribute>
+  
+  <!-- Sustainability content -->
+  <translatedAttribute name="Name" path="Name" key="SNAM" codeXPath="../Code">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="Text" path="Text" key="STXT" codeXPath="../Code">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="ShortDescription" path="ShortDescription" key="SSDN" codeXPath="../Code">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="650"/>
+  </translatedAttribute>
+  <translatedAttribute name="LongDescription" path="LongDescription" key="SLDN" codeXPath="../Code">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="780"/>
+  </translatedAttribute>
+  <translatedAttribute name="GreenChapterName" path="GreenChapter/GreenChapterName" key="GCN" codeXPath="../GreenChapterCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="65"/>
+  </translatedAttribute>
+  <translatedAttribute name="GreenItemName" path="GreenChapter/GreenItem/GreenItemName" key="GIN" codeXPath="../GreenItemCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="250"/>
+  </translatedAttribute>
+  <translatedAttribute name="GreenValueName" path="GreenChapter/GreenItem/GreenValue/GreenValueName" key="GVN" codeXPath="../GreenValueCode">
+    <metaAttributes validate="no" translate="yes" translated="no" direction="ltor" maxlength="260"/>
+  </translatedAttribute>
+  
+  <!-- Range -->
+  <translatedAttribute name="Name" path="Name" key="NAM" codeXPath="../@code" itemDescription="RangeText_Name">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="65"/>
+  </translatedAttribute>      
+  <translatedAttribute name="SubWOW" path="SubWOW" key="SOW" codeXPath="../@code" itemDescription="RangeText_SubWOW">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="78" cpyw="yes"/>
+  </translatedAttribute>    
+  <translatedAttribute name="WOW" path="WOW" key="WOW" codeXPath="../@code" itemDescription="RangeText_WOW">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="65" cpyw="yes"/>
+  </translatedAttribute>  
+  <translatedAttribute name="MarketingTextHeader" path="MarketingTextHeader" key="MTH" codeXPath="../@code" itemDescription="RangeText_MarketingTextHeader">
+    <metaAttributes validate="yes" translate="yes" direction="ltor" maxlength="585" cpyw="yes"/>
+  </translatedAttribute>
+  
+  <!-- ProductCluster: not used because ProductClusterName does not exist and a path isn't used because of a bug -->
+  <translatedAttribute name="ProductClusterName" path="ProductClusters/ProductCluster/Name" key="PCN" codeXPath="../@code" itemDescription="ProductCluster_Name">
+    <metaAttributes validate="yes" translate="yes" translated="no" direction="ltor" maxlength="65"/>
+  </translatedAttribute>      
+  
+</root>

@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:resources>
+    <!-- the sql resource provides a central place to edit database details -->
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC"/>
+        <map:parameter name="clob-encoding" value="UTF-8"/>
+      </map:transform>
+    </map:resource>
+  </map:resources>
+
+  <map:components>
+    <map:transformers default="xslt">
+      <map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer"/>
+      <map:transformer name="sendmail" src="org.apache.cocoon.mail.transformation.SendMailTransformer">
+        <smtphost>nlvg020.gdc1.ce.philips.com</smtphost>
+        <smtpport>25</smtpport>
+      </map:transformer>
+    </map:transformers>
+
+    <map:selectors>
+      <map:selector name="parameter" logger="sitemap.selector.parameter" src="org.apache.cocoon.selection.ParameterSelector"/>
+    </map:selectors>
+
+    <map:actions>
+      <map:action name="synced-copy-source" src="org.apache.cocoon.acting.SyncedCopySourceAction"/>
+    </map:actions>
+    
+    <map:serializers>    
+      <map:serializer logger="sitemap.serializer.xml" mime-type="text/xml" name="xml-indented" src="org.apache.cocoon.serialization.XMLSerializer">
+        <encoding>UTF-8</encoding>
+        <indent>yes</indent>
+      </map:serializer>            
+    </map:serializers>    
+    
+    
+  </map:components>
+
+  <map:pipelines>
+    <!--- -->
+    <map:component-configurations>
+      <global-variables>
+        <ldir>OCTLTranslations/</ldir>
+        <channel>OCTLTranslations</channel>
+        <ct>PMT_Translated</ct>
+      </global-variables>
+    </map:component-configurations>
+    <!--- -->
+    <map:pipeline name="{global:channel}" type="noncaching">
+      <!--- -->
+      <map:match pattern="runPipeline">
+        <map:act type="synced-copy-source" src="cocoon:/exportStart">
+          <map:parameter name="lockName" value="{global:channel}"/>
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/import.xml"/>
+          <map:generate src="{global:gdir}{global:ldir}temp/import.xml"/>
+          <map:serialize type="xml"/>
+        </map:act>
+        <map:generate src="../common/xml/locked.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="exportStart">
+        <map:act type="copy-source" src="cocoon:/deleteTempFiles">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/deleteTempFilesReport.xml"/>
+        </map:act>      
+        <map:act type="copy-source" src="cocoon:/processFiles?direction=outbound">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/processOutboundFilesReport.xml"/>
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/processFiles?direction=inbound">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/processInboundFilesReport.xml"/>
+        </map:act>        
+        <map:aggregate element="reports">
+          <map:part src="{global:gdir}{global:ldir}temp/processInboundFilesReport.xml"/>
+          <map:part src="{global:gdir}{global:ldir}temp/processOutboundFilesReport.xml"/>
+        </map:aggregate>
+        <map:transform type="xslt-saxon" src="xsl/makereport.xsl">
+          <map:parameter name="channel" value="{global:channel}"/>
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}"/>
+          <map:parameter name="exportdate" value="{date:yyyyMMdd}{date:hhmmss}"/>
+        </map:transform>
+        <map:transform type="write-source" label="stepA6"/>                
+        <map:serialize type="xml"/>        
+       </map:match>
+       
+       
+      <map:match pattern="processFiles">
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:direction}"/>
+          <map:when test="outbound">
+            <map:generate type="directory" src="/applusr/pals/files/upload/archive/pikachu-to-sdl-london">
+              <map:parameter name="depth" value="1"/>
+              <map:parameter name="include" value=".*pbatch.*\.xml$"/>
+            </map:generate>
+          </map:when>
+          <map:when test="inbound">
+            <map:generate type="directory" src="/applusr/pals/files/download/archive/pikachu-to-sdl-london">
+              <map:parameter name="depth" value="1"/>
+              <map:parameter name="include" value=".*pbatch.*\.xml$"/>
+            </map:generate>
+          </map:when>
+        </map:select>
+        <map:transform type="xslt-saxon" src="{cmc2:svcDir}/batch/translation/xsl/include_dir2createEntryRecords.xsl">
+          <map:parameter name="ct" value="{global:ct}"/>
+          <map:parameter name="timestamp" value="{date:yyyyMMdd}{date:hhmm}"/>
+        </map:transform>
+        <map:transform type="cinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+       
+
+      <map:match pattern="createEntryRecords/*/*/*.*.*.*.*.*.*">
+        <!--Parameters: {1}ct {2}timestamp {3}prefix {4}filetimestamp {5}locale {6}category {7}batch {8}subbatch {9}fileextension -->
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:direction}"/>
+          <map:when test="outbound">
+            <!-- process inbound files -->
+            <map:generate src="/applusr/pals/files/upload/archive/pikachu-to-sdl-london/{3}.{4}.{5}.{6}.{7}.{8}.{9}"/>
+            <map:transform type="xslt-saxon" src="xsl/exportTranslationStore.xsl">
+              <map:parameter name="ct" value="{global:ct}"/>
+              <map:parameter name="initialtableload" value="true"/>
+              <map:parameter name="filename" value="{3}.{4}.{5}.{6}.{7}.{8}.{9}"/>
+            </map:transform>            
+            <map:call resource="sql"/>        
+            <map:transform type="xslt-saxon" src="xsl/createReport.xsl"/>  
+          </map:when>
+          <map:when test="inbound">
+            <!-- process inbound files -->
+            <map:generate src="/applusr/pals/files/download/archive/pikachu-to-sdl-london/{3}.{4}.{5}.{6}.{7}.{8}.{9}"/>
+            <map:transform type="xslt-saxon" src="{cmc2:svcDir}/batch/translation/xsl/expandLanguageFamilies.xsl">
+              <map:parameter name="filename" value="{3}.{4}.{5}.{6}.{7}.{8}.{9}"/>
+            </map:transform>                        
+            <map:transform type="xslt-saxon" src="{cmc2:ctDir}/{global:ct}/xsl/create_entry_records.xsl">
+              <map:parameter name="ct" value="{1}"/>
+              <map:parameter name="ts" value="{2}"/>
+              <map:parameter name="filename" value="{3}.{4}.{5}.{6}.{7}.{8}.{9}"/>
+              <map:parameter name="dir" value="{cmc2:gdir}/{1}/inbox"/>
+              <map:parameter name="batchnumber" value="{7}"/>
+              <map:parameter name="subbatchnumber" value="{8}"/>
+            </map:transform>
+            <map:call resource="sql"/>        
+            <map:transform src="{cmc2:ctDir}/{global:ct}/xsl/reformatForImport.xsl"/>
+            <map:transform type="xslt-saxon" src="{cmc2:svcDir}/batch/translation/xsl/preProcessFile.xsl"/>               
+            <map:transform type="xslt-saxon" src="xsl/validate.xsl"/>
+            <map:transform type="xslt-saxon" src="xsl/transformresult.xsl"/>
+            <map:transform type="xslt-saxon" src="{cmc2:svcDir}/store/xsl/importTranslationStore.xsl">
+              <map:parameter name="ct" value="{global:ct}"/>
+              <map:parameter name="initialtableload" value="true"/>
+            </map:transform>
+            <map:call resource="sql"/>        
+            <map:transform type="xslt-saxon" src="xsl/createReport.xsl"/>
+          </map:when>
+        </map:select> 
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <map:match pattern="deleteTempFiles">
+        <map:generate type="directory" src="{global:gdir}{global:ldir}temp" label="step1">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm"/>
+          <map:parameter name="depth" value="3"/>
+          <map:parameter name="include" value=".*"/>
+        </map:generate>
+        <map:transform src="xsl/dir2shell_delete.xsl" label="step2">
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}temp"/>
+          <map:parameter name="leaf" value="temp"/>
+        </map:transform>
+        <map:transform type="shell" label="step3"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      
+      
+    </map:pipeline>
+  </map:pipelines>
+   <!-- -->
+   <map:views>
+      <map:view name="stepX" from-label="stepX">
+         <map:serialize type="xml"/>
+      </map:view>
+   </map:views>
+   <!-- -->
+</map:sitemap>

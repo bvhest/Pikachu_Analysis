@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <map:resources>
+    <!-- the sql resource provides a central place to edit database details -->
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC"/>
+        <map:parameter name="clob-encoding" value="UTF-8"/>
+      </map:transform>
+    </map:resource>
+  </map:resources>
+  <!-- -->  
+  <map:pipelines>
+
+    <map:component-configurations>
+      <global-variables>
+        <ct>PP_Translations</ct>
+      </global-variables>
+    </map:component-configurations>
+  
+    <map:pipeline type="noncaching">
+      <!-- Here is the main pipeline that executes the batch processing. 
+        In invoking the pipeline the execution timestamp is passed as a parameter along with ct.
+        Input parameters: {1} = timestamp
+      -->
+      <map:match pattern="runMain/*">    
+        <map:act type="copy-source" src="{cmc2:svcURL}/batch/localised/createBatches/{global:ct}/none">       
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/createBatches_report.xml"/>
+        </map:act>  
+        <!-- 2009-02-06 Create a zip of each pdf file as well as the pdf itself, as a workaround to the problem of incomplete downloads using IE, etc -->
+        <map:act type="copy-source" src="{cmc2:svcURL}/store/PDFExport/{global:ct}/batch/localised/processBatches/{global:ct}/none/{1}?zip=yes&amp;zipSourceDir={cmc2:gdir}/{global:ct}/outbox&amp;zipDestDir={cmc2:gdir}/{global:ct}/archive&amp;filePattern=.*\.pdf">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+        </map:act>      
+        <map:act type="copy-source" src="{cmc2:svcURL}/processControl/archiveFiles/outbox/{global:ct}">
+          <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/archive_report.xml"/>
+        </map:act>                
+        <map:generate src="{cmc2:gdir}/{global:ct}/temp/processBatches_report.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <!-- per-entry processing -->
+      <map:match pattern="process/*/*/**">
+      <!-- {1} localisation {2} timestamp {3} objectId -->      
+        <map:generate src="{cmc2:xmlDir}/empty.xml"/>
+        <!-- create an entry record for the target octl -->
+        <map:transform src="{cmc2:xslDir}/common/create_entry_record.xsl">
+          <map:parameter name="o" value="{3}"/>
+          <map:parameter name="ct" value="{global:ct}"/>
+          <map:parameter name="l" value="{1}"/>
+          <map:parameter name="ts" value="{2}"/>
+        </map:transform>
+        <!-- include the content from the source octl -->
+        <map:transform src="xsl/include_content.xsl">
+          <map:parameter name="svcURL" value="{cmc2:svcURL}/"/>
+          <map:parameter name="o" value="{3}"/>
+          <map:parameter name="ct" value="PP_Log"/>
+          <map:parameter name="l" value="{1}"/>
+        </map:transform>
+        <map:transform type="cinclude"/>  
+        <map:transform src="xsl/process_entries.xsl"/>      
+        <!-- include secondaries-->
+        <map:transform src="{cmc2:xslDir}/common/get_secondaries.xsl">
+          <map:parameter name="o" value="{3}"/>
+            <map:parameter name="ct" value="{global:ct}"/>
+            <map:parameter name="l" value="{1}"/>
+          </map:transform>
+          <map:call resource="sql"/>
+        <map:transform src="{cmc2:xslDir}/common/include_secondaries.xsl">
+          <map:parameter name="svcURL" value="{cmc2:svcURL}/"/>
+        </map:transform>
+        <map:transform type="cinclude"/> 
+        <!-- actual enrichment/processing-->
+        <map:transform src="xsl/enrich.xsl"/>
+        <map:transform src="xsl/status.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

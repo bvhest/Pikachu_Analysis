@@ -1,0 +1,113 @@
+#icp_view_overview div.icp_prd_ov_mainimage {
+	text-align: center;
+	padding-right: 10px;
+	float: right;
+}
+
+#icp_view_overview div.icp_prd_ov_overview {
+	min-height: 280px;
+}
+
+#icp_view_overview div.icp_prd_ov_overview h2 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+#icp_view_overview .icp_prd_ov_label {
+	color: #006;
+	font-style: italic;
+}
+
+#icp_view_overview span.icp_prd_ov_label {
+	width: 220px;
+}
+
+#icp_view_overview p.icp_prd_ov_header {
+	font-weight: bold;
+	font-size: 120%;
+	color: #00A7BC;
+	margin: 2ex 0px 1ex 0px;
+	clear: both;
+}
+
+#icp_view_overview div.icp_prd_ov_section ul {
+	margin: 1ex 0px 0px 5px;
+	padding-left: 16px;
+	list-style: none;
+}
+#icp_view_overview div.icp_prd_ov_section ul dl {
+	margin-left: 20px;
+}
+#icp_view_overview div.icp_prd_ov_section li p.icp_prd_ov_header,
+#icp_view_overview div.icp_prd_ov_assets div.asset p.icp_prd_ov_header,
+#icp_view_overview div.icp_prd_ov_accessories div.asset p.icp_prd_ov_header
+{
+	font-weight: bold;
+	font-size: 95%;
+	color: #0E5FD8;
+	margin: 1ex 0px;
+}
+#icp_view_overview div.icp_prd_ov_section dl {
+	margin-left: 20px;
+}
+
+/* This has more margin to make room for feature images and logos */
+#icp_view_overview div.icp_prd_ov_features ul dl {
+	margin-left: 80px;
+}
+#icp_view_overview div.icp_prd_ov_featureImages {
+	margin-left: 5px;
+	float: left;
+	width: 60px;
+}
+#icp_view_overview div.icp_prd_ov_featureImages img {
+	padding-top: 6px;
+}
+
+#icp_view_overview .icp_fulluom {
+	display: none;
+}
+
+#icp_view_overview div.icp_prd_ov_filters ul,
+#icp_view_overview div.icp_prd_ov_accessories ul,
+#icp_view_overview div.icp_prd_ov_performers ul,
+#icp_view_overview div.icp_prd_ov_richTexts ul {
+	list-style-type: square;
+}
+
+#icp_view_overview div.icp_prd_ov_richTexts p.prd_ov_richtext_chapter {
+	font-weight: bold;
+}
+#icp_view_overview div.icp_prd_ov_richTexts dl {
+	border:1px inset #aaa;
+	margin-left:20px;
+	padding:3px;
+}
+
+#icp_view_overview div.icp_prd_ov_disclaimers ul {
+	list-style-type: lower-roman;
+}
+
+#icp_view_overview div.icp_prd_ov_assets div.asset,
+#icp_view_overview div.icp_prd_ov_accessories div.asset
+{
+	width: 90px;
+	display: inline-table;
+	margin: 8px 8px;
+	min-height: 180px;
+}
+#icp_view_overview div.icp_prd_ov_assets div.asset .image,
+#icp_view_overview div.icp_prd_ov_accessories div.asset .image
+{
+	border: 2px outset #aaa;
+	padding: 3px;
+	text-align: center;
+}
+#icp_view_overview div.icp_prd_ov_assets div.asset .image .icp_lazyload,
+#icp_view_overview div.icp_prd_ov_accessories div.asset .image .icp_lazyload
+{
+	margin: auto;
+}
+#icp_view_overview div.icp_prd_ov_assets div.asset p.caption {
+	margin: 1ex 0px 0px;
+}

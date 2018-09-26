@@ -1,0 +1,94 @@
+#icp_view_awardsandreviews div.awdrev_title {
+	text-align: center;
+	font-size: 20pt;
+  font-family: "Gill Sans Std", "Gill Sans MT", Verdana;
+  color: #992C96;
+  margin-bottom:24px;
+  margin-top:12px;
+}
+
+#icp_view_awardsandreviews table.awdrev_main {
+  border-collapse: separate;
+  border-spacing: 15px;
+  width: 924px;
+  margin: 0 20px;
+}
+
+#icp_view_awardsandreviews table.awdrev_main td {
+  vertical-align: top;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+}
+#icp_view_awardsandreviews table.awdrev_main td.awdrev_awards {
+  width:160px;
+}
+
+#icp_view_awardsandreviews table.awdrev_main td.awdrev_reviews {
+}
+
+#icp_view_awardsandreviews div.awdrev_awards_title, #icp_view_awardsandreviews div.awdrev_reviews_title {
+  font-size: 12pt;
+  color: #00A7BC;
+  margin-bottom: 18px;
+}
+
+#icp_view_awardsandreviews div.awdrev_award_desc {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px ridge #ccc;
+  font-style: italic;
+  text-align: center;
+}
+
+#icp_view_awardsandreviews div.awdrev_reviews table {
+  border-collapse: collapse;
+}
+
+#icp_view_awardsandreviews table.awdrev_main td.awdrev_reviews table td {
+  vertical-align: top;
+  border-width: 0;
+}
+#icp_view_awardsandreviews table.awdrev_main td.awdrev_reviews table td.awdrev_review_left {
+  padding: 0 20px 20px 0;
+}
+#icp_view_awardsandreviews table.awdrev_main td.awdrev_reviews table td.awdrev_review_right {
+  padding: 0px 20px 20px 0;
+}
+
+#icp_view_awardsandreviews div.awdrev_norating {
+  font-style: italic;
+  color: #749A00;
+  padding-left: 4px;
+}
+
+#icp_view_awardsandreviews div.awdrev_rating_stars_blank {
+  background-image: url(../../web/alaTest/css/common/rating_star_sprites.gif);
+  height: 18px;
+  width: 85px;
+}
+
+#icp_view_awardsandreviews div.awdrev_rating_stars {
+  background-image: url(../../web/alaTest/css/common/rating_star_sprites.gif);
+  height: 18px;
+  width: 0px;
+  background-position: 0 -18px;
+}
+
+#icp_view_awardsandreviews div.awdrev_review_date {
+  padding-left: 4px;
+  margin-top: 5px;
+}
+
+#icp_view_awardsandreviews div.awdrev_review_head {
+  font-weight: bold;
+}
+
+#icp_view_awardsandreviews div.awdrev_review_title {
+  font-style: italic;
+  margin-bottom: .5ex;
+}
+
+#icp_view_awardsandreviews div.awdrev_award_logo {
+  text-align: center;
+}
+

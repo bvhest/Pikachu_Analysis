@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<languages>
+  <language name="Bulgarian" locale="bg_BG"/>
+  <language name="Chinese (simplified Chinese)" locale="zh_CN"/>
+  <language name="Taiwanese (traditional Chinese)" locale="zh_TW"/>
+  <language name="Croatian" locale="hr_HR"/>
+  <language name="Czech" locale="cs_CZ"/>
+  <language name="Dutch (Netherlands)" locale="nl_NL"/>
+  <language name="English (UK)" locale="en_GB"/>
+  <language name="Finnish" locale="fi_FI"/>
+  <language name="French (France)" locale="fr_FR"/>
+  <language name="Canadian French (Canada)" locale="fr_CA"/>
+  <language name="German (Germany)" locale="de_DE"/>
+  <language name="Greek (Greece)" locale="el_GR"/>
+  <language name="Hungarian (Hungary)" locale="hu_HU"/>
+  <language name="Italian (Italy)" locale="it-IT"/>
+  <language name="Korean (Korea)" locale="ko_KR"/>
+  <language name="Norwegian (Norway)" locale="no_NO"/>
+  <language name="Polish (Poland)" locale="pl_PL"/>
+  <language name="Portuguese (Portugal)" locale="pt_PT"/>
+  <language name="Portuguese (Brazil)" locale="pt_BR"/>
+  <language name="Romanian (Romania)" locale="ro_RO"/>
+  <language name="Russian (Russia)" locale="ru_RU"/>
+  <language name="Russian (Ukraine)" locale="ru_UA"/>
+  <language name="Serbian (Serbia Montenegro)" locale="sr_RS"/>
+  <language name="Slovakian (Slovakia)" locale="sk_SK"/>
+  <language name="Slovenian (Slovania)" locale="sl_SI"/>
+  <language name="Spanish (Spain)" locale="es_ES"/>
+  <language name="AR Spanish (Argentina, Uruguay)" locale="es_AR"/>
+  <language name="Latam Spanish (Mexico, Columbia, Chile, Peru, Venezuela)" locale="es_MX"/>
+  <!-- Multiple locales for one area are not desirable
+  <language name="Latam Spanish (Mexico, Columbia, Chile, Peru, Venezuela)" locale="es_CO"/>
+  <language name="Latam Spanish (Mexico, Columbia, Chile, Peru, Venezuela)" locale="es_CL"/>
+  <language name="Latam Spanish (Mexico, Columbia, Chile, Peru, Venezuela)" locale="es_PE"/>
+  <language name="Latam Spanish (Mexico, Columbia, Chile, Peru, Venezuela)" locale="es_VE"/>
+  -->
+  <language name="Swedish (Sweden)" locale="sv_SE"/>
+  <language name="Thai (Thailand)" locale="th_TH"/>
+  <language name="Turkish (Turkey)" locale="tr_TR"/>
+</languages>

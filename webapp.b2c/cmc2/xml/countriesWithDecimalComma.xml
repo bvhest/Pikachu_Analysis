@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- the countries listed in this file are based on the lemma "Countries using Arabic numerals with decimal comma" on Wikipedia:
+   | http://en.wikipedia.org/wiki/Decimal_mark#Countries_using_Arabic_numerals_with_decimal_comma 
+   | 
+   | The overview on Wikipedia has been cross-referenced with the countries in the Pikachu table locale_language.
+   | with <country code="CA" locale="fr_CA" /> manually added:
+select '<country code="'||country_code||'" locale="'||locale||'" />'
+  from locale_language 
+ where country_name in ( 'Albania', 'Andorra', 'Argentina', 'Armenia', 'Austria', 'Azerbaijan', 'Belarus', 'Belgium', 'Bolivia', 'Bosnia and Herzegovina', 'Brazil', 'Bulgaria'
+                       , 'Cameroon', 'Canada (French-speaking)', 'Chile', 'Colombia', 'Costa Rica', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Dominican Republic'
+                       , 'Ecuador', 'Estonia', 'Faroes', 'Finland', 'France', 'Germany', 'Georgia', 'Greece', 'Greenland', 'Honduras', 'Hungary', 'Iceland', 'Indonesia', 'Italy'
+                       , 'Kazakhstan', 'Kirgistan', 'Latvia', 'Lebanon', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Moldova'
+                       , 'Mongolia', 'Morocco', 'Netherlands', 'Norway', 'Paraguay', 'Peru', 'Poland', 'Portugal', 'Romania', 'Russia', 'Serbia', 'Slovakia', 'Slovenia'
+                       , 'South Africa', 'Spain', 'Sweden', 'Tunisia', 'Turkey', 'Ukraine', 'Uruguay', 'Uzbekistan', 'Venezuela', 'Vietnam')
+ order by country_code
+;
+   |
+   | BHE, 17/12/2012
+   |-->
+<root>
+   <country code="AR" locale="es_AR" />
+   <country code="AT" locale="de_AT" />
+   <country code="BE" locale="nl_BE" />
+   <country code="BE" locale="fr_BE" />
+   <country code="BG" locale="bg_BG" />
+   <country code="BR" locale="pt_BR" />
+   <country code="CA" locale="fr_CA" />
+   <country code="CL" locale="es_CL" />
+   <country code="CO" locale="es_CO" />
+   <country code="CZ" locale="cs_CZ" />
+   <country code="DE" locale="de_DE" />
+   <country code="DK" locale="da_DK" />
+   <country code="EE" locale="et_EE" />
+   <country code="ES" locale="es_ES" />
+   <country code="FI" locale="fi_FI" />
+   <country code="FR" locale="fr_FR" />
+   <country code="GR" locale="el_GR" />
+   <country code="HR" locale="hr_HR" />
+   <country code="HU" locale="hu_HU" />
+   <country code="ID" locale="id_ID" />
+   <country code="ID" locale="en_ID" />
+   <country code="IT" locale="it_IT" />
+   <country code="KZ" locale="kk_KZ" />
+   <country code="LT" locale="lt_LT" />
+   <country code="LV" locale="lv_LV" />
+   <country code="NL" locale="nl_NL" />
+   <country code="NO" locale="no_NO" />
+   <country code="PA" locale="es_PA" />
+   <country code="PE" locale="es_PE" />
+   <country code="PL" locale="pl_PL" />
+   <country code="PT" locale="pt_PT" />
+   <country code="RO" locale="ro_RO" />
+   <country code="RS" locale="sr_RS" />
+   <country code="RU" locale="ru_RU" />
+   <country code="SE" locale="sv_SE" />
+   <country code="SI" locale="sl_SI" />
+   <country code="SK" locale="sk_SK" />
+   <country code="TR" locale="tr_TR" />
+   <country code="UA" locale="uk_UA" />
+   <country code="UA" locale="ru_UA" />
+   <country code="UY" locale="es_UY" />
+   <country code="VE" locale="es_VE" />
+   <country code="VN" locale="vi_VN" />
+   <country code="ZA" locale="en_ZA" />
+</root>

@@ -1,0 +1,2431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Product xmlns:source="http://apache.org/cocoon/source/1.0" xmlns:sql="http://apache.org/cocoon/SQL/2.0">
+  <sql:rowset>
+    <sql:row>
+      <sql:id>WACS7000/12</sql:id>
+      <sql:lplastmod>2007-08-10T21:25:00</sql:lplastmod>
+      <sql:lpdata>
+        <Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" Brand="PHI" Division="CE" Country="NL" Locale="nl_NL" Status="Marketing Released" lastModified="2007-08-10T21:25:00" masterLastModified="2007-07-26T19:28:00" IsMaster="false" IsAccessory="false">
+          <CTN>WACS7000/12</CTN>
+          <DTN>WACS7000/12</DTN>
+          <ProductName>Draadloos Music Center/Music Station</ProductName>
+          <NamingString>
+            <MasterBrand>
+              <BrandCode>PHI</BrandCode>
+              <BrandName>Philips</BrandName>
+            </MasterBrand>
+            <BrandString>Philips</BrandString>
+            <Concept>
+              <ConceptCode>SB30000002</ConceptCode>
+              <ConceptName>Streamium</ConceptName>
+            </Concept>
+            <Descriptor>
+              <DescriptorCode>D300000224</DescriptorCode>
+              <DescriptorName>Draadloos Music Center/Music Station</DescriptorName>
+            </Descriptor>
+            <Alphanumeric>WACS7000</Alphanumeric>
+            <VersionString>
+			</VersionString>
+            <BrandedFeatureString>
+			</BrandedFeatureString>
+            <DescriptorBrandedFeatureString>Draadloos Music Center/Music Station</DescriptorBrandedFeatureString>
+          </NamingString>
+          <WOW>Beluister al uw muziek waar u maar wilt</WOW>
+          <SubWOW>Totaal muzikaal genot en totale muzikale vrijheid</SubWOW>
+          <MarketingTextHeader>Sla al uw muziek op de harde schijf (80 GB) op en geniet van draadloos streamen vanaf het Center naar het Station. Ervaar supersnel kopiëren vanaf de CD. Ook kunt u uw GoGear of iPod afspelen via het optionele 2-in-1-station.</MarketingTextHeader>
+          <SupraFeature>
+            <SupraFeatureCode>SF30000001</SupraFeatureCode>
+            <SupraFeatureName>Connected Planet</SupraFeatureName>
+          </SupraFeature>
+          <ConsumerSegment>
+            <ConsumerSegmentCode>CS30000001</ConsumerSegmentCode>
+            <ConsumerSegmentName>.2 Innovators .2 sdsdsd 1 100</ConsumerSegmentName>
+          </ConsumerSegment>
+          <KeyBenefitArea>
+            <KeyBenefitAreaCode>K300002502</KeyBenefitAreaCode>
+            <KeyBenefitAreaName>Onbeperkt luisterplezier - draadloos 2 200</KeyBenefitAreaName>
+            <KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+            <Feature>
+              <FeatureCode>F300006242</FeatureCode>
+              <FeatureReferenceName>Wireless streaming</FeatureReferenceName>
+              <FeatureName>Draadloze streaming</FeatureName>
+              <FeatureShortDescription>Draadloze streaming</FeatureShortDescription>
+              <FeatureLongDescription>Draadloze streaming tussen Music Center en Music Station(s)</FeatureLongDescription>
+              <FeatureGlossary>Met draadloze streaming hoeft u geen grote muziekbestanden te downloaden en op uw audioapparaat op te slaan. In plaats daarvan kunt u direct naar uw favoriete nummers luisteren, omdat de muziek tegelijk naar alle Music Stations wordt gestreamd. Neem uw muziek mee van de ene kamer naar de andere met Music Follows Me zonder dat u een nummer opnieuw hoeft te zoeken en af te spelen. Music Broadcast speelt gelijktijdig via het Center uw favoriete muziek af op alle Stations. Met My Room, My Music kan iedereen in uw gezin muziek uit de opgeslagen verzameling kiezen en daar in elke kamer met een Wireless Music Center of Station van genieten.</FeatureGlossary>
+              <FeatureWhy>Wireless streaming enables you to listen to your favorite music collection anytime, anywhere in your home.</FeatureWhy>
+              <FeatureWhat>With wireless audio streaming, you do not have to wait to download and store a large file on your audio device before listening to your favorite songs. Instead, the music is sent in a continuous stream and is played as it arrives.</FeatureWhat>
+              <FeatureHow>Wireless audio streaming eliminates the need to download huge files and allocate storage space prior to playing them back, which is a great convenience.</FeatureHow>
+              <FeatureRank>1</FeatureRank>
+              <FeatureTopRank>1</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300013535</FeatureCode>
+              <FeatureReferenceName>80GB hard disk/1500CDs</FeatureReferenceName>
+              <FeatureName>Harde schijf van 80 GB/1500 CD's</FeatureName>
+              <FeatureShortDescription>Harde schijf van 80 GB/1500 CD's</FeatureShortDescription>
+              <FeatureLongDescription>Harde schijf van 80 GB om maximaal 1500 CD's op te slaan en af te spelen</FeatureLongDescription>
+              <FeatureGlossary>De harde schijf van 80 GB biedt u een grote capaciteit om uw digitale muziekbestanden op te slaan. Er is ruimte voor maximaal 1500 CD's uit uw muziekcollectie en de opnamesnelheid is zo snel dat u een nummer bijna tegelijkertijd kunt afspelen en kopiëren.</FeatureGlossary>
+              <FeatureWhy>You want to store your entire CD collection in one location so your music is always easy to find, never in the wrong boxes and always in the right order.</FeatureWhy>
+              <FeatureWhat>The 80GB* hard disk comfortably holds a music collection up to 1500CDs.</FeatureWhat>
+              <FeatureHow>Simply copy your CDs to the Hard Disk once and information about artist, album and track is automatically associated with them. You can either play a CD and copy it at the same time or fast-transfer discs at 4 times the speed.</FeatureHow>
+              <FeatureRank>2</FeatureRank>
+              <FeatureTopRank>2</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300000602</FeatureCode>
+              <FeatureReferenceName>USB Direct</FeatureReferenceName>
+              <FeatureName>Directe aansluiting op USB</FeatureName>
+              <FeatureShortDescription>Directe aansluiting op USB</FeatureShortDescription>
+              <FeatureLongDescription>USB Direct for MP3/WMA music playback</FeatureLongDescription>
+              <FeatureGlossary>With the USB Direct mode, you can simply select the music on a USB device and playback all your content. All you have to do is plug in your USB device to playback music or export content from the device.</FeatureGlossary>
+              <FeatureWhy>You want to listen to your USB device and play it on the Wireless Music Center to enjoy your portable music.</FeatureWhy>
+              <FeatureWhat>You can plug in your USB device to either playback the content through the Wireless Music Center or to export content from the Wireless Music Center to the device.</FeatureWhat>
+              <FeatureHow>With the USB Direct mode, you can simply select the music on the USB device and playback all your content though operating it on the center.</FeatureHow>
+              <FeatureRank>3</FeatureRank>
+              <FeatureTopRank>3</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F400000482</FeatureCode>
+              <FeatureReferenceName>Docking cradle (optional)</FeatureReferenceName>
+              <FeatureName>Houder/basisstation</FeatureName>
+              <FeatureShortDescription>Houder/basisstation</FeatureShortDescription>
+              <FeatureLongDescription>Houder/basisstation voor GoGear en iPod (optioneel)</FeatureLongDescription>
+              <FeatureGlossary>Met dit 2-in-1-station kunt u uw Philips GoGear-speler of iPOD rechtstreeks op het Wireless Music System aansluiten en van uw muziek genieten in een uitstekende geluidskwaliteit. Zet gewoon het Wireless Music Center of Station in de AUX IN-modus voordat u uw draagbare speler in het station plaatst. Blader met de afstandsbediening van het Center door uw muziek en bedien de in het station geplaatste speler ermee. Zo kunt u genieten van de muziekcollectie op uw draagbare apparaten.</FeatureGlossary>
+              <FeatureWhy>n/a</FeatureWhy>
+              <FeatureWhat>n/a</FeatureWhat>
+              <FeatureHow>n/a</FeatureHow>
+              <FeatureRank>4</FeatureRank>
+              <FeatureTopRank>4</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300008226</FeatureCode>
+              <FeatureReferenceName>Universal Plug &amp; Play</FeatureReferenceName>
+              <FeatureName>Universal Plug &amp; Play</FeatureName>
+              <FeatureShortDescription>Universal Plug &amp; Play</FeatureShortDescription>
+              <FeatureLongDescription>Draadloos streamen vanaf een PC via UPnP</FeatureLongDescription>
+              <FeatureGlossary>Universal Plug &amp; Play is een toonaangevende technologie waarmee u verbinding kunt maken met elk willekeurig apparaat dat geschikt is voor Universal Plug &amp; Play voor het ontvangen en verzenden van muziek. Het Wireless Music Center maakt gebruik van Universal Plug &amp; Play zodat op een eenvoudige standaardmanier verbinding kan worden gemaakt met andere apparaten die geschikt zijn voor Universal Plug &amp; Play. U kunt uw Wireless Music Center eenvoudig aansluiten op andere media-apparaten voor het ontvangen en overzetten van content.</FeatureGlossary>
+              <FeatureWhy>You want to be able to connect your Wireless Music Center to other media devices to receive or to transfer content.</FeatureWhy>
+              <FeatureWhat>Universal Plug &amp; Play is an industry standard technology that lets you connect to any Universal Plug &amp; Play enabled device to receive or transmit music.</FeatureWhat>
+              <FeatureHow>Your Wireless Music Center utilizes Universal Plug &amp; Play to ensure an easy and standard way to connect to other Universal Plug &amp; Play enabled devices so you can perform content navigation and transfers.</FeatureHow>
+              <FeatureRank>5</FeatureRank>
+              <FeatureTopRank>5</FeatureTopRank>
+            </Feature>
+          </KeyBenefitArea>
+          <KeyBenefitArea>
+            <KeyBenefitAreaCode>K300002582</KeyBenefitAreaCode>
+            <KeyBenefitAreaName>Eenvoudige navigatie en bediening</KeyBenefitAreaName>
+            <KeyBenefitAreaRank>2</KeyBenefitAreaRank>
+            <Feature>
+              <FeatureCode>F300011502</FeatureCode>
+              <FeatureReferenceName>My Room, My Music</FeatureReferenceName>
+              <FeatureName>My Room, My Music</FeatureName>
+              <FeatureShortDescription>My Room, My Music 200</FeatureShortDescription>
+              <FeatureLongDescription>My Room, My Music afspelen op alle Stations</FeatureLongDescription>
+              <FeatureGlossary>Met My Room, My Music kan iedereen in uw gezin muziek kiezen uit de opgeslagen verzameling en daar in elke willekeurige kamer met een Wireless Music Station van genieten. De technologie voor toegang voor meerdere gebruikers streamt tegelijkertijd de geselecteerde muziek van het Wireless Music Center naar de Wireless Music Stations. Eén enkel Wireless Music Center kan naar maximaal 5 Stations streamen. Dit betekent dat u en uw gezin tegelijkertijd in verschillende kamers kunnen genieten van zes verschillende muziekkeuzen.</FeatureGlossary>
+              <FeatureWhy>Everyone wants to have access to the entire CD collection and enjoy what they want, when they want, in their own rooms</FeatureWhy>
+              <FeatureWhat>Allows every member of your family to independently select and play any music from the stored collection in any room equipped with a Wireless Music Station. That could mean six different tracks playing in different rooms, all at the same time.</FeatureWhat>
+              <FeatureHow>Multiple User Access technology simultaneously streams music selected by the client Wireless Music Stations from the Wireless Music Center. There is no delay, even when streaming to fi ve stations at once.</FeatureHow>
+              <FeatureRank>6</FeatureRank>
+              <FeatureTopRank>6</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300006250</FeatureCode>
+              <FeatureReferenceName>Music Follows Me</FeatureReferenceName>
+              <FeatureName>Music Follows Me</FeatureName>
+              <FeatureShortDescription>Music Follows Me</FeatureShortDescription>
+              <FeatureLongDescription>Music Follows Me: neem uw muziek mee door het hele huis</FeatureLongDescription>
+              <FeatureGlossary>De Music Follows Me-functie geeft u de mogelijkheid om uw favoriete muziek van de ene kamer naar de andere te brengen zonder dat u het nummer opnieuw hoeft te zoeken of af te spelen. Met een simpele druk op de knop zal uw favoriete nummer u overal in huis achtervolgen.</FeatureGlossary>
+              <FeatureWhy>No need to reselect a track, album or playlist when you move to another room.</FeatureWhy>
+              <FeatureWhat>The Music Follows Me feature allows you to enjoy music as you move from room to room without having to navigate and start playback of your chosen tracks all over again.</FeatureWhat>
+              <FeatureHow>Simply press a button on any Wireless Music Station or your remote control and your chosen music will continue playing in the room where you currently are.</FeatureHow>
+              <FeatureRank>7</FeatureRank>
+              <FeatureTopRank>7</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300006251</FeatureCode>
+              <FeatureReferenceName>Music Broadcast - Party mode!</FeatureReferenceName>
+              <FeatureName>Music Broadcast - Altijd feest!</FeatureName>
+              <FeatureShortDescription>Music Broadcast - Altijd feest!</FeatureShortDescription>
+              <FeatureLongDescription>Music Broadcast voor gelijktijdig afspelen op alle stations</FeatureLongDescription>
+              <FeatureGlossary>Speel DJ op uw eigen feestje en speel via het Wireless Music Centre gelijktijdig uw favoriete muziek af op alle Wireless Music Stations in de verschillende delen van uw huis. Fantastisch voor feestjes!</FeatureGlossary>
+              <FeatureWhy>You want to be able to play the same music in every room at once, with excellent sound quality and at the right volume. For parties or just for fun.</FeatureWhy>
+              <FeatureWhat>The Music Broadcast feature sends your choice of music to every Wireless Music Station in your home simultaneously at the touch of a button.</FeatureWhat>
+              <FeatureHow>When activated, this feature instantly broadcasts your selected track or playlist to up to 5 Wireless Music Stations around your home. It can only be activated from the Wireless Music Center, so only you decide what music gets broadcast. Each station has an override function, so those in other rooms can listen to different music if they want to.</FeatureHow>
+              <FeatureRank>8</FeatureRank>
+              <FeatureTopRank>8</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F400002821</FeatureCode>
+              <FeatureReferenceName>CD ripping plus Gracenote</FeatureReferenceName>
+              <FeatureName>CD's rippen en Gracenote</FeatureName>
+              <FeatureLongDescription>Rip CD's en vind informatie over muziek via Gracenote</FeatureLongDescription>
+              <FeatureGlossary>-</FeatureGlossary>
+              <FeatureWhy>na</FeatureWhy>
+              <FeatureWhat>na</FeatureWhat>
+              <FeatureHow>na</FeatureHow>
+              <FeatureRank>9</FeatureRank>
+              <FeatureTopRank>9</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F400000484</FeatureCode>
+              <FeatureReferenceName>2-Way LCD Remote Control</FeatureReferenceName>
+              <FeatureName>Tweerichtingsafstandsbediening met LCD</FeatureName>
+              <FeatureShortDescription>Tweerichtingsafstandsbediening met LCD</FeatureShortDescription>
+              <FeatureLongDescription>Tweerichtingsafstandsbediening met LCD en alfanumerieke zoekmogelijkheid</FeatureLongDescription>
+              <FeatureGlossary>n.v.t.</FeatureGlossary>
+              <FeatureWhy>n/a</FeatureWhy>
+              <FeatureWhat>n/a</FeatureWhat>
+              <FeatureHow>n/a</FeatureHow>
+              <FeatureRank>10</FeatureRank>
+              <FeatureTopRank>10</FeatureTopRank>
+            </Feature>
+          </KeyBenefitArea>
+          <KeyBenefitArea>
+            <KeyBenefitAreaCode>K300002583</KeyBenefitAreaCode>
+            <KeyBenefitAreaName>Pixel Plus 3 HD</KeyBenefitAreaName>
+            <KeyBenefitAreaRank>3</KeyBenefitAreaRank>
+            <Feature>
+              <FeatureCode>F300008242</FeatureCode>
+              <FeatureReferenceName>Super Sound Panel</FeatureReferenceName>
+              <FeatureName>'Pixel Plus' 3 HD</FeatureName>
+              <FeatureShortDescription>Super Sound Panel</FeatureShortDescription>
+              <FeatureLongDescription>Super Sound Panel voor een helder en diep bass-geluid</FeatureLongDescription>
+              <FeatureGlossary>Super Sound Panel is een innovatief panel met platte luidsprekers dat gebruikmaakt van hypermoderne technologie waarmee u de beschikking hebt over hoogwaardig, vol geluid via een platte en compacte luidsprekereenheid.</FeatureGlossary>
+              <FeatureWhy>Super Sound Panel speakers offer excellent sound performance across the frequency spectrum without the inevitable bulk of conventional speakers.</FeatureWhy>
+              <FeatureWhat>A speaker system specifi cally designed for both compactness and sound quality. Instead of the conventional thick woofer, they use Philips' patented speaker technology to deliver deep bass and a balanced, distortion-free sound from a very slim frame.</FeatureWhat>
+              <FeatureHow>Philips uses fl at plexi-piston™ speaker technology to achieve full-range sound performance from a fl at, compact design without compromising on either end of the audio spectrum.</FeatureHow>
+              <FeatureRank>11</FeatureRank>
+              <FeatureTopRank>11</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300000559</FeatureCode>
+              <FeatureReferenceName>Class D Amplifier</FeatureReferenceName>
+              <FeatureName>Klasse D-versterker</FeatureName>
+              <FeatureShortDescription>Klasse 'D' digitale versterker</FeatureShortDescription>
+              <FeatureLongDescription>Class ‘D’ Digital Amplifier voor betere geluidsprestaties</FeatureLongDescription>
+              <FeatureGlossary>De Class ‘D’ Digital Amplifier neemt een analoog signaal, zet dit om in een digitaal signaal en versterkt dat digitaal. Het signaal gaat vervolgens door een demodulatiefilter voor de uiteindelijke uitvoer. De versterkte digitale uitvoer levert alle voordelen van digitale audio, inclusief verbeterde geluidskwaliteit. Daar komt bij dat vergeleken met de traditionele AB-versterkers de Class ‘D’ Digital Amplifier een efficiëntie heeft van meer dan 90%. Deze grote efficiëntie vertaalt zich in een krachtige versterker die weinig ruimte nodig heeft.</FeatureGlossary>
+              <FeatureWhy>Because you want all the advantages of improved digital sound quality.</FeatureWhy>
+              <FeatureWhat>Class ‘D’ Digital Amplifier has greater than 90% efficiency compared to the traditional AB amplifiers. This high efficiency translates into a high powered set in a small foot print.</FeatureWhat>
+              <FeatureHow>It takes an analog signal and converts it to a digital signal. This digital output is then amplified giving the advantages of digital amplification. The signal then enters a demodulation filter to give the final output.</FeatureHow>
+              <FeatureRank>12</FeatureRank>
+              <FeatureTopRank>12</FeatureTopRank>
+            </Feature>
+          </KeyBenefitArea>
+          <PartnerLogo>
+            <PartnerLogoCode>P400000081</PartnerLogoCode>
+            <PartnerLogoName>UPnP</PartnerLogoName>
+            <PartnerLogoRank>1</PartnerLogoRank>
+          </PartnerLogo>
+          <PartnerLogo>
+            <PartnerLogoCode>P400000082</PartnerLogoCode>
+            <PartnerLogoName>WiFi certified</PartnerLogoName>
+            <PartnerLogoRank>2</PartnerLogoRank>
+          </PartnerLogo>
+          <FeatureLogo>
+            <FeatureCode>F300013535</FeatureCode>
+            <FeatureReferenceName>80GB hard disk/1500CDs</FeatureReferenceName>
+            <FeatureLogoRank>1</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureLogo>
+            <FeatureCode>F300011502</FeatureCode>
+            <FeatureReferenceName>My Room, My Music</FeatureReferenceName>
+            <FeatureLogoRank>2</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureLogo>
+            <FeatureCode>F300006250</FeatureCode>
+            <FeatureReferenceName>Music Follows Me</FeatureReferenceName>
+            <FeatureLogoRank>3</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureLogo>
+            <FeatureCode>F300006251</FeatureCode>
+            <FeatureReferenceName>Music Broadcast - Party mode!</FeatureReferenceName>
+            <FeatureLogoRank>4</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureLogo>
+            <FeatureCode>F300012445</FeatureCode>
+            <FeatureReferenceName>gracenote</FeatureReferenceName>
+            <FeatureLogoRank>5</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureLogo>
+            <FeatureCode>F300000602</FeatureCode>
+            <FeatureReferenceName>USB Direct</FeatureReferenceName>
+            <FeatureLogoRank>6</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureHighlight>
+            <FeatureCode>F300006242</FeatureCode>
+            <FeatureReferenceName>Wireless streaming</FeatureReferenceName>
+            <FeatureHighlightRank>1</FeatureHighlightRank>
+          </FeatureHighlight>
+          <FeatureHighlight>
+            <FeatureCode>F300013535</FeatureCode>
+            <FeatureReferenceName>80GB hard disk/1500CDs</FeatureReferenceName>
+            <FeatureHighlightRank>2</FeatureHighlightRank>
+          </FeatureHighlight>
+          <FeatureHighlight>
+            <FeatureCode>F300000602</FeatureCode>
+            <FeatureReferenceName>USB Direct</FeatureReferenceName>
+            <FeatureHighlightRank>3</FeatureHighlightRank>
+          </FeatureHighlight>
+          <FeatureHighlight>
+            <FeatureCode>F300008226</FeatureCode>
+            <FeatureReferenceName>Universal Plug &amp; Play</FeatureReferenceName>
+            <FeatureHighlightRank>5</FeatureHighlightRank>
+          </FeatureHighlight>
+          <FeatureHighlight>
+            <FeatureCode>F300008242</FeatureCode>
+            <FeatureReferenceName>Super Sound Panel</FeatureReferenceName>
+            <FeatureHighlightRank>11</FeatureHighlightRank>
+          </FeatureHighlight>
+          <CSChapter>
+            <CSChapterCode>3000799</CSChapterCode>
+            <CSChapterName>Geluid</CSChapterName>
+            <CSChapterRank>1</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006258</CSItemCode>
+              <CSItemName>Equalizer-instellingen</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031372</CSValueCode>
+                <CSValueName>Klassiek</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031375</CSValueCode>
+                <CSValueName>Jazz</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031376</CSValueCode>
+                <CSValueName>Pop</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031377</CSValueCode>
+                <CSValueName>Rock</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031378</CSValueCode>
+                <CSValueName>Techno</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045109</CSValueCode>
+                <CSValueName>Neutraal</CSValueName>
+                <CSValueRank>6</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006277</CSItemCode>
+              <CSItemName>Geluidsverbetering</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031426</CSValueCode>
+                <CSValueName>Dynamic Bass Boost, 3 stappen</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3037019</CSValueCode>
+                <CSValueName>Equalizer</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031432</CSValueCode>
+                <CSValueName>Incredible Surround</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031446</CSValueCode>
+                <CSValueName>Treble- en bassregeling</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3035245</CSValueCode>
+                <CSValueName>Class ‘D’ Digital Amplifier</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045229</CSValueCode>
+                <CSValueName>Slimme equalizer</CSValueName>
+                <CSValueRank>6</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006289</CSItemCode>
+              <CSItemName>Volumeregeling</CSItemName>
+              <CSItemRank>5</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031498</CSValueCode>
+                <CSValueName>Volume omhoog/omlaag</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006269</CSItemCode>
+              <CSItemName>Uitgangsvermogen</CSItemName>
+              <CSItemRank>6</CSItemRank>
+              <CSValue>
+                <CSValueName>Muziekvermogen 40 W+40 W</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000800</CSChapterCode>
+            <CSChapterName>Luidsprekers</CSChapterName>
+            <CSChapterRank>2</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006292</CSItemCode>
+              <CSItemName>Ingebouwde luidsprekers</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueName>2</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006296</CSItemCode>
+              <CSItemName>Luidsprekertypen</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045156</CSValueCode>
+                <CSValueName>Super Sound Panel</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3037738</CSValueCode>
+                <CSValueName>Geïntegreerde subwoofer</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045157</CSValueCode>
+                <CSValueName>Niet-afneembaar</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000804</CSChapterCode>
+            <CSChapterName>Audioweergave</CSChapterName>
+            <CSChapterRank>3</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006364</CSItemCode>
+              <CSItemName>Compressieformaat</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031762</CSValueCode>
+                <CSValueName>MP3</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3044751</CSValueCode>
+                <CSValueName>WMA</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031767</CSValueCode>
+                <CSValueName>PCM</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006366</CSItemCode>
+              <CSItemName>Media afspelen</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031776</CSValueCode>
+                <CSValueName>CD</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031777</CSValueCode>
+                <CSValueName>CD-R</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031778</CSValueCode>
+                <CSValueName>CD-RW</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031780</CSValueCode>
+                <CSValueName>MP3-CD</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045158</CSValueCode>
+                <CSValueName>WMA-CD</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006367</CSItemCode>
+              <CSItemName>Discafspeelmodi</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031797</CSValueCode>
+                <CSValueName>Volgende/vorige nummer zoeken</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031796</CSValueCode>
+                <CSValueName>Volgende/vorige album zoeken</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3035241</CSValueCode>
+                <CSValueName>Geheugen voor 99 nummers</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045213</CSValueCode>
+                <CSValueName>Herhalen/shuffle/programmeren</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031792</CSValueCode>
+                <CSValueName>Snel vooruit-/achteruitspoelen</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006373</CSItemCode>
+              <CSItemName>Ondersteuning van ID3-tag</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031815</CSValueCode>
+                <CSValueName>ja</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006375</CSItemCode>
+              <CSItemName>Ladertype</CSItemName>
+              <CSItemRank>5</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031818</CSValueCode>
+                <CSValueName>Sleuf</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006377</CSItemCode>
+              <CSItemName>MP3-bitsnelheden</CSItemName>
+              <CSItemRank>6</CSItemRank>
+              <CSValue>
+                <CSValueName>8 - 320 kbps en VBR</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006385</CSItemCode>
+              <CSItemName>WMA-bitsnelheden</CSItemName>
+              <CSItemRank>7</CSItemRank>
+              <CSValue>
+                <CSValueName>16-128 kbps</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3010032</CSItemCode>
+              <CSItemName>Afspeelmodus harde schijf</CSItemName>
+              <CSItemRank>8</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045162</CSValueCode>
+                <CSValueName>Album</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045163</CSValueCode>
+                <CSValueName>Genre</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045164</CSValueCode>
+                <CSValueName>Afspeellijst</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045165</CSValueCode>
+                <CSValueName>Alle nummers</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045166</CSValueCode>
+                <CSValueName>Zelfde artiest</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045167</CSValueCode>
+                <CSValueName>Zelfde genre</CSValueName>
+                <CSValueRank>6</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045190</CSValueCode>
+                <CSValueName>Ongecomprimeerde nummers</CSValueName>
+                <CSValueRank>7</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3010033</CSItemCode>
+              <CSItemName>Streaming-modus harde schijf</CSItemName>
+              <CSItemRank>9</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045168</CSValueCode>
+                <CSValueName>Wi-Fi streaming naar 5 stations</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045169</CSValueCode>
+                <CSValueName>"My Room, My Music"</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045170</CSValueCode>
+                <CSValueName>"Music Follows Me"</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045171</CSValueCode>
+                <CSValueName>"Music Broadcast"</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007569</CSItemCode>
+              <CSItemName>PC Link-afspeelmodus</CSItemName>
+              <CSItemRank>10</CSItemRank>
+              <CSValue>
+                <CSValueCode>3035842</CSValueCode>
+                <CSValueName>MP3-streaming via netwerk</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3035247</CSValueCode>
+                <CSValueName>Draadloze Wi-Fi verbinding</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3011812</CSItemCode>
+              <CSItemName>Modi directe aansluiting op USB</CSItemName>
+              <CSItemRank>11</CSItemRank>
+              <CSValue>
+                <CSValueCode>3051449</CSValueCode>
+                <CSValueName>Snel achteruitspoelen/vooruitspoelen</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3051430</CSValueCode>
+                <CSValueName>Spelen/pauze</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3051431</CSValueCode>
+                <CSValueName>Vorige/volgende</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3051450</CSValueCode>
+                <CSValueName>Stoppen</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000805</CSChapterCode>
+            <CSChapterName>Audio-opname</CSChapterName>
+            <CSChapterRank>4</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006390</CSItemCode>
+              <CSItemName>Bitsnelheid</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueName>128, 160, 192, 256 en 320 kbps</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006399</CSItemCode>
+              <CSItemName>Opnamemedia</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031890</CSValueCode>
+                <CSValueName>HDD</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006402</CSItemCode>
+              <CSItemName>Opnamesnelheid</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueName>1 x, 4 x</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006387</CSItemCode>
+              <CSItemName>Audioformaat</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031847</CSValueCode>
+                <CSValueName>MP3</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000810</CSChapterCode>
+            <CSChapterName>Opslagmedia</CSChapterName>
+            <CSChapterRank>5</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006445</CSItemCode>
+              <CSItemName>Capaciteit harde schijf</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueName>80</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <UnitOfMeasure>
+                <UnitOfMeasureCode>3000044</UnitOfMeasureCode>
+                <UnitOfMeasureName>gigabyte</UnitOfMeasureName>
+                <UnitOfMeasureSymbol>GB</UnitOfMeasureSymbol>
+              </UnitOfMeasure>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000812</CSChapterCode>
+            <CSChapterName>Tuner/ontvangst/overdracht</CSChapterName>
+            <CSChapterRank>6</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006508</CSItemCode>
+              <CSItemName>Tunerbereik</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032122</CSValueCode>
+                <CSValueName>FM</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006479</CSItemCode>
+              <CSItemName>Automatisch digitaal afstemmen</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032068</CSValueCode>
+                <CSValueName>ja</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006481</CSItemCode>
+              <CSItemName>Automatisch opslaan</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032071</CSValueCode>
+                <CSValueName>ja</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006496</CSItemCode>
+              <CSItemName>Aantal voorkeurzenders</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueName>60</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000813</CSChapterCode>
+            <CSChapterName>Connectiviteit</CSChapterName>
+            <CSChapterRank>7</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3010014</CSItemCode>
+              <CSItemName>Audio cinch in</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045149</CSValueCode>
+                <CSValueName>Analoge AUX (Center/Station)</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007503</CSItemCode>
+              <CSItemName>Audio cinch out</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045134</CSValueCode>
+                <CSValueName>Analoge lijnuitgang (Center)</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006573</CSItemCode>
+              <CSItemName>Andere aansluitingen</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueCode>3051149</CSValueCode>
+                <CSValueName>DIN-aansluiting</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006556</CSItemCode>
+              <CSItemName>Hoofdtelefoon</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032235</CSValueCode>
+                <CSValueName>3,5 mm</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3009295</CSItemCode>
+              <CSItemName>WI-FI Antenne</CSItemName>
+              <CSItemRank>5</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045132</CSValueCode>
+                <CSValueName>FM-dipool</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006591</CSItemCode>
+              <CSItemName>Draadloze verbindingen</CSItemName>
+              <CSItemRank>6</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032408</CSValueCode>
+                <CSValueName>Draadloos LAN (802.11b)</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007535</CSItemCode>
+              <CSItemName>Voeding</CSItemName>
+              <CSItemRank>7</CSItemRank>
+              <CSValue>
+                <CSValueName>220 V 50 Hz</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3010013</CSItemCode>
+              <CSItemName>Draadloze Universal Plug &amp; Play</CSItemName>
+              <CSItemRank>8</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045133</CSValueCode>
+                <CSValueName>Ingeschakeld</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006561</CSItemCode>
+              <CSItemName>LAN met kabels</CSItemName>
+              <CSItemRank>9</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032249</CSValueCode>
+                <CSValueName>Ethernet (RJ 45) 1 x</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000814</CSChapterCode>
+            <CSChapterName>Gebruiksgemak</CSChapterName>
+            <CSChapterRank>8</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006648</CSItemCode>
+              <CSItemName>Displaytype</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032562</CSValueCode>
+                <CSValueName>LCD</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006600</CSItemCode>
+              <CSItemName>Achtergrondverlichting</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032437</CSValueCode>
+                <CSValueName>ja</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006601</CSItemCode>
+              <CSItemName>Kleur van achtergrondverlichting</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032442</CSValueCode>
+                <CSValueName>Wit</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006690</CSItemCode>
+              <CSItemName>Taalversies in beeldschermmenu</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032757</CSValueCode>
+                <CSValueName>Engels</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3032756</CSValueCode>
+                <CSValueName>Nederlands 1</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3032759</CSValueCode>
+                <CSValueName>Frans 11</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3032760</CSValueCode>
+                <CSValueName>Duits</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3032761</CSValueCode>
+                <CSValueName>Italiaans</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3032764</CSValueCode>
+                <CSValueName>Spaans</CSValueName>
+                <CSValueRank>6</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006639</CSItemCode>
+              <CSItemName>digitaal inhoudsbeheer</CSItemName>
+              <CSItemRank>5</CSItemRank>
+              <CSValue>
+                <CSValueCode>VA4001041</CSValueCode>
+                <CSValueName>Inclusief WADM-software</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007571</CSItemCode>
+              <CSItemName>energiebesparende stand-bystand</CSItemName>
+              <CSItemRank>6</CSItemRank>
+              <CSValue>
+                <CSValueCode>3035346</CSValueCode>
+                <CSValueName>1 watt</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006754</CSItemCode>
+              <CSItemName>Wandmontage/plafondprojectie mogelijk</CSItemName>
+              <CSItemRank>10</CSItemRank>
+              <CSValue>
+                <CSValueName>Wandmontage mogelijk</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006626</CSItemCode>
+              <CSItemName>Klok</CSItemName>
+              <CSItemRank>11</CSItemRank>
+              <CSValue>
+                <CSValueCode>3034860</CSValueCode>
+                <CSValueName>Op het hoofddisplay</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000815</CSChapterCode>
+            <CSChapterName>Accessoires</CSChapterName>
+            <CSChapterRank>9</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006766</CSItemCode>
+              <CSItemName>Kabels</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueName>5 000 Ethernet-kabel</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006770</CSItemCode>
+              <CSItemName>CD-ROM</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueName>Installatie-CD-ROM, WADM-software en hulpprogramma's.</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006787</CSItemCode>
+              <CSItemName>Afstandsbediening</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueName>Tweerichtingsdisplay met 6 regels, eenrichtingsafstandsbediening</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006763</CSItemCode>
+              <CSItemName>Batterijen</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueName>4 x AAA + 2 x AA</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006798</CSItemCode>
+              <CSItemName>Garantiekaart</CSItemName>
+              <CSItemRank>5</CSItemRank>
+              <CSValue>
+                <CSValueName>Garantiekaart</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006786</CSItemCode>
+              <CSItemName>Snelstartgids</CSItemName>
+              <CSItemRank>6</CSItemRank>
+              <CSValue>
+                <CSValueName>Engels, Frans, Spaans</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006793</CSItemCode>
+              <CSItemName>Gebruikershandleiding</CSItemName>
+              <CSItemRank>7</CSItemRank>
+              <CSValue>
+                <CSValueName>Engels, Frans, Spaans, Italiaans, Duits</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000820</CSChapterCode>
+            <CSChapterName>Afmetingen</CSChapterName>
+            <CSChapterRank>10</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006861</CSItemCode>
+              <CSItemName>Gewicht van de omdoos</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueName>15,5</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <UnitOfMeasure>
+                <UnitOfMeasureCode>3000049</UnitOfMeasureCode>
+                <UnitOfMeasureName>kilogram</UnitOfMeasureName>
+                <UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+              </UnitOfMeasure>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007552</CSItemCode>
+              <CSItemName>Afmetingen van het product (BxDxH)</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueName>608 mm x 175 mm x 303 mm</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006883</CSItemCode>
+              <CSItemName>Gewicht van het apparaat</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueName>12,93</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <UnitOfMeasure>
+                <UnitOfMeasureCode>3000049</UnitOfMeasureCode>
+                <UnitOfMeasureName>kilogram</UnitOfMeasureName>
+                <UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+              </UnitOfMeasure>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007551</CSItemCode>
+              <CSItemName>Afmetingen verpakking (BxDxH)</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueName>682 mm x 400 mm x 236 mm</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000821</CSChapterCode>
+            <CSChapterName>Voeding</CSChapterName>
+            <CSChapterRank>11</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006932</CSItemCode>
+              <CSItemName>Stroomvoorziening</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3033414</CSValueCode>
+                <CSValueName>100 - 240 V AC, 50/60 Hz</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>S_0000653</CSItemCode>
+              <CSItemName>Puissance d'alimentation max.</CSItemName>
+              <CSItemRank>22</CSItemRank>
+              <CSValue>
+                <CSValueCode>V_00006927</CSValueCode>
+                <CSValueName>2 000</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <UnitOfMeasure>
+                <UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+                <UnitOfMeasureName>Watt</UnitOfMeasureName>
+                <UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+              </UnitOfMeasure>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3009682</CSItemCode>
+              <CSItemName>自重</CSItemName>
+              <CSItemRank>7</CSItemRank>
+              <CSValue>
+                <CSValueName>0.2</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <UnitOfMeasure>
+                <UnitOfMeasureCode>3000049</UnitOfMeasureCode>
+                <UnitOfMeasureName>千克</UnitOfMeasureName>
+                <UnitOfMeasureSymbol>千克</UnitOfMeasureSymbol>
+              </UnitOfMeasure>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>S_0001669</CSItemCode>
+              <CSItemName>12 NC</CSItemName>
+              <CSItemRank>12</CSItemRank>
+              <CSValue>
+                <CSValueCode>V_00015559</CSValueCode>
+                <CSValueName>8834 064 00010 (West-Europa)</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>V_00020320</CSValueCode>
+                <CSValueName>8834 064 00450 (Hongkong)</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>V_00020322</CSValueCode>
+                <CSValueName>8834 064 00660 (Taiwan)</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>V_00020323</CSValueCode>
+                <CSValueName>8834 064 00710 (China)</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>V_00020323_test</CSValueCode>
+                <CSValueName>3 87 12581 32800 2 (test)</CSValueName>
+                <CSValueRank>6</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <ProductOwner>Benjamin BY Ngo</ProductOwner>
+          <ProductDivision>
+            <ProductDivisionCode>3400</ProductDivisionCode>
+            <ProductDivisionName>Consumer Electronics</ProductDivisionName>
+          </ProductDivision>
+          <Code12NC>907310013386</Code12NC>
+          <GTIN>8710895966061</GTIN>
+          <CRDateYW>200646</CRDateYW>
+          <CRDate>2006-11-13</CRDate>
+          <MarketingVersion>12.0.17</MarketingVersion>
+          <MarketingStatus>Final Published</MarketingStatus>
+          <NavigationGroup>
+            <NavigationGroupCode>navigation</NavigationGroupCode>
+            <NavigationGroupName>Navigatie</NavigationGroupName>
+            <NavigationGroupRank>1</NavigationGroupRank>
+            <NavigationAttribute>
+              <NavigationAttributeCode>FG_TYPE_SUBCAT_AUDIO_SYSTEMS</NavigationAttributeCode>
+              <NavigationAttributeName>Type</NavigationAttributeName>
+              <NavigationAttributeRank>1</NavigationAttributeRank>
+              <NavigationValue>
+                <NavigationValueCode>FK_WIRELESS_MUSIC_SYSTEMS</NavigationValueCode>
+                <NavigationValueName>Draadloze muzieksystemen</NavigationValueName>
+                <NavigationValueRank>1</NavigationValueRank>
+              </NavigationValue>
+            </NavigationAttribute>
+            <NavigationAttribute>
+              <NavigationAttributeCode>RS_FEATURES_HOME_AV_AUDSYS_CAT</NavigationAttributeCode>
+              <NavigationAttributeName>Functies</NavigationAttributeName>
+              <NavigationAttributeRank>1</NavigationAttributeRank>
+              <NavigationValue>
+                <NavigationValueCode>R_WIRELESS_STREAMING</NavigationValueCode>
+                <NavigationValueName>Draadloze streaming</NavigationValueName>
+                <NavigationValueRank>1</NavigationValueRank>
+              </NavigationValue>
+            </NavigationAttribute>
+            <NavigationAttribute>
+              <NavigationAttributeCode>FG_FEATURES_AUDIO_SYSTEMS</NavigationAttributeCode>
+              <NavigationAttributeName>Functies</NavigationAttributeName>
+              <NavigationAttributeRank>1</NavigationAttributeRank>
+              <NavigationValue>
+                <NavigationValueCode>FK_CD_RIPPING_AUDIO_SYSTEMS</NavigationValueCode>
+                <NavigationValueName>CD's rippen</NavigationValueName>
+                <NavigationValueRank>1</NavigationValueRank>
+              </NavigationValue>
+            </NavigationAttribute>
+            <NavigationAttribute>
+              <NavigationAttributeCode>RS_FEATURES_HOME_AV_SUBCAT</NavigationAttributeCode>
+              <NavigationAttributeName>Functies</NavigationAttributeName>
+              <NavigationAttributeRank>1</NavigationAttributeRank>
+              <NavigationValue>
+                <NavigationValueCode>R_WIRELESS_STREAMING</NavigationValueCode>
+                <NavigationValueName>Draadloze streaming</NavigationValueName>
+                <NavigationValueRank>1</NavigationValueRank>
+              </NavigationValue>
+              <NavigationValue>
+                <NavigationValueCode>R_PARTY_MODE</NavigationValueCode>
+                <NavigationValueName>Music Broadcast - Altijd feest!</NavigationValueName>
+                <NavigationValueRank>1</NavigationValueRank>
+              </NavigationValue>
+              <NavigationValue>
+                <NavigationValueCode>R_CLASS_D_AMP</NavigationValueCode>
+                <NavigationValueName>Klasse D-versterker</NavigationValueName>
+                <NavigationValueRank>1</NavigationValueRank>
+              </NavigationValue>
+              <NavigationValue>
+                <NavigationValueCode>R_UNIVERSAL_PLUG_PLAY</NavigationValueCode>
+                <NavigationValueName>Universal Plug &amp; Play</NavigationValueName>
+                <NavigationValueRank>1</NavigationValueRank>
+              </NavigationValue>
+            </NavigationAttribute>
+            <NavigationAttribute>
+              <NavigationAttributeCode>RS_CONCEPT</NavigationAttributeCode>
+              <NavigationAttributeName>Concept</NavigationAttributeName>
+              <NavigationAttributeRank>1</NavigationAttributeRank>
+              <NavigationValue>
+                <NavigationValueCode>R_STREAMIUM</NavigationValueCode>
+                <NavigationValueName>Streamium</NavigationValueName>
+                <NavigationValueRank>1</NavigationValueRank>
+              </NavigationValue>
+            </NavigationAttribute>
+            <NavigationAttribute>
+              <NavigationAttributeCode>FG_CONNECTIVITY_AUDIO_SYSTEMS</NavigationAttributeCode>
+              <NavigationAttributeName>Connectiviteit</NavigationAttributeName>
+              <NavigationAttributeRank>1</NavigationAttributeRank>
+              <NavigationValue>
+                <NavigationValueCode>FK_USB_AUDIO_SYSTEMS</NavigationValueCode>
+                <NavigationValueName>USB</NavigationValueName>
+                <NavigationValueRank>1</NavigationValueRank>
+              </NavigationValue>
+              <NavigationValue>
+                <NavigationValueCode>FK_WIRELESS_AUDIO_SYSTEMS</NavigationValueCode>
+                <NavigationValueName>Draadloos</NavigationValueName>
+                <NavigationValueRank>1</NavigationValueRank>
+              </NavigationValue>
+            </NavigationAttribute>
+          </NavigationGroup>
+        </Product>
+      </sql:lpdata>
+      <sql:tlplastmodfrom>2007-05-29T10:43:23</sql:tlplastmodfrom>
+      <sql:tlpdata>
+        <Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="true" IsAccessory="false" lastModified="2007-05-29T10:43:23.0" Status="Marketing Released" Division="CE" Brand="PHI">
+          <CTN>WACS7000/12</CTN>
+          <DTN>WACS7000/12</DTN>
+          <ProductName>Wireless Music Center&amp;Station</ProductName>
+          <NamingString>
+            <MasterBrand>
+              <BrandCode>PHI</BrandCode>
+              <BrandName>PHILIPS</BrandName>
+            </MasterBrand>
+            <BrandString>PHILIPS</BrandString>
+            <Concept>
+              <ConceptCode>SB30000002</ConceptCode>
+              <ConceptName>Streamium</ConceptName>
+            </Concept>
+            <Descriptor>
+              <DescriptorCode>D300000224</DescriptorCode>
+              <DescriptorName>Wireless Music Center&amp;Station</DescriptorName>
+            </Descriptor>
+            <Alphanumeric>WACS7000</Alphanumeric>
+            <VersionString/>
+            <BrandedFeatureString/>
+            <DescriptorBrandedFeatureString>Wireless Music Center&amp;Station</DescriptorBrandedFeatureString>
+          </NamingString>
+          <WOW>Enjoy all your music in every room</WOW>
+          <SubWOW>Total music enjoyment and freedom</SubWOW>
+          <MarketingTextHeader>Store your whole life's music on the 80GB hard disk and enjoy wireless streaming from the Center to the Station. Experience hi-speed CD-ripping. Plus, you can playback your GoGear or iPod by using the optional 2-in-1 dock.</MarketingTextHeader>
+          <SupraFeature>
+            <SupraFeatureCode>SF30000001</SupraFeatureCode>
+            <SupraFeatureName>Connected Planet</SupraFeatureName>
+          </SupraFeature>
+          <KeyBenefitArea>
+            <KeyBenefitAreaCode>K300002502</KeyBenefitAreaCode>
+            <KeyBenefitAreaName>Unlimited listening pleasure - wirelessly 2,200</KeyBenefitAreaName>
+            <KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+            <Feature>
+              <FeatureCode>F300006242</FeatureCode>
+              <FeatureReferenceName>Wireless streaming</FeatureReferenceName>
+              <FeatureName>Wireless streaming</FeatureName>
+              <FeatureShortDescription>Wireless Streaming</FeatureShortDescription>
+              <FeatureLongDescription>Wireless streaming between Music Center and Station(s)</FeatureLongDescription>
+              <FeatureGlossary>With wireless streaming, you don't need to download and store large music files on our audio device. Instead, you can listen to favorite songs as they are continuously streamed to all the Music Stations - at the same time. Have your music follow you from room to room with Music Follows Me - no need to restart navigation and playback. Music Broadcast simultaneously broadcasts your desired music from the Center to all Stations. And with My Room, My Music, any family member can enjoy selected music from the stored collection in any room that is equipped with a Wireless Music Center or Station.</FeatureGlossary>
+              <FeatureWhy>Wireless streaming enables you to listen to your favorite music collection anytime, anywhere in your home.</FeatureWhy>
+              <FeatureWhat>With wireless audio streaming, you do not have to wait to download and store a large file on your audio device before listening to your favorite songs. Instead, the music is sent in a continuous stream and is played as it arrives.</FeatureWhat>
+              <FeatureHow>Wireless audio streaming eliminates the need to download huge files and allocate storage space prior to playing them back, which is a great convenience.</FeatureHow>
+              <FeatureRank>1</FeatureRank>
+              <FeatureTopRank>1</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300013535</FeatureCode>
+              <FeatureReferenceName>80GB hard disk/1500CDs</FeatureReferenceName>
+              <FeatureName>80GB hard disk/1500CDs</FeatureName>
+              <FeatureShortDescription>80GB Hard Disk/ 1500CDs</FeatureShortDescription>
+              <FeatureLongDescription>80GB hard disk to store and playback up to 1500CDs</FeatureLongDescription>
+              <FeatureGlossary>The 80GB hard disk offers a very large capacity for you to store your digital music files. It easily holds up to 1500CDs of your music collection, and the recording speed is so fast that you can basically play and rip a particular song almost at the same time.
+</FeatureGlossary>
+              <FeatureWhy>You want to store your entire CD collection
+in one location so your music is always easy to
+find, never in the wrong boxes and always in
+the right order.</FeatureWhy>
+              <FeatureWhat>The 80GB* hard disk comfortably holds a
+music collection up to 1500CDs.
+</FeatureWhat>
+              <FeatureHow>Simply copy your CDs to the Hard Disk once
+and information about artist, album and track
+is automatically associated with them. You can
+either play a CD and copy it at the same time
+or fast-transfer discs at 4 times the speed.
+</FeatureHow>
+              <FeatureRank>2</FeatureRank>
+              <FeatureTopRank>2</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300000602</FeatureCode>
+              <FeatureReferenceName>USB Direct</FeatureReferenceName>
+              <FeatureName>USB Direct</FeatureName>
+              <FeatureShortDescription>USB Direct iPod</FeatureShortDescription>
+              <FeatureLongDescription>USB Direct playback</FeatureLongDescription>
+              <FeatureGlossary>With the USB Direct mode, you can simply select the music on a USB memory stick and playback all your content through the center. All you have to do is plug in your USB memory stick to playback music or export content from the Wireless Music Center to the device.</FeatureGlossary>
+              <FeatureWhy>You want to listen to your USB memory stick and play it on the Wireless Music Center to enjoy your portable music.</FeatureWhy>
+              <FeatureWhat>You can plug in your USB memory stick to either playback the content through the Wireless Music Center or to export content from the Wireless Music Center to the device.</FeatureWhat>
+              <FeatureHow>With the USB Direct mode, you can simply select the music on the USB memory stick and playback all your content though operating it on the center.</FeatureHow>
+              <FeatureRank>3</FeatureRank>
+              <FeatureTopRank>3</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F400000482</FeatureCode>
+              <FeatureReferenceName>Docking cradle (optional)</FeatureReferenceName>
+              <FeatureName>Docking cradle</FeatureName>
+              <FeatureShortDescription>Docking Craddle</FeatureShortDescription>
+              <FeatureLongDescription>Docking cradle for GoGear and iPod (optional)</FeatureLongDescription>
+              <FeatureGlossary>This 2-in-1 dock lets you connect your Philips GoGear Player or iPOD directly to the Wireless Music System and enjoy it in superb sound. Simply switch the Wireless Music Center or Station to AUX IN mode before docking your portable player. Use the Center¡¦s remote control for music navigation and control on your docked player to enjoy the music collection in your portable devices.</FeatureGlossary>
+              <FeatureWhy>n/a</FeatureWhy>
+              <FeatureWhat>n/a</FeatureWhat>
+              <FeatureHow>n/a</FeatureHow>
+              <FeatureRank>4</FeatureRank>
+              <FeatureTopRank>4</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300008226</FeatureCode>
+              <FeatureReferenceName>Universal Plug &amp; Play</FeatureReferenceName>
+              <FeatureName>Universal Plug &amp; Play</FeatureName>
+              <FeatureShortDescription>Universal Plug &amp; Play</FeatureShortDescription>
+              <FeatureLongDescription>Wireless streaming from PC via UPnP</FeatureLongDescription>
+              <FeatureGlossary>Universal Plug &amp; Play is an industry standard technology that lets you connect to any Universal Plug &amp; Play enabled device to receive or transmit music. Your Wireless Music Center utilizes Universal Plug &amp; Play to ensure an easy and standard way to connect to other Universal Plug &amp; Play enabled devices. You can easily connect your Wireless Music Center to other media devices to receive or to transfer content.</FeatureGlossary>
+              <FeatureWhy>You want to be able to connect your Wireless Music Center to other media devices to receive or to transfer content.</FeatureWhy>
+              <FeatureWhat>Universal Plug &amp; Play is an industry standard technology that lets you connect to any Universal Plug &amp; Play enabled device to receive or transmit music.</FeatureWhat>
+              <FeatureHow>Your Wireless Music Center utilizes Universal Plug &amp; Play to ensure an easy and standard way to connect to other Universal Plug &amp; Play enabled devices so you can perform content navigation and transfers.</FeatureHow>
+              <FeatureRank>5</FeatureRank>
+              <FeatureTopRank>5</FeatureTopRank>
+            </Feature>
+          </KeyBenefitArea>
+          <KeyBenefitArea>
+            <KeyBenefitAreaCode>K300002582</KeyBenefitAreaCode>
+            <KeyBenefitAreaName>Easy navigation and control</KeyBenefitAreaName>
+            <KeyBenefitAreaRank>2</KeyBenefitAreaRank>
+            <Feature>
+              <FeatureCode>F300011502</FeatureCode>
+              <FeatureReferenceName>My Room, My Music</FeatureReferenceName>
+              <FeatureName>My Room, My Music</FeatureName>
+              <FeatureShortDescription>My Room, My Music</FeatureShortDescription>
+              <FeatureLongDescription>My Room, My Music playback to all Stations</FeatureLongDescription>
+              <FeatureGlossary>With My Room, My Music, your family member can enjoy their chosen music from the stored collections in any room equipped with a Wireless Music Station. Multiple User Access technology simultaneously stream music selected by the client Wireless Music Station form the Wireless Music Center. One Wireless Music Center can stream music to up to five Stations. That's six different music options for your whole family to enjoy in any room - simultaneously and instantly.</FeatureGlossary>
+              <FeatureWhy>Everyone wants to have access to the entire
+CD collection and enjoy what they want, when
+they want, in their own rooms 500
+</FeatureWhy>
+              <FeatureWhat>Allows every member of your family to independently
+select and play any music from the
+stored collection in any room equipped with
+a Wireless Music Station. That could mean six
+different tracks playing in different rooms, all
+at the same time.
+</FeatureWhat>
+              <FeatureHow>Multiple User Access technology simultaneously
+streams music selected by the client
+Wireless Music Stations from the Wireless
+Music Center. There is no delay, even when
+streaming to fi ve stations at once.
+</FeatureHow>
+              <FeatureRank>6</FeatureRank>
+              <FeatureTopRank>6</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300006250</FeatureCode>
+              <FeatureReferenceName>Music Follows Me</FeatureReferenceName>
+              <FeatureName>Music Follows Me</FeatureName>
+              <FeatureShortDescription>Music Follows Me</FeatureShortDescription>
+              <FeatureLongDescription>Music Follows Me: take your music with you from room to room</FeatureLongDescription>
+              <FeatureGlossary>Music follows Me feature allows you to bring your favorite music from room to room in your house without having to restart navigation and playback of that particular track. By simply pressing a button, your favorite song will follow you anywhere you go in your house.</FeatureGlossary>
+              <FeatureWhy>No need to reselect a track, album or playlist when you move to another room.
+</FeatureWhy>
+              <FeatureWhat>The Music Follows Me feature allows you to enjoy music as you move from room to room without having to navigate and start playback of your chosen tracks all over again.
+</FeatureWhat>
+              <FeatureHow>Simply press a button on any Wireless Music Station or your remote control and your chosen music will continue playing in the room where you currently are.
+</FeatureHow>
+              <FeatureRank>7</FeatureRank>
+              <FeatureTopRank>7</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300006251</FeatureCode>
+              <FeatureReferenceName>Music Broadcast - Party mode!</FeatureReferenceName>
+              <FeatureName>Music Broadcast - Party mode!</FeatureName>
+              <FeatureShortDescription>Music Broadcast - Party mode!</FeatureShortDescription>
+              <FeatureLongDescription>Music Broadcast for simultaneous playback to all Stations</FeatureLongDescription>
+              <FeatureGlossary>Be your own DJ at your home party and simultaneously broadcast your favorite dance music from the Wireless Music Center to all Wireless Music Stations installed in various parts of your home. Great for parties!</FeatureGlossary>
+              <FeatureWhy>You want to be able to play the same music
+in every room at once, with excellent sound
+quality and at the right volume. For parties or
+just for fun.</FeatureWhy>
+              <FeatureWhat>The Music Broadcast feature sends your choice
+of music to every Wireless Music Station in your
+home simultaneously at the touch of a button.</FeatureWhat>
+              <FeatureHow>When activated, this feature instantly broadcasts
+your selected track or playlist to up to
+5 Wireless Music Stations around your home.
+It can only be activated from the Wireless
+Music Center, so only you decide what music
+gets broadcast. Each station has an override
+function, so those in other rooms can listen to
+different music if they want to.
+</FeatureHow>
+              <FeatureRank>8</FeatureRank>
+              <FeatureTopRank>8</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F400002821</FeatureCode>
+              <FeatureReferenceName>CD ripping plus Gracenote</FeatureReferenceName>
+              <FeatureName>CD ripping plus Gracenote</FeatureName>
+              <FeatureLongDescription>Rip CDs with Gracenote automatic song information search</FeatureLongDescription>
+              <FeatureGlossary>-</FeatureGlossary>
+              <FeatureWhy>na</FeatureWhy>
+              <FeatureWhat>na</FeatureWhat>
+              <FeatureHow>na</FeatureHow>
+              <FeatureRank>9</FeatureRank>
+              <FeatureTopRank>9</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F400000484</FeatureCode>
+              <FeatureReferenceName>2-Way LCD Remote Control</FeatureReferenceName>
+              <FeatureName>2-Way LCD Remote Control</FeatureName>
+              <FeatureShortDescription>2-Way LCD Remote Control</FeatureShortDescription>
+              <FeatureLongDescription>2-Way LCD Remote Control with alphanumerical search</FeatureLongDescription>
+              <FeatureGlossary>n/a</FeatureGlossary>
+              <FeatureWhy>n/a</FeatureWhy>
+              <FeatureWhat>n/a</FeatureWhat>
+              <FeatureHow>n/a</FeatureHow>
+              <FeatureRank>10</FeatureRank>
+              <FeatureTopRank>10</FeatureTopRank>
+            </Feature>
+          </KeyBenefitArea>
+          <KeyBenefitArea>
+            <KeyBenefitAreaCode>K300002583</KeyBenefitAreaCode>
+            <KeyBenefitAreaName>Pixel Plus 3 HD</KeyBenefitAreaName>
+            <KeyBenefitAreaRank>3</KeyBenefitAreaRank>
+            <Feature>
+              <FeatureCode>F300008242</FeatureCode>
+              <FeatureReferenceName>Super Sound Panel</FeatureReferenceName>
+              <FeatureName>Pixel Plus 3 HD</FeatureName>
+              <FeatureShortDescription>Super Sound Panel 1200</FeatureShortDescription>
+              <FeatureLongDescription>Super Sound Panel for clear and deep bass sound</FeatureLongDescription>
+              <FeatureGlossary>Super Sound Panel is an innovative, flat speaker panel that uses cutting-edge technology to provide high quality, full-range audio from a flat and compact speaker unit.</FeatureGlossary>
+              <FeatureWhy>Super Sound Panel speakers offer excellent
+sound performance across the frequency
+spectrum without the inevitable bulk of
+conventional speakers.
+</FeatureWhy>
+              <FeatureWhat>A speaker system specifi cally designed for both
+compactness and sound quality. Instead of the
+conventional thick woofer, they use Philips'
+patented speaker technology to deliver deep
+bass and a balanced, distortion-free sound
+from a very slim frame.
+</FeatureWhat>
+              <FeatureHow>Philips uses fl at plexi-piston™ speaker
+technology to achieve full-range sound
+performance from a fl at, compact design
+without compromising on either end of the
+audio spectrum.
+</FeatureHow>
+              <FeatureRank>11</FeatureRank>
+              <FeatureTopRank>11</FeatureTopRank>
+            </Feature>
+            <Feature>
+              <FeatureCode>F300000559</FeatureCode>
+              <FeatureReferenceName>Class D Amplifier</FeatureReferenceName>
+              <FeatureName>Class D SmartTouch Amplifier</FeatureName>
+              <FeatureShortDescription>Class ‘D’ Digital Amplifier SmartTouch</FeatureShortDescription>
+              <FeatureLongDescription>SmartTouch Class ‘D’ Digital Amplifier for quality sound performance</FeatureLongDescription>
+              <FeatureGlossary>Class ‘D’ Digital Amplifier takes an analog signal, converts it into a digital signal and then amplifies the signal digitally. The signal then enters a demodulation filter to give the final output. The amplified digital output delivers all the advantages of digital audio, including improved sound quality. In addition, Class ‘D’ Digital Amplifier has greater than 90% efficiency compared to traditional AB amplifiers. This high efficiency translates into a powerful amplifier with a small footprint.</FeatureGlossary>
+              <FeatureWhy>Because you want all the advantages of improved digital sound quality.</FeatureWhy>
+              <FeatureWhat>Class ‘D’ Digital Amplifier has greater than 90% efficiency compared to the traditional AB amplifiers. This high efficiency translates into a high powered set in a small foot print.</FeatureWhat>
+              <FeatureHow>It takes an analog signal and converts it to a digital signal. This digital output is then amplified giving the advantages of digital amplification. The signal then enters a demodulation filter to give the final output.</FeatureHow>
+              <FeatureRank>12</FeatureRank>
+              <FeatureTopRank>12</FeatureTopRank>
+            </Feature>
+          </KeyBenefitArea>
+          <PartnerLogo>
+            <PartnerLogoCode>P400000081</PartnerLogoCode>
+            <PartnerLogoName>UPnP</PartnerLogoName>
+            <PartnerLogoRank>1</PartnerLogoRank>
+          </PartnerLogo>
+          <PartnerLogo>
+            <PartnerLogoCode>P400000082</PartnerLogoCode>
+            <PartnerLogoName>WiFi certified</PartnerLogoName>
+            <PartnerLogoRank>2</PartnerLogoRank>
+          </PartnerLogo>
+          <FeatureLogo>
+            <FeatureCode>F300013535</FeatureCode>
+            <FeatureReferenceName>80GB hard disk/1500CDs</FeatureReferenceName>
+            <FeatureLogoRank>1</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureLogo>
+            <FeatureCode>F300011502</FeatureCode>
+            <FeatureReferenceName>My Room, My Music</FeatureReferenceName>
+            <FeatureLogoRank>2</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureLogo>
+            <FeatureCode>F300006250</FeatureCode>
+            <FeatureReferenceName>Music Follows Me</FeatureReferenceName>
+            <FeatureLogoRank>3</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureLogo>
+            <FeatureCode>F300006251</FeatureCode>
+            <FeatureReferenceName>Music Broadcast - Party mode!</FeatureReferenceName>
+            <FeatureLogoRank>4</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureLogo>
+            <FeatureCode>F300012445</FeatureCode>
+            <FeatureReferenceName>gracenote</FeatureReferenceName>
+            <FeatureLogoRank>5</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureLogo>
+            <FeatureCode>F300000602</FeatureCode>
+            <FeatureReferenceName>USB Direct</FeatureReferenceName>
+            <FeatureLogoRank>6</FeatureLogoRank>
+          </FeatureLogo>
+          <FeatureHighlight>
+            <FeatureCode>F300006242</FeatureCode>
+            <FeatureReferenceName>Wireless streaming</FeatureReferenceName>
+            <FeatureHighlightRank>1</FeatureHighlightRank>
+          </FeatureHighlight>
+          <FeatureHighlight>
+            <FeatureCode>F300013535</FeatureCode>
+            <FeatureReferenceName>80GB hard disk/1500CDs</FeatureReferenceName>
+            <FeatureHighlightRank>2</FeatureHighlightRank>
+          </FeatureHighlight>
+          <FeatureHighlight>
+            <FeatureCode>F300000602</FeatureCode>
+            <FeatureReferenceName>USB Direct</FeatureReferenceName>
+            <FeatureHighlightRank>3</FeatureHighlightRank>
+          </FeatureHighlight>
+          <FeatureHighlight>
+            <FeatureCode>F300008226</FeatureCode>
+            <FeatureReferenceName>Universal Plug &amp; Play</FeatureReferenceName>
+            <FeatureHighlightRank>5</FeatureHighlightRank>
+          </FeatureHighlight>
+          <FeatureHighlight>
+            <FeatureCode>F300008242</FeatureCode>
+            <FeatureReferenceName>Super Sound Panel 1,200</FeatureReferenceName>
+            <FeatureHighlightRank>11</FeatureHighlightRank>
+          </FeatureHighlight>
+          <CSChapter>
+            <CSChapterCode>3000799</CSChapterCode>
+            <CSChapterName>Sound</CSChapterName>
+            <CSChapterRank>1</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006258</CSItemCode>
+              <CSItemName>Equalizer settings</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031372</CSValueCode>
+                <CSValueName>Classic</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031375</CSValueCode>
+                <CSValueName>Jazz</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031376</CSValueCode>
+                <CSValueName>Pop</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031377</CSValueCode>
+                <CSValueName>Rock</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031378</CSValueCode>
+                <CSValueName>Techno</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045109</CSValueCode>
+                <CSValueName>Neutral</CSValueName>
+                <CSValueRank>6</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006277</CSItemCode>
+              <CSItemName>Sound Enhancement</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031426</CSValueCode>
+                <CSValueName>Dynamic Bass Boost 3 steps</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3037019</CSValueCode>
+                <CSValueName>Equalizer</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031432</CSValueCode>
+                <CSValueName>Incredible Surround</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031446</CSValueCode>
+                <CSValueName>Treble and Bass Control</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3035245</CSValueCode>
+                <CSValueName>Class "D" Digital Amplifier</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045229</CSValueCode>
+                <CSValueName>Smart equalizer</CSValueName>
+                <CSValueRank>6</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006289</CSItemCode>
+              <CSItemName>Volume Control</CSItemName>
+              <CSItemRank>5</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031498</CSValueCode>
+                <CSValueName>Volume Control up/down</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006269</CSItemCode>
+              <CSItemName>Output Power</CSItemName>
+              <CSItemRank>6</CSItemRank>
+              <CSValue>
+                <CSValueName>40W+40W Music Power</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000800</CSChapterCode>
+            <CSChapterName>Loudspeakers</CSChapterName>
+            <CSChapterRank>2</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006292</CSItemCode>
+              <CSItemName>Built-in speakers</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueName>2</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006296</CSItemCode>
+              <CSItemName>Loudspeaker types</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045156</CSValueCode>
+                <CSValueName>Super Sound Panel</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3037738</CSValueCode>
+                <CSValueName>Integrated subwoofer</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045157</CSValueCode>
+                <CSValueName>Non-detachable</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000804</CSChapterCode>
+            <CSChapterName>Audio Playback</CSChapterName>
+            <CSChapterRank>3</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006364</CSItemCode>
+              <CSItemName>Compression format</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031762</CSValueCode>
+                <CSValueName>MP3</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3044751</CSValueCode>
+                <CSValueName>WMA</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031767</CSValueCode>
+                <CSValueName>PCM</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006366</CSItemCode>
+              <CSItemName>Playback Media</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031776</CSValueCode>
+                <CSValueName>CD</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031777</CSValueCode>
+                <CSValueName>CD-R</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031778</CSValueCode>
+                <CSValueName>CD-RW</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031780</CSValueCode>
+                <CSValueName>MP3-CD</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045158</CSValueCode>
+                <CSValueName>WMA-CD</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006367</CSItemCode>
+              <CSItemName>Disc Playback Modes</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031797</CSValueCode>
+                <CSValueName>Next/Previous Track Search</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031796</CSValueCode>
+                <CSValueName>Next/Previous Album Search</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3035241</CSValueCode>
+                <CSValueName>99-Track Programmable</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045213</CSValueCode>
+                <CSValueName>Repeat/Shuffle/Program</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3031792</CSValueCode>
+                <CSValueName>Fast Forward/Backward</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006373</CSItemCode>
+              <CSItemName>ID3-tag support</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031815</CSValueCode>
+                <CSValueName>yes</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006375</CSItemCode>
+              <CSItemName>Loader Type</CSItemName>
+              <CSItemRank>5</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031818</CSValueCode>
+                <CSValueName>Slot</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006377</CSItemCode>
+              <CSItemName>MP3 bit rates</CSItemName>
+              <CSItemRank>6</CSItemRank>
+              <CSValue>
+                <CSValueName>8-320 kbps and VBR</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006385</CSItemCode>
+              <CSItemName>WMA bit rates</CSItemName>
+              <CSItemRank>7</CSItemRank>
+              <CSValue>
+                <CSValueName>16-128 kbps</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3010032</CSItemCode>
+              <CSItemName>Hard Disk Playback Mode</CSItemName>
+              <CSItemRank>8</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045162</CSValueCode>
+                <CSValueName>Album</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045163</CSValueCode>
+                <CSValueName>Genre</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045164</CSValueCode>
+                <CSValueName>Playlist</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045165</CSValueCode>
+                <CSValueName>All tracks</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045166</CSValueCode>
+                <CSValueName>Same Artist</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045167</CSValueCode>
+                <CSValueName>Same Genre</CSValueName>
+                <CSValueRank>6</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045190</CSValueCode>
+                <CSValueName>Uncompressed tracks</CSValueName>
+                <CSValueRank>7</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3010033</CSItemCode>
+              <CSItemName>Hard Disk Streaming Mode</CSItemName>
+              <CSItemRank>9</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045168</CSValueCode>
+                <CSValueName>Wi-Fi streaming to 5 stations</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045169</CSValueCode>
+                <CSValueName>"My Room, My Music"</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045170</CSValueCode>
+                <CSValueName>"Music Follows Me"</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3045171</CSValueCode>
+                <CSValueName>"Music Broadcast"</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007569</CSItemCode>
+              <CSItemName>PC Link playback mode</CSItemName>
+              <CSItemRank>10</CSItemRank>
+              <CSValue>
+                <CSValueCode>3035842</CSValueCode>
+                <CSValueName>MP3 streaming via network</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3035247</CSValueCode>
+                <CSValueName>Wi-Fi wireless connection</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3011812</CSItemCode>
+              <CSItemName>USB Direct Modes</CSItemName>
+              <CSItemRank>11</CSItemRank>
+              <CSValue>
+                <CSValueCode>3051449</CSValueCode>
+                <CSValueName>Fast Backward/Fast Forward</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3051430</CSValueCode>
+                <CSValueName>Play/Pause</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3051431</CSValueCode>
+                <CSValueName>Previous/Next</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3051450</CSValueCode>
+                <CSValueName>Stop</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000805</CSChapterCode>
+            <CSChapterName>Audio Recording</CSChapterName>
+            <CSChapterRank>4</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006390</CSItemCode>
+              <CSItemName>Bit rate</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueName>128, 160, 192, 256 &amp; 320 kbps</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006399</CSItemCode>
+              <CSItemName>Recording Media</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031890</CSValueCode>
+                <CSValueName>HDD</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006402</CSItemCode>
+              <CSItemName>Recording speed</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueName>1 x, 4 x</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006387</CSItemCode>
+              <CSItemName>Audio file format</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueCode>3031847</CSValueCode>
+                <CSValueName>MP3</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000810</CSChapterCode>
+            <CSChapterName>Storage Media</CSChapterName>
+            <CSChapterRank>5</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006445</CSItemCode>
+              <CSItemName>Hard Disk Capacity</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueName>80</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <UnitOfMeasure>
+                <UnitOfMeasureCode>3000044</UnitOfMeasureCode>
+                <UnitOfMeasureName>gigabyte</UnitOfMeasureName>
+                <UnitOfMeasureSymbol>GB</UnitOfMeasureSymbol>
+              </UnitOfMeasure>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000812</CSChapterCode>
+            <CSChapterName>Tuner/Reception/Transmission</CSChapterName>
+            <CSChapterRank>6</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006508</CSItemCode>
+              <CSItemName>Tuner Bands</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032122</CSValueCode>
+                <CSValueName>FM</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006479</CSItemCode>
+              <CSItemName>Auto digital tuning</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032068</CSValueCode>
+                <CSValueName>yes</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006481</CSItemCode>
+              <CSItemName>Auto store</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032071</CSValueCode>
+                <CSValueName>yes</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006496</CSItemCode>
+              <CSItemName>Number of Preset Channels</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueName>60</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000813</CSChapterCode>
+            <CSChapterName>Connectivity</CSChapterName>
+            <CSChapterRank>7</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3010014</CSItemCode>
+              <CSItemName>Audio cinch in</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045149</CSValueCode>
+                <CSValueName>Analog AUX (Center/Station)</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007503</CSItemCode>
+              <CSItemName>Audio cinch out</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045134</CSValueCode>
+                <CSValueName>Analog Line-out (Center)</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006573</CSItemCode>
+              <CSItemName>Other connections</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueCode>3051149</CSValueCode>
+                <CSValueName>DIN connection</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006556</CSItemCode>
+              <CSItemName>Headphone</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032235</CSValueCode>
+                <CSValueName>3.5 mm</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3009295</CSItemCode>
+              <CSItemName>WIFI Antenna</CSItemName>
+              <CSItemRank>5</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045132</CSValueCode>
+                <CSValueName>WIFI FM Dipole</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006591</CSItemCode>
+              <CSItemName>Wireless connections</CSItemName>
+              <CSItemRank>6</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032408</CSValueCode>
+                <CSValueName>Wireless LAN(802.11g)</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007535</CSItemCode>
+              <CSItemName>Power</CSItemName>
+              <CSItemRank>7</CSItemRank>
+              <CSValue>
+                <CSValueName>220 V 50 Hz</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3010013</CSItemCode>
+              <CSItemName>Wireless Universal Plug &amp; Play</CSItemName>
+              <CSItemRank>8</CSItemRank>
+              <CSValue>
+                <CSValueCode>3045133</CSValueCode>
+                <CSValueName>Enabled</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006561</CSItemCode>
+              <CSItemName>LAN wired</CSItemName>
+              <CSItemRank>9</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032249</CSValueCode>
+                <CSValueName>Ethernet (RJ 45) 1x</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000814</CSChapterCode>
+            <CSChapterName>Convenience</CSChapterName>
+            <CSChapterRank>8</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006648</CSItemCode>
+              <CSItemName>Display Type</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032562</CSValueCode>
+                <CSValueName>LCD</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006600</CSItemCode>
+              <CSItemName>Backlight</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032437</CSValueCode>
+                <CSValueName>yes</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006601</CSItemCode>
+              <CSItemName>Backlight color</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032442</CSValueCode>
+                <CSValueName>White</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006690</CSItemCode>
+              <CSItemName>On-Screen Display languages</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueCode>3032757</CSValueCode>
+                <CSValueName>English</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3032756</CSValueCode>
+                <CSValueName>Dutch</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3032759</CSValueCode>
+                <CSValueName>French</CSValueName>
+                <CSValueRank>3</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3032760</CSValueCode>
+                <CSValueName>German</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3032761</CSValueCode>
+                <CSValueName>Italian</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>3032764</CSValueCode>
+                <CSValueName>Spanish</CSValueName>
+                <CSValueRank>6</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006639</CSItemCode>
+              <CSItemName>Digital Content Management</CSItemName>
+              <CSItemRank>5</CSItemRank>
+              <CSValue>
+                <CSValueCode>VA4001041</CSValueCode>
+                <CSValueName>WADM software included</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007571</CSItemCode>
+              <CSItemName>Eco Power Standby</CSItemName>
+              <CSItemRank>6</CSItemRank>
+              <CSValue>
+                <CSValueCode>3035346</CSValueCode>
+                <CSValueName>1 watt</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006754</CSItemCode>
+              <CSItemName>Wall mountable / Ceiling Throw</CSItemName>
+              <CSItemRank>10</CSItemRank>
+              <CSValue>
+                <CSValueName>Wall Mountable</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006626</CSItemCode>
+              <CSItemName>Clock</CSItemName>
+              <CSItemRank>11</CSItemRank>
+              <CSValue>
+                <CSValueCode>3034860</CSValueCode>
+                <CSValueName>On main display</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000815</CSChapterCode>
+            <CSChapterName>Accessories</CSChapterName>
+            <CSChapterRank>9</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006766</CSItemCode>
+              <CSItemName>Cables</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueName>5000 Ethernet Cable</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006770</CSItemCode>
+              <CSItemName>CD-ROM</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueName>Installation CD-ROM, WADM and utilities softwares.</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006787</CSItemCode>
+              <CSItemName>Remote control</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueName>2-way 6-line Display, 1-way Remote</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006763</CSItemCode>
+              <CSItemName>Batteries</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueName>4 x AAA + 2 x AA</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006798</CSItemCode>
+              <CSItemName>Warranty Card</CSItemName>
+              <CSItemRank>5</CSItemRank>
+              <CSValue>
+                <CSValueName>Warranty Card</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006786</CSItemCode>
+              <CSItemName>Quick start guide</CSItemName>
+              <CSItemRank>6</CSItemRank>
+              <CSValue>
+                <CSValueName>English, French, Spanish</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006793</CSItemCode>
+              <CSItemName>User Manual</CSItemName>
+              <CSItemRank>7</CSItemRank>
+              <CSValue>
+                <CSValueName>English, French, Spanish, Italian, German</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000820</CSChapterCode>
+            <CSChapterName>Dimensions</CSChapterName>
+            <CSChapterRank>10</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006861</CSItemCode>
+              <CSItemName>Master carton weight</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueName>15.5</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <UnitOfMeasure>
+                <UnitOfMeasureCode>3000049</UnitOfMeasureCode>
+                <UnitOfMeasureName>kilogram</UnitOfMeasureName>
+                <UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+              </UnitOfMeasure>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007552</CSItemCode>
+              <CSItemName>Product dimensions (WxDxH)</CSItemName>
+              <CSItemRank>2</CSItemRank>
+              <CSValue>
+                <CSValueName>608mm x 175mm x 303mm</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3006883</CSItemCode>
+              <CSItemName>Set weight</CSItemName>
+              <CSItemRank>3</CSItemRank>
+              <CSValue>
+                <CSValueName>12.93</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <UnitOfMeasure>
+                <UnitOfMeasureCode>3000049</UnitOfMeasureCode>
+                <UnitOfMeasureName>kilogram</UnitOfMeasureName>
+                <UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+              </UnitOfMeasure>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3007551</CSItemCode>
+              <CSItemName>Carton dimensions (WxDxH)</CSItemName>
+              <CSItemRank>4</CSItemRank>
+              <CSValue>
+                <CSValueName>682mm x 400mm x 236mm</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <CSChapter>
+            <CSChapterCode>3000821</CSChapterCode>
+            <CSChapterName>Power</CSChapterName>
+            <CSChapterRank>11</CSChapterRank>
+            <CSItem>
+              <CSItemCode>3006932</CSItemCode>
+              <CSItemName>Power supply</CSItemName>
+              <CSItemRank>1</CSItemRank>
+              <CSValue>
+                <CSValueCode>3033414</CSValueCode>
+                <CSValueName>100-240VAC, 50/60Hz</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>S_0000653</CSItemCode>
+              <CSItemName>Max. input power</CSItemName>
+              <CSItemRank>22</CSItemRank>
+              <CSValue>
+                <CSValueCode>V_00006927</CSValueCode>
+                <CSValueName>2000</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <UnitOfMeasure>
+                <UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+                <UnitOfMeasureName>Watt</UnitOfMeasureName>
+                <UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+              </UnitOfMeasure>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>3009682</CSItemCode>
+              <CSItemName>Tare weight</CSItemName>
+              <CSItemRank>7</CSItemRank>
+              <CSValue>
+                <CSValueName>.2</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <UnitOfMeasure>
+                <UnitOfMeasureCode>3000049</UnitOfMeasureCode>
+                <UnitOfMeasureName>kilogram</UnitOfMeasureName>
+                <UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+              </UnitOfMeasure>
+            </CSItem>
+            <CSItem>
+              <CSItemCode>S_0001669</CSItemCode>
+              <CSItemName>12 NC</CSItemName>
+              <CSItemRank>12</CSItemRank>
+              <CSValue>
+                <CSValueCode>V_00015559</CSValueCode>
+                <CSValueName>8834 064 00010 (Western Europe)</CSValueName>
+                <CSValueRank>1</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>V_00020320</CSValueCode>
+                <CSValueName>8834 064 00450 (Hong Kong)</CSValueName>
+                <CSValueRank>2</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>V_00020322</CSValueCode>
+                <CSValueName>8834 064 00660 (Taiwan)</CSValueName>
+                <CSValueRank>4</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>V_00020323</CSValueCode>
+                <CSValueName>8834 064 00710 (China)</CSValueName>
+                <CSValueRank>5</CSValueRank>
+              </CSValue>
+              <CSValue>
+                <CSValueCode>V_00020323_test</CSValueCode>
+                <CSValueName>2 87 12581 32800 3 (test)</CSValueName>
+                <CSValueRank>6</CSValueRank>
+              </CSValue>
+            </CSItem>
+          </CSChapter>
+          <ProductOwner>Benjamin BY Ngo</ProductOwner>
+          <ProductDivision>
+            <ProductDivisionCode>3400</ProductDivisionCode>
+            <ProductDivisionName>Consumer Electronics</ProductDivisionName>
+          </ProductDivision>
+          <Code12NC>907310013386</Code12NC>
+          <GTIN>8710895966061</GTIN>
+          <CRDateYW>200646</CRDateYW>
+          <CRDate>2006-11-13</CRDate>
+          <MarketingVersion>12.0.17</MarketingVersion>
+          <MarketingStatus>Final Published</MarketingStatus>
+        </Product>
+      </sql:tlpdata>
+    </sql:row>
+  </sql:rowset>
+</Product>

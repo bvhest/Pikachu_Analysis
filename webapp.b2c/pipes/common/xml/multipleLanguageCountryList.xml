@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql:rowset xmlns:sql="http://apache.org/cocoon/SQL/2.0" xmlns:ws="http://apache.org/cocoon/source/1.0" xmlns:dir="http://apache.org/cocoon/directory/2.0">
+<sql:row>
+<sql:country_code>US</sql:country_code>
+</sql:row>
+<sql:row>
+<sql:country_code>CH</sql:country_code>
+</sql:row>
+<sql:row>
+<sql:country_code>CA</sql:country_code>
+</sql:row>
+<sql:row>
+<sql:country_code>EG</sql:country_code>
+</sql:row>
+<sql:row>
+<sql:country_code>BE</sql:country_code>
+</sql:row>
+<sql:row>
+<sql:country_code>MY</sql:country_code>
+</sql:row>
+<sql:row>
+<sql:country_code>IL</sql:country_code>
+</sql:row>
+<sql:row>
+<sql:country_code>HK</sql:country_code>
+</sql:row>
+<sql:row>
+<sql:country_code>ID</sql:country_code>
+</sql:row>
+<sql:row>
+<sql:country_code>UA</sql:country_code>
+</sql:row>
+</sql:rowset>

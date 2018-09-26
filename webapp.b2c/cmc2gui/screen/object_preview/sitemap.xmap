@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <!-- =========================== Components ================================ -->
+  <map:components>
+  </map:components>
+  <!-- =========================== Resources =============================== -->
+  <map:resources>
+  </map:resources>
+  <!-- =========================== Pipelines ================================= -->
+  <map:pipelines>
+    <!-- use case pipeline - URI request handling -->
+    <map:pipeline type="noncaching">
+      <!--
+        param1: content type param2: locale param3: objectId (normalized with underscores) id: objectId
+      -->
+      <map:match pattern="object_preview.xml">
+        <map:select type="resource-exists">
+          <map:when test="../../{global:cmc2xslt}/{request-param:param1}.xsl">
+            <map:generate
+              src="cocoon:/{global:gui_url}xmlraw/object_store/{request-param:param1}/{request-param:param2}/{request-param:param3}.xml?id={request-param:id}"
+              label="source" />
+            <!-- Include required content -->
+            <!--
+              <map:transform type="xslt-saxon" src="xsl/include_content.xsl" label="include_content"> <map:parameter
+              name="svcURL" value="{cmc2:svcURL}/"/> <map:parameter name="o" value="{request-param:id}"/> <map:parameter
+              name="l" value="{request-param:param2}"/> </map:transform>
+            -->
+            <!-- Execute the includes -->
+            <!--
+			   <map:transform type="cinclude" label="content_included"/>
+			-->
+            <!-- Merge asset lists that were retrieved from the database -->
+            <!--
+            <map:transform type="xslt-saxon" src="xsl/merge_assets.xsl" label="merge_assets"/>
+			-->
+            <!-- Transform to xUCDM format -->
+            <map:transform type="xslt-saxon" src="../../../cmc2/xsl/common/icp-products.xsl" label="xucdm" />
+            <!-- Transform to create the preview -->
+            <map:transform type="xslt-saxon" src="../../{global:cmc2xslt}/{request-param:param1}.xsl"
+              label="preview" />
+          </map:when>
+          <map:otherwise>
+            <map:generate src="nopreview.xml" />
+          </map:otherwise>
+        </map:select>
+        <map:serialize type="xml" />
+      </map:match>
+      <!-- -->
+    </map:pipeline>
+  </map:pipelines>
+  <!-- -->
+  <map:views>
+    <map:view name="source" from-label="source">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="include_content" from-label="include_content">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="content_included" from-label="content_included">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="merge_assets" from-label="merge_assets">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="xucdm" from-label="xucdm">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="preview" from-label="preview">
+      <map:serialize type="xml" />
+    </map:view>
+  </map:views>
+</map:sitemap>

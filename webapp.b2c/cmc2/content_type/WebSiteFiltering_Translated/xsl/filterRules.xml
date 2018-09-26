@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<octl>
+	<sql:rowset xmlns:sql="http://apache.org/cocoon/SQL/2.0">
+		<sql:row>
+			<sql:active_flag>1</sql:active_flag>
+			<sql:batch_number/>
+			<sql:content_type>FilterRules</sql:content_type>
+			<sql:endofprocessing>2299-01-01T00:00:00</sql:endofprocessing>
+			<sql:intransaction_flag>0</sql:intransaction_flag>
+			<sql:lastmodified_ts>2010-01-11T13:02:00</sql:lastmodified_ts>
+			<sql:localisation>none</sql:localisation>
+			<sql:masterlastmodified_ts>2010-01-05T22:30:00</sql:masterlastmodified_ts>
+			<sql:needsprocessing_flag>0</sql:needsprocessing_flag>
+			<sql:needsprocessing_ts>1900-01-01T00:00:00</sql:needsprocessing_ts>
+			<sql:object_id>filterrules</sql:object_id>
+			<sql:startofprocessing>1900-01-01T00:00:00</sql:startofprocessing>
+			<sql:status>Loaded</sql:status>
+			<sql:marketingversion/>
+			<sql:remark/>
+			<sql:islocalized>0</sql:islocalized>
+			<sql:data>
+				<Filters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" docStatus="draft" isMaster="true" language="en_US" lastModified="2010-01-05T22:30:00" localization="Global" masterLastModified="2010-01-05T22:30:00" xsi:noNamespaceSchemaLocation="xUCDM_FilterKeys.xsd">
+					<!-- START OF CHARACTERISTICS BASED XML -->
+					<FilterGroup code="FG_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FG_LP_COLOR_TEMP" status="active">
+						<DisplayName>Color temperature</DisplayName>
+						<Glossary>Color temperature</Glossary>
+						<FilterKeys>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_28312'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_28312']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>2700</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_25805'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_25805']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>3000</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_28313'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_28313']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>3050</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_25804'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_25804']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>3100</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_16439'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_16439']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>3186</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_25803'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_25803']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>3200</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_29419'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_29419']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>3300</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_16441'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_16441']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>3500</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue/CSValueCode='LP_CSV_16421'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue[CSValueCode='LP_CSV_16421']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>3800</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_16423'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_16423']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>3800</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_16440'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_16440']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>4000</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_25127'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_25127']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>4100</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_25802'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_25802']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>4200</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue/CSValueCode='LP_CSV_16409'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue[CSValueCode='LP_CSV_16409']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>4300</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue/CSValueCode='LP_CSV_16406'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue[CSValueCode='LP_CSV_16406']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>4300</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_14640'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_14640']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>4300</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue/CSValueCode='LP_CSV_16408'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue[CSValueCode='LP_CSV_16408']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>4500</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_16404'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_16404']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>4500</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue/CSValueCode='LP_CSV_16422'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue[CSValueCode='LP_CSV_16422']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>4600</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_16424'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_16424']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>4600</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_25128'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_25128']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>5100</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_16438'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_16438']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>5400</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue/CSValueCode='LP_CSV_16407'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLLAMP']/CSValue[CSValueCode='LP_CSV_16407']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>6700</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue/CSValueCode='LP_CSV_16405'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP']/CSValue[CSValueCode='LP_CSV_16405']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>6700</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_TEMP" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_TEMP" status="active">
+								<DisplayName>Color temperature</DisplayName>
+								<Glossary>Color temperature</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>K</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP' and CSItemIsFreeFormat=1]/CSValue/CSValueName!=''</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_COLTEMP' and CSItemIsFreeFormat=1]/CSValue/CSValueName</XPath_DV>
+								<UseFixedFV>false</UseFixedFV>
+							</FilterKey>
+						</FilterKeys>
+					</FilterGroup>
+					<FilterGroup code="FG_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FG_LP_COLOR_REND" status="active">
+						<DisplayName>Color rendering index</DisplayName>
+						<Glossary>Color rendering index</Glossary>
+						<FilterKeys>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_30019'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_30019']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>63</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_26627'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_26627']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>65</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_20975'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_20975']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>68</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_25136'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_25136']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>70</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_20980'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_20980']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>73</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_20979'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_20979']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>75</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_24805'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_24805']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>80</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_20977'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_20977']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>81</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_20974'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_20974']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>82</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_20978'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_20978']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>84</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_20976'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_20976']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>85</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue/CSValueCode='LP_CSV_29550'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI']/CSValue[CSValueCode='LP_CSV_29550']/CSValueName</XPath_DV>
+								<UseFixedFV>true</UseFixedFV>
+								<FixedFV>90</FixedFV>
+							</FilterKey>
+							<FilterKey code="FK_LP_COLOR_REND" lastModified="2010-01-05T22:35:42" rank="1" referenceName="FK_LP_COLOR_REND" status="active">
+								<DisplayName>Color rendering index</DisplayName>
+								<Glossary>Color rendering index</Glossary>
+								<MustHaveValue>true</MustHaveValue>
+								<UnitOfSortValue>RA</UnitOfSortValue>
+								<XPath>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI' and CSItemIsFreeFormat=1]/CSValue/CSValueName!='-'</XPath>
+								<XPath_DV>CSChapter[CSChapterCode='LP_CSC_LIT']/CSItem[CSItemCode='LP_CSI_CRI' and CSItemIsFreeFormat=1]/CSValue/CSValueName</XPath_DV>
+								<UseFixedFV>false</UseFixedFV>
+							</FilterKey>
+						</FilterKeys>
+					</FilterGroup>
+					<!-- START OF CATEGORY BASED XML -->
+					<!-- START OF AWARD BASED XML -->
+				</Filters>
+			</sql:data>
+		</sql:row>
+	</sql:rowset>
+</octl>

@@ -1,0 +1,680 @@
+<?xml version="1.0"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <map:components>
+    <map:transformers default="xslt-saxon">
+      <map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer" />
+      <map:transformer name="romanization" src="org.apache.cocoon.transformation.RomanizationTransformer" />
+    </map:transformers>
+    <map:actions>
+      <map:action name="synced-copy-source" src="org.apache.cocoon.acting.SyncedCopySourceAction" />
+    </map:actions>
+  </map:components>
+  <map:resources>
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC" />
+        <map:parameter name="clob-encoding" value="UTF-8" />
+      </map:transform>
+    </map:resource>
+  </map:resources>
+
+<!-- How the export works.
+  1. Select Locales to be exported
+  2. Batch up products
+  3. Process data on a locale|batch basis.
+  Two export modes exists. Full database read and the delta database read extract.
+  Irrespective of the database extract mode a mormalized delta export is performed for ATG
+  The modes are selected via a request parameter. delta='y' for delta extract from database.
+  Full database read.
+    1. selectExportProducts sets flags in customer_locale_export (cle) for products to be exported.
+    2. All products are extracted for a batch from the database and permanently stored in the inbox directory.
+      All products are needed for data normalization. Flags set in cle are ignored.
+    3. The LastExportedTimestamp is added to the Product xml as an attribute to each product.
+    4. Product data is normalized and formatted for ATG.
+    5. Report on what is exported is generated base on flags set in cle.
+  Delta database Read
+    note: This pipeline will be invoked only with maximum batch number for a delta read.
+    1. selectExportProducts sets flags in customer_locale_export (cle) for products to be exported.
+    2. Only products with flag set in cle are extracted from the database.
+    3. Extracted products are merged with the products (maximum batch number) stored in the inbox directory. The result is resaved in this batch file.
+    4. The LastExportedTimestamp is added to the Product xml as an attribute to each product.
+    4. Product data is normalized and formatted for ATG.
+    5. Report on what is exported is generated base on flags set in cle.
+-->    
+
+  <map:pipelines>
+    <!--- -->
+    <map:component-configurations>
+      <global-variables>
+        <ldir>ShopAtgExport/</ldir>
+        <channel>ShopAtgExport</channel>
+      </global-variables>
+    </map:component-configurations>
+    <!--- -->
+    <map:pipeline name="{global:channel}" type="noncaching">
+      <!--- -->
+      <map:match pattern="runPipeline">
+        <map:act type="synced-copy-source" src="cocoon:/exportStart">
+          <map:parameter name="lockName" value="{global:channel}" />
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/import.xml" />
+          <map:generate src="{global:gdir}{global:ldir}temp/import.xml" />
+          <map:serialize type="xml" />
+        </map:act>
+        <map:generate src="../common/xml/locked.xml" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="exportStart">
+        <!-- Set Start Time.of this channel -->
+        <map:act type="copy-source" src="cocoon:/runsql_setstarttime">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetStartTime.xml" />
+        </map:act>
+        <!-- Call the Main Export. -->
+        <map:act type="copy-source" src="cocoon:/exportMain">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportExportMain.xml" />
+        </map:act>
+        <!-- Set End Time of this channel -->
+        <map:act type="copy-source" src="cocoon:/runsql_setendtime">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSetEndTime.xml" />
+        </map:act>
+        <!-- Show result -->
+        <map:act type="copy-source" src="cocoon:/runsql_gettimings">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportGetTimings.xml" />
+        </map:act>
+        <map:generate src="{global:gdir}{global:ldir}temp/ReportGetTimings.xml" />
+        <map:serialize type="xml" />
+      </map:match>
+      <!-- set Start / End Time -->
+      <map:match pattern="runsql_*">
+        <map:generate src="../common/xml/empty.xml" />
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:delta}" />
+          <map:when test="y">
+            <map:transform type="xslt-saxon" src="../common/xsl/{global:db}sql_{1}.xsl">
+              <map:parameter name="channel" value="{global:channel}" />
+              <map:parameter name="run_id" value="{request-param:runId}"/>
+              <map:parameter name="run_mode" value="{request-param:runmode}"/>
+            </map:transform>
+          </map:when>
+          <map:otherwise>
+            <map:transform type="xslt-saxon" src="../common/xsl/{global:db}sql_{1}.xsl">
+              <map:parameter name="channel" value="{global:channel}FullExtract" />
+              <map:parameter name="run_id" value="{request-param:runId}"/>
+              <map:parameter name="run_mode" value="{request-param:runmode}"/>
+            </map:transform>
+          </map:otherwise>
+        </map:select>
+        <!-- Run db queries -->
+        <map:call resource="sql" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="exportMain">
+        <!-- Delete all files in the {global:gdir}{global:ldir}temp directory. Write the results of this action to a report. -->
+        <map:act type="copy-source" src="cocoon:/deleteTempFiles">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportDeleteTmpFilesReport.xml" />
+        </map:act>
+        <!-- Loop over all languages -->
+        <map:generate src="../common/xml/empty.xml" />
+        <map:transform src="xsl/{global:db}sql_getlocales.xsl" label="step1">
+          <map:parameter name="channel" value="{global:channel}" />
+          <map:parameter name="delta" value="{request-param:delta}" />
+        </map:transform>
+        <map:call resource="sql" />
+        <!-- Transform output to get include statements to exportSub -->
+        <map:transform type="xslt-saxon" src="xsl/ll2includeForBatching.xsl" label="step2A" />
+        <!-- Execute the includes -->
+        <map:transform type="cinclude" label="step4" />
+        <!-- Generate report for products -->
+        <map:transform type="xslt-saxon" src="xsl/makereport.xsl" label="step3">
+          <map:parameter name="channel" value="{global:channel}" />
+          <map:parameter name="exportdate" value="{1}" />
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}" />
+        </map:transform>
+        <!-- Write report to disk -->
+        <map:transform type="write-source" label="step4" />
+        <!-- Get the run timestamp -->
+        <map:transform type="xslt-saxon" src="xsl/sql_gettimestamp.xsl" label="step3">
+          <map:parameter name="channel" value="{global:channel}" />
+          <map:parameter name="delta" value="{request-param:delta}" />
+        </map:transform>
+        <map:call resource="sql" />
+        <!-- Transform output to get include statements to createContentReady -->
+        <map:transform type="xslt-saxon" src="xsl/createContentReady.xsl" label="stepX">
+          <map:parameter name="delta" value="{request-param:delta}" />
+        </map:transform>
+        <!-- Execute the includes -->
+        <map:transform type="cinclude" label="step4" />
+        <!-- Reset batch numbers to zero in CLE table -->
+        <map:transform type="xslt-saxon" src="xsl/sql_updateCLE.xsl" label="step3">
+          <map:parameter name="channel" value="{global:channel}" />
+        </map:transform>
+        <map:call resource="sql" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="batchSub.*.*.*">
+        <!-- {1} timestamp {2} country {3} locale -->
+        <!-- batchSub.20090203181122.NL.nl_NL -->
+        <!-- Idenfity and batch products, ordering on MASTERLASTMODIFIED DESC -->
+        <map:generate src="../common/xml/empty.xml" />
+        <!-- This adds records to the customer_locale_export table then batches entries ordering them descending master last 
+          modified date The batching covers all records unconditionally of whether they will be exported -->
+        <map:transform type="xslt-saxon" src="xsl/sql_createbatches.xsl" label="stepB1">
+          <map:parameter name="batchsize" value="750" />
+          <map:parameter name="locale" value="{3}" />
+          <map:parameter name="channel" value="{global:channel}" />
+        </map:transform>
+        <map:call resource="sql" />
+        <!-- From now on the processing will be on a locale/batched basis. The distinct locales and batches are selected 
+          and ordered here. output is:- locale | batch number | number_ctns in a batch | maximum batch number -->
+        <map:transform type="xslt-saxon" src="xsl/sql_selectbatches.xsl" label="stepB3">
+          <map:parameter name="locale" value="{3}" />
+          <map:parameter name="channel" value="{global:channel}" />
+        </map:transform>
+        <map:call resource="sql" />
+        <!-- invokes exportSub pipeline. If there are no ctns to be exported for a locale and delta='y' then processing stops 
+          here -->
+        <map:transform type="xslt-saxon" src="xsl/ll2include.xsl" label="stepB5">
+          <map:parameter name="timestamp" value="{1}" />
+          <map:parameter name="country" value="{2}" />
+          <map:parameter name="locale" value="{3}" />
+          <map:parameter name="channel" value="{global:channel}" />
+          <map:parameter name="delta" value="{request-param:delta}" />
+        </map:transform>
+        <map:transform type="cinclude" label="stepB6" />
+        <map:serialize type="xml" />
+      </map:match>
+
+
+      <map:match pattern="exportSub.*.*.*.*.*">
+        <!-- export per locale {1} timestamp, {2} country {3} locale {4} batch number {5} max batch number -->
+        <!-- this is the MAIN SELECTOR. It sets the flag in the customer_locale_export tables for products to be exported -->
+        <map:act type="copy-source" src="cocoon:/selectExportProducts.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/ReportSelectExportProducts_{3}.{4}.xml" />
+        </map:act>
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:delta}" />
+          <map:when test="y">
+            <!-- Extract new products from database. merge and resave with products in inbox directory -->
+            <map:act type="copy-source" src="cocoon:/aggregateData.{3}.{5}">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}inbox/PhilipsCatalog_{3}.{4}.xml" />
+            </map:act>
+          </map:when>
+          <map:when test="resend" />
+          <map:otherwise>
+            <!-- Extract all products from database and save in inbox directory -->
+            <map:act type="copy-source" src="cocoon:/exportLocaleFiles.{3}.{4}">
+              <map:parameter name="dest" value="{global:gdir}{global:ldir}inbox/PhilipsCatalog_{3}.{4}.xml" />
+            </map:act>
+          </map:otherwise>
+        </map:select>
+        <!-- get last exported timestamp from the cle and add as attributes to the products -->
+        <map:act type="copy-source" src="cocoon:/addLastExportTimestamps.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/PhilipsCatalog_{3}.{4}.xml" />
+        </map:act>
+        <!-- Normalise and format data for ATG -->
+        <map:act type="copy-source" src="cocoon:/exportData.{1}.{2}.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/exportData_{3}.{4}.xml" />
+        </map:act>
+
+        <map:generate src="{global:gdir}{global:ldir}temp/exportData_{3}.{4}.xml" />
+        <map:serialize type="xml" />
+      </map:match>
+
+
+      <map:match pattern="aggregateData.*.*">
+        <!-- export per locale {1} locale {2} batch number -->
+        <map:select type="resource-exists">
+          <map:when test="{global:gdir}{global:ldir}inbox/PhilipsCatalog_{1}.{2}.xml">
+            <map:aggregate element="root">
+              <map:part src="cocoon:/exportLocaleFiles.{1}.{2}" />
+              <map:part src="{global:gdir}{global:ldir}inbox/PhilipsCatalog_{1}.{2}.xml" />
+            </map:aggregate>
+          </map:when>
+          <map:otherwise>
+            <map:generate src="cocoon:/exportLocaleFiles.{1}.{2}?delta=n" />
+          </map:otherwise>
+        </map:select>
+        <map:transform type="xslt-saxon" src="xsl/merge_aggregation.xsl" />
+        <map:serialize type="xml" />
+      </map:match>
+
+
+      <map:match pattern="addLastExportTimestamps.*.*">
+        <map:generate src="{global:gdir}{global:ldir}inbox/PhilipsCatalog_{1}.{2}.xml" />
+        <map:transform type="xslt-saxon" src="xsl/sql_getLastExportTimestamps.xsl">
+          <map:parameter name="locale" value="{1}" />
+          <map:parameter name="channel" value="{global:channel}" />
+        </map:transform>
+        <map:call resource="sql" />
+        <map:transform type="xslt-saxon" src="xsl/formatLastExportTimestamps.xsl" />
+        <map:serialize type="xml" />
+      </map:match>
+
+      <map:match pattern="exportData.*.*.*.*">
+        <!-- export per locale {1} timestamp, {2} country {3} locale {4} batch number -->
+        <map:act type="copy-source" src="cocoon:/exportAtg.Product.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-ctv.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.Award.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-award.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.Disclaimer.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-disclaimer.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.Abp.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-abp.xml" />
+        </map:act>
+        <!--
+        <map:act type="copy-source" src="cocoon:/exportAtg.RichText.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-richtext.xml" />
+        </map:act>
+        -->
+        <map:act type="copy-source" src="cocoon:/exportAtg.CommercialSpecChapter.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-cschapter.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.CommercialSpecItem.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-csitem.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.CommercialSpecValue.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-csvalue.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.Descriptor.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-descriptor.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.Concept.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-master-marketingconcept.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.Feature.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-feature.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.KeyBenefitArea.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-kba.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.VersionElement.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-versionelement.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.SystemLogo.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-master-systemlogo.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.PartnerLogo.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-master-partnerlogo.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.Brand.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-master-brand.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/exportAtg.UnitOfMeasure.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-master-unitofmeasure.xml" />
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/genReport.{1}.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/FinalReport_{1}_{3}_{4}.xml" />
+        </map:act>
+        <!-- 
+          Export product's accessory relations separately.
+          Before Atg can create the relation it has to 'know' all accessories first.
+          Because the order of export cannot be controlled for this the relations for each batch are
+          stored in the temp directory and merged into one file for the highest batch number in a later stage.
+        -->
+        <map:act type="copy-source" src="cocoon:/exportAtg.ProductAccessories.{3}.{4}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/{1}-{2}-{3}-prdacc.xml" />
+        </map:act>
+
+        <map:generate src="{global:gdir}{global:ldir}temp/FinalReport_{1}_{3}_{4}.xml" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="exportAtg.*.*.*">
+        <!-- export per locale {1} type {2} locale {3} batch number -->
+        <map:generate src="{global:gdir}{global:ldir}temp/PhilipsCatalog_{2}.{3}.xml" />
+        <map:transform type="xslt-saxon" src="xsl/Atg{1}.xsl">
+          <map:parameter name="doctypesfilepath" value="{cmc2:xmlDir}/doctype_attributes.xml" />
+        </map:transform>
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="selectExportProducts.*.*">
+        <!-- export per locale {1} locale {2} batch number. With delta='y' batch number is ignored -->
+        <map:generate src="../common/xml/empty.xml" />
+        <map:transform type="xslt-saxon" src="xsl/{global:db}sql_selectproducts.xsl" label="step9">
+          <map:parameter name="locale" value="{1}" />
+          <map:parameter name="batchnumber" value="{2}" />
+          <map:parameter name="channel" value="{global:channel}" />
+          <map:parameter name="delta" value="{request-param:delta}" />
+        </map:transform>
+        <map:call resource="sql" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="testConvert">
+        <map:generate src="xsl/testProduct.xml" />
+        <map:transform type="xslt-saxon" src="xsl/convertProducts.xsl" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <!--
+        {1} locale
+        {2} batch number (only relevant if delta!='y')
+      -->
+      <map:match pattern="exportLocaleFiles.*.*">
+        <map:generate src="../common/xml/empty.xml" label="step10" />
+        <map:transform type="xslt-saxon" src="xsl/{global:db}sql_getlocaleproducts.xsl">
+          <map:parameter name="locale" value="{1}" />
+          <map:parameter name="batchnumber" value="{2}" />
+          <map:parameter name="channel" value="{global:channel}" />
+          <map:parameter name="delta" value="{request-param:delta}" />
+        </map:transform>
+        <map:call resource="sql" />
+        <!-- transform output -->
+        <map:transform type="xslt-saxon" src="xsl/convertProducts.xsl" label="step12">
+          <map:parameter name="doctypesfilepath" value="{cmc2:xmlDir}/doctype_attributes.xml" />
+          <map:parameter name="islatin" value="{request-param:islatin}" />
+          <map:parameter name="locale" value="{1}" />
+        </map:transform>
+        <!-- map:transform type="xslt-saxon" src="xsl/sql_clean.xsl" label="step12" /-->
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="genReport.*.*.*">
+        <map:generate src="../common/xml/empty.xml" />
+        <map:transform src="xsl/sql_genreport.xsl">
+          <map:parameter name="exportdate" value="{1}" />
+          <map:parameter name="locale" value="{2}" />
+          <map:parameter name="batchnumber" value="{3}" />
+          <map:parameter name="channel" value="{global:channel}" />
+        </map:transform>
+        <map:call resource="sql" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="updateExportDate.*.*.*">
+        <map:generate src="../common/xml/empty.xml" />
+        <map:transform src="xsl/sql_updatetransmitdate.xsl">
+          <map:parameter name="exportdate" value="{1}" />
+          <map:parameter name="locale" value="{2}" />
+          <map:parameter name="batchnumber" value="{3}" />
+          <map:parameter name="channel" value="{global:channel}" />
+        </map:transform>
+        <map:call resource="sql" />
+        
+        <map:serialize type="xml" />
+      </map:match>
+      <!-- Create CONTENT-READY file -->
+      <map:match pattern="createCONTENTREADY.*">
+        <map:generate src="../common/xml/empty.xml" />
+        <map:act type="copy-source" src="../common/xml/empty.xml">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}archive/{1}/CONTENT-READY" />
+        </map:act>
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <!--
+        Aggregate product accessory relation files into one file.
+        
+        {1} timestamp
+        {2} country
+        {3} locale
+        {4} max. batch number
+      -->
+      <map:match pattern="aggregateProductAccessories.*.*.*.*">
+        <!-- Retrieve all files in inbox -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}temp" label="step13">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="include" value="-prdacc\.xml$" />
+        </map:generate>
+        <map:transform src="xsl/dir2include_files.xsl">
+          <map:parameter name="source-dir" value="{global:gdir}{global:ldir}temp" />
+          <map:parameter name="ends-with" value="{2}-{3}-prdacc.xml" />
+        </map:transform>
+        <map:transform type="include">
+          <map:parameter name="concurrent" value="true"/>
+        </map:transform>
+        <map:transform src="xsl/write-merged-gsa-template.xsl">
+          <map:parameter name="target-path" value="{global:gdir}{global:ldir}outbox/{1}-{2}-{3}-prdacc.xml"/>
+        </map:transform>
+        <map:transform type="write-source"/>
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--
+        Archive all files from outbox to archive.
+        
+        {1} timestamp 
+        {2} locale
+      -->
+      <map:match pattern="archiveFiles.*.*">
+        <!-- Retrieve all files in inbox -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}outbox" label="step13">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="include" value=".*" />
+        </map:generate>
+        <!-- Move files to archive -->
+        <map:transform src="xsl/dir2shell_move.xsl" label="step14">
+          <map:parameter name="sourceDir" value="{global:gdir}{global:ldir}outbox" />
+          <map:parameter name="targetDir" value="{global:gdir}{global:ldir}archive" />
+          <map:parameter name="locale" value="{2}" />
+          <map:parameter name="timestamp" value="{1}" />
+        </map:transform>
+        <map:transform type="shell" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="deleteTempFiles">
+        <!-- Delete all files in {global:gdir}{global:ldir}temp directory -->
+        <!-- Retrieve all files in {global:gdir}{global:ldir}temp directory -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}temp" label="step14">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="include" value=".*" />
+        </map:generate>
+        <!-- Delete all files -->
+        <map:transform src="../common/xsl/dir2shell_delete.xsl" label="step15">
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}temp" />
+        </map:transform>
+        <map:transform type="shell" label="step16" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="testPipeline">
+        <map:act type="copy-source" src="cocoon:/restoreTestFiles">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/RestoreTestFilesReport.xml" />
+        </map:act>
+        
+        <map:act type="copy-source" src="cocoon:/runPipeline">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/runPipeline.xml" />
+        </map:act>
+        <map:generate src="{global:gdir}{global:ldir}temp/runPipeline.xml" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="restoreTestFiles">
+        <!-- Move files from testdata to inbox -->
+        <!-- Retrieve all files in testdata -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}testdata">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="include" value=".*" />
+        </map:generate>
+        <!-- Move files to inbox -->
+        <map:transform src="../common/xsl/dir2shell_move.xsl">
+          <map:parameter name="sourceDir" value="{global:gdir}{global:ldir}testdata" />
+          <map:parameter name="targetDir" value="{global:gdir}{global:ldir}inbox" />
+        </map:transform>
+        <map:transform type="shell" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="restoreArchiveFiles">
+        <!-- Move files from archive to inbox -->
+        <!-- Retrieve all files in archive -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}archive">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="include" value=".*" />
+        </map:generate>
+        <!-- Move files to inbox -->
+        <map:transform src="../common/xsl/dir2shell_move.xsl">
+          <map:parameter name="sourceDir" value="{global:gdir}{global:ldir}archive" />
+          <map:parameter name="targetDir" value="inbox" />
+        </map:transform>
+        <map:transform type="shell" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+      <map:match pattern="deleteArchiveFiles">
+        <!-- Delete all files in {global:gdir}{global:ldir}temp directory -->
+        <!-- Retrieve all files in {global:gdir}{global:ldir}temp directory -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}archive">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm" />
+          <map:parameter name="depth" value="1" />
+          <map:parameter name="include" value=".*" />
+        </map:generate>
+        <!-- Delete all files -->
+        <map:transform src="../common/xsl/dir2shell_delete.xsl">
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}archive" />
+        </map:transform>
+        <map:transform type="shell" />
+        <map:serialize type="xml" />
+      </map:match>
+      
+    </map:pipeline>
+  </map:pipelines>
+  
+  <map:views>
+    <map:view name="stepX" from-label="stepX">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepX1" from-label="stepX1">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepX2" from-label="stepX2">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepX3" from-label="stepX3">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA1" from-label="stepA1">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA2" from-label="stepA2">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA3" from-label="stepA3">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA4" from-label="stepA4">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA5" from-label="stepA5">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA6" from-label="stepA6">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA7" from-label="stepA7">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA8" from-label="stepA8">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA9" from-label="stepA9">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA10" from-label="stepA10">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA11" from-label="stepA11">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA12" from-label="stepA12">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepA13" from-label="stepA13">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepB1" from-label="stepB1">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepB2" from-label="stepB2">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepB3" from-label="stepB3">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepB4" from-label="stepB4">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepB5" from-label="stepB5">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepB6" from-label="stepB6">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepB7" from-label="stepB7">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepB8" from-label="stepB8">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepB9" from-label="stepB9">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="stepB10" from-label="stepB10">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step1" from-label="step1">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step2" from-label="step2">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step2A" from-label="step2A">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step3" from-label="step3">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step4" from-label="step4">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step5" from-label="step5">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step6" from-label="step6">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step7" from-label="step7">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step8" from-label="step8">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step9" from-label="step9">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step10" from-label="step10">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step11" from-label="step11">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step12" from-label="step12">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step13" from-label="step13">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step14" from-label="step14">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step15" from-label="step15">
+      <map:serialize type="xml" />
+    </map:view>
+    <map:view name="step16" from-label="step16">
+      <map:serialize type="xml" />
+    </map:view>
+  </map:views>
+  
+</map:sitemap>

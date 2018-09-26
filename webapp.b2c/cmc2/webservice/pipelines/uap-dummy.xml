@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<octl xmlns:sql="http://apache.org/cocoon/SQL/2.0">
+  <sql:rowset>
+    <sql:row>
+      <sql:active_flag>1</sql:active_flag>
+      <sql:batch_number />
+      <sql:content_type>UAP</sql:content_type>
+      <sql:endofprocessing>2299-01-01T00:00:00</sql:endofprocessing>
+      <sql:intransaction_flag>0</sql:intransaction_flag>
+      <sql:lastmodified_ts>2009-07-09T15:39:46</sql:lastmodified_ts>
+      <sql:localisation>none</sql:localisation>
+      <sql:masterlastmodified_ts>2009-07-09T15:00:00</sql:masterlastmodified_ts>
+      <sql:needsprocessing_flag>0</sql:needsprocessing_flag>
+      <sql:needsprocessing_ts>1900-01-01T00:00:00</sql:needsprocessing_ts>
+      <sql:object_id>nly25965</sql:object_id>
+      <sql:startofprocessing>1900-01-01T00:00:00</sql:startofprocessing>
+      <sql:status>Loaded</sql:status>
+      <sql:marketingversion />
+      <sql:remark />
+      <sql:islocalized>0</sql:islocalized>
+      <sql:data>
+        <AuthorisationProfile DocTimeStamp="2009-08-31T15:10:34" masterLastModified="2009-07-27T08:02:22.0000000+02:00">
+          <User status="Active">
+            <Name>Freek Segers</Name>
+            <CodeID>nly25965</CodeID>
+            <Organisation>Philips Consumer Lifestyle</Organisation>
+            <Email>freek.segers@philips.com</Email>
+            <PersonalSite />
+            <IMNRC />
+            <ProfilePicture />
+          </User>
+          <Authorisations>
+            <GlobalElements>
+              <Roles>
+                <Role>Read</Role>
+                <Role>Create</Role>
+                <Role>Update</Role>
+                <Role>Delete</Role>
+                <Role>Sign</Role>
+              </Roles>
+            </GlobalElements>
+            <Specifications>
+              <Roles>
+                <Role>Read</Role>
+                <Role>Create</Role>
+                <Role>Update</Role>
+                <Role>Delete</Role>
+              </Roles>
+            </Specifications>
+            <Reference>
+              <Roles>
+                <Role>Read</Role>
+                <Role>Create</Role>
+                <Role>Update</Role>
+                <Role>Delete</Role>
+              </Roles>
+            </Reference>
+            <Template>
+              <Roles>
+                <Role>Read</Role>
+                <Role>Create</Role>
+                <Role>Update</Role>
+                <Role>Delete</Role>
+              </Roles>
+            </Template>
+            <Subcategories>
+              <Subcategory>
+                <SubcategoryCode>M_CLOCK_RADIOS_SU</SubcategoryCode>
+                <Roles>
+                  <Role>Read</Role>
+                  <Role>Create</Role>
+                  <Role>Update</Role>
+                  <Role>Delete</Role>
+                </Roles>
+              </Subcategory>
+              <Subcategory>
+                <SubcategoryCode>PLASMA_LARGE_32_42_SU</SubcategoryCode>
+                <Roles>
+                  <Role>Read</Role>
+                  <Role>Create</Role>
+                  <Role>Update</Role>
+                  <Role>Delete</Role>
+                </Roles>
+              </Subcategory>
+              <Subcategory>
+                <SubcategoryCode>FLAT_TV_STANDS_SU</SubcategoryCode>
+                <Roles>
+                  <Role>Read</Role>
+                  <Role>Create</Role>
+                  <Role>Update</Role>
+                  <Role>Delete</Role>
+                </Roles>
+              </Subcategory>
+              <Subcategory>
+                <SubcategoryCode>WIDESCREEN_LARGE_29_32_SU</SubcategoryCode>
+                <Roles>
+                  <Role>Read</Role>
+                  <Role>Create</Role>
+                  <Role>Update</Role>
+                  <Role>Delete</Role>
+                </Roles>
+              </Subcategory>
+              <Subcategory>
+                <SubcategoryCode>HOME_THEATER_SU</SubcategoryCode>
+                <Roles>
+                  <Role>Read</Role>
+                  <Role>Create</Role>
+                  <Role>Update</Role>
+                  <Role>Delete</Role>
+                </Roles>
+              </Subcategory>
+              <Subcategory>
+                <SubcategoryCode>SU00397_SU</SubcategoryCode>
+                <Roles>
+                  <Role>Read</Role>
+                  <Role>Create</Role>
+                  <Role>Update</Role>
+                  <Role>Delete</Role>
+                </Roles>
+              </Subcategory>
+            </Subcategories>
+            <GrantedMAGs>
+              <MAGCode>MAG</MAGCode>
+            </GrantedMAGs>
+            <GrantedOrganisations>
+              <Organisation>Philips</Organisation>
+            </GrantedOrganisations>
+          </Authorisations>
+        </AuthorisationProfile>
+      </sql:data>
+    </sql:row>
+  </sql:rowset>
+</octl>

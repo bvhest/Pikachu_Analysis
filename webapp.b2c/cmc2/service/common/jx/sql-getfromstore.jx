@@ -1,0 +1,51 @@
+	<octl xmlns:jx="http://apache.org/cocoon/templates/jx/1.0">
+		<sql:execute-query xmlns:sql="http://apache.org/cocoon/SQL/2.0">
+			<sql:query>
+        select o.active_flag
+             , oc.batch_number
+             , o.content_type
+             , to_char(o.endofprocessing,'YYYY-MM-DD"T"HH24:MI:SS') endofprocessing
+             , oc.intransaction_flag
+             , to_char(o.lastmodified_ts,'YYYY-MM-DD"T"HH24:MI:SS') lastmodified_ts
+             , o.localisation
+             , to_char(o.masterlastmodified_ts,'YYYY-MM-DD"T"HH24:MI:SS') masterlastmodified_ts
+             , oc.needsprocessing_flag
+             , to_char(oc.needsprocessing_ts,'YYYY-MM-DD"T"HH24:MI:SS') needsprocessing_ts
+             , o.object_id
+             , to_char(o.startofprocessing,'YYYY-MM-DD"T"HH24:MI:SS') startofprocessing
+             , o.status
+             , o.marketingversion
+             , o.remark
+             , o.islocalized
+             , os.data
+         from  octl o
+        inner join octl_store os
+           on os.content_type          = o.content_type
+          and os.localisation          = o.localisation 
+          and os.object_id             = o.object_id 
+        inner join octl_control oc
+           on oc.content_type          = o.content_type
+          and oc.localisation          = o.localisation 
+          and oc.object_id             = o.object_id 
+          <jx:choose>
+	        <jx:when test="${cocoon.parameters.runmode.length()>0}">
+	          and oc.modus             = '${cocoon.parameters.runmode}'
+	        </jx:when>
+	        <jx:otherwise>
+	          and oc.modus             = 'BATCH'
+	        </jx:otherwise>
+          </jx:choose>
+        where o.content_type = '${cocoon.parameters.ct}' 
+          and o.localisation = '${cocoon.parameters.l}' 
+          and o.object_id    = '${cocoon.parameters.o}'
+          and os.masterlastmodified_ts = to_date('${cocoon.parameters.mlm}','YYYYMMDD"T"HH24MISS')
+          and os.lastmodified_ts       = (Select max(lastmodified_ts) 
+                                            from octl_store 
+                                           where content_type = '${cocoon.parameters.ct}' 
+                                             and localisation = '${cocoon.parameters.l}' 
+                                             and object_id    = '${cocoon.parameters.o}' 
+                                             and to_char(masterlastmodified_ts,'YYYYMMDD"T"HH24MISS')  = '${cocoon.parameters.mlm}'
+                                          )
+			</sql:query>
+		</sql:execute-query>
+	</octl>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <!-- -->
+  <map:components>
+    <map:transformers default="xslt">
+      <map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer"/>
+      <map:transformer name="sendmail" src="org.apache.cocoon.mail.transformation.SendMailTransformer">
+        <smtphost>nlvg020.gdc1.ce.philips.com</smtphost>
+        <smtpport>25</smtpport>
+      </map:transformer>
+      <!--
+      <map:transformer name="dump" logger="sitemap.transformer.dump" src="com.philips.cocoon.transformation.DumpTransformer"/>
+       -->
+    </map:transformers>
+  </map:components>
+  <!-- -->
+  <map:pipelines>
+    <map:pipeline>
+      <!--
+        {1} pipeline
+        {2} channel
+        {3} additional path
+      -->
+      <map:match pattern="*.*/**">
+            <map:act type="copy-source" src="cocoon:/createXmap_{1}_{2}">
+              <map:parameter name="dest" value="{2}.xmap"/>
+            </map:act>
+        <map:mount check-reload="yes" src="{2}.xmap" uri-prefix=""/>
+        <!--map:generate src="{2}.xmap" label="step1"/>
+        <map:serialize/-->
+      </map:match>
+      <!--
+        {1} pipeline
+        {2} channel
+      -->
+      <map:match pattern="createXmap_*_*">
+        <map:generate src="common/xml/empty.xml"/>
+        <map:transform src="common/xsl/sql_getchanneldata.xsl">
+          <map:parameter name="channel" value="{2}"/>
+        </map:transform>
+        <!--map:transform type="dump"><map:parameter name="logfile" value="{cmc2:gdir}/temp/temp/dump.pipeline.sql.xml"/></map:transform-->
+        <!-- Run db queries -->
+        <map:transform type="sql">
+          <map:parameter name="use-connection" value="oracleDbCMC"/>
+          <map:parameter name="clob-encoding" value="UTF-8"/>
+        </map:transform>
+        <map:transform type="xslt-saxon" src="common/xsl/channeldata2sitemap.xsl">
+          <map:parameter name="channel" value="{2}"/>
+        </map:transform>
+        <!-- Make sitemap -->
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="*/**">
+        <map:mount check-reload="yes" src="{1}/" uri-prefix="{1}"/>
+      </map:match>
+      <!-- -->
+      <map:handle-errors>
+        <map:select type="exception">
+          <map:when test="not-found">
+            <map:generate type="exception"/>
+            <map:transform src="common/xsl/exception2html.xsl">
+              <map:parameter name="contextPath" value="{request:contextPath}"/>
+              <map:parameter name="realPath" value="{realpath:}"/>
+              <map:parameter name="pageTitle" value="Resource not found"/>
+            </map:transform>
+            <map:serialize status-code="404"/>
+          </map:when>
+          <map:when test="invalid-continuation">
+            <map:generate type="exception"/>
+            <map:transform src="common/xsl/exception2html.xsl">
+              <map:parameter name="contextPath" value="{request:contextPath}"/>
+              <map:parameter name="realPath" value="{realpath:}"/>
+              <map:parameter name="pageTitle" value="Invalid Continuation"/>
+            </map:transform>
+            <map:serialize status-code="404"/>
+          </map:when>
+          <map:otherwise>
+            <map:generate type="exception"/>
+            <map:transform src="common/xsl/exception2html.xsl">
+              <map:parameter name="contextPath" value="{request:contextPath}"/>
+              <map:parameter name="realPath" value="{realpath:}"/>
+            </map:transform>
+            <map:serialize status-code="500"/>
+          </map:otherwise>
+        </map:select>
+      </map:handle-errors>
+      <!-- -->
+    </map:pipeline>
+  </map:pipelines>
+  <!-- -->
+  <map:views>
+    <map:view name="step1" from-label="step1">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step2" from-label="step2">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step3" from-label="step3">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step4" from-label="step4">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step5" from-label="step5">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step6" from-label="step6">
+      <map:serialize type="xml"/>
+    </map:view>
+  </map:views>
+  <!-- -->
+</map:sitemap>

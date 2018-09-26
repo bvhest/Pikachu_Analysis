@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <map:components>
+    <map:transformers default="xslt">
+      <map:transformer name="shell" src="org.apache.cocoon.transformation.FileActionsTransformer"/>
+    </map:transformers>
+    <map:actions>
+      <map:action name="synced-copy-source" src="org.apache.cocoon.acting.SyncedCopySourceAction"/>
+    </map:actions>
+  </map:components>
+
+  <map:pipelines>
+    <!--- -->
+    <map:component-configurations>
+      <global-variables>
+        <ldir>Main/</ldir>
+      </global-variables>
+    </map:component-configurations>
+    <!--- -->
+    <map:pipeline name="Main" type="noncaching">
+      <!--- -->
+      <map:match pattern="directRun_*/*/**">
+        <map:generate src="cocoon:/run_{1}/{2}/{3}"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <!--
+         | runPipeLineCollection
+         | Run a collection of pipelines specified in an XML file.
+         | {1} = collection name. The corresponding file must be located in xml/pipeline_collections/.
+         -->
+      <map:match pattern="runPipelineCollection/*">
+        <map:generate src="xml/pipeline_collections/{1}.xml"/>
+        <map:transform type="xslt-saxon" src="xsl/sql_getChannelsDataForCollection.xsl"/>
+        <map:transform type="sql">
+          <map:parameter name="use-connection" value="oracleDbCMC"/>
+          <map:parameter name="clob-encoding" value="UTF-8"/>
+        </map:transform>
+        <map:transform type="xslt-saxon" src="xsl/runCocoonPipeline.xsl">
+          <map:parameter name="runMode" value="runPipeline"/>        
+        </map:transform>
+        <map:transform type="include"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <!--- -->
+      <map:match pattern="*Pipeline">
+        <!-- This is the starting point of the pipeline. A lock is requested to prevent this pipeline from running multiple times in parallel.
+        When a lock cannot be acquired, an error message is shown. If a lock can be acquired, run exportMain -->
+        <map:act type="synced-copy-source" src="cocoon:/pipeMain_{1}_">
+          <map:parameter name="lockName" value="Main"/>
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/pipe.xml"/>
+          <map:generate src="{global:gdir}{global:ldir}temp/pipe.xml"/>
+          <map:serialize type="xml"/>
+        </map:act>
+        <map:generate src="../common/xml/locked.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="*Pipeline_*">
+        <!-- This is the starting point of the pipeline. A lock is requested to prevent this pipeline from running multiple times in parallel.
+        When a lock cannot be acquired, an error message is shown. If a lock can be acquired, run exportMain -->
+        <map:act type="synced-copy-source" src="cocoon:/pipeMain_{1}_{2}">
+          <map:parameter name="lockName" value="Main"/>
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/pipe.xml"/>
+          <map:generate src="{global:gdir}{global:ldir}temp/pipe.xml"/>
+          <map:serialize type="xml"/>
+        </map:act>
+        <map:generate src="../common/xml/locked.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--- -->
+      <map:match pattern="pipeMain_*_*">
+        <!-- Delete all files in the {global:gdir}{global:ldir}temp directory. Write the results of this action to a report.-->
+        <map:act type="copy-source" src="cocoon:/deleteTempFiles.{2}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/{2}_ReportDeleteTmpFilesReport.xml"/>
+        </map:act>
+        <map:act type="copy-source" src="cocoon:/cleanupAction_{1}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/{2}_ReportCleanupAction_{1}.xml"/>
+        </map:act>
+
+        <map:generate src="status" type="status" label="step1"/>
+        <map:transform src="xsl/{global:db}sql_getChannelsData.xsl" label="step2">
+          <map:parameter name="repeat" value="{2}"/>
+        </map:transform>
+        <!-- Run db queries -->
+        <map:transform type="sql" label="step3">
+          <map:parameter name="use-connection" value="oracleDbCMC"/>
+          <map:parameter name="clob-encoding" value="UTF-8"/>
+        </map:transform>
+        <map:transform type="xslt-saxon" src="xsl/runCocoonPipeline.xsl" label="step4">
+          <map:parameter name="runMode" value="{1}Pipeline"/> 
+		  <map:parameter name="groupName" value="{2}"/>	
+        </map:transform>
+        <map:transform type="cinclude" label="step5">
+          <map:parameter name="use-request-parameters" value="true"/>
+        </map:transform>
+        <!-- generate report -->
+        <map:transform type="xslt-saxon" src="../common/xsl/makereport.xsl" label="step6">
+          <map:parameter name="channel" value="Main"/>
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}"/>
+          <map:parameter name="exportdate" value="{date:yyyyMMdd}T{date:hhmmss}"/>
+        </map:transform>
+        <!-- write to disk -->
+        <map:transform type="write-source" label="step7"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="run_*/*/**">
+        <map:act type="copy-source" src="../common/xml/empty.xml">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/{request-param:groupName}_{2}_{3}_begin.xml"/>
+        </map:act>
+        <map:act type="copy-source" src="cocoon://{1}/{2}/{3}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/{request-param:groupName}_{2}_{3}_end.xml"/>
+          <map:parameter name="use-request-parameters" value="true"/>
+        </map:act>
+        <map:generate src="{global:gdir}{global:ldir}temp/{request-param:groupName}_{2}_{3}_end.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="run_*/*">
+        <map:act type="copy-source" src="../common/xml/empty.xml">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/{request-param:groupName}_{2}_begin.xml"/>
+        </map:act>
+        <map:act type="copy-source" src="cocoon://{1}/{2}">
+          <map:parameter name="dest" value="{global:gdir}{global:ldir}temp/{request-param:groupName}_{2}_end.xml"/>
+        </map:act>
+        <map:generate src="{global:gdir}{global:ldir}temp/{request-param:groupName}_{2}_end.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="deleteTempFiles.*">
+        <!-- Delete all files in {global:gdir}{global:ldir}temp directory -->
+        <!-- Retrieve all files in {global:gdir}{global:ldir}temp directory -->
+        <map:generate type="directory" src="{global:gdir}{global:ldir}temp">
+          <map:parameter name="dateFormat" value="yyyy-MM-dd hh:mm"/>
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value="{1}_*.*"/>
+        </map:generate>
+        <!-- Delete all files -->
+        <map:transform src="../common/xsl/dir2shell_delete.xsl">
+          <map:parameter name="dir" value="{global:gdir}{global:ldir}temp"/>
+        </map:transform>
+        <map:transform type="shell"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="cleanupAction_test">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:transform src="xsl/sql_cleanForTest.xsl">
+        </map:transform>
+        <!-- Run db queries -->
+        <map:transform type="sql">
+          <map:parameter name="use-connection" value="oracleDbCMC"/>
+          <map:parameter name="clob-encoding" value="UTF-8"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:match pattern="cleanupAction_run">
+        <map:generate src="../common/xml/empty.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- -->
+      <map:handle-errors when="always">
+        <map:select type="exception">
+          <map:when test="not-found">
+            <map:generate type="exception"/>
+            <map:transform type="xslt-saxon" src="../common/xsl/exception2html_write.xsl">
+              <map:parameter name="contextPath" value="{request:contextPath}"/>
+              <map:parameter name="realPath" value="{realpath:}"/>
+              <map:parameter name="dir" value="{global:gdir}"/>
+              <map:parameter name="pageTitle" value="Resource not found"/>
+            </map:transform>
+            <map:transform type="write-source"/>
+            <map:serialize type="xml"/>
+          </map:when>
+          <map:when test="invalid-continuation">
+            <map:generate type="exception"/>
+            <map:transform type="xslt-saxon" src="../common/xsl/exception2html_write.xsl">
+              <map:parameter name="contextPath" value="{request:contextPath}"/>
+              <map:parameter name="realPath" value="{realpath:}"/>
+              <map:parameter name="dir" value="{global:gdir}"/>
+              <map:parameter name="pageTitle" value="Invalid Continuation"/>
+            </map:transform>
+            <map:transform type="write-source"/>
+            <map:serialize type="xml"/>
+          </map:when>
+          <map:otherwise>
+            <map:generate type="exception"/>
+            <map:transform type="xslt-saxon" src="../common/xsl/exception2html_write.xsl">
+              <map:parameter name="contextPath" value="{request:contextPath}"/>
+              <map:parameter name="realPath" value="{realpath:}"/>
+              <map:parameter name="dir" value="{global:gdir}"/>
+            </map:transform>
+            <map:transform type="write-source"/>
+            <map:serialize type="xml"/>
+          </map:otherwise>
+        </map:select>
+      </map:handle-errors>
+      <!-- -->
+    </map:pipeline>
+    <!-- -->
+  </map:pipelines>
+  <map:views>
+    <map:view name="xmldb" from-label="xmldb">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="xmlprefo" from-label="xmlprefo">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="xmlfo" from-label="xmlfo">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step1" from-label="step1">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step2" from-label="step2">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step3" from-label="step3">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step4" from-label="step4">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step5" from-label="step5">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step6" from-label="step6">
+      <map:serialize type="xml"/>
+    </map:view>
+    <map:view name="step7" from-label="step7">
+      <map:serialize type="xml"/>
+    </map:view>
+  </map:views>
+</map:sitemap>

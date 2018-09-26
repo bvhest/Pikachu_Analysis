@@ -1,0 +1,533 @@
+Command: Merging revisions 9756-9860 of http://pww.svn.gdc1.ce.philips.com/svn/PikaChu/branches/20110818_Merge_Shopping_3.0_RandR/webapp into C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp, respecting ancestry  
+Merging r9758 through r9860: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp  
+REVERTED Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\deployment\testdata  
+REVERTED Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\deployment\bootstrap  
+REVERTED Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\counts  
+REVERTED Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\merge_20100426_Merge_B2B_and_B2C_r9044-r9148.txt  
+REVERTED Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\merge_20101105_EmpowerMe_Redesign_OCB_r9147-r9251.txt  
+REVERTED Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\merge_20101105_EmpowerMe_Redesign_OCB_r8356-r9052.txt  
+REVERTED Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\merge_20101105_EmpowerMe_Redesign_OCB_r9034-r9149.txt  
+REVERTED Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\merge_20101115_EmpowerMe_Redesign_OCB_r9034-r9149.txt  
+REVERTED Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\merge_20110317_Merge_B2B_and_B2C_r9148-r9249.txt  
+REVERTED Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\merge_20101115_NPS_Up_One_Categorization_r8436-r9054.txt  
+REVERTED Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\merge_20101123_EmpowerMe_Redesign_OCB_r9148-r9168.txt  
+ADD/COMMIT  Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport  
+COMMITED Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgMerchandiseExport\xsl\sql_selectproducts.xsl  
+REVERTED Conflicted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgMerchandiseExport\xsl\sql_getlocales.xsl  
+IGNORE Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\alaTestProducts\sql_getlocaleproducts.xsl  
+IGNORE Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\alaTestProducts\sql_selectproducts.xsl  
+IGNORE  Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\Bazaarvoice  
+COMMITED Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer  
+COMMITED Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer\sitemap.xmap  
+COMMITED Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer\xsl  
+COMMITED Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer\xsl\writereport.xsl  
+COMMITED Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer\xsl\initDB.xsl  
+COMMITED Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\common\xsl\xucdm-internal.xsl  
+COMMITED Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgExport\xsl\AtgProduct.xsl  
+REVERTED  Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\Merge_RandR_r9679-9759_20110818.txt  
+REVERTED Conflicted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\xsl\common\cmc2.function.xsl  
+COMMITED Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\convertSecondaryContent.xsl  
+COMMITED Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\mergeAwards.xsl  
+COMMITED Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\sql_include_secondary_content.xsl  
+REVERTED Conflicted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT_Master\xsl\include_content.xsl  
+COMMITED Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMA\xsl\create_entry_records.xsl  
+Completed: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp  
+Warning!: One or more files are in a conflicted state.  
+
+
+
+cmc2 commited
+Command: Commit  
+Modified: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMA\xsl\create_entry_records.xsl  
+Modified: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\convertSecondaryContent.xsl  
+Modified: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\mergeAwards.xsl  
+Modified: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\sql_include_secondary_content.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\mergeAwards.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMA\xsl\create_entry_records.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\convertSecondaryContent.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\sql_include_secondary_content.xsl  
+Completed: At revision: 9865  
+
+
+
+
+
+pipes commited
+Command: Commit  
+Modified: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgExport\xsl\AtgProduct.xsl  
+Modified: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgMerchandiseExport\xsl\sql_selectproducts.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer\sitemap.xmap  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer\xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer\xsl\initDB.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer\xsl\writereport.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\sitemap.xmap  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgAbp.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgAward.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgBrand.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgCommercialSpecChapter.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgCommercialSpecItem.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgCommercialSpecValue.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgConcept.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgDescriptor.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgDisclaimer.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgFeature.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgKeyBenefitArea.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgPartnerLogo.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgProduct.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgProductAccessories.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgSystemLogo.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgUnitOfMeasure.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgVersionElement.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\convertProducts.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\createContentReady.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\dir2include_files.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\dir2shell_move.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\filterBadProducts.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\formatLastExportTimestamps.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\getProductList.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\ll2include.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\ll2includeForBatching.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\makereport.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\merge_aggregation.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\objectAssets.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_clean.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_createbatches.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_genreport.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_getLastExportTimestamps.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_getlocaleproducts.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_getlocales.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_gettimestamp.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_selectbatches.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_selectproducts.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_updateCLE.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\validDoctypes.xsl  
+Adding: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\write-merged-gsa-template.xsl  
+Modified: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\common\xsl\xucdm-internal.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgProductAccessories.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgSystemLogo.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\convertProducts.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\merge_aggregation.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgDisclaimer.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgDescriptor.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\validDoctypes.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\common\xsl\xucdm-internal.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\getProductList.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgProduct.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\write-merged-gsa-template.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgCommercialSpecValue.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_gettimestamp.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\createContentReady.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_updateCLE.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\dir2include_files.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgConcept.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgPartnerLogo.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\objectAssets.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgAward.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgVersionElement.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgMerchandiseExport\xsl\sql_selectproducts.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\ll2include.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgAbp.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgCommercialSpecItem.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_clean.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_getlocales.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_getlocaleproducts.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\ll2includeForBatching.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\makereport.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgKeyBenefitArea.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_createbatches.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\dir2shell_move.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\filterBadProducts.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgUnitOfMeasure.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgExport\xsl\AtgProduct.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgBrand.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_selectproducts.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_genreport.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\formatLastExportTimestamps.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgFeature.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_selectbatches.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgCommercialSpecChapter.xsl  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\sitemap.xmap  
+Sending content: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\sql_getLastExportTimestamps.xsl  
+Completed: At revision: 9864  
+
+Switch
+
+$ svn switch http://pww.svn.gdc1.ce.philips.com/svn/Pik
+D    pipes/ProductExport/xsl/ShopAtgSearch
+U    pipes/ProductExport/xsl/sql_getmasterlocaleproduct
+U    pipes/ProductExport/xsl/sql_selectproducts.xsl
+A    pipes/ProductExport/xsl/Netbiscuits
+A    pipes/ProductExport/xsl/Netbiscuits/sql_getmasterl
+A    pipes/ProductExport/xsl/Netbiscuits/sql_getlocalep
+A    pipes/ProductExport/xsl/Netbiscuits/convertProduct
+A    pipes/ProductExport/xsl/Netbiscuits/postprocess.xs
+U    pipes/ProductExport/xsl/sql_getlocaleproducts.xsl
+U    pipes/ProductExport/sitemap.xmap
+G    pipes/ShopAtgExport/xsl/ll2include.xsl
+D    pipes/AtgMerchandiseExport/xsl/ShopAtgMerchandise.
+U    pipes/AtgMerchandiseExport/xsl/sql_getCatalogProdu
+U    pipes/AtgMerchandiseExport/xsl/sql_getproducts.xsl
+U    pipes/AtgMerchandiseExport/xsl/sql_getlocales.xsl
+U    pipes/RangeExport/xsl/sql_setFlags.xsl
+U    pipes/catalog_import_sap/sitemap.xmap
+D    pipes/catalog_import_sap/xsl/renameFiles.xsl
+A    pipes/catalog_import_sap/xsl/includeRename.xsl
+A    pipes/catalog_import_sap/xsl/includeRenameFile.xsl
+U    pipes/catalog_import_sap/xsl/merge.xsl
+A    pipes/catalog_import_sap/xsl/processMergedFile.xsl
+D    pipes/CatExport/xsl/ShopCatsformatCats.xsl
+A    pipes/CatExport/xsl/formatCats_Atg_B2C.xsl
+U    pipes/CatExport/xsl/ConsumerCatsformatCats.xsl
+U    pipes/CatExport/xsl/ProfessionalCatsformatCats.xsl
+U    pipes/Generic/xsl/sql_getmasterproducts.xsl
+U    pipes/Generic/xsl/sql_getlocaleproducts.xsl
+U    pipes/Generic/xsl/sql_selectproducts.xsl
+U    pipes/common/xsl/xucdm-product-external.xsl
+U    pipes/LocaleProduct/xsl/sql_getProducts.xsl
+U    pipes/LocaleProduct/xsl/sql_getProducts1.xsl
+U    cmc2/xsl/common/cmc2.function.xsl
+U    cmc2/content_type/Purge/xsl/purge.xsl
+U    cmc2/content_type/catalog_definition/sitemap.xmap
+U    cmc2/content_type/catalog_definition/xsl/include.x
+U    cmc2/content_type/catalog_definition/xsl/sql_updat
+U    cmc2/content_type/PMS/sitemap.xmap
+U    cmc2/content_type/PMS/xsl/sql_analyzePMStables.xsl
+U    cmc2/content_type/PMT/sitemap.xmap
+U    cmc2/content_type/PMT/xsl/sql_getPrimaryInputConte
+U    cmc2/content_type/PMT/xsl/create_entry_record.xsl
+U    cmc2/content_type/RefreshMV/xsl/sql_refreshMV.xsl
+U    cmc2/content_type/PMT_Master/sitemap.xmap
+D    cmc2/content_type/PMT_Master/xsl/objectRelations.x
+U    cmc2/content_type/PMT_Master/xsl/filterFix.xsl
+U    cmc2/content_type/PMT_Master/xsl/include_content.x
+U    cmc2/content_type/PMT_Master/xsl/seo.xsl
+U    cmc2/content_type/PMT_Master/xsl/process_entries.x
+U    cmc2/service/LocaleProduct/xsl/sql_getProducts.xsl
+U    cmc2/service/LocaleProduct/xsl/sql_getProducts1.xs
+U    cmc2/service/store/xsl/store.xsl
+D    cmc2/xml/doctype_groups.xlsx
+D    cmc2/xml/doctype_attributes.xlsx
+U    cmc2/xml/doctype_attributes.xml
+A    cmc2/webservice/pipelines/listCategorizationItems
+A    cmc2/webservice/pipelines/listCategorizationItems/
+A    cmc2/webservice/pipelines/listCategorizationItems/
+U    cmc2/webservice/pipelines/em-product-templates_pms
+U    cmc2/webservice/pipelines/getCategorization/sql_se
+U    cmc2/webservice/pipelines/getCategorization/output
+A    cmc2/webservice/pipelines/getCategorization/output
+U    cmc2/webservice/pipelines/getCategorization/filter
+A    cmc2/webservice/pipelines/getCategorization/filter
+U    cmc2/webservice/pipelines/json/catg2json.xsl
+A    cmc2/webservice/pipelines/json/catgitem2json.xsl
+U    cmc2/webservice/pipelines/em-functions.xsl
+U    cmc2/webservice/pipelines/listProducts/sql_select.
+U    cmc2/webservice/pipelines/sitemap.xmap
+D    Merge_RandR_r9679-9759_20110818.txt
+D    deployment/Prepare Pikachu.txt
+D    deployment/testdata
+D    deployment/bootstrap
+A    deployment/content types
+A    deployment/content types/Server.sh
+A    deployment/content types/PMS_Raw.xml
+A    deployment/content types/ContentTypesCatalog_def_E
+A    deployment/database_dev1
+A    deployment/database_dev1/01_cre_tables.sql
+A    deployment/database_dev1/06_update_secondary_relat
+A    deployment/database_dev1/03_cre_privileges.sql
+A    deployment/database_dev1/08_cre_types.sql
+A    deployment/database_dev1/98_logback_dbappender.sql
+A    deployment/database_dev1/05_cre_content.sql
+A    deployment/database_dev1/00_cre_users.sql
+A    deployment/database_dev1/02_cre_synonyms.sql
+A    deployment/database_dev1/04_cre_store_trigger.sql
+A    deployment/database_dev1/06_create_catalog_placeho
+A    deployment/database_dev1/99_misceleaneous.sql
+A    deployment/database_dev1/07_update_pms_alerts.pkb
+A    deployment/database_dev1/07_update_pms_alerts.pks
+A    deployment/OCB deployment
+A    deployment/OCB deployment/xUCDM Categorization_201
+A    deployment/OCB deployment/indexes_cmc2.sql
+A    deployment/OCB deployment/B2C_deployment.txt
+A    deployment/OCB deployment/loadAll.sql
+A    deployment/OCB deployment/cmc_Translatable_Categor
+A    deployment/OCB deployment/constraints_cmc2.sql
+A    deployment/OCB deployment/materialview_cmc2.sql
+A    deployment/OCB deployment/tables_cmc2.sql
+A    deployment/OCB deployment/createDirectories.sql
+A    deployment/OCB deployment/external_tables_cmc2.sql
+D    deployment/database/01_cre_tables.sql
+A    deployment/database/04_alt_pcu_channels_trg.sql
+A    deployment/database/03_cre_privileges.sql
+A    deployment/database/pkb_update_pms_alerts.sql
+A    deployment/database/pks_update_pms_alerts.sql
+A    deployment/database/01_alt_tables.sql
+A    deployment/database/04_cre_store_trigger.sql
+A    deployment/database/04_cre_prd_pcu_process_logging
+A    deployment/database/06_create_catalog_placeholders
+A    deployment/database/04_alt_pcu_content_type_schedu
+A    deployment/database/readme.txt
+A    deployment/database/02_cre_pms_ForeignKeys.sql
+A    deployment/database/typ_pms_products_type.sql
+A    deployment/database_dev2
+A    deployment/database_dev2/04_cre_octl_translations_
+A    deployment/database_dev2/01_cre_views.sql
+A    deployment/database_dev2/98_fill_octl_control.sql
+A    deployment/database_dev2/02_cre_synonyms.sql
+A    deployment/database_dev2/runAll.sql
+A    deployment/database_dev2/06_cancel_pending_transla
+A    deployment/database_dev2/09_cre_indexes.sql
+A    deployment/database_dev2/08_1_update_pms_alerts.pk
+A    deployment/database_dev2/02_cre_private_synonym.sq
+A    deployment/database_dev2/06_update_secondary_relat
+A    deployment/database_dev2/01_cre_tables.sql
+A    deployment/database_dev2/98_clean_pmt_translated.s
+A    deployment/database_dev2/08_cre_types.sql
+A    deployment/database_dev2/03_cre_privileges.sql
+A    deployment/database_dev2/98_logback_dbappender.sql
+A    deployment/database_dev2/04_pms_triggers.sql
+A    deployment/database_dev2/04_cre_store_trigger.sql
+A    deployment/database_dev2/06_create_catalog_placeho
+A    deployment/database_dev2/99_misceleaneous.sql
+A    deployment/database_dev2/readme.txt
+A    deployment/database_dev2/04_cre_store_trigger_2use
+A    deployment/database_dev2/08_2_update_pms_alerts.pk
+A    deployment/database_sdl
+A    deployment/database_sdl/01_cre_tables.sql
+A    deployment/database_sdl/05_cre_content.sql
+A    deployment/database_sdl/02_cre_synonyms.sql
+A    deployment/database_sdl/99_misceleaneous.sql
+A    deployment/database_sdl/readme.txt
+A    merge_20100426_Merge_B2B_and_B2C_r9044-r9148.txt
+A    merge_20101105_EmpowerMe_Redesign_OCB_r9147-r9251.
+A    merge_20101105_EmpowerMe_Redesign_OCB_r8356-r9052.
+A    merge_20101105_EmpowerMe_Redesign_OCB_r9034-r9149.
+A    merge_20101115_EmpowerMe_Redesign_OCB_r9034-r9149.
+A    merge_20110317_Merge_B2B_and_B2C_r9148-r9249.txt
+A    merge_20101115_NPS_Up_One_Categorization_r8436-r90
+A    merge_20101123_EmpowerMe_Redesign_OCB_r9148-r9168.
+A    counts
+A    counts/run
+A    counts/run/test_product.url
+A    counts/run/test_family.url
+A    counts/sitemap.xmap
+A    counts/xsl
+A    counts/xsl/sql_productList.xsl
+A    counts/xsl/convert_productList.xsl
+A    counts/xsl/sql_familyList.xsl
+A    counts/xsl/convert_familyList.xsl
+A    counts/xsl/sql_atgproductList.xsl
+A    counts/xsl/empty.xml
+A    counts/xsl/sql_atgfamilyList.xsl
+A    counts/xsl/Table.css
+A    20110818_Merge_Shopping_3.0_RandR_9756-9860.txt
+Updated to revision 9866.
+
+
+Command: Merging revisions 9566-9866 of http://pww.svn.gdc1.ce.philips.com/svn/PikaChu/branches/20110818_Merge_Shopping_3.0_RandR/webapp/pipes into C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes, respecting ancestry, Test Only  
+Merging r9567 through r9757: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes  
+ADD/COMMIT Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\catalog_import_sap\sitemap.xmap  
+Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\catalog_import_sap\xsl\renameFiles.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\catalog_import_sap\xsl\merge.xsl  
+Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\catalog_import_sap\xsl\includeRename.xsl  
+Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\catalog_import_sap\xsl\includeRenameFile.xsl  
+Deleted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\catalog_import_sap\xsl\processMergedFile.xsl  
+Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\CatExport\xsl\ShopCatsformatCats.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgMerchandiseExport\xsl\sql_getCatalogProducts.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgMerchandiseExport\xsl\sql_getproducts.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgMerchandiseExport\xsl\sql_getlocales.xsl  
+Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgMerchandiseExport\xsl\ShopAtgMerchandise.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\sitemap.xmap  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\sql_selectproducts.xsl  
+Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\ShopAtgSearch  
+Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\ShopAtgSearch\xUCDMsplit.xsl  
+Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\ShopAtgSearch\sql_getlocaleproducts.xsl  
+Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\ShopAtgSearch\sql_selectproducts.xsl  
+Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\ShopAtgSearch\convertProducts.xsl  
+REVERTED Conflicted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\sql_getlocaleproducts.xsl  
+ADD/COMMIT Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\AtgProductAccessories.xsl  
+ADD/COMMIT Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\write-merged-gsa-template.xsl  
+ADD/COMMIT Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ShopAtgExport\xsl\dir2include_files.xsl  
+REVERTED Conflicted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\AtgMerchandiseExport\xsl\sql_getlocales.xsl  
+REVERTED Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\alaTestProducts\sql_getlocaleproducts.xsl  
+REVERTED Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\alaTestProducts\sql_selectproducts.xsl  
+REVERTED Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\ProductExport\xsl\Bazaarvoice  
+REVERTED Tree conflict: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes\InitializeTestServer  
+Completed: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\pipes  
+Warning!: One or more files are in a conflicted state.  
+
+Command: Merging revisions 9566-9867 of http://pww.svn.gdc1.ce.philips.com/svn/PikaChu/branches/20110818_Merge_Shopping_3.0_RandR/webapp/cmc2 into C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2, respecting ancestry, Test Only  
+Merging r9567 through r9757: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\service\store\xsl\store.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\catalog_definition\sitemap.xmap  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\catalog_definition\xsl\include.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\catalog_definition\xsl\sql_updateCLE.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\sitemap.xmap  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\sql_getPrimaryInputContent.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT\xsl\create_entry_record.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT_Master\sitemap.xmap  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT_Master\xsl\filterFix.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT_Master\xsl\include_content.xsl  
+Added: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT_Master\xsl\objectRelations.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT_Master\xsl\process_entries.xsl  
+REVERTED Conflicted: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\xsl\common\cmc2.function.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2\content_type\PMT_Master\xsl\include_content.xsl  
+Updated: C:\cocoon-pikachu-2.1.9\build\B2C_Trunk\20110127_Merge_20101115_20101105_20100426\webapp\cmc2  
+Warning!: One or more files are in a conflicted state.  
+
+
+
+
+-----------------------   Production UPDATES  --------------------
+
+
+U    service/batch/import/sitemap.xmap
+U    service/store/xsl/store.xsl
+D    xml/doctype_groups.xlsx
+D    xml/doctype_attributes.xlsx
+U    content_type/PMT_Master/sitemap.xmap
+U    content_type/PMT_Master/xsl/filterFix.xsl
+U    content_type/PMT_Master/xsl/include_content.xsl
+A    content_type/PMT_Master/xsl/objectRelations.xsl
+U    content_type/PMT_Master/xsl/process_entries.xsl
+U    content_type/catalog_definition/sitemap.xmap
+U    content_type/catalog_definition/xsl/include.xsl
+U    content_type/catalog_definition/xsl/sql_updateCLE.xsl
+U    content_type/PMT/sitemap.xmap
+U    content_type/PMT/xsl/sql_getPrimaryInputContent.xsl
+U    content_type/PMT/xsl/create_entry_record.xsl
+U    content_type/PMT/xsl/convertSecondaryContent.xsl
+U    content_type/PMT/xsl/mergeAwards.xsl
+U    content_type/PMT/xsl/sql_include_secondary_content.xsl
+U    content_type/PMA/xsl/create_entry_records.xsl
+A    webservice/pipelines/listCategorizationItems
+A    webservice/pipelines/listCategorizationItems/sql_select.xsl
+A    webservice/pipelines/listCategorizationItems/output.xsl
+U    webservice/pipelines/em-product-templates.xsl
+U    webservice/pipelines/em-product-templates_pms2.xsl
+U    webservice/pipelines/getCategorization/sql_select.xsl
+U    webservice/pipelines/getCategorization/output.xsl
+A    webservice/pipelines/getCategorization/output_ProductTree.xsl
+U    webservice/pipelines/getCategorization/filter.xsl
+A    webservice/pipelines/getCategorization/filter_ProductTree.xsl
+U    webservice/pipelines/getProductDetails/output.xsl
+U    webservice/pipelines/getProductDetails/output_PMS2.xsl
+U    webservice/pipelines/getProductDetails/filter.xsl
+A    webservice/pipelines/getUploadURL
+A    webservice/pipelines/getUploadURL/output.xsl
+U    webservice/pipelines/json/catg2json.xsl
+A    webservice/pipelines/json/catgitem2json.xsl
+U    webservice/pipelines/em-functions.xsl
+U    webservice/pipelines/listProducts/sql_select.xsl
+U    webservice/pipelines/listProducts/output.xsl
+U    webservice/pipelines/listProducts/output_PMS2.xsl
+U    webservice/pipelines/sitemap.xmap
+
+
+A    CatExport/xsl/ShopCatsformatCats.xsl
+U    AtgMerchandiseExport/xsl/sql_getCatalogProducts.xsl
+U    AtgMerchandiseExport/xsl/sql_getproducts.xsl
+U    AtgMerchandiseExport/xsl/sql_selectproducts.xsl
+A    AtgMerchandiseExport/xsl/ShopAtgMerchandise.xsl
+U    ProductExport/xsl/sql_selectproducts.xsl
+A    ProductExport/xsl/ShopAtgSearch
+A    ProductExport/xsl/ShopAtgSearch/xUCDMsplit.xsl
+A    ProductExport/xsl/ShopAtgSearch/sql_getlocaleproducts.xsl
+A    ProductExport/xsl/ShopAtgSearch/sql_selectproducts.xsl
+A    ProductExport/xsl/ShopAtgSearch/convertProducts.xsl
+U    ProductExport/sitemap.xmap
+U    common/xsl/xucdm-product-external.xsl
+U    common/xsl/xucdm-internal.xsl
+U    common/xsl/xucdm-product-external-v1.2.xsl
+U    AtgExport/xsl/AtgProduct.xsl
+U    IntegrityChecks/xsl/sql_getDerivedCatalogCodes.xsl
+U    IntegrityChecks/xsl/sql_unCategorizedProducts.xsl
+U    catalog_import_sap/sitemap.xmap
+D    catalog_import_sap/xsl/includeRename.xsl
+D    catalog_import_sap/xsl/includeRenameFile.xsl
+D    catalog_import_sap/xsl/processMergedFile.xsl
+A    catalog_import_sap/xsl/renameFiles.xsl
+U    catalog_import_sap/xsl/merge.xsl
+A    InitializeTestServer
+A    InitializeTestServer/sitemap.xmap
+A    InitializeTestServer/xsl
+A    InitializeTestServer/xsl/writereport.xsl
+A    InitializeTestServer/xsl/initDB.xsl
+A    ShopAtgSearch
+A    ShopAtgSearch/xUCDMsplit.xsl
+A    ShopAtgSearch/sql_getlocaleproducts.xsl
+A    ShopAtgSearch/sql_selectproducts.xsl
+A    ShopAtgSearch/convertProducts.xsl
+U    AssetsExport/xsl/createIncludeForAssetsRetrieval.xsl
+A    ShopAtgExport
+A    ShopAtgExport/sitemap.xmap
+A    ShopAtgExport/xsl
+A    ShopAtgExport/xsl/AtgKeyBenefitArea.xsl
+A    ShopAtgExport/xsl/sql_createbatches.xsl
+A    ShopAtgExport/xsl/getProductList.xsl
+A    ShopAtgExport/xsl/AtgProduct.xsl
+A    ShopAtgExport/xsl/AtgCommercialSpecValue.xsl
+A    ShopAtgExport/xsl/filterBadProducts.xsl
+A    ShopAtgExport/xsl/sql_gettimestamp.xsl
+A    ShopAtgExport/xsl/createContentReady.xsl
+A    ShopAtgExport/xsl/sql_genreport.xsl
+A    ShopAtgExport/xsl/AtgConcept.xsl
+A    ShopAtgExport/xsl/AtgPartnerLogo.xsl
+A    ShopAtgExport/xsl/sql_selectbatches.xsl
+A    ShopAtgExport/xsl/objectAssets.xsl
+A    ShopAtgExport/xsl/AtgAward.xsl
+A    ShopAtgExport/xsl/sql_getLastExportTimestamps.xsl
+A    ShopAtgExport/xsl/ll2include.xsl
+A    ShopAtgExport/xsl/AtgAbp.xsl
+A    ShopAtgExport/xsl/AtgProductAccessories.xsl
+A    ShopAtgExport/xsl/AtgSystemLogo.xsl
+A    ShopAtgExport/xsl/sql_getlocales.xsl
+A    ShopAtgExport/xsl/convertProducts.xsl
+A    ShopAtgExport/xsl/merge_aggregation.xsl
+A    ShopAtgExport/xsl/AtgDisclaimer.xsl
+A    ShopAtgExport/xsl/makereport.xsl
+A    ShopAtgExport/xsl/AtgDescriptor.xsl
+A    ShopAtgExport/xsl/makereport.xsl
+A    ShopAtgExport/xsl/AtgDescriptor.xsl
+A    ShopAtgExport/xsl/validDoctypes.xsl
+A    ShopAtgExport/xsl/write-merged-gsa-template.xsl
+A    ShopAtgExport/xsl/dir2shell_move.xsl
+A    ShopAtgExport/xsl/AtgBrand.xsl
+A    ShopAtgExport/xsl/AtgUnitOfMeasure.xsl
+A    ShopAtgExport/xsl/sql_selectproducts.xsl
+A    ShopAtgExport/xsl/formatLastExportTimestamps.xsl
+A    ShopAtgExport/xsl/sql_updateCLE.xsl
+A    ShopAtgExport/xsl/dir2include_files.xsl
+A    ShopAtgExport/xsl/AtgFeature.xsl
+A    ShopAtgExport/xsl/AtgCommercialSpecChapter.xsl
+A    ShopAtgExport/xsl/AtgVersionElement.xsl
+A    ShopAtgExport/xsl/sql_clean.xsl
+A    ShopAtgExport/xsl/AtgCommercialSpecItem.xsl
+A    ShopAtgExport/xsl/sql_getlocaleproducts.xsl
+A    ShopAtgExport/xsl/ll2includeForBatching.xsl
+A    IntegrityChecksLighting
+A    IntegrityChecksLighting/sitemap.xmap
+A    IntegrityChecksLighting/xsl
+A    IntegrityChecksLighting/xsl/sql_productList.xsl
+A    IntegrityChecksLighting/xsl/convert_productList.xsl
+A    IntegrityChecksLighting/xsl/sql_familyList.xsl
+A    IntegrityChecksLighting/xsl/convert_familyList.xsl
+A    IntegrityChecksLighting/xsl/convert2csv.xsl
+A    IntegrityChecksLighting/xsl/formatEmail.xsl
+A    IntegrityChecksLighting/xsl/sendReportAsEmail.xsl
+A    IntegrityChecksLighting/xsl/convert2html.xsl
+A    IntegrityChecksLighting/xsl/sql_atgProductList.xsl
+A    IntegrityChecksLighting/xsl/sql_prismaProductList.xsl
+A    IntegrityChecksLighting/xsl/empty.xml
+A    IntegrityChecksLighting/xsl/sql_atgFamilyList.xsl
+A    IntegrityChecksLighting/xsl/sql_prismaFamilyList.xsl
+Updated to revision 9890.
+
+
+
+
+
+

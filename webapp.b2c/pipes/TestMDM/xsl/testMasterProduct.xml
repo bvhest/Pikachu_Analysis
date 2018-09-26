@@ -1,0 +1,3589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products>
+	<sql:rowset xmlns:sql="http://apache.org/cocoon/SQL/2.0" name="product">
+		<sql:row>
+			<sql:id>HD7446/20</sql:id>
+			<sql:language>ENG</sql:language>
+			<sql:data>
+				<Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="1" IsAccessory="0" lastModified="2007-05-21T16:30:46.0" Status="" Division="DAP" Brand="PHI">
+					<CTN>HD7446/20</CTN>
+					<DTN>HD7446/20</DTN>
+					<ProductName>Coffeemaker</ProductName>
+					<NamingString>
+						<MasterBrand>
+							<BrandCode>PHI</BrandCode>
+							<BrandName>Philips</BrandName>
+						</MasterBrand>
+						<BrandString>Philips</BrandString>
+						<BrandString2/>
+						<Descriptor>
+							<DescriptorCode>NSD_000014</DescriptorCode>
+							<DescriptorName>Coffeemaker</DescriptorName>
+						</Descriptor>
+						<Alphanumeric>HD7446/20</Alphanumeric>
+						<VersionString/>
+					</NamingString>
+					<ShortDescription/>
+					<WOW>Good Coffee Easily</WOW>
+					<SubWOW>Holds 10 to 15 cups, compact design</SubWOW>
+					<MarketingTextHeader>Easy to use and reliable coffeemaker with a smart and compact design for easy storage.</MarketingTextHeader>
+					<MarketingTextBody/>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000048</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Easy to experience</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000072</FeatureCode>
+							<FeatureName>Translucent water tank</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Translucent water tank shows the water level in the tank</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>11</FeatureRank>
+							<FeatureTopRank>11</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000118</FeatureCode>
+							<FeatureName>Dishwasher-proof filter and jug</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Dishwasher-proof parts for easy cleaning</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>13</FeatureRank>
+							<FeatureTopRank>13</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000120</FeatureCode>
+							<FeatureName>Drip stop</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>The drip stop prevents dripping coffee  on the hotplate</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>14</FeatureRank>
+							<FeatureTopRank>14</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000423</FeatureCode>
+							<FeatureName>Detachable swing filter</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Detachable swing filter</FeatureLongDescription>
+							<FeatureGlossary>Detachable swing filter for easy filling and cleaning</FeatureGlossary>
+							<FeatureRank>15</FeatureRank>
+							<FeatureTopRank>15</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000195</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Compact Design</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>3</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000766</FeatureCode>
+							<FeatureName>1.3L for 10 - 15 cups</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>1.3L for 10 - 15 cups</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>31</FeatureRank>
+							<FeatureTopRank>31</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000425</FeatureCode>
+							<FeatureName>Cord storage</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Cord storage</FeatureLongDescription>
+							<FeatureGlossary>With the cord storage you can keep your countertop neat and tidy</FeatureGlossary>
+							<FeatureRank>32</FeatureRank>
+							<FeatureTopRank>32</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<CSChapter>
+						<CSChapterCode>CHA_0000009</CSChapterCode>
+						<CSChapterName>General specifications</CSChapterName>
+						<CSChapterRank>12</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000734</CSItemCode>
+							<CSItemName>Translucent water tank</CSItemName>
+							<CSItemRank>5</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>7</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000745</CSItemCode>
+							<CSItemName>Dishwasher proof swing filter &amp; jug</CSItemName>
+							<CSItemRank>8</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>23</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000737</CSItemCode>
+							<CSItemName>Drip stop</CSItemName>
+							<CSItemRank>14</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>10</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000736</CSItemCode>
+							<CSItemName>Detachable swing filter</CSItemName>
+							<CSItemRank>20</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>9</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000738</CSItemCode>
+							<CSItemName>Cord storage</CSItemName>
+							<CSItemRank>21</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>11</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000739</CSItemCode>
+							<CSItemName>Non slip feet</CSItemName>
+							<CSItemRank>22</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>12</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000007</CSChapterCode>
+						<CSChapterName>Technical Specifications</CSChapterName>
+						<CSChapterRank>16</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000117</CSItemCode>
+							<CSItemName>Power</CSItemName>
+							<CSItemRank>1</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007308</CSValueCode>
+								<CSValueName>900</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Watt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000135</CSItemCode>
+							<CSItemName>Capacity</CSItemName>
+							<CSItemRank>3</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007310</CSValueCode>
+								<CSValueName>1.3 / 10-15</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>ZLC</UnitOfMeasureCode>
+								<UnitOfMeasureName>Litres / cups</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Litres / cups</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000741</CSItemCode>
+							<CSItemName>Voltage</CSItemName>
+							<CSItemRank>10</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007316</CSValueCode>
+								<CSValueName>220-240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>VLT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Volt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>V</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000744</CSItemCode>
+							<CSItemName>Frequency</CSItemName>
+							<CSItemRank>11</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007319</CSValueCode>
+								<CSValueName>50/60</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>HTZ</UnitOfMeasureCode>
+								<UnitOfMeasureName>Hertz</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Hz</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000740</CSItemCode>
+							<CSItemName>Cord length</CSItemName>
+							<CSItemRank>12</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007315</CSValueCode>
+								<CSValueName>0.88</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MTR</UnitOfMeasureCode>
+								<UnitOfMeasureName>Metres</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>m</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000743</CSItemCode>
+							<CSItemName>Brewing time</CSItemName>
+							<CSItemRank>13</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007318</CSValueCode>
+								<CSValueName>11</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MIN</UnitOfMeasureCode>
+								<UnitOfMeasureName>Minutes</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>minute(s)</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000017</CSChapterCode>
+						<CSChapterName>Design specifications</CSChapterName>
+						<CSChapterRank>26</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000137</CSItemCode>
+							<CSItemName>Colour</CSItemName>
+							<CSItemRank>2</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007313</CSValueCode>
+								<CSValueName>Black</CSValueName>
+								<CSValueRank>3</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000746</CSItemCode>
+							<CSItemName>Bowl, cover, pusher</CSItemName>
+							<CSItemRank>15</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007320</CSValueCode>
+								<CSValueName>Plastic (polypropylene)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00007321</CSValueCode>
+								<CSValueName>Glass jug</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000750</CSItemCode>
+							<CSItemName>Dimensions (L x W x H)</CSItemName>
+							<CSItemRank>16</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007322</CSValueCode>
+								<CSValueName>195*195*240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00007323</CSValueCode>
+								<CSValueName>220*220*290</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MMT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Millimetre</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000749</CSItemCode>
+							<CSItemName>Weight (incl. Packaging)</CSItemName>
+							<CSItemRank>17</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007444</CSValueCode>
+								<CSValueName>1.94</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000751</CSItemCode>
+							<CSItemName>Weight appliance</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007325</CSValueCode>
+								<CSValueName>1.42</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000008</CSChapterCode>
+						<CSChapterName>Accessories</CSChapterName>
+						<CSChapterRank>27</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000752</CSItemCode>
+							<CSItemName>Jug</CSItemName>
+							<CSItemRank>19</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007326</CSValueCode>
+								<CSValueName>HD7983/70 (White)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<ProductDivision>
+						<ProductDivisionCode>0300</ProductDivisionCode>
+						<ProductDivisionName>DAP</ProductDivisionName>
+					</ProductDivision>
+					<CRDateYW>200552</CRDateYW>
+					<CRDate>2006-01-01</CRDate>
+					<MarketingVersion>1.0</MarketingVersion>
+					<MarketingStatus>Final Published</MarketingStatus>
+				</Product>
+			</sql:data>
+			<sql:rowset name="cat">
+				<sql:row>
+					<sql:groupcode>KITCHEN_APPLIANCES_GR</sql:groupcode>
+					<sql:groupname>Kitchen Appliances</sql:groupname>
+					<sql:categorycode>KAP_COFFEEMAKERSANDKETTLES_CA</sql:categorycode>
+					<sql:categoryname>Coffee Makers and Kettles</sql:categoryname>
+					<sql:subcategorycode>CK_COFFEEMAKERS_SU</sql:subcategorycode>
+					<sql:subcategoryname>Coffee Makers</sql:subcategoryname>
+				</sql:row>
+			</sql:rowset>
+		</sql:row>
+		<sql:row>
+			<sql:id>HD7448/00</sql:id>
+			<sql:language>ENG</sql:language>
+			<sql:data>
+				<Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="1" IsAccessory="0" lastModified="2007-05-21T16:30:46.0" Status="" Division="DAP" Brand="PHI">
+					<CTN>HD7448/00</CTN>
+					<DTN>HD7448/00</DTN>
+					<ProductName>Coffeemaker</ProductName>
+					<NamingString>
+						<MasterBrand>
+							<BrandCode>PHI</BrandCode>
+							<BrandName>Philips</BrandName>
+						</MasterBrand>
+						<BrandString>Philips</BrandString>
+						<BrandString2/>
+						<Descriptor>
+							<DescriptorCode>NSD_000014</DescriptorCode>
+							<DescriptorName>Coffeemaker</DescriptorName>
+						</Descriptor>
+						<Alphanumeric>HD7448/00</Alphanumeric>
+						<VersionElement1>
+							<VersionElementCode>HD7448/00</VersionElementCode>
+							<VersionElementName>1.3L 1000W</VersionElementName>
+						</VersionElement1>
+						<VersionString>1.3L 1000W</VersionString>
+					</NamingString>
+					<ShortDescription/>
+					<WOW>Good Coffee Easily</WOW>
+					<SubWOW>Holds 10 to 15 cups, compact design</SubWOW>
+					<MarketingTextHeader>Easy to use and reliable coffeemaker with a smart and compact design for easy storage.</MarketingTextHeader>
+					<MarketingTextBody/>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000048</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Easy to experience</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000072</FeatureCode>
+							<FeatureName>Translucent water tank</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Translucent water tank shows the water level in the tank</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>11</FeatureRank>
+							<FeatureTopRank>11</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000117</FeatureCode>
+							<FeatureName>Illuminated power switch</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Illuminated power switch</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>12</FeatureRank>
+							<FeatureTopRank>12</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000118</FeatureCode>
+							<FeatureName>Dishwasher-proof filter and jug</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Dishwasher-proof parts for easy cleaning</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>13</FeatureRank>
+							<FeatureTopRank>13</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000120</FeatureCode>
+							<FeatureName>Drip stop</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>The drip stop prevents dripping coffee  on the hotplate</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>14</FeatureRank>
+							<FeatureTopRank>14</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000423</FeatureCode>
+							<FeatureName>Detachable swing filter</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Detachable swing filter</FeatureLongDescription>
+							<FeatureGlossary>Detachable swing filter for easy filling and cleaning</FeatureGlossary>
+							<FeatureRank>15</FeatureRank>
+							<FeatureTopRank>15</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000119</FeatureCode>
+							<FeatureName>Comfortable grip</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Comfortable grip for a steady pour</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>16</FeatureRank>
+							<FeatureTopRank>16</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000195</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Compact Design</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>3</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000766</FeatureCode>
+							<FeatureName>1.3L for 10 - 15 cups</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>1.3L for 10 - 15 cups</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>31</FeatureRank>
+							<FeatureTopRank>31</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000425</FeatureCode>
+							<FeatureName>Cord storage</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Cord storage</FeatureLongDescription>
+							<FeatureGlossary>With the cord storage you can keep your countertop neat and tidy</FeatureGlossary>
+							<FeatureRank>32</FeatureRank>
+							<FeatureTopRank>32</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<CSChapter>
+						<CSChapterCode>CHA_0000009</CSChapterCode>
+						<CSChapterName>General specifications</CSChapterName>
+						<CSChapterRank>12</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000734</CSItemCode>
+							<CSItemName>Translucent water tank</CSItemName>
+							<CSItemRank>5</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>7</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000735</CSItemCode>
+							<CSItemName>Illuminated power switch</CSItemName>
+							<CSItemRank>7</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>8</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000745</CSItemCode>
+							<CSItemName>Dishwasher proof swing filter &amp; jug</CSItemName>
+							<CSItemRank>8</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>23</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000737</CSItemCode>
+							<CSItemName>Drip stop</CSItemName>
+							<CSItemRank>14</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>10</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000736</CSItemCode>
+							<CSItemName>Detachable swing filter</CSItemName>
+							<CSItemRank>20</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000738</CSItemCode>
+							<CSItemName>Cord storage</CSItemName>
+							<CSItemRank>21</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>11</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000739</CSItemCode>
+							<CSItemName>Non slip feet</CSItemName>
+							<CSItemRank>22</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>12</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000007</CSChapterCode>
+						<CSChapterName>Technical Specifications</CSChapterName>
+						<CSChapterRank>16</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000117</CSItemCode>
+							<CSItemName>Power</CSItemName>
+							<CSItemRank>1</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002548</CSValueCode>
+								<CSValueName>1000</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Watt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000135</CSItemCode>
+							<CSItemName>Capacity</CSItemName>
+							<CSItemRank>3</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002551</CSValueCode>
+								<CSValueName>1.3 / 10-15</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>ZLC</UnitOfMeasureCode>
+								<UnitOfMeasureName>Litres / cups</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Litres / cups</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000741</CSItemCode>
+							<CSItemName>Voltage</CSItemName>
+							<CSItemRank>10</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002557</CSValueCode>
+								<CSValueName>220-240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>VLT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Volt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>V</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000744</CSItemCode>
+							<CSItemName>Frequency</CSItemName>
+							<CSItemRank>11</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002560</CSValueCode>
+								<CSValueName>50/60</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>HTZ</UnitOfMeasureCode>
+								<UnitOfMeasureName>Hertz</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Hz</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000740</CSItemCode>
+							<CSItemName>Cord length</CSItemName>
+							<CSItemRank>12</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002556</CSValueCode>
+								<CSValueName>0.88</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MTR</UnitOfMeasureCode>
+								<UnitOfMeasureName>Metres</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>m</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000743</CSItemCode>
+							<CSItemName>Brewing time</CSItemName>
+							<CSItemRank>13</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002569</CSValueCode>
+								<CSValueName>9</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MIN</UnitOfMeasureCode>
+								<UnitOfMeasureName>Minutes</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>minute(s)</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000017</CSChapterCode>
+						<CSChapterName>Design specifications</CSChapterName>
+						<CSChapterRank>26</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000137</CSItemCode>
+							<CSItemName>Colour</CSItemName>
+							<CSItemRank>2</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002552</CSValueCode>
+								<CSValueName>White</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000746</CSItemCode>
+							<CSItemName>Bowl, cover, pusher</CSItemName>
+							<CSItemRank>15</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002561</CSValueCode>
+								<CSValueName>Plastic (polypropylene)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00002562</CSValueCode>
+								<CSValueName>Glass jug</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000750</CSItemCode>
+							<CSItemName>Dimensions (L x W x H)</CSItemName>
+							<CSItemRank>16</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002564</CSValueCode>
+								<CSValueName>220*220*290</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MMT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Millimetre</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000749</CSItemCode>
+							<CSItemName>Weight (incl. Packaging)</CSItemName>
+							<CSItemRank>17</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002570</CSValueCode>
+								<CSValueName>1.94</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000751</CSItemCode>
+							<CSItemName>Weight appliance</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002566</CSValueCode>
+								<CSValueName>1.42</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000008</CSChapterCode>
+						<CSChapterName>Accessories</CSChapterName>
+						<CSChapterRank>27</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000752</CSItemCode>
+							<CSItemName>Jug</CSItemName>
+							<CSItemRank>19</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002567</CSValueCode>
+								<CSValueName>HD7983/70 (White)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00002568</CSValueCode>
+								<CSValueName>HD7983/20 (Black)</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<ProductDivision>
+						<ProductDivisionCode>0300</ProductDivisionCode>
+						<ProductDivisionName>DAP</ProductDivisionName>
+					</ProductDivision>
+					<CRDateYW>200552</CRDateYW>
+					<CRDate>2006-01-01</CRDate>
+					<MarketingVersion>1.0</MarketingVersion>
+					<MarketingStatus>Final Published</MarketingStatus>
+				</Product>
+			</sql:data>
+			<sql:rowset name="cat">
+				<sql:row>
+					<sql:groupcode>KITCHEN_APPLIANCES_GR</sql:groupcode>
+					<sql:groupname>Kitchen Appliances</sql:groupname>
+					<sql:categorycode>KAP_COFFEEMAKERSANDKETTLES_CA</sql:categorycode>
+					<sql:categoryname>Coffee Makers and Kettles</sql:categoryname>
+					<sql:subcategorycode>CK_COFFEEMAKERS_SU</sql:subcategorycode>
+					<sql:subcategoryname>Coffee Makers</sql:subcategoryname>
+				</sql:row>
+			</sql:rowset>
+		</sql:row>
+		<sql:row>
+			<sql:id>HD7466/20</sql:id>
+			<sql:language>ENG</sql:language>
+			<sql:data>
+				<Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="1" IsAccessory="0" lastModified="2007-05-21T16:30:46.0" Status="" Division="DAP" Brand="PHI">
+					<CTN>HD7466/20</CTN>
+					<DTN>HD7466/20</DTN>
+					<ProductName>Coffeemaker</ProductName>
+					<NamingString>
+						<MasterBrand>
+							<BrandCode>PHI</BrandCode>
+							<BrandName>Philips</BrandName>
+						</MasterBrand>
+						<BrandString>Philips</BrandString>
+						<BrandString2/>
+						<Descriptor>
+							<DescriptorCode>NSD_000014</DescriptorCode>
+							<DescriptorName>Coffeemaker</DescriptorName>
+						</Descriptor>
+						<Alphanumeric>HD7466/20</Alphanumeric>
+						<VersionElement1>
+							<VersionElementCode>HD7466/20</VersionElementCode>
+							<VersionElementName>0.6L 650W</VersionElementName>
+						</VersionElement1>
+						<VersionString>0.6L 650W</VersionString>
+					</NamingString>
+					<ShortDescription/>
+					<WOW>Good Coffee Easily</WOW>
+					<SubWOW>Holds 4 to 6 cups, compact design</SubWOW>
+					<MarketingTextHeader>Reliable and easy to use coffeemaker, which is ideal for people looking for a compact design</MarketingTextHeader>
+					<MarketingTextBody/>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000048</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Easy to experience</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000072</FeatureCode>
+							<FeatureName>Translucent water tank</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Translucent water tank shows the water level in the tank</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>11</FeatureRank>
+							<FeatureTopRank>11</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000117</FeatureCode>
+							<FeatureName>Illuminated power switch</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Illuminated power switch</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>12</FeatureRank>
+							<FeatureTopRank>12</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000118</FeatureCode>
+							<FeatureName>Dishwasher-proof filter and jug</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Dishwasher-proof parts for easy cleaning</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>13</FeatureRank>
+							<FeatureTopRank>13</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000120</FeatureCode>
+							<FeatureName>Drip stop</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>The drip stop prevents dripping coffee  on the hotplate</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>14</FeatureRank>
+							<FeatureTopRank>14</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000423</FeatureCode>
+							<FeatureName>Detachable swing filter</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Detachable swing filter</FeatureLongDescription>
+							<FeatureGlossary>Detachable swing filter for easy filling and cleaning</FeatureGlossary>
+							<FeatureRank>15</FeatureRank>
+							<FeatureTopRank>15</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000195</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Compact Design</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>3</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000424</FeatureCode>
+							<FeatureName>0.6L for 4-6 cups</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>0.6L for 4-6 cups</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>30</FeatureRank>
+							<FeatureTopRank>30</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000425</FeatureCode>
+							<FeatureName>Cord storage</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Cord storage</FeatureLongDescription>
+							<FeatureGlossary>With the cord storage you can keep your countertop neat and tidy</FeatureGlossary>
+							<FeatureRank>32</FeatureRank>
+							<FeatureTopRank>32</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<CSChapter>
+						<CSChapterCode>CHA_0000009</CSChapterCode>
+						<CSChapterName>General specifications</CSChapterName>
+						<CSChapterRank>12</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000734</CSItemCode>
+							<CSItemName>Translucent water tank</CSItemName>
+							<CSItemRank>5</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>7</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000735</CSItemCode>
+							<CSItemName>Illuminated power switch</CSItemName>
+							<CSItemRank>7</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>8</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000745</CSItemCode>
+							<CSItemName>Dishwasher proof swing filter &amp; jug</CSItemName>
+							<CSItemRank>8</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000737</CSItemCode>
+							<CSItemName>Drip stop</CSItemName>
+							<CSItemRank>14</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>10</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000736</CSItemCode>
+							<CSItemName>Detachable swing filter</CSItemName>
+							<CSItemRank>20</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>9</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000738</CSItemCode>
+							<CSItemName>Cord storage</CSItemName>
+							<CSItemRank>21</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>11</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000739</CSItemCode>
+							<CSItemName>Non slip feet</CSItemName>
+							<CSItemRank>22</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>12</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000007</CSChapterCode>
+						<CSChapterName>Technical Specifications</CSChapterName>
+						<CSChapterRank>16</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000117</CSItemCode>
+							<CSItemName>Power</CSItemName>
+							<CSItemRank>1</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002435</CSValueCode>
+								<CSValueName>650</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Watt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000135</CSItemCode>
+							<CSItemName>Capacity</CSItemName>
+							<CSItemRank>3</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002437</CSValueCode>
+								<CSValueName>0.6 / 4-7</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>ZLC</UnitOfMeasureCode>
+								<UnitOfMeasureName>Litres / cups</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Litres / cups</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000741</CSItemCode>
+							<CSItemName>Voltage</CSItemName>
+							<CSItemRank>10</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002444</CSValueCode>
+								<CSValueName>220-240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>VLT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Volt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>V</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000744</CSItemCode>
+							<CSItemName>Frequency</CSItemName>
+							<CSItemRank>11</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002447</CSValueCode>
+								<CSValueName>50/60</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>HTZ</UnitOfMeasureCode>
+								<UnitOfMeasureName>Hertz</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Hz</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000740</CSItemCode>
+							<CSItemName>Cord length</CSItemName>
+							<CSItemRank>12</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002443</CSValueCode>
+								<CSValueName>0.88</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MTR</UnitOfMeasureCode>
+								<UnitOfMeasureName>Metres</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>m</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000743</CSItemCode>
+							<CSItemName>Brewing time</CSItemName>
+							<CSItemRank>13</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002445</CSValueCode>
+								<CSValueName>9</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MIN</UnitOfMeasureCode>
+								<UnitOfMeasureName>Minutes</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>minute(s)</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000017</CSChapterCode>
+						<CSChapterName>Design specifications</CSChapterName>
+						<CSChapterRank>26</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000137</CSItemCode>
+							<CSItemName>Colour</CSItemName>
+							<CSItemRank>2</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002456</CSValueCode>
+								<CSValueName>Black</CSValueName>
+								<CSValueRank>5</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000746</CSItemCode>
+							<CSItemName>Bowl, cover, pusher</CSItemName>
+							<CSItemRank>15</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002448</CSValueCode>
+								<CSValueName>Plastic (polypropylene)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00002449</CSValueCode>
+								<CSValueName>Glass jug</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000750</CSItemCode>
+							<CSItemName>Dimensions (L x W x H)</CSItemName>
+							<CSItemRank>16</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002450</CSValueCode>
+								<CSValueName>195*195*240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MMT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Millimetre</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000749</CSItemCode>
+							<CSItemName>Weight (incl. Packaging)</CSItemName>
+							<CSItemRank>17</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002457</CSValueCode>
+								<CSValueName>1.62</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000751</CSItemCode>
+							<CSItemName>Weight appliance</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002452</CSValueCode>
+								<CSValueName>1.18</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000008</CSChapterCode>
+						<CSChapterName>Accessories</CSChapterName>
+						<CSChapterRank>27</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000752</CSItemCode>
+							<CSItemName>Jug</CSItemName>
+							<CSItemRank>19</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002454</CSValueCode>
+								<CSValueName>HD7980/70 (White)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00002455</CSValueCode>
+								<CSValueName>HD7980/70 (Black)</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<ProductDivision>
+						<ProductDivisionCode>0300</ProductDivisionCode>
+						<ProductDivisionName>DAP</ProductDivisionName>
+					</ProductDivision>
+					<CRDateYW>200552</CRDateYW>
+					<CRDate>2006-01-01</CRDate>
+					<MarketingVersion>1.0</MarketingVersion>
+					<MarketingStatus>Final Published</MarketingStatus>
+				</Product>
+			</sql:data>
+			<sql:rowset name="cat">
+				<sql:row>
+					<sql:groupcode>KITCHEN_APPLIANCES_GR</sql:groupcode>
+					<sql:groupname>Kitchen Appliances</sql:groupname>
+					<sql:categorycode>KAP_COFFEEMAKERSANDKETTLES_CA</sql:categorycode>
+					<sql:categoryname>Coffee Makers and Kettles</sql:categoryname>
+					<sql:subcategorycode>CK_COFFEEMAKERS_SU</sql:subcategorycode>
+					<sql:subcategoryname>Coffee Makers</sql:subcategoryname>
+				</sql:row>
+			</sql:rowset>
+		</sql:row>
+		<sql:row>
+			<sql:id>HD7502/35</sql:id>
+			<sql:language>ENG</sql:language>
+			<sql:data>
+				<Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="1" IsAccessory="0" lastModified="2007-05-10T17:31:34.0" Status="" Division="DAP" Brand="PHI">
+					<CTN>HD7502/35</CTN>
+					<DTN>HD7502</DTN>
+					<ProductName>Coffeemaker</ProductName>
+					<NamingString>
+						<MasterBrand>
+							<BrandCode>PHI</BrandCode>
+							<BrandName>Philips</BrandName>
+						</MasterBrand>
+						<BrandString>Philips</BrandString>
+						<BrandString2/>
+						<Descriptor>
+							<DescriptorCode>NSD_000014</DescriptorCode>
+							<DescriptorName>Coffeemaker</DescriptorName>
+						</Descriptor>
+						<Alphanumeric>HD7502</Alphanumeric>
+						<VersionString/>
+					</NamingString>
+					<ShortDescription/>
+					<WOW>Original coffee, effortlessly</WOW>
+					<SubWOW>Today`s look timeless taste</SubWOW>
+					<MarketingTextHeader/>
+					<MarketingTextBody/>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000196</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Superior Aroma</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0001693</FeatureCode>
+							<FeatureName>Aroma jug</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Keeps aroma in the jug</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>12</FeatureRank>
+							<FeatureTopRank>12</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0002045</FeatureCode>
+							<FeatureName>1000 Watt</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>For a fast and hot cup of coffee</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>13</FeatureRank>
+							<FeatureTopRank>13</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000048</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Easy to experience</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>2</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0001571</FeatureCode>
+							<FeatureName>Drip stop</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Drip stop to interupt the brewing whenever you like</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>224</FeatureRank>
+							<FeatureTopRank>224</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000949</FeatureCode>
+							<FeatureName>Cord storage</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Cord storage</FeatureLongDescription>
+							<FeatureGlossary>For easy storage of redundant cord length.</FeatureGlossary>
+							<FeatureRank>225</FeatureRank>
+							<FeatureTopRank>225</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0002046</FeatureCode>
+							<FeatureName>1.2L (10-15 cups)</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>1.2L (10-15 cups)</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>226</FeatureRank>
+							<FeatureTopRank>226</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<CSChapter>
+						<CSChapterCode>CHA_0000009</CSChapterCode>
+						<CSChapterName>General specifications</CSChapterName>
+						<CSChapterRank>12</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0001299</CSItemCode>
+							<CSItemName>Dish-washer-proof parts</CSItemName>
+							<CSItemRank>9</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>3</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000736</CSItemCode>
+							<CSItemName>Detachable swing filter</CSItemName>
+							<CSItemRank>20</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000738</CSItemCode>
+							<CSItemName>Cord storage</CSItemName>
+							<CSItemRank>21</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000007</CSChapterCode>
+						<CSChapterName>Technical Specifications</CSChapterName>
+						<CSChapterRank>16</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000117</CSItemCode>
+							<CSItemName>Power</CSItemName>
+							<CSItemRank>1</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021495</CSValueCode>
+								<CSValueName>1000</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Watt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000027</CSItemCode>
+							<CSItemName>Frequency</CSItemName>
+							<CSItemRank>3</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021494</CSValueCode>
+								<CSValueName>50/60</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>HTZ</UnitOfMeasureCode>
+								<UnitOfMeasureName>Hertz</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Hz</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000741</CSItemCode>
+							<CSItemName>Voltage</CSItemName>
+							<CSItemRank>10</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021499</CSValueCode>
+								<CSValueName>220-240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>VLT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Volt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>V</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000740</CSItemCode>
+							<CSItemName>Cord length</CSItemName>
+							<CSItemRank>12</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021498</CSValueCode>
+								<CSValueName>0.88</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MTR</UnitOfMeasureCode>
+								<UnitOfMeasureName>Metres</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>m</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000743</CSItemCode>
+							<CSItemName>Brewing time</CSItemName>
+							<CSItemRank>13</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021500</CSValueCode>
+								<CSValueName>&lt; 10</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MIN</UnitOfMeasureCode>
+								<UnitOfMeasureName>Minutes</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>minute(s)</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000135</CSItemCode>
+							<CSItemName>Capacity</CSItemName>
+							<CSItemRank>14</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021497</CSValueCode>
+								<CSValueName>1.2L/ 10-15</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>ZLC</UnitOfMeasureCode>
+								<UnitOfMeasureName>Litres / cups</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Litres / cups</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000017</CSChapterCode>
+						<CSChapterName>Design specifications</CSChapterName>
+						<CSChapterRank>26</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000123</CSItemCode>
+							<CSItemName>Materials</CSItemName>
+							<CSItemRank>8</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021496</CSValueCode>
+								<CSValueName>Polypropylene/ Glass jug</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000750</CSItemCode>
+							<CSItemName>Dimensions (L x W x H)</CSItemName>
+							<CSItemRank>16</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021501</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MMT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Millimetre</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000749</CSItemCode>
+							<CSItemName>Weight (incl. Packaging)</CSItemName>
+							<CSItemRank>17</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021502</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000751</CSItemCode>
+							<CSItemName>Weight appliance</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021503</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000137</CSItemCode>
+							<CSItemName>Colour</CSItemName>
+							<CSItemRank>19</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>11</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000008</CSChapterCode>
+						<CSChapterName>Accessories</CSChapterName>
+						<CSChapterRank>27</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0001870</CSItemCode>
+							<CSItemName>Aroma jug</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>15</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<ProductDivision>
+						<ProductDivisionCode>0300</ProductDivisionCode>
+						<ProductDivisionName>DAP</ProductDivisionName>
+					</ProductDivision>
+					<CRDateYW>200735</CRDateYW>
+					<CRDate>2007-09-01</CRDate>
+					<MarketingVersion>1.0</MarketingVersion>
+					<MarketingStatus>Final Published</MarketingStatus>
+				</Product>
+			</sql:data>
+			<sql:rowset name="cat">
+				<sql:row>
+					<sql:groupcode>KITCHEN_APPLIANCES_GR</sql:groupcode>
+					<sql:groupname>Kitchen Appliances</sql:groupname>
+					<sql:categorycode>KAP_COFFEEMAKERSANDKETTLES_CA</sql:categorycode>
+					<sql:categoryname>Coffee Makers and Kettles</sql:categoryname>
+					<sql:subcategorycode>CK_COFFEEMAKERS_SU</sql:subcategorycode>
+					<sql:subcategoryname>Coffee Makers</sql:subcategoryname>
+				</sql:row>
+			</sql:rowset>
+		</sql:row>
+		<sql:row>
+			<sql:id>HD7502/55</sql:id>
+			<sql:language>ENG</sql:language>
+			<sql:data>
+				<Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="1" IsAccessory="0" lastModified="2007-05-09T18:16:16.0" Status="" Division="DAP" Brand="PHI">
+					<CTN>HD7502/55</CTN>
+					<DTN>HD7502</DTN>
+					<ProductName>Coffeemaker</ProductName>
+					<NamingString>
+						<MasterBrand>
+							<BrandCode>PHI</BrandCode>
+							<BrandName>Philips</BrandName>
+						</MasterBrand>
+						<BrandString>Philips</BrandString>
+						<BrandString2/>
+						<Descriptor>
+							<DescriptorCode>NSD_000014</DescriptorCode>
+							<DescriptorName>Coffeemaker</DescriptorName>
+						</Descriptor>
+						<Alphanumeric>HD7502</Alphanumeric>
+						<VersionString/>
+					</NamingString>
+					<ShortDescription/>
+					<WOW>Original coffee, effortlessly</WOW>
+					<SubWOW>Today`s look timeless taste</SubWOW>
+					<MarketingTextHeader/>
+					<MarketingTextBody/>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000196</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Superior Aroma</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0001693</FeatureCode>
+							<FeatureName>Aroma jug</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Keeps aroma in the jug</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>12</FeatureRank>
+							<FeatureTopRank>12</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0002045</FeatureCode>
+							<FeatureName>1000 Watt</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>For a fast and hot cup of coffee</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>13</FeatureRank>
+							<FeatureTopRank>13</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000048</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Easy to experience</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>2</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0001571</FeatureCode>
+							<FeatureName>Drip stop</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Drip stop to interupt the brewing whenever you like</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>224</FeatureRank>
+							<FeatureTopRank>224</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000949</FeatureCode>
+							<FeatureName>Cord storage</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Cord storage</FeatureLongDescription>
+							<FeatureGlossary>For easy storage of redundant cord length.</FeatureGlossary>
+							<FeatureRank>225</FeatureRank>
+							<FeatureTopRank>225</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0002046</FeatureCode>
+							<FeatureName>1.2L (10-15 cups)</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>1.2L (10-15 cups)</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>226</FeatureRank>
+							<FeatureTopRank>226</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<CSChapter>
+						<CSChapterCode>CHA_0000009</CSChapterCode>
+						<CSChapterName>General specifications</CSChapterName>
+						<CSChapterRank>12</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0001299</CSItemCode>
+							<CSItemName>Dish-washer-proof parts</CSItemName>
+							<CSItemRank>9</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>3</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000736</CSItemCode>
+							<CSItemName>Detachable swing filter</CSItemName>
+							<CSItemRank>20</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000738</CSItemCode>
+							<CSItemName>Cord storage</CSItemName>
+							<CSItemRank>21</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000007</CSChapterCode>
+						<CSChapterName>Technical Specifications</CSChapterName>
+						<CSChapterRank>16</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000117</CSItemCode>
+							<CSItemName>Power</CSItemName>
+							<CSItemRank>1</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021245</CSValueCode>
+								<CSValueName>1000</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Watt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000027</CSItemCode>
+							<CSItemName>Frequency</CSItemName>
+							<CSItemRank>3</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021244</CSValueCode>
+								<CSValueName>50/60</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>HTZ</UnitOfMeasureCode>
+								<UnitOfMeasureName>Hertz</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Hz</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000741</CSItemCode>
+							<CSItemName>Voltage</CSItemName>
+							<CSItemRank>10</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021249</CSValueCode>
+								<CSValueName>220-240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>VLT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Volt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>V</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000740</CSItemCode>
+							<CSItemName>Cord length</CSItemName>
+							<CSItemRank>12</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021248</CSValueCode>
+								<CSValueName>0.88</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MTR</UnitOfMeasureCode>
+								<UnitOfMeasureName>Metres</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>m</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000743</CSItemCode>
+							<CSItemName>Brewing time</CSItemName>
+							<CSItemRank>13</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021250</CSValueCode>
+								<CSValueName>&lt; 10</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MIN</UnitOfMeasureCode>
+								<UnitOfMeasureName>Minutes</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>minute(s)</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000135</CSItemCode>
+							<CSItemName>Capacity</CSItemName>
+							<CSItemRank>14</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021247</CSValueCode>
+								<CSValueName>1.2L/ 10-15</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>ZLC</UnitOfMeasureCode>
+								<UnitOfMeasureName>Litres / cups</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Litres / cups</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000017</CSChapterCode>
+						<CSChapterName>Design specifications</CSChapterName>
+						<CSChapterRank>26</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000123</CSItemCode>
+							<CSItemName>Materials</CSItemName>
+							<CSItemRank>8</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021246</CSValueCode>
+								<CSValueName>Polypropylene/ Glass jug</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000750</CSItemCode>
+							<CSItemName>Dimensions (L x W x H)</CSItemName>
+							<CSItemRank>16</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021251</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MMT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Millimetre</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000749</CSItemCode>
+							<CSItemName>Weight (incl. Packaging)</CSItemName>
+							<CSItemRank>17</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021252</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000751</CSItemCode>
+							<CSItemName>Weight appliance</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021253</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000137</CSItemCode>
+							<CSItemName>Colour</CSItemName>
+							<CSItemRank>19</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>11</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000008</CSChapterCode>
+						<CSChapterName>Accessories</CSChapterName>
+						<CSChapterRank>27</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0001870</CSItemCode>
+							<CSItemName>Aroma jug</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>15</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<ProductDivision>
+						<ProductDivisionCode>0300</ProductDivisionCode>
+						<ProductDivisionName>DAP</ProductDivisionName>
+					</ProductDivision>
+					<CRDateYW>200735</CRDateYW>
+					<CRDate>2007-09-01</CRDate>
+					<MarketingVersion>1.0</MarketingVersion>
+					<MarketingStatus>Final Published</MarketingStatus>
+				</Product>
+			</sql:data>
+			<sql:rowset name="cat">
+				<sql:row>
+					<sql:groupcode>KITCHEN_APPLIANCES_GR</sql:groupcode>
+					<sql:groupname>Kitchen Appliances</sql:groupname>
+					<sql:categorycode>KAP_COFFEEMAKERSANDKETTLES_CA</sql:categorycode>
+					<sql:categoryname>Coffee Makers and Kettles</sql:categoryname>
+					<sql:subcategorycode>CK_COFFEEMAKERS_SU</sql:subcategorycode>
+					<sql:subcategoryname>Coffee Makers</sql:subcategoryname>
+				</sql:row>
+			</sql:rowset>
+		</sql:row>
+		<sql:row>
+			<sql:id>HD7446/20</sql:id>
+			<sql:language>ENG</sql:language>
+			<sql:data>
+				<Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="1" IsAccessory="0" lastModified="2007-05-21T16:30:46.0" Status="" Division="DAP" Brand="PHI">
+					<CTN>HD7446/20</CTN>
+					<DTN>HD7446/20</DTN>
+					<ProductName>Coffeemaker</ProductName>
+					<NamingString>
+						<MasterBrand>
+							<BrandCode>PHI</BrandCode>
+							<BrandName>Philips</BrandName>
+						</MasterBrand>
+						<BrandString>Philips</BrandString>
+						<BrandString2/>
+						<Descriptor>
+							<DescriptorCode>NSD_000014</DescriptorCode>
+							<DescriptorName>Coffeemaker</DescriptorName>
+						</Descriptor>
+						<Alphanumeric>HD7446/20</Alphanumeric>
+						<VersionString/>
+					</NamingString>
+					<ShortDescription/>
+					<WOW>Good Coffee Easily</WOW>
+					<SubWOW>Holds 10 to 15 cups, compact design</SubWOW>
+					<MarketingTextHeader>Easy to use and reliable coffeemaker with a smart and compact design for easy storage.</MarketingTextHeader>
+					<MarketingTextBody/>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000048</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Easy to experience</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000072</FeatureCode>
+							<FeatureName>Translucent water tank</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Translucent water tank shows the water level in the tank</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>11</FeatureRank>
+							<FeatureTopRank>11</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000118</FeatureCode>
+							<FeatureName>Dishwasher-proof filter and jug</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Dishwasher-proof parts for easy cleaning</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>13</FeatureRank>
+							<FeatureTopRank>13</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000120</FeatureCode>
+							<FeatureName>Drip stop</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>The drip stop prevents dripping coffee  on the hotplate</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>14</FeatureRank>
+							<FeatureTopRank>14</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000423</FeatureCode>
+							<FeatureName>Detachable swing filter</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Detachable swing filter</FeatureLongDescription>
+							<FeatureGlossary>Detachable swing filter for easy filling and cleaning</FeatureGlossary>
+							<FeatureRank>15</FeatureRank>
+							<FeatureTopRank>15</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000195</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Compact Design</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>3</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000766</FeatureCode>
+							<FeatureName>1.3L for 10 - 15 cups</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>1.3L for 10 - 15 cups</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>31</FeatureRank>
+							<FeatureTopRank>31</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000425</FeatureCode>
+							<FeatureName>Cord storage</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Cord storage</FeatureLongDescription>
+							<FeatureGlossary>With the cord storage you can keep your countertop neat and tidy</FeatureGlossary>
+							<FeatureRank>32</FeatureRank>
+							<FeatureTopRank>32</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<CSChapter>
+						<CSChapterCode>CHA_0000009</CSChapterCode>
+						<CSChapterName>General specifications</CSChapterName>
+						<CSChapterRank>12</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000734</CSItemCode>
+							<CSItemName>Translucent water tank</CSItemName>
+							<CSItemRank>5</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>7</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000745</CSItemCode>
+							<CSItemName>Dishwasher proof swing filter &amp; jug</CSItemName>
+							<CSItemRank>8</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>23</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000737</CSItemCode>
+							<CSItemName>Drip stop</CSItemName>
+							<CSItemRank>14</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>10</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000736</CSItemCode>
+							<CSItemName>Detachable swing filter</CSItemName>
+							<CSItemRank>20</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>9</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000738</CSItemCode>
+							<CSItemName>Cord storage</CSItemName>
+							<CSItemRank>21</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>11</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000739</CSItemCode>
+							<CSItemName>Non slip feet</CSItemName>
+							<CSItemRank>22</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>12</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000007</CSChapterCode>
+						<CSChapterName>Technical Specifications</CSChapterName>
+						<CSChapterRank>16</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000117</CSItemCode>
+							<CSItemName>Power</CSItemName>
+							<CSItemRank>1</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007308</CSValueCode>
+								<CSValueName>900</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Watt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000135</CSItemCode>
+							<CSItemName>Capacity</CSItemName>
+							<CSItemRank>3</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007310</CSValueCode>
+								<CSValueName>1.3 / 10-15</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>ZLC</UnitOfMeasureCode>
+								<UnitOfMeasureName>Litres / cups</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Litres / cups</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000741</CSItemCode>
+							<CSItemName>Voltage</CSItemName>
+							<CSItemRank>10</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007316</CSValueCode>
+								<CSValueName>220-240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>VLT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Volt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>V</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000744</CSItemCode>
+							<CSItemName>Frequency</CSItemName>
+							<CSItemRank>11</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007319</CSValueCode>
+								<CSValueName>50/60</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>HTZ</UnitOfMeasureCode>
+								<UnitOfMeasureName>Hertz</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Hz</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000740</CSItemCode>
+							<CSItemName>Cord length</CSItemName>
+							<CSItemRank>12</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007315</CSValueCode>
+								<CSValueName>0.88</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MTR</UnitOfMeasureCode>
+								<UnitOfMeasureName>Metres</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>m</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000743</CSItemCode>
+							<CSItemName>Brewing time</CSItemName>
+							<CSItemRank>13</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007318</CSValueCode>
+								<CSValueName>11</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MIN</UnitOfMeasureCode>
+								<UnitOfMeasureName>Minutes</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>minute(s)</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000017</CSChapterCode>
+						<CSChapterName>Design specifications</CSChapterName>
+						<CSChapterRank>26</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000137</CSItemCode>
+							<CSItemName>Colour</CSItemName>
+							<CSItemRank>2</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007313</CSValueCode>
+								<CSValueName>Black</CSValueName>
+								<CSValueRank>3</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000746</CSItemCode>
+							<CSItemName>Bowl, cover, pusher</CSItemName>
+							<CSItemRank>15</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007320</CSValueCode>
+								<CSValueName>Plastic (polypropylene)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00007321</CSValueCode>
+								<CSValueName>Glass jug</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000750</CSItemCode>
+							<CSItemName>Dimensions (L x W x H)</CSItemName>
+							<CSItemRank>16</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007322</CSValueCode>
+								<CSValueName>195*195*240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00007323</CSValueCode>
+								<CSValueName>220*220*290</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MMT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Millimetre</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000749</CSItemCode>
+							<CSItemName>Weight (incl. Packaging)</CSItemName>
+							<CSItemRank>17</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007444</CSValueCode>
+								<CSValueName>1.94</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000751</CSItemCode>
+							<CSItemName>Weight appliance</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007325</CSValueCode>
+								<CSValueName>1.42</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000008</CSChapterCode>
+						<CSChapterName>Accessories</CSChapterName>
+						<CSChapterRank>27</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000752</CSItemCode>
+							<CSItemName>Jug</CSItemName>
+							<CSItemRank>19</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00007326</CSValueCode>
+								<CSValueName>HD7983/70 (White)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<ProductDivision>
+						<ProductDivisionCode>0300</ProductDivisionCode>
+						<ProductDivisionName>DAP</ProductDivisionName>
+					</ProductDivision>
+					<CRDateYW>200552</CRDateYW>
+					<CRDate>2006-01-01</CRDate>
+					<MarketingVersion>1.0</MarketingVersion>
+					<MarketingStatus>Final Published</MarketingStatus>
+				</Product>
+			</sql:data>
+			<sql:rowset name="cat">
+				<sql:row>
+					<sql:groupcode>KITCHEN_APPLIANCES_GR</sql:groupcode>
+					<sql:groupname>Kitchen Appliances</sql:groupname>
+					<sql:categorycode>KAP_COFFEEMAKERSANDKETTLES_CA</sql:categorycode>
+					<sql:categoryname>Coffee Makers and Kettles</sql:categoryname>
+					<sql:subcategorycode>CK_COFFEEMAKERS_SU</sql:subcategorycode>
+					<sql:subcategoryname>Coffee Makers</sql:subcategoryname>
+				</sql:row>
+			</sql:rowset>
+		</sql:row>
+		<sql:row>
+			<sql:id>HD7448/00</sql:id>
+			<sql:language>ENG</sql:language>
+			<sql:data>
+				<Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="1" IsAccessory="0" lastModified="2007-05-21T16:30:46.0" Status="" Division="DAP" Brand="PHI">
+					<CTN>HD7448/00</CTN>
+					<DTN>HD7448/00</DTN>
+					<ProductName>Coffeemaker</ProductName>
+					<NamingString>
+						<MasterBrand>
+							<BrandCode>PHI</BrandCode>
+							<BrandName>Philips</BrandName>
+						</MasterBrand>
+						<BrandString>Philips</BrandString>
+						<BrandString2/>
+						<Descriptor>
+							<DescriptorCode>NSD_000014</DescriptorCode>
+							<DescriptorName>Coffeemaker</DescriptorName>
+						</Descriptor>
+						<Alphanumeric>HD7448/00</Alphanumeric>
+						<VersionElement1>
+							<VersionElementCode>HD7448/00</VersionElementCode>
+							<VersionElementName>1.3L 1000W</VersionElementName>
+						</VersionElement1>
+						<VersionString>1.3L 1000W</VersionString>
+					</NamingString>
+					<ShortDescription/>
+					<WOW>Good Coffee Easily</WOW>
+					<SubWOW>Holds 10 to 15 cups, compact design</SubWOW>
+					<MarketingTextHeader>Easy to use and reliable coffeemaker with a smart and compact design for easy storage.</MarketingTextHeader>
+					<MarketingTextBody/>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000048</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Easy to experience</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000072</FeatureCode>
+							<FeatureName>Translucent water tank</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Translucent water tank shows the water level in the tank</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>11</FeatureRank>
+							<FeatureTopRank>11</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000117</FeatureCode>
+							<FeatureName>Illuminated power switch</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Illuminated power switch</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>12</FeatureRank>
+							<FeatureTopRank>12</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000118</FeatureCode>
+							<FeatureName>Dishwasher-proof filter and jug</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Dishwasher-proof parts for easy cleaning</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>13</FeatureRank>
+							<FeatureTopRank>13</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000120</FeatureCode>
+							<FeatureName>Drip stop</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>The drip stop prevents dripping coffee  on the hotplate</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>14</FeatureRank>
+							<FeatureTopRank>14</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000423</FeatureCode>
+							<FeatureName>Detachable swing filter</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Detachable swing filter</FeatureLongDescription>
+							<FeatureGlossary>Detachable swing filter for easy filling and cleaning</FeatureGlossary>
+							<FeatureRank>15</FeatureRank>
+							<FeatureTopRank>15</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000119</FeatureCode>
+							<FeatureName>Comfortable grip</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Comfortable grip for a steady pour</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>16</FeatureRank>
+							<FeatureTopRank>16</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000195</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Compact Design</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>3</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000766</FeatureCode>
+							<FeatureName>1.3L for 10 - 15 cups</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>1.3L for 10 - 15 cups</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>31</FeatureRank>
+							<FeatureTopRank>31</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000425</FeatureCode>
+							<FeatureName>Cord storage</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Cord storage</FeatureLongDescription>
+							<FeatureGlossary>With the cord storage you can keep your countertop neat and tidy</FeatureGlossary>
+							<FeatureRank>32</FeatureRank>
+							<FeatureTopRank>32</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<CSChapter>
+						<CSChapterCode>CHA_0000009</CSChapterCode>
+						<CSChapterName>General specifications</CSChapterName>
+						<CSChapterRank>12</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000734</CSItemCode>
+							<CSItemName>Translucent water tank</CSItemName>
+							<CSItemRank>5</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>7</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000735</CSItemCode>
+							<CSItemName>Illuminated power switch</CSItemName>
+							<CSItemRank>7</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>8</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000745</CSItemCode>
+							<CSItemName>Dishwasher proof swing filter &amp; jug</CSItemName>
+							<CSItemRank>8</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>23</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000737</CSItemCode>
+							<CSItemName>Drip stop</CSItemName>
+							<CSItemRank>14</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>10</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000736</CSItemCode>
+							<CSItemName>Detachable swing filter</CSItemName>
+							<CSItemRank>20</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000738</CSItemCode>
+							<CSItemName>Cord storage</CSItemName>
+							<CSItemRank>21</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>11</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000739</CSItemCode>
+							<CSItemName>Non slip feet</CSItemName>
+							<CSItemRank>22</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>12</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000007</CSChapterCode>
+						<CSChapterName>Technical Specifications</CSChapterName>
+						<CSChapterRank>16</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000117</CSItemCode>
+							<CSItemName>Power</CSItemName>
+							<CSItemRank>1</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002548</CSValueCode>
+								<CSValueName>1000</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Watt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000135</CSItemCode>
+							<CSItemName>Capacity</CSItemName>
+							<CSItemRank>3</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002551</CSValueCode>
+								<CSValueName>1.3 / 10-15</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>ZLC</UnitOfMeasureCode>
+								<UnitOfMeasureName>Litres / cups</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Litres / cups</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000741</CSItemCode>
+							<CSItemName>Voltage</CSItemName>
+							<CSItemRank>10</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002557</CSValueCode>
+								<CSValueName>220-240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>VLT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Volt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>V</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000744</CSItemCode>
+							<CSItemName>Frequency</CSItemName>
+							<CSItemRank>11</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002560</CSValueCode>
+								<CSValueName>50/60</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>HTZ</UnitOfMeasureCode>
+								<UnitOfMeasureName>Hertz</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Hz</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000740</CSItemCode>
+							<CSItemName>Cord length</CSItemName>
+							<CSItemRank>12</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002556</CSValueCode>
+								<CSValueName>0.88</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MTR</UnitOfMeasureCode>
+								<UnitOfMeasureName>Metres</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>m</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000743</CSItemCode>
+							<CSItemName>Brewing time</CSItemName>
+							<CSItemRank>13</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002569</CSValueCode>
+								<CSValueName>9</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MIN</UnitOfMeasureCode>
+								<UnitOfMeasureName>Minutes</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>minute(s)</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000017</CSChapterCode>
+						<CSChapterName>Design specifications</CSChapterName>
+						<CSChapterRank>26</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000137</CSItemCode>
+							<CSItemName>Colour</CSItemName>
+							<CSItemRank>2</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002552</CSValueCode>
+								<CSValueName>White</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000746</CSItemCode>
+							<CSItemName>Bowl, cover, pusher</CSItemName>
+							<CSItemRank>15</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002561</CSValueCode>
+								<CSValueName>Plastic (polypropylene)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00002562</CSValueCode>
+								<CSValueName>Glass jug</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000750</CSItemCode>
+							<CSItemName>Dimensions (L x W x H)</CSItemName>
+							<CSItemRank>16</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002564</CSValueCode>
+								<CSValueName>220*220*290</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MMT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Millimetre</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000749</CSItemCode>
+							<CSItemName>Weight (incl. Packaging)</CSItemName>
+							<CSItemRank>17</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002570</CSValueCode>
+								<CSValueName>1.94</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000751</CSItemCode>
+							<CSItemName>Weight appliance</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002566</CSValueCode>
+								<CSValueName>1.42</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000008</CSChapterCode>
+						<CSChapterName>Accessories</CSChapterName>
+						<CSChapterRank>27</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000752</CSItemCode>
+							<CSItemName>Jug</CSItemName>
+							<CSItemRank>19</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002567</CSValueCode>
+								<CSValueName>HD7983/70 (White)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00002568</CSValueCode>
+								<CSValueName>HD7983/20 (Black)</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<ProductDivision>
+						<ProductDivisionCode>0300</ProductDivisionCode>
+						<ProductDivisionName>DAP</ProductDivisionName>
+					</ProductDivision>
+					<CRDateYW>200552</CRDateYW>
+					<CRDate>2006-01-01</CRDate>
+					<MarketingVersion>1.0</MarketingVersion>
+					<MarketingStatus>Final Published</MarketingStatus>
+				</Product>
+			</sql:data>
+			<sql:rowset name="cat">
+				<sql:row>
+					<sql:groupcode>KITCHEN_APPLIANCES_GR</sql:groupcode>
+					<sql:groupname>Kitchen Appliances</sql:groupname>
+					<sql:categorycode>KAP_COFFEEMAKERSANDKETTLES_CA</sql:categorycode>
+					<sql:categoryname>Coffee Makers and Kettles</sql:categoryname>
+					<sql:subcategorycode>CK_COFFEEMAKERS_SU</sql:subcategorycode>
+					<sql:subcategoryname>Coffee Makers</sql:subcategoryname>
+				</sql:row>
+			</sql:rowset>
+		</sql:row>
+		<sql:row>
+			<sql:id>HD7466/20</sql:id>
+			<sql:language>ENG</sql:language>
+			<sql:data>
+				<Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="1" IsAccessory="0" lastModified="2007-05-21T16:30:46.0" Status="" Division="DAP" Brand="PHI">
+					<CTN>HD7466/20</CTN>
+					<DTN>HD7466/20</DTN>
+					<ProductName>Coffeemaker</ProductName>
+					<NamingString>
+						<MasterBrand>
+							<BrandCode>PHI</BrandCode>
+							<BrandName>Philips</BrandName>
+						</MasterBrand>
+						<BrandString>Philips</BrandString>
+						<BrandString2/>
+						<Descriptor>
+							<DescriptorCode>NSD_000014</DescriptorCode>
+							<DescriptorName>Coffeemaker</DescriptorName>
+						</Descriptor>
+						<Alphanumeric>HD7466/20</Alphanumeric>
+						<VersionElement1>
+							<VersionElementCode>HD7466/20</VersionElementCode>
+							<VersionElementName>0.6L 650W</VersionElementName>
+						</VersionElement1>
+						<VersionString>0.6L 650W</VersionString>
+					</NamingString>
+					<ShortDescription/>
+					<WOW>Good Coffee Easily</WOW>
+					<SubWOW>Holds 4 to 6 cups, compact design</SubWOW>
+					<MarketingTextHeader>Reliable and easy to use coffeemaker, which is ideal for people looking for a compact design</MarketingTextHeader>
+					<MarketingTextBody/>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000048</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Easy to experience</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000072</FeatureCode>
+							<FeatureName>Translucent water tank</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Translucent water tank shows the water level in the tank</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>11</FeatureRank>
+							<FeatureTopRank>11</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000117</FeatureCode>
+							<FeatureName>Illuminated power switch</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Illuminated power switch</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>12</FeatureRank>
+							<FeatureTopRank>12</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000118</FeatureCode>
+							<FeatureName>Dishwasher-proof filter and jug</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Dishwasher-proof parts for easy cleaning</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>13</FeatureRank>
+							<FeatureTopRank>13</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000120</FeatureCode>
+							<FeatureName>Drip stop</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>The drip stop prevents dripping coffee  on the hotplate</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>14</FeatureRank>
+							<FeatureTopRank>14</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000423</FeatureCode>
+							<FeatureName>Detachable swing filter</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Detachable swing filter</FeatureLongDescription>
+							<FeatureGlossary>Detachable swing filter for easy filling and cleaning</FeatureGlossary>
+							<FeatureRank>15</FeatureRank>
+							<FeatureTopRank>15</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000195</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Compact Design</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>3</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0000424</FeatureCode>
+							<FeatureName>0.6L for 4-6 cups</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>0.6L for 4-6 cups</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>30</FeatureRank>
+							<FeatureTopRank>30</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000425</FeatureCode>
+							<FeatureName>Cord storage</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Cord storage</FeatureLongDescription>
+							<FeatureGlossary>With the cord storage you can keep your countertop neat and tidy</FeatureGlossary>
+							<FeatureRank>32</FeatureRank>
+							<FeatureTopRank>32</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<CSChapter>
+						<CSChapterCode>CHA_0000009</CSChapterCode>
+						<CSChapterName>General specifications</CSChapterName>
+						<CSChapterRank>12</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000734</CSItemCode>
+							<CSItemName>Translucent water tank</CSItemName>
+							<CSItemRank>5</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>7</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000735</CSItemCode>
+							<CSItemName>Illuminated power switch</CSItemName>
+							<CSItemRank>7</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>8</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000745</CSItemCode>
+							<CSItemName>Dishwasher proof swing filter &amp; jug</CSItemName>
+							<CSItemRank>8</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000737</CSItemCode>
+							<CSItemName>Drip stop</CSItemName>
+							<CSItemRank>14</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>10</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000736</CSItemCode>
+							<CSItemName>Detachable swing filter</CSItemName>
+							<CSItemRank>20</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>9</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000738</CSItemCode>
+							<CSItemName>Cord storage</CSItemName>
+							<CSItemRank>21</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>11</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000739</CSItemCode>
+							<CSItemName>Non slip feet</CSItemName>
+							<CSItemRank>22</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>12</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000007</CSChapterCode>
+						<CSChapterName>Technical Specifications</CSChapterName>
+						<CSChapterRank>16</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000117</CSItemCode>
+							<CSItemName>Power</CSItemName>
+							<CSItemRank>1</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002435</CSValueCode>
+								<CSValueName>650</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Watt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000135</CSItemCode>
+							<CSItemName>Capacity</CSItemName>
+							<CSItemRank>3</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002437</CSValueCode>
+								<CSValueName>0.6 / 4-7</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>ZLC</UnitOfMeasureCode>
+								<UnitOfMeasureName>Litres / cups</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Litres / cups</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000741</CSItemCode>
+							<CSItemName>Voltage</CSItemName>
+							<CSItemRank>10</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002444</CSValueCode>
+								<CSValueName>220-240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>VLT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Volt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>V</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000744</CSItemCode>
+							<CSItemName>Frequency</CSItemName>
+							<CSItemRank>11</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002447</CSValueCode>
+								<CSValueName>50/60</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>HTZ</UnitOfMeasureCode>
+								<UnitOfMeasureName>Hertz</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Hz</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000740</CSItemCode>
+							<CSItemName>Cord length</CSItemName>
+							<CSItemRank>12</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002443</CSValueCode>
+								<CSValueName>0.88</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MTR</UnitOfMeasureCode>
+								<UnitOfMeasureName>Metres</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>m</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000743</CSItemCode>
+							<CSItemName>Brewing time</CSItemName>
+							<CSItemRank>13</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002445</CSValueCode>
+								<CSValueName>9</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MIN</UnitOfMeasureCode>
+								<UnitOfMeasureName>Minutes</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>minute(s)</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000017</CSChapterCode>
+						<CSChapterName>Design specifications</CSChapterName>
+						<CSChapterRank>26</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000137</CSItemCode>
+							<CSItemName>Colour</CSItemName>
+							<CSItemRank>2</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002456</CSValueCode>
+								<CSValueName>Black</CSValueName>
+								<CSValueRank>5</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000746</CSItemCode>
+							<CSItemName>Bowl, cover, pusher</CSItemName>
+							<CSItemRank>15</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002448</CSValueCode>
+								<CSValueName>Plastic (polypropylene)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00002449</CSValueCode>
+								<CSValueName>Glass jug</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000750</CSItemCode>
+							<CSItemName>Dimensions (L x W x H)</CSItemName>
+							<CSItemRank>16</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002450</CSValueCode>
+								<CSValueName>195*195*240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MMT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Millimetre</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000749</CSItemCode>
+							<CSItemName>Weight (incl. Packaging)</CSItemName>
+							<CSItemRank>17</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002457</CSValueCode>
+								<CSValueName>1.62</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000751</CSItemCode>
+							<CSItemName>Weight appliance</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002452</CSValueCode>
+								<CSValueName>1.18</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000008</CSChapterCode>
+						<CSChapterName>Accessories</CSChapterName>
+						<CSChapterRank>27</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000752</CSItemCode>
+							<CSItemName>Jug</CSItemName>
+							<CSItemRank>19</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00002454</CSValueCode>
+								<CSValueName>HD7980/70 (White)</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<CSValue>
+								<CSValueCode>V_00002455</CSValueCode>
+								<CSValueName>HD7980/70 (Black)</CSValueName>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<ProductDivision>
+						<ProductDivisionCode>0300</ProductDivisionCode>
+						<ProductDivisionName>DAP</ProductDivisionName>
+					</ProductDivision>
+					<CRDateYW>200552</CRDateYW>
+					<CRDate>2006-01-01</CRDate>
+					<MarketingVersion>1.0</MarketingVersion>
+					<MarketingStatus>Final Published</MarketingStatus>
+				</Product>
+			</sql:data>
+			<sql:rowset name="cat">
+				<sql:row>
+					<sql:groupcode>KITCHEN_APPLIANCES_GR</sql:groupcode>
+					<sql:groupname>Kitchen Appliances</sql:groupname>
+					<sql:categorycode>KAP_COFFEEMAKERSANDKETTLES_CA</sql:categorycode>
+					<sql:categoryname>Coffee Makers and Kettles</sql:categoryname>
+					<sql:subcategorycode>CK_COFFEEMAKERS_SU</sql:subcategorycode>
+					<sql:subcategoryname>Coffee Makers</sql:subcategoryname>
+				</sql:row>
+			</sql:rowset>
+		</sql:row>
+		<sql:row>
+			<sql:id>HD7502/35</sql:id>
+			<sql:language>ENG</sql:language>
+			<sql:data>
+				<Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="1" IsAccessory="0" lastModified="2007-05-10T17:31:34.0" Status="" Division="DAP" Brand="PHI">
+					<CTN>HD7502/35</CTN>
+					<DTN>HD7502</DTN>
+					<ProductName>Coffeemaker</ProductName>
+					<NamingString>
+						<MasterBrand>
+							<BrandCode>PHI</BrandCode>
+							<BrandName>Philips</BrandName>
+						</MasterBrand>
+						<BrandString>Philips</BrandString>
+						<BrandString2/>
+						<Descriptor>
+							<DescriptorCode>NSD_000014</DescriptorCode>
+							<DescriptorName>Coffeemaker</DescriptorName>
+						</Descriptor>
+						<Alphanumeric>HD7502</Alphanumeric>
+						<VersionString/>
+					</NamingString>
+					<ShortDescription/>
+					<WOW>Original coffee, effortlessly</WOW>
+					<SubWOW>Today`s look timeless taste</SubWOW>
+					<MarketingTextHeader/>
+					<MarketingTextBody/>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000196</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Superior Aroma</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0001693</FeatureCode>
+							<FeatureName>Aroma jug</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Keeps aroma in the jug</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>12</FeatureRank>
+							<FeatureTopRank>12</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0002045</FeatureCode>
+							<FeatureName>1000 Watt</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>For a fast and hot cup of coffee</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>13</FeatureRank>
+							<FeatureTopRank>13</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000048</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Easy to experience</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>2</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0001571</FeatureCode>
+							<FeatureName>Drip stop</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Drip stop to interupt the brewing whenever you like</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>224</FeatureRank>
+							<FeatureTopRank>224</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000949</FeatureCode>
+							<FeatureName>Cord storage</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Cord storage</FeatureLongDescription>
+							<FeatureGlossary>For easy storage of redundant cord length.</FeatureGlossary>
+							<FeatureRank>225</FeatureRank>
+							<FeatureTopRank>225</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0002046</FeatureCode>
+							<FeatureName>1.2L (10-15 cups)</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>1.2L (10-15 cups)</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>226</FeatureRank>
+							<FeatureTopRank>226</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<CSChapter>
+						<CSChapterCode>CHA_0000009</CSChapterCode>
+						<CSChapterName>General specifications</CSChapterName>
+						<CSChapterRank>12</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0001299</CSItemCode>
+							<CSItemName>Dish-washer-proof parts</CSItemName>
+							<CSItemRank>9</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>3</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000736</CSItemCode>
+							<CSItemName>Detachable swing filter</CSItemName>
+							<CSItemRank>20</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000738</CSItemCode>
+							<CSItemName>Cord storage</CSItemName>
+							<CSItemRank>21</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000007</CSChapterCode>
+						<CSChapterName>Technical Specifications</CSChapterName>
+						<CSChapterRank>16</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000117</CSItemCode>
+							<CSItemName>Power</CSItemName>
+							<CSItemRank>1</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021495</CSValueCode>
+								<CSValueName>1000</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Watt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000027</CSItemCode>
+							<CSItemName>Frequency</CSItemName>
+							<CSItemRank>3</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021494</CSValueCode>
+								<CSValueName>50/60</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>HTZ</UnitOfMeasureCode>
+								<UnitOfMeasureName>Hertz</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Hz</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000741</CSItemCode>
+							<CSItemName>Voltage</CSItemName>
+							<CSItemRank>10</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021499</CSValueCode>
+								<CSValueName>220-240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>VLT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Volt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>V</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000740</CSItemCode>
+							<CSItemName>Cord length</CSItemName>
+							<CSItemRank>12</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021498</CSValueCode>
+								<CSValueName>0.88</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MTR</UnitOfMeasureCode>
+								<UnitOfMeasureName>Metres</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>m</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000743</CSItemCode>
+							<CSItemName>Brewing time</CSItemName>
+							<CSItemRank>13</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021500</CSValueCode>
+								<CSValueName>&lt; 10</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MIN</UnitOfMeasureCode>
+								<UnitOfMeasureName>Minutes</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>minute(s)</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000135</CSItemCode>
+							<CSItemName>Capacity</CSItemName>
+							<CSItemRank>14</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021497</CSValueCode>
+								<CSValueName>1.2L/ 10-15</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>ZLC</UnitOfMeasureCode>
+								<UnitOfMeasureName>Litres / cups</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Litres / cups</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000017</CSChapterCode>
+						<CSChapterName>Design specifications</CSChapterName>
+						<CSChapterRank>26</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000123</CSItemCode>
+							<CSItemName>Materials</CSItemName>
+							<CSItemRank>8</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021496</CSValueCode>
+								<CSValueName>Polypropylene/ Glass jug</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000750</CSItemCode>
+							<CSItemName>Dimensions (L x W x H)</CSItemName>
+							<CSItemRank>16</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021501</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MMT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Millimetre</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000749</CSItemCode>
+							<CSItemName>Weight (incl. Packaging)</CSItemName>
+							<CSItemRank>17</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021502</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000751</CSItemCode>
+							<CSItemName>Weight appliance</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021503</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000137</CSItemCode>
+							<CSItemName>Colour</CSItemName>
+							<CSItemRank>19</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>11</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000008</CSChapterCode>
+						<CSChapterName>Accessories</CSChapterName>
+						<CSChapterRank>27</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0001870</CSItemCode>
+							<CSItemName>Aroma jug</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>15</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<ProductDivision>
+						<ProductDivisionCode>0300</ProductDivisionCode>
+						<ProductDivisionName>DAP</ProductDivisionName>
+					</ProductDivision>
+					<CRDateYW>200735</CRDateYW>
+					<CRDate>2007-09-01</CRDate>
+					<MarketingVersion>1.0</MarketingVersion>
+					<MarketingStatus>Final Published</MarketingStatus>
+				</Product>
+			</sql:data>
+			<sql:rowset name="cat">
+				<sql:row>
+					<sql:groupcode>KITCHEN_APPLIANCES_GR</sql:groupcode>
+					<sql:groupname>Kitchen Appliances</sql:groupname>
+					<sql:categorycode>KAP_COFFEEMAKERSANDKETTLES_CA</sql:categorycode>
+					<sql:categoryname>Coffee Makers and Kettles</sql:categoryname>
+					<sql:subcategorycode>CK_COFFEEMAKERS_SU</sql:subcategorycode>
+					<sql:subcategoryname>Coffee Makers</sql:subcategoryname>
+				</sql:row>
+			</sql:rowset>
+		</sql:row>
+		<sql:row>
+			<sql:id>HD7502/55</sql:id>
+			<sql:language>ENG</sql:language>
+			<sql:data>
+				<Product xmlns:sql="http://apache.org/cocoon/SQL/2.0" IsMaster="1" IsAccessory="0" lastModified="2007-05-09T18:16:16.0" Status="" Division="DAP" Brand="PHI">
+					<CTN>HD7502/55</CTN>
+					<DTN>HD7502</DTN>
+					<ProductName>Coffeemaker</ProductName>
+					<NamingString>
+						<MasterBrand>
+							<BrandCode>PHI</BrandCode>
+							<BrandName>Philips</BrandName>
+						</MasterBrand>
+						<BrandString>Philips</BrandString>
+						<BrandString2/>
+						<Descriptor>
+							<DescriptorCode>NSD_000014</DescriptorCode>
+							<DescriptorName>Coffeemaker</DescriptorName>
+						</Descriptor>
+						<Alphanumeric>HD7502</Alphanumeric>
+						<VersionString/>
+					</NamingString>
+					<ShortDescription/>
+					<WOW>Original coffee, effortlessly</WOW>
+					<SubWOW>Today`s look timeless taste</SubWOW>
+					<MarketingTextHeader/>
+					<MarketingTextBody/>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000196</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Superior Aroma</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0001693</FeatureCode>
+							<FeatureName>Aroma jug</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Keeps aroma in the jug</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>12</FeatureRank>
+							<FeatureTopRank>12</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0002045</FeatureCode>
+							<FeatureName>1000 Watt</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>For a fast and hot cup of coffee</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>13</FeatureRank>
+							<FeatureTopRank>13</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<KeyBenefitArea>
+						<KeyBenefitAreaCode>KBA_0000048</KeyBenefitAreaCode>
+						<KeyBenefitAreaName>Easy to experience</KeyBenefitAreaName>
+						<KeyBenefitAreaRank>2</KeyBenefitAreaRank>
+						<Feature>
+							<FeatureCode>FEA_0001571</FeatureCode>
+							<FeatureName>Drip stop</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Drip stop to interupt the brewing whenever you like</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>224</FeatureRank>
+							<FeatureTopRank>224</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0000949</FeatureCode>
+							<FeatureName>Cord storage</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>Cord storage</FeatureLongDescription>
+							<FeatureGlossary>For easy storage of redundant cord length.</FeatureGlossary>
+							<FeatureRank>225</FeatureRank>
+							<FeatureTopRank>225</FeatureTopRank>
+						</Feature>
+						<Feature>
+							<FeatureCode>FEA_0002046</FeatureCode>
+							<FeatureName>1.2L (10-15 cups)</FeatureName>
+							<FeatureShortDescription/>
+							<FeatureLongDescription>1.2L (10-15 cups)</FeatureLongDescription>
+							<FeatureGlossary/>
+							<FeatureRank>226</FeatureRank>
+							<FeatureTopRank>226</FeatureTopRank>
+						</Feature>
+					</KeyBenefitArea>
+					<CSChapter>
+						<CSChapterCode>CHA_0000009</CSChapterCode>
+						<CSChapterName>General specifications</CSChapterName>
+						<CSChapterRank>12</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0001299</CSItemCode>
+							<CSItemName>Dish-washer-proof parts</CSItemName>
+							<CSItemRank>9</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>3</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000736</CSItemCode>
+							<CSItemName>Detachable swing filter</CSItemName>
+							<CSItemRank>20</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000738</CSItemCode>
+							<CSItemName>Cord storage</CSItemName>
+							<CSItemRank>21</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>2</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000007</CSChapterCode>
+						<CSChapterName>Technical Specifications</CSChapterName>
+						<CSChapterRank>16</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000117</CSItemCode>
+							<CSItemName>Power</CSItemName>
+							<CSItemRank>1</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021245</CSValueCode>
+								<CSValueName>1000</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>WTT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Watt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000027</CSItemCode>
+							<CSItemName>Frequency</CSItemName>
+							<CSItemRank>3</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021244</CSValueCode>
+								<CSValueName>50/60</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>HTZ</UnitOfMeasureCode>
+								<UnitOfMeasureName>Hertz</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Hz</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000741</CSItemCode>
+							<CSItemName>Voltage</CSItemName>
+							<CSItemRank>10</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021249</CSValueCode>
+								<CSValueName>220-240</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>VLT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Volt</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>V</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000740</CSItemCode>
+							<CSItemName>Cord length</CSItemName>
+							<CSItemRank>12</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021248</CSValueCode>
+								<CSValueName>0.88</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MTR</UnitOfMeasureCode>
+								<UnitOfMeasureName>Metres</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>m</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000743</CSItemCode>
+							<CSItemName>Brewing time</CSItemName>
+							<CSItemRank>13</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021250</CSValueCode>
+								<CSValueName>&lt; 10</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MIN</UnitOfMeasureCode>
+								<UnitOfMeasureName>Minutes</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>minute(s)</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000135</CSItemCode>
+							<CSItemName>Capacity</CSItemName>
+							<CSItemRank>14</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021247</CSValueCode>
+								<CSValueName>1.2L/ 10-15</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>ZLC</UnitOfMeasureCode>
+								<UnitOfMeasureName>Litres / cups</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>Litres / cups</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000017</CSChapterCode>
+						<CSChapterName>Design specifications</CSChapterName>
+						<CSChapterRank>26</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0000123</CSItemCode>
+							<CSItemName>Materials</CSItemName>
+							<CSItemRank>8</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021246</CSValueCode>
+								<CSValueName>Polypropylene/ Glass jug</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000750</CSItemCode>
+							<CSItemName>Dimensions (L x W x H)</CSItemName>
+							<CSItemRank>16</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021251</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>MMT</UnitOfMeasureCode>
+								<UnitOfMeasureName>Millimetre</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000749</CSItemCode>
+							<CSItemName>Weight (incl. Packaging)</CSItemName>
+							<CSItemRank>17</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021252</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000751</CSItemCode>
+							<CSItemName>Weight appliance</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_00021253</CSValueCode>
+								<CSValueName>TBD</CSValueName>
+								<CSValueRank>1</CSValueRank>
+							</CSValue>
+							<UnitOfMeasure>
+								<UnitOfMeasureCode>KGM</UnitOfMeasureCode>
+								<UnitOfMeasureName>Kilogram</UnitOfMeasureName>
+								<UnitOfMeasureSymbol>kg</UnitOfMeasureSymbol>
+							</UnitOfMeasure>
+						</CSItem>
+						<CSItem>
+							<CSItemCode>S_0000137</CSItemCode>
+							<CSItemName>Colour</CSItemName>
+							<CSItemRank>19</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>11</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<CSChapter>
+						<CSChapterCode>CHA_0000008</CSChapterCode>
+						<CSChapterName>Accessories</CSChapterName>
+						<CSChapterRank>27</CSChapterRank>
+						<CSItem>
+							<CSItemCode>S_0001870</CSItemCode>
+							<CSItemName>Aroma jug</CSItemName>
+							<CSItemRank>18</CSItemRank>
+							<CSValue>
+								<CSValueCode>V_ISNULLVALUE_0</CSValueCode>
+								<CSValueName/>
+								<CSValueRank>15</CSValueRank>
+							</CSValue>
+						</CSItem>
+					</CSChapter>
+					<ProductDivision>
+						<ProductDivisionCode>0300</ProductDivisionCode>
+						<ProductDivisionName>DAP</ProductDivisionName>
+					</ProductDivision>
+					<CRDateYW>200735</CRDateYW>
+					<CRDate>2007-09-01</CRDate>
+					<MarketingVersion>1.0</MarketingVersion>
+					<MarketingStatus>Final Published</MarketingStatus>
+				</Product>
+			</sql:data>
+			<sql:rowset name="cat">
+				<sql:row>
+					<sql:groupcode>KITCHEN_APPLIANCES_GR</sql:groupcode>
+					<sql:groupname>Kitchen Appliances</sql:groupname>
+					<sql:categorycode>KAP_COFFEEMAKERSANDKETTLES_CA</sql:categorycode>
+					<sql:categoryname>Coffee Makers and Kettles</sql:categoryname>
+					<sql:subcategorycode>CK_COFFEEMAKERS_SU</sql:subcategorycode>
+					<sql:subcategoryname>Coffee Makers</sql:subcategoryname>
+				</sql:row>
+			</sql:rowset>
+		</sql:row>
+	</sql:rowset>
+</Products>

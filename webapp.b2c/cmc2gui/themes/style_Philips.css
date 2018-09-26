@@ -1,0 +1,231 @@
+/* All body, td and th */
+body,TD,TH {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+/* All <a> tags: link is default look+feel; others are self-explanatory*/
+A:link {
+	text-decoration: none;
+	color: #0066CC;
+}
+A:visited {
+	text-decoration: none;
+	color: #0066CC;
+}
+A:active {
+	text-decoration: underline; 
+	color: #000000;
+}
+A:hover {
+	text-decoration: underline; 
+	color: #000000;
+}
+
+/* Any element with class = 'gui_main' */
+.gui_main {
+	/*table-layout: fixed; */
+}
+/* Any element with class = 'gui_main_menu' */
+.gui_main_menu {
+	table-layout: fixed;
+}
+
+.gui_context_menu {
+	table-layout: fixed;
+}
+/*  any <td> descended from any element with class = 'gui_context_menu'; e.g. all TDs in gui_context_menu tables have these attributes */
+.gui_context_menu td {
+  padding-top: 2px;
+  padding-bottom: 1px;
+  padding-left: 2px;
+}
+
+.gui_context_menu_sub {
+	table-layout: fixed;
+}
+
+.gui_context_menu_sub td {
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+
+/* any element with id = MainPage.  In theory the id should be unique within the page */
+#MainPage {
+  padding-top: 2px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+  vertical-align: top;
+}
+
+.bodystyle {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;
+}
+
+.small {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+
+.medium {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.big {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #0066CC;
+	font-weight: bold;
+}
+
+/* All <H1> elements */
+h1 {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #0066CC;
+  display: inline;
+}
+
+h2 {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #0066CC;
+  display: inline;
+}
+
+h3 {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0066CC;
+  display: inline;
+}
+
+/* All <td> elements in tables that are class = 'small' */
+table.small td {
+	font-size: 100%;
+}  
+
+
+.xbig {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+
+.topicTitle {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.topicText {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+.topicBullet {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.topicItalic {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.expanded {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 2px;
+}
+
+.justified {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-align: justify;
+}
+
+.footer {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 9px;
+	color: #999999;
+}
+
+.box1 {
+	padding: 3px;
+	border-width: thin;
+	border-style: solid;
+	border-color: #CCCCCC #666666 #666666 #CCCCCC;
+}
+
+.box2 {
+	font-style: italic;
+	word-spacing: 2pt;
+	padding: 3px;
+	border-width: thin;
+	border-style: solid;
+}
+
+.breadcrumb {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.menu_item_current {
+}
+
+/* <p> with class = 'menu_item_separator' */	
+p.menu_item_separator {
+	color: #06c;
+	font-size: 100%;
+	font-weight: bold;
+	background-color: #ddf;
+	width: 100%;
+	border-width: 1px 0px;
+	border-color: #06c;
+	border-style: solid;
+	margin: 5px 0px 0px 0px;
+	padding: 0px 0px 0px 10px;
+}
+
+/* all <table> with class 'main' */
+table.main {
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+}
+
+/* all <tr> with class header that are inside a <table> with class 'main' */
+table.main tr.header {
+	background-image: url('/cmc2gui/themes/images/bg_nav.gif');
+	background-position: 0px -6px;
+	font-weight: bold;
+	height: 30px;
+}
+
+/* all <td> inside a <tr> with class header that is inside a <table> with class 'main' */
+table.main tr.header td {
+	font-weight: bold;
+	vertical-align: top;
+	padding: 1px 4px;
+}
+
+table.main tr.odd {
+	background-color: transparent;
+}
+
+table.main tr.even {
+	background-color: #ddf;
+}
+
+table.main tr.highlight {
+	background-color: #bbf;
+}
+
+table.main td {
+	vertical-align: top;
+	padding: 5px 3px;
+}

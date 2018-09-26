@@ -1,0 +1,21 @@
+<sql:execute-query xmlns:sql="http://apache.org/cocoon/SQL/2.0" 
+                   xmlns:jx="http://apache.org/cocoon/templates/jx/1.0">
+   <sql:query>
+      update octl_control
+         set needsprocessing_flag = 1
+           , needsprocessing_ts = sysdate
+       where content_type = '${cocoon.parameters.ct}' 
+         and localisation = '${cocoon.parameters.l}' 
+        <jx:if test="${cocoon.parameters.o.length()>0}">
+         and object_id    = '${cocoon.parameters.o}'
+        </jx:if>
+        <jx:choose>
+	      <jx:when test="${cocoon.parameters.runmode.length()>0}">
+	        and modus    = '${cocoon.parameters.runmode}'
+	      </jx:when>
+	      <jx:otherwise>
+	      	and modus    = 'BATCH'
+	      </jx:otherwise>
+        </jx:choose>
+   </sql:query>
+</sql:execute-query>

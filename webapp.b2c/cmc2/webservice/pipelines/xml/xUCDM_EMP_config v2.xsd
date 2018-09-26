@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by Michiel Klaren (Philips) -->
+<!-- 2010-12-13 v2 Michiel Klaren Inserted enumeration (CatCom, CatShop, CatCare) on attribute catalog of element Column -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="Config">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Views">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Overview">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element ref="Column"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Content">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element ref="Column"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Countries">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element ref="Column"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RefLists">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Countries">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="Country">
+											<xs:complexType>
+												<xs:attribute name="id" type="xs:ID" use="required"/>
+												<xs:attribute name="abbreviation" type="xs:string" use="required"/>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attribute name="seq" type="xs:unsignedInt" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Locales">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="Locale">
+											<xs:complexType>
+												<xs:attribute name="id" type="xs:ID" use="required"/>
+												<xs:attribute name="abbreviation" type="xs:string" use="required"/>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attribute name="country" type="xs:string" use="required"/>
+												<xs:attribute name="seq" type="xs:unsignedInt" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Catalogs">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="Catalog">
+											<xs:complexType>
+												<xs:attribute name="id" type="xs:ID" use="required"/>
+												<xs:attribute name="label" type="xs:string" use="required"/>
+												<xs:attribute name="seq" type="xs:unsignedInt" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Column">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="id" type="xs:string" use="required"/>
+					<xs:attribute name="type" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="master"/>
+								<xs:enumeration value="contentCategory"/>
+								<xs:enumeration value="contentItem"/>
+								<xs:enumeration value="countryCatalog"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="label" type="xs:string" use="required"/>
+					<xs:attribute name="seq" type="xs:unsignedInt" use="required"/>
+					<xs:attribute name="country" type="xs:string"/>
+					<xs:attribute name="catalog">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="CatCom"/>
+								<xs:enumeration value="CatShop"/>
+								<xs:enumeration value="CatCare"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

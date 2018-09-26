@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:resources>
+    <!-- the sql resource provides a central place to edit database details -->
+    <map:resource name="sql">
+      <map:transform type="sql">
+        <map:parameter name="use-connection" value="oracleDbCMC" />
+        <map:parameter name="clob-encoding" value="UTF-8" />
+      </map:transform>
+    </map:resource>
+  </map:resources>
+
+  <!--
+    Purge the database and filestore by removing records and files that aren't used.
+    Purging the database means removing all unused OCTL_STORE records.
+    Purging the filestore meand moving files that aren't referenced by the database to th RecycleBin directory in the filestore.
+    
+    Request params:
+    purge     If empty both the filestore and database are purged.
+              If 'filestore' only the filestore is purged.
+              If 'database' only the database is purged.
+    recycle   If 'false' files from the filestore are deleted immediately and not moved to the RecycleBin directory.
+  -->
+  <map:pipelines>
+
+    <map:component-configurations>
+      <global-variables>
+        <ct>Purge</ct>
+      </global-variables>
+    </map:component-configurations>
+
+    <map:pipeline type="noncaching">
+      <map:match pattern="runMain/*">
+        <map:select type="parameter">
+          <map:parameter name="parameter-selector-test" value="{request-param:purge}"/>
+          <map:when test="">
+            <map:act type="copy-source" src="cocoon:/purge/1/{1}">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/purgeDatabase_report.xml" />
+            </map:act>
+            <map:act type="copy-source" src="cocoon:/purgeFilestore/{1}">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/purgeFilestore_report.xml" />
+            </map:act>
+            
+            <map:aggregate element="report">
+              <map:part src="{cmc2:gdir}/{global:ct}/temp/purgeDatabase_report.xml"/>
+              <map:part src="{cmc2:gdir}/{global:ct}/temp/purgeFilestore_report.xml"/>
+            </map:aggregate>
+          </map:when>
+
+          <map:when test="database">
+            <map:act type="copy-source" src="cocoon:/purge/1/{1}">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/purgeDatabase_report.xml" />
+            </map:act>
+            <map:generate src="{cmc2:gdir}/{global:ct}/temp/purgeDatabase_report.xml"/>
+          </map:when>
+
+          <map:when test="filestore">
+            <map:act type="copy-source" src="cocoon:/purgeFilestore/{1}">
+              <map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/purgeFilestore_report.xml" />
+            </map:act>
+            <map:generate src="{cmc2:gdir}/{global:ct}/temp/purgeFilestore_report.xml"/>
+          </map:when>
+		  
+		  <map:when test="optimized">
+			
+			<map:act type="copy-source" src="cocoon:/purge/1/{1}">
+				<map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/purgeDatabase_report.xml" />
+			</map:act>
+
+			<map:act type="copy-source" src="cocoon:/fileStorePurge/{1}">
+				<map:parameter name="dest" value="{cmc2:gdir}/{global:ct}/temp/purgeFilestore_report.xml" />
+			</map:act>
+			<map:aggregate element="report">
+				<map:part src="{cmc2:gdir}/{global:ct}/temp/purgeDatabase_report.xml"/>
+				<map:part src="{cmc2:gdir}/{global:ct}/temp/purgeFilestore_report.xml"/>
+			</map:aggregate>
+		  </map:when>
+		  
+        </map:select>
+
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--
+        {1} max_history_versions
+        {2} timestamp
+      -->
+      <map:match pattern="purge/*/*">
+        <map:generate src="{cmc2:xmlDir}/empty.xml" />
+        <map:transform src="xsl/purge.xsl">
+          <map:parameter name="max_history_versions" value="{1}" />
+          <map:parameter name="ts" value="{2}" />
+          <map:parameter name="ct" value="{global:ct}" />
+          <map:parameter name="l" value="none" />
+		  <map:parameter name="purge" value="{request-param:purge}" />
+        </map:transform>
+        <map:call resource="sql" />
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!--
+        {1} timestamp
+      -->
+      <map:match pattern="purgeFilestore/*">
+        <map:generate type="directory" src="{cmc2:clobFilestoreDir}">
+          <map:parameter name="depth" value="1"/>
+          <map:parameter name="include" value=".*"/>
+          <map:parameter name="exclude" value="RecylceBin|logs"/>
+        </map:generate>
+        <map:transform type="xslt-saxon" src="xsl/include_filestorePurge.xsl">
+          <map:parameter name="filestorePurgeService" value="{cmc2:svcURL}/store/filestorePurge"/>
+        </map:transform>
+        <map:transform type="include"/>
+        <map:serialize type="xml" />
+      </map:match>
+	  
+		<!--
+			{1} timestamp
+			-->
+		<map:match pattern="fileStorePurge/*">
+			<map:generate src="{cmc2:xmlDir}/empty.xml" />		
+			<map:transform type="xslt-saxon" src="xsl/retrieveFilestoreDataforDeletion.xsl">
+				<map:parameter name="filestorePurgeService" value="{cmc2:svcURL}/store/filestorePurge"/>
+			</map:transform>
+			<map:call resource="sql"/>
+			<map:transform type="xslt-saxon" src="xsl/include_ctl2createBatches.xsl">          
+				<map:parameter name="target-dir" value="{cmc2:gdir}/{global:ct}/temp"/>
+			</map:transform>	
+			<map:transform type="cinclude" />
+			<map:transform type="xslt-saxon" src="xsl/sql_cleanbatches.xsl">
+				<map:parameter name="batchnumber" value="{1}"/>
+			</map:transform>
+			<map:call resource="sql"/>
+			<map:serialize type="xml"/>
+		</map:match>
+		
+		<!-- {1} locale -->
+		
+		<map:match pattern="purgeBatchedFiles.*">
+			<map:generate src="{cmc2:xmlDir}/empty.xml" />	       
+			<!-- invoking new pipeline starts -->
+			<map:act type="copy-source" src="cocoon:/reportdeleted/{1}">
+              <map:parameter name="dest" value="{cmc2:clobFilestoreDir}/logs/filestorePurge_report_{1}.xml"/>
+			</map:act>
+			<!-- invoking new pipeline ends -->
+			<map:serialize type="xml"/>
+		</map:match>
+		
+		<!--added a new pipeline -->
+		<map:match pattern="reportdeleted/*">
+			<map:generate src="{cmc2:xmlDir}/empty.xml" />	       
+			<map:transform type="xslt-saxon" src="xsl/sql_selectbatches.xsl">          
+				<map:parameter name="dir" value="{cmc2:clobFilestoreDir}"/>
+				<map:parameter name="batchnumber" value="{1}"/>
+			</map:transform>
+			<map:call resource="sql"/>
+			<map:transform type="xslt-saxon" src="xsl/filestorePurge_delete.xsl">          
+				<map:parameter name="dir" value="{cmc2:clobFilestoreDir}"/>
+				<map:parameter name="batchnumber" value="{1}"/>
+				<map:parameter name="recycle" value="{request-param:recycle}"/>
+			</map:transform>						
+			<map:transform type="shell"/>
+			<map:serialize type="xml"/>
+		</map:match>		
+			
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>
