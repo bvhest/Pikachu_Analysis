@@ -18,6 +18,9 @@ custom_code.r <-
              recursive = TRUE,
              include.dirs = FALSE)
 
+activeChannels.df <-
+  readRDS(file = "./analyse/output/activeChannels.Rds")
+
 ###############################################################################
 # munge into desired format:
 #   - list of channels, including custom-code (files) per channel
@@ -43,7 +46,9 @@ custom_code.df <-
   # sort alphabetically
   dplyr::arrange(channel, file) %>%
   # clean-up data: remove backup files (funny that these have been created while using a version-repository)
-  dplyr::filter(!stringr::str_detect(tolower(file),"backup"))
+  dplyr::filter(!stringr::str_detect(tolower(file),"backup")) %>%
+  # remove inactive channels/keep active channels
+  dplyr::right_join(activeChannels.df, by = "channel")
 
 # convert from long to wide format
 custom_code.wide.df <-
