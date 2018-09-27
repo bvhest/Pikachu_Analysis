@@ -20,6 +20,9 @@ docType.df <-
 colnames(docType.df)
 glimpse(docType.df)
 
+activeChannels.df <-
+  readRDS(file = "./analyse/output/activeChannels.Rds")
+
 ###############################################################################
 # list data for specific export channel
 ###############################################################################
@@ -54,7 +57,8 @@ var_channels <-
   colnames(docType.df)[10:length(colnames(docType.df))]
 
 # create generic funtion:
-listChannelDocTypes <- function(p_docTypes, p_channel) {
+listChannelDocTypes <- 
+  function(p_docTypes, p_channel) {
   channelDocTypes.df <-
     p_docTypes %>%
     dplyr::filter(!!rlang::sym(p_channel) == "yes") %>%
@@ -75,6 +79,23 @@ for (var_ch in var_channels) {
     listChannelDocTypes(docType.df, var_ch) %>%
     dplyr::bind_rows(channelDocTypes.df)
 }
+
+# remove inactive channels/keep active channels 
+# (but also the syndication"-levels, which are virtual channels)
+virtualChannels <-
+  channelDocTypes.df %>%
+  dplyr::select(channel) %>%
+  dplyr::filter(grepl("Syndication",channel)) %>%
+  dplyr::distinct(channel) %>%
+  dplyr::arrange(channel)
+
+activeChannels.df <-
+  virtualChannels %>%
+  dplyr::bind_rows(activeChannels.df)
+  
+channelDocTypes.df <- 
+  channelDocTypes.df %>%
+  dplyr::right_join(activeChannels.df, by = "channel")
 
 # convert from long to wide format
 channelDocTypes.wide.df <-
