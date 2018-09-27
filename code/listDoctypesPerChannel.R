@@ -8,7 +8,7 @@ library(XML)
 library(tidyverse)
 
 ###############################################################################
-# read data
+# read data from file
 ###############################################################################
 docType.xml <- 
   XML::xmlParse(file = "webapp.b2c/cmc2/xml/doctype_attributes.xml")
