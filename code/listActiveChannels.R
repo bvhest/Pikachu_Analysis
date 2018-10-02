@@ -96,6 +96,6 @@ channels.params.wide.df <-
 # export processed data (in csv-format suitable for spreadsheet)
 ###############################################################################
 channels.params.wide.df %>%
-  readr::write_excel_csv(path="./analyse/output/channelParameters.csv",
+  readr::write_excel_csv(path="./analyse/output/channelParameters_fromOverview.csv",
                          na = "")
 
