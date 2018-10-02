@@ -46,7 +46,8 @@ custom_code.df <-
   # sort alphabetically
   dplyr::arrange(channel, file) %>%
   # clean-up data: remove backup files (funny that these have been created while using a version-repository)
-  dplyr::filter(!stringr::str_detect(tolower(file),"backup")) %>%
+  dplyr::filter(!stringr::str_detect(string = tolower(file),
+                                     pattern = "backup")) %>%
   # remove inactive channels/keep active channels
   dplyr::right_join(activeChannels.df, by = "channel")
 
