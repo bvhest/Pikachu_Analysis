@@ -112,68 +112,84 @@ base_dir <-
   "./webapp.b2c/pipes/ProductExport/xsl"
 out_dir <- 
   "./code/data/diff"
+
 # create output-dir (if non-existent)
 if (!dir.exists(out_dir)) {
   dir.create(out_dir, 
              showWarnings = FALSE)
 }
   
-
+i <- 0
 # loop over channels
+for (v_channel in custom_code.df %>%
+     dplyr::select(channel) %>%
+     dplyr::distinct(channel) %>%
+     unlist()) {
 
-v_channel <- "EloquaProducts"
-print(v_channel) 
-# loop over custom code per channel
-for (v_file in custom_code.df %>%
-               dplyr::filter(channel == v_channel) %>%
-               dplyr::select(file)) {
-  v_file <- "convertProducts.xsl"
-  print(v_file)
+# v_channel <- "E3loquaProducts" # test-data
+  i <- i+1
+  print(paste(i, v_channel, sep = "; "))
 
-  base_file <-
-    base_code.df %>%
-    dplyr::filter(file == v_file) %>%
-    dplyr::select(file) %>%
-    dplyr::pull()
-  print(base_file)
+  # loop over custom code per channel
+  for (v_file in custom_code.df %>%
+                 dplyr::filter(channel == v_channel) %>%
+                 dplyr::select(file) %>%
+                 dplyr::distinct(channel) %>%
+                 unlist()) {
 
-  # compare the custom-code with the base-code
-  v_target <-
-    paste(base_dir, v_channel, v_file, 
-          sep = "/")
-  v_current <-
-    paste(base_dir, base_file, 
-          sep = "/")
-  
-  filediff <-
-    diffobj::diffFile(target = v_target, 
-                      current = v_current)  
-  
-  # store the diff on the file-system:
-  v_output_dir <-
-    paste(out_dir, v_channel, 
-          sep = "/")
+    if (!is.na(v_file)) {
+      # v_file <- "convertProducts.xsl" # test-data
+      print(v_file)
 
-  # create subdirectory, if required
-  if (!dir.exists(v_output_dir)) {
-    dir.create(v_output_dir, 
-               showWarnings = FALSE)
-  }
-  # write file
-  v_output_file <-
-    paste(v_output_dir, stringr::str_replace(v_file, 
-                                             pattern = ".xsl",
-                                             replace = ".txt"), 
-          sep = "/")
+      base_file <-
+        base_code.df %>%
+        dplyr::filter(file == v_file) %>%
+        dplyr::select(file) %>%
+        dplyr::pull()
 
-  # readr::write_lines(x = as.character(filediff), 
-  #                    path = v_output_file, 
-  #                    append = FALSE)
-  write(x = as.character(filediff), 
-        file = v_output_file, 
-        append = FALSE)
-  
-} # END loop over custom code per channel
+      if (length(base_file) == 0 || is.na(base_file)) {
+        base_file <- "dummy.xsl"
+      }
 
+      print(base_file)
 
+      # compare the custom-code with the base-code
+      v_customCode <-
+        paste(base_dir, v_channel, v_file,
+              sep = "/")
+      v_baseCode <-
+        paste(base_dir, base_file,
+              sep = "/")
+
+      filediff <-
+        diffobj::diffFile(current = v_customCode,
+                          target = v_baseCode)
+
+      # store the diff on the file-system:
+      v_output_dir <-
+        paste(out_dir, v_channel,
+              sep = "/")
+
+      # create subdirectory, if required
+      if (!dir.exists(v_output_dir)) {
+        dir.create(v_output_dir,
+                   showWarnings = FALSE)
+      }
+      # write file
+      v_output_file <-
+        paste(v_output_dir, stringr::str_replace(v_file,
+                                                 pattern = ".xsl",
+                                                 replace = ".html"),
+              sep = "/")
+
+      # readr::write_lines(x = as.character(filediff),
+      #                    path = v_output_file,
+      #                    append = FALSE)
+      write(x = as.character(filediff),
+            file = v_output_file,
+            append = FALSE)
+    }
+  } # END loop over custom code per channel
+
+} # END loop over channels
 
