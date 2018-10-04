@@ -6,16 +6,17 @@
 
 library(XML)
 library(tidyverse)
+library(rvest)
 
 ###############################################################################
 # read data from file
 ###############################################################################
-docType.xml <- 
+docTypeConfig.xml <- 
   XML::xmlParse(file = "webapp.b2c/cmc2/xml/doctype_attributes.xml")
 
-docType.df <- 
-  XML:::xmlAttrsToDataFrame(getNodeSet(docType.xml, 
-                                       path='/doctypes/doctype'))
+docTypeConfig.df <- 
+  XML:::xmlAttrsToDataFrame(XML::getNodeSet(docTypeConfig.xml, 
+                                            path='/doctypes/doctype'))
 
 colnames(docType.df)
 glimpse(docType.df)
@@ -23,23 +24,58 @@ glimpse(docType.df)
 activeChannels.df <-
   readRDS(file = "./analyse/output/activeChannels.Rds")
 
+# read doctype names directly from ccr website:
+# http://pww.ccr.philips.com/cgi-bin/newmpr/conf_viewer.pl?confFile=doctypes.conf&sort=2
+
+docTypesFile <-
+  paste("./analyse/output","docTypes.Rds", sep = "/")
+
+if (!file.exists(docTypesFile)) {
+  url <- 
+    "http://pww.ccr.philips.com/cgi-bin/newmpr/conf_viewer.pl?confFile=doctypes.conf&sort=2"
+  url <- 
+    "./code/data/ccr_doctypes.html"
+  
+  docTypes.r.df <- 
+    url %>%
+    xml2::read_html() %>%
+    rvest::html_nodes('.tborder') %>%
+    rvest::html_table(header = TRUE,
+                      fill = TRUE)
+  
+  docTypes.df <- 
+    docTypes.r.df[[1]]
+  
+  glimpse(docTypes.df)
+  
+  saveRDS(docTypes.df,
+           file = docTypesFile)
+
+} else {
+  docTypes.df <-
+    readRDS(file = docTypesFile)
+}
+
+# cleanup
+remove(docTypesFile, docTypeConfig.xml)
+
 ###############################################################################
 # list data for specific export channel
 ###############################################################################
 
-channelDocTypes.df <-
-  docType.df %>%
-  dplyr::filter(ICEcat == "yes") %>%
-  dplyr::select(code, secureURL)
-# 33 asset types
+# channelDocTypes.df <-
+#   docType.df %>%
+#   dplyr::filter(ICEcat == "yes") %>%
+#   dplyr::select(code, secureURL)
+# # 33 asset types
 
 # check: voor ICEcat 33 asset types, zoals ook door Freek gevonden.
 
-channelDocTypes.df <-
-  docType.df %>%
-  dplyr::filter(XCProducts == "yes") %>%
-  dplyr::select(code) # , secureURL
- # 3 asset types
+# channelDocTypes.df <-
+#   docType.df %>%
+#   dplyr::filter(XCProducts == "yes") %>%
+#   dplyr::select(code) # , secureURL
+#  # 3 asset types
 
 ### THIS WORKS !!!
 
@@ -50,7 +86,7 @@ channelDocTypes.df <-
 #   - https://stackoverflow.com/questions/49786597/r-dplyr-filter-with-a-dynamic-variable-name
 #
 ###############################################################################
-var_ch <- "ICEcat"
+#var_ch <- "ICEcat"  # test-data
 
 # select unique channels from doctype_attributes.xml
 var_channels <-
@@ -76,7 +112,8 @@ channelDocTypes.df <-
 for (var_ch in var_channels) {
 
   channelDocTypes.df <-
-    listChannelDocTypes(docType.df, var_ch) %>%
+    listChannelDocTypes(docTypeConfig.df, 
+                        var_ch) %>%
     dplyr::bind_rows(channelDocTypes.df)
 }
 
@@ -93,19 +130,27 @@ activeChannels.df <-
   virtualChannels %>%
   dplyr::bind_rows(activeChannels.df)
   
-channelDocTypes.df <- 
-  channelDocTypes.df %>%
+channelDocTypes.c.df <- 
+  docTypes.df %>%
+  # rename columns
+  dplyr::rename(code = Derivation,
+                name = 'Long Description') %>%
+  # remove unnecessary columns (keep code and name)
+  dplyr::select(code, name) %>%
+  # add asset name
+  dplyr::left_join(channelDocTypes.df, by = "code") %>%
+  # filter on active channels
   dplyr::right_join(activeChannels.df, by = "channel")
 
 # convert from long to wide format
 channelDocTypes.wide.df <-
-  channelDocTypes.df %>%
+  channelDocTypes.c.df %>%
   dplyr::select(-secureURL) %>%
   dplyr::mutate(inUse = TRUE) %>%       # value-colomn required for spreading
   tidyr::spread(key = "channel",        # spread
                 value = "inUse") %>%
   dplyr::select(SyndicationL1:SyndicationL5Assets, everything()) %>% # move syndication-levels to first column position
-  dplyr::select(code, everything()) %>% # move code to first column position
+  dplyr::select(code, name, everything()) %>% # move code to first column position
   dplyr::arrange(code)
 
 ###############################################################################
@@ -115,6 +160,3 @@ channelDocTypes.wide.df %>%
   readr::write_excel_csv(path="./analyse/output/channelDocTypes.csv",
                          na = "")
 
-channelDocTypes.wide.df %>%
-  readr::write_csv(path="./analyse/output/channelDocTypes.csv",
-                   na = "")
