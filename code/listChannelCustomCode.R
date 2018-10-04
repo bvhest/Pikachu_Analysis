@@ -6,6 +6,7 @@
 
 #library(XML)
 library(tidyverse)
+library(digest)
 
 ###############################################################################
 # read data
@@ -31,7 +32,20 @@ code.df <-
   code.r %>%
   # map to data-frame and provide name for nameless column:
   as.data.frame(stringsAsFactors = FALSE) %>%
-  dplyr::select(files = 1) %>%
+  dplyr::select(files = 1)  
+
+# add md5 checksum for the files
+code.df$hash <-
+  lapply(code.df$files, 
+         function(x) {digest(x, 
+                             algo="md5", 
+                             serialize = FALSE, 
+                             file = TRUE)})
+
+head(code.df, 3)
+
+code.c.df <-
+  code.df %>%
   # remove common part of path:
   dplyr::mutate(files = stringr::str_remove(string = files, 
                                             pattern = "./webapp.b2c/pipes/ProductExport/xsl/")) %>%
@@ -42,15 +56,17 @@ code.df <-
                   fill = "left",
                   remove = TRUE)
 
+head(code.c.df, 3)
+
 base_code.df <-
-  code.df %>%
+  code.c.df %>%
   # filter out the channel specific code:
   dplyr::filter(is.na(channel)) %>%
   # sort alphabetically
   dplyr::arrange(channel, file)
 
 custom_code.df <-
-  code.df %>%
+  code.c.df %>%
   # filter out the process base stylesheets, keeping only the channel specific code:
   dplyr::filter(!is.na(channel)) %>%
   # sort alphabetically
@@ -91,11 +107,11 @@ glimpse(obsolete_code.df)
 # export processed data (in csv-format suitable for spreadsheet)
 ###############################################################################
 custom_code.wide.df %>%
-  readr::write_excel_csv(path="./analyse/output/channelCustomCode.csv",
+  readr::write_excel_csv(path = "./analyse/output/channelCustomCode.csv",
                          na = "")
 
 obsolete_code.df %>%
-  readr::write_excel_csv(path="./analyse/output/obsoleteChannels_deleteCode.csv",
+  readr::write_excel_csv(path = "./analyse/output/obsoleteChannels_deleteCode.csv",
                          na = "")
 
 ###############################################################################
@@ -193,3 +209,76 @@ for (v_channel in custom_code.df %>%
 
 } # END loop over channels
 
+###############################################################################
+# perform a correlation between the hash-es: 
+#    check which files are identical (if any).
+#
+# see:
+#   - https://rpubs.com/HaroldNelsonJr43/260932
+#   - https://stackoverflow.com/questions/39338293/how-can-i-use-summarise-each-for-correlations-in-dplyr
+#   - https://stackoverflow.com/questions/50458635/correlation-matrix-with-dplyr-tidyverse-and-broom-p-value-matrix
+#
+###############################################################################
+
+# create result-directory
+out_dir <- 
+  "./code/data/identicalCode"
+
+# create output-dir (if non-existent)
+if (!dir.exists(out_dir)) {
+  dir.create(out_dir, 
+             showWarnings = FALSE)
+}
+
+# compare all (base and custom) code:
+all_code.df <-
+  base_code.df %>%
+  dplyr::bind_rows(custom_code.df)
+
+
+for (v_file in all_code.df %>%
+               dplyr::select(file) %>%
+                   dplyr::distinct(file) %>%
+                   unlist()) {
+
+  # v_file <- "convertProducts.xsl" # test-data
+  
+  temp <-
+    all_code.df %>%
+    dplyr::filter(file == v_file) %>%
+    dplyr::select(channel, hash) %>%
+    dplyr::mutate(channel = dplyr::if_else(is.na(channel), "base.Export", channel))
+
+  channel.cor <-
+    data.frame(matrix(NA, 
+                      nrow = nrow(temp), 
+                      ncol = nrow(temp)),
+               row.names = temp$channel)
+  colnames(channel.cor) <- 
+    temp$channel
+
+  # create matrix with identical hash-codes:
+  for (i in 1:nrow(temp)) {  
+    indices <- 
+      which(unlist(temp$hash[i]) == unlist(temp$hash))
+    
+    channel.cor[i,indices] <- "x"
+  }
+  
+  # move row-names to fist column
+  channel.cor <-
+    channel.cor %>%
+    tibble::rownames_to_column()
+  
+  # save reults to file
+  file <-
+    paste0(out_dir,
+           "/identicalCode_", 
+           stringr::str_remove(v_file, ".xsl"),
+           ".csv")
+  
+  channel.cor %>%
+    readr::write_excel_csv(path = file,
+                           na = "")
+  
+}
