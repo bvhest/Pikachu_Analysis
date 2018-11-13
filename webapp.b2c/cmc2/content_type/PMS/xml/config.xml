@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<config>
-  <catalogs>
-    <catalog catalogCode="CONSUMER" publicId="com"/>
-    <catalog catalogCode="CARE" publicId="care"/>
-    <catalog catalogCode="FLAGSHIPSHOP" publicId="shop"/>    
-  </catalogs>
-</config>

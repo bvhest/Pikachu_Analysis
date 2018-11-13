@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<catalog-definition xmlns:sql="http://apache.org/cocoon/SQL/2.0" xmlns:source="http://apache.org/cocoon/source/1.0" DocTimeStamp="2010-05-17T00:00:00" ct="catalog_definition" l="none" o="Translatable_CategorizationCatalog">
-	<object o="MASTER"/>
-	<object o="CARE"/>
-	<object o="MARKETING"/>
-</catalog-definition>

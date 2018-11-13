@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<root xmlns:cinclude="http://apache.org/cocoon/include/1.0">
-  <cinclude:include src="cocoon://cmc2/content_type/PP_Configuration?schedule_id=750"/>
-  <cinclude:include src="cocoon://cmc2/content_type/PP_Log?schedule_id=755"/>
-  <cinclude:include src="cocoon://cmc2/content_type/PText_Raw?schedule_id=760"/>
-  <cinclude:include src="cocoon://cmc2/content_type/PText_Translated?schedule_id=765"/>
-  <cinclude:include src="cocoon://cmc2/content_type/PP_Translations?schedule_id=770"/>
-</root>

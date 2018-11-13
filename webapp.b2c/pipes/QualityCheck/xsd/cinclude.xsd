@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://apache.org/cocoon/include/1.0" xmlns:cinclude="http://apache.org/cocoon/include/1.0">
-		<xs:element name="include">
-			<xs:complexType>
-				<xs:attribute name="src" type="xs:string"/>
-			</xs:complexType>
-		</xs:element>
-</xs:schema>

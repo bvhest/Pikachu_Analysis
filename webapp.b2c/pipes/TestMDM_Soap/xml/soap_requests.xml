@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root xmlns:include="http://apache.org/cocoon/include/1.0">
-	<include:include src="cocoon:/ExecuteSoapCall"/>
-</root>

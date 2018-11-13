@@ -1,8 +1,0 @@
-	<locales>
-		<sql:execute-query xmlns:sql="http://apache.org/cocoon/SQL/2.0">
-			<sql:query>
-			select distinct locale, country_code,  TO_CHAR(sysdate,'yyyy-mm-dd"T"hh24:mi:ss') as ts from LOCALE_LANGUAGE
-			--where locale in ('nl_NL','nl_BE','fr_BE','fr_FR','fr_CA','en_CA','en_US','en_GB','de_DE','de_AT','de_CH')
-			</sql:query>
-		</sql:execute-query>
-	</locales>

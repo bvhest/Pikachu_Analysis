@@ -1,4 +1,0 @@
-<s:write xmlns:s="http://apache.org/cocoon/source/1.0">
-	<s:source>${cocoon.parameters.placeholder}/${cocoon.parameters.ct}/${cocoon.parameters.l}/${cocoon.parameters.o}.xml</s:source>
-	<s:fragment><placeholder/></s:fragment>
-</s:write>

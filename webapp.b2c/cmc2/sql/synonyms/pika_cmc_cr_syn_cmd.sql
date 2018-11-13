@@ -1,7 +1,0 @@
-create synonym CATEGORY_TREE for cocoon_pikap1_schema.CATEGORY_TREE;
-create synonym CHANNEL_CATALOGS for cocoon_pikap1_schema.CHANNEL_CATALOGS;
-create synonym CHANNEL_EXPORT for cocoon_pikap1_schema.CHANNEL_EXPORT;
-create synonym CHANNEL_PARAM for cocoon_pikap1_schema.CHANNEL_PARAM;
-create synonym CHANNELS for cocoon_pikap1_schema.CHANNELS;
-create synonym CUSTOMER_LOCALE_EXPORT for cocoon_pikap1_schema.CUSTOMER_LOCALE_EXPORT;
-create synonym TRIGO_LOCALIZED_PRODUCTS for cocoon_pikap1_schema.TRIGO_LOCALIZED_PRODUCTS;

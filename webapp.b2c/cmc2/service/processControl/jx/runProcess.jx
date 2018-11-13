@@ -1,9 +1,0 @@
-	<Process>
-		<sql:execute-query xmlns:sql="http://apache.org/cocoon/SQL/2.0">
-			<sql:query>
-        select  pipeline,id
-		from content_types
-		where content_type='${cocoon.parameters.ct}'
-			</sql:query>
-		</sql:execute-query>
-	</Process>
