@@ -1,3 +1,10 @@
+# Pikachu code base
+webapp.b2c/
+
+# Pikachu data (ignore all subdirectories from the data-directory, include files directly in the data directory)
+!data/
+data/*
+
 # History files
 .Rhistory
 .Rapp.history

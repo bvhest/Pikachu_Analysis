@@ -1,1 +1,0 @@
-empty feed for some locales like ru_by, iw_il, ru_uz, sr_rs, etc.
