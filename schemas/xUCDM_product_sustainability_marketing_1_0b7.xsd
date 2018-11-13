@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by Ali Simsek (Philips) -->
+<!-- lastmodified 2011-06-01 11:00 by Ali Simsek -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0b2">
+  <xs:element name="Products">
+    <xs:annotation>
+      <xs:documentation>XML Unified Catalog Data Model - Sustainability</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Product">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CTN" type="CTNType" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Product CTN</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="GreenData" type="GreenDataType"/>
+            </xs:sequence>
+            <xs:attribute name="lastModified" type="xs:dateTime" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="DocTimestamp" type="xs:dateTime" use="required"/>
+      <xs:attribute name="DocStatus" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="approved"/>
+            <xs:enumeration value="draft"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="CTNType">
+    <xs:restriction base="identifierType">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="codeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="identifierType">
+    <xs:restriction base="codeType">
+      <xs:pattern value="[0-9A-Z_\-/]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="GreenDataType">
+    <xs:sequence>
+      <xs:element name="PhilipsGreenLogo" type="PhilipsGreenLogoType"/>
+      <xs:element name="EnergyLabel" type="EnergyLabelType"/>
+      <xs:element name="EcoFlower" type="EcoFlowerType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PhilipsGreenLogoType">
+    <xs:attribute name="isGreenProduct" type="xs:boolean" use="optional">
+      <xs:annotation>
+        <xs:documentation>Indicates if this product is a Green Product according to the Philips rules</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="EnergyLabelType">
+    <xs:annotation>
+      <xs:documentation>Energy consumption label according to the legal requirements EU Directive 1062/2010</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EnergyClasses" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="EnergyClass" type="EnergyClassType" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="EnergyClassType">
+    <xs:sequence>
+      <xs:element name="Code" type="identifierType"/>
+      <xs:element name="CountryCode" type="xs:string"/>
+      <xs:element name="Value" type="xs:string"/>
+      <xs:element name="Description" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="rank" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="EcoFlowerType">
+    <xs:attribute name="isEcoFlowerProduct" type="xs:boolean" use="optional">
+      <xs:annotation>
+        <xs:documentation>Indicates if this product has an Eco Flower Award</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+</xs:schema>

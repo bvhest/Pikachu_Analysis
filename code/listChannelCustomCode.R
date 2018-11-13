@@ -142,7 +142,7 @@ for (v_channel in custom_code.df %>%
      dplyr::distinct(channel) %>%
      unlist()) {
 
-# v_channel <- "E3loquaProducts" # test-data
+# v_channel <- "EloquaProducts" # test-data
   i <- i+1
   print(paste(i, v_channel, sep = "; "))
 
@@ -179,7 +179,8 @@ for (v_channel in custom_code.df %>%
 
       filediff <-
         diffobj::diffFile(current = v_customCode,
-                          target = v_baseCode)
+                          target = v_baseCode,
+                          ignore.white.space = TRUE)
 
       # store the diff on the file-system:
       v_output_dir <-
@@ -265,15 +266,15 @@ for (v_file in all_code.df %>%
     channel.cor[i,indices] <- "x"
   }
   
-  # move row-names to fist column
+  # move row-names to first column
   channel.cor <-
     channel.cor %>%
     tibble::rownames_to_column()
   
-  # save reults to file
+  # save results to file
   file <-
     paste0(out_dir,
-           "/identicalCode_", 
+           "/", # identicalCode_
            stringr::str_remove(v_file, ".xsl"),
            ".csv")
   

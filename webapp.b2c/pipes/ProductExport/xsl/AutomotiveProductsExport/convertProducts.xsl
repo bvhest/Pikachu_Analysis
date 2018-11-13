@@ -10,21 +10,21 @@
             > 
 
   <!--  base the transformation on the default xUCDM transformation -->
-   <!-- <xsl:import href="../../../common/xsl/xucdm-product-external.xsl"/>
+  <!-- <xsl:import href="../../../common/xsl/xucdm-product-external.xsl"/>
   <xsl:import href="../../../common/xsl/xUCDM-external-assets.xsl"/>
   
   <xsl:include href="../../../../cmc2/xsl/common/cmc2.function.xsl"/> -->
-   <xsl:import href="../xUCDM.1.1.convertProducts.xsl"/>
-   <!-- ETL -->
-    
-    <xsl:param name="doctypesfilepath"/>
-    <xsl:param name="type"/>
-    <xsl:param name="channel"/>
-    <xsl:param name="asset-syndication"/>
+  <xsl:import href="../xUCDM.1.1.convertProducts.xsl"/>
+  <!-- ETL -->
+
+  <xsl:param name="doctypesfilepath"/>
+  <xsl:param name="type"/>
+  <xsl:param name="channel"/>
+  <xsl:param name="asset-syndication"/>
   <xsl:param name="broker-level" select="''"/>
   <xsl:param name="system" select="'PikachuB2C'"/>
-  
- <!--  <xsl:variable name="assetschannel">
+
+  <!--  <xsl:variable name="assetschannel">
     <xsl:choose>
      
      
@@ -34,18 +34,18 @@
      
     </xsl:choose>
   </xsl:variable> -->
-   
+
   <!-- ETL -->
-    <xsl:template match="Products">
+  <xsl:template match="Products">
     <Products>
       <xsl:attribute name="DocTimeStamp" select="substring(string(current-dateTime()),1,19)"/>
       <xsl:attribute name="DocStatus" select="'approved'"/>
       <xsl:apply-templates select="node()"/>
     </Products>
   </xsl:template>
- <xsl:template match="Product">
+  <xsl:template match="Product">
     <Product>
-    <xsl:apply-templates select="@*[not(local-name() = 'lastModified' or local-name() = 'masterLastModified' or local-name() = 'Brand' or local-name() = 'Division')]"/>
+      <xsl:apply-templates select="@*[not(local-name() = 'lastModified' or local-name() = 'masterLastModified' or local-name() = 'Brand' or local-name() = 'Division')]"/>
       <!-- Ensure lastModified and masterLastModified have a 'T' in them -->
       <xsl:attribute name="lastModified" select="concat(substring(@lastModified,1,10),'T',substring(@lastModified,12,8))"/>
       <xsl:if test="@masterLastModified">
@@ -91,7 +91,9 @@
         <xsl:with-param name="catalogtype" select="../../sql:catalogtype"/>
       </xsl:call-template>
       <xsl:apply-templates select="ProductName"/>
-      <FullProductName><xsl:value-of select="cmc2-f:formatFullProductName(NamingString)"/></FullProductName>
+      <FullProductName>
+        <xsl:value-of select="cmc2-f:formatFullProductName(NamingString)"/>
+      </FullProductName>
       <xsl:apply-templates select="NamingString"/>
       <xsl:apply-templates select="ShortDescription"/>
       <xsl:apply-templates select="WOW"/>
@@ -122,12 +124,22 @@
       <xsl:apply-templates select="FeatureCompareGroups"/>
       <xsl:apply-templates select="Disclaimers"/>
       <xsl:call-template name="doAccessories">
-        <xsl:with-param name="cschapters"><csc><xsl:copy-of select="CSChapter"/></csc></xsl:with-param>
-        <xsl:with-param name="abp"><abp><xsl:copy-of select="AccessoryByPacked"/></abp></xsl:with-param>
+        <xsl:with-param name="cschapters">
+          <csc>
+            <xsl:copy-of select="CSChapter"/>
+          </csc>
+        </xsl:with-param>
+        <xsl:with-param name="abp">
+          <abp>
+            <xsl:copy-of select="AccessoryByPacked"/>
+          </abp>
+        </xsl:with-param>
       </xsl:call-template>
       <!-- Green2 modification -->
       <xsl:call-template name="doAwards">
-        <xsl:with-param name="Awards"><xsl:copy-of select="Award[not(@AwardType=$exclude-award-types)]"/></xsl:with-param>
+        <xsl:with-param name="Awards">
+          <xsl:copy-of select="Award[not(@AwardType=$exclude-award-types)]"/>
+        </xsl:with-param>
       </xsl:call-template>
       <!-- end Green2 -->
       <xsl:call-template name="doProductReference"/>
@@ -140,8 +152,8 @@
         <xsl:with-param name="language" select="../../sql:language"/>
         <xsl:with-param name="locale" select="@Locale"/>
       </xsl:call-template>
-  
-  </Product>
+
+    </Product>
   </xsl:template>
-  
+
 </xsl:stylesheet>

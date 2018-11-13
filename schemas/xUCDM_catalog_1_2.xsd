@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- lastmodified 2009-12-22-->
+<!-- 
+	Change log:
+	1.0 -> 1.01:  Added SN as a valid country
+	1.01 -> 1.02:  Added SA as a valid country
+	1.02 -> 1.03:  Added countries AE, AQ, EE, HR, IR, LT, LV, SI, VN, YU
+                 Added optional attribute priority
+	1.03 -> 1.04:  Added countries VA and HM, used by DAP for packaging data
+	1.04 -> 1.05: CustmerSpecificFields replaced with  CustomerSpecificField (with unbounded # occurrences under CatalogProduct and exactly 1 Name and Value)
+    1.2 rename
+1.2.1 Added locale patterns to support master_GLOBAL
+1.2.2.Added GLOBAL as country
+1.2.3 2009-12-22 MKL Remove minlength and maxlength restrictions on Country (enumeration is sufficient)
+1.2.4.2009-12-23 RH changed master_global into master_GLOBAL
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.2">
+	<xs:element name="Catalogs">
+		<xs:annotation>
+			<xs:documentation>A set of catalogs that define what products they contain, with catalog-specific attributes to localise / specialise the information of the product.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="Catalog"/>
+			</xs:sequence>
+			<xs:attribute name="Timestamp" type="xs:dateTime" use="required">
+				<xs:annotation>
+					<xs:documentation>Timestamp the XML was created
+     					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Version" use="required">
+				<xs:annotation>
+					<xs:documentation>Version of the program that created the XML
+    					 </xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Catalog" type="CatalogType"/>
+	<xs:simpleType name="CatalogTypeName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="CountryCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="GLOBAL"/>
+			<xs:enumeration value="AA"/>
+			<xs:enumeration value="AE"/>
+			<xs:enumeration value="AQ"/>
+			<xs:enumeration value="AR"/>
+			<xs:enumeration value="AT"/>
+			<xs:enumeration value="AU"/>
+			<xs:enumeration value="BE"/>
+			<xs:enumeration value="BG"/>
+			<xs:enumeration value="BR"/>
+			<xs:enumeration value="CA"/>
+			<xs:enumeration value="CH"/>
+			<xs:enumeration value="CL"/>
+			<xs:enumeration value="CN"/>
+			<xs:enumeration value="CO"/>
+			<xs:enumeration value="CZ"/>
+			<xs:enumeration value="DE"/>
+			<xs:enumeration value="DK"/>
+			<xs:enumeration value="EE"/>
+			<xs:enumeration value="ES"/>
+			<xs:enumeration value="FI"/>
+			<xs:enumeration value="FR"/>
+			<xs:enumeration value="GB"/>
+			<xs:enumeration value="GR"/>
+			<xs:enumeration value="HK"/>
+			<xs:enumeration value="HM"/>
+			<xs:enumeration value="HR"/>
+			<xs:enumeration value="HU"/>
+			<xs:enumeration value="ID"/>
+			<xs:enumeration value="IE"/>
+			<xs:enumeration value="IN"/>
+			<xs:enumeration value="IR"/>
+			<xs:enumeration value="IT"/>
+			<xs:enumeration value="JP"/>
+			<xs:enumeration value="KR"/>
+			<xs:enumeration value="LT"/>
+			<xs:enumeration value="LV"/>
+			<xs:enumeration value="ME"/>
+			<xs:enumeration value="MX"/>
+			<xs:enumeration value="MY"/>
+			<xs:enumeration value="NL"/>
+			<xs:enumeration value="NO"/>
+			<xs:enumeration value="NZ"/>
+			<xs:enumeration value="PA"/>
+			<xs:enumeration value="PE"/>
+			<xs:enumeration value="PH"/>
+			<xs:enumeration value="PK"/>
+			<xs:enumeration value="PL"/>
+			<xs:enumeration value="PT"/>
+			<xs:enumeration value="RO"/>
+			<xs:enumeration value="RU"/>
+			<xs:enumeration value="SA"/>
+			<xs:enumeration value="SE"/>
+			<xs:enumeration value="SG"/>
+			<xs:enumeration value="SK"/>
+			<xs:enumeration value="SI"/>
+			<xs:enumeration value="SN"/>
+			<xs:enumeration value="TH"/>
+			<xs:enumeration value="TR"/>
+			<xs:enumeration value="TW"/>
+			<xs:enumeration value="UA"/>
+			<xs:enumeration value="US"/>
+			<xs:enumeration value="UY"/>
+			<xs:enumeration value="VA"/>
+			<xs:enumeration value="VE"/>
+			<xs:enumeration value="VN"/>
+			<xs:enumeration value="YU"/>
+			<xs:enumeration value="ZA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProductDivisionCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="0100"/>
+			<xs:enumeration value="0200"/>
+			<xs:enumeration value="0300"/>
+			<xs:enumeration value="3400"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CatalogProductType">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="CustomerSpecificField">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Name" type="xs:string"/>
+						<xs:element name="Value" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="CTN" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="15"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="StartOfPublication" type="xs:date" use="required"/>
+		<xs:attribute name="EndOfPublication" type="xs:date" use="required"/>
+		<xs:attribute name="StartOfSales" type="xs:date"/>
+		<xs:attribute name="EndOfSales" type="xs:date"/>
+		<xs:attribute name="Price" type="PriceType"/>
+		<xs:attribute name="Action" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="add"/>
+					<xs:enumeration value="update"/>
+					<xs:enumeration value="delete"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="LastModified" type="xs:dateTime" use="required"/>
+		<xs:attribute name="AvailableForOnline"/>
+	</xs:complexType>
+	<xs:complexType name="CatalogType">
+		<xs:annotation>
+			<xs:documentation>The definition of a catalog DO NOT CONFUSE WITH UCDM catalog type</xs:documentation>
+		</xs:annotation>
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="Locales" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The locale(s) that are associated with this catalog determine what language(s) the products are translated</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Locale" maxOccurs="unbounded">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="([a-z]{2}_[A-Z]{2})|master_GLOBAL"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CatalogProduct" type="CatalogProductType"/>
+		</xs:sequence>
+		<xs:attribute name="CatalogTypeName" type="CatalogTypeName" use="required"/>
+		<xs:attribute name="Country" type="CountryCode" use="required"/>
+		<xs:attribute name="ProductDivisionCode" type="ProductDivisionCode"/>
+		<xs:attribute name="Currency" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="3"/>
+					<xs:maxLength value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="PriceType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([0-9]+(\.[0-9]{1,2})?)?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriorityType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([0-9])*"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

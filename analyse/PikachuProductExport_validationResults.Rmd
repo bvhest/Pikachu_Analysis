@@ -1,0 +1,273 @@
+---
+title: "Pikachu Product Exports"
+author: "BvH"
+date: "October 25, 2018"
+output: html_document
+---
+
+## Notes
+
+
+## Validations
+
+### AutomotiveProductsExport
+
+Export is **not valid** xUCDM 1.1.2
+
+
+#### Schema-validation log
+
+./data/AutomotiveProductsExport/CN_zh_CN_12258LLECOB1.xml:1: element ProductType: Schemas validity error : Element 'ProductType': This element is not expected. Expected is one of ( Catalog, FinancialCategorization, Categorization, Assets, ProductName, FullProductName, NamingString, ShortDescription, WOW, SubWOW ).  
+./data/AutomotiveProductsExport/CN_zh_CN_12258LLECOB1.xml fails to validate
+
+
+### Bazaarvoice
+
+Bazaarvoice_Export is **valid** against BazaarvoiceProductFeedSchema_v14.7.
+
+
+### ChannelAdvisor
+
+Export is **not valid** xUCDM 1.1.2
+
+*Note: no xUCDM parameter specified, no 'converProducts.xsl' provided. So what default stylsheet is used ???*
+
+#### Schema-validation log
+
+./data/ChannelAdvisor/US_en_US_T970.xml:1: element Products: Schemas validity error : Element 'Products': The attribute 'DocTimeStamp' is required but missing.  
+./data/ChannelAdvisor/US_en_US_T970.xml:1: element Products: Schemas validity error : Element 'Products': The attribute 'DocStatus' is required but missing.  
+./data/ChannelAdvisor/US_en_US_T970.xml:1: element Product: Schemas validity error : Element 'Product', attribute 'Brand': The attribute 'Brand' is not allowed.  
+./data/ChannelAdvisor/US_en_US_T970.xml:1: element Product: Schemas validity error : Element 'Product', attribute 'Division': The attribute 'Division' is not allowed.  
+./data/ChannelAdvisor/US_en_US_T970.xml:1: element Product: Schemas validity error : Element 'Product', attribute 'EndOfPublication': The attribute 'EndOfPublication' is not allowed.  
+./data/ChannelAdvisor/US_en_US_T970.xml:1: element Product: Schemas validity error : Element 'Product', attribute 'StartOfPublication': The attribute 'StartOfPublication' is not allowed.  
+./data/ChannelAdvisor/US_en_US_T970.xml:1: element DTN: Schemas validity error : Element 'DTN': This element is not expected. Expected is one of ( Code12NC, GTIN, MarketingVersion, MarketingStatus ).  
+./data/ChannelAdvisor/US_en_US_T970.xml fails to validate
+
+
+
+### ChinaProducts
+
+Export is **valid** xUCDM 1.1.2
+
+
+### CliplisterProducts
+
+Export is **not valid** xUCDM 1.1.2
+
+#### Schema-validation log
+
+./data/CliplisterProducts/CliplisterProducts_ProductExport_20181023T0949_de_DE.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': 'mit Aquatec Wet & Dry-Versiegelung' is not a valid value of the atomic type 'FeatureCodeType'.  
+./data/CliplisterProducts/CliplisterProducts_ProductExport_20181023T0949_de_DE.xml:1: element DummyPrice: Schemas validity error : Element 'DummyPrice': [facet 'pattern'] The value '.02' is not accepted by the pattern '([0-9]+(\.[0-9]{1,2})?)?'.  
+./data/CliplisterProducts/CliplisterProducts_ProductExport_20181023T0949_de_DE.xml:1: element DummyPrice: Schemas validity error : Element 'DummyPrice': '.02' is not a valid value of the atomic type 'PriceType'.
+
+
+
+
+### EirtightProducts
+
+Export is **not valid** xUCDM 1.1.2
+
+#### Schema-validation log
+
+./data/EirtightProducts/US_en_US_AT830_41.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': [facet 'maxLength'] The value has a length of '33'; this exceeds the allowed maximum length of '30'.  
+./data/EirtightProducts/US_en_US_AT830_41.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': 'with Aquatec - Wet or Dry shaving' is not a valid value of the atomic type 'FeatureCodeType'.  
+./data/EirtightProducts/US_en_US_AT830_41.xml fails to validate
+
+
+### Eloqua
+
+Export is **not valid** xUCDM 1.2.4
+
+#### Schema-validation log
+
+./data/Eloqua/EloquaProducts_Export_20181020T0720_US_en_US.xml:1: element Products: Schemas validity error : Element 'Products': The attribute 'DocTimeStamp' is required but missing.  
+./data/Eloqua/EloquaProducts_Export_20181020T0720_US_en_US.xml:1: element Products: Schemas validity error : Element 'Products': The attribute 'DocStatus' is required but missing.  
+./data/Eloqua/EloquaProducts_Export_20181020T0720_US_en_US.xml:1: element DTN: Schemas validity error : Element 'DTN': This element is not expected. Expected is one of ( Code12NC, GTIN, ProductType, MarketingVersion, MarketingStatus ).
+
+
+### eShop
+
+Export is **not valid** xUCDM 1.1.2
+
+#### Schema-validation log
+
+./data/eShop/RU_ru_RU_22PFS4022_60.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': [facet 'maxLength'] The value has a length of '35'; this exceeds the allowed maximum length of '30'.  
+./data/eShop/RU_ru_RU_22PFS4022_60.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': 'с технологией Digital Crystal Clear' is not a valid value of the atomic type 'FeatureCodeType'.  
+./data/eShop/RU_ru_RU_22PFS4022_60.xml fails to validate
+
+
+### EStoreProducts
+
+Export is **valid** xUCDM 1.1.2
+
+
+
+### EtailDetailProducts
+
+Export is **not valid** xUCDM 1.1.2
+
+#### Schema-validation log
+
+./data/EtailDetailProducts/DE_de_DE_42PUS7809_12.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': [facet 'maxLength'] The value has a length of '51'; this exceeds the allowed maximum length of '30'.  
+./data/EtailDetailProducts/DE_de_DE_42PUS7809_12.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': 'mit 2-seitigem Ambilight und Pixel Precise Ultra HD' is not a valid value of the atomic type 'FeatureCodeType'.  
+./data/EtailDetailProducts/DE_de_DE_42PUS7809_12.xml fails to validate
+
+./data/EtailDetailProducts/DE_de_DE_SCF194_90.xml:1: element DummyPrice: Schemas validity error : Element 'DummyPrice': [facet 'pattern'] The value '.02' is not accepted by the pattern '([0-9]+(\.[0-9]{1,2})?)?'.  
+./data/EtailDetailProducts/DE_de_DE_SCF194_90.xml:1: element DummyPrice: Schemas validity error : Element 'DummyPrice': '.02' is not a valid value of the atomic type 'PriceType'.  
+./data/EtailDetailProducts/DE_de_DE_SCF194_90.xml fails to validate
+
+
+### ETLProducts
+
+Export is **not valid** xUCDM 1.1.2
+
+#### Schema-validation log
+
+./data/ETLProducts/US_en_US_HX9033_65.xml:1: element ProductType: Schemas validity error : Element 'ProductType': This element is not expected. Expected is one of ( Catalog, FinancialCategorization, Categorization, Assets, ProductName, FullProductName, NamingString, ShortDescription, WOW, SubWOW ).  
+./data/ETLProducts/US_en_US_HX9033_65.xml fails to validate
+
+
+### FlixMediaProducts
+
+Export is **valid** xUCDM 1.1.2
+
+
+### FoxIntProducts
+
+Export is **not valid** xUCDM 1.1.2
+
+#### Schema-validation log
+
+./data/FoxIntProducts/FoxIntProducts_ProductExport_20181021T1909_en_US.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': [facet 'maxLength'] The value has a length of '43'; this exceeds the allowed maximum length of '30'.  
+./data/FoxIntProducts/FoxIntProducts_ProductExport_20181021T1909_en_US.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': 'with SmartClean System and Shave Wet or Dry' is not a valid value of the atomic type 'FeatureCodeType'.  
+./data/FoxIntProducts/FoxIntProducts_ProductExport_20181021T1909_en_US.xml fails to validate
+
+
+
+### FuturesourceProducts
+
+*Note*: no output. This feed results in an error msg from at least 2016-01-21 09:15 onward!
+
+
+#### Pikachu-channel log
+
+<Products DocTimeStamp="2018-10-25T13:15:24" DocStatus="approved"><sql:error>ORA-00936: missing expression
+</sql:error></Products>
+
+
+### HomeLightMetadata
+
+Export is **not valid** xUCDM 1.1.2, should be valid xUCDM 1.3
+
+
+
+### ICEcat
+
+Export is **not valid** xUCDM 1.1.2
+
+#### Schema-validation log
+
+./data/ICEcat/US_en_US_AT875_41.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': [facet 'maxLength'] The value has a length of '43'; this exceeds the allowed maximum length of '30'.  
+./data/ICEcat/US_en_US_AT875_41.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': 'with Aquatec wet and dry and Pop-up trimmer' is not a valid value of the atomic type 'FeatureCodeType'.  
+./data/ICEcat/US_en_US_AT875_41.xml fails to validate
+
+
+### LDRenderingExport
+
+??? no Pikachu feed
+
+
+
+### LirioProducts
+
+Export is **valid** xUCDM 1.1.2
+
+
+
+### PhilipsRetailDirect
+
+Export is **not valid** xUCDM 1.1.2
+
+#### Schema-validation log
+
+./data/PhilipsRetailDirect/NL_nl_NL_65PUS8602_12.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': [facet 'maxLength'] The value has a length of '53'; this exceeds the allowed maximum length of '30'.  
+./data/PhilipsRetailDirect/NL_nl_NL_65PUS8602_12.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': 'met driezijdig Ambilight en P5 Perfect Picture Engine' is not a valid value of the atomic type 'FeatureCodeType'.  
+./data/PhilipsRetailDirect/NL_nl_NL_65PUS8602_12.xml fails to validate
+
+### PILProducts2Hybris
+
+Export is **valid** xUCDM CQ 1.1.31
+
+
+### ProductDescription
+
+Custom export. Not xUCDM.
+
+??? no Pikachu feed
+
+
+### Products2CQLighting
+
+Export is **valid** xUCDM CQ 1.1.31
+
+
+### SearchStream
+
+Export is **not valid** xUCDM 1.1.2
+
+#### Schema-validation log
+
+./data/SearchStream/US_en_US_T970.xml:1: element Products: Schemas validity error : Element 'Products': The attribute 'DocTimeStamp' is required but missing.  
+./data/SearchStream/US_en_US_T970.xml:1: element Products: Schemas validity error : Element 'Products': The attribute 'DocStatus' is required but missing.  
+./data/SearchStream/US_en_US_T970.xml:1: element Product: Schemas validity error : Element 'Product', attribute 'Brand': The attribute 'Brand' is not allowed.  
+./data/SearchStream/US_en_US_T970.xml:1: element Product: Schemas validity error : Element 'Product', attribute 'Division': The attribute 'Division' is not allowed.  
+./data/SearchStream/US_en_US_T970.xml:1: element Product: Schemas validity error : Element 'Product', attribute 'EndOfPublication': The attribute 'EndOfPublication' is not allowed.  
+./data/SearchStream/US_en_US_T970.xml:1: element Product: Schemas validity error : Element 'Product', attribute 'StartOfPublication': The attribute 'StartOfPublication' is not allowed.  
+./data/SearchStream/US_en_US_T970.xml:1: element DTN: Schemas validity error : Element 'DTN': This element is not expected. Expected is one of ( Code12NC, GTIN, MarketingVersion, MarketingStatus ).  
+./data/SearchStream/US_en_US_T970.xml fails to validate
+
+
+
+### SPAF
+
+Custom export. Not xUCDM.
+
+*Note*: empty feed for some locales like ru_by, iw_il, ru_uz, sr_rs, etc.
+
+
+
+### Tradeplace
+
+??? no Pikachu feed
+
+
+### VmaHK
+
+Custom export. Not xUCDM.
+
+*Note*: empty catalog(?), resulting in empty XML documents with a "root"-element.
+
+
+
+### WebcollageProducts
+
+Export is **not valid** xUCDM 1.1.2
+
+
+#### Schema-validation log
+
+./data/WebcollageProducts/WebcollageProducts_ProductExport_20181022T0746_nl_NL.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': [facet 'maxLength'] The value has a length of '37'; this exceeds the allowed maximum length of '30'.  
+./data/WebcollageProducts/WebcollageProducts_ProductExport_20181022T0746_nl_NL.xml:1: element BrandedFeatureString: Schemas validity error : Element 'BrandedFeatureString': 'met Aquatec voor nat en droog scheren' is not a valid value of the atomic type 'FeatureCodeType'.  
+./data/WebcollageProducts/WebcollageProducts_ProductExport_20181022T0746_nl_NL.xml fails to validate
+
+### XCProducts
+
+Export is **not valid** xUCDM 1.1.2
+
+#### Schema-validation log
+
+./data/XCProducts/XCProducts_ProductExport_20181023T0955_en_US.0.xml:1: element Products: Schemas validity error : Element 'Products': The attribute 'DocTimeStamp' is required but missing.  
+./data/XCProducts/XCProducts_ProductExport_20181023T0955_en_US.0.xml:1: element Products: Schemas validity error : Element 'Products': The attribute 'DocStatus' is required but missing.  
+./data/XCProducts/XCProducts_ProductExport_20181023T0955_en_US.0.xml:1: element Product: Schemas validity error : Element 'Product': The attribute 'IsMaster' is required but missing.  
+./data/XCProducts/XCProducts_ProductExport_20181023T0955_en_US.0.xml:1: element Product: Schemas validity error : Element 'Product': The attribute 'IsAccessory' is required but missing.  
+./data/XCProducts/XCProducts_ProductExport_20181023T0955_en_US.0.xml:1: element ID: Schemas validity error : Element 'ID': This element is not expected. Expected is ( CTN ).

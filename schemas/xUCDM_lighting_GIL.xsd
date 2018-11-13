@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xs:element name="Products">
+		<xs:annotation>
+			<xs:documentation>XML Unified Catalog Data Model - Sustainibility for Lighting</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="GreenProduct" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Publisher" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The source system that created the Green Information for Lighting</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Description" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>CTN description</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="FamilyDescription" type="xs:string" minOccurs="0"/>
+							<xs:element name="Code12NC" type="xs:string" minOccurs="0"/>
+							<xs:element name="Image" type="xs:string" minOccurs="0"/>
+							<xs:element name="ProductOwner" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>The organizational owner of the product</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="GreenProductData" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation>The green product marketing text. A generic text is filled in for Green products.
+																			To make the description product-specific, overwrite the generic text in this field.
+										</xs:documentation>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="EcoPassport" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="FocalAreas" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="FocalArea" minOccurs="0" maxOccurs="unbounded">
+																	<xs:annotation>
+																		<xs:documentation>Contains the focal areas that indicate the sustainable footprint of the product </xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="FocalAreaName" type="xs:string" minOccurs="0"/>
+																			<xs:element name="MeetRegulations" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="FAAttributes" minOccurs="0" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element ref="FAAttribute" minOccurs="0" maxOccurs="unbounded"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="GreenAwards" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Awards that are related to the sustainable character of the product </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="GreenAward" minOccurs="0" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Contains the Green Awards that indicate the sustainable footprint of the product </xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="GreenAwardName" type="xs:string" minOccurs="0"/>
+																<xs:element name="GreenAwardValue" type="xs:boolean" minOccurs="0"/>
+																<xs:element name="GreenAwardPosition" type="xs:string" minOccurs="0"/>												
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>													
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="CommercialID" type="xs:string"/>
+						<xs:attribute name="Locale" type="xs:string"/>
+						<xs:attribute name="LogisticID" type="xs:string"/>
+						<xs:attribute name="lastModified" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="DocStatus" type="xs:string"/>
+			<xs:attribute name="DocTimeStamp" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FAAttribute">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FAAttributeName" type="xs:string" minOccurs="0"/>
+				<xs:element name="FAAttributeValue" type="xs:string" minOccurs="0"/>
+				<xs:element name="UnitOfMeasurement" type="xs:string" minOccurs="0"/>
+				<xs:element name="FAAttributePosition" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

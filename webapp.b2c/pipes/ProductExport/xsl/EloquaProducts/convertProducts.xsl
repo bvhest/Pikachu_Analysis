@@ -14,9 +14,9 @@
   <xsl:variable name="domains" select="document('../../../../cmc2/xml/countryDomains.xml')/domains"/>
   
   <xsl:template match="Products">    
-      <Products>
-        <xsl:apply-templates select="node()"/>
-      </Products>      
+    <Products>
+      <xsl:apply-templates select="node()"/>
+    </Products>      
   </xsl:template>
     
   <xsl:template match="sql:rowset[@name='product']/sql:row/sql:data/Product">
@@ -55,7 +55,7 @@
         <xsl:with-param name="catalogtype" select="../../sql:catalogtype"/>
       </xsl:call-template>
 
-			<xsl:apply-templates select="ProductName"/>
+	  <xsl:apply-templates select="ProductName"/>
       <xsl:apply-templates select="NamingString"/>
       <xsl:apply-templates select="WOW"/>
       <xsl:apply-templates select="SubWOW"/>

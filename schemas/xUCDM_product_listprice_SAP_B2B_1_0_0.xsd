@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by Bart van Hest (Philips) -->
+<!-- lastmodified 2013-01-15 -->
+<!-- version 1.0.0: - intial creation -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.1">
+	<xs:element name="Products">
+		<xs:annotation>
+			<xs:documentation>SAP-2-Pikachu List Price Data Model - data model to interface the list price information from SAP R3 to Pikachu. The list price information is needed for the Lighting Total Cost of Ownership (TCO) application hosted by Sefaira.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Product" minOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Product that is sold by Philips Lighting.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Code12NC" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>12NC of the product without formatting spaces.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="4"/>
+										<xs:maxLength value="12"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CTN" type="CTNType">
+								<xs:annotation>
+									<xs:documentation>The Commercial Type Number of an actual existing product (prod.id)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ListPrices" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>This element contains the SAP R3 list prices for the product.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="ListPrice">
+									<xs:annotation>
+										<xs:documentation>This county specific list price.</xs:documentation>
+									</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="PriceType">
+														<xs:attribute name="CountryCode" use="required">
+															<xs:annotation>
+																<xs:documentation>Two-letter ISO 3166-1 country code. See http://en.wikipedia.org/wiki/ISO_3166-1.</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:pattern value="([A-Z]{2})|global|GLOBAL"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="CurrencyCode" use="required">
+															<xs:annotation>
+																<xs:documentation>ISO 4217 currency code. See http://en.wikipedia.org/wiki/ISO_4217.</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:pattern value="([A-Z]{3})"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="DocTimeStamp" type="xs:dateTime" use="required"/>
+			<xs:attribute name="DocStatus" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="draft"/>
+						<xs:enumeration value="final"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="DocVersion" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The filename of the XSD schma, e.g. xUCDM_product_external_1_2.xsd</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="CTNType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([0-9]+(\.[0-9]{1,2})?)?"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

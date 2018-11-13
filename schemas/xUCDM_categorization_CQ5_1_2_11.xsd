@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  version 1.1.1
+  version 1.1.2 - FS 
+    - Added IsHidden attribute on categorization nodes.
+    - Added GroupShortCode
+    - Added unique constraints on group, cat and subcat codes.
+    - Added type attribute.
+  version 1.2.5:
+    - Added GroupSeoName, CategorySeoName and SubcategorySeoName
+  version 1.2.6 - FS
+    - Added GroupSeoDisplayName, CategorySeoDisplayName and SubcategorySeoDisplayName
+  version 1.2.8 - FS
+    ExtendedCategorization Node element:
+    - Added SeoDisplayName and ShortCode attributes
+    - SEOName and Name attributes are required
+  version 1.2.10 - FS
+    - Made CatalogType an optional element (as it is not used anywhere) and typed it as xs:string
+  version 1.2.11 - FS 
+    - Added description elements to each node
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.2.11">
+  <xs:element name="Categorization">
+    <xs:annotation>
+      <xs:documentation>XML Unified Catalog Data Model - Categorization</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Catalog" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CatalogCode">
+                <xs:annotation>
+                  <xs:documentation>Unique, Not changeable.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CatalogReferenceName" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Unique. May be changed.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CatalogName" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>Display name</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CatalogType" type="xs:string" minOccurs="0"/>
+              <xs:element name="FixedCategorization">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Group" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="GroupCode">
+                            <xs:annotation>
+                              <xs:documentation>Unique, Not changeable.</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="50"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="GroupShortCode" minOccurs="0">
+                            <xs:annotation>
+                              <xs:documentation>Group code to be used as node name</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:pattern value="[0-9a-z\-_]+"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="GroupReferenceName">
+                            <xs:annotation>
+                              <xs:documentation>Unique. May be changed.</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="50"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="GroupName">
+                            <xs:annotation>
+                              <xs:documentation>Display name</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="50"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="GroupSeoName">
+                            <xs:annotation>
+                              <xs:documentation>Romanized SEO name</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="50"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="GroupSeoDisplayName" minOccurs="0">
+                            <xs:annotation>
+                              <xs:documentation>Display SEO name</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="50"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="GroupDescription" minOccurs="0">
+                            <xs:annotation>
+                              <xs:documentation>Description</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="600"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="GroupRank" type="xs:integer"/>
+                          <xs:element name="Category" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="CategoryCode">
+                                  <xs:annotation>
+                                    <xs:documentation>Unique, Not changeable.</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CategoryReferenceName">
+                                  <xs:annotation>
+                                    <xs:documentation>Unique. May be changed.</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CategoryName">
+                                  <xs:annotation>
+                                    <xs:documentation>Display name</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CategorySeoName">
+                                  <xs:annotation>
+                                    <xs:documentation>Romanized SEO name</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CategorySeoDisplayName" minOccurs="0">
+                                  <xs:annotation>
+                                    <xs:documentation>Display SEO name</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CategoryDescription" minOccurs="0">
+                                  <xs:annotation>
+                                    <xs:documentation>Description</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="600"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CategoryRank" type="xs:integer"/>
+                                <xs:element name="SubCategory" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="SubCategoryCode">
+                                        <xs:annotation>
+                                          <xs:documentation>Unique, Not changeable.</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:maxLength value="50"/>
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="SubCategoryReferenceName">
+                                        <xs:annotation>
+                                          <xs:documentation>Unique. May be changed.</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:maxLength value="50"/>
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="SubCategoryName">
+                                        <xs:annotation>
+                                          <xs:documentation>Display name</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:maxLength value="50"/>
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="SubCategorySeoName">
+                                        <xs:annotation>
+                                          <xs:documentation>Romanized SEO name</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:maxLength value="50"/>
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="SubCategorySeoDisplayName" minOccurs="0">
+                                        <xs:annotation>
+                                          <xs:documentation>Display SEO name</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:maxLength value="50"/>
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="SubCategoryDescription" minOccurs="0">
+                                        <xs:annotation>
+                                          <xs:documentation>Description</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:maxLength value="600"/>
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="SubCategoryRank" type="xs:integer"/>
+                                      <xs:element name="ATGCatalog" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                          <xs:documentation>Indicates to which ATG catalogs this subcategory must be exported. Use this element to split out in separate trees.</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Consumer"/>
+                                            <xs:enumeration value="Professional"/>
+                                            <xs:enumeration value="Norelco"/>
+                                            <xs:enumeration value="Walita"/>
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element ref="Product" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                    <xs:attributeGroup ref="CommonNodeAttributes"/>
+                                    <xs:attribute name="status" use="required">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:enumeration value="Preliminary">
+                                            <xs:annotation>
+                                              <xs:documentation source="xUCDM 1.07">In preparation. Allowed to assign products. Not (yet) allowed to publish in outputs.</xs:documentation>
+                                            </xs:annotation>
+                                          </xs:enumeration>
+                                          <xs:enumeration value="Active">
+                                            <xs:annotation>
+                                              <xs:documentation source="xUCDM v1.07">
+																							Allowed to assign products.
+																							Available to publish in outputs.</xs:documentation>
+                                            </xs:annotation>
+                                          </xs:enumeration>
+                                          <xs:enumeration value="PhasedOut">
+                                            <xs:annotation>
+                                              <xs:documentation source="xUCDM v1.07">
+																								No longer allowed to assign products. Available to publish in outputs.
+
+																								Typical usage: subcategories that are no longer marketed but are available for consumer support.</xs:documentation>
+                                            </xs:annotation>
+                                          </xs:enumeration>
+                                          <xs:enumeration value="Deleted">
+                                            <xs:annotation>
+                                              <xs:documentation source="xUCDM v1.07">Not allowed to assign products. Not allowed  to publish in outputs. This (part of) categorization is not to be displayed in internal systems or published in outputs. </xs:documentation>
+                                            </xs:annotation>
+                                          </xs:enumeration>
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attributeGroup ref="CommonNodeAttributes"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attributeGroup ref="CommonNodeAttributes"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+                <xs:unique name="GroupCode">
+                  <xs:selector xpath="Group"/>
+                  <xs:field xpath="GroupCode"/>
+                </xs:unique>
+                <xs:unique name="GroupShortCode">
+                  <xs:selector xpath="Group"/>
+                  <xs:field xpath="GroupShortCode"/>
+                </xs:unique>
+                <xs:unique name="CategoryCode">
+                  <xs:selector xpath="Group/Category"/>
+                  <xs:field xpath="CategoryCode"/>
+                </xs:unique>
+                <xs:unique name="SubCategoryCode">
+                  <xs:selector xpath="Group/Category/SubCategory"/>
+                  <xs:field xpath="SubCategoryCode"/>
+                </xs:unique>
+              </xs:element>
+              <xs:element name="ExtendedCategorization" type="CategorizationLevelType" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="Locale" use="required">
+              <xs:annotation>
+                <xs:documentation>2-character ISO 639-1 locale code</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:pattern value="([a-z]{2}_[A-Z]{2})|master_GLOBAL"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="IsMaster" type="xs:boolean" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="DocTimeStamp" type="xs:dateTime" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Product">
+    <xs:annotation>
+      <xs:documentation>Reference to an existing product (prod.id)</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true"/>
+  </xs:element>
+  <xs:complexType name="BusinessUnitType">
+    <xs:sequence>
+      <xs:element name="BusinessUnitCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="BusinessUnitName" type="xs:string"/>
+      <xs:element name="MainArticleGroup" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Main Article Group</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MainArticleGroupCode">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="3"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="MainArticleGroupName" type="xs:string"/>
+            <xs:element name="ArticleGroup" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ArticleGroupCode">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="4"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ArticleGroupName" type="xs:string"/>
+                  <xs:element name="BasicType" minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="BasicTypeCode"/>
+                        <xs:element name="BasicTypeName"/>
+                        <xs:element ref="Product" minOccurs="0" maxOccurs="unbounded"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CategorizationLevelType">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Node">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="NodeDescription" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="600"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="ChildProducts" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="Product" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ChildCategories" minOccurs="0">
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension base="CategorizationLevelType"/>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attributeGroup ref="CommonNodeAttributes"/>
+          <xs:attribute name="Code" use="required" type="codeType"/>
+          <xs:attribute name="Name" type="xs:string" use="required"/>
+          <xs:attribute name="ReferenceName" type="xs:string" use="required"/>
+          <xs:attribute name="SeoName" type="xs:string" use="required"/>
+          <xs:attribute name="SeoDisplayName" type="xs:string"/>
+          <xs:attribute name="Rank" type="xs:nonNegativeInteger"/>
+          <xs:attribute name="Level" type="xs:nonNegativeInteger"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:simpleType name="codeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="40"/>
+      <xs:pattern value="[0-9A-Za-z_\-]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:attributeGroup name="CommonNodeAttributes">
+    <xs:attribute name="lastModified" type="xs:dateTime" use="optional"/>
+    <xs:attribute name="IsHidden" type="xs:boolean" use="optional">
+      <xs:annotation>
+        <xs:documentation>When IsHidden is true the node and everything below is not to be part of any navigation</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="type" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Indication of the type of Node.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+</xs:schema>

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by Philips (Philips) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+	attributeFormDefault="unqualified" version="1.06">
+	<xs:element name="Products">
+		<xs:annotation>
+			<xs:documentation>XML Unified Catalog Data Model - Sustainibility</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Product">
+					<xs:annotation>
+						<xs:documentation>A result of labour or of a natural or industrial process</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Publisher" type="xs:string" nillable="false">
+								<xs:annotation>
+									<xs:documentation>The source system that created the Green Information Model</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Description" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>CTN description</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Code12NC" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>12NC code</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="12"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ProductOwner" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>The organizational owner of the product</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="InfoSupplier" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Contact information about provider of information about this product.
+Must be filled in case of external supplier.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Company" type="xs:string"/>
+										<xs:element name="VendorID" type="xs:string"/>
+										<xs:element name="Address" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Streetname and number</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="City" type="xs:string"/>
+										<xs:element name="State" type="xs:string" minOccurs="0"/>
+										<xs:element name="Country" type="xs:string"/>
+										<xs:element name="ContactName" type="xs:string"/>
+										<xs:element name="Phone" type="xs:string"/>
+										<xs:element name="Email" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="GreenProductData">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation>The green product marketing text. A generic text is filled in for Green products.
+																			To make the description product-specific, overwrite the generic text in this field.
+											</xs:documentation>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="EcoPassport">
+											<xs:complexType>
+												<xs:sequence>
+												<xs:element name="FocalArea">
+												<xs:annotation>
+												<xs:documentation>Contains the focal areas that indicate the sustainable footprint of the product </xs:documentation>
+												</xs:annotation>
+
+												<xs:complexType>
+												<xs:sequence maxOccurs="unbounded">
+												<xs:element name="Energy" minOccurs="0">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Onmode" type="WattageType2"
+												minOccurs="0"/>
+												<xs:element name="Offmode" type="WattageType1"
+												minOccurs="0"/>
+												<xs:element name="Standby" type="WattageType1"
+												minOccurs="0"/>
+												<xs:element name="CarbonNeutral" type="xs:boolean"
+												minOccurs="0"/>
+												<xs:element name="Dimmable" type="xs:string"
+												minOccurs="0"/>
+												<xs:element name="EnergySavings"
+												type="WattageType3" minOccurs="0"/>
+												<xs:element name="EnergyLabelLuminaire"
+												type="Range" minOccurs="0"/>
+												<xs:element name="LED" type="xs:boolean"
+												minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="MeetRegulations"
+												type="xs:boolean" use="required"/>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="Weight" minOccurs="0">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProductWeight"
+												type="WeightType1" minOccurs="0"/>
+												<xs:element name="AccessoryWeight"
+												type="WeightType1" minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="MeetRegulations"
+												type="xs:boolean" use="required"/>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="Recycling" minOccurs="0">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="RecycledContentInProduct"
+												type="Percentage" minOccurs="0"/>
+												<xs:element name="Recyclability" type="Percentage"
+												minOccurs="0"/>
+												<xs:element name="SustainableWoodParts"
+												type="xs:string" minOccurs="0"/>
+												<xs:element name="Upgradability" type="xs:boolean"
+												minOccurs="0"/>
+												<xs:element name="InfoAndRecommend"
+												type="xs:string" minOccurs="0"/>
+												<xs:element name="WEEE" type="xs:string"
+												minOccurs="0"/>
+												<xs:element name="RecycledMaterials"
+												type="Percentage" minOccurs="0"/>
+												<xs:element name="RecycledNonFerroMetals"
+												type="Percentage" minOccurs="0"/>
+												<xs:element name="HousingRecycledPlastics"
+												type="Percentage" minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="MeetRegulations"
+												type="xs:boolean" use="required"/>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="Substances" id="FA_SUBSTANCES"
+												minOccurs="0">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="MercuryContent"
+												type="WeightType1" minOccurs="0"/>
+												<xs:element name="RoHSCompliance"
+												type="xs:boolean" minOccurs="0"/>
+												<xs:element name="REACHCompliance"
+												type="xs:boolean" minOccurs="0"/>
+												<xs:element name="PVCFree" minOccurs="0">
+												<xs:simpleType>
+												<xs:restriction base="xs:string">
+												<xs:enumeration value="Yes"/>
+												<xs:enumeration value="Yes, excluding powercord"/>
+												<xs:enumeration value="No"/>
+												</xs:restriction>
+												</xs:simpleType>
+												</xs:element>
+												<xs:element name="BFRFree" type="xs:boolean"
+												minOccurs="0"/>
+												<xs:element name="MercuryFree" type="xs:boolean"
+												minOccurs="0"/>
+												<xs:element name="CadmiumFree" type="xs:boolean"
+												minOccurs="0"/>
+												<xs:element name="LeadFree" type="xs:boolean"
+												minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="MeetRegulations"
+												type="xs:boolean" use="required"/>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="Packaging" id="FA_PACKAGING"
+												minOccurs="0">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Cardboard" type="WeightType1"
+												minOccurs="0"/>
+												<xs:element name="Plastics" type="WeightType1"
+												minOccurs="0"/>
+												<xs:element name="PercentageRecycledMaterials"
+												type="Percentage" minOccurs="0"/>
+												<xs:element name="RecycledContent"
+												type="Percentage" minOccurs="0"/>
+												<xs:element name="PackagingLogo" type="xs:string"
+												minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="MeetRegulations"
+												type="xs:boolean" use="required"/>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="Reliability" minOccurs="0">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Failure" type="Hours"
+												minOccurs="0"/>
+												<xs:element name="Lifetime" type="xs:string"
+												minOccurs="0"/>
+												<xs:element name="LCA" type="xs:string"
+												minOccurs="0"/>
+												<xs:element name="Reliability" type="xs:string"
+												minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="MeetRegulations"
+												type="xs:boolean" use="required"/>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="EcoFocalArea" minOccurs="0"
+												maxOccurs="unbounded">
+												<xs:annotation>
+												<xs:documentation>Contains the focal areas that indicate the sustainable footprint of generic attribute for the product </xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="FocalAreaName" type="xs:string"
+												minOccurs="0"/>
+												<xs:element name="MeetRegulations"
+												type="xs:boolean" minOccurs="0"/>
+												<xs:element name="FAAttributes" minOccurs="0"
+												maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element ref="FAAttribute" minOccurs="0"
+												maxOccurs="unbounded"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="GreenAwards">
+											<xs:annotation>
+												<xs:documentation>Awards that are related to the sustainable character of the product </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence maxOccurs="unbounded">
+												<xs:element name="PhilipsGreenLogo" minOccurs="0">
+												<xs:complexType>
+												<xs:attribute name="PhilipsGreenLogoProduct"
+												type="xs:boolean" use="required">
+												<xs:annotation>
+												<xs:documentation>Indicates if this product is an Green Product according to the Philips rules</xs:documentation>
+												</xs:annotation>
+												</xs:attribute>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="EnergyLabels" minOccurs="0">
+												<xs:annotation>
+												<xs:documentation>
+																Energy comsuption label according to the legal reqiurements EU Directive 1062/2010
+															</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:sequence maxOccurs="unbounded">
+												<xs:element name="ApplicableFor"
+												type="LocalizationType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="TheBlueAngel" minOccurs="0">
+												<xs:annotation>
+												<xs:documentation>
+																The Blue Angel is an eco-label award for products and companies
+															</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:sequence maxOccurs="unbounded">
+												<xs:element name="ApplicableFor"
+												type="LocalizationType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="EUEcoLabel" minOccurs="0">
+												<xs:annotation>
+												<xs:documentation>
+																The EU Ecolabel is an eco-label award for products and companies
+															</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:sequence maxOccurs="unbounded">
+												<xs:element name="ApplicableFor"
+												type="LocalizationType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="CommercialID" type="CommercialIDType" use="required">
+							<xs:annotation>
+								<xs:documentation>The commercial identification of an actual existing product.
+For ex-CE: CTN (f.i. 42PFL9900D/10).
+For ex-DAP: ProductID (f.i. HQ8150/16).</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="LogisticID" type="LogisticIDType" use="required">
+							<xs:annotation>
+								<xs:documentation>The logistic identification for an actual existing product. In Note: SAP this is the material number of the FERT.
+For ex-CE: CTN.
+For ex-DAP: 11NC+0 (without formatting spaces).</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="lastModified" type="xs:dateTime" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="DocTimeStamp" type="xs:dateTime" use="required"/>
+			<xs:attribute name="DocStatus" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="approved"/>
+						<xs:enumeration value="draft"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="LocalizationType">
+		<xs:sequence>
+			<xs:element name="Code" type="xs:string"/>
+			<xs:element name="Countrycode" type="xs:string"/>
+			<xs:element name="Value" type="xs:string"/>
+			<xs:element name="Description" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="Rank" type="xs:positiveInteger" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="CommercialIDType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LogisticIDType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FocalAreaType">
+		<xs:sequence>
+			<xs:element name="Code" type="xs:int"/>
+			<xs:element name="Description" type="xs:string"/>
+			<xs:element name="Value" type="xs:string"/>
+			<xs:element name="UnitOfMeasureName" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="MeetRegulations" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="positiveDecimal" id="positiveDecimal">
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
+	<xs:simpleType name="WeightType1">
+		<xs:annotation>
+			<xs:documentation>Unit = gr; with two decimals</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="positiveDecimal">
+			<xs:fractionDigits value="2" fixed="false"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WattageType1">
+		<xs:annotation>
+			<xs:documentation>Unit = W; with two decimals</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="positiveDecimal">
+			<xs:fractionDigits value="2" fixed="false"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="WattageType2">
+		<xs:annotation>
+			<xs:documentation>Supply either a value or a range</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="Value" type="WattageType1"/>
+			<xs:sequence>
+				<xs:element name="MinValue" type="WattageType1"/>
+				<xs:element name="MaxValue" type="WattageType1"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:simpleType name="WattageType3">
+		<xs:annotation>
+			<xs:documentation>Unit = Kwh/yr; with two decimals</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="positiveDecimal">
+			<xs:fractionDigits value="2" fixed="false"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Percentage">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Hours">
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+	<xs:element name="FAAttribute">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FAAttributeName" type="xs:string" minOccurs="0"/>
+				<xs:element name="FAAttributeValue" type="xs:string" minOccurs="0"/>
+				<!-- <xs:element name="UnitOfMeasurement" type="xs:string" minOccurs="0"/> -->
+				<xs:element name="FAAttributePosition" type="xs:string" minOccurs="0"/>
+				<xs:element name="UnitOfMeasure">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="UnitOfMeasureCode" type="xs:string" minOccurs="0"/>
+							<xs:element name="UnitOfMeasureName" type="xs:string" minOccurs="0"/>
+							<xs:element name="UnitOfMeasureSymbol" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="Range">
+		<xs:sequence>
+			<xs:element name="minValue" type="xs:string" minOccurs="0"/>
+			<xs:element name="maxValue" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

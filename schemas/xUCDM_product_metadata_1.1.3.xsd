@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (x64) (http://www.altova.com) by Philips (Philips) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  version="1.1.2"
+>
+  <xs:annotation>
+    <xs:documentation>
+      This schema defines the product metadata feed that contains basic product attributes.
+
+      History:
+      0.1
+      FS Initial draft.
+      0.2 FS Added ImageUrl element.
+      0.3 FS ProductType enum aligned with xUCDM product marketing
+      schema.
+      0.4 FS Correction: ProductType MCR is MCI.
+      0.5 KR Correction: Added digits to uppercaseString and
+      uppercasePath.
+      0.6 FS Added DocTimeStamp attribute on root element.
+      0.7 GW Added Price, DeleteAfterDate, Priority,
+      Lastmodified.
+      0.8 FS Changed Price, DeleteAfterDate, Priority, Lastmodified to use lowercase first character
+      (convention).
+      0.9 FS Added FilterKey value attribute.
+             Made some attributes mandatory.
+      1.0 FS Allow dash as part of the uppercaseString type.
+      1.1 CJ : Updated datatypes:
+	       - dtn type changed to string
+	       - priority type changed to decimal 
+	       - filterKeyType type changed to string
+	       - Added space in uppercasePath	    
+	       - price attribute priceType to string  
+	       - marketingVersion type to string	
+	       - division, ProductType to optional	
+      1.1.1 FS Added optional displayValue on FilterKey element.
+               Allow multiple Path elements in Categorization.
+      1.1.2 CJ Added Product type 'Accessory'.
+               brandCode is optional.
+               Changed uppercasePath to pathType which allows lowercase chars and special characters underscore, hyphen.
+      1.1.3 FS Added optional WOW element.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:element name="Products">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Product" type="productMainType" />
+      </xs:sequence>
+      <xs:attribute name="DocTimeStamp" type="xs:dateTime" />
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="productMainType">
+    <xs:sequence>
+      <xs:element name="ProductName" type="xs:string" />
+      <xs:element name="WOW" type="xs:string" minOccurs="0"/>
+      <xs:element name="SeoProductName" type="xs:string" minOccurs="0" />
+      <xs:element name="ImageUrl" type="xs:anyURI" />
+      <xs:element name="FilterGroups">
+        <xs:complexType>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="FilterGroup" type="filterGroupType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Catalogs">
+        <xs:complexType>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element name="Catalog" type="catalogType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Categorizations">
+        <xs:complexType>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Categorization" type="categorizationType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="ctn" type="ctnType" use="required" />
+    <xs:attribute name="dtn" type="xs:string" use="required" />
+    <xs:attribute name="gtin" type="gtinType" use="optional" />
+    <xs:attribute name="locale" type="localeType" use="required" />
+    <xs:attribute name="productType" type="productTypeType" use="optional" />
+    <xs:attribute name="brandCode" type="brandCodeType" use="optional" />
+    <xs:attribute name="division" type="divisionType" use="optional" />
+    <xs:attribute name="marketingVersion" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:simpleType name="ctnType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20" />
+      <xs:pattern value="[0-9A-Z][0-9A-Za-z\-\._/]+" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="gtinType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20" />
+      <xs:pattern value="[0-9]+" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="localeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(master_global|[a-z]{2}_[A-Z]{2})" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="brandCodeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="divisionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CLS" />
+      <xs:enumeration value="Lighting" />
+      <xs:enumeration value="HC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="productTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MCI" />
+      <xs:enumeration value="Key" />
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Accessory" />
+      <xs:enumeration value="CRP" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="marketingVersionType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+\.\d+\.\d+" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="uppercaseString">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="60" />
+      <xs:pattern value="[0-9A-Z_\-]+" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="filterGroupType">
+    <xs:sequence>
+      <xs:element name="FilterKeys">
+        <xs:complexType>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element name="FilterKey" type="filterKeyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="code" type="uppercaseString" />
+  </xs:complexType>
+  <xs:complexType name="filterKeyType">
+    <xs:attribute name="code" type="xs:string" use="required" />
+    <xs:attribute name="value" type="xs:string" use="optional" />
+    <xs:attribute name="displayValue" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="catalogType">
+    <xs:attribute name="code" type="uppercaseString" use="required" />
+    <xs:attribute name="sop" type="xs:date" use="required" />
+    <xs:attribute name="somp" type="xs:date" use="optional" />
+    <xs:attribute name="eop" type="xs:date" use="required" />
+    <xs:attribute name="isDeleted" type="xs:boolean" use="optional" />
+    <xs:attribute name="price" type="xs:string" use="optional" />
+    <xs:attribute name="lastModified" type="xs:dateTime" use="required" />
+    <xs:attribute name="deleteAfterDate" type="xs:date" use="optional" />
+    <xs:attribute name="priority" type="xs:decimal" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="pathType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(/[0-9A-Za-z_\- ]+){3,}" />
+    </xs:restriction>
+  </xs:simpleType>
+	<!-- Categorization path -->
+  <xs:complexType name="categorizationType">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="Path" type="pathType" />
+    </xs:sequence>
+    <xs:attribute name="code" type="uppercaseString" />
+  </xs:complexType>
+  <xs:simpleType name="PriceType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]+(\.[0-9]{1,2})?)?" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

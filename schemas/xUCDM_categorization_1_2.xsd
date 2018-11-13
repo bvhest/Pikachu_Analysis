@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by PH CONSUMER ELECTRONICS BV (PH CONSUMER ELECTRONICS BV) -->
+<!-- lastmodified 2009-11-06 -->
+<!-- version1.2.1: added locale and country pattern -->
+<!-- version1.2.2: RH 2009-12-13 updated locale and country pattern-->
+<!-- version1.2.3: FS 2010-08-09 Added country ME -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.2">
+	<xs:element name="Categorization">
+		<xs:annotation>
+			<xs:documentation>XML Unified Catalog Data Model - Categorization</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Catalog" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CatalogCode">
+								<xs:annotation>
+									<xs:documentation>Unique, Not changeable.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="50"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CatalogReferenceName" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Unique. May be changed.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CatalogName" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Display name</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CatalogType"/>
+							<xs:element name="FixedCategorization">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Group" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="GroupCode">
+														<xs:annotation>
+															<xs:documentation>Unique, Not changeable.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="32"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="GroupReferenceName">
+														<xs:annotation>
+															<xs:documentation>Unique. May be changed.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="40"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="GroupName">
+														<xs:annotation>
+															<xs:documentation>Display name</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="32"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="GroupRank" type="xs:integer"/>
+													<xs:element name="Category" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="CategoryCode">
+																	<xs:annotation>
+																		<xs:documentation>Unique, Not changeable.</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="32"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="CategoryReferenceName">
+																	<xs:annotation>
+																		<xs:documentation>Unique. May be changed.</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="40"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="CategoryName">
+																	<xs:annotation>
+																		<xs:documentation>Display name</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="32"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="CategoryRank" type="xs:integer"/>
+																<xs:element name="SubCategory" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="SubCategoryCode">
+																				<xs:annotation>
+																					<xs:documentation>Unique, Not changeable.</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="35"/>
+																						<!-- 2009-03-30 Michiel Klaren was 32-->
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="SubCategoryReferenceName">
+																				<xs:annotation>
+																					<xs:documentation>Unique. May be changed.</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="40"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="SubCategoryName">
+																				<xs:annotation>
+																					<xs:documentation>Display name</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="32"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="SubCategoryRank" type="xs:integer"/>
+																			<xs:element name="ATGCatalog" minOccurs="0" maxOccurs="unbounded">
+																				<xs:annotation>
+																					<xs:documentation>Indicates to which ATG catalogs this subcategory must be exported. Use this element to split out in separate trees.</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="Consumer"/>
+																						<xs:enumeration value="Professional"/>
+																						<xs:enumeration value="Norelco"/>
+																						<xs:enumeration value="Walita"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element ref="Product" minOccurs="0" maxOccurs="unbounded"/>
+																		</xs:sequence>
+																		<xs:attribute name="status" use="required">
+																			<xs:simpleType>
+																				<xs:restriction base="xs:string">
+																					<xs:enumeration value="Preliminary">
+																						<xs:annotation>
+																							<xs:documentation source="xUCDM 1.07">In preparation. Allowed to assign products. Not (yet) allowed to publish in outputs.</xs:documentation>
+																						</xs:annotation>
+																					</xs:enumeration>
+																					<xs:enumeration value="Active">
+																						<xs:annotation>
+																							<xs:documentation source="xUCDM v1.07">
+Allowed to assign products.
+Available to publish in outputs.</xs:documentation>
+																						</xs:annotation>
+																					</xs:enumeration>
+																					<xs:enumeration value="PhasedOut">
+																						<xs:annotation>
+																							<xs:documentation source="xUCDM v1.07">
+No longer allowed to assign products. Available to publish in outputs.
+
+Typical usage: subcategories that are no longer marketed but are available for consumer support.</xs:documentation>
+																						</xs:annotation>
+																					</xs:enumeration>
+																					<xs:enumeration value="Deleted">
+																						<xs:annotation>
+																							<xs:documentation source="xUCDM v1.07">Not allowed to assign products. Not allowed  to publish in outputs. This (part of) categorization is not to be displayed in internal systems or published in outputs. </xs:documentation>
+																						</xs:annotation>
+																					</xs:enumeration>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:attribute>
+																		<xs:attribute name="usedByCE" type="xs:byte" use="optional">
+																			<xs:annotation>
+																				<xs:documentation>Not used anymore</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="usedByDAP" type="xs:byte" use="optional">
+																			<xs:annotation>
+																				<xs:documentation>Not used anymore</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="lastModified" type="xs:dateTime" use="optional"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="lastModified" type="xs:dateTime" use="optional"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="lastModified" type="xs:dateTime" use="optional"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+								<xs:unique name="GroupCode">
+									<xs:selector xpath="Group"/>
+									<xs:field xpath="GroupCode"/>
+								</xs:unique>
+								<xs:unique name="GroupReferenceName">
+									<xs:selector xpath="Group"/>
+									<xs:field xpath="GroupReferenceName"/>
+								</xs:unique>
+								<xs:unique name="CategoryCode">
+									<xs:selector xpath="Group/Category"/>
+									<xs:field xpath="CategoryCode"/>
+								</xs:unique>
+								<xs:unique name="CategoryReferenceName">
+									<xs:selector xpath="Group/Category"/>
+									<xs:field xpath="CategoryReferenceName"/>
+								</xs:unique>
+								<xs:unique name="SubCategoryCode">
+									<xs:selector xpath="Group/Category/SubCategory"/>
+									<xs:field xpath="SubCategoryCode"/>
+								</xs:unique>
+								<xs:unique name="SubCategoryReferenceName">
+									<xs:selector xpath="Group/Category/SubCategory"/>
+									<xs:field xpath="SubCategoryReferenceName"/>
+								</xs:unique>
+							</xs:element>
+							<xs:element name="ExtendedCategorization" type="CategorizationLevelType" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="Language" use="required">
+							<xs:annotation>
+								<xs:documentation>2-character ISO 639-1 language code</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="([a-z]{2})|master"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="IsMaster" type="xs:boolean" use="required"/>
+						<xs:attribute name="Country">
+							<xs:annotation>
+								<xs:documentation>2-character ISO 3166-1-alpha-2 country code</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="GLOBAL"/>
+									<xs:enumeration value="AA"/>
+									<xs:enumeration value="AE"/>
+									<xs:enumeration value="AQ"/>
+									<xs:enumeration value="AR"/>
+									<xs:enumeration value="AT"/>
+									<xs:enumeration value="AU"/>
+									<xs:enumeration value="BE"/>
+									<xs:enumeration value="BG"/>
+									<xs:enumeration value="BR"/>
+									<xs:enumeration value="CA"/>
+									<xs:enumeration value="CH"/>
+									<xs:enumeration value="CL"/>
+									<xs:enumeration value="CN"/>
+									<xs:enumeration value="CO"/>
+									<xs:enumeration value="CZ"/>
+									<xs:enumeration value="DE"/>
+									<xs:enumeration value="DK"/>
+									<xs:enumeration value="EE"/>
+									<xs:enumeration value="ES"/>
+									<xs:enumeration value="FI"/>
+									<xs:enumeration value="FR"/>
+									<xs:enumeration value="GB"/>
+									<xs:enumeration value="GR"/>
+									<xs:enumeration value="HK"/>
+									<xs:enumeration value="HM"/>
+									<xs:enumeration value="HR"/>
+									<xs:enumeration value="HU"/>
+									<xs:enumeration value="ID"/>
+									<xs:enumeration value="IE"/>
+									<xs:enumeration value="IN"/>
+									<xs:enumeration value="IR"/>
+									<xs:enumeration value="IT"/>
+									<xs:enumeration value="JP"/>
+									<xs:enumeration value="KR"/>
+									<xs:enumeration value="LT"/>
+									<xs:enumeration value="LV"/>
+									<xs:enumeration value="MX"/>
+									<xs:enumeration value="MY"/>
+									<xs:enumeration value="ME"/>
+									<xs:enumeration value="NL"/>
+									<xs:enumeration value="NO"/>
+									<xs:enumeration value="NZ"/>
+									<xs:enumeration value="PA"/>
+									<xs:enumeration value="PE"/>
+									<xs:enumeration value="PH"/>
+									<xs:enumeration value="PK"/>
+									<xs:enumeration value="PL"/>
+									<xs:enumeration value="PT"/>
+									<xs:enumeration value="RO"/>
+									<xs:enumeration value="RU"/>
+									<xs:enumeration value="SA"/>
+									<xs:enumeration value="SE"/>
+									<xs:enumeration value="SG"/>
+									<xs:enumeration value="SK"/>
+									<xs:enumeration value="SI"/>
+									<xs:enumeration value="SN"/>
+									<xs:enumeration value="TH"/>
+									<xs:enumeration value="TR"/>
+									<xs:enumeration value="TW"/>
+									<xs:enumeration value="UA"/>
+									<xs:enumeration value="US"/>
+									<xs:enumeration value="UY"/>
+									<xs:enumeration value="VA"/>
+									<xs:enumeration value="VE"/>
+									<xs:enumeration value="VN"/>
+									<xs:enumeration value="YU"/>
+									<xs:enumeration value="ZA"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="DocTimeStamp" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Product">
+		<xs:annotation>
+			<xs:documentation>Reference to an existing product (prod.id)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:complexType name="BusinessUnitType">
+		<xs:sequence>
+			<xs:element name="BusinessUnitCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BusinessUnitName" type="xs:string"/>
+			<xs:element name="MainArticleGroup" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Main Article Group</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MainArticleGroupCode">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="3"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="MainArticleGroupName" type="xs:string"/>
+						<xs:element name="ArticleGroup" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ArticleGroupCode">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="4"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="ArticleGroupName" type="xs:string"/>
+									<xs:element name="BasicType" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="BasicTypeCode"/>
+												<xs:element name="BasicTypeName"/>
+												<xs:element ref="Product" minOccurs="0" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CategorizationLevelType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="Node">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ChildProducts" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="Product" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ChildCategories" minOccurs="0">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="CategorizationLevelType"/>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="Code" use="required"/>
+					<xs:attribute name="Name" type="xs:string"/>
+					<xs:attribute name="Rank" type="xs:nonNegativeInteger"/>
+					<xs:attribute name="Level" type="xs:nonNegativeInteger"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

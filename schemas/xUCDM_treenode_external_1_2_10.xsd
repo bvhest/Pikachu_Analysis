@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by Roger Paulssen (PH CONSUMER ELECTRONICS BV) -->
+<!-- lastmodified 2008-02-26 by Michiel Klaren -->
+<!--
+	1.2.8  2011-08-01 FS  
+          - Added Discriminators as Filter Purpose type
+          - Deprecated SellingUpFeature and ConsumerSegment
+          - Removed ProductReference and ProductReferences.
+          - Added new form for ProductRefs/ProductReference
+	1.2.9  2012-01-02 FS  Node/@code now has max length of 40 instead of 30
+	1.2.10 2013-01-07 FS
+		- Change node type 'perfectMatch' to 'perfectmatch'
+		- Changed CTNType to accept dots.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  version="1.2.10">
+  <xs:element name="Nodes">
+    <xs:annotation>
+      <xs:documentation>XML Unified Catalog Data Model - Node Marketing Schema for Preliminary or Final published
+        marketing content.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Node" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Node that is marketed.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MarketingVersion" type="xs:string" minOccurs="0" />
+              <xs:element name="MarketingStatus">
+                <xs:annotation>
+                  <xs:documentation>Marketing status of the Node.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="New" />
+                    <xs:enumeration value="Preliminary Published" />
+                    <xs:enumeration value="Final Published" />
+                    <xs:enumeration value="Deleted" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LifecycleStatus" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Status of the node as content (shown to customers)</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Planned" />
+                    <xs:enumeration value="Active" />
+                    <xs:enumeration value="PhasedOut" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Owner" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>The organisational owner of the node, actually displayed on the leaflet
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Assets">
+                <xs:annotation>
+                  <xs:documentation>This block can be used to add asset referrals to a standard product marketing XML.
+                    The metadata is limited to the bare necessities. The most logical addition would be a version and a
+                    date. If more is needed, please think about the alternatives, add the meta data in the referred
+                    document or create a seperate document based on the asset list. The code can be used to store the
+                    product/feature/etc code. It is preferred to replace a / or '-' by a '_'. The type can be used to
+                    store the CCR doctype. The locale can be used to store a language or a locale, if the document is
+                    not localized. it should be set to 'global'. A number can be used to store one or more from the same
+                    doctype. The extension can be used to store the file extension</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="Asset">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:anyURI">
+                            <xs:attribute name="code" use="required" />
+                            <xs:attribute name="type" use="required" />
+                            <xs:attribute name="locale" use="required" />
+                            <xs:attribute name="number" />
+                            <xs:attribute name="description" type="xs:string" use="required" />
+                            <xs:attribute name="extension" use="optional" />
+                            <xs:attribute name="lastModified" type="xs:date" use="required" />
+                            <xs:attribute name="extent" type="xs:string" />
+                            <xs:attribute name="caption" type="xs:string" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Name" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Name that can be used for display to customers/consumers</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:minLength value="0" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WOW" type="xs:string" minOccurs="0" />
+              <xs:element name="SubWOW" type="xs:string" minOccurs="0" />
+              <xs:element name="MarketingTextHeader" type="xs:string" minOccurs="0" />
+              <xs:element name="KeyBenefitArea" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>The KBA and Features of the Node</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="KeyBenefitAreaCode">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="30" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="KeyBenefitAreaName" type="xs:string" />
+                    <xs:element name="KeyBenefitAreaRank" type="xs:integer" />
+                    <xs:element name="Feature" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FeatureCode" type="FeatureCodeType" />
+                          <xs:element name="FeatureReferenceName" type="ReferenceNameType" />
+                          <xs:element name="FeatureName" type="xs:string">
+                            <xs:annotation>
+                              <xs:documentation>Displayname of feature</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="FeatureShortDescription" type="xs:string" minOccurs="0" />
+                          <xs:element name="FeatureLongDescription" type="xs:string" minOccurs="0" />
+                          <xs:element name="FeatureGlossary" type="xs:string" minOccurs="0" />
+                          <xs:element name="FeatureWhy" type="xs:string" minOccurs="0" />
+                          <xs:element name="FeatureWhat" type="xs:string" minOccurs="0" />
+                          <xs:element name="FeatureHow" type="xs:string" minOccurs="0" />
+                          <xs:element name="FeatureRank" type="xs:integer">
+                            <xs:annotation>
+                              <xs:documentation>The rank of the feature within the KBA</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="FeatureTopRank">
+                            <xs:annotation>
+                              <xs:documentation>The rank of the feature within the node</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CSChapter" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>The specifications (name - value and optional UoM) of the CTN.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CSChapterCode" type="codeType" />
+                    <xs:element name="CSChapterName" type="xs:string" />
+                    <xs:element name="CSChapterRank" type="xs:integer" />
+                    <xs:element name="CSItem" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="CSItemCode" type="codeType" />
+                          <xs:element name="CSItemName" type="xs:string" />
+                          <xs:element name="CSItemRank" type="xs:integer" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="SystemLogo" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>System (industry standard) logos are used to identify a specific technology/standard
+                    (e.g. USB, DVD Video).</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SystemLogoCode">
+                      <xs:simpleType>
+                        <xs:restriction base="identifierType">
+                          <xs:maxLength value="30" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="SystemLogoName" type="xs:string" />
+                    <xs:element name="SystemLogoRank" type="xs:integer" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Filters">
+                <xs:annotation>
+                  <xs:documentation>Can be used to filter the set of Features and CSItems.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="Purpose">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Features">
+                            <xs:complexType>
+                              <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                <xs:element name="Feature">
+                                  <xs:complexType>
+                                    <xs:attribute name="code" type="FeatureCodeType" use="required" />
+                                    <xs:attribute name="referenceName" type="ReferenceNameType">
+                                      <xs:annotation>
+                                        <xs:documentation>ReferenceName is for human reference only.</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="rank" type="xs:integer">
+                                      <xs:annotation>
+                                        <xs:documentation>The rank of this feature for this purpose. If ommitted, the
+                                          FeatureTopRank is to be used as default.</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:attribute>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="CSItems">
+                            <xs:complexType>
+                              <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                <xs:element name="CSItem">
+                                  <xs:complexType>
+                                    <xs:attribute name="code" type="codeType" use="required">
+                                      <xs:annotation>
+                                        <xs:documentation>Add constraints for existing in AllCommSpecs
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="referenceName" type="ReferenceNameType">
+                                      <xs:annotation>
+                                        <xs:documentation>ReferenceName is for human reference only. Fill with
+                                          Chapter.Name - Item.Name</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="rank" type="xs:integer">
+                                      <xs:annotation>
+                                        <xs:documentation>The rank of this CSItem for this purpose. If ommitted, the
+                                          rank in CSChapter/CSItem is to be used as default.
+                                          NOTE 2008-02-25: HOW IS THIS TO WORK IN COMBINATION WITH THE GROUPING IN CHAPTERS!??</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:attribute>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="type" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="codeType">
+                              <xs:enumeration value="Base" />
+                              <xs:enumeration value="Differentiating" />
+                              <xs:enumeration value="Discriminators" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Award" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>Award for the node or assigned products.
+                    Also supporting What The Press Says.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AwardCode">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="20" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="AwardName" type="xs:string" minOccurs="0" />
+                    <xs:element name="AwardDate" type="xs:string" minOccurs="0" />
+                    <xs:element name="AwardPlace" minOccurs="0" />
+                    <xs:element name="Title" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Magazine that published the award</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="Issue" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Issue of magazine where the award was published.</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="Rating" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Rating given with the award.</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="Trend" type="xs:integer" minOccurs="0" />
+                    <xs:element name="AwardAuthor" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="50" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TestPros" type="xs:string" minOccurs="0" />
+                    <xs:element name="TestCons" type="xs:string" minOccurs="0" />
+                    <xs:element name="AwardDescription" />
+                    <xs:element name="AwardAcknowledgement" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Quote</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="AwardVerdict" type="xs:string" minOccurs="0" />
+                    <xs:element name="AwardText" type="xs:string" minOccurs="0" />
+                    <xs:element name="Locales" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Locales where this Award is relevant</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence maxOccurs="unbounded">
+                          <xs:element name="Locale" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="AwardRank" type="xs:integer" />
+                    <xs:element name="AwardSourceCode" type="xs:string" minOccurs="0" />
+                    <xs:element name="AwardVideo" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Length" type="xs:decimal" />
+                          <xs:element name="Width" type="xs:decimal" />
+                          <xs:element name="Height" type="xs:decimal" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="AwardCategory" type="xs:string" minOccurs="0" />
+                    <xs:element name="AwardSourceLocale" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                  <xs:attribute name="AwardType" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="local" />
+                        <xs:enumeration value="global" />
+                        <xs:enumeration value="global_highlight" />
+                        <xs:enumeration value="ala_summary" />
+                        <xs:enumeration value="ala_award" />
+                        <xs:enumeration value="ala_expert" />
+                        <xs:enumeration value="ala_user" />
+                        <xs:enumeration value="ala_video" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="status">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="Draft" />
+                        <xs:enumeration value="Preliminary Published" />
+                        <xs:enumeration value="Final Published" />
+                        <xs:enumeration value="Deleted" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="endOfPublication" type="xs:date" />
+                  <xs:attribute name="isPaid" type="xs:boolean" />
+                  <xs:attribute name="awardAlid" type="xs:string" />
+                  <xs:attribute name="globalSource" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ProductRefs">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="ProductReference">
+                      <xs:annotation>
+                        <xs:documentation>Related products, e.g. related accessories - optimized format.
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:choice>
+                          <xs:sequence maxOccurs="unbounded">
+                            <xs:element name="CTN">
+                              <xs:complexType>
+                                <xs:simpleContent>
+                                  <xs:extension base="CTNType">
+                                    <xs:attribute name="rank" type="xs:integer" />
+                                    <xs:attribute name="group" type="xs:string">
+                                      <xs:annotation>
+                                        <xs:documentation>Grouping of CTN's</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="groupRank" type="xs:integer" />
+                                  </xs:extension>
+                                </xs:simpleContent>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                          <xs:sequence maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation>
+                                New form to accomodate requirements to send variation information.
+                                Variations are created in PFS and have Commercial spec items linked to them that
+                                form the discrimiating specs.
+                                For each product in the variation this form holds the values of the discriminating
+                                specs.
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:element name="Product">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="CSItem" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                      <xs:sequence>
+                                        <xs:element name="CSValue" minOccurs="0">
+                                          <xs:complexType>
+                                            <xs:sequence>
+                                              <xs:element name="CSValueCode" type="identifierType" />
+                                              <xs:element name="CSValueName" type="xs:string" />
+                                              <xs:element name="CSValueDisplayName" type="xs:string" />
+                                            </xs:sequence>
+                                          </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="UnitOfMeasure" minOccurs="0">
+                                          <xs:complexType>
+                                            <xs:sequence>
+                                              <xs:element name="UnitOfMeasureCode">
+                                                <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="30"/>
+                                                  </xs:restriction>
+                                                </xs:simpleType>
+                                              </xs:element>
+                                              <xs:element name="UnitOfMeasureName">
+                                                <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="30" />
+                                                  </xs:restriction>
+                                                </xs:simpleType>
+                                              </xs:element>
+                                              <xs:element name="UnitOfMeasureSymbol">
+                                                <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="10" />
+                                                  </xs:restriction>
+                                                </xs:simpleType>
+                                              </xs:element>
+                                            </xs:sequence>
+                                          </xs:complexType>
+                                        </xs:element>
+                                      </xs:sequence>
+                                      <xs:attribute name="code" type="identifierType" />
+                                    </xs:complexType>
+                                  </xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="ctn" type="CTNType" />
+                                <xs:attribute name="rank" type="xs:positiveInteger" />
+                                <xs:attribute name="group" type="xs:string">
+                                  <xs:annotation>
+                                    <xs:documentation>Grouping of CTN's</xs:documentation>
+                                  </xs:annotation>
+                                </xs:attribute>
+                                <xs:attribute name="groupRank" type="xs:integer"/>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:choice>
+                        <xs:attribute name="ProductReferenceType" type="ProductReferenceType" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="RichTexts">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="RichText">
+                      <xs:complexType>
+                        <xs:sequence maxOccurs="unbounded">
+                          <xs:element name="Chapter" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Name" />
+                              </xs:sequence>
+                              <xs:attribute name="code" type="codeType" use="required" />
+                              <xs:attribute name="referenceName" type="ReferenceNameType" use="required" />
+                              <xs:attribute name="rank" type="xs:nonNegativeInteger" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Item" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation>Asset is to be retrieved from CCR using the Asset@code.
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Head" type="xs:string" minOccurs="0" />
+                                <xs:element name="Body" type="TextWithMarkupType" minOccurs="0" />
+                                <xs:element name="BulletList" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence maxOccurs="unbounded">
+                                      <xs:element name="BulletItem">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Text" type="TextWithMarkupType" />
+                                            <xs:element name="SubList" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence maxOccurs="unbounded">
+                                                  <xs:element name="SubItem">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="Text" type="TextWithMarkupType" />
+                                                      </xs:sequence>
+                                                      <xs:attribute name="rank" type="xs:nonNegativeInteger"
+                                                        use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="rank" type="xs:nonNegativeInteger" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="code" type="codeType">
+                                <xs:annotation>
+                                  <xs:documentation>Asset for this item is to be retrieved from CCR using the
+                                    RTB@code@docType</xs:documentation>
+                                </xs:annotation>
+                              </xs:attribute>
+                              <xs:attribute name="referenceName" type="ReferenceNameType">
+                                <xs:annotation>
+                                  <xs:documentation>Name to be displayed in CCR</xs:documentation>
+                                </xs:annotation>
+                              </xs:attribute>
+                              <xs:attribute name="rank" type="xs:nonNegativeInteger" use="required" />
+                              <xs:attribute name="docType" type="xs:string">
+                                <xs:annotation>
+                                  <xs:documentation>The docType to which this AssetCaption belongs. Note: only possible
+                                    for node keyed images. Support for additional objects requires ObjType and ObjKey.
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="type" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="LearnMore" />
+                              <xs:enumeration value="Q&amp;A" />
+                              <xs:enumeration value="Testimonial" />
+                              <xs:enumeration value="ProofPoint" />
+                              <xs:enumeration value="ProductDescription" />
+                              <xs:enumeration value="CCS" />
+                              <xs:enumeration value="CCT" />
+                              <xs:enumeration value="COG" />
+                              <xs:enumeration value="GSC" />
+                              <xs:enumeration value="GSE" />
+                              <xs:enumeration value="GSM" />
+                              <xs:enumeration value="HFQ" />
+                              <xs:enumeration value="QAC" />
+                              <xs:enumeration value="QAD" />
+                              <xs:enumeration value="RSN" />
+                              <xs:enumeration value="TNT" />
+                              <xs:enumeration value="TUT" />
+                              <xs:enumeration value="SCC" />
+                              <xs:enumeration value="SCE" />
+                              <xs:enumeration value="SCO" />
+                              <xs:enumeration value="SDA" />
+                              <xs:enumeration value="SUC" />
+                              <xs:enumeration value="SUE" />
+                              <xs:enumeration value="SUM" />
+                              <xs:enumeration value="MarketingDownload" />
+                              <xs:enumeration value="Gifting" />
+                              <xs:enumeration value="AssetCaption" />
+                              <xs:enumeration value="TextTable" />
+                              <xs:enumeration value="FeatureText" />
+                              <xs:enumeration value="ApplicationText" />
+                              <xs:enumeration value="DimensionDiagramTable" />
+                              <xs:enumeration value="PhotometricProduct" />
+                              <xs:enumeration value="LegalTextEU" />
+                              <xs:enumeration value="WarningText" />
+                              <xs:enumeration value="BackgroundInfo" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="IsMaster" type="xs:boolean" use="required" />
+            <xs:attribute name="lastModified" type="xs:dateTime" use="optional" />
+            <xs:attribute name="masterLastModified" type="xs:dateTime" use="optional">
+              <xs:annotation>
+                <xs:documentation>Last modification timestamp in source application</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Country" use="optional">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="2" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Locale" use="optional">
+              <xs:annotation>
+                <xs:documentation>Locale (2-char or 5-char). For example en or en_US</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="5" />
+                  <xs:minLength value="2" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="isLocalized" type="xs:boolean" use="optional">
+              <xs:annotation>
+                <xs:documentation>Flag that indicates local source content that deviates from master source content
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="code" type="clusterCodeType" use="required" />
+            <xs:attribute name="referenceName" type="ReferenceNameType" />
+            <xs:attribute name="nodeType" type="NodeTypeType" />
+            <xs:attribute name="routingCode" type="xs:string" />
+            <xs:attribute name="displayProductImage">
+              <xs:annotation>
+                <xs:documentation>Indicates whether the product image should be displayed on a variation detail.
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="0" />
+                  <xs:maxExclusive value="2" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="DocTimeStamp" type="xs:dateTime" use="required" />
+      <xs:attribute name="DocStatus" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="draft" />
+            <xs:enumeration value="approved" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="DocType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="RMT" />
+            <xs:enumeration value="FMT" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="DocVersion" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The filename of the XSD schma, e.g. xUCDM_treenode_external_1_2.xsd</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="CTNType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9A-Z][0-9A-Z_\-/.]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="identifierType">
+    <xs:restriction base="codeType">
+      <xs:pattern value="[0-9A-Z_\-/]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ReferenceNameType">
+    <xs:annotation>
+      <xs:documentation>Unique identification of object for human reference in internal systems. NOT TO BE DISPLAYED TO
+        CONSUMERS. ReferenceName can be changed.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="60" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FeatureCodeType">
+    <xs:annotation>
+      <xs:documentation>Unique identification of the feature for system reference. Cannot be changed over the lifecycle
+        of the feature.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="codeType" />
+  </xs:simpleType>
+  <xs:simpleType name="clusterCodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="40"/>
+      <xs:pattern value="[0-9A-Z_\-/]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="codeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ProductReferenceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Accessory" />
+      <xs:enumeration value="Performer" />
+      <xs:enumeration value="Variation" />
+      <xs:enumeration value="CrossSell" />
+      <xs:enumeration value="Chassis" />
+      <xs:enumeration value="ChassisOf" />
+      <xs:enumeration value="RefurbishedOf" />
+      <xs:enumeration value="Contains" />
+      <xs:enumeration value="assigned" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NodeTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="range" />
+      <xs:enumeration value="variation" />
+      <xs:enumeration value="perfectmatch" />
+      <xs:enumeration value="family" />
+      <xs:enumeration value="concept" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TextWithMarkupType" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="SUB" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="SUP" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+    </xs:choice>
+  </xs:complexType>
+</xs:schema>

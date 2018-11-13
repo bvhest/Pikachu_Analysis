@@ -39,6 +39,18 @@ activeChannels.df <-
   # and convert to lowercase
   dplyr::rename(channel = Channel)
 
+inActiveChannels.df <-
+  channels.r %>%
+  # remove rubish-row
+  dplyr::filter(Channel != "Pikachu B2C") %>% 
+  # remove active channels
+  dplyr::filter(!is.na(Enabled)) %>%
+# remove columns that are not relevant for filtering on active channels 
+  # (in other code)
+  dplyr::select(Channel) %>%
+  # and convert to lowercase
+  dplyr::rename(channel = Channel)
+
 ###############################################################################
 # export processed data (in csv-format suitable for spreadsheet)
 ###############################################################################
@@ -90,7 +102,7 @@ channels.params.wide.df <-
   tidyr::spread(key = parameter,
                 value = value)
 
-# note: the same paramters ae present in both lower- and title-case !!
+# note: the same parameters ae present in both lower- and title-case !!
 
 ###############################################################################
 # export processed data (in csv-format suitable for spreadsheet)
