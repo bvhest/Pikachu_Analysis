@@ -1,0 +1,199 @@
+<xs:schema 
+  attributeFormDefault="unqualified" 
+  elementFormDefault="qualified" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- 
+  Version History
+  ===============
+  version 1.0.0: BHE 2018-11-15 
+     - reverse engineered from the Pikachu SPAF product export.
+-->
+
+  <xs:element name="Feed" type="FeedType"/>
+
+  <xs:complexType name="FeedType">
+    <xs:sequence>
+      <xs:element type="ProductType" name="Product"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="market"/>
+    <xs:attribute type="xs:string" name="language"/>
+  </xs:complexType>
+  
+  <xs:complexType name="ProductType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="PartNumber"/>
+      <xs:element type="xs:string" name="ProductDescription"/>
+      <xs:element type="xs:long" name="UpcEan"/>
+      <xs:element type="xs:date" name="LaunchDate"/>
+      <xs:element type="xs:string" name="EndOfLifeDate"/>
+      <xs:element type="xs:string" name="MarketingText"/>
+      <xs:element type="KeySellingPointsType" name="KeySellingPoints"/>
+      <xs:element type="WhatIsInTheBoxType" name="WhatIsInTheBox"/>
+      <xs:element type="CategorizationType" name="Categorization"/>
+      <xs:element type="ProductFeaturesType" name="ProductFeatures"/>
+      <xs:element type="VisualFeaturesType" name="VisualFeatures"/>
+      <xs:element type="FootnotesType" name="Footnotes"/>
+      <xs:element type="LegalCopyType" name="LegalCopy"/>
+      <xs:element type="HeroImageType" name="HeroImage"/>
+      <xs:element type="ImagesType" name="Images"/>
+      <xs:element type="ManufacturerLogoType" name="ManufacturerLogo"/>
+      <xs:element type="xs:string" name="Videos"/>
+      <xs:element type="PdfProductDataSheetType" name="PdfProductDataSheet" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="PdfUserManualType" name="PdfUserManual"/>
+      <xs:element type="xs:string" name="PdfMsds"/>
+      <xs:element type="xs:string" name="WarrantyCard"/>
+      <xs:element type="ProductUrlType" name="ProductUrl"/>
+      <xs:element type="AccessoriesPartNumbersType" name="AccessoriesPartNumbers"/>
+      <xs:element type="xs:string" name="MainProductsPartNumbers"/>
+      <xs:element type="xs:string" name="MainProductsModels"/>
+      <xs:element type="AttributeGroupType" name="AttributeGroup" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="KeySellingPointsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Item" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="WhatIsInTheBoxType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Item" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CategorizationType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="GroupCode"/>
+      <xs:element type="xs:string" name="GroupName"/>
+      <xs:element type="xs:string" name="CategoryCode"/>
+      <xs:element type="xs:string" name="CategoryName"/>
+      <xs:element type="xs:string" name="SubcategoryCode"/>
+      <xs:element type="xs:string" name="SubcategoryName"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type"/>
+  </xs:complexType>
+
+  <xs:complexType name="AssetType">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI">
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="MediaType">
+    <xs:sequence>
+      <xs:element type="AssetType" name="Asset"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ItemType">
+    <xs:sequence>
+      <xs:element type="MediaType" name="Media" minOccurs="0"/>
+      <xs:element type="xs:string" name="Orientation" minOccurs="0"/>
+      <xs:element type="xs:string" name="Name" minOccurs="0"/>
+      <xs:element type="xs:string" name="Code" minOccurs="0"/>
+      <xs:element type="xs:string" name="Header" minOccurs="0"/>
+      <xs:element type="xs:byte" name="Id" minOccurs="0"/>
+      <xs:element type="xs:string" name="Text" minOccurs="0"/>
+      <xs:element type="AssetType" name="Asset" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProductFeaturesType">
+    <xs:sequence>
+      <xs:element type="ItemType" name="Item" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GroupType">
+    <xs:sequence>
+      <xs:element type="ItemType" name="Item"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VisualFeaturesType">
+    <xs:sequence>
+      <xs:element type="GroupType" name="Group"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FootnotesType">
+    <xs:sequence>
+      <xs:element type="ItemType" name="Item" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LegalCopyType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Item" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="HeroImageType">
+    <xs:sequence>
+      <xs:element type="AssetType" name="Asset"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ImageType">
+    <xs:sequence>
+      <xs:element type="AssetType" name="Asset"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ImagesType">
+    <xs:sequence>
+      <xs:element type="ImageType" name="Image" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ManufacturerLogoType">
+    <xs:sequence>
+      <xs:element type="AssetType" name="Asset"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PdfProductDataSheetType">
+    <xs:sequence>
+      <xs:element type="AssetType" name="Asset"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PdfUserManualType">
+    <xs:sequence>
+      <xs:element type="AssetType" name="Asset"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProductUrlType">
+    <xs:sequence>
+      <xs:element type="AssetType" name="Asset"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AccessoriesPartNumbersType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="PartNumber"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AttributeType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="xs:string" name="Code"/>
+      <xs:element type="xs:string" name="Value"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AttributeGroupType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="xs:string" name="Code"/>
+      <xs:element type="AttributeType" name="Attribute" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  </xs:schema>

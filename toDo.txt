@@ -1,0 +1,16 @@
+TODO
+==== 
+ - delta uit channels tabel toevoegen aan Channels -tab in spreadsheet
+ - Rendering export ?
+ - 2e tab: catalog uit channel catalogs ipv parameters
+ 
+ - product selectie:
+   gebruik van brand, division, product type, customisation per kanaal?
+ 
+
+DONE
+==== 
+ - SPAF - reverse engineer schema
+ - ProductDescription - reverse engineer schema
+ 
+ 

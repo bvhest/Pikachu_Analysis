@@ -1,0 +1,30 @@
+<xs:schema 
+  attributeFormDefault="unqualified" 
+  elementFormDefault="qualified" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+
+<!-- 
+  Version History
+  ===============
+  version 1.0.0: BHE 2018-11-15 
+     - reverse engineered from the Pikachu ProductDescription product export.
+-->
+  
+  <xs:element name="root" type="rootType"/>
+  
+  <xs:complexType name="rootType">
+    <xs:sequence>
+      <xs:element type="ProductType" name="Product"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProductType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="CTN"/>
+      <xs:element type="xs:string" name="ProductName"/>
+      <xs:element type="xs:string" name="FullProductName"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

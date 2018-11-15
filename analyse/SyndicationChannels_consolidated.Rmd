@@ -18,6 +18,16 @@ output:
 ##  prettydoc::html_pretty:
 ##    theme: tactile
 ##    highlight: github
+##
+## TODO:
+## - delta uit channels tabel toevoegen aan Channels -tab in spreadsheet
+## - Rendering export ?
+## - 2e tab: catalog uit channel catalogs ipv parameters
+## 
+## - SPAF - reverse engineer schema
+## 
+## - product selectie:
+##   gebruik van brand, division, product type, customisation per kanaal?
 ---
 
 ## Introduction
@@ -82,7 +92,11 @@ This report starts out with the conclusions and recommendations, followed by the
 
 ### xUCDM validity
 
-See spreadsheet "SyndicationChannels_consolidated.xlsx" tab "PCHU Channel validity".
+See spreadsheet "SyndicationChannels_consolidated.xlsx" tab ["PCHU Channel validity"](SyndicationChannels_consolidated.xlsx#'PCHU Channel validity'!A18).
+
+<!-- 
+Note: creating a link (from Markdown) to a tab in an Excel spreadsheet is described at https://stackoverflow.com/questions/5807556/excel-hyperlink-to-different-workbook-and-specific-worksheet
+-->
 
 *Valid* channel content:
 
@@ -142,7 +156,7 @@ Note:
 
 ### Channel parameters
 
-See spreadsheet "SyndicationChannels_consolidated.xlsx" tab "PCHU Channel Parameters".
+See spreadsheet "SyndicationChannels_consolidated.xlsx" tab "[PCHU Channel Parameters](SyndicationChannels_consolidated.xlsx#'Channel_Parameters'!A1)".
 
 Observations:
 
@@ -157,7 +171,7 @@ Observations:
 
 ### Channel locale-configuration
 
-See spreadsheet "SyndicationChannels_consolidated.xlsx" tab "PCHU Channel Locales".
+See spreadsheet "SyndicationChannels_consolidated.xlsx" tab ["PCHU Channel Locales"](SyndicationChannels_consolidated.xlsx#'PCHU_Channel_Locales'!A1).
 
 Observations:
 
@@ -169,7 +183,7 @@ Observations:
 
 ### Channel asset-configuration
 
-See spreadsheet "SyndicationChannels_consolidated.xlsx" tab "Assets".
+See spreadsheet "SyndicationChannels_consolidated.xlsx" tab ["Assets"](SyndicationChannels_consolidated.xlsx#'Assets'!A1).
 
 Observations:
 
@@ -228,14 +242,14 @@ The channel content is divided into the following categories:
     d. SPAF (custom),
     e. VmaHK (custom).
 
-The channels with a custom-mapping are described in detail on the tab "Product content" in the spreadsheet "SyndicationChannels_consolidated.xlsx".
+The channels with a custom-mapping are described in detail on the tab ["Product content"](SyndicationChannels_consolidated.xlsx#'Product_content'!A1) in the spreadsheet "SyndicationChannels_consolidated.xlsx".
 
 
 
 
 ### Channel product-metadata content
 
-See spreadsheet "SyndicationChannels_consolidated.xlsx" tab "Product content".
+See spreadsheet "SyndicationChannels_consolidated.xlsx" tab ["Product content"](SyndicationChannels_consolidated.xlsx#'Product_content'!A1).
 
 There are the following categories:
 
