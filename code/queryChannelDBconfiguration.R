@@ -64,27 +64,39 @@ pr.jdbcConnection <-
                  user = "U1BATCH", 
                  password = "CMC2_QA")
 
-# Query on the Oracle instance name.
+# TEST with : 3110 # EloquaProducts
+# ch_locales.r.df <- 
+#   DBI::dbGetQuery(conn = qa.jdbcConnection, 
+#                   statement = "SELECT CUSTOMER_ID, LOCALE, ENABLED, LOCALEENABLED FROM CMC2_QA1_SCHEMA.CHANNEL_CATALOGS WHERE CUSTOMER_ID = 3110 AND CATALOG_TYPE= 'CONSUMER'" )
+
+
+
+# Query on the channels-table.
+qry <- 
+  "SELECT ch.* 
+   FROM CHANNELS ch
+   WHERE ch.MACHINEAFFINITY != 'deprecated' 
+   AND ch.TYPE = 'export'"
+  
 channels.r.df <- 
   DBI::dbGetQuery(conn = qa.jdbcConnection, 
-                  statement = "SELECT * FROM CMC2_QA1_SCHEMA.CHANNELS WHERE MACHINEAFFINITY != 'deprecated' AND ch.TYPE = 'export'" )
-
-# 3110 # EloquaProducts
-ch_locales.r.df <- 
-  DBI::dbGetQuery(conn = qa.jdbcConnection, 
-                  statement = "SELECT CUSTOMER_ID, LOCALE, ENABLED, LOCALEENABLED FROM CMC2_QA1_SCHEMA.CHANNEL_CATALOGS WHERE CUSTOMER_ID = 3110 AND CATALOG_TYPE= 'CONSUMER'" )
+                  statement = qry )
 
 # all channels
-qry <- "SELECT ch.NAME,
-       cc.LOCALE, 
-       cc.ENABLED, 
-       cc.LOCALEENABLED
-FROM CMC2_QA1_SCHEMA.CHANNELS ch
-INNER JOIN CMC2_QA1_SCHEMA.CHANNEL_CATALOGS cc
-   ON cc.CUSTOMER_ID = ch.ID
-WHERE ch.MACHINEAFFINITY != 'deprecated'
-  AND ch.TYPE = 'export'
-  AND cc.CATALOG_TYPE= 'CONSUMER'"
+qry <- 
+  "SELECT ch.NAME,
+          cc.LOCALE, 
+          cc.ENABLED, 
+          cc.LOCALEENABLED,
+          cc.DIVISION,
+          cc.BRAND,
+          cc.PRODUCT_TYPE
+  FROM CHANNELS ch
+  INNER JOIN CHANNEL_CATALOGS cc
+     ON cc.CUSTOMER_ID = ch.ID
+  WHERE ch.MACHINEAFFINITY != 'deprecated'
+    AND ch.TYPE = 'export'
+    AND cc.CATALOG_TYPE= 'CONSUMER'"
 
 ch_locales.r.df <- 
   DBI::dbGetQuery(conn = qa.jdbcConnection, 
@@ -111,7 +123,7 @@ channels.params.df <-
   # keep exports (remove other processes)
   dplyr::filter(TYPE == "export") %>%
   # remove irrelevant columns
-  dplyr::select(NAME, PIPELINE, CATALOG) %>%
+  dplyr::select(NAME, PIPELINE, CATALOG, PUBLICATIONOFFSET_SOP, PUBLICATIONOFFSET_EOP) %>%
   # split process and parameters
   tidyr::separate(col = PIPELINE, 
                   into = c('BaseExport', 'Parameters'), 
@@ -146,8 +158,10 @@ channels.params.df <-
                   fill = "right",
                   remove = TRUE) %>%
   # convert channel name to lower-case:
-  dplyr::rename(channel = NAME,
-                catalog = CATALOG) %>%
+  dplyr::rename(Channel = NAME,
+                Catalog = CATALOG,
+                Offset_sop = PUBLICATIONOFFSET_SOP,
+                Offset_eop = PUBLICATIONOFFSET_EOP) %>%
   # sort alphabetically
   dplyr::arrange(channel, parameter)
 
@@ -159,7 +173,11 @@ channels.params.wide.df <-
   tidyr::spread(key = parameter,
                 value = value)
 
-# note: the same paramters ae present in both lower- and title-case !!
+# note: 
+#   the same parameters ae present in both lower- and title-case !!
+#   Pikachu is case-sensitive, so some of the parameters will be ignored...
+
+
 
 #
 # locales per channel configuration
@@ -169,15 +187,20 @@ channels.locales.df <-
   # remove all rows that are dsabled:
   dplyr::filter(LOCALEENABLED == 1) %>%
   # remove irrelevant columns
-  dplyr::select(NAME, LOCALE, LOCALEENABLED) %>%
+  dplyr::select(NAME, LOCALE, LOCALEENABLED, DIVISION, BRAND, PRODUCT_TYPE) %>%
   # convert column names:
   dplyr::rename(channel = NAME,
                 locale = LOCALE,
-                enabled = LOCALEENABLED) %>%
+                enabled = LOCALEENABLED,
+                division = DIVISION,
+                brand = BRAND,
+                productType = PRODUCT_TYPE) %>%
   # remove duplicate entries(duplicate becasue??)
   dplyr::distinct(channel, locale, .keep_all = TRUE) %>%
   # order data
   dplyr::arrange(channel, locale)
+
+glimpse(channels.locales.df)
 
 # transpose into (wide) tabel/spreadsheet format
 channels.locales.wide.df <-
