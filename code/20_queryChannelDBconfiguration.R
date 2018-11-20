@@ -73,10 +73,13 @@ pr.jdbcConnection <-
 
 # Query on the channels-table.
 qry <- 
-  "SELECT ch.* 
-   FROM CHANNELS ch
+  "SELECT DISTINCT ch.*,
+          cc.CATALOG_TYPE
+    FROM CHANNELS ch
+   INNER JOIN CHANNEL_CATALOGS cc
+      ON cc.CUSTOMER_ID = ch.ID
    WHERE ch.MACHINEAFFINITY != 'deprecated' 
-   AND ch.TYPE = 'export'"
+     AND ch.TYPE = 'export'"
   
 channels.r.df <- 
   DBI::dbGetQuery(conn = qa.jdbcConnection, 
@@ -91,7 +94,7 @@ qry <-
           cc.DIVISION,
           cc.BRAND,
           cc.PRODUCT_TYPE
-  FROM CHANNELS ch
+   FROM CHANNELS ch
   INNER JOIN CHANNEL_CATALOGS cc
      ON cc.CUSTOMER_ID = ch.ID
   WHERE ch.MACHINEAFFINITY != 'deprecated'
@@ -123,7 +126,7 @@ channels.params.df <-
   # keep exports (remove other processes)
   dplyr::filter(TYPE == "export") %>%
   # remove irrelevant columns
-  dplyr::select(NAME, PIPELINE, CATALOG, PUBLICATIONOFFSET_SOP, PUBLICATIONOFFSET_EOP) %>%
+  dplyr::select(NAME, PIPELINE, CATALOG_TYPE, PUBLICATIONOFFSET_SOP, PUBLICATIONOFFSET_EOP) %>%
   # split process and parameters
   tidyr::separate(col = PIPELINE, 
                   into = c('BaseExport', 'Parameters'), 
@@ -159,11 +162,11 @@ channels.params.df <-
                   remove = TRUE) %>%
   # convert channel name to lower-case:
   dplyr::rename(Channel = NAME,
-                Catalog = CATALOG,
+                Catalog = CATALOG_TYPE,
                 Offset_sop = PUBLICATIONOFFSET_SOP,
                 Offset_eop = PUBLICATIONOFFSET_EOP) %>%
   # sort alphabetically
-  dplyr::arrange(channel, parameter)
+  dplyr::arrange(channel, Catalog, parameter)
 
 glimpse(channels.params.df)
 

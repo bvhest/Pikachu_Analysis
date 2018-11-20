@@ -1,0 +1,52 @@
+---
+title: "Award migration"
+author: "BHE"
+date: "November 20, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Award types
+
+source: CCR
+
+| doc-type | description | format |
+| -------- | ----------- | ------ |
+| KA1 | Key award 1 child | TIF |
+| KA2 | Key award 1 child | TIF |
+| KA3 | Key award 1 child | TIF |
+| KA5 | Key award 1 child | TIF |
+| KA5 | Key award 1 child | TIF |
+| KA6 | Key award 1 child | TIF |
+| KA7 | Key award 1 child | TIF |
+| KA8 | Key award 1 child | TIF |
+| KA9 | Key award 1 child | TIF |
+| AWP | Award Picture | JPG |
+| GFA | Green Flagship Award  | PDF |
+| AWL | Award source logo | TIF |
+| AWR | Award rank | TIF |
+| GAW | Global award logo | JPG |
+| GAP | Global award logo - 2400x2400 | TIF |
+| GAZ | Global award logo - rendering | PNG |
+
+
+
+## Feeds with these awards
+
+source: Pikachu
+
+All asset types mentioned in paragraph 'Award types' are present in
+
+  - WebcollageProducts_ProductExport_20181022T0746_NL_master.xml
+  - WebcollageProducts_ProductExport_20181022T0746_nl_NL.xml
+  
+
+Exceptions (or not in my selection of exported data):
+
+  - GAW: not found
+  - AWR: not found
+  - AWP: only in EloquaProducts_Export_20181020T0720_RU_ru_RU.xml
+  

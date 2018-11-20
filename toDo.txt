@@ -1,16 +1,28 @@
 TODO
 ==== 
- - delta uit channels tabel toevoegen aan Channels -tab in spreadsheet
- - Rendering export ?
- - 2e tab: catalog uit channel catalogs ipv parameters
+ 5. 2e tab: catalog uit channel catalogs ipv parameters
+   --> R-verwerking opsplitsen in 
+       1. parameters per kanaal
+       2. catalog/brand/etc per kanaaal
+
+ 6. Rendering export ?
+   --> RenderingExport verdwijnt uit resultaat van channels.r.df naar channels.params.df
+       Waarom???
+       
+ 7. actieve channels obv SIM-tool (incl anaylse vd log-files)
+   --> toegang nodig tot SIM-tool
  
- - product selectie:
-   gebruik van brand, division, product type, customisation per kanaal?
+ 8. DB-aanalyse opnieuw uitvoeren met Prod-data ipv QA-data.
  
 
 DONE
 ==== 
- - SPAF - reverse engineer schema
- - ProductDescription - reverse engineer schema
+ 1. SPAF - reverse engineer schema
+ 2. ProductDescription - reverse engineer schema
+ 3. product selectie:
+   gebruik van brand, division, product type, customisation per kanaal?
+ 4. delta uit channels tabel toevoegen aan Channels -tab in spreadsheet
+
  
- 
+
+ik begrijp uit de story dat ook moet worden uitgezocht hoe ze naar STEP moeten worden gemigreerd; naar de global of local context. 
