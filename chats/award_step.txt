@@ -1,0 +1,77 @@
+[?11/?15/?2018 4:14 PM]  Hest, Bart van:  
+hoi Freek
+
+nog een vraag: ik zie dat ik nog steeds de QA database heb gebruikt ipv de Prod database.
+
+Zou je mij via ee nmail in contact willen brengen met het Pikachu support team zodat ik iig een account met selectie rechten kan aanvragen voor de Pikachu database?
+ 
+[?11/?15/?2018 4:16 PM]  Segers, Freek:  
+partner.ajith.s@philips.com
+ 
+SIM-tool:
+http://130.139.133.47:5080/mod_perl/njobs.pl We saved this conversation. You'll see it soon in the Conversations tab in Skype for Business and in the Conversation History folder in Outlook. 
+[?11/?20/?2018 3:22 PM]  Segers, Freek:  
+Hoi Bart,
+ 
+[?11/?20/?2018 3:36 PM]  Hest, Bart van:  
+hallo Freek
+ 
+[?11/?20/?2018 3:41 PM]  Segers, Freek:  
+Ik ben vandaag niet in Eindhoven
+Heb jij nog gekeken of je in Azure DevOps komt?
+ 
+[?11/?20/?2018 3:42 PM]  Hest, Bart van:  
+ja, dat lukt. Ik heb de story gelezen en bekijk momenteel de webcollage feed omdat deze Ala_award type assets heeft
+ 
+[?11/?20/?2018 3:42 PM]  Segers, Freek:  
+Die ala_award-dingen kunnen we denk ik gewoon vergeten. Die bestaan niet meer.
+Alles wat er nog in Pikachu zit is oud en wordt niet geupdatet
+Misschien kun je met Patrick checken of hij verwacht dat er iets van dat spul gemigreerd wordt.
+ 
+[?11/?20/?2018 3:44 PM]  Hest, Bart van:  
+ok.
+kan ik verder uitgaan van de lijst met assets op CCR om de awards te vinden?
+ 
+[?11/?20/?2018 3:44 PM]  Segers, Freek:  
+Het gaat vooral om de KAx awards
+Dat zijn in feite gewoon assets. Ze hangen niet aan een award in het productmodel.
+ 
+[?11/?20/?2018 3:45 PM]  Segers, Freek:  
+Maar in STEP willen we alleen met 'echte' awards werken.
+ 
+[?11/?20/?2018 3:50 PM]  Hest, Bart van:  
+wat bedoel je met echte awards? Obv een award asset-type? En wel gerelateerd aan een award object?
+kan ik ook toegang krijgen tot STEP test of qa?
+ 
+[?11/?20/?2018 3:51 PM]  Segers, Freek:  
+Producten moeten echt aan een Award gelinked worden
+Die Award kan een asset hebben
+ 
+[?11/?20/?2018 3:52 PM]  Segers, Freek:  
+https://dev.productlibrary.philips.com/workbench 
+Kun je daar bij?
+ 
+[?11/?20/?2018 3:54 PM]  Hest, Bart van:  
+ja
+ 
+[?11/?20/?2018 3:54 PM]  Segers, Freek:  
+Kun je me je CODE1 ID geven?
+ 
+[?11/?20/?2018 3:55 PM]  Hest, Bart van:  
+320040725
+welke versie van Java heb ik nodig? 1.6?
+mijn Philips laptop heeft nog geen Java :)
+ 
+[?11/?20/?2018 3:56 PM]  Segers, Freek:  
+:D
+Je moet JDK8 hebben. 
+De laatste (11) werkt niet met STEP
+JNLP wordt niet meer ondersteund
+Ik heb een user aangemaakt. Ww is Welcome!PPL
+ 
+[?11/?20/?2018 3:58 PM]  Segers, Freek:  
+Je bent Admin, maar moet wel opletten dat je geen configuraties wijzigt.
+ 
+[?11/?20/?2018 3:59 PM]  Hest, Bart van:  
+ok
+ 
