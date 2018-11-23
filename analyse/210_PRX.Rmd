@@ -1,0 +1,847 @@
+---
+title: "Award migration"
+author: "BHE"
+date: "November 20, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+PRX Url: https://www.philips.co.uk/prx/product/B2C/nl_NL/CONSUMER/products/SW7700_67.summary
+
+
+"The URL format should be ==> http://<SERVER>:<PORT>/product/<SECTOR_CODE>/<LOCALE>/<CATALOG>/products/<CTN>.<summary|overview|features|metadata|disclaimers|specification|support|assets|accessories|marketing|relatedProducts|greendata|awards|tokenssupportassets|additionalInfo>"
+
+
+
+test product:
+ <Product Country="NL" IsAccessory="false" IsMaster="false" Locale="nl_NL" lastModified="2018-10-20T04:44:09" masterLastModified="2018-06-22T00:25:56">
+    <CTN>SW7700/67</CTN>
+    <GTIN>08710103834885</GTIN>
+    <MarketingVersion>6.4.1</MarketingVersion>
+    <MarketingStatus>Final Published</MarketingStatus>
+    <CRDate>2017-08-25</CRDate>
+    <CRDateYW>201734</CRDateYW>
+    <ModelYears>
+      <ModelYear>2017</ModelYear>
+    </ModelYears>
+    <ProductDivision>
+      <ProductDivisionCode>0200</ProductDivisionCode>
+      <ProductDivisionName>Consumer Lifestyle</ProductDivisionName>
+      <FormerPDCode>0300</FormerPDCode>
+    </ProductDivision>
+    <ProductOwner>Aymen Mnif</ProductOwner>
+    <DTN>SW7700/67</DTN>
+    <Catalog>
+      <StartOfPublication>2017-09-18T00:00:00</StartOfPublication>
+      <EndOfPublication>2027-10-01T00:00:00</EndOfPublication>
+      <StartOfSales>2017-09-18T00:00:00</StartOfSales>
+      <EndOfSales>2027-10-01T00:00:00</EndOfSales>
+      <DummyPrice>209.99</DummyPrice>
+      <Deleted>false</Deleted>
+      <DeleteAfterDate/>
+      <ProductRank>78</ProductRank>
+    </Catalog>
+    <FinancialCategorization>
+      <BusinessGroupCode>9044</BusinessGroupCode>
+      <BusinessGroupName>Personal Care</BusinessGroupName>
+      <BusinessUnitCode>0321</BusinessUnitCode>
+      <BusinessUnitName>Male Grooming</BusinessUnitName>
+      <MainArticleGroupCode>E01</MainArticleGroupCode>
+      <MainArticleGroupName>Shaving 3 Heads</MainArticleGroupName>
+      <ArticleGroupCode>0638</ArticleGroupCode>
+      <ArticleGroupName>S7000</ArticleGroupName>
+    </FinancialCategorization>
+    <Categorization type="CONSUMER">
+      <GroupCode>PERSONAL_CARE_GR</GroupCode>
+      <GroupName>Personal care</GroupName>
+      <CategoryCode>MENS_SHAVING_CA</CategoryCode>
+      <CategoryName>FACE Shavers</CategoryName>
+      <SubcategoryCode>SERIES_SHAVERS_SU</SubcategoryCode>
+      <SubcategoryName>Series shavers</SubcategoryName>
+    </Categorization>
+    <Assets>
+      <Asset code="SW7700_67" type="DFU" locale="nl_NL" number="001" description="User manual" extension="pdf" lastModified="2018-03-13">http://download.p4c.philips.com/files/s/sw7700_67/sw7700_67_dfu_nld.pdf</Asset>
+      <Asset code="SW7700_67" type="KA1" locale="nl_NL" number="001" description="Key award 1" extension="tif" lastModified="2017-09-01">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-KA1-nl_NL-001</Asset>
+      <Asset code="SW7700_67" type="KA2" locale="nl_NL" number="001" description="Key Award 2 " extension="tif" lastModified="2017-09-01">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-KA2-nl_NL-001</Asset>
+      <Asset code="SW7700_67" type="KA3" locale="nl_NL" number="001" description="Key Award 3" extension="tif" lastModified="2017-09-01">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-KA3-nl_NL-001</Asset>
+      <Asset code="SW7700_67" type="PSS" locale="nl_NL" number="001" description="Leaflet" extension="pdf" lastModified="2017-11-22">http://download.p4c.philips.com/files/s/sw7700_67/sw7700_67_pss_nldnl.pdf</Asset>
+      <Asset code="SW7700_67" type="QSG" locale="nl_NL" number="001" description="Quick start guide" extension="pdf" lastModified="2018-01-16">http://download.p4c.philips.com/files/s/sw7700_67/sw7700_67_qsg_nld.pdf</Asset>
+      <Asset code="SW7700_67" type="RTL" locale="nl_NL" number="001" description="Retail Trade Leaflet" extension="pdf" lastModified="2018-07-16">http://download.p4c.philips.com/files/s/sw7700_67/sw7700_67_rtl_nldnl.pdf</Asset>
+      <Asset code="SW7700_67" type="A1P" locale="global" number="001" description="Alternative product photograph 1 - highres 2196x1795" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-A1P-global-001</Asset>
+      <Asset code="SW7700_67" type="APP" locale="global" number="001" description="Alternative product photograph - highres 2196x1795" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-APP-global-001</Asset>
+      <Asset code="SW7700_67" type="D1P" locale="global" number="001" description="Product detail 1 - highres 2196x1795" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-D1P-global-001</Asset>
+      <Asset code="SW7700_67" type="D2P" locale="global" number="001" description="Product detail 2 - highres 2196x1795" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-D2P-global-001</Asset>
+      <Asset code="SW7700_67" type="DPP" locale="global" number="001" description="Product detail photograph - highres 2196x2196" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-DPP-global-001</Asset>
+      <Asset code="SW7700_67" type="P3D" locale="global" number="001" description="Product 3D" extension="zip" lastModified="2017-09-22">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-P3D-global</Asset>
+      <Asset code="SW7700_67" type="PID" locale="global" number="001" description="Packaging photograph - highres 1447x756" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-PID-global-001</Asset>
+      <Asset code="SW7700_67" type="PIM" locale="global" number="001" description="Packaging photograph - master" extension="tif" lastModified="2017-07-27">http://download.p4c.philips.com/files/s/sw7700_67/sw7700_67_pim_.tif</Asset>
+      <Asset code="SW7700_67" type="PIS" locale="global" number="001" description="Packaging photograph - small 90x65" extension="jpg" lastModified="2017-07-27">http://download.p4c.philips.com/files/s/sw7700_67/sw7700_67_pis_.jpg</Asset>
+      <Asset code="SW7700_67" type="PSS" locale="global" number="001" description="Leaflet" extension="pdf" lastModified="2018-06-22">http://download.p4c.philips.com/files/s/sw7700_67/sw7700_67_pss_.pdf</Asset>
+      <Asset code="SW7700_67" type="RTP" locale="global" number="001" description="Standard product photograph - highres 2196x1795" extension="tif" lastModified="2017-07-28">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-RTP-global-001</Asset>
+      <Asset code="SW7700_67" type="U1P" locale="global" number="001" description="Product In Use 1 - highres 2196x1795" extension="tif" lastModified="2018-04-16">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-U1P-global-001</Asset>
+      <Asset code="SW7700_67" type="U2P" locale="global" number="001" description="Product In Use 2 - highres 2196x1795" extension="tif" lastModified="2018-03-26">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-U2P-global-001</Asset>
+      <Asset code="SW7700_67" type="U3P" locale="global" number="001" description="Product In Use 3 - highres 2196x1795" extension="tif" lastModified="2018-03-19">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-U3P-global-001</Asset>
+      <Asset code="SW7700_67" type="U4P" locale="global" number="001" description="Product In Use 4 - highres 2196x1795" extension="tif" lastModified="2018-04-27">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-U4P-global-001</Asset>
+      <Asset code="SW7700_67" type="UPL" locale="global" number="001" description="Product in use photograph - highres 2196x1795" extension="tif" lastModified="2018-04-04">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-UPL-global-001</Asset>
+      <Asset code="SW7700_67" type="IMS" locale="nl_NL" number="" description="Single product shot" extension="" lastModified="2018-10-20">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-IMS-nl_NL</Asset>
+      <Asset code="SW7700_67" type="GAL" locale="nl_NL" number="" description="Product gallery image set" extension="" lastModified="2018-10-20">http://images.philips.com/is/image/PhilipsConsumer/SW7700_67-GAL-nl_NL</Asset>
+      <Asset code="SW7700_67" type="URL" locale="nl_NL" number="" description="Product URL" extension="" lastModified="2018-10-20">http://www.philips.nl/c-p/SW7700_67/star-wars-special-edition-elektrisch-scheerapparaat-voor-nat-en-droog-scheren</Asset>
+      <Asset code="F400038722_SW7700_67" type="FIL" locale="global" number="001" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/F400038722_SW7700_67-FIL-global-001</Asset>
+      <Asset code="F400069422_SW7700_67" type="FIL" locale="global" number="001" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2017-07-28">http://images.philips.com/is/image/PhilipsConsumer/F400069422_SW7700_67-FIL-global-001</Asset>
+      <Asset code="F400069424_SW7700_67" type="FIL" locale="global" number="001" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2017-07-28">http://images.philips.com/is/image/PhilipsConsumer/F400069424_SW7700_67-FIL-global-001</Asset>
+      <Asset code="F400071037_SW7700_67" type="FIL" locale="global" number="001" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/F400071037_SW7700_67-FIL-global-001</Asset>
+      <Asset code="F400072085_SW7700_67" type="FIL" locale="global" number="001" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/F400072085_SW7700_67-FIL-global-001</Asset>
+      <Asset code="F400072209_SW7700_67" type="FIL" locale="global" number="001" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2017-08-03">http://images.philips.com/is/image/PhilipsConsumer/F400072209_SW7700_67-FIL-global-001</Asset>
+      <Asset code="F400072238_SW7700_67" type="FIL" locale="global" number="001" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/F400072238_SW7700_67-FIL-global-001</Asset>
+      <Asset code="F400081586_SW7700_67" type="FIL" locale="global" number="001" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/F400081586_SW7700_67-FIL-global-001</Asset>
+      <Asset code="F400083405_SW7700_67" type="FIL" locale="global" number="001" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/F400083405_SW7700_67-FIL-global-001</Asset>
+      <Asset code="F400083632_SW7700_67" type="FIL" locale="global" number="001" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2017-07-27">http://images.philips.com/is/image/PhilipsConsumer/F400083632_SW7700_67-FIL-global-001</Asset>
+      <Asset code="F400084144" type="FLP" locale="global" number="001" description="Feature logo - highres 331x213" extension="tif" lastModified="2017-08-11">http://images.philips.com/is/image/PhilipsConsumer/F400084144-FLP-global-001</Asset>
+      <Asset code="F400084145" type="FLP" locale="global" number="001" description="Feature logo - highres 331x213" extension="tif" lastModified="2017-08-11">http://images.philips.com/is/image/PhilipsConsumer/F400084145-FLP-global-001</Asset>
+      <Asset code="F400084155" type="FLP" locale="global" number="001" description="Feature logo - highres 331x213" extension="tif" lastModified="2017-08-11">http://images.philips.com/is/image/PhilipsConsumer/F400084155-FLP-global-001</Asset>
+      <Asset code="F400084156" type="FLP" locale="global" number="001" description="Feature logo - highres 331x213" extension="tif" lastModified="2017-08-11">http://images.philips.com/is/image/PhilipsConsumer/F400084156-FLP-global-001</Asset>
+      <Asset code="F400084158" type="FLP" locale="global" number="001" description="Feature logo - highres 331x213" extension="tif" lastModified="2017-08-11">http://images.philips.com/is/image/PhilipsConsumer/F400084158-FLP-global-001</Asset>
+      <Asset code="GA40020933" type="GAL" locale="global" number="001" description="needs to be blocked as code in CCR Global award logo - master" extension="jpg" lastModified="2017-07-18">GA40020933-GAL-global-001.jpg</Asset>
+      <Asset code="GA40020933" type="GAP" locale="global" number="001" description="Global award logo - highres 590x590" extension="tif" lastModified="2017-07-18">http://images.philips.com/is/image/PhilipsConsumer/GA40020933-GAP-global-001</Asset>
+      <Asset code="GA40020934" type="GAL" locale="global" number="001" description="needs to be blocked as code in CCR Global award logo - master" extension="jpg" lastModified="2017-07-18">GA40020934-GAL-global-001.jpg</Asset>
+      <Asset code="GA40020934" type="GAP" locale="global" number="001" description="Global award logo - highres 590x590" extension="tif" lastModified="2017-07-18">http://images.philips.com/is/image/PhilipsConsumer/GA40020934-GAP-global-001</Asset>
+      <Asset code="GA40020953" type="GAL" locale="global" number="001" description="needs to be blocked as code in CCR Global award logo - master" extension="jpg" lastModified="2017-07-18">GA40020953-GAL-global-001.jpg</Asset>
+      <Asset code="GA40020953" type="GAP" locale="global" number="001" description="Global award logo - highres 590x590" extension="tif" lastModified="2017-07-18">http://images.philips.com/is/image/PhilipsConsumer/GA40020953-GAP-global-001</Asset>
+      <Asset code="PHI" type="BRP" locale="global" number="001" description="Brand logo - highres 1476x886" extension="tif" lastModified="2016-02-18">http://images.philips.com/is/image/PhilipsConsumer/PHI-BRP-global-001</Asset>
+    </Assets>
+    <ProductName>Elektrisch scheerapparaat voor nat en droog scheren</ProductName>
+    <FullProductName>Philips Star Wars special edition Elektrisch scheerapparaat voor nat en droog scheren SW7700/67 V-Track Precision PRO-mesjes met 5 draairichtingen, Flex-scheerhoofden, SkinGlide-ringen, SmartClick-precisietrimmer</FullProductName>
+    <NamingString>
+      <MasterBrand>
+        <BrandCode>PHI</BrandCode>
+        <BrandName>Philips</BrandName>
+      </MasterBrand>
+      <BrandString>Philips</BrandString>
+      <Family>
+        <FamilyCode>SB40008971</FamilyCode>
+        <FamilyName>Star Wars special edition</FamilyName>
+        <FamilyNameUsed>1</FamilyNameUsed>
+      </Family>
+      <Descriptor>
+        <DescriptorCode>D4013822</DescriptorCode>
+        <DescriptorName>Elektrisch scheerapparaat voor nat en droog scheren</DescriptorName>
+      </Descriptor>
+      <Alphanumeric>SW7700/67</Alphanumeric>
+      <VersionElement1>
+        <VersionElementCode>V4044858</VersionElementCode>
+        <VersionElementName>V-Track Precision PRO-mesjes</VersionElementName>
+      </VersionElement1>
+      <VersionElement2>
+        <VersionElementCode>V4039235</VersionElementCode>
+        <VersionElementName>Flex-scheerhoofden, 5 draairichtingen</VersionElementName>
+      </VersionElement2>
+      <VersionElement3>
+        <VersionElementCode>V4044787</VersionElementCode>
+        <VersionElementName>SkinGlide-ringen</VersionElementName>
+      </VersionElement3>
+      <VersionElement4>
+        <VersionElementCode>V4032126</VersionElementCode>
+        <VersionElementName>SmartClick-precisietrimmer</VersionElementName>
+      </VersionElement4>
+      <VersionString>V-Track Precision PRO-mesjes met 5 draairichtingen, Flex-scheerhoofden, SkinGlide-ringen, SmartClick-precisietrimmer</VersionString>
+      <BrandedFeatureString/>
+      <DescriptorBrandedFeatureString>Elektrisch scheerapparaat voor nat en droog scheren</DescriptorBrandedFeatureString>
+    </NamingString>
+    <WOW>Beschermende scheerbeurt, minimale huidirritatie</WOW>
+    <SubWOW>Ervaar de kracht van V-Track Pro!</SubWOW>
+    <MarketingTextHeader>Gebruik de kracht van V-Track PRO om ook langer haar de baas te zijn. De 72 zelfslijpende V-vormige mesjes van onze V-Track PRO trekken minder aan haartjes als u scheert, zelfs bij stoppels van 3 dagen.</MarketingTextHeader>
+    <KeyBenefitArea>
+      <KeyBenefitAreaCode>K4026714</KeyBenefitAreaCode>
+      <KeyBenefitAreaName>Ontworpen voor perfectie</KeyBenefitAreaName>
+      <KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+      <Feature>
+        <FeatureCode>F400083405_SW7700_67</FeatureCode>
+        <FeatureReferenceName>V-Track Precision PRO Blades (Star Wars)</FeatureReferenceName>
+        <FeatureName>V-Track Precision PRO-mesjes</FeatureName>
+        <FeatureLongDescription>V-Track Precision PRO voor onze beste scheerbeurt voor stoppels van 3 dagen</FeatureLongDescription>
+        <FeatureGlossary>Scheer perfect glad. De V-Track Precision PRO-mesjes brengen elk haartje voorzichtig in de beste positie bij stoppels van 3 dagen, zelfs plat liggende haren en haren met verschillende lengtes. Scheert 30% gladder met minder bewegingen, waardoor uw huid in perfecte conditie blijft.</FeatureGlossary>
+        <FeatureRank>1</FeatureRank>
+        <FeatureTopRank>1</FeatureTopRank>
+      </Feature>
+      <Feature>
+        <FeatureCode>F400083632_SW7700_67</FeatureCode>
+        <FeatureReferenceName>72 self-sharpening blades (Star Wars)</FeatureReferenceName>
+        <FeatureName>72 zelfslijpende mesjes</FeatureName>
+        <FeatureLongDescription>72 draaiende mesjes pakken en trimmen haar vanuit alle hoeken</FeatureLongDescription>
+        <FeatureGlossary>72 zelfslijpende mesjes. 151.000 trims per minuut. Nul haartjes blijven staan, ongeacht de groeirichting.</FeatureGlossary>
+        <FeatureRank>2</FeatureRank>
+        <FeatureTopRank>2</FeatureTopRank>
+      </Feature>
+      <Feature>
+        <FeatureCode>F400069424_SW7700_67</FeatureCode>
+        <FeatureReferenceName>5-direction DynamicFlex Heads (S7000 ROW MLU)</FeatureReferenceName>
+        <FeatureName>Dynamic Flex-scheerhoofden met 5 draairichtingen</FeatureName>
+        <FeatureLongDescription>Flexibele scheerhoofden met 5 draairichtingen volgen de contouren van de huid voor minder druk</FeatureLongDescription>
+        <FeatureGlossary>Onze scheerhoofden draaien eenvoudig in 5 richtingen en volgen zo voorzichtig alle contouren van uw gezicht en hals. Er is bij het scheren minder druk nodig, waardoor de belasting van de huid wordt geminimaliseerd.</FeatureGlossary>
+        <FeatureRank>3</FeatureRank>
+        <FeatureTopRank>4</FeatureTopRank>
+      </Feature>
+    </KeyBenefitArea>
+    <KeyBenefitArea>
+      <KeyBenefitAreaCode>K4029466</KeyBenefitAreaCode>
+      <KeyBenefitAreaName>Ontworpen voor maximaal huidcomfort</KeyBenefitAreaName>
+      <KeyBenefitAreaRank>2</KeyBenefitAreaRank>
+      <Feature>
+        <FeatureCode>F400069422_SW7700_67</FeatureCode>
+        <FeatureReferenceName>SkinGlide rings (S7000 ROW MLU)</FeatureReferenceName>
+        <FeatureName>SkinGlide-ringen</FeatureName>
+        <FeatureLongDescription>SkinGlide-ringen met coating die wrijving vermindert voor soepel glijden</FeatureLongDescription>
+        <FeatureGlossary>Geniet van een comfortabele scheerbeurt met wrijvingsarme SkinGlide-ringen die zijn voorzien van mircobolletjes. Duizenden piepkleine glasachtige bolletjes verminderen de wrijving en weerstand tussen het scheerapparaat en de huid. Hierdoor glijdt het scheerapparaat soepel en gemakkelijk over de huid en helpt het huidirritatie te voorkomen.</FeatureGlossary>
+        <FeatureRank>1</FeatureRank>
+        <FeatureTopRank>3</FeatureTopRank>
+      </Feature>
+      <Feature>
+        <FeatureCode>F400072238_SW7700_67</FeatureCode>
+        <FeatureReferenceName>Aquatec Wet &amp; Dry (S6000 S5000)</FeatureReferenceName>
+        <FeatureName>Aquatec voor nat en droog scheren</FeatureName>
+        <FeatureLongDescription>Comfortabel droog of verfrissend nat scheren met Aquatec</FeatureLongDescription>
+        <FeatureGlossary>Kies hoe u het liefst scheert. Met de Aquatec Wet &amp; Dry-afdichting kunt u kiezen voor een snelle en comfortabele droge scheerbeurt. Of u kunt nat scheren, met gel of schuim, zelfs onder de douche.</FeatureGlossary>
+        <FeatureRank>2</FeatureRank>
+        <FeatureTopRank>5</FeatureTopRank>
+      </Feature>
+    </KeyBenefitArea>
+    <KeyBenefitArea>
+      <KeyBenefitAreaCode>K300000216</KeyBenefitAreaCode>
+      <KeyBenefitAreaName>Gebruiksvriendelijk</KeyBenefitAreaName>
+      <KeyBenefitAreaRank>3</KeyBenefitAreaRank>
+      <Feature>
+        <FeatureCode>F400081586_SW7700_67</FeatureCode>
+        <FeatureReferenceName>60 minutes of cordless shaving (S5000 W&amp;D)</FeatureReferenceName>
+        <FeatureName>60 minuten draadloos scheren</FeatureName>
+        <FeatureLongDescription>60 minuten draadloos scheren</FeatureLongDescription>
+        <FeatureGlossary>Na 1 uur opladen kunt u meer dan 60 minuten scheren; dat zijn ongeveer 20 scheerbeurten. Dit scheerapparaat is alleen draadloos te gebruiken.</FeatureGlossary>
+        <FeatureRank>1</FeatureRank>
+        <FeatureTopRank>6</FeatureTopRank>
+      </Feature>
+      <Feature>
+        <FeatureCode>F400072209_SW7700_67</FeatureCode>
+        <FeatureReferenceName>1-hour charging time (S5000 Li-ion)</FeatureReferenceName>
+        <FeatureName>Oplaadtijd van 1 uur</FeatureName>
+        <FeatureLongDescription>Oplaadtijd van 1 uur</FeatureLongDescription>
+        <FeatureGlossary>Scheer langer na elke keer opladen, dankzij onze krachtige, energiezuinige en duurzame lithium-ionaccu. Laad snel op in 5 minuten en u hebt voldoende vermogen voor één scheerbeurt.</FeatureGlossary>
+        <FeatureRank>2</FeatureRank>
+        <FeatureTopRank>7</FeatureTopRank>
+      </Feature>
+      <Feature>
+        <FeatureCode>F400071037_SW7700_67</FeatureCode>
+        <FeatureReferenceName>Fully washable shaver (S7000 S6000 ROW)</FeatureReferenceName>
+        <FeatureName>Volledig afwasbaar scheerapparaat</FeatureName>
+        <FeatureLongDescription>Scheerapparaat kan worden schoongespoeld onder de kraan</FeatureLongDescription>
+        <FeatureGlossary>Klap het scheerhoofd open en spoel het apparaat grondig af onder de kraan.</FeatureGlossary>
+        <FeatureRank>3</FeatureRank>
+        <FeatureTopRank>8</FeatureTopRank>
+      </Feature>
+      <Feature>
+        <FeatureCode>F400038722_SW7700_67</FeatureCode>
+        <FeatureReferenceName>Built to last (shaver)</FeatureReferenceName>
+        <FeatureName>Duurzaam gebouwd</FeatureName>
+        <FeatureLongDescription>2 jaar garantie, werkt op alle voltages, vervangbare mesjes</FeatureLongDescription>
+        <FeatureGlossary>Al onze scheerapparaten worden geleverd met 2 jaar wereldwijde garantie en kunnen aan iedere spanning worden aangepast. De messen hoeven maar eens in de 2 jaar te worden vervangen.</FeatureGlossary>
+        <FeatureRank>4</FeatureRank>
+        <FeatureTopRank>10</FeatureTopRank>
+      </Feature>
+    </KeyBenefitArea>
+    <KeyBenefitArea>
+      <KeyBenefitAreaCode>K4028096</KeyBenefitAreaCode>
+      <KeyBenefitAreaName>Haal het maximale uit uw scheerapparaat</KeyBenefitAreaName>
+      <KeyBenefitAreaRank>4</KeyBenefitAreaRank>
+      <Feature>
+        <FeatureCode>F400072085_SW7700_67</FeatureCode>
+        <FeatureReferenceName>SmartClick precision trimmer (S5000)</FeatureReferenceName>
+        <FeatureName>SmartClick-precisietrimmer</FeatureName>
+        <FeatureLongDescription>Opzetbare trimmer voor het perfect trimmen van snor en bakkebaarden</FeatureLongDescription>
+        <FeatureGlossary>Bevestig onze huidvriendelijke precisietrimmer om uw look te voltooien. Deze is ideaal voor het onderhouden van uw snor en het trimmen van uw bakkebaarden.</FeatureGlossary>
+        <FeatureRank>1</FeatureRank>
+        <FeatureTopRank>9</FeatureTopRank>
+      </Feature>
+    </KeyBenefitArea>
+    <FeatureLogo>
+      <FeatureCode>F400084144</FeatureCode>
+      <FeatureReferenceName>Light Side logo Star Wars</FeatureReferenceName>
+      <FeatureLogoRank>4</FeatureLogoRank>
+    </FeatureLogo>
+    <FeatureLogo>
+      <FeatureCode>F400084145</FeatureCode>
+      <FeatureReferenceName>Light Side graphic logo Star Wars</FeatureReferenceName>
+      <FeatureLogoRank>5</FeatureLogoRank>
+    </FeatureLogo>
+    <FeatureLogo>
+      <FeatureCode>F400084155</FeatureCode>
+      <FeatureReferenceName>Star Wars logo</FeatureReferenceName>
+      <FeatureLogoRank>6</FeatureLogoRank>
+    </FeatureLogo>
+    <FeatureLogo>
+      <FeatureCode>F400084156</FeatureCode>
+      <FeatureReferenceName>Lucasflims logo Star Wars</FeatureReferenceName>
+      <FeatureLogoRank>7</FeatureLogoRank>
+    </FeatureLogo>
+    <FeatureLogo>
+      <FeatureCode>F400084158</FeatureCode>
+      <FeatureReferenceName>Disney logo Star Wars</FeatureReferenceName>
+      <FeatureLogoRank>8</FeatureLogoRank>
+    </FeatureLogo>
+    <FeatureImage>
+      <FeatureCode>F400083405_SW7700_67</FeatureCode>
+      <FeatureReferenceName>V-Track Precision PRO Blades (Star Wars)</FeatureReferenceName>
+      <FeatureImageRank>1</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400083632_SW7700_67</FeatureCode>
+      <FeatureReferenceName>72 self-sharpening blades (Star Wars)</FeatureReferenceName>
+      <FeatureImageRank>2</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400069422_SW7700_67</FeatureCode>
+      <FeatureReferenceName>SkinGlide rings (S7000 ROW MLU)</FeatureReferenceName>
+      <FeatureImageRank>3</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400069424_SW7700_67</FeatureCode>
+      <FeatureReferenceName>5-direction DynamicFlex Heads (S7000 ROW MLU)</FeatureReferenceName>
+      <FeatureImageRank>4</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400072238_SW7700_67</FeatureCode>
+      <FeatureReferenceName>Aquatec Wet &amp; Dry (S6000 S5000)</FeatureReferenceName>
+      <FeatureImageRank>5</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400081586_SW7700_67</FeatureCode>
+      <FeatureReferenceName>60 minutes of cordless shaving (S5000 W&amp;D)</FeatureReferenceName>
+      <FeatureImageRank>6</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400072209_SW7700_67</FeatureCode>
+      <FeatureReferenceName>1-hour charging time (S5000 Li-ion)</FeatureReferenceName>
+      <FeatureImageRank>7</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400071037_SW7700_67</FeatureCode>
+      <FeatureReferenceName>Fully washable shaver (S7000 S6000 ROW)</FeatureReferenceName>
+      <FeatureImageRank>8</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400072085_SW7700_67</FeatureCode>
+      <FeatureReferenceName>SmartClick precision trimmer (S5000)</FeatureReferenceName>
+      <FeatureImageRank>9</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400038722_SW7700_67</FeatureCode>
+      <FeatureReferenceName>Built to last (shaver)</FeatureReferenceName>
+      <FeatureImageRank>10</FeatureImageRank>
+    </FeatureImage>
+    <FeatureHighlight>
+      <FeatureCode>F400083405_SW7700_67</FeatureCode>
+      <FeatureReferenceName>V-Track Precision PRO Blades (Star Wars)</FeatureReferenceName>
+      <FeatureHighlightRank>1</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400083632_SW7700_67</FeatureCode>
+      <FeatureReferenceName>72 self-sharpening blades (Star Wars)</FeatureReferenceName>
+      <FeatureHighlightRank>2</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400069422_SW7700_67</FeatureCode>
+      <FeatureReferenceName>SkinGlide rings (S7000 ROW MLU)</FeatureReferenceName>
+      <FeatureHighlightRank>3</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400069424_SW7700_67</FeatureCode>
+      <FeatureReferenceName>5-direction DynamicFlex Heads (S7000 ROW MLU)</FeatureReferenceName>
+      <FeatureHighlightRank>4</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400072238_SW7700_67</FeatureCode>
+      <FeatureReferenceName>Aquatec Wet &amp; Dry (S6000 S5000)</FeatureReferenceName>
+      <FeatureHighlightRank>5</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400081586_SW7700_67</FeatureCode>
+      <FeatureReferenceName>60 minutes of cordless shaving (S5000 W&amp;D)</FeatureReferenceName>
+      <FeatureHighlightRank>6</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400072209_SW7700_67</FeatureCode>
+      <FeatureReferenceName>1-hour charging time (S5000 Li-ion)</FeatureReferenceName>
+      <FeatureHighlightRank>7</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400071037_SW7700_67</FeatureCode>
+      <FeatureReferenceName>Fully washable shaver (S7000 S6000 ROW)</FeatureReferenceName>
+      <FeatureHighlightRank>8</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400072085_SW7700_67</FeatureCode>
+      <FeatureReferenceName>SmartClick precision trimmer (S5000)</FeatureReferenceName>
+      <FeatureHighlightRank>9</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400038722_SW7700_67</FeatureCode>
+      <FeatureReferenceName>Built to last (shaver)</FeatureReferenceName>
+      <FeatureHighlightRank>10</FeatureHighlightRank>
+    </FeatureHighlight>
+    <CSChapter>
+      <CSChapterCode>CH4001523</CSChapterCode>
+      <CSChapterName>Scheerresultaten</CSChapterName>
+      <CSChapterRank>1</CSChapterRank>
+      <CSItem>
+        <CSItemCode>IT4007976</CSItemCode>
+        <CSItemName>Scheersysteem</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4079593</CSValueCode>
+          <CSValueName>V-Track Precision PRO-mesjes</CSValueName>
+          <CSValueRank>32</CSValueRank>
+        </CSValue>
+        <CSValue>
+          <CSValueCode>VA4100426</CSValueCode>
+          <CSValueName>72 zelfslijpende mesjes</CSValueName>
+          <CSValueRank>33</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4007978</CSItemCode>
+        <CSItemName>Huidcomfort</CSItemName>
+        <CSItemRank>2</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4084203</CSValueCode>
+          <CSValueName>SkinGlide-ringen</CSValueName>
+          <CSValueRank>9</CSValueRank>
+        </CSValue>
+        <CSValue>
+          <CSValueCode>VA4033823</CSValueCode>
+          <CSValueName>Huidbeschermend systeem</CSValueName>
+          <CSValueRank>23</CSValueRank>
+        </CSValue>
+        <CSValue>
+          <CSValueCode>VA4081202</CSValueCode>
+          <CSValueName>AquaTec Wet &amp; Dry</CSValueName>
+          <CSValueRank>28</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4007977</CSItemCode>
+        <CSItemName>Volgt de contouren</CSItemName>
+        <CSItemRank>3</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4096953</CSValueCode>
+          <CSValueName>DynamicFlex-scheerhoofden met 5 draairichtingen</CSValueName>
+          <CSValueRank>16</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>3000815</CSChapterCode>
+      <CSChapterName>Accessoires</CSChapterName>
+      <CSChapterRank>2</CSChapterRank>
+      <CSItem>
+        <CSItemCode>IT4032633</CSItemCode>
+        <CSItemName>SmartClick</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4076320</CSValueCode>
+          <CSValueName>Precisietrimmer</CSValueName>
+          <CSValueRank>14</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4007991</CSItemCode>
+        <CSItemName>Etui</CSItemName>
+        <CSItemRank>2</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4046862</CSValueCode>
+          <CSValueName>Reisetui</CSValueName>
+          <CSValueRank>21</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>3000821</CSChapterCode>
+      <CSChapterName>Vermogen</CSChapterName>
+      <CSChapterRank>3</CSChapterRank>
+      <CSItem>
+        <CSItemCode>IT4015298</CSItemCode>
+        <CSItemName>Gebruikstijd</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4095197</CSValueCode>
+          <CSValueName>60 min. / 20 scheerbeurten</CSValueName>
+          <CSValueRank>31</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4032891</CSItemCode>
+        <CSItemName>Opladen</CSItemName>
+        <CSItemRank>2</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4077304</CSValueCode>
+          <CSValueName>Volledig opladen in 1 uur</CSValueName>
+          <CSValueRank>4</CSValueRank>
+        </CSValue>
+        <CSValue>
+          <CSValueCode>VA4085067</CSValueCode>
+          <CSValueName>Snelle oplaadtijd van 5 min. voor 1 keer scheren</CSValueName>
+          <CSValueRank>27</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>3006920</CSItemCode>
+        <CSItemName>Batterijtype</CSItemName>
+        <CSItemRank>3</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>3033275</CSValueCode>
+          <CSValueName>Lithium-ion</CSValueName>
+          <CSValueRank>11</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4015297</CSItemCode>
+        <CSItemName>Automatisch voltage</CSItemName>
+        <CSItemRank>4</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4030670</CSValueCode>
+          <CSValueName>100 - 240 V</CSValueName>
+          <CSValueRank>2</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4009440</CSItemCode>
+        <CSItemName>Maximaal energieverbruik</CSItemName>
+        <CSItemRank>5</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4076318</CSValueCode>
+          <CSValueName>9</CSValueName>
+          <CSValueRank>19</CSValueRank>
+        </CSValue>
+        <UnitOfMeasure>
+          <UnitOfMeasureCode>3000072</UnitOfMeasureCode>
+          <UnitOfMeasureName>watt</UnitOfMeasureName>
+          <UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+        </UnitOfMeasure>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4009439</CSItemCode>
+        <CSItemName>Energieverbruik in stand-by</CSItemName>
+        <CSItemRank>6</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4076317</CSValueCode>
+          <CSValueName>0,1</CSValueName>
+          <CSValueRank>20</CSValueRank>
+        </CSValue>
+        <UnitOfMeasure>
+          <UnitOfMeasureCode>3000072</UnitOfMeasureCode>
+          <UnitOfMeasureName>watt</UnitOfMeasureName>
+          <UnitOfMeasureSymbol>W</UnitOfMeasureSymbol>
+        </UnitOfMeasure>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>CH4001524</CSChapterCode>
+      <CSChapterName>Gebruiksgemak</CSChapterName>
+      <CSChapterRank>4</CSChapterRank>
+      <CSItem>
+        <CSItemCode>IT4007983</CSItemCode>
+        <CSItemName>Nat en droog</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4021352</CSValueCode>
+          <CSValueName>Nat en droog te gebruiken</CSValueName>
+          <CSValueRank>10</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4007985</CSItemCode>
+        <CSItemName>Schoonmaken</CSItemName>
+        <CSItemRank>2</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4063376</CSValueCode>
+          <CSValueName>Volledig afspoelbaar</CSValueName>
+          <CSValueRank>7</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4027494</CSItemCode>
+        <CSItemName>Bediening</CSItemName>
+        <CSItemRank>3</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4064594</CSValueCode>
+          <CSValueName>Snoerloos gebruik</CSValueName>
+          <CSValueRank>24</CSValueRank>
+        </CSValue>
+        <CSValue>
+          <CSValueCode>VA4090065</CSValueCode>
+          <CSValueName>Koppel los voor gebruik</CSValueName>
+          <CSValueRank>29</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>3001096</CSChapterCode>
+      <CSChapterName>Ontwerp</CSChapterName>
+      <CSChapterRank>5</CSChapterRank>
+      <CSItem>
+        <CSItemCode>S_0000001</CSItemCode>
+        <CSItemName>Kleur</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>1</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4007102</CSValueCode>
+          <CSValueName>Star Wars Light Side</CSValueName>
+          <CSValueRank>1</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4008709</CSItemCode>
+        <CSItemName>Handvat</CSItemName>
+        <CSItemRank>2</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4076321</CSValueCode>
+          <CSValueName>Ergonomische grip</CSValueName>
+          <CSValueRank>6</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>CHA_0000049</CSChapterCode>
+      <CSChapterName>Service</CSChapterName>
+      <CSChapterRank>6</CSChapterRank>
+      <CSItem>
+        <CSItemCode>IT4002813</CSItemCode>
+        <CSItemName>2 jaar garantie</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4011021</CSValueCode>
+          <CSValueName>Ja</CSValueName>
+          <CSValueRank>15</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4015371</CSItemCode>
+        <CSItemName>Vervangend scheerhoofd</CSItemName>
+        <CSItemRank>2</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4081207</CSValueCode>
+          <CSValueName>Elke 2 jaar vervangen met SH70</CSValueName>
+          <CSValueRank>26</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <Filters>
+      <Purpose type="Comparison">
+        <Features>
+          <Feature code="F400083405_SW7700_67" referenceName="V-Track Precision PRO Blades (Star Wars)" rank="1"/>
+          <Feature code="F400083632_SW7700_67" referenceName="72 self-sharpening blades (Star Wars)" rank="2"/>
+          <Feature code="F400069422_SW7700_67" referenceName="SkinGlide rings (S7000 ROW MLU)" rank="3"/>
+          <Feature code="F400069424_SW7700_67" referenceName="5-direction DynamicFlex Heads (S7000 ROW MLU)" rank="4"/>
+          <Feature code="F400072238_SW7700_67" referenceName="Aquatec Wet &amp; Dry (S6000 S5000)" rank="5"/>
+          <Feature code="F400081586_SW7700_67" referenceName="60 minutes of cordless shaving (S5000 W&amp;D)" rank="6"/>
+          <Feature code="F400072209_SW7700_67" referenceName="1-hour charging time (S5000 Li-ion)" rank="7"/>
+          <Feature code="F400071037_SW7700_67" referenceName="Fully washable shaver (S7000 S6000 ROW)" rank="8"/>
+          <Feature code="F400072085_SW7700_67" referenceName="SmartClick precision trimmer (S5000)" rank="9"/>
+          <Feature code="F400038722_SW7700_67" referenceName="Built to last (shaver)" rank="10"/>
+        </Features>
+        <CSItems>
+          <CSItem code="IT4007976" referenceName="Scheerresultaten - Scheersysteem" rank="1"/>
+          <CSItem code="IT4032633" referenceName="Accessoires - SmartClick" rank="1"/>
+          <CSItem code="IT4015298" referenceName="Vermogen - Gebruikstijd" rank="1"/>
+          <CSItem code="IT4007983" referenceName="Gebruiksgemak - Nat en droog" rank="1"/>
+          <CSItem code="S_0000001" referenceName="Ontwerp - Kleur" rank="1"/>
+          <CSItem code="IT4002813" referenceName="Service - 2 jaar garantie" rank="1"/>
+          <CSItem code="IT4007978" referenceName="Scheerresultaten - Huidcomfort" rank="2"/>
+          <CSItem code="IT4007991" referenceName="Accessoires - Etui" rank="2"/>
+          <CSItem code="IT4032891" referenceName="Vermogen - Opladen" rank="2"/>
+          <CSItem code="IT4007985" referenceName="Gebruiksgemak - Schoonmaken" rank="2"/>
+          <CSItem code="IT4008709" referenceName="Ontwerp - Handvat" rank="2"/>
+          <CSItem code="IT4015371" referenceName="Service - Vervangend scheerhoofd" rank="2"/>
+          <CSItem code="IT4007977" referenceName="Scheerresultaten - Volgt de contouren" rank="3"/>
+          <CSItem code="3006920" referenceName="Vermogen - Batterijtype" rank="3"/>
+          <CSItem code="IT4027494" referenceName="Gebruiksgemak - Bediening" rank="3"/>
+          <CSItem code="IT4015297" referenceName="Vermogen - Automatisch voltage" rank="4"/>
+          <CSItem code="IT4009440" referenceName="Vermogen - Maximaal energieverbruik" rank="5"/>
+          <CSItem code="IT4009439" referenceName="Vermogen - Energieverbruik in stand-by" rank="6"/>
+        </CSItems>
+      </Purpose>
+      <Purpose type="Detail">
+        <Features>
+          <Feature code="F400083405_SW7700_67" referenceName="V-Track Precision PRO Blades (Star Wars)" rank="1"/>
+          <Feature code="F400083632_SW7700_67" referenceName="72 self-sharpening blades (Star Wars)" rank="2"/>
+          <Feature code="F400069422_SW7700_67" referenceName="SkinGlide rings (S7000 ROW MLU)" rank="3"/>
+          <Feature code="F400069424_SW7700_67" referenceName="5-direction DynamicFlex Heads (S7000 ROW MLU)" rank="4"/>
+          <Feature code="F400072238_SW7700_67" referenceName="Aquatec Wet &amp; Dry (S6000 S5000)" rank="5"/>
+          <Feature code="F400081586_SW7700_67" referenceName="60 minutes of cordless shaving (S5000 W&amp;D)" rank="6"/>
+          <Feature code="F400072209_SW7700_67" referenceName="1-hour charging time (S5000 Li-ion)" rank="7"/>
+          <Feature code="F400071037_SW7700_67" referenceName="Fully washable shaver (S7000 S6000 ROW)" rank="8"/>
+          <Feature code="F400072085_SW7700_67" referenceName="SmartClick precision trimmer (S5000)" rank="9"/>
+          <Feature code="F400038722_SW7700_67" referenceName="Built to last (shaver)" rank="10"/>
+        </Features>
+        <CSItems>
+          <CSItem code="IT4007976" referenceName="Scheerresultaten - Scheersysteem" rank="1"/>
+          <CSItem code="IT4032633" referenceName="Accessoires - SmartClick" rank="1"/>
+          <CSItem code="IT4015298" referenceName="Vermogen - Gebruikstijd" rank="1"/>
+          <CSItem code="IT4007983" referenceName="Gebruiksgemak - Nat en droog" rank="1"/>
+          <CSItem code="S_0000001" referenceName="Ontwerp - Kleur" rank="1"/>
+          <CSItem code="IT4002813" referenceName="Service - 2 jaar garantie" rank="1"/>
+          <CSItem code="IT4007978" referenceName="Scheerresultaten - Huidcomfort" rank="2"/>
+          <CSItem code="IT4007991" referenceName="Accessoires - Etui" rank="2"/>
+          <CSItem code="IT4032891" referenceName="Vermogen - Opladen" rank="2"/>
+          <CSItem code="IT4007985" referenceName="Gebruiksgemak - Schoonmaken" rank="2"/>
+          <CSItem code="IT4008709" referenceName="Ontwerp - Handvat" rank="2"/>
+          <CSItem code="IT4015371" referenceName="Service - Vervangend scheerhoofd" rank="2"/>
+          <CSItem code="IT4007977" referenceName="Scheerresultaten - Volgt de contouren" rank="3"/>
+          <CSItem code="3006920" referenceName="Vermogen - Batterijtype" rank="3"/>
+          <CSItem code="IT4027494" referenceName="Gebruiksgemak - Bediening" rank="3"/>
+          <CSItem code="IT4015297" referenceName="Vermogen - Automatisch voltage" rank="4"/>
+          <CSItem code="IT4009440" referenceName="Vermogen - Maximaal energieverbruik" rank="5"/>
+          <CSItem code="IT4009439" referenceName="Vermogen - Energieverbruik in stand-by" rank="6"/>
+        </CSItems>
+      </Purpose>
+    </Filters>
+    <FeatureCompareGroups/>
+    <Disclaimers>
+      <Disclaimer code="DIS40011875" rank="1" referenceName="Cut 30% closer in less strokes  (Vtrack Pro)">
+        <DisclaimerText>Scheert 30% gladder met minder bewegingen - in vergelijking met de Philips-voorganger</DisclaimerText>
+        <DisclaimElements/>
+      </Disclaimer>
+    </Disclaimers>
+    <AccessoryByPacked>
+      <AccessoryByPackedCode>AB40004543</AccessoryByPackedCode>
+      <AccessoryByPackedReference>SmartClick precision trimmer Black</AccessoryByPackedReference>
+      <AccessoryByPackedName>SmartClick-precisietrimmer</AccessoryByPackedName>
+      <AccessoryByPackedRank>1</AccessoryByPackedRank>
+    </AccessoryByPacked>
+    <AccessoryByPacked>
+      <AccessoryByPackedCode>AB40003302</AccessoryByPackedCode>
+      <AccessoryByPackedReference>Luxurious pouch</AccessoryByPackedReference>
+      <AccessoryByPackedName>Luxe etui</AccessoryByPackedName>
+      <AccessoryByPackedRank>2</AccessoryByPackedRank>
+    </AccessoryByPacked>
+    <Award AwardType="global_highlight">
+      <AwardCode>GA40020933</AwardCode>
+      <AwardName>Light Side</AwardName>
+      <AwardDate>2017</AwardDate>
+      <AwardPlace>NL</AwardPlace>
+      <AwardDescription>Light Side</AwardDescription>
+      <AwardAcknowledgement>Star Wars</AwardAcknowledgement>
+      <AwardRank>1</AwardRank>
+    </Award>
+    <Award AwardType="global_highlight">
+      <AwardCode>GA40020934</AwardCode>
+      <AwardName>Light Side</AwardName>
+      <AwardDate>2017</AwardDate>
+      <AwardPlace>NL</AwardPlace>
+      <AwardDescription>Light Side</AwardDescription>
+      <AwardAcknowledgement>Star Wars</AwardAcknowledgement>
+      <AwardRank>5</AwardRank>
+    </Award>
+    <Award AwardType="global_highlight">
+      <AwardCode>GA40020953</AwardCode>
+      <AwardName>Star Wars</AwardName>
+      <AwardDate>2017</AwardDate>
+      <AwardPlace>NL</AwardPlace>
+      <AwardDescription>Star Wars</AwardDescription>
+      <AwardAcknowledgement>Star Wars</AwardAcknowledgement>
+      <AwardRank>6</AwardRank>
+    </Award>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>CP0480/01</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>CP9062/01</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>HQ110/01</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>HQ110/02</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>HQ110/42</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>RQ111/50</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>RQ111/51</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>RQ111/52</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>RQ111/53</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>RQ585/50</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>RQ585/51</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>RQ585/52</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>SH575/50</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>SH90/50</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>SH90/51</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>SH90/52</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>SH90/60</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>SH90/62</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>SH90/63</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+  </Product>
+ 

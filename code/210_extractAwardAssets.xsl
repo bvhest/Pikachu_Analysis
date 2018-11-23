@@ -10,7 +10,7 @@
   </xsl:template>
 
   <xsl:template match="Products">
-    <xsl:text>id,type,locale,description,extension,parent_id</xsl:text>
+    <xsl:text>id,type,locale,description,extension,parent_id,url</xsl:text>
     <xsl:apply-templates select="//Product"/>
   </xsl:template>
 
@@ -24,7 +24,7 @@
   <!-- create lines with asset data: -->
   <xsl:template match="Asset">
     <xsl:param name = "productID" />
-"<xsl:value-of select="@code" />","<xsl:value-of select="@type" />","<xsl:value-of select="@locale" />","<xsl:value-of select="@description" />","<xsl:value-of select="@extension" />","<xsl:value-of select="$productID" />"<xsl:text>&#xD;</xsl:text>
+"<xsl:value-of select="@code" />","<xsl:value-of select="@type" />","<xsl:value-of select="@locale" />","<xsl:value-of select="@description" />","<xsl:value-of select="@extension" />","<xsl:value-of select="$productID" />","<xsl:value-of select="text()" />"<xsl:text>&#xD;</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>
