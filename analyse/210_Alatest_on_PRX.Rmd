@@ -1,5 +1,5 @@
 ---
-title: "Award migration"
+title: "Award migration: Alatest awards"
 author: "BHE"
 date: "November 20, 2018"
 output: html_document
@@ -8,15 +8,21 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-PRX Url: https://www.philips.co.uk/prx/product/B2C/nl_NL/CONSUMER/products/SW7700_67.summary
-
-
 "The URL format should be ==> http://<SERVER>:<PORT>/product/<SECTOR_CODE>/<LOCALE>/<CATALOG>/products/<CTN>.<summary|overview|features|metadata|disclaimers|specification|support|assets|accessories|marketing|relatedProducts|greendata|awards|tokenssupportassets|additionalInfo>"
+
+PRX Url: 
+
+  - https://www.philips.co.uk/prx/product/B2C/nl_NL/CONSUMER/products/SW7700_67.summary
+
+Website:
+
+  - https://www.philips.nl/c-p/SW7700_67/star-wars-special-edition-elektrisch-scheerapparaat-voor-nat-en-droog-scheren
 
 
 
 test product:
+
+```
  <Product Country="NL" IsAccessory="false" IsMaster="false" Locale="nl_NL" lastModified="2018-10-20T04:44:09" masterLastModified="2018-06-22T00:25:56">
     <CTN>SW7700/67</CTN>
     <GTIN>08710103834885</GTIN>
@@ -844,4 +850,712 @@ test product:
       <ProductReferenceRank>0</ProductReferenceRank>
     </ProductReference>
   </Product>
+```
  
+ 
+Example with Ala_Award-asset: BG105/10 for nl_NL (Webcollage-feed)
+
+PRX Url: 
+
+  - https://www.philips.co.uk/prx/product/B2C/nl_NL/CONSUMER/products/BG105_10.summary
+  - https://www.philips.co.uk/prx/product/B2C/nl_NL/CONSUMER/products/BG105_10.awards
+  
+Website: 
+
+  - https://www.philips.nl/c-p/BG105_10/bodygroom-series-1000-body-groomer
+
+Note: 
+
+ - KA1 and KA2 awards are duplicated as GAL-awards.
+ - 6 asset-urls available for "ala_award", including the KA design award
+
+```
+    <Award AwardType="ala_award" awardAlid="214139434" globalSource="true" status="Final Published">
+      <AwardCode>ALA_187750614</AwardCode>
+      <AwardName>iF DESIGN AWARD 2016</AwardName>
+      <AwardDate>2016-02-26</AwardDate>
+      <Title>ifdesign.de</Title>
+      <Rating>0</Rating>
+      <AwardAuthor/>
+      <TestPros/>
+      <TestCons/>
+      <AwardDescription>Philips BG105/10</AwardDescription>
+      <AwardAcknowledgement>Philips BG105/10</AwardAcknowledgement>
+      <AwardVerdict/>
+      <AwardText>iF DESIGN AWARD 2016</AwardText>
+      <AwardRank>7</AwardRank>
+      <AwardSourceCode>ALS_49000084</AwardSourceCode>
+      <AwardCategory/>
+      <AwardSourceLocale>en_DE</AwardSourceLocale>
+    </Award>
+```
+
+Note that the asset is linked by the AwardSourceCode and included twice within the Assets-element; for both local and global:
+```
+      <Asset code="ALS_49000084" description="Award www" extension="html" lastModified="" locale="global" number="001" type="AWW">http://alatest.co.uk/redirect/sources/49000084/50428/</Asset>
+      <Asset code="ALS_49000084" description="Award www" extension="html" lastModified="" locale="nl_NL" number="001" type="AWW">http://alatest.co.uk/redirect/sources/49000084/50428/</Asset>
+```
+
+Note that Ala_Award-assets are hosted on the alatest-server.
+
+The asset <Asset code="ALS_10000002" description="Award www" extension="html" lastModified="" locale="nl_NL" number="001" type="AWW">http://alatest.co.uk/redirect/sources/10000002/50428/</Asset>
+is not referenced from anywhere in the product-message.
+
+Similarly, PRX contains an award that is not present in the product-message.
+
+```
+awardCode	"ALA_214139434NL"
+awardName	"Review samenvatting voor de Philips BG105"
+awardDate	""
+title	"alaTest.nl"
+rating	"87"
+awardAuthor	"alaTest"
+testPros	""
+testCons	""
+awardDescription	""
+awardAcknowledgement	"alaTest heeft 17 reviews verzameld en geanalyseerd voor Philips BG105. De gemiddelde beoordeling voor dit product is 3.8/5, vergeleken met een gemiddelde beoordeling van 4.2/5 voor andere producten in dezelfde categorie."
+awardVerdict	"We hebben de consumenten- en expertbeoordelingen, de leeftijd van het product en andere factoren geanalyseerd. Vergeleken met andere producten in dezelfde categorie krijgt de Philips BG105 een alaScore™ van 87/100 = Zeer goed."
+awardText	""
+awardRank	"8"
+awardSourceCode	"ALS_12101"
+awardCategory	""
+awardSourceLocale	"nl_NL"
+awardAlid	"214139434"
+globalSource	"false"
+status	"Final Published"
+awardType	"ala_summary"
+assets	
+0	
+asset	"https://images.philips.com/is/image/PhilipsConsumer/ALR087-AWR-nl_NL-001"
+type	"AWR"
+1	
+asset	"http://alatest.nl/professionele-reviews/alatest/a/po3-214139434,381/#partner:50428"
+type	"AWU"
+2	
+asset	"https://images.philips.com/is/image/PhilipsConsumer/ALS_12101-AWL-nl_NL-001"
+type	"AWL"
+```
+
+But the alatest-assets are ***NOT shown*** on the AEM-website!
+The KAi-assets are ***shown*** on the AEM-website.
+
+
+the product-message:
+
+```
+  <Product IsAccessory="false" IsMaster="true" lastModified="2017-11-05T00:31:51" masterLastModified="2017-11-05T00:29:53">
+    <CTN>BG105/10</CTN>
+    <MarketingVersion>5.3.1</MarketingVersion>
+    <MarketingStatus>Final Published</MarketingStatus>
+    <CRDate>2014-11-28</CRDate>
+    <CRDateYW>201448</CRDateYW>
+    <ModelYears>
+      <ModelYear>2014</ModelYear>
+    </ModelYears>
+    <ProductDivision>
+      <ProductDivisionCode>0200</ProductDivisionCode>
+      <ProductDivisionName>Consumer Lifestyle</ProductDivisionName>
+      <FormerPDCode>0300</FormerPDCode>
+    </ProductDivision>
+    <ProductOwner>trainee.malegrooming</ProductOwner>
+    <DTN>BG105/10</DTN>
+    <Catalog>
+      <StartOfPublication>2015-02-14T00:00:00</StartOfPublication>
+      <EndOfPublication>2025-03-01T00:00:00</EndOfPublication>
+      <StartOfSales>2015-02-14T00:00:00</StartOfSales>
+      <EndOfSales>2025-03-01T00:00:00</EndOfSales>
+      <DummyPrice/>
+      <Deleted>false</Deleted>
+      <DeleteAfterDate/>
+      <ProductRank>99</ProductRank>
+    </Catalog>
+    <FinancialCategorization>
+      <BusinessGroupCode>9044</BusinessGroupCode>
+      <BusinessGroupName>Personal Care</BusinessGroupName>
+      <BusinessUnitCode>0321</BusinessUnitCode>
+      <BusinessUnitName>Male Grooming</BusinessUnitName>
+      <MainArticleGroupCode>E15</MainArticleGroupCode>
+      <MainArticleGroupName>Grooming</MainArticleGroupName>
+      <ArticleGroupCode>3149</ArticleGroupCode>
+      <ArticleGroupName>Body Grooming</ArticleGroupName>
+    </FinancialCategorization>
+    <Categorization type="CONSUMER">
+      <GroupCode>PERSONAL_CARE_GR</GroupCode>
+      <GroupName>Personal care</GroupName>
+      <CategoryCode>BODY_GROOMERS_CA</CategoryCode>
+      <CategoryName>BODY groomers</CategoryName>
+      <SubcategoryCode>TRIMMING_ONLY_SU</SubcategoryCode>
+      <SubcategoryName>Trimming</SubcategoryName>
+    </Categorization>
+    <Assets>
+      <Asset code="BG105_10" description="User manual" extension="pdf" lastModified="2015-03-05" locale="nl_NL" number="001" type="DFU">http://download.p4c.philips.com/files/b/bg105_10/bg105_10_dfu_nld.pdf</Asset>
+      <Asset code="BG105_10" description="Key award 1" extension="tif" lastModified="2016-11-18" locale="nl_NL" number="001" type="KA1">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-KA1-nl_NL-001</Asset>
+      <Asset code="BG105_10" description="Key Award 2 " extension="tif" lastModified="2016-11-18" locale="nl_NL" number="001" type="KA2">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-KA2-nl_NL-001</Asset>
+      <Asset code="BG105_10" description="Leaflet" extension="pdf" lastModified="2018-03-21" locale="nl_NL" number="001" type="PSS">http://download.p4c.philips.com/files/b/bg105_10/bg105_10_pss_nldnl.pdf</Asset>
+      <Asset code="BG105_10" description="Retail Trade Leaflet" extension="pdf" lastModified="2017-12-02" locale="nl_NL" number="001" type="RTL">http://download.p4c.philips.com/files/b/bg105_10/bg105_10_rtl_nldnl.pdf</Asset>
+      <Asset code="BG105_10" description="Alternative product photograph - highres 2196x1795" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="APP">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-APP-global-001</Asset>
+      <Asset code="BG105_10" description="Emotional benefit photograph - highres 514x514" extension="tif" lastModified="2018-03-16" locale="global" number="001" type="BPP">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-BPP-global-001</Asset>
+      <Asset code="BG105_10" description="Product detail 2 - highres 2196x1795" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="D2P">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-D2P-global-001</Asset>
+      <Asset code="BG105_10" description="Product detail 4 - highres 2196x1795" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="D4P">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-D4P-global-001</Asset>
+      <Asset code="BG105_10" description="Product detail photograph - highres 2196x2196" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="DPP">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-DPP-global-001</Asset>
+      <Asset code="BG105_10" description="Main in-use photograph - highres 2480x1462" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="MI1">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-MI1-global-001</Asset>
+      <Asset code="BG105_10" description="Product 3D" extension="zip" lastModified="2015-02-05" locale="global" number="001" type="P3D">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-P3D-global</Asset>
+      <Asset code="BG105_10" description="Product 360 video" extension="flv" lastModified="2015-02-05" locale="global" number="001" type="P3F">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-P3F-global-001</Asset>
+      <Asset code="BG105_10" description="Packaging photograph - highres 1447x756" extension="tif" lastModified="2017-02-27" locale="global" number="001" type="PID">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-PID-global-001</Asset>
+      <Asset code="BG105_10" description="Packaging photograph - master" extension="tif" lastModified="2017-02-27" locale="global" number="001" type="PIM">http://download.p4c.philips.com/files/b/bg105_10/bg105_10_pim_.tif</Asset>
+      <Asset code="BG105_10" description="Packaging photograph - small 90x65" extension="jpg" lastModified="2017-02-27" locale="global" number="001" type="PIS">http://download.p4c.philips.com/files/b/bg105_10/bg105_10_pis_.jpg</Asset>
+      <Asset code="BG105_10" description="Leaflet" extension="pdf" lastModified="2018-03-21" locale="global" number="001" type="PSS">http://download.p4c.philips.com/files/b/bg105_10/bg105_10_pss_.pdf</Asset>
+      <Asset code="BG105_10" description="Standard product photograph - highres 2196x1795" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="RTP">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-RTP-global-001</Asset>
+      <Asset code="BG105_10" description="Product In Use 1 - highres 2196x1795" extension="tif" lastModified="2018-04-05" locale="global" number="001" type="U1P">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-U1P-global-001</Asset>
+      <Asset code="BG105_10" description="Product In Use 2 - highres 2196x1795" extension="tif" lastModified="2018-03-21" locale="global" number="001" type="U2P">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-U2P-global-001</Asset>
+      <Asset code="BG105_10" description="Product In Use 5 - highres 2196x1795" extension="tif" lastModified="2018-04-25" locale="global" number="001" type="U5P">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-U5P-global-001</Asset>
+      <Asset code="BG105_10" description="Product in use photograph - highres 2196x1795" extension="tif" lastModified="2018-03-28" locale="global" number="001" type="UPL">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-UPL-global-001</Asset>
+      <Asset code="BG105_10" description="Single product shot" extension="" lastModified="2017-11-05" locale="" number="" type="IMS">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-IMS-</Asset>
+      <Asset code="BG105_10" description="Product gallery image set" extension="" lastModified="2017-11-05" locale="" number="" type="GAL">http://images.philips.com/is/image/PhilipsConsumer/BG105_10-GAL-</Asset>
+      <Asset code="ALS_10000002" description="Award www" extension="html" lastModified="" locale="nl_NL" number="001" type="AWW">http://alatest.co.uk/redirect/sources/10000002/50428/</Asset>
+      <Asset code="ALS_49000084" description="Award www" extension="html" lastModified="" locale="global" number="001" type="AWW">http://alatest.co.uk/redirect/sources/49000084/50428/</Asset>
+      <Asset code="ALS_49000084" description="Award www" extension="html" lastModified="" locale="nl_NL" number="001" type="AWW">http://alatest.co.uk/redirect/sources/49000084/50428/</Asset>
+      <Asset code="ALS_4900060" description="Award www" extension="html" lastModified="" locale="global" number="001" type="AWW">http://alatest.co.uk/redirect/sources/4900060/50428/</Asset>
+      <Asset code="ALS_4900060" description="Award www" extension="html" lastModified="" locale="nl_NL" number="001" type="AWW">http://alatest.co.uk/redirect/sources/4900060/50428/</Asset>
+      <Asset code="F400069002_BG105_10" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="FIL">http://images.philips.com/is/image/PhilipsConsumer/F400069002_BG105_10-FIL-global-001</Asset>
+      <Asset code="F400069006" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="FIL">http://images.philips.com/is/image/PhilipsConsumer/F400069006-FIL-global-001</Asset>
+      <Asset code="F400070397_BG105_10" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="FIL">http://images.philips.com/is/image/PhilipsConsumer/F400070397_BG105_10-FIL-global-001</Asset>
+      <Asset code="F400075817_BG105_10" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="FIL">http://images.philips.com/is/image/PhilipsConsumer/F400075817_BG105_10-FIL-global-001</Asset>
+      <Asset code="F400076944_BG105_10" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="FIL">http://images.philips.com/is/image/PhilipsConsumer/F400076944_BG105_10-FIL-global-001</Asset>
+      <Asset code="F400076945_BG105_10" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="FIL">http://images.philips.com/is/image/PhilipsConsumer/F400076945_BG105_10-FIL-global-001</Asset>
+      <Asset code="F400077592" description="Feature photograph - highres 2100x1170" extension="tif" lastModified="2016-03-02" locale="global" number="001" type="FIL">http://images.philips.com/is/image/PhilipsConsumer/F400077592-FIL-global-001</Asset>
+      <Asset code="GA40019044" description="needs to be blocked as code in CCR Global award logo - master" extension="jpg" lastModified="2016-05-11" locale="global" number="001" type="GAL">GA40019044-GAL-global-001.jpg</Asset>
+      <Asset code="GA40019044" description="Global award logo - highres 590x590" extension="tif" lastModified="2016-05-11" locale="global" number="001" type="GAP">http://images.philips.com/is/image/PhilipsConsumer/GA40019044-GAP-global-001</Asset>
+      <Asset code="GA40019049" description="needs to be blocked as code in CCR Global award logo - master" extension="jpg" lastModified="2016-05-11" locale="global" number="001" type="GAL">GA40019049-GAL-global-001.jpg</Asset>
+      <Asset code="GA40019049" description="Global award logo - highres 590x590" extension="tif" lastModified="2016-05-11" locale="global" number="001" type="GAP">http://images.philips.com/is/image/PhilipsConsumer/GA40019049-GAP-global-001</Asset>
+      <Asset code="PHI" description="Brand logo - highres 1476x886" extension="tif" lastModified="2016-02-18" locale="global" number="001" type="BRP">http://images.philips.com/is/image/PhilipsConsumer/PHI-BRP-global-001</Asset>
+    </Assets>
+    <ProductName>Skin protection system body groomer</ProductName>
+    <FullProductName>Philips Bodygroom series 1000 body groomer BG105/10 Skin protection system 1 click-on comb, 3mm Includes 1 AA battery Shower cord</FullProductName>
+    <NamingString>
+      <MasterBrand>
+        <BrandCode>PHI</BrandCode>
+        <BrandName>Philips</BrandName>
+      </MasterBrand>
+      <BrandString>Philips</BrandString>
+      <Family>
+        <FamilyCode>SB40005444</FamilyCode>
+        <FamilyName>Bodygroom series 1000</FamilyName>
+        <FamilyNameUsed>1</FamilyNameUsed>
+      </Family>
+      <Descriptor>
+        <DescriptorCode>D4014046</DescriptorCode>
+        <DescriptorName>body groomer</DescriptorName>
+      </Descriptor>
+      <Alphanumeric>BG105/10</Alphanumeric>
+      <VersionElement1>
+        <VersionElementCode>V4041092</VersionElementCode>
+        <VersionElementName>Skin protection system</VersionElementName>
+      </VersionElement1>
+      <VersionElement2>
+        <VersionElementCode>V4041586</VersionElementCode>
+        <VersionElementName>1 click-on comb, 3mm</VersionElementName>
+      </VersionElement2>
+      <VersionElement3>
+        <VersionElementCode>V4041093</VersionElementCode>
+        <VersionElementName>Includes 1 AA battery</VersionElementName>
+      </VersionElement3>
+      <VersionElement4>
+        <VersionElementCode>V4041587</VersionElementCode>
+        <VersionElementName>Shower cord</VersionElementName>
+      </VersionElement4>
+      <VersionString>Skin protection system 1 click-on comb, 3mm Includes 1 AA battery Shower cord</VersionString>
+      <BrandedFeatureString/>
+      <DescriptorBrandedFeatureString>body groomer</DescriptorBrandedFeatureString>
+    </NamingString>
+    <WOW>Trims body hair, protects skin</WOW>
+    <SubWOW>Even in sensitive areas</SubWOW>
+    <MarketingTextHeader>The Series 1000 is designed specifically for the body, unlike other manual or electric tools made for the face. It comes with a unique skin protection system and compact design, ideal for use on smaller, sensitive areas or on the go.</MarketingTextHeader>
+    <KeyBenefitArea>
+      <KeyBenefitAreaCode>K4019454</KeyBenefitAreaCode>
+      <KeyBenefitAreaName>Skin-friendly performance</KeyBenefitAreaName>
+      <KeyBenefitAreaRank>1</KeyBenefitAreaRank>
+      <Feature>
+        <FeatureCode>F400076944_BG105_10</FeatureCode>
+        <FeatureReferenceName>Skin protection system (Junior Streetfighter MLU)</FeatureReferenceName>
+        <FeatureName>Skin protection system</FeatureName>
+        <FeatureLongDescription>Guard your skin, while trimming as close as 0.5mm</FeatureLongDescription>
+        <FeatureGlossary>The unique skin protection system guards even your most sensitive body areas, allowing you to comfortably trim hair as close as 0.5mm without direct contact between the sharp edge of the blades and your skin.</FeatureGlossary>
+        <FeatureRank>1</FeatureRank>
+        <FeatureTopRank>1</FeatureTopRank>
+      </Feature>
+      <Feature>
+        <FeatureCode>F400076945_BG105_10</FeatureCode>
+        <FeatureReferenceName>Bidirectional trimmer and comb (Junior Streetfighter MLU)</FeatureReferenceName>
+        <FeatureName>Bidirectional trimmer and comb</FeatureName>
+        <FeatureLongDescription>Trim hair in any direction with the 3mm comb</FeatureLongDescription>
+        <FeatureGlossary>Uniquely designed with a bidirectional trimmer and 3mm comb, this tool makes it possible to catch and cut hairs even when they grow in different directions. For thicker hair, pre-trimming with the comb is recommended.</FeatureGlossary>
+        <FeatureRank>2</FeatureRank>
+        <FeatureTopRank>2</FeatureTopRank>
+      </Feature>
+    </KeyBenefitArea>
+    <KeyBenefitArea>
+      <KeyBenefitAreaCode>K300000216</KeyBenefitAreaCode>
+      <KeyBenefitAreaName>Easy to use</KeyBenefitAreaName>
+      <KeyBenefitAreaRank>2</KeyBenefitAreaRank>
+      <Feature>
+        <FeatureCode>F400069006</FeatureCode>
+        <FeatureReferenceName>AA battery power (Junior Streetfighter MLU)</FeatureReferenceName>
+        <FeatureName>AA battery power</FeatureName>
+        <FeatureLongDescription>Includes one AA battery, for up to 2 months use</FeatureLongDescription>
+        <FeatureGlossary>This compact, AA battery-powered trimmer can be used whenever, and wherever you need it. One battery delivers up to two months use, run-time may differ depending on hair type and body grooming frequency. For optimal performance use only high quality Philips Alkaline AA batteries.</FeatureGlossary>
+        <FeatureRank>1</FeatureRank>
+        <FeatureTopRank>3</FeatureTopRank>
+      </Feature>
+      <Feature>
+        <FeatureCode>F400069002_BG105_10</FeatureCode>
+        <FeatureReferenceName>100% waterproof (Junior Streetfighter MLU)</FeatureReferenceName>
+        <FeatureName>100% waterproof</FeatureName>
+        <FeatureLongDescription>Easy to clean and use in or out of the shower</FeatureLongDescription>
+        <FeatureGlossary>This body groomer is 100% waterproof and showerproof, so you can simply rinse it clean when you've finished. For best results, use on dry hair before you shower.</FeatureGlossary>
+        <FeatureRank>2</FeatureRank>
+        <FeatureTopRank>4</FeatureTopRank>
+      </Feature>
+      <Feature>
+        <FeatureCode>F400075817_BG105_10</FeatureCode>
+        <FeatureReferenceName>Ergonomic grip (Junior Oxygen Speedy Streetfighter MLU)</FeatureReferenceName>
+        <FeatureName>Ergonomic grip</FeatureName>
+        <FeatureLongDescription>Ergonomic grip for maximum control</FeatureLongDescription>
+        <FeatureGlossary>The rubber grip is designed to ensure optimal handling even when wet, for better control during use, in or out of the shower.</FeatureGlossary>
+        <FeatureRank>3</FeatureRank>
+        <FeatureTopRank>5</FeatureTopRank>
+      </Feature>
+      <Feature>
+        <FeatureCode>F400070397_BG105_10</FeatureCode>
+        <FeatureReferenceName>Shower cord (Junior Streetfighter MLU)</FeatureReferenceName>
+        <FeatureName>Shower cord</FeatureName>
+        <FeatureLongDescription>Shower cord for easy storage</FeatureLongDescription>
+        <FeatureGlossary>Use the shower cord to hang your body groomer where it's most convenient for you. Easily accessible and always ready to go, whatever the occasion.</FeatureGlossary>
+        <FeatureRank>4</FeatureRank>
+        <FeatureTopRank>6</FeatureTopRank>
+      </Feature>
+    </KeyBenefitArea>
+    <KeyBenefitArea>
+      <KeyBenefitAreaCode>K4006087</KeyBenefitAreaCode>
+      <KeyBenefitAreaName>Built to last</KeyBenefitAreaName>
+      <KeyBenefitAreaRank>3</KeyBenefitAreaRank>
+      <Feature>
+        <FeatureCode>F400077592</FeatureCode>
+        <FeatureReferenceName>Built to last (Junior Streetfighter MLU)</FeatureReferenceName>
+        <FeatureName>Built to last</FeatureName>
+        <FeatureLongDescription>2 year guarantee, no oil needed</FeatureLongDescription>
+        <FeatureGlossary>All of our grooming products are built to last. They come with a 2 year worldwide guarantee and they never need to be oiled.</FeatureGlossary>
+        <FeatureRank>1</FeatureRank>
+        <FeatureTopRank>7</FeatureTopRank>
+      </Feature>
+    </KeyBenefitArea>
+    <FeatureImage>
+      <FeatureCode>F400076944_BG105_10</FeatureCode>
+      <FeatureReferenceName>Skin protection system (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureImageRank>1</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400076945_BG105_10</FeatureCode>
+      <FeatureReferenceName>Bidirectional trimmer and comb (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureImageRank>2</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400069006</FeatureCode>
+      <FeatureReferenceName>AA battery power (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureImageRank>3</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400069002_BG105_10</FeatureCode>
+      <FeatureReferenceName>100% waterproof (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureImageRank>4</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400075817_BG105_10</FeatureCode>
+      <FeatureReferenceName>Ergonomic grip (Junior Oxygen Speedy Streetfighter MLU)</FeatureReferenceName>
+      <FeatureImageRank>5</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400070397_BG105_10</FeatureCode>
+      <FeatureReferenceName>Shower cord (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureImageRank>6</FeatureImageRank>
+    </FeatureImage>
+    <FeatureImage>
+      <FeatureCode>F400077592</FeatureCode>
+      <FeatureReferenceName>Built to last (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureImageRank>7</FeatureImageRank>
+    </FeatureImage>
+    <FeatureHighlight>
+      <FeatureCode>F400076944_BG105_10</FeatureCode>
+      <FeatureReferenceName>Skin protection system (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureHighlightRank>1</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400076945_BG105_10</FeatureCode>
+      <FeatureReferenceName>Bidirectional trimmer and comb (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureHighlightRank>2</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400069006</FeatureCode>
+      <FeatureReferenceName>AA battery power (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureHighlightRank>3</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400069002_BG105_10</FeatureCode>
+      <FeatureReferenceName>100% waterproof (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureHighlightRank>4</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400075817_BG105_10</FeatureCode>
+      <FeatureReferenceName>Ergonomic grip (Junior Oxygen Speedy Streetfighter MLU)</FeatureReferenceName>
+      <FeatureHighlightRank>5</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400070397_BG105_10</FeatureCode>
+      <FeatureReferenceName>Shower cord (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureHighlightRank>6</FeatureHighlightRank>
+    </FeatureHighlight>
+    <FeatureHighlight>
+      <FeatureCode>F400077592</FeatureCode>
+      <FeatureReferenceName>Built to last (Junior Streetfighter MLU)</FeatureReferenceName>
+      <FeatureHighlightRank>7</FeatureHighlightRank>
+    </FeatureHighlight>
+    <CSChapter>
+      <CSChapterCode>CHA_0000076</CSChapterCode>
+      <CSChapterName>Cutting system</CSChapterName>
+      <CSChapterRank>1</CSChapterRank>
+      <CSItem>
+        <CSItemCode>S_0001544</CSItemCode>
+        <CSItemName>Cutter width</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>1</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4008117</CSValueCode>
+          <CSValueName>32</CSValueName>
+          <CSValueRank>1</CSValueRank>
+        </CSValue>
+        <UnitOfMeasure>
+          <UnitOfMeasureCode>3000058</UnitOfMeasureCode>
+          <UnitOfMeasureName>millimeter</UnitOfMeasureName>
+          <UnitOfMeasureSymbol>mm</UnitOfMeasureSymbol>
+        </UnitOfMeasure>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4010244</CSItemCode>
+        <CSItemName>Cutting element</CSItemName>
+        <CSItemRank>2</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4085314</CSValueCode>
+          <CSValueName>Bi-directional trimmer</CSValueName>
+          <CSValueRank>6</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4036665</CSItemCode>
+        <CSItemName>Skin comfort</CSItemName>
+        <CSItemRank>3</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4085307</CSValueCode>
+          <CSValueName>Skin protection system</CSValueName>
+          <CSValueRank>16</CSValueRank>
+        </CSValue>
+        <CSValue>
+          <CSValueCode>VA4085305</CSValueCode>
+          <CSValueName>Comfort in sensitive areas</CSValueName>
+          <CSValueRank>17</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>CH4001561</CSChapterCode>
+      <CSChapterName>Create the look you want</CSChapterName>
+      <CSChapterRank>2</CSChapterRank>
+      <CSItem>
+        <CSItemCode>IT4008248</CSItemCode>
+        <CSItemName>Number of length settings</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4085304</CSValueCode>
+          <CSValueName>1 fixed length setting</CSValueName>
+          <CSValueRank>13</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>3000815</CSChapterCode>
+      <CSChapterName>Accessories</CSChapterName>
+      <CSChapterRank>3</CSChapterRank>
+      <CSItem>
+        <CSItemCode>3006780</CSItemCode>
+        <CSItemName>Included batteries</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4085313</CSValueCode>
+          <CSValueName>AA battery included</CSValueName>
+          <CSValueRank>12</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4036667</CSItemCode>
+        <CSItemName>Shower cord</CSItemName>
+        <CSItemRank>2</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4085320</CSValueCode>
+          <CSValueName>Yes</CSValueName>
+          <CSValueRank>3</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>CH4001524</CSChapterCode>
+      <CSChapterName>Ease of use</CSChapterName>
+      <CSChapterRank>4</CSChapterRank>
+      <CSItem>
+        <CSItemCode>IT4010234</CSItemCode>
+        <CSItemName>Secured length settings</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4023964</CSValueCode>
+          <CSValueName>Yes</CSValueName>
+          <CSValueRank>4</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4007983</CSItemCode>
+        <CSItemName>Wet &amp; Dry</CSItemName>
+        <CSItemRank>2</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4056926</CSValueCode>
+          <CSValueName>Fully washable</CSValueName>
+          <CSValueRank>2</CSValueRank>
+        </CSValue>
+        <CSValue>
+          <CSValueCode>VA4023749</CSValueCode>
+          <CSValueName>Showerproof and easy cleaning</CSValueName>
+          <CSValueRank>10</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4027494</CSItemCode>
+        <CSItemName>Operation</CSItemName>
+        <CSItemRank>3</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4064594</CSValueCode>
+          <CSValueName>Cordless use</CSValueName>
+          <CSValueRank>7</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4017174</CSItemCode>
+        <CSItemName>Maintenance free</CSItemName>
+        <CSItemRank>4</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4037052</CSValueCode>
+          <CSValueName>No oil needed</CSValueName>
+          <CSValueRank>8</CSValueRank>
+        </CSValue>
+        <CSValue>
+          <CSValueCode>VA4085315</CSValueCode>
+          <CSValueName>No need to replace the blades</CSValueName>
+          <CSValueRank>11</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>3001096</CSChapterCode>
+      <CSChapterName>Design</CSChapterName>
+      <CSChapterRank>5</CSChapterRank>
+      <CSItem>
+        <CSItemCode>IT4008709</CSItemCode>
+        <CSItemName>Handle</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4076321</CSValueCode>
+          <CSValueName>Ergonomic grip &amp; handling</CSValueName>
+          <CSValueRank>5</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>3000821</CSChapterCode>
+      <CSChapterName>Power</CSChapterName>
+      <CSChapterRank>6</CSChapterRank>
+      <CSItem>
+        <CSItemCode>3006919</CSItemCode>
+        <CSItemName>Battery type</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4094564</CSValueCode>
+          <CSValueName>AA battery</CSValueName>
+          <CSValueRank>14</CSValueRank>
+        </CSValue>
+      </CSItem>
+      <CSItem>
+        <CSItemCode>IT4015298</CSItemCode>
+        <CSItemName>Run time</CSItemName>
+        <CSItemRank>2</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4093588</CSValueCode>
+          <CSValueName>Up to 2 months</CSValueName>
+          <CSValueRank>9</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <CSChapter>
+      <CSChapterCode>CHA_0000049</CSChapterCode>
+      <CSChapterName>Service</CSChapterName>
+      <CSChapterRank>7</CSChapterRank>
+      <CSItem>
+        <CSItemCode>IT4010194</CSItemCode>
+        <CSItemName>2-year worldwide guarantee</CSItemName>
+        <CSItemRank>1</CSItemRank>
+        <CSItemIsFreeFormat>0</CSItemIsFreeFormat>
+        <CSValue>
+          <CSValueCode>VA4023904</CSValueCode>
+          <CSValueName>Yes</CSValueName>
+          <CSValueRank>1</CSValueRank>
+        </CSValue>
+      </CSItem>
+    </CSChapter>
+    <Filters>
+      <Purpose type="Comparison">
+        <Features>
+          <Feature code="F400076944_BG105_10" rank="1" referenceName="Skin protection system (Junior Streetfighter MLU)"/>
+          <Feature code="F400076945_BG105_10" rank="2" referenceName="Bidirectional trimmer and comb (Junior Streetfighter MLU)"/>
+          <Feature code="F400069006" rank="3" referenceName="AA battery power (Junior Streetfighter MLU)"/>
+          <Feature code="F400069002_BG105_10" rank="4" referenceName="100% waterproof (Junior Streetfighter MLU)"/>
+          <Feature code="F400075817_BG105_10" rank="5" referenceName="Ergonomic grip (Junior Oxygen Speedy Streetfighter MLU)"/>
+          <Feature code="F400070397_BG105_10" rank="6" referenceName="Shower cord (Junior Streetfighter MLU)"/>
+          <Feature code="F400077592" rank="7" referenceName="Built to last (Junior Streetfighter MLU)"/>
+        </Features>
+        <CSItems>
+          <CSItem code="S_0001544" rank="1" referenceName="Cutting system - Cutter width"/>
+          <CSItem code="IT4008248" rank="1" referenceName="Create the look you want - Number of length settings"/>
+          <CSItem code="3006780" rank="1" referenceName="Accessories - Included batteries"/>
+          <CSItem code="IT4010234" rank="1" referenceName="Ease of use - Secured length settings"/>
+          <CSItem code="IT4008709" rank="1" referenceName="Design - Handle"/>
+          <CSItem code="3006919" rank="1" referenceName="Power - Battery type"/>
+          <CSItem code="IT4010194" rank="1" referenceName="Service - 2-year worldwide guarantee"/>
+          <CSItem code="IT4010244" rank="2" referenceName="Cutting system - Cutting element"/>
+          <CSItem code="IT4036667" rank="2" referenceName="Accessories - Shower cord"/>
+          <CSItem code="IT4007983" rank="2" referenceName="Ease of use - Wet &amp; Dry"/>
+          <CSItem code="IT4015298" rank="2" referenceName="Power - Run time"/>
+          <CSItem code="IT4036665" rank="3" referenceName="Cutting system - Skin comfort"/>
+          <CSItem code="IT4027494" rank="3" referenceName="Ease of use - Operation"/>
+          <CSItem code="IT4017174" rank="4" referenceName="Ease of use - Maintenance free"/>
+        </CSItems>
+      </Purpose>
+      <Purpose type="Detail">
+        <Features>
+          <Feature code="F400076944_BG105_10" rank="1" referenceName="Skin protection system (Junior Streetfighter MLU)"/>
+          <Feature code="F400076945_BG105_10" rank="2" referenceName="Bidirectional trimmer and comb (Junior Streetfighter MLU)"/>
+          <Feature code="F400069006" rank="3" referenceName="AA battery power (Junior Streetfighter MLU)"/>
+          <Feature code="F400069002_BG105_10" rank="4" referenceName="100% waterproof (Junior Streetfighter MLU)"/>
+          <Feature code="F400075817_BG105_10" rank="5" referenceName="Ergonomic grip (Junior Oxygen Speedy Streetfighter MLU)"/>
+          <Feature code="F400070397_BG105_10" rank="6" referenceName="Shower cord (Junior Streetfighter MLU)"/>
+          <Feature code="F400077592" rank="7" referenceName="Built to last (Junior Streetfighter MLU)"/>
+        </Features>
+        <CSItems>
+          <CSItem code="S_0001544" rank="1" referenceName="Cutting system - Cutter width"/>
+          <CSItem code="IT4008248" rank="1" referenceName="Create the look you want - Number of length settings"/>
+          <CSItem code="3006780" rank="1" referenceName="Accessories - Included batteries"/>
+          <CSItem code="IT4010234" rank="1" referenceName="Ease of use - Secured length settings"/>
+          <CSItem code="IT4008709" rank="1" referenceName="Design - Handle"/>
+          <CSItem code="3006919" rank="1" referenceName="Power - Battery type"/>
+          <CSItem code="IT4010194" rank="1" referenceName="Service - 2-year worldwide guarantee"/>
+          <CSItem code="IT4010244" rank="2" referenceName="Cutting system - Cutting element"/>
+          <CSItem code="IT4036667" rank="2" referenceName="Accessories - Shower cord"/>
+          <CSItem code="IT4007983" rank="2" referenceName="Ease of use - Wet &amp; Dry"/>
+          <CSItem code="IT4015298" rank="2" referenceName="Power - Run time"/>
+          <CSItem code="IT4036665" rank="3" referenceName="Cutting system - Skin comfort"/>
+          <CSItem code="IT4027494" rank="3" referenceName="Ease of use - Operation"/>
+          <CSItem code="IT4017174" rank="4" referenceName="Ease of use - Maintenance free"/>
+        </CSItems>
+      </Purpose>
+    </Filters>
+    <FeatureCompareGroups/>
+    <Disclaimers/>
+    <AccessoryByPacked>
+      <AccessoryByPackedCode>ABPP_VA4085313</AccessoryByPackedCode>
+      <AccessoryByPackedReference>Included batteries: AA battery included</AccessoryByPackedReference>
+      <AccessoryByPackedName>Included batteries: AA battery included</AccessoryByPackedName>
+      <AccessoryByPackedRank>1</AccessoryByPackedRank>
+    </AccessoryByPacked>
+    <Award AwardType="global_highlight">
+      <AwardCode>GA40019044</AwardCode>
+      <AwardName>iF DESIGN AWARD 2016</AwardName>
+      <AwardDate>2016</AwardDate>
+      <AwardPlace>Germany</AwardPlace>
+      <AwardDescription>BodyGroom 1000</AwardDescription>
+      <AwardAcknowledgement>iF DESIGN AWARD 2016</AwardAcknowledgement>
+      <AwardRank>1</AwardRank>
+    </Award>
+    <Award AwardType="global_highlight">
+      <AwardCode>GA40019049</AwardCode>
+      <AwardName>Red Dot Award 2016: Winner</AwardName>
+      <AwardDate>2016</AwardDate>
+      <AwardPlace>Germany</AwardPlace>
+      <AwardDescription>BodyGroom 1000</AwardDescription>
+      <AwardAcknowledgement>Red Dot Award 2016: Winner</AwardAcknowledgement>
+      <AwardRank>5</AwardRank>
+    </Award>
+    <Award AwardType="ala_award" awardAlid="214139434" globalSource="true" status="Final Published">
+      <AwardCode>ALA_187750116</AwardCode>
+      <AwardName>Red Dot Award 2016: Winner</AwardName>
+      <AwardDate>2016-01-01</AwardDate>
+      <Title>red-dot.de (UK)</Title>
+      <Rating>0</Rating>
+      <AwardAuthor/>
+      <TestPros/>
+      <TestCons/>
+      <AwardDescription>Philips BG105/10</AwardDescription>
+      <AwardAcknowledgement>Philips BG105/10</AwardAcknowledgement>
+      <AwardVerdict/>
+      <AwardText>Red Dot Award 2016: Winner</AwardText>
+      <AwardRank>6</AwardRank>
+      <AwardSourceCode>ALS_4900060</AwardSourceCode>
+      <AwardCategory/>
+      <AwardSourceLocale>en_GB</AwardSourceLocale>
+    </Award>
+    <Award AwardType="ala_award" awardAlid="214139434" globalSource="true" status="Final Published">
+      <AwardCode>ALA_187750614</AwardCode>
+      <AwardName>iF DESIGN AWARD 2016</AwardName>
+      <AwardDate>2016-02-26</AwardDate>
+      <Title>ifdesign.de</Title>
+      <Rating>0</Rating>
+      <AwardAuthor/>
+      <TestPros/>
+      <TestCons/>
+      <AwardDescription>Philips BG105/10</AwardDescription>
+      <AwardAcknowledgement>Philips BG105/10</AwardAcknowledgement>
+      <AwardVerdict/>
+      <AwardText>iF DESIGN AWARD 2016</AwardText>
+      <AwardRank>7</AwardRank>
+      <AwardSourceCode>ALS_49000084</AwardSourceCode>
+      <AwardCategory/>
+      <AwardSourceLocale>en_DE</AwardSourceLocale>
+    </Award>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>BG2000/10</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+    <ProductReference ProductReferenceType="Accessory">
+      <CTN>CRP338/01</CTN>
+      <ProductReferenceRank>0</ProductReferenceRank>
+    </ProductReference>
+  </Product>
+```
+
+
+

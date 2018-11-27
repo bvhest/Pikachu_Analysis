@@ -72,7 +72,7 @@ With 'pr'=product, 'la'=language, 'co'=country, 'br'=branch.
 
 Doc-types are valid for a product or multiple branches.
 
-![](./images/ccr.jpg)
+![](./analyse/images/ccr.jpg)
 
 When assets are uploaded, the branch is specified.
 
@@ -81,12 +81,10 @@ When an asset is related to a product in PFS, the branch or asset-id is used. A 
 Available information in CCR;
 
   1. Doc: branch-id, md5, resource-name
-  2. Branch: branch-id, tree-id, ssid (id from Pikach)
+  2. Branch: branch-id, tree-id, ssid (id from Pikachu)
   3. Tree: tree-id
 
 This information can be exported and related to re-create the tree structure.
-
-
 
 
 ## Pikachu 
@@ -115,7 +113,10 @@ Exceptions (or not in my selection of exported data):
   - GAW: not found
   - AWR: not found
 
-
+The unique mime-types present in the feed are:
+```{r mime_type, echo=FALSE, message=FALSE}
+unique(awards.c$extension)
+```
 
   
 ### Observations
@@ -143,11 +144,6 @@ The following data-set shows the 'raw' assets from the feeds.
 load(file = "../data/awards/awards.RData")
 
 glimpse(awards.r)
-```
-
-The unique mime-types present in the feed are:
-```{r mime_type, echo=FALSE, message=FALSE}
-unique(awards.c$extension)
 ```
 
 The total number of awards is `r nrow(awards.r)`.
@@ -207,15 +203,27 @@ awards.r %>%
   dplyr::group_by(url) %>%
   dplyr::summarise(asset.count = n()) %>%
   dplyr::arrange(desc(asset.count)) %>%
-  dplyr::top_n(5) %>%
+  dplyr::top_n(15) %>%
   kableExtra::kable(caption="Most frequently occuring assets grouped by url") %>%
   kableExtra::kable_styling()
 ```
 
-So only the GAP asset is reused. All other assets seem to be unique for the product. Based on grouping on the url, there are `r nrow(awards.c)` unique assets. Note that the product-id is included in the url.
 
-Based on knowledge of CCR/PFS/Pikachu, we know that when the asset is published, a unique url is created for each published product asset.
-The number of unique assets is expected to be far lower.
+Based on grouping on the url, there are `r nrow(awards.c)` unique assets. This means that 
+
+  - the number of unique url's is higher than the number of unique id's (!),
+  - a number of assets/awards are related to multiple products. These assets are:
+
+```{r data_count3, echo=FALSE}
+awards.c %>%
+  dplyr::group_by(id) %>%
+  dplyr::summarise(count = n_distinct(parent_id)) %>%
+  dplyr::filter(count > 1) %>%
+  dplyr::arrange(id, parent_id) %>%
+  kableExtra::kable(caption="Assets (url's) used with different products") %>%
+  kableExtra::kable_styling()
+```
+
 
 Next, for each of the unique url's the image is downloaded and the md5-checksum for this image is calculated. The structure of this data-set looks as follows:
 ```{r data_count4, echo=FALSE, message=FALSE}
@@ -259,25 +267,19 @@ awards.c %>%
 # 8 KA7       1
 # 9 KA8       1
 #
-# total: 80 assets
+# totaal: 80 assets
 ```
 
 What are the most often (re)occuring assets?
 ```{r data_count6, echo=FALSE, message=FALSE}
 awards.c %>%
-  dplyr::group_by(md5, type) %>%
+  dplyr::group_by(md5) %>% # md5 is 8th column
   dplyr::summarise(count = n()) %>%
   dplyr::arrange(desc(count)) %>%
-  dplyr::filter(count > 1) %>%
   dplyr::top_n(15) %>%
   kableExtra::kable(caption="Most frequently occuring assets grouped by MD5-checksum") %>%
   kableExtra::kable_styling()
-```
 
-The asset with md5="b2a3816bd00372242ae6151723c0b613" is used as both KA1 and KA2.
-This reuse is present for other assets aswell.
-
-```{r data_count6b, echo=FALSE, message=FALSE}
 # # A tibble: 68 x 2
 # md5                              asset.count
 # <chr>                                  <int>
@@ -355,12 +357,3 @@ Questions:
   3. do we/can we create the award-product relations in STEP?
     note; this information is available!
 
-Note that based on this migration-approach, the assets will be based on the published images, not on the master-images of these assets.
-A better approach is to base the migration on the master-images available in CCR. This requires 
-
-  - either a backtracking of published assets to the sources in CCR,
-  - a migration approach based on the Pikachu (object-)asset feed.
-
-Note that the asset-list contains the product-assets, the object-asset-list contains object (eg feature) related assets.
-
-The object-asset-list (data: 27-11-2018) contains approx. 5868 Object-elements that contain one of the GAx asset-types, but no KAi asset-types.

@@ -16,7 +16,7 @@
 
   <xsl:template match="Product">
     <xsl:variable name="productID" select="CTN"/>
-    <xsl:apply-templates select="Assets/Asset[@type = ['KA1','KA2','KA3','KA4','KA5','KA6','KA7','KA8','GFA','AWL','GAP','GAZ']]">
+    <xsl:apply-templates select="Assets/Asset[@type = ['KA1','KA2','KA3','KA4','KA5','KA6','KA7','KA8','KA9','GFA','AWL','GAP','GAZ','ala_award']]">
       <xsl:with-param name="productID" select="$productID" />
     </xsl:apply-templates>
   </xsl:template>

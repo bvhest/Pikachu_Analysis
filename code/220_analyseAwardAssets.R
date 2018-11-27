@@ -176,3 +176,20 @@ awards.c %>%
 # totaal: 80 assets
 
 save(awards.r, awards.c, file = "./data/awards/awards.RData")
+
+# Sanity check
+
+awards <-
+  awards.r %>%
+  select(id) %>%
+  left_join(awards.c, by="id")
+
+awards.r %>%
+  summarise(unique.id.count = n_distinct(id),
+            unique.url.count = n_distinct(url))
+
+awards.c %>%
+  summarise(unique.id.count = n_distinct(id),
+            unique.url.count = n_distinct(url),
+            unique.md5.count = n_distinct(md5))
+
