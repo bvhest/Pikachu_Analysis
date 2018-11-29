@@ -364,3 +364,7 @@ A better approach is to base the migration on the master-images available in CCR
 Note that the asset-list contains the product-assets, the object-asset-list contains object (eg feature) related assets.
 
 The object-asset-list (data: 27-11-2018) contains approx. 5868 Object-elements that contain one of the GAx asset-types, but no KAi asset-types.
+The KAi asset-types can be found in the AssetList import files. The InternalResourceIdentifier contains the URI to the master image (TIF-file).
+
+*Issue:*
+Both the AssetList and ObjectAssetList only contain the MD5-checksum (and the doc-type) to identify the asset.
