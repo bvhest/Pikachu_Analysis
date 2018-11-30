@@ -124,6 +124,43 @@ Exceptions (or not in my selection of exported data):
   2. Webcollage global and local feeds both contain both global and local assets,
 
 
+The Key-Awards (as assets) are present as doctypes in the 
+
+  1.AssetList:
+    - KAx (public + secure + internal url)
+    - KxP (secure + internal url)
+  2. P4C_xSPOT_Marketing_Asset_201811261100_0001
+    - KAx (X>3)
+
+
+The Key-Awards (as awards) are present in the 
+
+  1. PMT_Raw import (for product "BG105/10")
+
+```
+    <Award AwardType="global_highlight">
+      <AwardCode>GA40019044</AwardCode>
+      <AwardName>iF DESIGN AWARD 2016</AwardName>
+      <AwardDate>2016</AwardDate>
+      <AwardPlace>Germany</AwardPlace>
+      <AwardDescription>BodyGroom 1000</AwardDescription>
+      <AwardAcknowledgement>iF DESIGN AWARD 2016</AwardAcknowledgement>
+      <AwardRank>1</AwardRank>
+    </Award>
+    <Award AwardType="global_highlight">
+      <AwardCode>GA40019049</AwardCode>
+      <AwardName>Red Dot Award 2016: Winner</AwardName>
+      <AwardDate>2016</AwardDate>
+      <AwardPlace>Germany</AwardPlace>
+      <AwardDescription>BodyGroom 1000</AwardDescription>
+      <AwardAcknowledgement>Red Dot Award 2016: Winner</AwardAcknowledgement>
+      <AwardRank>2</AwardRank>
+    </Award>
+```
+The relation between these Awards of type 'global highlight', which for this product corresponds to the KeyAward, and the acompanying image/asset is based on the AwardCode that is equal to the ObjectId in the ObjectAssetList. This object contains assets of type 'GAL', 'GAP', 'GAW' and 'GAZ'
+
+
+
 
 ### Awards in WebcollageProducts-feed
 
@@ -307,6 +344,12 @@ awards.c %>%
 
   - used as both a 'GAP' and as a 'KA4' asset type,
   - created *and* published anew for different products
+
+
+### Pikachu Imports
+
+KAx awards are present in the 
+
 
 
 

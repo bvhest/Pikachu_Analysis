@@ -14,6 +14,8 @@ library(tidyverse)
 library(kableExtra)
 ```
 
+
+
 ## Description
 
 In the future the distinction between global and local awards is no longer made based on the asset type (award) and there will only be 1 asset type. This means that the current usage is to be analysed and an approach to migrate them into the new set up is needed.
@@ -23,12 +25,17 @@ Especially the usage / dependency at AEM side on the use of Key-Awards and Ala_a
 
 
 
+
+
 ## Acceptance criteria
 
 Usage of award types clarified and based on clarification removed from migration scope if needed.
 
 
+
+
 ## Results
+
 
 
 
@@ -54,35 +61,7 @@ Key-Awards are locale-specific.
 
 #### Pikachu
 
-The Key-Awards are modelled in the Pikachu "PMT" content-type as an Award-element with `AwardType="global_highlight"`
-```
-    <Award AwardType="global_highlight">
-      <AwardCode>GA40019049</AwardCode>
-      <AwardName>Red Dot Award 2016: winnaar</AwardName>
-      <AwardDate>2016</AwardDate>
-      <AwardPlace>Duitsland</AwardPlace>
-      <AwardDescription>BodyGroom 1000</AwardDescription>
-      <AwardAcknowledgement>Red Dot Award 2016: winnaar</AwardAcknowledgement>
-      <AwardRank>2</AwardRank>
-    </Award>
-```
-
-*Note*: 
-
-  1. the "PMT" content-type is the final content-type in Pikachu and is used as source for the different exports,
-  2. the other Award-elements are created for the "Alatest"-awards, which are no longer presented on AEM, but still present in the Pikachu database.
-
-The image that corresponds to the Award is stored in the ObjectAssetList-element as an Object with one or more assets.
-```
-      <Object>
-        <id>GA40019049</id>
-        <Asset>...</Asset>
-        ...
-      </Object>
-```
-The relation between the two is based on the AwardCode and the Object/id.
-
-The Awards are also included in the product message as Asset-elements in the AssetList-element.
+The Key-Awards are included in the product message as Asset-elements in the AssetList-element.
 
 Eg. the "red-dot award"-image is included as
 ```
@@ -102,8 +81,44 @@ Eg. the "red-dot award"-image is included as
 
 
 
+The Key-Awards are, for the products checked in more detail, *also modelled* as an Award-element with `AwardType="global_highlight"` in the Pikachu "PMT_Raw" up to PMT" content-types
+```
+    <Award AwardType="global_highlight">
+      <AwardCode>GA40019049</AwardCode>
+      <AwardName>Red Dot Award 2016: winnaar</AwardName>
+      <AwardDate>2016</AwardDate>
+      <AwardPlace>Duitsland</AwardPlace>
+      <AwardDescription>BodyGroom 1000</AwardDescription>
+      <AwardAcknowledgement>Red Dot Award 2016: winnaar</AwardAcknowledgement>
+      <AwardRank>2</AwardRank>
+    </Award>
+```
+
+*Note*: 
+
+  1. the "PMT_Raw" content-type is the initial content-type in Pikachu, received from the application PFS,
+  1. the "PMT" content-type is the final content-type in Pikachu and is used as source for the different exports,
+  2. the other Award-elements are created for the "Alatest"-awards, which are no longer presented on AEM, but still present in the Pikachu database.
+
+The image that corresponds to the Award is stored in the ObjectAssetList-element as an Object with one or more assets.
+```
+      <Object>
+        <id>GA40019049</id>
+        <Asset>...</Asset>
+        ...
+      </Object>
+```
+The relation between these Awards of type 'global highlight', which for this product corresponds to the KeyAward, and the acompanying image/asset is based on the AwardCode that is equal to the ObjectId in the ObjectAssetList. This object contains assets of type 'GAL', 'GAP', 'GAW' and 'GAZ'
+
+
+Finally, these Key-Awards are also included as assets of type 'KxP' (x = 1..9). These assets only have the internal and secure url.
+
+
+
 
 #### PRX/AEM
+
+In PRX, awards are created for the Key-Awards and other Awards in the Pikachu feed.
 
 The awards data-model in PRX includes the following attributes for the Key-Awards:
 
@@ -132,7 +147,9 @@ The awards data-model in PRX includes the following attributes for the Key-Award
   This conclusion is based on the ommision of all award-attributes in PRX that are not present in the Pikachu Asset-element, but are available in the Pikachu Award element.
   2. it also means that sufficient information is available in Pikachu to migrate all relevant Award information, including the description, into STEP.
 
-  
+*Source*: https://www.philips.co.uk/prx/product/B2C/nl_NL/CONSUMER/products/SW7700_67.awards
+
+
 
 
 #### STEP
@@ -140,6 +157,8 @@ The awards data-model in PRX includes the following attributes for the Key-Award
 Awards are modelled as a separate object in STEP. An award can be related to a product.
 
 Awards can have a title, description and an image.
+
+
 
 
 
@@ -153,7 +172,7 @@ When the product-data is used as starting point for the migration, this results 
 
 When the asset-urls are used to download the images and a md5-checksum is calculated, the number of unique images is found to be approx. `r round(100*68/142, digits = 0)`%.
 
-The following criteria are defined for starting point of the migration:
+The following criteria are defined for the starting point of the migration:
 
 it must be possible 
 
@@ -179,7 +198,7 @@ Because the ObjectAssetList also contains the Key-Awards, this looks like the be
 
   * *open question*: should the award caption be migrated?  
     --> answer: not available for a award in Pikachu,
-  * describe data-model of awards in STEP,
+  * describe data-model of awards in STEP in detail,
   * describe upload mechanism to ADAM and/or STEP. This should cover:
     * linking assets to awards,
     * linking awards to products/levels in blue-tree,
