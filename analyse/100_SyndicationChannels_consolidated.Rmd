@@ -4,7 +4,7 @@ author: "Bart van Hest (Integration Technology & Services, The Future Group)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
 ## default:
-##  html_document:
+  html_document:
 ##    toc: true
 ##    toc_float: true
 ##    theme: lumen
@@ -29,6 +29,13 @@ output:
 ## - product selectie:
 ##   gebruik van brand, division, product type, customisation per kanaal?
 ---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+
 
 ## Introduction
 
@@ -365,6 +372,66 @@ The code for the following channels can be removed from the Pikachu code-base:
   - ShopAtgSearch
   - VCProducts
 
+
+
+
+### Active FTP-interfaces
+
+
+#### SIM-tool processes
+
+active export | process | errors | files sent | remarks
+------------- | ------- | ------ | ------- | ---------------------------- 
+yes | alatest-to-pikachu | no | yes | Complex job uploaded 1 file.
+yes | B2B-Hybris-meta_upload-ACC | no | yes |  
+yes | bazaarvoice | no | yes |  | 
+yes | ChannelAdvisor_si_SI | ? | no | transferred 0 files: 40 times before. Files don't seem to be processed on remote server. *Note*: One month old files can be found.
+yes | CliplisterProducts | no | no | pikachu-to-clipster transferred 0 files: 1 times before. *Note*: no old files can be found.
+yes | CliplisterProducts2 | no | yes | 
+yes | cq5-cat_PRX_Prod | no | ? | transferred 0 files: 1 times before.
+yes | cq5-meta_PRX_Stg | no | ? | transferred 0 files: 1 times before.
+yes | eloqua | no | no
+yes | EtailDetailProducts | no | yes | 
+yes | ETLsaving_Calcu | no | yes | archive_ftp/remote (unclear) directory contains files > 1 year old. No archiving/deletions?
+?   | feedcommerce | no | yes |  *Note*: old zip- and xml-files found. No archiving/deletions?
+yes | feedcommerce_PL_Eirtight | no | yes | *Note*: remote dir contains file 'Apr 19  2017 DO NOT USE THIS LOCATION.txt' and zip-files from this date onward...
+yes | flixmedia | no | yes | 
+yes | FlixMediaProducts_DE | no | ? | pikachu-to-flixmedia transferred 0 files: 1 times before. *Note*: One month old files can be found.
+yes | Hybris | no | yes | 
+yes | icecat | ? | ? | *Note*: remote dir contains 2 year old files. But also recent files.
+yes | IceCatRichContent | yes | yes | Job completed: pikachu-to-IceCatRichContent with 1 errors (retry of ftp put-commend for failed transfer). *Note*: remote dir contains 2 year old files. But also recent files.
+?   | infomatica_tradeplace | no | yes | 
+?   | lightingaws | no | yes | 
+yes | Lirio | no | yes | 
+?   | meta-cat-file-copy | no | no | *Note*: cp: missing destination file operand after `/applusr/pals/sim/data/pikachu-to-B2B-Hybris-meta_upload'
+yes | MMDProductExport | no | yes | 
+yes | myshop1 | no | no | *Note*: ssh_exchange_identification: Connection closed by remote host. Couldn't read packet: Connection reset by peer.
+yes | rendering | no | yes | 
+yes | searchstream | no | yes | 
+yes | spaf | no | ? | pikachu-to-spaf transferred 0 files: 4 times before. *Note*: recent files available.
+yes | WebcollageProducts | no | ? | pikachu-to-webcollage transferred 0 files: 3 times before. *Note*: recent files available.
+
+
+
+#### Missing FTP-processes for active exports
+
+```{r data_count1, echo=FALSE, message=FALSE, paged.print=FALSE}
+# 1. read active processes
+activeExports <-
+  readRDS(file = "../analyse/output/activeChannels.Rds")
+
+# 2. filter out processes that are not listed in above table
+activeExports %>%
+  dplyr::filter(tolower(channel) %in% 
+                    tolower(c("AmaHK", "AutomotiveProductsExport",
+                               "ChinaProducts", "CockpitReportExport", "EStoreProducts", 
+                               "FYP", "FoxIntProducts", "FuturesourceProducts", 
+                               "HomeLightMetadata", "Netbiscuits", "PhilipsRetailDirect",
+                               "ProductDescription", "Tradeplace", "VmaHK", "XCProducts"
+                               ))) %>%
+  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable_styling()
+```
 
 
 
