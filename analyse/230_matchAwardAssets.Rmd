@@ -1,0 +1,158 @@
+---
+title: "300_matchAwardAssets"
+author: "BHE"
+date: "December 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#library(XML)
+library(tidyverse)
+library(readr)
+library(httr)
+#library(purrr)
+library(digest)
+#library(tiff)
+library(jpeg)
+```
+
+## Initial data
+
+#
+# read & list channel custom code.
+#
+# BHE, 26-09-2018
+#
+
+#library(XML)
+library(tidyverse)
+library(readr)
+library(httr)
+#library(purrr)
+library(digest)
+#library(tiff)
+library(jpeg)
+
+###############################################################################
+# define data
+###############################################################################
+the PMT_RAW--PMT contains an AWARD-element:
+```
+<Award AwardType="global_highlight">
+  <AwardCode>GA40019049</AwardCode>
+  <AwardName>Red Dot Award 2016: winnaar</AwardName>
+  <AwardDate>2016</AwardDate>
+  <AwardPlace>Duitsland</AwardPlace>
+  <AwardDescription>BodyGroom 1000</AwardDescription>
+  <AwardAcknowledgement>Red Dot Award 2016: winnaar</AwardAcknowledgement>
+  <AwardRank>2</AwardRank>
+</Award>
+```
+
+This refers to an object from the ObjectAsstList
+
+```
+<Object xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectID>GA40019049</ObjectID>
+  <Asset>
+    <ResourceType>GAL</ResourceType>
+    <Language/>
+    <License>Final</License>
+    <AccessRights/>
+    <Modified>2016-05-11</Modified>
+    <Publisher>CCR</Publisher>
+    <InternalResourceIdentifier>http://pww.pcc.philips.com/mprdata/160511/1605110321_gal.jpg</InternalResourceIdentifier>
+    <SecureResourceIdentifier>https://www.p4c.philips.com/cgi-bin/dcbint/sget?url=/mprdata/160511/1605110321_gal.jpg</SecureResourceIdentifier>
+    <PublicResourceIdentifier/>
+    <Creator>310059896</Creator>
+    <Format>image/jpeg</Format>
+    <Extent>136989</Extent>
+    <Md5>dc6eae3c7e1f2bae83132d7af3e57436</Md5>
+  </Asset>
+  <Asset>
+    <ResourceType>GAP</ResourceType>
+    <Language/>
+    <License>Final</License>
+    <AccessRights/>
+    <Modified>2016-05-11</Modified>
+    <Publisher>CCR</Publisher>
+    <InternalResourceIdentifier>http://pww.pcc.philips.com/mprdata/160511/1605110322_gap.tif</InternalResourceIdentifier>
+    <SecureResourceIdentifier>https://www.p4c.philips.com/cgi-bin/dcbint/sget?url=/mprdata/160511/1605110322_gap.tif</SecureResourceIdentifier>
+    <PublicResourceIdentifier/>
+    <Creator>310059896</Creator>
+    <Format>image/tiff</Format>
+    <Extent>682256</Extent>
+    <Md5>67430fd90ef639b83a5c77d89328cb72</Md5>
+  </Asset>
+  <Asset>
+    <ResourceType>GAW</ResourceType>
+    <Language/>
+    <License>Final</License>
+    <AccessRights/>
+    <Modified>2016-05-11</Modified>
+    <Publisher>CCR</Publisher>
+    <InternalResourceIdentifier>http://pww.pcc.philips.com/mprdata/160511/1605110323_gaw.jpg</InternalResourceIdentifier>
+    <SecureResourceIdentifier>https://www.p4c.philips.com/cgi-bin/dcbint/sget?url=/mprdata/160511/1605110323_gaw.jpg</SecureResourceIdentifier>
+    <PublicResourceIdentifier/>
+    <Creator>310059896</Creator>
+    <Format>image/jpeg</Format>
+    <Extent>2514</Extent>
+    <Md5>92711a06efedb448460cf67443306c13</Md5>
+  </Asset>
+  <Asset>
+    <ResourceType>GAZ</ResourceType>
+    <Language/>
+    <License>Final</License>
+    <AccessRights/>
+    <Modified>2017-11-28</Modified>
+    <Publisher>CCR</Publisher>
+    <InternalResourceIdentifier>http://pww.pcc.philips.com/mprdata/171128/17112801vt_gaz.png</InternalResourceIdentifier>
+    <SecureResourceIdentifier>https://www.p4c.philips.com/cgi-bin/dcbint/sget?url=/mprdata/171128/17112801vt_gaz.png</SecureResourceIdentifier>
+    <PublicResourceIdentifier/>
+    <Creator/>
+    <Format/>
+    <Extent>474054</Extent>
+    <Md5>40c6e9a37e64c8db1b8e47a7dfb86fba</Md5>
+  </Asset>
+</Object>
+```          
+Next, check if the assets defined in this ObjectAssetList are equal to the KA1-asset in the PMT that contains this AwardType
+When the images are equal, it will be possible to migrate Award descriptions for the matching images into STEP.
+
+## match images
+
+```{r}
+# data from XML
+KA1_image <- 
+  "http://download.p4c.philips.com/files/b/bg105_10/bg105_10_ka1_nldnl.tif"
+KA1_ccrmd5 <- 
+  "28ebe7b76712f9ffebc42c87f68c6f06"
+
+GAL_image <- 
+  "http://pww.pcc.philips.com/mprdata/160511/1605110321_gal.jpg"
+GAL_ccrmd5 <- 
+  "dc6eae3c7e1f2bae83132d7af3e57436"
+GAP_image <- 
+  "http://pww.pcc.philips.com/mprdata/160511/1605110322_gap.tif"
+GAP_ccrmd5 <- 
+  "67430fd90ef639b83a5c77d89328cb72"
+GAW_image <- 
+  "http://pww.pcc.philips.com/mprdata/160511/1605110323_gaw.jpg"
+GAW_ccrmd5 <- 
+  "92711a06efedb448460cf67443306c13"
+GAZ_image <- 
+  "http://pww.pcc.philips.com/mprdata/171128/17112801vt_gaz.png"
+GAZ_ccrmd5 <- 
+  "40c6e9a37e64c8db1b8e47a7dfb86fba"
+
+assets <-
+  data.frame(type="KA1", url=KA1_image, ccrmd5=KA1_ccrmd5) %>%
+  dplyr::rbind_all(data.frame(type="GAL", url=GAL_image, ccrmd5=GAL_ccrmd5)) %>%
+
+# calculate md5 checksum from downloaded images
+
+```
+
+

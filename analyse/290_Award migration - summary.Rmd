@@ -1,10 +1,13 @@
 ---
 title: "Summary Award migration - PFS / Pikachu / CCR / AEM"
-author: "BHE"
-date: "November 29, 2018"
+author: "Bart van Hest (Integration Technology & Services, The Future Group)"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   word_document: default
   html_document: default
+  markdowntemplates::prismskel:
+    toc: true
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
