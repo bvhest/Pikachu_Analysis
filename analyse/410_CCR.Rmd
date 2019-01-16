@@ -1,0 +1,75 @@
+---
+title: "CCR - Overview functionality"
+author: "Bart van Hest (Integration Technology & Services, The Future Group)"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document: default
+  markdowntemplates::prismskel:
+    toc: true
+    toc_float: true
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(kableExtra)
+```
+
+## Description
+
+**[User Story 84417](https://dev.azure.com/PhilipsAgile/1.0%20DC%20Digital/_workitems/edit/84417) - Analysis / break down of all CCR functionality**
+
+...
+
+
+## Acceptance criteria
+
+...
+
+
+
+## Summary
+
+
+## Analysis
+
+### CCR
+
+CCR = Central Content Repository
+
+#### Functionality
+
+Repository for 
+
+  - assets (images, movies, documents, ...)  
+  Check [doc-types](http://pww.ccr.philips.com/cgi-bin/newmpr/conf_viewer.pl?confFile=doctypes.conf&sort=2)
+  - care data (P4C/PCT-feed)
+  - ...
+
+
+
+#### End-user functionality
+
+Central product-info hub:
+
+  - [FindYourProduct](http://pww.ccr.philips.com/ccrprd/f?p=402:100:1360897010053076)
+
+Asset maintenance:
+
+  - [asset upload widget](http://pww.ccr.philips.com/cgi-bin/newmpr/dcrt.pl), code1-authentication, role-based
+  - [mass upload option](http://pww.ccr.philips.com/ccr_batch_upload-new.html)
+
+  - asset search 
+  - asset maintaintenance
+  - reports(?)
+
+#### Interfaces
+
+Really many...
+
+  - Pikachu: (object)asset-list (asset metadata, including publ./interna/safe url), batch-based.
+  - SDL Rendering: asset (asset metadata, including url), batch-based.
+  - Pikachu: product care pages (PCT)
+  

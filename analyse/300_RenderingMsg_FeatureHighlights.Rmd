@@ -19,6 +19,9 @@ library(kableExtra)
 
 ## Description
 
+**[User Story 179402](https://dev.azure.com/PhilipsAgile/1.0%20DC%20Digital/_workitems/edit/179402) - Check rendering of features/highlighted features**
+
+
 As a marketing manager
 I want to see product features on the commercial leaflet and trade leaflets
 in order to inform potential buyers about a product's features.

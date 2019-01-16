@@ -1,0 +1,169 @@
+---
+title: "CCR - Restricted (Secure) Documents"
+author: "Bart van Hest (Integration Technology & Services, The Future Group)"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document: default
+  markdowntemplates::prismskel:
+    toc: true
+    toc_float: true
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(kableExtra)
+```
+
+## Description
+
+**[User Story 184903](https://dev.azure.com/PhilipsAgile/1.0%20DC%20Digital/_workitems/edit/184903) - Analysis on service center / call center agent role**
+
+Gather business requirements around secured documents.  (Check with Nico Mannaerts).
+
+find out if there is a different need to be able to access secured assets and if so how this should be represented in user roles
+
+
+
+## Acceptance criteria
+
+Good stuff.
+
+
+
+## Summary
+
+
+## Analysis
+
+### CCR
+
+AA  |	Derivation  |	Long Description  |	Restricted  |	Show EULA |	Highlight  |	Scene7 Image  |	License  |	Doc class  |	XSD-file  |	Support Global  |	Feedback  |	  	Description | 	Filetypes | 	Rec. Filesize | 	Max. Filesize | 	Tree | 	Version |	Parent  |	Doctype 
+-- |	-- |	------------------------- |	------ | ------ | ------ | ----- |	----- |	----- |	----- |	----- |	----- |	-----
+5 |	O14 |	Categorization content (restricted) |	HTML  	| 	 	0 | 	 	 	Y |	0 |	0 |	0 |	0 |	2 |	 	0 |	0 	  
+
+Peter Ruiter (2018-12-18) uses the terms:
+
+  *	Public - Available on the internet
+  *	Restricted - Available on the internet with a valid token (recognized secure cookie with valid hash)
+  *	Internal - Available on the PGN
+
+The token is a secure cookie, that means it is only send when HTTPS is used, and it is encrypted. The cookie is not signed. 
+The cookie is validated by checking the hash value of the cookie. If the hash-value is correct the cookie is validated. Part of the has value is the date and the IP-address of the requestor, so these cookies cannot be shared and are only valid for the day the cookie was created.
+
+  *	Doctype is configured to be either public or private **--> how & where ???**
+  *	Private asset will not get a public URL (Symlink on P4C) **--> Private == internal**
+  *	P4C/P4S:
+    *	P4C pages show only public assets
+    *	P4S pages also show private assets
+    *	P4S "users" are recognized by a token stored in (a secure Cookie). 
+    *	Different types of tokens: servicer or call center agent or webuser.
+    *	Token type defines which doctypes are displayed/accessible. Digital Services manages this.
+    *	The cookie is:
+      - retrieved via atyourservice.philips.com. Here, user management is handled. (Contact: John Huls)
+      - retrieved from P4C with a cookie-set script
+    *	Cookie is a session cookie that expires within 24 hours, or when users close their browser.
+
+
+
+
+
+### CCR requirements documentation
+
+From document:  "[P4C Requirements-working_draft.doc](./originalDocumentation/P4C_Requirements-working_draft.doc)" (2009)
+
+    2.4.2	Restricted content
+    Retrieve secure cookie(s) and determine type of user based on (list of) cookie(s), extend list of doctypes for (all) secure cookie(s).
+    Based on the type of user some different sub templates are used, and for some usertypes ( ‘servicer’) an extra menu is added (Service Menu), also when no info is available for this menu (saying: No documentation available).
+    User types and cookies are configured (and maintained) in the CCR.
+    
+    	<RD_P4S_USERTYPE_0100 	section=”BasicConcepts” 
+    					title=”Language Labels”
+    >
+    Defining the user type is an algorithm: 
+    1.	If one of the secure cookies is of type ‘servicer’ then the usertype is ‘servicer’. 
+    2.	If one of the secure cookies is of type ‘callcenter’, and there is no cookie with user type ‘servicer’, then the usertype is ‘callcenter’
+    3.	In all other situations the usertype is same as the cookie defines.
+    
+    </RD_P4S_USERTYPE_0100>
+
+    2.4.3	Document set for a product
+    The product support page is created based on the available content. This is in fact the document set for the product (in this case the term ‘document’ includes the files and the OLEE’s). Next to the public documentation there is also the restricted documentation. When the user has a cookie for restricted documentation also the restricted documents for the product are retrieved and the found document records are filtered for the document types that are configured for the cookie. In this way a complete document set is created before the page creation is started.
+
+*Note: More details in the folowing pages of the document.*
+
+
+
+
+### TODO
+
+  1. ~~how and where are doc-types maintained wrt "public", "restricted" and "internal"?~~
+  2. user-role defined for maintaining this information?
+  3. ~~which doc-types are defined as "restricted"?~~
+  4. use of "Restricted" documents?
+    a. linked to 'lower' level of marketing product id, the 'chassis'.
+    b. which system maintains 'chassis'-product relation.
+  5. ~~retention policy?~~
+
+P4C/P4S gets list of files from CCR. Frequency is every 6 hours.
+
+  * P4C : Philips for Consumers (<> Care)
+  * P4S : Philips for Services (callcenter)
+
+DS has documents that describes the procedures for working with CCR. 
+For example the procedure to create a new doctype, when this required.
+
+
+### Done
+
+####   1. how and where are doc-types maintained wrt "public", "restricted" and "internal"?
+
+--> a doctype can be "restricted" or "non-restricted" (boolean switch).  
+    When "restricted", a doctype can be published to P4S and made accessible with a valid token only. When "non-restricted", a doctype can be published to P4C and become publicly available. 
+    So the three possible values "public", "restricted" and "internal" are configured with two separate flags.
+
+
+| restricted / published to | yes      |  no      | 
+| ------------------------- | -------- | -------- |
+| P4S                       |          | internal |
+| P4C                       |          | public   |
+
+
+
+#### 3. which doc-types are defined as "restricted"?
+
+*Note*: data-source = [doctypes.comf](http://pww.ccr.philips.com/cgi-bin/newmpr/conf_viewer.pl?confFile=doctypes.conf&sort=2), date = 2018-10-04.
+
+```{r restricted_doctypes, echo=FALSE, message=FALSE}
+###############################################################################
+# query the data:
+###############################################################################
+docTypesFile <-
+  paste("./output","docTypes.conf.Rds", sep = "/")
+
+docTypes.c.df <-
+  readRDS(file = docTypesFile)
+
+# 1. how many locales per asset type?
+docTypes.c.df %>%
+  dplyr::filter(Restricted == 0) %>%
+  dplyr::mutate(Restricted = dplyr::if_else(Restricted == 0, 'true', 'false')) %>%
+  kableExtra::kable(caption="Restricted doctypes") %>%
+  kableExtra::kable_styling()
+
+```
+
+
+
+
+#### 5. retention policy
+
+**Policy**: documents in CCR are stored for 20 years after the end-of-marketing date.
+
+The reason is that products can be/are sold for some period after the end of active marketing of a product. For example because products are still available in wharehouses.
+The retention period is therefore 15+5 years.
+
+The actual situation is that documents are not deleted after the retention period. They are only 'un-published' from the care site.
+
