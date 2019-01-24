@@ -1,10 +1,11 @@
 <!--
    | XML schema for the AssetList msg.
    |
-   | The AssetList msg is exported by SPOT and delivered to Pikachu, where it is further processed.
+   | The AssetList msg is exported by SPOT and delivered to Pikachu, where it is further processed. It contains
+   | product-related assets (as opposed to the object/tree-related assets).
    | SPOT receives the asset data from CCR (full-feed, meaning all products and all product-related-assets) 
-   | and filters-out the products that don't thave changed assets. Pikachu receives a delta-feed, but the 
-   | assets are complete per product.
+   | and filters-out the products that don't have changed assets. Pikachu receives a so-called delta-full-feed, 
+   | where every product in the feed will contain all of its assets.
    |
    | Based on the InternalResourceIdentifier, Pikachu retrieves the assets from CCR and send the assets to Scene7.
    | The asset-metadata is included in the product marketing- and product care-messages and send to the AEM website 
