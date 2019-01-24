@@ -1,7 +1,8 @@
 <!--
    | XML schema for the ObjectAssetList msg.
    |
-   | The ObjectAssetList msg is exported by CCR and delivered to Pikachu, where it is further processed.
+   | The ObjectAssetList msg is exported by CCR and delivered to Pikachu, where it is further processed. It contains
+   | object assets, aka tree-related assets.
    | Based on the InternalResourceIdentifier, Pikachu retrieves the assets from CCR and send the assets to Scene7.
    | The asset-metadata is included in the product marketing- and product care-messages and send to the AEM website 
    | and to syndication partners.
