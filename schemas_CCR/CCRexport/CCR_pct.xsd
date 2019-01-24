@@ -1,0 +1,62 @@
+<!--
+   | XML schema for the Product Care (PCT) msg.
+   |
+   | The PCT msg is exported by CCR and delivered to Pikachu, where it is further processed and send to AEM.
+   | The PCT is global. Based on the Care-catalog, it's localised in Pikachu.
+   | 
+   | Reverse engineered from the XML-message in Pikachu.
+   | BHE, 2019-01-24
+   |
+   -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Products" type="ProductsType"/>
+
+  <xs:complexType name="ProductsType">
+    <xs:sequence>
+      <xs:element type="ProductType" name="Product" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="DocStatus"/>
+    <xs:attribute type="xs:dateTime" name="docTimestamp"/>
+  </xs:complexType>
+
+  <xs:complexType name="ProductType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="CTN"/>
+      <xs:element type="xs:string" name="ProductType"/>
+      <xs:element type="xs:string" name="ProductImage"/>
+      <xs:element type="xs:string" name="HasSoftwareAsset"/>
+      <xs:element type="ProductDivisionType" name="ProductDivision"/>
+      <xs:element type="xs:string" name="ProductName"/>
+      <xs:element type="NamingStringType" name="NamingString"/>
+      <xs:element type="xs:string" name="ShortDescription"/>
+      <xs:element type="xs:string" name="RichTexts"/>
+    </xs:sequence>
+    <xs:attribute type="xs:dateTime" name="masterLastModified" use="optional"/>
+    <xs:attribute type="xs:string" name="IsMaster" use="optional"/>
+    <xs:attribute type="xs:string" name="Country" use="optional"/>
+    <xs:attribute type="xs:string" name="Locale" use="optional"/>
+    <xs:attribute type="xs:string" name="IsAccessory" use="optional"/>
+    <xs:attribute type="xs:dateTime" name="lastModified" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="ProductDivisionType">
+    <xs:sequence>
+      <xs:element type="xs:short" name="ProductDivisionCode"/>
+      <xs:element type="xs:string" name="ProductDivisionName"/>
+      <xs:element type="xs:string" name="FormerPDCode"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MasterBrandType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="BrandCode"/>
+      <xs:element type="xs:string" name="BrandName"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NamingStringType">
+    <xs:sequence>
+      <xs:element type="MasterBrandType" name="MasterBrand"/>
+      <xs:element type="xs:string" name="BrandString"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

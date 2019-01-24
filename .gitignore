@@ -47,3 +47,6 @@ vignettes/*.pdf
 *.html
 *.zip
 *.docx
+
+# Input data
+*.xml

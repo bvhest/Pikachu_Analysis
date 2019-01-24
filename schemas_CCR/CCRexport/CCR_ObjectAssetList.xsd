@@ -1,0 +1,50 @@
+<!--
+   | XML schema for the ObjectAssetList msg.
+   |
+   | The ObjectAssetList msg is exported by CCR and delivered to Pikachu, where it is further processed.
+   | Based on the InternalResourceIdentifier, Pikachu retrieves the assets from CCR and send the assets to Scene7.
+   | The asset-metadata is included in the product marketing- and product care-messages and send to the AEM website 
+   | and to syndication partners.
+   | 
+   | Reverse engineered from the XML-message in Pikachu.
+   | BHE, 2019-01-24
+   |
+   -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ObjectsMsg" type="ObjectsMsgType"/>
+
+  <xs:complexType name="ObjectsMsgType">
+    <xs:sequence>
+      <xs:element type="ObjectType" name="Object" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:float" name="version"/>
+    <xs:attribute type="xs:dateTime" name="docTimestamp"/>
+  </xs:complexType>
+
+  <xs:complexType name="ObjectType">
+    <xs:sequence>
+      <xs:element type="xs:long" name="ObjectID"/>
+      <xs:element type="AssetType" name="Asset" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AssetType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="ResourceType"/>
+      <xs:element type="xs:string" name="Language"/>
+      <xs:element type="xs:string" name="License"/>
+      <xs:element type="xs:string" name="AccessRights"/>
+      <xs:element type="xs:date" name="Modified"/>
+      <xs:element type="xs:string" name="Publisher"/>
+      <xs:element type="xs:string" name="InternalResourceIdentifier"/>
+      <xs:element type="xs:string" name="SecureResourceIdentifier"/>
+      <xs:element type="xs:string" name="PublicResourceIdentifier"/>
+      <xs:element type="xs:string" name="Creator"/>
+      <xs:element type="xs:string" name="Format"/>
+      <xs:element type="xs:int" name="Extent"/>
+      <xs:element type="xs:string" name="Md5"/>
+    </xs:sequence>
+  </xs:complexType>
+ 
+</xs:schema>
