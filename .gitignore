@@ -42,7 +42,6 @@ vignettes/*.pdf
 
 # Output data
 *.Rda
-*.pdf
 *.csv
 *.html
 *.zip
