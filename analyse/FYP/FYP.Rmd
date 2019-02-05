@@ -1,0 +1,40 @@
+# FYP
+
+## intro
+
+i am working as business analyst for the Digital Content project.
+I have been assigned the task to determine the impact of this project on the support and service organisation.
+I would like to have a meeting with you in order to learn which applications are used by your part of the organisation and what information is required to make your work possible.
+When is a meeting (in person at HTC/via Skype) possible for you? 
+
+## FYP future
+
+- search
+- assets (downloaden)
+- product information
+
+toekomst
+- toegang via code1 account & STEP access
+- producten personal health (niet health systems)
+- zoeken op product ids & types (adv. search; zoeken op specificaties)
+- alleen approved workspace
+- niet alle locales tegelijk
+- view/read only (aangepast read-only account)
+
+
+resultaat
+- product information
+- specifications
+- asset view (public/internal)
+- online catalog
+
+
+
+FYP - verschillen in toegankeljkheid ik / sc user
+
+
+wie gebruikt FYP? 
+hoeveel users
+hoe doet een gemiddelde call center gebruiker zijn werk (met FYP)
+
+doel; waar gaan we te kort komen/pijn hebben.
