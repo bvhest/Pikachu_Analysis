@@ -1,0 +1,203 @@
+# STEP Digital Content - Impact on different service users
+
+## Meeting
+
+Rajiv Swami - Service Manager Global Claims & Analytics PH Consumer Care Europe & APAC  
+date: 2019-01-30
+
+
+## Meeting minutes 
+
+The service centers, both the global and local centers, handle claims and service requests that come from both retailers and consumers.
+The applications that are used by the service centers are shown in the following overview:
+
+![Service Center application landscape](../images/serviceCenter_landscape.png)
+
+
+### At Your Service (AYS)
+
+At Your Service (AYS) is the most important application in use.
+
+The AYS application shows the product id (CTN code), a product image and product description.
+Amongst other functionality, it can be used to find product service manuals. These service manuals are retrieved from CCR based in links. *Note* that the service manuals are not duplicated and stored locally in the AYS application.
+The availability of the product service manuals is based on roles in the application. Product service manuals are only available to workshops (= the repair centers).
+
+Call center information (another role) provides eg a kind of FAQ: questions & answers.
+
+OnlinetTool: Service Network Support
+
+
+#### overview of data and source of the data
+
+| source      | information | interface | refresh frequency |
+| ----------- | ---------------------------------------- | --------- | ----------------- |
+| CCR         | Product CTN       | link to P4C/P4S        | n.a.              |
+| CCR         | Product image     | link to P4C/P4S        | n.a.              |
+| CCR         | Product description     | link to P4C/P4S        | n.a.              |
+| CCR         | Product service manuals | link to P4C/P4S        | n.a.              |
+
+In short, the required product information is retrieved through a direct link to the P4C/P4S-product page.
+
+
+#### Technology
+
+? ...*unknown*
+
+
+#### Contacts
+
+IT repsonsible: Ton Huybers (tech lead)
+
+
+
+
+
+### Salesforce
+
+Salesforce is the customer relation management (CRM) application. Salesforce is the replacement of the old Siebel application.
+In Salesforce, the product publication dates (sop/eop from CCR/LCB) are available, based on an interface to CCR/LCB. 
+
+    *Note*: its not yet known if this interface is equal to the documented interface between CCR/LCB and Siebel.
+
+If the product publication info is not available in Salesforce, a case (when a consumer complaints) for a product can not be created in Salesforce.
+
+*Note*: it sometimes occurs that publication dates are not available, although the products are being sold. Than a case can not be created and an IT-ticket is required to get the product entered/updated in CCR/LCB and interfaced to Salesforce. It takes 2-3 days to get the sop/eop in Salesforece after an update in LCB.
+
+*Note*: The call Centers in China  do not use Salesforce, but they can accesss thee same data. But thow?
+China uses CCFS. GThis application gets its product data through a datahub called RCDH. **TODO** check documentation on RCDH.
+The Call Centers in China do not use AYS either!
+
+
+#### overview of data and source of the data
+
+| source      | information | interface | refresh frequency |
+| ----------- | ---------------------------------------- | --------- | ----------------- |
+| CCR         | Product CTN                              | ?         | ?              |
+| CCR/LCB     | Product sop/eop                          | ?         | ?              |
+| CCR         | (Siebel) Product manual (DFU)                     | direct link P4C/P4S | ?              |
+| CCR         | (Siebel) Product Leaflet (PSS)                    | direct link P4C/P4S | ?              |
+| CCR         | (Siebel) Product support page                     | direct link P4C/P4S | ?              |
+| CCR         | (Siebel) Product support page (FAQs)              | direct link P4C/P4S | ?              |
+| CCR         | (Siebel) Product support page (scripts)           | direct link P4C/P4S | ?              |
+
+
+*Note*; 
+* the lines with (Siebel) describe data that was used by Siebel. **TODO**: Is it also used by Salesforce?  
+  --> YES (2019-02-05). The Product ID and sop/eop are provided by a feed from Pikachu (**???** no feeds with Salesforce, Siebel or 'service' in the name!). The Siebel format was more or less used 1-on-1 for the interface with Salesforce.
+  Because Pikachu can't deliver all data, this feed is merged with a feed from CCR. This is implemented in Informatica.
+* In short, most of the required product information is retrieved through a direct link to the P4C/P4S-product page.
+
+
+
+#### Technology
+
+'Out-of-the-box' application
+
+
+#### Contacts
+
+IT repsonsible: ?
+
+
+
+
+
+### Find Your Product (FYP)
+
+Find Your Product (FYP) is most often used to check the publication status of products for different countries. In addition, product assets are retrieved with FYP.
+
+Additional information:
+
+- Sales information (amount of products sold in a country),
+- Product assets, mostly service guides, also quality- and environemental related.  
+  Used by customer support and repair centers, 
+- Predecessor/successor information
+- FAQ's
+
+This application is used by global support (Ehvn & Amsterdam) and by Local (country) support.
+*Note*: it is also used by 'logistics'. **TODO**: check the details
+
+
+#### overview of data and source of the data
+
+| source      | information | interface | refresh frequency |
+| ----------- | ---------------------------------------- | --------- | ----------------- |
+| CCR         | Product CTN         | DB        | n.a.              |
+| CCR         | Product image       | DB        | n.a.              |
+| CCR         | Product description | DB            | n.a.              |
+| CCR/LCB     | Product sop/eop     | DB        | n.a.              |
+| CCR         | Product assets      | link to file-system           | n.a.              |
+| CCR         | Product amount sold | DB            | n.a.              |
+| CCR         | Product predecessor | DB            | n.a.              |
+| CCR         | Product successor   | DB            | n.a.              |
+| CCR         | Product support page (FAQs)              | direct link | ?              |
+|             |             |           |                   |
+
+*Note*:
+
+  1. the FAQ's are generated by Cognos (*stil in use?*) based on Free-Text-Reporting. As these FAQ's are present in CCR, there must be an interface from Cognos reporting to CCR. **TODO**: check the details
+  2. "test"-product: QT4001/15
+
+
+#### Technology
+
+FYP is one of the applications that is part of the CCR landscape. It's developed with Oracle APEX as UI and the data is stored in an Oracle database.
+
+
+#### Contacts
+
+Functional: Joost Hungerink
+
+IT repsonsible: Paul der Kinderen (?)
+
+
+
+
+### Document Management System (DMS)
+
+DMS is, for example, used to store proof that a consumer bought a product (receipts).
+DMS is not connected to CCR (as far as Rajiv knows).
+
+*Note*:  
+Product/service related documents in DMS can be uploaded (by consumers) through the Consumer Portal. These are also available in AYS. *These documents are out of our 'view'*!
+
+
+#### overview of data and source of the data
+
+- none
+
+
+#### Technology
+
+DMS is based on Microsoft Sharepoint. 
+
+
+#### Contacts
+
+IT repsonsible: ?
+
+
+
+## Open questions
+
+
+ 1. who maintains the info required for claimes, like service manuals, etc?
+
+Rajiv's department does not maintain the documentation, FAQ's, etc. 
+
+Who does maintain this?
+
+--> Ask Udo for the technical info. DS for the product data.
+
+THe service manual is updated, there are no different manuals for different years (for products containing different parts.)
+Udo Jungbluth = technical support person, responsible for the documentation maintenance and publication.
+
+  2. Maintenance of FAQ?  
+  Partially based on Cognos reports on free text. Partially based on On Line Editing & Entry tool (OLEE), which is used for creation/maintenance fo FAQ-type of content.
+
+
+  2. Application authentication is based on LDAP. How is a new person enroled?
+
+  3. does it make sense to generate the current support pages as static html and start publishing new support pages for products from Stibo STEP from the go-live onward?  
+  Motivation; the current support landscape is *large, complex and has scattered documentation*, making it *hard* to migrate the data, the interfaces, etc. 
+
