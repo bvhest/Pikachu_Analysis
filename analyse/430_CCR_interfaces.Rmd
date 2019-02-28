@@ -3,12 +3,10 @@ title: "CCR - Overview of interfaces"
 author: "Bart van Hest (Integration Technology & Services, The Future Group)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
-  prettydoc::html_pretty:
+  rmdformats::html_clean:
     toc: true
     toc_depth: 4
     number_sections: true
-    theme: tactile
-    highlight: github
   html_document: default
   word_document: default
   markdowntemplates::prismskel:
