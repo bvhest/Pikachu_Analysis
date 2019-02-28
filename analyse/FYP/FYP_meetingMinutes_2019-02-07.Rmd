@@ -57,6 +57,7 @@ Important information: basically everything currently in FYP.
 - FAQ's  
   *Note*: CCR/FYP OLEE-based FAQ's have been migrated into Salesforce. **TODO**; check completeness.
   CCR/FYP OLEE-based FAQ'sare beeing phased out.
+  *Note*: there are two types of FAQ's, with different doctypes. One for Services, the other for the Call-centers.
 
 
 
