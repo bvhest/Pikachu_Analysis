@@ -83,36 +83,52 @@ Really many...
 
 ### CCR Outbound interfaces
 
-Source: [CC-Architecture-7-10-2008, V0.9.xlsx](./CCR/CC-Architecture-7-10-2008, V0.9.xlsx)
-
 
 id | source   | target   | type | description
 -- | -------- | -------- | ---- | -------------------------------------------------------
 2 | CCR | Leaflet Rendering |  | Metadata about products & documents
 3 | CCR | P4C |  | "(1) Content files, (2) Meta data files, (3) configuration files"
 4 | CCR | CC-Support |  | Sends product information fro CCR to Salesforce(Siebel), PCCW, IBM SITEL & SENTO
-5 | CCR | SNDB |  | 
-6 | CCR | ATG | Database link | Metadata about products & documents
-7 | CCR | SAP-FIL-CE |  | 
+6 | CCR | AEM-PRX | Files | Zip-files with product-care data per locale. Transferred with the SIM-tool (CCR-to-cq5-PRX process)
 8 | CCR | PikaChu |  | 
+11 | CCR | SDL | Batch | *note: difference with id=2 ?*
+66 | CCR | SPOT |  | 
+74 | CCR | LCB |  | 
+75 | CCR | OLEE |  | 
+76 | CCR | DMT |  | 
+80 | CCR | Find Your Product |  | 
+-- | CCR | Scene7 | files | Publication of (product) video's to Scene7
+-- | CCR | Scene7 | files | Publication of (product) asset's to Scene7 (indirectly through Pikachu)
+-- | CCR | Tns-Nipo | files | Product (related) data in csv-format, delivered with SIM-tool (ccr_to_tns_nipo_upload process)
+-- | CCR | TPVisionData | files | categorization, chassis, docs, doc-types, locales, product description, delivered with SIM-tool (ccr_to_TPVisionData_upload process)
+
+
+
+Outbound-interfaces (status onbevestigd):
+
+id | source   | target   | type | description
+-- | -------- | -------- | ---- | -------------------------------------------------------
+5 | CCR | SNDB |  | 
+7 | CCR | SAP-FIL-CE |  | 
 9 | CCR | Reporting | Database link | Extract and load several data tables
 10 | CCR | Reporting | Files | Registration of ACR sales data from SAP. This data is stored by CCR in CSV files and copied to reporting directories
-11 | CCR | SDL | Batch | 
 12 | CCR  | OCDB | Database link | 
 25 | CCR | Reporting | Copy | Load FAQ stats 
 40 | CCR | Reporting  | Files | Monthly downloads overview
 41 | CCR | Reporting  | Files | Monthly OLEE statistics
 42 | CCR | Reporting  | Files | Monthly Statistics overview
 66 | CCR | SPOT |  | 
-74 | CCR | LCB |  | 
-75 | CCR | OLEE |  | 
 76 | CCR | DMT |  | 
-80 | CCR | Find Your Product |  | 
 82 | CCR | Dashboards & Reports |  | 
 83 | CCR | SMS |  | Feed to support product content from CCR
 90 | CCR | Upload SNDB |  | 
 99 | CCR | Export Directory | Files | The GET-script is used to deliver restricted content and for public content if the direct URL is not known.
 
+Sources: 
+
+- [CC-Architecture-7-10-2008, V0.9.xlsx](./CCR/CC-Architecture-7-10-2008, V0.9.xlsx)
+- Pikachu
+- SIM-tool
 
 
 CCR related applications:
@@ -127,24 +143,33 @@ id | source   | target   | type | description
 
 ### CCR Inbound interfaces
 
-Source: [CC-Architecture-7-10-2008, V0.9.xlsx](./CCR/CC-Architecture-7-10-2008, V0.9.xlsx)
+id | source   | target   | type | description
+-- | -------- | -------- | ---- | -------------------------------------------------------
+31 | PFS | CCR |  | 
+35 | PikaChu | CCR |  | 
+49 | SDL | CCR | Batch | 
+77 | LCB | CCR |  | 
+78 | OLEE | CCR |  | 
+-- | ACD_SITEL |CCR | files | unknown data to call-center(?) company, delivered with SIM-tool (ACD_SITEL_to_ccr process)
+
+Inbound-interfaces (status onbevestigd):
 
 id | source   | target   | type | description
 -- | -------- | -------- | ---- | -------------------------------------------------------
  1 | ?? | CCR |  | Languages & Countries
 14 | Nafta (IBM) | CCR |  | Claims data. Process "ACR registration"
-31 | PFS | CCR |  | 
-35 | PikaChu | CCR |  | 
 44 | SAP | CCR |  | Global product  data. Process "ACR Registration"
-49 | SDL | CCR | Batch | 
-77 | LCB | CCR |  | 
-78 | OLEE | CCR |  | 
 79 | DMT | CCR |  | 
 81 | Content Upload Tools | CCR |  | 
 85 | PCC Intranet | CCR | URL | 
 97 | EMA | CCR |  | 
 104 | PML | CCR |  | 
 
+Sources: 
+
+- [CC-Architecture-7-10-2008, V0.9.xlsx](./CCR/CC-Architecture-7-10-2008, V0.9.xlsx)
+- Pikachu
+- SIM-tool
 
 
 CCR related applications:
@@ -166,7 +191,7 @@ The group of interfaces that are most relevant to the "PIL BCD Digital 2.0 Conte
   1. Product marketing content
   2. Product care content
   3. Product service content
-
+  4. generic content (eg assets used by all of the above)
 
 
 
@@ -182,7 +207,7 @@ CCR feeds to Pikachu and SDL Rendering:
 
 ![CCR asset exports](./images/CCR_asset_exports.png)
 
-a. Asset-List export
+###### a. Asset-List export
 
 Product-related assets, like Standard Product Photo,commercial leaflet, etc.
 
@@ -198,7 +223,8 @@ Product-related assets, like Standard Product Photo,commercial leaflet, etc.
 |         | c. The AssetList only contains the MD5-checksum (and the doc-type) to identify the asset. |
 
 
-b. Object-Asset-List export
+
+###### b. Object-Asset-List export
 
 Object-related assets, like feature images, awards, etc.
 
@@ -215,27 +241,41 @@ Object-related assets, like feature images, awards, etc.
 
 
 
-c. Assets-2-SDL export
+
+###### c. Assets-2-SDL export
 
 |         |                                                                        | 
 | ------- | ---------------------------------------------------------------------- |
-| purpose | a. publish product assets (logical files/url's for both assets and object-assets) to enable SDL-Rendering include images on the leaflets. |
+| purpose | publish product assets (logical files/url's for both assets and object-assets) to enable SDL-Rendering include images on the leaflets. |
 | asset-types | *unknown* |
 | type    | batch |
 | frequency | daily |
-| remarks | - |
+| remarks | The product-data required for the leaflets is send from Pikachu (RenderingExport (full & delta)) by using the SIM-tool (pikachu-to-rendering process). |
+
+
+
+###### d. SDL-leaflets-2-CCR import
+
+|         |                                                                        | 
+| ------- | ---------------------------------------------------------------------- |
+| purpose | Import the commercial leaflets generated by SDL. |
+| asset-types | commercial leaflets (PSS) |
+| type    | batch |
+| frequency | daily |
+| remarks | The import must include leaflet metadata (product-id, locale, creation date). The data is retrieved using the SIM-tool (rendering-to-ccr process). |
+
 
 
 ##### 2. Product care content (PCT)
 
-a. Pikachu: Product catalogs-export
+###### a. Pikachu: Product catalogs-export
 
 ![CCR product catalog exports](./images/CCR_catalog_exports.png)
 
 
 |         |                                                                        | 
 | ------- | ---------------------------------------------------------------------- |
-| purpose | a. publish product publication status (published/archived, sop/eop) to the Care-website. Note: this feed also controls which product-data to send by the middleware (Pikachu) to AEM. | 
+| purpose | publish product publication status (published/archived, sop/eop) to the Care-website. Note: this feed also controls which product-data to send by the middleware (Pikachu) to AEM. | 
 | type    | batch |
 | frequency | daily |
 | remarks | Locale (country) specific export |
@@ -260,13 +300,13 @@ Content:
 - priority (always empty)
 
 
-b. Pikachu: Product categorization-export
+###### b. Pikachu: Product categorization-export
 
 ![CCR product categorization exports](./images/CCR_categorization_exports.png)
 
 |         |                                                                        | 
 | ------- | ---------------------------------------------------------------------- |
-| purpose | a. publish product categorization-structure to the Care-website. | 
+| purpose | publish product categorization-structure to the Care-website. | 
 | type    | batch |
 | frequency | daily |
 | remarks | No Care-specific categorization found. The Product-tree, Marketing-tree and professional-tree are send in the FixedCategorization-format. No differentiation between countries. |
@@ -288,14 +328,14 @@ Content:
 
 
 
-c. Pikachu: Product care content-export
+###### c. Pikachu: Product care content-export
 
 ![CCR product care content exports](./images/CCR_pct_exports.png)
 
 
 |         |                                                                        | 
 | ------- | ---------------------------------------------------------------------- |
-| purpose | a. publish product cate content to the Care-website. | 
+| purpose | publish product cate content to the Care-website. | 
 | type    | batch |
 | frequency | daily |
 | remarks | delta-export. Locale (language & country) specific export. The middleware (Pikachu) enriches the data before exporting to the Care-website. |
@@ -342,17 +382,17 @@ Notes:
   
   Product can indeed not be found on the Philips-website (resulting in a shit-load of alternative products...).
 
-d. OLEE-import
+###### d. OLEE-import
 
 Notes: 
 
   1. still required? OLEE for call-centers is obsolete. What is status of OLEE for service centers?
   
-e. SAP-import
+###### e. SAP-import
 
-f. PFS-import
+###### f. PFS-import
 
-g. SPOT-export
+###### g. SPOT-export
 
 
 
@@ -363,15 +403,35 @@ g. SPOT-export
 #### Product service content (p4s)
 
 
+#### Generic content
+
+##### Asset export
+
+###### a. images/documents export
+
+Described in the paragraph "AssetList-export"
+
+
+###### b. videos export
+
+
+|         |                                                                        | 
+| ------- | ---------------------------------------------------------------------- |
+| purpose | publish (product)video's to Scene7. | 
+| type    | batch |
+| frequency | daily |
+| remarks | Delivered by the SIM-tool (ccr-to-scene7-videos process). |
+
+
 
 #### Local Catalog Builder (LCB)
 
-a. LCB-import
+###### a. LCB-import
 
-b. LCB-export
+###### b. LCB-export
 
 
 #### Find Your Product (FYP)
 
-a. FYP-export
+###### a. FYP-export
 
