@@ -3,12 +3,12 @@ title: "CCR - Overview of interfaces"
 author: "Bart van Hest (Integration Technology & Services, The Future Group)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
+  word_document: default
+  html_document: default
   rmdformats::html_clean:
     toc: true
     toc_depth: 4
     number_sections: true
-  html_document: default
-  word_document: default
   markdowntemplates::prismskel:
     toc: true
     toc_float: true
@@ -94,7 +94,7 @@ FAQ maintenance:
 
 Really many... Click on the image to view it enlarged.
 
-![CCR Architecture overview (note; created in 2008, but still largely actual. ATG has been replaced by Adobe AEM, Siebel by Salesforce)](./images/ccr_landscape.PNG)
+![CCR Architecture overview.<br/><br/>(note; created in 2008, but the overview of interfaces is still relevant. Some applications have been replaced. eg. ATG has been replaced by Adobe AEM, Siebel by Salesforce)](./images/ccr_landscape.PNG)
 
 ### CCR Outbound interfaces
 
@@ -106,7 +106,7 @@ id | source   | target   | type | description
 4 | CCR | CC-Support |  | Sends product information from CCR to call-center applications: Salesforce (formerly: Siebel), (discontinued: PCCW), (discontinued: IBM SITEL & SENTO)
 6 | CCR | AEM-PRX | Files | Zip-files with product-care data per locale (PCT-feed). Transferred with the SIM-tool (CCR-to-cq5-PRX process)
 8 | CCR | PikaChu |  | Object-Asset-List, Asset-List (? see process 66), product care texts (PCT-Raw).
-66 | CCR | SPOT |  | Asset-List (?). According to the old documentation, SPOT receives the Asset-List from CCR and forwards a delta-filtered Asset-List to Pikachu. It's not clear if Pikachu receives this data from SPOT or directly from CCR.
+66 | CCR | SPOT |  | Asset-List. According to the old documentation, SPOT receives the Asset-List from CCR and forwards a delta-filtered Asset-List to Pikachu. It's not clear if Pikachu receives this data from SPOT or directly from CCR. The Asset-List feed to Pikachu is a delta, either coming from SPOT or CCR.
 74 | CCR | LCB | database | Local catalog Builder application is build directly on the CCR database.
 75 | CCR | OLEE |database  | OLEE (FAQ maintenance) application is build directly on the CCR database.
 76 | CCR | DMT | database | Data managenment toolkit (asset configuration, site configuration for website, rendering, other...) is build directly on the CCR database.
@@ -144,6 +144,7 @@ Sources:
 - Pikachu
 - SIM-tool
 - interview Paul der Kinderen (2019-03-07)
+- interview Peter Ruiter (2019-03-13)
 
 
 CCR related applications:
@@ -161,7 +162,7 @@ id | source   | target   | type | description
 id | source   | target   | type | description
 -- | -------- | -------- | ---- | -------------------------------------------------------
  1 | ?? | CCR |  | Languages & Countries. On project basis new data is entered using DMT and SQL scripts.
-31 | PFS | CCR |  | multiplke interfaces to get tree- and product data from PFS. Also Localisation tool, for example for localisation of assets. Functoinality that will be replaced by STEP and ADAM. 
+31 | PFS | CCR |  | multiple interfaces to get tree- and product data from PFS. Also Localisation tool, for example for localisation of assets.
 35 | PikaChu | CCR |  | 
 49 | SDL | CCR | Batch | upload of rendered leafletds (including the metadata)
 77 | LCB | CCR |  | 
@@ -187,6 +188,7 @@ Sources:
 - Pikachu
 - SIM-tool
 - interview Paul der Kinderen (2019-03-07)
+- interview Peter Ruiter (2019-03-13)
 
 
 CCR related applications:
@@ -201,7 +203,7 @@ id | source   | target   | type | description
 
 
 
-### CCR interfaces break-down by purpose
+### CCR interface details
 
 The above interfaces are many and diverse. To make the assignment manageable, the interfaces will be grouped by purpose. For each group, the status, content and interface details will be described.
 
@@ -215,7 +217,7 @@ The group of interfaces that are most relevant to the "PIL BCD Digital 2.0 Conte
   4. generic interfaces (eg asset-downloads, reporting, etc.)
 
 
-#### Product marketing content (website/leaflet rendering)
+#### Product marketing content
 
 CCR feeds to Pikachu and SDL Rendering:
 
@@ -227,25 +229,15 @@ CCR feeds to Pikachu and SDL Rendering:
 CCR feeds from Pikachu and SDL Rendering:
 
  e. SDL Rendering: Leaflets (and corresponding metadata and images).
-<<<<<<< HEAD
 
-=======
->>>>>>> ca27ec18ce4f2fd2bcbd6f07ba8e370eb3565e34
 
-##### Product marketing catalog
+##### PFS-2-CCR Product marketing information
 
-|         |                                                                        | 
-| ------- | ---------------------------------------------------------------------- |
-| purpose | publish product publication status (published/archived, start- and end-of-publication dates) per country for marketing catalog. | 
-| type    | batch |
-| frequency | daily |
-| remarks | a. the country identification is translated into a locale (language/country combination. |
-|         | b. full feed. |
-|         | c. the filenames are "lcb_full_marketing_0200_<date-timestamp>.xml", "lcb_full_care_0200_<date-timestamp>.xml", "lcb_full_0200_<date-timestamp>.xml". |
+Multiple interfaces to get tree- and product data from PFS. Also Localisation tool, for example for localisation of assets.
 
-<<<<<<< HEAD
-=======
-##### Product marketing catalog
+
+
+##### CCR-2-Pikachu Product marketing catalog
 
 |         |                                                                        | 
 | ------- | ---------------------------------------------------------------------- |
@@ -256,7 +248,6 @@ CCR feeds from Pikachu and SDL Rendering:
 |         | b. full feed. |
 |         | c. the filenames are "lcb_full_marketing_0200_<date-timestamp>.xml", "lcb_full_care_0200_<date-timestamp>.xml", "lcb_full_0200_<date-timestamp>.xml". |
 
->>>>>>> ca27ec18ce4f2fd2bcbd6f07ba8e370eb3565e34
 Content:
 
 - catalogTypeName ("CONSUMER_MARKETING")
@@ -277,9 +268,11 @@ Content:
 - priority (always empty)
 
 
-##### Product assets
+##### CCR-2-Pikachu Product assets
 
 ![CCR asset exports](./images/CCR_asset_exports.png)
+
+###### a. Asset-List export
 
 ###### a. Asset-List export
 
@@ -292,9 +285,14 @@ Product-related assets, like Standard Product Photo,commercial leaflet, etc.
 | asset-types | see document ["100_SyndicationChannels_consolidated.xlsx"](100_SyndicationChannels_consolidated.xlsx), tab "Assets". |
 | type    | batch |
 | frequency | daily |
-| remarks | a. Assets are exported from CCR through SPOT to Pikachu. SPOT implements delta-filtering. Pikachu retrieves the Asset physical files and publishes these to Scene7. Pikachu includes the Asset logical files/url's into the feeds to the AEM website. |
+| remarks | a. Assets are exported from CCR through SPOT to Pikachu. SPOT implements delta-filtering. |
 |         | b. The assets are localised. |
-|         | c. The AssetList only contains the MD5-checksum (and the doc-type) to identify the asset. |
+|         | c. Pikachu retrieves the Asset physical files and publishes these to Scene7. Pikachu includes the Asset logical files/url's into the feeds to the AEM website. |
+|         | d. The AssetList only contains the MD5-checksum (and the doc-type) to identify the asset. |
+
+
+*TODO*: check if asset-list is delivered directly from CCR or through SPOT. Why? Because CCR delivers an asset list to both Pikachu and SPOT.  
+*Status 14/03*: the asset-list export that is received by Pikachu is a delta-feed. The naming-convention of the messages suggests that the data is received from SPOT.
 
 
 
@@ -309,14 +307,14 @@ Object-related assets, like feature images, awards, etc.
 | asset-types | see document ["100_SyndicationChannels_consolidated.xlsx"](100_SyndicationChannels_consolidated.xlsx), tab "Assets". |
 | type    | batch |
 | frequency | daily |
-| remarks | a. Assets are exported from CCR through SPOT to Pikachu. SPOT implements delta-filtering. Pikachu retrieves the Asset physical files and publishes these to Scene7. Pikachu includes the Asset logical files/url's into the feeds to the AEM website. |
+| remarks | a. ObjectAssets are directly exported from CCR to Pikachu. The feed is a full-feed. |
 |         | b. The assets are localised. |
-|         | c. The ObjectAssetList only contains the MD5-checksum (and the doc-type) to identify the asset. |
+|         | c. Pikachu includes the Asset logical files/url's into the feeds to the AEM website. |
+|         | d. The ObjectAssetList only contains the MD5-checksum (and the doc-type) to identify the asset. |
 
-*TODO*: check if asset-list is delivered directly from CCR or through SPOT. Why? Because CCR delivers an asset list to both Pikachu and SPOT.
 
 
-###### c. Assets-2-SDL export
+###### c. CCR-2-SDL Assets export
 
 |         |                                                                        | 
 | ------- | ---------------------------------------------------------------------- |
@@ -329,7 +327,7 @@ Object-related assets, like feature images, awards, etc.
 
 
 
-###### d. SDL-leaflets-2-CCR import
+###### d. SDL-2-CCR Leaflets import
 
 |         |                                                                        | 
 | ------- | ---------------------------------------------------------------------- |
@@ -342,25 +340,12 @@ Object-related assets, like feature images, awards, etc.
 
 
 #### Product service content
-<<<<<<< HEAD
-
 
   a. CCR-2-Pikachu: product care catalog, batch-based.
   b. CCR-2-Pikachu: product care texts (PCT), batch-based.
   c. Pikachu-2-CCR: Care Categorization
   d. OLEE-import
  
-
-=======
-
-
-  a. CCR-2-Pikachu: product care catalog, batch-based.
-  b. CCR-2-Pikachu: product care texts (PCT), batch-based.
-  c. Pikachu-2-CCR: Care Categorization
-  d. OLEE-import
- 
-
->>>>>>> ca27ec18ce4f2fd2bcbd6f07ba8e370eb3565e34
 ##### a. Pikachu: Product catalogs-export
 
 ![CCR product catalog exports](./images/CCR_catalog_exports.png)
@@ -447,7 +432,7 @@ Notes:
   Product can indeed not be found on the Philips-website (resulting in a shit-load of alternative products...).
 
 
-##### c. Pikachu: Product categorization-export
+##### c. Pikachu2CCR: Product Care categorization-import
 
 ![CCR product categorization exports](./images/CCR_categorization_exports.png)
 
@@ -474,7 +459,6 @@ Content:
 - Product-ID (CTN)
 
 ##### d. OLEE-import
-<<<<<<< HEAD
 
 Notes: 
 
@@ -482,41 +466,55 @@ Notes:
 
 
 ##### e. call-center feed (salesforce)
-=======
 
 Notes: 
 
   1. still required? OLEE for call-centers is obsolete. What is status of OLEE for service centers?
->>>>>>> ca27ec18ce4f2fd2bcbd6f07ba8e370eb3565e34
 
 Export from CCR is combined with an export from Pikachu, with Informatica, and loaded into Salesforce.
 
-<<<<<<< HEAD
-Note: the products already present in STEP are loaded into Salesforce trough a manual process.
-=======
-##### e. call-center feed (salesforce)
->>>>>>> ca27ec18ce4f2fd2bcbd6f07ba8e370eb3565e34
-
-Export from CCR is combined with an export from Pikachu, with Informatica, and loaded into Salesforce.
-
-<<<<<<< HEAD
-##### e. service-center feed (AYS)
-
-=======
 Note: the products already present in STEP are loaded into Salesforce trough a manual process.
 
 
-##### e. service-center feed (AYS)
 
->>>>>>> ca27ec18ce4f2fd2bcbd6f07ba8e370eb3565e34
+
+##### f. service-center feed (AYS)
+
 ???
 
 
-##### f. Find Your Product (FYP)
+##### g. Local Catalog Builder (LCB)
+
+Application build on CCR to maintain the product marketing and care catalogs. These catalogs contain the product publication status (published/archived, start- and end-of-publication dates) per country.
+
+
+###### a. LCB inbound interface
+
+This LCB interface is not a physical interface between two applications as the LCB application is part of the CCR application landscape and is build on the CCR database.
+Therefore this interface can be considered to be a 'logical' interface.
+
+###### b. LCB outbound interface
+
+This LCB interface is not a physical interface between two applications as the LCB application is part of the CCR application landscape and is build on the CCR database.
+Therefore this interface can be considered to be a 'logical' interface.
+
+
+##### h. Find Your Product (FYP)
 
 This FYP interface is not a physical interface between two applications as the FYP application is part of the CCR application landscape and is build on the CCR database.
 Therefore this interface can be considered to be a 'logical' interface.
 
+##### i. Data Management toolkit (DMT)
+
+This DMT interface is not a physical interface between two applications as the FYP application is part of the CCR application landscape and is build on the CCR database.
+Therefore this interface can be considered to be a 'logical' interface.
+
+
+#### Product content for resellers
+
+The product catalog and marketing texts intended for resellers is created by and delivered by Pikachu based on the product descriptions received from PFS and the asset metadata received from CCR.
+
+The resellers can retrieve the images by using either the asset public url, or by downloading the assets by using the restricted url and CCR (s)GET-scripts.
 
 
 
@@ -554,19 +552,6 @@ The assets are made available to FlixMediaProducts, ICEcat and WebcollageProduct
 
 
 
-##### Local Catalog Builder (LCB)
-
-###### a. LCB inbound interface
-
-This LCB interface is not a physical interface between two applications as the LCB application is part of the CCR application landscape and is build on the CCR database.
-Therefore this interface can be considered to be a 'logical' interface.
-
-
-###### b. LCB outbound interface
-
-This LCB interface is not a physical interface between two applications as the LCB application is part of the CCR application landscape and is build on the CCR database.
-Therefore this interface can be considered to be a 'logical' interface.
-
 ##### Reports
 
 Data required for reporting was originally delivered to COGNOS. Cognos has been decomissioned and so are most of the reporting feeds.
@@ -582,15 +567,13 @@ Both an inbound and outbound interface exists with SAP.
 
 The purpose of the outbound interface is to deliver pakacking-related information from CCR to SAP.
 
-<<<<<<< HEAD
-###### SAP-2-CCR interface 
 
-???
+###### SAP-2-CCR inbound interface 
+
+***ToDo*** ??? is this a different interface from the outbound interface described below? What are its contents?
 
 
-=======
->>>>>>> ca27ec18ce4f2fd2bcbd6f07ba8e370eb3565e34
-###### CCR-2-SAP interface 
+###### CCR-2-SAP outbound interface I
 
 Interface based on (Oracle) message queue in CCR-database. SAP puts the msgs on this queue. CCR processes the requests and deliveres the data. (eg product packaging info, REL-doctype). 
 
@@ -598,6 +581,25 @@ Note:
 
   - Same mechanism is used for the upload wizard.
 
+###### CCR-2-SAP outbound interface II
+
+Exact purpose and contents are unknown.
+
+now: SAP-XI : routing of XML-files on request of SAP for third-parties
+
+
+##### Tns-Nipo
+
+Exact purpose and contents are unknown.
+
+Product (related) data in csv-format, delivered with SIM-tool (ccr_to_tns_nipo_upload process)
+
+
+##### TPVisionData
+
+Exact purpose and contents are unknown.
+
+Categorization, chassis, docs, doc-types, locales, product description, delivered with SIM-tool (ccr_to_TPVisionData_upload process)
 
 
 
@@ -607,8 +609,6 @@ Note:
    how do they use CCR?
    
    
-
-
 
 
 
