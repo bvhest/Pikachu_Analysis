@@ -3,12 +3,12 @@ title: "CCR - Overview of interfaces"
 author: "Bart van Hest (Integration Technology & Services, The Future Group)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
-  word_document: default
-  html_document: default
   rmdformats::html_clean:
     toc: true
     toc_depth: 4
     number_sections: true
+  word_document: default
+  html_document: default
   markdowntemplates::prismskel:
     toc: true
     toc_float: true
@@ -39,8 +39,23 @@ The interfaces described in this report were identified based on (old) documenta
 
 My feeling is that the most important information/data streams are known and in scope of the program. For these, alternative sources/sinks can be defined in the new application landscape based on ADAM and STEP. Because of the technology used in the CCR application(landscape), the new interfaces will often require modifications in the connected applications. This will require early contact with the supporting (external) parties.
 
-
 My worries concern the lesser known or even undocumented interfaces. As CCR has grown over the years, there seem to be many hidden 'features' and 'feeds'. Some of these may become visible only after shutdown of CCR.
+
+A possible approach for replacing the CCR interfaces is an *incremental replacement* where STEP will replace the role of PFS and ADAM will synchronise newly created or updated assets to CCR. This approach is based on a (temporary) compleet duplication of all assets in both ADAM and CCR.   
+
+This will prevent the need to have all interfaces ready *at the same time* and either 
+
+  - modify/map the asset internal url in the receiving applications,
+  - sent a full export to all receiving applications in order to update the internal url.
+
+Note that this approach assumes: 
+
+  - that the migration of existing product content from PFS to STEP and existing assets from CCR to ADAM has been implemented.
+  - that applications that download assets from ADAM/CCR use an asset identification that does not depend on asset-id's, names or (internal/restricted) urls in order to prevent them downloading the same assets twice (note: instead, they could use a checksum to indentify the assets).
+  - that the product care and marketing catalogs need to be either maintained in both STEP and LCB, or need to be exported from STEP to Pikachu in the CCR format.
+  - that in addition to CCR, also Pikachu is required during the time both ADAM and CCR are in operation simultaneously.
+
+
 
 
 # Analysis CCR
