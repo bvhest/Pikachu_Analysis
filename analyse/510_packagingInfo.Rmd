@@ -1,0 +1,11 @@
+---
+title: "510_ProductLogisticInfo"
+author: "BHE"
+date: "March 21, 2019"
+output: html_document
+---
+
+Test-product: SC2006/11
+
+![](./images/logisticInfo.png)
+
