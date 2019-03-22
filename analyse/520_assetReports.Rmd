@@ -1,22 +1,9 @@
 ---
-title: "Report on asset usage"
-author: "Bart van Hest (Integration Technology & Services, The Future Group)"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
-output:
-  rmdformats::html_clean:
-    toc: true
-    toc_depth: 4
-    number_sections: true
-  word_document: default
-  html_document: default
-  markdowntemplates::prismskel:
-    toc: true
-    toc_float: true
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
 ---
-
-```{r setup, include=FALSE, echo=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ```{r libs, echo=TRUE}
 #remove.packages(c("DBI", "rJava", "RJDBC"))
