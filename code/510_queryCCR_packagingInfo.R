@@ -131,5 +131,61 @@ save(products.r.df,
 ###############################################################################
 # data cleaning & manipulation
 ###############################################################################
+glimpse(products.r.df)
+glimpse(LogisticProductList.r)
 
 ## ToDo (2019-03-21): filter db result set and join with source-data!
+ccr_logistic_data.c <-
+  products.r.df %>%
+  # make join easier to perform by renaming columns ot target name
+  dplyr::rename(CalcCTN = PM_NAME,
+                GLOBAL_TRADE_ITEM_NUM = PKG_GTIN) %>%
+  # cast numeric to integer type (easier sorting)
+  #dplyr::mutate(GLOBAL_TRADE_ITEM_NUM = as.integer(GLOBAL_TRADE_ITEM_NUM)) %>%
+  # keep unique combinations of ctn and gtin (remove country info)
+  dplyr::select(-COUNTRY_CD) %>% # remove unnecessary columns
+  dplyr::distinct(CalcCTN, LP_GTIN, GLOBAL_TRADE_ITEM_NUM, 
+                  .keep_all = TRUE)
+
+glimpse(ccr_logistic_data.c)
+
+logisticProductList.c <-
+  LogisticProductList.r %>%
+  # remove unnecessary columns
+  dplyr::select(-c("Unit", "Leng", "InList")) %>%
+  # cast numeric to text type and left-pad with leading zero's
+  dplyr::mutate(GLOBAL_TRADE_ITEM_NUM = as.character(GLOBAL_TRADE_ITEM_NUM),
+                GLOBAL_TRADE_ITEM_NUM = stringr::str_pad(GLOBAL_TRADE_ITEM_NUM,
+                                                         width = 14,
+                                                         side = "left", 
+                                                         pad = "0")) %>% 
+  dplyr::left_join(ccr_logistic_data.c,
+                   by = c("CalcCTN", "GLOBAL_TRADE_ITEM_NUM"))
+
+# write results to file
+readr::write_csv(logisticProductList.c,
+                 path = "./analyse/packaging/LogisticProductList_IPL_enriched.csv")
+
+
+save(ccr_logistic_data.c,
+     logisticProductList.c,
+     file = "./code/data/logistic_data_cleaned.RData")
+
+# BRI861/00
+ccr_logistic_data.c %>% dplyr::filter(CalcCTN == "BRI861/00")
+logisticProductList.c %>% dplyr::filter(CalcCTN == "BRI861/00")
+
+# check assumption that lowest gtin corresponds with the 'piece' packaging-type.
+logisticProductList.checked <-
+  logisticProductList.c %>%
+  dplyr::filter(!is.na(PKGT_CD)) %>% 
+#  dplyr::filter(CalcCTN == "BRI861/00") %>%
+  dplyr::select(CalcCTN, LP_GTIN, GLOBAL_TRADE_ITEM_NUM, PKGT_NAME, PKG_NR_OF_ITEMS) %>%
+  dplyr::group_by(LP_GTIN) %>%
+  summarize(smallest_gtin = min(GLOBAL_TRADE_ITEM_NUM)) %>%
+  dplyr::left_join(ccr_logistic_data.c,
+                   by = c("LP_GTIN" = "LP_GTIN", "smallest_gtin" = "GLOBAL_TRADE_ITEM_NUM")) %>%
+  dplyr::filter(PKG_NR_OF_ITEMS > 1)
+
+# note: result-set should be zero !
+dim(logisticProductList.checked)
