@@ -1,0 +1,272 @@
+---
+title: "Report on asset usage"
+author: "Bart van Hest (Integration Technology & Services, The Future Group)"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  rmdformats::html_clean:
+    toc: true
+    toc_depth: 4
+    number_sections: true
+  word_document: default
+  html_document: default
+  markdowntemplates::prismskel:
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r libs, echo=TRUE}
+#remove.packages(c("DBI", "rJava", "RJDBC"))
+#install.packages('rJava', dependencies = TRUE)
+#install.packages('RJDBC', dependencies = TRUE)
+#install.packages('DBI', dependencies = TRUE)
+
+
+# load required libraries
+library(tidyverse)
+library(kableExtra)
+
+library(DBI)
+# Set JAVA_HOME, set max. memory, and load rJava library
+Sys.setenv(JAVA_HOME='c:/java')
+options(java.parameters="-Xmx2g")
+library(rJava)
+
+# Output Java version
+.jinit()
+print(.jcall("java/lang/System", "S", "getProperty", "java.version"))
+
+# Load RJDBC library
+library(RJDBC)
+
+oracle.JdbcDriver <- 
+  RJDBC::JDBC(driverClass="oracle.jdbc.OracleDriver", 
+              classPath="c:/Java/Oracle/ojdbc8.jar")
+
+pr.jdbcConnection <- 
+  DBI::dbConnect(drv = oracle.JdbcDriver,
+                 url = "jdbc:oracle:thin:@130.139.136.60:1521:CCR1P", 
+                 user = "bvanhest", 
+                 password = "Philips@123")
+
+```
+
+# Introduction
+
+
+
+# Data
+
+
+
+## IPL (mag='F02') related products
+
+
+```{r}
+# /* 
+# Select all F02 (IPL) related products
+# */
+qry <- 
+  "select pm_name from m_product_model m, m_article_group ag
+where m.AG_CD =ag.ag_cd
+and ag.mag_cd='F02'"
+
+DBI::dbGetQuery(conn = pr.jdbcConnection, 
+                statement = qry ) %>%
+  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable_styling()
+``` 
+
+
+```{r}
+# /*
+# select all symcure id relation related to an IPL products
+# */
+qry <- 
+  "select count(*) 
+from m_symptom_cure_relation SCR, (select pm_name from m_product_model m, m_article_group ag
+where m.AG_CD =ag.ag_cd
+and ag.mag_cd='F02') PM
+where scr.pm_name=pm.pm_name"
+
+DBI::dbGetQuery(conn = pr.jdbcConnection, 
+                statement = qry ) %>%
+  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable_styling()
+```
+
+
+
+
+```{r}
+# /*
+# select all symcure id related to IPL products
+# */
+qry <- 
+  "select count(*) 
+from 
+    m_symptom_cure_relation SCR, 
+    (select pm_name from m_product_model m, m_article_group ag
+        where m.AG_CD =ag.ag_cd
+        and ag.mag_cd='F02') PM,
+    m_symptom_cure SC
+where scr.pm_name=pm.pm_name
+and SCR.SYCU_ID=SC.SYCU_ID"
+
+DBI::dbGetQuery(conn = pr.jdbcConnection, 
+                statement = qry ) %>%
+  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable_styling()
+```
+
+
+
+
+```{r}
+# /*
+# select the counts per document type for all symcure id related to IPL products
+# */
+qry <- 
+  "select dt_cd,count(*) 
+from 
+    m_symptom_cure_relation SCR, 
+    (select pm_name from m_product_model m, m_article_group ag
+        where m.AG_CD =ag.ag_cd
+        and ag.mag_cd='F02') PM,
+    m_symptom_cure SC
+where scr.pm_name=pm.pm_name
+and SCR.SYCU_ID=SC.SYCU_ID
+group by dt_cd"
+ 
+
+DBI::dbGetQuery(conn = pr.jdbcConnection, 
+                statement = qry ) %>%
+  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable_styling()
+
+# /*
+# QAD     7862
+# GDA      12
+# CCT      990
+# QAC      10
+# TNT      6
+# TUT      54
+# */
+  
+```
+
+
+
+
+```{r}
+# /*
+# Select the count per document type for ALL secured FAQs
+# */
+qry <- 
+  "select sc.dt_cd,count(*) 
+from 
+    m_symptom_cure_relation SCR, 
+    (select pm_name from m_product_model m, m_article_group ag
+        where m.AG_CD =ag.ag_cd
+        ) PM,
+    m_symptom_cure SC,
+    m_document_type DT
+where scr.pm_name=pm.pm_name
+and SCR.SYCU_ID=SC.SYCU_ID
+and dt.dt_cd = SC.DT_CD
+and dt.dt_restricted_ind='Y'
+group by sc.dt_cd"
+
+DBI::dbGetQuery(conn = pr.jdbcConnection, 
+                statement = qry ) %>%
+  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable_styling()
+```
+
+
+
+ 
+```{r}
+qry <- 
+  "select sc.dt_cd, count(*) 
+from 
+    m_symptom_cure_relation SCR, 
+    m_symptom_cure SC,
+    m_document_type DT
+where SCR.SYCU_ID=SC.SYCU_ID
+and dt.dt_cd = SC.DT_CD
+and dt.dt_restricted_ind='Y'
+group by sc.dt_cd"
+
+DBI::dbGetQuery(conn = pr.jdbcConnection, 
+                statement = qry ) %>%
+  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable_styling()
+ 
+# /* Result:
+# GSM     108
+# SUE      3690
+# CCS      2441
+# SCE       7893
+# RSN      1977
+# SUH      10
+# GDA      18057
+# SCC      9482
+# CCT      514468
+# GSC      18654
+# RSL       1
+# SCH      2
+# SCP       39
+# RSE       1
+# RSA      22
+# STI        3693
+# SUC      6182
+# SUM     4353
+# GSP      50
+# SCO      29204
+# GSE      8106
+# SDA      68846
+# */
+```
+  
+  
+   
+```{r}
+# /*
+# Select all products that have a restricted asset linked to it
+# */
+qry <- 
+  "select scr.pm_name, count(*) 
+from 
+    m_symptom_cure_relation SCR, 
+    m_symptom_cure SC,
+    m_document_type DT
+where SCR.SYCU_ID=SC.SYCU_ID
+and dt.dt_cd = SC.DT_CD
+and dt.dt_restricted_ind='Y'
+group by scr.pm_name"
+
+DBI::dbGetQuery(conn = pr.jdbcConnection, 
+                statement = qry ) %>%
+  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable_styling()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+# Close DB connection
+dbDisconnect(pr.jdbcConnection)
+```
