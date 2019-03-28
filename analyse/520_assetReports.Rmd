@@ -1,11 +1,20 @@
 ---
-title: "R Notebook"
-output: html_notebook
-editor_options: 
-  chunk_output_type: inline
+title: "Doctypes for IPL (F02) related products"
+author: "Bart van Hest (Integration Technology & Services, The Future Group)"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  rmdformats::html_clean:
+    toc: true
+    toc_depth: 4
+    number_sections: true
+  word_document: default
+  html_document: default
+  markdowntemplates::prismskel:
+    toc: true
+    toc_float: true
 ---
 
-```{r libs, echo=TRUE}
+```{r libs, warning=FALSE, include=FALSE}
 #remove.packages(c("DBI", "rJava", "RJDBC"))
 #install.packages('rJava', dependencies = TRUE)
 #install.packages('RJDBC', dependencies = TRUE)
@@ -18,8 +27,10 @@ library(kableExtra)
 
 library(DBI)
 # Set JAVA_HOME, set max. memory, and load rJava library
-Sys.setenv(JAVA_HOME='c:/java')
+Sys.setenv(JAVA_HOME='C:/Java/jdk1.8.0_191')
 options(java.parameters="-Xmx2g")
+# check: https://cran.r-project.org/bin/windows/base/rw-FAQ.html
+#        https://stackoverflow.com/questions/37735108/r-error-onload-failed-in-loadnamespace-for-rjava
 library(rJava)
 
 # Output Java version
@@ -57,13 +68,16 @@ pr.jdbcConnection <-
 # Select all F02 (IPL) related products
 # */
 qry <- 
-  "select pm_name from m_product_model m, m_article_group ag
-where m.AG_CD =ag.ag_cd
-and ag.mag_cd='F02'"
+  "select m.pm_name 
+from m_product_model m
+   , m_article_group ag
+where m.ag_cd = ag.ag_cd
+  and ag.mag_cd = 'F02'
+order by m.pm_name"
 
 DBI::dbGetQuery(conn = pr.jdbcConnection, 
                 statement = qry ) %>%
-  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable(caption="IPL (F02) related products") %>%
   kableExtra::kable_styling()
 ``` 
 
@@ -74,14 +88,17 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 # */
 qry <- 
   "select count(*) 
-from m_symptom_cure_relation SCR, (select pm_name from m_product_model m, m_article_group ag
-where m.AG_CD =ag.ag_cd
-and ag.mag_cd='F02') PM
-where scr.pm_name=pm.pm_name"
+from m_symptom_cure_relation scr,
+     (select pm_name 
+      from m_product_model m
+         , m_article_group ag
+      where m.ag_cd = ag.ag_cd
+      and ag.mag_cd = 'F02') pm
+where scr.pm_name = pm.pm_name"
 
 DBI::dbGetQuery(conn = pr.jdbcConnection, 
                 statement = qry ) %>%
-  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable(caption="Count of Symptom-cure relations for IPL products") %>%
   kableExtra::kable_styling()
 ```
 
@@ -93,45 +110,47 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 # select all symcure id related to IPL products
 # */
 qry <- 
-  "select count(*) 
-from 
-    m_symptom_cure_relation SCR, 
-    (select pm_name from m_product_model m, m_article_group ag
-        where m.AG_CD =ag.ag_cd
-        and ag.mag_cd='F02') PM,
-    m_symptom_cure SC
-where scr.pm_name=pm.pm_name
-and SCR.SYCU_ID=SC.SYCU_ID"
+  "select count(pm.pm_name) 
+from m_symptom_cure_relation scr, 
+     (select pm_name 
+      from m_product_model m
+         , m_article_group ag
+      where m.ag_cd = ag.ag_cd
+      and ag.mag_cd = 'F02') pm,
+     m_symptom_cure SC
+where scr.pm_name = pm.pm_name
+  and scr.sycu_id = sc.sycu_id"
 
 DBI::dbGetQuery(conn = pr.jdbcConnection, 
                 statement = qry ) %>%
-  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable(caption="Count of Symptom-cure records for IPL products") %>%
   kableExtra::kable_styling()
 ```
 
-
-
+# DONE UNTIL HERE
 
 ```{r}
 # /*
 # select the counts per document type for all symcure id related to IPL products
 # */
 qry <- 
-  "select dt_cd,count(*) 
-from 
-    m_symptom_cure_relation SCR, 
-    (select pm_name from m_product_model m, m_article_group ag
-        where m.AG_CD =ag.ag_cd
-        and ag.mag_cd='F02') PM,
-    m_symptom_cure SC
-where scr.pm_name=pm.pm_name
-and SCR.SYCU_ID=SC.SYCU_ID
-group by dt_cd"
+  "select dt_cd as doc_type, count(pm.pm_name) as product_count
+from m_symptom_cure SC,
+     m_symptom_cure_relation scr, 
+     (select pm_name 
+      from m_product_model m
+         , m_article_group ag
+      where m.ag_cd = ag.ag_cd
+      and ag.mag_cd = 'F02') pm
+where scr.pm_name = pm.pm_name
+  and scr.sycu_id = sc.sycu_id
+group by sc.dt_cd
+order by product_count desc" 
  
 
 DBI::dbGetQuery(conn = pr.jdbcConnection, 
                 statement = qry ) %>%
-  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable(caption="Product-count per doc-type for Symptom-cure records for IPL products") %>%
   kableExtra::kable_styling()
 
 # /*
@@ -153,23 +172,25 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 # Select the count per document type for ALL secured FAQs
 # */
 qry <- 
-  "select sc.dt_cd,count(*) 
-from 
-    m_symptom_cure_relation SCR, 
-    (select pm_name from m_product_model m, m_article_group ag
-        where m.AG_CD =ag.ag_cd
-        ) PM,
-    m_symptom_cure SC,
-    m_document_type DT
-where scr.pm_name=pm.pm_name
-and SCR.SYCU_ID=SC.SYCU_ID
-and dt.dt_cd = SC.DT_CD
-and dt.dt_restricted_ind='Y'
-group by sc.dt_cd"
+  "select sc.dt_cd as doc_type, count(pm.pm_name) as product_count
+from m_symptom_cure SC,
+     m_symptom_cure_relation scr,
+     m_document_type dt, 
+     (select pm_name 
+      from m_product_model m
+         , m_article_group ag
+      where m.ag_cd = ag.ag_cd
+      and ag.mag_cd = 'F02') pm
+where scr.pm_name = pm.pm_name
+  and scr.sycu_id = sc.sycu_id
+  and dt.dt_cd    = sc.dt_cd
+  and dt.dt_restricted_ind = 'Y'
+group by sc.dt_cd
+order by product_count desc" 
 
 DBI::dbGetQuery(conn = pr.jdbcConnection, 
                 statement = qry ) %>%
-  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable(caption="Product-count per secured doc-type for Symptom-cure records for IPL products") %>%
   kableExtra::kable_styling()
 ```
 
@@ -178,19 +199,19 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
  
 ```{r}
 qry <- 
-  "select sc.dt_cd, count(*) 
-from 
-    m_symptom_cure_relation SCR, 
-    m_symptom_cure SC,
-    m_document_type DT
-where SCR.SYCU_ID=SC.SYCU_ID
-and dt.dt_cd = SC.DT_CD
-and dt.dt_restricted_ind='Y'
-group by sc.dt_cd"
+  "select sc.dt_cd, count(scr.pm_name) as product_count
+from m_symptom_cure_relation scr, 
+     m_symptom_cure sc,
+     m_document_type dt
+where scr.sycu_id = sc.sycu_id
+and dt.dt_cd = sc.dt_cd
+and dt.dt_restricted_ind = 'Y'
+group by sc.dt_cd
+order by product_count desc"
 
 DBI::dbGetQuery(conn = pr.jdbcConnection, 
                 statement = qry ) %>%
-  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable(caption="Product-count per secured doc-type for Symptom-cure records for all products") %>%
   kableExtra::kable_styling()
  
 # /* Result:
@@ -226,19 +247,19 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 # Select all products that have a restricted asset linked to it
 # */
 qry <- 
-  "select scr.pm_name, count(*) 
-from 
-    m_symptom_cure_relation SCR, 
-    m_symptom_cure SC,
-    m_document_type DT
-where SCR.SYCU_ID=SC.SYCU_ID
-and dt.dt_cd = SC.DT_CD
+  "select scr.pm_name as product, count(sc.dt_cd) as doctype_count
+from m_symptom_cure_relation scr, 
+     m_symptom_cure sc,
+     m_document_type dt
+where scr.sycu_id=sc.sycu_id
+and dt.dt_cd = sc.dt_cd
 and dt.dt_restricted_ind='Y'
-group by scr.pm_name"
+group by scr.pm_name
+order by scr.pm_name"
 
 DBI::dbGetQuery(conn = pr.jdbcConnection, 
                 statement = qry ) %>%
-  kableExtra::kable(caption="Active exports without FTP process") %>%
+  kableExtra::kable(caption="Products with related secured doc-types") %>%
   kableExtra::kable_styling()
 ```
 
@@ -251,9 +272,7 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 
 
 
-
-
 ```{r}
 # Close DB connection
-dbDisconnect(pr.jdbcConnection)
+#dbDisconnect(pr.jdbcConnection)
 ```

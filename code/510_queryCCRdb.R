@@ -46,9 +46,10 @@ pr.jdbcConnection <-
 
 # Select all F02 (IPL) related products
 qry <- 
-  "select pm_name from m_product_model m, m_article_group ag
-where m.AG_CD =ag.ag_cd
-and ag.mag_cd='F02'"
+  "select m.pm_name 
+from m_product_model m, m_article_group ag
+where m.ag_cd = ag.ag_cd
+and ag.mag_cd = 'F02'"
   
 products.r.df <- 
   DBI::dbGetQuery(conn = pr.jdbcConnection, 
