@@ -82,7 +82,7 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 ``` 
 
 
-```{r}
+```
 # /*
 # select all symcure id relation related to an IPL products
 # */
@@ -105,7 +105,7 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 
 
 
-```{r}
+```
 # /*
 # select all symcure id related to IPL products
 # */
@@ -127,9 +127,7 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
   kableExtra::kable_styling()
 ```
 
-# DONE UNTIL HERE
-
-```{r}
+```
 # /*
 # select the counts per document type for all symcure id related to IPL products
 # */
@@ -167,7 +165,7 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 
 
 
-```{r}
+```
 # /*
 # Select the count per document type for ALL secured FAQs
 # */
@@ -197,7 +195,7 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 
 
  
-```{r}
+```
 qry <- 
   "select sc.dt_cd, count(scr.pm_name) as product_count
 from m_symptom_cure_relation scr, 
@@ -247,15 +245,66 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 # Select all products that have a restricted asset linked to it
 # */
 qry <- 
-  "select scr.pm_name as product, count(sc.dt_cd) as doctype_count
+  "select scr.pm_name as product, 
+          count(sc.dt_cd) as doctype_count
 from m_symptom_cure_relation scr, 
      m_symptom_cure sc,
      m_document_type dt
 where scr.sycu_id=sc.sycu_id
 and dt.dt_cd = sc.dt_cd
-and dt.dt_restricted_ind='Y'
+and dt.dt_restricted_ind = 'Y'
+and scr.pm_name = 'SC2001/21' -- has 13 restricted doctypes: 12x CCR, 1x, GDA
 group by scr.pm_name
 order by scr.pm_name"
+
+#
+# DON'T RUN without product selection. Takes too long to complete.
+#
+DBI::dbGetQuery(conn = pr.jdbcConnection, 
+                statement = qry ) %>%
+  kableExtra::kable(caption="Products with related secured doc-types") %>%
+  kableExtra::kable_styling()
+```
+
+Do i understand the results? How is the data made up?
+
+  - SC2003/12	 GDA
+SC2003/31	 GDA
+SC2001/21	 GDA
+SC2001/31	 GDA
+SC2003/21	 GDA
+SC2001/00	 GDA
+SC2002/00	 GDA
+SC2003/00	 GDA
+SC2000/00	 GDA
+SC2002/01	 GDA
+SC2001/01	 GDA
+SC2003/11
+
+
+```{r}
+# /*
+# Select all products that have a restricted asset linked to it
+# */
+qry <- 
+  "select scr.pm_name as product, 
+          sc.dt_cd as doctype
+from m_symptom_cure_relation scr, 
+     m_symptom_cure sc,
+     m_document_type dt, 
+     (select pm_name 
+      from m_product_model m
+         , m_article_group ag
+      where m.ag_cd = ag.ag_cd
+      and ag.mag_cd = 'F02') pm
+where scr.pm_name = pm.pm_name
+  and scr.sycu_id=sc.sycu_id
+and dt.dt_cd = sc.dt_cd
+and dt.dt_restricted_ind = 'Y'
+and scr.pm_name = 'SC2001/21'
+--and sc.dt_cd = 'GDA'
+order by doctype"
+
 
 DBI::dbGetQuery(conn = pr.jdbcConnection, 
                 statement = qry ) %>%
@@ -266,8 +315,24 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
 
 
 
+-- qry om een aantal voorbeeld producten te selecteren: IPL producten bevatten alleen CCT en GDA restricted doc-types.
 
-
+qry <- 
+  "select sc.dt_cd as doc_type, count(pm.pm_name) as product_count
+from m_symptom_cure SC,
+     m_symptom_cure_relation scr,
+     m_document_type dt, 
+     (select pm_name 
+      from m_product_model m
+         , m_article_group ag
+      where m.ag_cd = ag.ag_cd
+      and ag.mag_cd = 'F02') pm
+where scr.pm_name = pm.pm_name
+  and scr.sycu_id = sc.sycu_id
+  and dt.dt_cd    = sc.dt_cd
+  and dt.dt_restricted_ind = 'Y'
+group by sc.dt_cd
+order by product_count desc"
 
 
 
