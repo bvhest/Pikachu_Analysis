@@ -109,3 +109,54 @@ save(ccr_logistic_data.c,
      logisticProductList.c,
      file = "./code/data/logistic_data_from_ccr_cleaned.RData")
 
+remove(products.r.df, ccr_logistic_data.c, qry, pr.jdbcConnection, oracle.JdbcDriver)
+
+###############################################################################
+# compare data with that of spreadsheet
+###############################################################################
+
+logisticProductList_ccr.c <-
+  logisticProductList.c %>%
+  dplyr::select(-starts_with("PKG"))
+
+load(file = "./code/data/logistic_data_cleaned.RData")
+
+logisticProductList.c <-
+  logisticProductList.c %>%
+  dplyr::filter(PKG_NR_OF_ITEMS == 1) %>%
+  dplyr::select(-starts_with("PKG"))
+
+glimpse(logisticProductList_ccr.c)
+glimpse(logisticProductList.c)
+
+# number of records from spreadsheet
+nrow(logisticProductList.c)
+# number of records from ccr
+nrow(logisticProductList_ccr.c)
+
+
+ipl_products_from_spreadsheat_not_in_ccr <-
+  logisticProductList.c %>%                    # select records from spreadsheet
+  dplyr::anti_join(logisticProductList_ccr.c,  # that do not exist in ccr-set.
+                   by = c("CalcCTN", "LP_GTIN"))
+
+nrow(ipl_products_from_spreadsheat_not_in_ccr)
+
+ipl_products_from_spreadsheat_only_in_spreadsheet <-
+  logisticProductList.c %>%                    # select records from spreadsheet
+  dplyr::left_join(logisticProductList_ccr.c,  # that do not exist in ccr-set.
+                   by = c("CalcCTN", "LP_GTIN")) %>%
+  dplyr::distinct(GLOBAL_TRADE_ITEM_NUM.x, 
+                  .keep_all = TRUE)
+
+nrow(ipl_products_from_spreadsheat_only_in_spreadsheet)
+
+
+ipl_products_from_spreadsheat_only_in_ccr <-
+  logisticProductList.c %>%                    # select records from spreadsheet
+  dplyr::right_join(logisticProductList_ccr.c, # that do not exist in ccr-set.
+                    by = c("CalcCTN", "LP_GTIN")) %>%
+  dplyr::distinct(GLOBAL_TRADE_ITEM_NUM.x, 
+                  .keep_all = TRUE)
+
+nrow(ipl_products_from_spreadsheat_only_in_ccr)
