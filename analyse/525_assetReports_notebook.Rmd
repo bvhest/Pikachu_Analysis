@@ -2,16 +2,12 @@
 title: "Doctypes for IPL (F02) related products"
 author: "Bart van Hest (Integration Technology & Services, The Future Group)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output:
-  rmdformats::html_clean:
-    toc: true
-    toc_depth: 4
-    number_sections: true
-  word_document: default
-  html_document: default
-  markdowntemplates::prismskel:
-    toc: true
-    toc_float: true
+output: 
+  html_notebook: 
+    code_folding: hide
+    theme: cerulean
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r libs_and_db_connection, warning=FALSE, include=FALSE}
