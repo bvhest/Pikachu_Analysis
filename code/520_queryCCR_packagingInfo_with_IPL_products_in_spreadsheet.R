@@ -1,7 +1,8 @@
 #
-# read asset configuratoins from CCR database.
+# Query GTIN corresponding to piece-packaging-type for all IPL-products in 
+# provided spreadsheet.
 #
-# BHE, 21-03-2019
+# BHE, 2019-03-21
 #
 
 sessionInfo()
@@ -14,7 +15,7 @@ library(readxl)
 
 library(DBI)
 # Set JAVA_HOME, set max. memory, and load rJava library
-Sys.setenv(JAVA_HOME='c:/java')
+Sys.setenv(JAVA_HOME='c:/Java/jdk1.8.0_191')
 options(java.parameters="-Xmx2g")
 library(rJava)
 
