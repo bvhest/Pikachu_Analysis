@@ -45,11 +45,11 @@ The assumption is tested by
 
 ## Verify approach
 
-The assumption is first checked for one test-product: "SC2006/11".
+The assumption is first checked for one test-product ("SC2006/11") taken from the document "LogisticProductList_IPL.xlsx".
 
 ![Screenshot of the list with IPL products](./images/logisticInfo.png)
 
-Packaging-types present in the CCR database:
+The list of packaging-types present in the CCR database is:
 
 ```{r echo=FALSE}
 ccr_logistic_data.c %>%
@@ -60,14 +60,17 @@ ccr_logistic_data.c %>%
   kableExtra::kable_styling()
 ```
 
+Note thath the "Set" in CCR equals the "piece" packaging-type.
 
-The IPL product data is filtered on the CTN and matched (joined) with the packaging information from the CCR Production database:
+The IPL product data is loaded from the document "LogisticProductList_IPL.xlsx", filtered on the CTN and matched (joined) with the packaging information from the CCR Production database:
 
 ```{r echo=FALSE}
 logisticProductList.c %>%
-  dplyr::filter(CalcCTN == "BRI861/00") %>%
+  dplyr::filter(CalcCTN == "SC2006/11") %>% # BRI861/00 (original test-product )
+  dplyr::filter(!is.na(LP_GTIN)) %>% # filter out records for which the gtin is not known.
   dplyr::select(CalcCTN, LP_GTIN, GLOBAL_TRADE_ITEM_NUM, PKGT_NAME, PKG_NR_OF_ITEMS) %>%
-  kableExtra::kable(caption="Active exports without FTP process") %>%
+  dplyr::arrange(GLOBAL_TRADE_ITEM_NUM) %>%
+  kableExtra::kable(caption="Packaging information available in CCR for product 'SC2006/11'.") %>%
   kableExtra::kable_styling()
 ```
 
@@ -78,11 +81,12 @@ Note that none of the GTIN-values in the list with IPL-products corresponds with
 
 ## Final results
 
-When the assumption that the smallest value for the GTIN corresponds with the packaging-type 'piece' (ccr packaging name is 'set') is true, none of the records with the smallest value for the GTIN should have a number of items greater than 1.
+When the assumption that the smallest value for the GTIN corresponds with the packaging-type 'piece' (ccr packaging name is 'set') is true, for the whole dataset none of the records with the smallest value for the GTIN should have a number of items greater than 1.
 
 
 ```{r}
 logisticProductList.checked <-
+  # start with data imported from spreadsheet "LogisticProductList_IPL.xlsx":
   logisticProductList.c %>%
   # remove those IPL products for which no packaging data was found in CCR:
   dplyr::filter(!is.na(PKGT_CD)) %>% 
@@ -97,8 +101,10 @@ logisticProductList.checked <-
   dplyr::filter(PKG_NR_OF_ITEMS > 1)
 
 # verify that no records exist that have more than one items in a package-type:
-dim(logisticProductList.checked)[[1]]
+nrow(logisticProductList.checked) # should equal 0!
 ```
+
+The number of records for the smallest value with the GTIN, grouped by CTN, that have a number of items greater than 1 is `r nrow(logisticProductList.checked)`.
 
 # Conclusion
 
