@@ -83,21 +83,23 @@ The first table shows the number of assets of a specific document type that are 
 # select the counts per document type for all symcure id related to IPL products
 # */
 qry <- 
-  "select sc.dt_cd as doc_type, 
-decode(dt.dt_restricted_ind, 'Y', 'restricted', 'public') as availability,
-count(pm.pm_name) as asset_count
-from m_symptom_cure SC,
-     m_symptom_cure_relation scr,
-     m_document_type dt, 
-     (select pm_name 
-      from m_product_model m
-         , m_article_group ag
-      where m.ag_cd = ag.ag_cd
-      and ag.mag_cd = 'F02') pm
-where scr.pm_name = pm.pm_name
+  "select sc.dt_cd as doc_type
+     , decode(dt.dt_restricted_ind, 'Y', 'restricted', 'public') as availability
+     , aa.aa_desc as application_area
+     , count(scr.pm_name) as asset_count
+from m_symptom_cure sc
+   , m_symptom_cure_relation scr
+   , m_document_type dt
+   , m_application_area aa
+where scr.pm_name in (select pm_name 
+                      from m_product_model m
+                         , m_article_group ag
+                      where m.ag_cd = ag.ag_cd
+                      and ag.mag_cd = 'F02')
   and scr.sycu_id = sc.sycu_id
   and dt.dt_cd    = sc.dt_cd
-group by sc.dt_cd, dt.dt_restricted_ind
+  and dt.aa_id    = aa.aa_id
+group by sc.dt_cd, dt.dt_restricted_ind, aa.aa_desc
 order by asset_count desc"
 
 DBI::dbGetQuery(conn = pr.jdbcConnection, 
@@ -148,7 +150,7 @@ qry <-
 from m_symptom_cure_relation scr, 
      m_symptom_cure sc,
      m_document_type dt
-where scr.sycu_id=sc.sycu_id
+where scr.sycu_id = sc.sycu_id
 and dt.dt_cd = sc.dt_cd
 and dt.dt_restricted_ind = 'Y'
 and scr.pm_name in (select pm_name 
@@ -167,6 +169,34 @@ DBI::dbGetQuery(conn = pr.jdbcConnection,
   kableExtra::kable(caption="IPL Products with related secured doc-types") %>%
   kableExtra::kable_styling()
 ```
+
+
+
+```{r}
+# /*
+# Select application area and source-systems for unique doctypes related to IPL products
+# */
+qry <- 
+  "select unique dt.dt_cd as doc_type
+     , decode(dt.dt_restricted_ind, 'Y', 'restricted', 'public') as availability
+     , aa.aa_desc as application_area
+     , dtr.dtr_source_system as source_system
+from m_document_type dt
+   , m_application_area aa
+   , m_document_tree dtr
+where dt.aa_id    = aa.aa_id
+  and dt.dtr_id   = dtr.dtr_id(+)
+order by doc_type"
+
+#
+# DON'T RUN without product selection. Takes too long to complete.
+#
+DBI::dbGetQuery(conn = pr.jdbcConnection, 
+                statement = qry ) %>%
+  kableExtra::kable(caption="Doc-types by application area and source-systems") %>%
+  kableExtra::kable_styling()
+```
+
 
 
 ```{r close_db_connection, warning=FALSE, include=FALSE}
