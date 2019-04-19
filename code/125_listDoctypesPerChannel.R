@@ -18,8 +18,8 @@ docTypeConfig.df <-
   XML:::xmlAttrsToDataFrame(XML::getNodeSet(docTypeConfig.xml, 
                                             path='/doctypes/doctype'))
 
-colnames(docType.df)
-glimpse(docType.df)
+colnames(docTypeConfig.df)
+glimpse(docTypeConfig.df)
 
 activeChannels.df <-
   readRDS(file = "./analyse/output/activeChannels.Rds")
@@ -90,7 +90,7 @@ remove(docTypesFile, docTypeConfig.xml)
 
 # select unique channels from doctype_attributes.xml
 var_channels <-
-  colnames(docType.df)[10:length(colnames(docType.df))]
+  colnames(docTypeConfig.df)[10:length(colnames(docTypeConfig.df))]
 
 # create generic funtion:
 listChannelDocTypes <- 
@@ -98,7 +98,7 @@ listChannelDocTypes <-
   channelDocTypes.df <-
     p_docTypes %>%
     dplyr::filter(!!rlang::sym(p_channel) == "yes") %>%
-    dplyr::select(code, secureURL) %>%
+    dplyr::select(code, language, secureURL) %>%
     dplyr::mutate(channel = p_channel) %>%
     dplyr::select(channel, everything()) # move channel to first column position
   
@@ -122,21 +122,20 @@ for (var_ch in var_channels) {
 virtualChannels <-
   channelDocTypes.df %>%
   dplyr::select(channel) %>%
-  dplyr::filter(grepl("Syndication",channel)) %>%
+  dplyr::filter(grepl("Syndication", channel)) %>%
   dplyr::distinct(channel) %>%
   dplyr::arrange(channel)
 
 activeChannels.df <-
   virtualChannels %>%
   dplyr::bind_rows(activeChannels.df)
-  
+
+
+# cleaned doctypes per channel:  
 channelDocTypes.c.df <- 
-  docTypes.df %>%
-  # rename columns
-  dplyr::rename(code = Derivation,
-                name = 'Long Description') %>%
+  docTypeConfig.df %>%
   # remove unnecessary columns (keep code and name)
-  dplyr::select(code, name) %>%
+  dplyr::select(code, description) %>%
   # add asset name
   dplyr::left_join(channelDocTypes.df, by = "code") %>%
   # filter on active channels
@@ -150,8 +149,18 @@ channelDocTypes.wide.df <-
   tidyr::spread(key = "channel",        # spread
                 value = "inUse") %>%
   dplyr::select(SyndicationL1:SyndicationL5Assets, everything()) %>% # move syndication-levels to first column position
-  dplyr::select(code, name, everything()) %>% # move code to first column position
+  dplyr::select(code, description, everything()) %>% # move code to first column position
   dplyr::arrange(code)
+
+# save this data for later use:
+docTypesFile <-
+  paste("./analyse/output","channelDocTypes.c.Rds", sep = "/")
+saveRDS(channelDocTypes.c.df,
+        file = docTypesFile)
+docTypesFile <-
+  paste("./analyse/output","channelDocTypes.wide.Rds", sep = "/")
+saveRDS(channelDocTypes.wide.df,
+        file = docTypesFile)
 
 ###############################################################################
 # export processed data (in csv-format suitable for spreadsheet)
