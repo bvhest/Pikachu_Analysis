@@ -1,0 +1,80 @@
+---
+title: "Video assets"
+author: "BHE"
+date: "April 18, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Video process  CCR/Pikachu/Scene7 + beheer
+
+
+
+## CCR Video types
+
+master
+  - CMV : Cluster Main Video - master 
+  - FAV : Special doctype for Scene7 videos 
+
+'real'
+  - CVG : Campaign Video General (MP4)
+  - CVI : Campaign Video Interview (MP4) 
+  - CVL : Campaign Video Lifestyle (MP4)
+  - CVP : Campaign Video Promotion (MP4)
+  - FV1 : Family Video (MP4)
+  - FV2 : Family Video (MP4)
+  - FV3 : Family Video (MP4)
+  - FV4 : Family Video (MP4)
+  - FV5 : Family Video (MP4)
+  - P3F : Product 360 Video (FLV)
+
+
+
+## Pikachu Video types
+
+Pikachu receives video-assets in the object_asset-list import from CCR.
+
+Channels receiving these video-types:
+```{r}
+docTypesFile <-
+  paste("./analyse/output","channelDocTypes.c.Rds", sep = "/")
+channelDocTypes.c.df <-
+  readRDS(file = docTypesFile)
+
+# (Pikachu) video asset definitions
+channelDocTypes.c.df %>%
+  # remove 'channel'  column
+  dplyr::select(-channel) %>%
+  # filter on video asset-types
+  dplyr::filter(code %in% c('CVG', 'CVI', 'CVL', 'CVP', 'FV1', 'FV2', 'FV3', 'FV4', 'FV5', 'P3F')) %>%
+  # keep unique asset codes
+  dplyr::distinct(code, .keep_all = TRUE) %>%
+  # show as table
+  kableExtra::kable(caption = "Video asset definitions in Pikachu") %>%
+  kableExtra::kable_styling()
+```
+
+
+
+```{r}
+docTypesFile <-
+  paste("./analyse/output","channelDocTypes.wide.Rds", sep = "/")
+channelDocTypes.wide.df <-
+  readRDS(file = docTypesFile)
+
+# Pikachu publication configuration
+channelDocTypes.wide.df %>%
+  # filter on video asset-types
+  dplyr::filter(code %in% c('CVG', 'CVI', 'CVL', 'CVP', 'FV1', 'FV2', 'FV3', 'FV4', 'FV5', 'P3F')) %>%
+  # remove 'description'  column
+  dplyr::select(-description) %>%
+  # transpose matrix (tidyverse-way)
+  tidyr::gather(key = channel, value = published, SyndicationL1:XCProducts) %>% 
+  tidyr::spread(key = code, value = published) %>%
+  # show as table
+  kableExtra::kable(caption = "Video asset's configured for Pikachu Exports") %>%
+  kableExtra::kable_styling()
+```
