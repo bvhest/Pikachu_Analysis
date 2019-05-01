@@ -302,3 +302,63 @@ videos_published_to_scene7_but_not_in_channel %>%
   kableExtra::kable(caption = "Video's published by 'Scene7Videos'-export, but not included in channels") %>%
   kableExtra::kable_styling()
 ```
+
+## Video's in Pikachu (object)asster-list imports
+
+*data-source*: feeds in week of 2019-05-01.
+
+```{r message=FALSE, include=FALSE}
+file_name <-
+  paste("./output","movies.c.Rds", sep = "/")
+movies.c <-
+  readRDS(file = file_name)
+```
+
+```{r echo=FALSE}
+  movies.c %>%
+  dplyr::group_by(source, type) %>%
+  dplyr::summarise(asset_count = n_distinct(md5)) %>%
+  # present as table
+  kableExtra::kable(caption = "Video count per source and video-type") %>%
+  kableExtra::kable_styling()
+```
+
+A quick comparison with the video-types in the feed and the ones in the configuration, shows that the following video-types are not received by Pikachu:
+
+```{r echo=FALSE}
+channelDocTypes.c.df %>%
+  # filter on video asset-types
+  dplyr::filter(code %in% c('CVG', 'CVI', 'CVL', 'CVP', 'FML', 'FQL', 
+                            'FV1', 'FV2', 'FV3', 'FV4', 'FV5', 
+                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 'P3F',
+                            'PM2', 'PM3', 'PM4', 'PM5', 'PRM', 'SDM',
+                            'TV1', 'TV2','TV3','TV4','TV5')) %>%
+  # anti-join with tpyes in imports
+  dplyr::anti_join(movies.c, by = c("code" = "type")) %>%
+  dplyr::select(-channel) %>%
+  dplyr::distinct(code, .keep_all = TRUE) %>%
+  dplyr::arrange(code) %>%
+  # present as table
+  kableExtra::kable(caption = "Configured video-types not present in the Pikachu (object)asset-list import") %>%
+  kableExtra::kable_styling()
+```
+
+This has an impact on the following channels:
+
+```{r echo=FALSE}
+channelDocTypes.c.df %>%
+  # filter on video asset-types
+  dplyr::filter(code %in% c('CVG', 'CVI', 'CVL', 'CVP', 'FML', 'FQL', 
+                            'FV1', 'FV2', 'FV3', 'FV4', 'FV5', 
+                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 'P3F',
+                            'PM2', 'PM3', 'PM4', 'PM5', 'PRM', 'SDM',
+                            'TV1', 'TV2','TV3','TV4','TV5')) %>%
+  # anti-join with tpyes in imports
+  dplyr::anti_join(movies.c, by = c("code" = "type")) %>%
+#  dplyr::distinct(code, .keep_all = TRUE) %>%
+  dplyr::select(channel, code) %>%
+  dplyr::arrange(channel, code) %>%
+  # present as table
+  kableExtra::kable(caption = "Configured video-types not present in the Pikachu (object)asset-list import") %>%
+  kableExtra::kable_styling()
+```
