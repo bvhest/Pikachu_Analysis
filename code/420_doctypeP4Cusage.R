@@ -1,7 +1,7 @@
 #
 # list download of doctypes from P4C.
 #
-# note: real usae can/will be larger as Akamai requests these documents when it 
+# note: real usage can/will be larger as Akamai requests these documents when it 
 # can't find them in its local cache (with 12 hours retention).
 #
 # BHE, 19-12-2018

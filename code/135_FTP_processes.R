@@ -1,6 +1,6 @@
 ## Missing SIM-tool FTP-processes for active exports
 #
-# BHE 2018-21-05
+# BHE 2018-12-05
 #
 
 library(tidyverse)
