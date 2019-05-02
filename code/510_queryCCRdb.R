@@ -39,10 +39,9 @@ oracle.JdbcDriver <-
 
 pr.jdbcConnection <- 
   DBI::dbConnect(drv = oracle.JdbcDriver,
-                 url = "jdbc:oracle:thin:@130.139.136.60:1521:CCR1P", 
-                 user = "bvanhest", 
-                 password = "Philips@123")
-
+                 url = Sys.getenv("ccr_prd_url"), 
+                 user = Sys.getenv("ccr_prd_user"), 
+                 password = Sys.getenv("ccr_prd_pwd"))
 
 # Select all F02 (IPL) related products
 qry <- 

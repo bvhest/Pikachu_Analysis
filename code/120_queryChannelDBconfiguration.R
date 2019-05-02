@@ -9,7 +9,7 @@ library(tidyverse)
 
 library(DBI)
 # Set JAVA_HOME, set max. memory, and load rJava library
-Sys.setenv(JAVA_HOME='c:/java')
+Sys.setenv(JAVA_HOME='c:/Java/jdk1.8.0_191')
 options(java.parameters="-Xmx2g")
 library(rJava)
 
@@ -27,42 +27,23 @@ library(RJDBC)
 #   - https://bommaritollc.com/2012/11/22/connecting-r-to-an-oracle-database-with-rjdbc/
 #   - http://www.rforge.net/RJDBC/
 ###############################################################################
-  # <!-- B2C QA1 BATCH -->
-  # <jdbc name="oracleDbCMC">
-  # <driver>oracle.jdbc.driver.OracleDriver</driver>
-  # <pool-controller min="50" max="100" oradb="true"/>
-  # <dburl>jdbc:oracle:thin:@gdcocl.gdc1.ce.philips.com:5323:PCHU1Q</dburl>
-  # <user>BATCH</user>
-  # <password>hbakip</password>
-  # </jdbc>
-  # 
-  # <!-- B2C PRD1 SCHEMA -->
-  # <jdbc name="oracleDbCMC">
-  # <driver>oracle.jdbc.driver.OracleDriver</driver>
-  # <pool-controller min="50" max="100" oradb="true"/>
-  # <dburl>jdbc:oracle:thin:@gdcocl.gdc1.ce.philips.com:5334:PCHU1P</dburl>
-  # <user>cmcprd1</user>
-  # <password>1drpcmc</password>
-  # </jdbc>
 
-  
-  
 # Create connection driver and open connection (define full path on Windows...)
 oracle.JdbcDriver <- 
   RJDBC::JDBC(driverClass="oracle.jdbc.OracleDriver", 
-              classPath="c:/Java/lib/ojdbc8.jar")
+              classPath="c:/Java/Oracle/ojdbc8.jar")
 
 qa.jdbcConnection <- 
   DBI::dbConnect(drv = oracle.JdbcDriver,
-                 url = "jdbc:oracle:thin:@130.139.136.68:1521:PCHU1Q",
-                 user = "CMC2_QA1_SCHEMA", 
-                 password = "CMC2_QA")
+                 url = Sys.getenv("pchu_qa_url"), 
+                 user = Sys.getenv("pchu_qa_user"), 
+                 password = Sys.getenv("pchu_qa_pwd"))
 
 pr.jdbcConnection <- 
   DBI::dbConnect(drv = oracle.JdbcDriver,
-                 url = "jdbc:oracle:thin:@130.139.136.69:1521:PCHU2P", 
-                 user = "U1BATCH", 
-                 password = "CMC2_QA")
+                 url = Sys.getenv("pchu_prd_url"), 
+                 user = Sys.getenv("pchu_prd_user"), 
+                 password = Sys.getenv("pchu_prd_pwd"))
 
 # TEST with : 3110 # EloquaProducts
 # ch_locales.r.df <- 
@@ -75,14 +56,14 @@ pr.jdbcConnection <-
 qry <- 
   "SELECT DISTINCT ch.*,
           cc.CATALOG_TYPE
-    FROM CHANNELS ch
-   INNER JOIN CHANNEL_CATALOGS cc
+    FROM CMC2_PROD1_SCHEMA.CHANNELS ch
+   INNER JOIN CMC2_PROD1_SCHEMA.CHANNEL_CATALOGS cc
       ON cc.CUSTOMER_ID = ch.ID
    WHERE ch.MACHINEAFFINITY != 'deprecated' 
      AND ch.TYPE = 'export'"
   
 channels.r.df <- 
-  DBI::dbGetQuery(conn = qa.jdbcConnection, 
+  DBI::dbGetQuery(conn = pr.jdbcConnection, 
                   statement = qry )
 
 # all channels
@@ -94,19 +75,19 @@ qry <-
           cc.DIVISION,
           cc.BRAND,
           cc.PRODUCT_TYPE
-   FROM CHANNELS ch
-  INNER JOIN CHANNEL_CATALOGS cc
+   FROM CMC2_PROD1_SCHEMA.CHANNELS ch
+  INNER JOIN CMC2_PROD1_SCHEMA.CHANNEL_CATALOGS cc
      ON cc.CUSTOMER_ID = ch.ID
   WHERE ch.MACHINEAFFINITY != 'deprecated'
     AND ch.TYPE = 'export'
     AND cc.CATALOG_TYPE= 'CONSUMER'"
 
 ch_locales.r.df <- 
-  DBI::dbGetQuery(conn = qa.jdbcConnection, 
+  DBI::dbGetQuery(conn = pr.jdbcConnection, 
                   statement = qry)
 
 # Close connection
-dbDisconnect(qa.jdbcConnection)
+dbDisconnect(pr.jdbcConnection)
 
 save(channels.r.df,
      ch_locales.r.df,
@@ -166,7 +147,7 @@ channels.params.df <-
                 Offset_sop = PUBLICATIONOFFSET_SOP,
                 Offset_eop = PUBLICATIONOFFSET_EOP) %>%
   # sort alphabetically
-  dplyr::arrange(channel, Catalog, parameter)
+  dplyr::arrange(Channel, Catalog, parameter)
 
 glimpse(channels.params.df)
 
@@ -210,6 +191,11 @@ channels.locales.wide.df <-
   channels.locales.df %>%
   tidyr::spread(key = channel,
                 value = enabled)
+
+save(channels.params.df,
+     channels.locales.df,
+     file = "./code/data/db_channel_config_cleaned.RData")
+
 
 ###############################################################################
 # export processed data (in csv-format suitable for spreadsheet)
