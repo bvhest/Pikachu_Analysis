@@ -51,6 +51,9 @@ master-types
   - HQ4 : High quality movie 1 (MP4)
   - HQ5 : High quality movie 1 (MP4)
   - P3F : Product 360 Video (FLV)
+  - P3M : 360 hotspot movie
+  - P3X : Product 360 with Hotspots (js)
+  - PRV : 360 View (FLV,SWF) 
   - PM2 : Product movie 2
   - PM3 : Product movie 2
   - PM4 : Product movie 2
@@ -92,7 +95,8 @@ channelDocTypes.c.df %>%
   # filter on video asset-types
   dplyr::filter(code %in% c('CVG', 'CVI', 'CVL', 'CVP', 'FML', 'FQL', 
                             'FV1', 'FV2', 'FV3', 'FV4', 'FV5', 
-                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 'P3F',
+                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 
+                            'P3F', 'P3M', 'P3X', 'PRV', 
                             'PM2', 'PM3', 'PM4', 'PM5', 'PRM', 'SDM',
                             'TV1', 'TV2','TV3','TV4','TV5')) %>%
   # keep unique asset codes and sort
@@ -116,7 +120,8 @@ channelDocTypes.wide.df %>%
   # filter on video asset-types
   dplyr::filter(code %in% c('CVG', 'CVI', 'CVL', 'CVP', 'FML', 'FQL', 
                             'FV1', 'FV2', 'FV3', 'FV4', 'FV5', 
-                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 'P3F',
+                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 
+                            'P3F', 'P3M', 'P3X', 'PRV', 
                             'PM2', 'PM3', 'PM4', 'PM5', 'PRM', 'SDM',
                             'TV1', 'TV2','TV3','TV4','TV5')) %>%
   # remove 'description'  column
@@ -256,7 +261,7 @@ channelDocTypes.c.df %>%
 
 ## Mismatch between Pikachu channels that include videos and Scene7-publication of videos
 
-```{r filter_movies, include=FALSE}
+```{r filter_movies, warning=FALSE, include=FALSE}
 # video export to scene7
 scene7_videos <-
   channelDocTypes.c.df %>%
@@ -274,7 +279,8 @@ video_channel_usage <-
   # filter on video asset-types
   dplyr::filter(code %in% c('CVG', 'CVI', 'CVL', 'CVP', 'FML', 'FQL', 
                             'FV1', 'FV2', 'FV3', 'FV4', 'FV5', 
-                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 'P3F',
+                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 
+                            'P3F', 'P3M', 'P3X', 'PRV', 
                             'PM2', 'PM3', 'PM4', 'PM5', 'PRM', 'SDM',
                             'TV1', 'TV2','TV3','TV4','TV5')) %>%
   # keep unique asset codes and sort
@@ -289,32 +295,32 @@ videos_published_to_scene7_but_not_in_channel <-
   dplyr::anti_join(video_channel_usage, by = "code")
 ```
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE}
 videos_in_channel_but_not_published_to_scene7 %>%
   # present as table
   kableExtra::kable(caption = "Video's included in channels, but not published by 'Scene7Videos'-export") %>%
   kableExtra::kable_styling()
 ```
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE}
 videos_published_to_scene7_but_not_in_channel %>%
   # present as table
   kableExtra::kable(caption = "Video's published by 'Scene7Videos'-export, but not included in channels") %>%
   kableExtra::kable_styling()
 ```
 
-## Video's in Pikachu (object)asster-list imports
+## Video's in Pikachu (object)asset-list imports
 
 *data-source*: feeds in week of 2019-05-01.
 
-```{r message=FALSE, include=FALSE}
+```{r message=FALSE, warning=FALSE, include=FALSE}
 file_name <-
   paste("./output","movies.c.Rds", sep = "/")
 movies.c <-
   readRDS(file = file_name)
 ```
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE}
   movies.c %>%
   dplyr::group_by(source, type) %>%
   dplyr::summarise(asset_count = n_distinct(md5)) %>%
@@ -325,12 +331,13 @@ movies.c <-
 
 A quick comparison with the video-types in the feed and the ones in the configuration, shows that the following video-types are not received by Pikachu:
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE}
 channelDocTypes.c.df %>%
   # filter on video asset-types
   dplyr::filter(code %in% c('CVG', 'CVI', 'CVL', 'CVP', 'FML', 'FQL', 
                             'FV1', 'FV2', 'FV3', 'FV4', 'FV5', 
-                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 'P3F',
+                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 
+                            'P3F', 'P3M', 'P3X', 'PRV', 
                             'PM2', 'PM3', 'PM4', 'PM5', 'PRM', 'SDM',
                             'TV1', 'TV2','TV3','TV4','TV5')) %>%
   # anti-join with tpyes in imports
@@ -345,12 +352,13 @@ channelDocTypes.c.df %>%
 
 This has an impact on the following channels:
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE}
 channelDocTypes.c.df %>%
   # filter on video asset-types
   dplyr::filter(code %in% c('CVG', 'CVI', 'CVL', 'CVP', 'FML', 'FQL', 
                             'FV1', 'FV2', 'FV3', 'FV4', 'FV5', 
-                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 'P3F',
+                            'HQ1', 'HQ2', 'HQ3', 'HQ4', 'HQ5', 
+                            'P3F', 'P3M', 'P3X', 'PRV', 
                             'PM2', 'PM3', 'PM4', 'PM5', 'PRM', 'SDM',
                             'TV1', 'TV2','TV3','TV4','TV5')) %>%
   # anti-join with tpyes in imports
@@ -362,3 +370,57 @@ channelDocTypes.c.df %>%
   kableExtra::kable(caption = "Configured video-types not present in the Pikachu (object)asset-list import") %>%
   kableExtra::kable_styling()
 ```
+
+
+
+## Video's to Scene7-export
+
+The video's are retrieved from CCR and uploaded to the Scene7 server by the Scene7Videos-export process.
+
+
+### Publication
+
+Video-files are copied from a source to a target directory. This is controlled with two request-parameters for the Scene7Videos-export process. The mime-type is also passed as a parameter.
+
+```
+  src       The source path (pointer to asset in mprdata-dir on CCR server)
+  tgt       The target path (dynamically created per asset with createScene7VideoId-function)
+  mimetype  The mimetype
+```
+
+```
+<!--
+  Create a Scene7 ID for video files.
+  The ID is based on the assets request ID (e.g. 110817012g) from CCR which is taken from the InternalResourceIdentifier.
+  The ID is prefixed with a fixed string 'CCR' and has a fixed suffix '-global-001'. The doctype is added as well.
+  
+  E.g. http://pww.pcc.philips.com/mprdata/110817/110817012g_hq1.mp4 becomes CCR110817012G-HQ1-global-001
+-->
+<xsl:function name="asset-f:createScene7VideoId">
+  <xsl:param name="asset-raw"/>
+  
+  <xsl:value-of select="concat('CCR'
+                      , upper-case(replace(tokenize($asset-raw/InternalResourceIdentifier,'/')[last()],'_(.+?)$',''))
+                      , '-'
+                      , $asset-raw/ResourceType
+                      , '-global-001'
+                      )"/>
+</xsl:function>
+```
+Once the files have been retrieved and stored in the /archive folder, a file with the name 'CONTENT-READY' is created and the movie-files will be picked up by the SIM-tool and delivered to the Scene7-server.
+
+The SIM-tool job is called "pikachu-to-scene7-Videos-Production" and runs with a daily frequency.
+Once the file '/ebizdata/pikap1/data/Scene7Videos/archive/CONTENT-READY' is present, it will move all files (movie- and (deletion)text-files) to the from the directory '/ebizdata/pikap1/data/Scene7Videos/archive' to the remote directory 'videos' on the server 's7ftp3.scene7.com'. The account 'philipsconsumer' is used.
+
+
+### Removal from Publication
+
+The Pikachu code contains a video deletion mechanism (video “un-publication”). The parameters that control this functionality are not included in the default settings for the Scene7Videos-export.
+
+When the `processDeletions` parameter is set (boolean value?), the expor tprocess will create a deletions-file with deleted videos.
+
+The deletion-file contains the same `tgt`-path as mentioned in the "publication"-paragraph. In this case that means that the the file contains the names of the movie-assets in the Scene7-format (i.e. 'CCR110817012G-HQ1-global-001' in the example from the "publication"-paragraph).
+
+?? What happens with the deletions-file ??
+--> It's also uploaded to the Scene7-server by the SIM-tool.
+
