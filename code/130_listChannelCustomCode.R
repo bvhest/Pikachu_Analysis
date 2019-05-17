@@ -22,6 +22,101 @@ code.r <-
 activeChannels.df <-
   readRDS(file = "./analyse/output/activeChannels.Rds")
 
+
+###############################################################################
+# before performing the diff, remove all lines that are not relevant.
+#
+#   note: this can be commentlines too, as sometimes the code is duplicated and 
+#         only the comments updated.
+###############################################################################
+base_dir <- 
+  "./webapp.b2c/pipes/ProductExport/xsl"
+cleaned_dir <- 
+  "./data/code/ProductExport/xsl"
+
+if (!dir.exists(cleaned_dir)) {
+  dir.create(cleaned_dir, 
+             showWarnings = FALSE)
+}
+
+code.df <-
+  code.r %>%
+  # map to data-frame and provide name for nameless column:
+  as.data.frame(stringsAsFactors = FALSE) %>%
+  dplyr::select(files = 1)  
+
+code.c.df <-
+  code.df %>%
+  # remove common part of path:
+  dplyr::mutate(files = stringr::str_remove(string = files, 
+                                            pattern = "./webapp.b2c/pipes/ProductExport/xsl/")) %>%
+  # split into export channel (= directory) and filename:
+  tidyr::separate(col = files, 
+                  into = c('channel', 'file'), 
+                  sep = "/",
+                  fill = "left",
+                  remove = TRUE)
+
+head(code.c.df, 3)
+
+i <- 0
+# loop over channels
+for (v_channel in code.c.df %>%
+     dplyr::select(channel) %>%
+     dplyr::distinct(channel) %>%
+     unlist()) {
+  
+  # v_channel <- "EloquaProducts" # test-data
+  i <- i+1; print(paste(i, v_channel, sep = "; "))
+  
+  # loop over custom code per channel
+  for (v_file in code.c.df %>%
+       dplyr::filter(channel == v_channel) %>%
+       dplyr::select(file) %>%
+       dplyr::distinct(channel) %>%
+       unlist()) {
+    
+    if (!is.na(v_file)) {
+      # v_file <- "convertProducts.xsl" # test-data
+      print(v_file)
+      
+      
+      v_in_file <-
+        paste(base_dir, v_channel, v_file,
+              sep = "/")
+      v_out_dir <-
+        paste(cleaned_dir, v_channel,
+              sep = "/")
+      v_out_file <-
+        paste(v_out_dir, v_file,
+              sep = "/")
+      
+      if (!dir.exists(v_out_dir)) {
+        dir.create(v_out_dir, 
+                   showWarnings = TRUE)
+      }
+      if (!file.exists(v_out_file)) {
+        file.create(v_out_file, 
+                   showWarnings = FALSE)
+      }
+      
+      con <- file(v_in_file, open = 'r')
+      lines <- readLines(con)
+      for (j in 1:length(lines)) {
+        line <- lines[j]
+#        if(!grepl("\\<", line) && !grepl("\\<!--", line) && !startsWith(line, "-->")){
+        if(grepl("\\<xsl", line) || grepl("\\</xsl", line)){
+          # remove spaces and tabs
+          line <-
+            gsub(pattern = "\t", replacement = " ", x = line)
+          write(line, file = v_out_file, append = TRUE)
+        } 
+      }
+    }
+  } # END loop over custom code per channel
+} # END loop over channels
+
+
 ###############################################################################
 # munge into desired format:
 #   - list of channels, including custom-code (files) per channel
@@ -113,6 +208,7 @@ custom_code.wide.df %>%
 obsolete_code.df %>%
   readr::write_excel_csv(path = "./analyse/output/obsoleteChannels_deleteCode.csv",
                          na = "")
+
 
 ###############################################################################
 # perform an automated diff between the base code and the channel custom code.
