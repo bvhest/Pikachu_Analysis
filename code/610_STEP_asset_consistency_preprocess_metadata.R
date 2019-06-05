@@ -77,6 +77,20 @@ asset.meta.c <-
   asset.meta.c %>%
   dplyr::select(doctype, characteristic, value, everything())
 
+# filter out 2nd occurences of some doctype definitions
+asset.meta.c <-
+  asset.meta.c %>%
+  # start wth filtering out shitty data
+  dplyr::filter(!(doctype %in% c("...", "...94"))) %>%
+  tidyr::separate(doctype, into = c("doctype", "doctype_rank"), sep = 3) %>%
+  # now remove the stupid "..." separator
+  dplyr::mutate(doctype_rank = stringr::str_remove(doctype_rank, pattern = "...")) %>%
+  # and only keep the lowest 'rank' (= the data from the spreadsheet column with lowest rank)
+  dplyr::group_by(doctype) %>%
+  dplyr::filter(doctype_rank == max(doctype_rank)) %>%
+  # and remove rakn-column (no longer required)
+  dplyr::select(-doctype_rank)
+
 # save for future use:
 saveRDS(asset.meta.c, file = "./data/STEP_assets/asset.meta.spreadsheet.rds")
 
