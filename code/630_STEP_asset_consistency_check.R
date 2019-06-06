@@ -56,3 +56,33 @@ asset.metdata.impl %>%
   dplyr::distinct(doctype)
 # 6 doctypes implemented, yet not defined
 
+# assets that are represented by different doctypes
+asset.metdata.impl %>%
+  dplyr::filter(type == "asset") %>%
+  dplyr::select(id, doctype, name) %>%
+  dplyr::distinct(id, doctype, name) %>%
+  dplyr::group_by(id) %>%
+  dplyr::mutate(count_doctype = n()) %>%
+  dplyr::filter(count_doctype > 1) %>%
+  dplyr::arrange(desc(count_doctype))
+
+################################################################################
+# check on completeness of implementation vs definition
+################################################################################
+
+# product beauty shot (PBP=Productbeautyshot)
+asset.metdata.def %>%
+  dplyr::filter(doctype == "PBP")
+
+asset.metdata.impl %>%
+  dplyr::filter(type == "asset" & id == "Productbeautyshot")
+
+# filter the definition on the input values. 
+# These need to be compared with those in STEP.
+def <-
+  asset.metdata.def %>%
+  dplyr::filter(doctype == "PBP") %>%
+  dplyr::filter(grepl(pattern = "XMLGEN_input", AssetConfigurationAutomation))
+
+
+

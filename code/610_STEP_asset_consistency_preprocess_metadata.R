@@ -16,6 +16,7 @@ library(readxl)
 # note: 
 #   - replaced spaces in file-name with underscores.
 #   - copied row 4 to new row 9.
+#   - moved row 7 ("Mapping Status") to new row 10
 #   - added headers to row 9, columns E & F: "Excel Metadata maintain", "Excel Metadata config"
 #   - removed space in column name 'Doctype '
 ###############################################################################
@@ -59,7 +60,7 @@ asset.meta.c <-
                 AssetConfigurationAutomation = 'Asset Configuration Automation',
                 ExcelMetadataMaintain = 'Excel Metadata maintain',
                 ExcelMetadataConfig = 'Excel Metadata config') %>%
-  dplyr::filter(grepl("XMLGEN",AssetConfigurationAutomation)) %>%
+  dplyr::filter(grepl("XMLGEN|Asset Configuraiton Automation",AssetConfigurationAutomation)) %>%
   tidyr::gather(data = .,
                 key = doctype,
                 value = value,
@@ -93,6 +94,34 @@ asset.meta.c <-
 
 # save for future use:
 saveRDS(asset.meta.c, file = "./data/STEP_assets/asset.meta.spreadsheet.rds")
+
+
+# omzetten naar een tidy data formaat met doc-type per rij
+#   zie https://stackoverflow.com/questions/29775461/how-can-i-spread-repeated-measures-of-multiple-variables-into-wide-format
+asset.meta.tidy <-
+  asset.meta.c %>%
+  dplyr::select(doctype, characteristic, value, Type) %>%
+  dplyr::rename(type = Type) %>%
+  dplyr::mutate(characteristic = stringr::str_replace_all(stringr::str_remove(stringr::str_to_lower(characteristic),
+                                                                              pattern = " \\(default = public\\)"),
+                                                          pattern = " ",
+                                                          replace = "_")) %>%
+  tidyr::spread(key = characteristic, value = value)
+  
+
+# filter out doctype-occurences wich are not in status "In Progress"
+assets_of_interest <-
+  asset.meta.c %>%
+  dplyr::filter(value == "In Progress") %>%
+  dplyr::select(doctype) %>%
+  pull(doctype)
+
+asset.meta.tidy <-
+  asset.meta.tidy %>%
+  dplyr::filter(doctype %in% assets_of_interest)
+
+# save for future use:
+saveRDS(asset.meta.tidy, file = "./data/STEP_assets/asset.meta.spreadsheet.tidy.rds")
 
 # DONE
 #
