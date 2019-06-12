@@ -28,6 +28,7 @@ for (env in c("dev" , "tst")) {
   
   glimpse(asset.meta.r)
   glimpse(asset_specs.meta.r)
+  # observations: in tst many more occurances for asset.meta.r (1141 vs 275)
   
   ###############################################################################
   # data cleaning
@@ -36,7 +37,8 @@ for (env in c("dev" , "tst")) {
   asset.reference.c <-
     asset.meta.r %>%
     # filter on asset-reference-type
-    dplyr::filter(type == 'asset-ref')
+    dplyr::filter(type == 'asset-ref') %>%
+    dplyr::rename(assetref_name = name)
   
   asset.meta <-
     asset.meta.r %>%
@@ -51,9 +53,9 @@ for (env in c("dev" , "tst")) {
     # join asset-metadata with asset-reference to
     #   - get doctype (defined on the relation, not on the asset)
     #   - get cardinality of the asset-assetref relation
-    #nb. prevent too many double names, so sub-select columns (needs an inversion of processing of the tables)
+    # nb. prevent too many double names, so sub-select columns (needs an inversion of processing of the tables)
     asset.reference.c %>%
-    dplyr::select(id, parentID) %>%
+    dplyr::select(id, assetref_name, parentID) %>%
     dplyr::rename(doctype = id) %>%
     dplyr::right_join(asset.meta, by = c("parentID" = "id")) %>%
     # clean-up mess of column names
@@ -73,4 +75,4 @@ for (env in c("dev" , "tst")) {
 
 # DONE
 #
-# start matching with meta-data from Sabine's speradsheets
+# now start matching with meta-data from Sabine's speradsheets
