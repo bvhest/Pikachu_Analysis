@@ -23,11 +23,11 @@ for (env in c(env1 , env2)) {
   ###############################################################################
   
   filename <-
-    paste0("./data/csv/",env,"/620_STEP_assets_metadata.csv")
+    paste0("./data/csv/",env,"/STEP_assets_metadata.csv")
   asset.meta.r <-
     readr::read_csv(file = filename)
   filename <- 
-    paste0("./data/csv/",env,"/620_STEP_asset_specs_metadata.csv")
+    paste0("./data/csv/",env,"/STEP_asset_specs_metadata.csv")
   asset_specs.meta.r <-
     readr::read_csv(file = filename)
   

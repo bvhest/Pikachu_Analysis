@@ -29,7 +29,8 @@ for (env in c(env1, env2)) {
   assign(x = var_name, 
          value = readRDS(file = filename))
   
-  # some quick counts per environment referencing the dynamically defined variables (using base::as.name):
+  # some quick counts per environment referencing the dynamically defined 
+  #    variables (using base::as.name):
   # how many unique assets?
   # implemented
   count <-
@@ -48,47 +49,6 @@ for (env in c(env1, env2)) {
   print(paste("unique assets based on doctype:", count))
   
 }  
-
-################################################################################
-# check on differences between implementations
-################################################################################
-
-# 1. metadata (so without asset specs/attributes)
-asset.metdata.dev <-
-  asset.metdata.impl.dev %>%
-  dplyr::distinct(id, name, doctype, assetref_name, locale, dimension, optional, multiValued) %>%
-  dplyr::filter(!is.na(doctype))
-
-asset.metdata.tst <-
-  asset.metdata.impl.tst %>%
-  dplyr::distinct(id, name, doctype, assetref_name, locale, dimension, optional, multiValued) %>%
-  dplyr::filter(!is.na(doctype))
-
-  
-diff <-
-  asset.metdata.dev %>%
-  dplyr::right_join(asset.metdata.tst,
-                    by = c("id", "doctype"),
-                    suffix = c(".dev", ".tst"))
-
-# Ouch... on STEP Test many asset cross-references are valid for (almost?!) all asset-types..
-pbp <-
-  diff %>%
-  # select product beauty shot
-  dplyr::filter(doctype == "PBP") %>% 
-  dplyr::arrange(id)
-
-readr::write_excel_csv(pbp, 
-                       path = paste0("./data/diff_",env1, "_", env2,"_pbp.csv"))
-
-app <-
-  diff %>%
-  # select product beauty shot
-  dplyr::filter(id == "Alternativeproductphotograph") %>% 
-  dplyr::arrange(id)
-
-readr::write_excel_csv(app, 
-                       path = paste0("./data/diff_",env1, "_", env2,"_app.csv"))
 
 ################################################################################
 # check on differences between implementations II : occurances and specifications.

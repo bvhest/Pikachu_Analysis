@@ -18,7 +18,7 @@ mainDir <-
 # run system command that performs the transformation (assume present in same 
 #    directory)
 cmd <-
-  "./code/620_STEP_asset_xml2csv.bat"
+  "./code/610_STEP_asset_xml2csv.bat"
 
 for (env in c(env1 , env2)) {
   print(paste0("Transformation of STEP XML for environment: ", env))

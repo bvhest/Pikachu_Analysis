@@ -12,7 +12,7 @@ required_packages <-
 new_packages <- 
   required_packages[!(required_packages %in% installed.packages()[,"Package"])]
 
-if(length(new.packages)) 
+if(!is_empty(new_packages)) 
   install.packages(new_packages)
 
 ###############################################################################
