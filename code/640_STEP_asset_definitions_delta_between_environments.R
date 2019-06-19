@@ -124,3 +124,7 @@ for (type in doctypes) {
               col.names = FALSE,
               row.names = FALSE)  
 }
+
+# if no errors, then 'return' TRUE
+succesfull <- TRUE
+message <- ""
