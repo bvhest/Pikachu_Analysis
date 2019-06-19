@@ -17,7 +17,9 @@ message <- "Creating differences between environments was not successful."
 ################################################################################
 # import the data exported from the different STEP environments:
 ################################################################################
+i <- 0
 for (env in c(env1, env2)) {
+  i <- i+1
   # show selected environment
   print(env)
 
@@ -48,7 +50,30 @@ for (env in c(env1, env2)) {
     dplyr::count()
   print(paste("unique assets based on doctype:", count))
   
+  # 1. metadata (so without asset specs/attributes)
+  asset.metdata <-
+    eval(as.name(var_name)) %>%
+    dplyr::distinct(id, name, doctype, assetref_name, locale, dimension, optional, multiValued) %>%
+    dplyr::filter(!is.na(doctype))
+
+  var_name <-
+    paste0("asset.metdata.env",i)
+  assign(x = var_name, 
+         value = asset.metdata)
+
 }  
+
+print("data loaded, start comparison...")
+
+################################################################################
+# create merged data-set
+################################################################################
+
+diff <-
+  asset.metdata.env1 %>%
+  dplyr::right_join(asset.metdata.env2,
+                    by = c("id", "doctype"),
+                    suffix = c(".env1", ".env2"))
 
 ################################################################################
 # check on differences between implementations II : occurances and specifications.
@@ -57,7 +82,6 @@ for (env in c(env1, env2)) {
 
 doctypes <-
   eval(as.name(var_name)) %>%
-  dplyr::filter(type == "asset") %>%
   dplyr::filter(!is.na(doctype)) %>%
   dplyr::distinct(doctype) %>%
   dplyr::pull()
@@ -67,26 +91,26 @@ for (type in doctypes) {
     diff %>%
     dplyr::filter(doctype == type)
   
-  diff_crossreferences <-
-    asset %>%
-    dplyr::filter(is.na(name.dev)) %>%
-    dplyr::select(id, name.tst, doctype, assetref_name.tst)
+  # diff_crossreferences <-
+  #   asset %>%
+  #   dplyr::filter(is.na(name.env1)) %>%
+  #   dplyr::select(id, name.env2, doctype, assetref_name.env2)
+  # 
+  # diff_metadata <-
+  #   asset %>%
+  #   dplyr::filter(!is.na(name.env1)) %>%
+  #   dplyr::select(id, name.env2, doctype, assetref_name.env2)
   
-  diff_metadata <-
-    asset %>%
-    dplyr::filter(!is.na(name.dev)) %>%
-    dplyr::select(id, name.tst, doctype, assetref_name.tst)
-  
-  set.dev <-
-    asset.metdata.dev %>%
+  set.env1 <-
+    asset.metdata.env1 %>%
     dplyr::filter(doctype == type) 
 
-  set.tst <-
-    asset.metdata.tst %>%
+  set.env2 <-
+    asset.metdata.env2 %>%
     dplyr::filter(doctype == type) 
   
   ctable_environment <-
-    compareDF::compare_df(set.dev, set.tst, c("doctype"), 
+    compareDF::compare_df(set.env1, set.env2, c("doctype"), 
                           limit_html = 200,
                           stop_on_error = FALSE)
   
