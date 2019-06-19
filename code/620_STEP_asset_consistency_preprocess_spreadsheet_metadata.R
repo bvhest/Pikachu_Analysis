@@ -9,6 +9,9 @@
 library(tidyverse)
 library(readxl)
 
+# start with the negative scenario
+succesfull <- FALSE
+message <- "Import and processsing of asset metadata from spreadsheet into R rds-format was not successful."
 
 ###############################################################################
 # read asset metadata from spreadsheet
@@ -22,7 +25,7 @@ library(readxl)
 ###############################################################################
 
 asset.meta <-
-  readxl::read_xlsx(path = "./data/STEP_assets/STEP_Asset_Type_Definition_Agreements_021.xlsx",
+  readxl::read_xlsx(path = "./data/STEP/assets/metadata/STEP_Asset_Type_Definition_Agreements_021.xlsx",
                     sheet = 3, # sheet "CMC2PIL Mapping"
                     skip = 8
                     )
@@ -93,7 +96,7 @@ asset.meta.c <-
   dplyr::select(-doctype_rank)
 
 # save for future use:
-saveRDS(asset.meta.c, file = "./data/STEP_assets/asset.meta.spreadsheet.rds")
+saveRDS(asset.meta.c, file = "./data/STEP/assets/metadata/spreadsheet_asset_metadata.rds")
 
 
 # omzetten naar een tidy data formaat met doc-type per rij
@@ -121,9 +124,12 @@ asset.meta.tidy <-
   dplyr::filter(doctype %in% assets_of_interest)
 
 # save for future use:
-saveRDS(asset.meta.tidy, file = "./data/STEP_assets/asset.meta.spreadsheet.tidy.rds")
+saveRDS(asset.meta.tidy, file = "./data/STEP/assets/metadata/spreadsheet_asset_metadata_tidy.rds")
 
 # DONE
 #
 # start matching with data exported from STEP
 
+# if no errors, then 'return' TRUE
+succesfull <- TRUE
+message <- ""

@@ -8,17 +8,22 @@
 
 library(tidyverse)
 library(readr)
+library(compareDF)
+
+# start with the negative scenario
+succesfull <- FALSE
+message <- "Creating differences between environments was not successful."
 
 ################################################################################
 # import the data exported from the different STEP environments:
 ################################################################################
-for (env in c("dev" , "tst")) {
+for (env in c(env1, env2)) {
   # show selected environment
   print(env)
 
   # load data into dynamically defined variables (using base::assign)
   filename <- 
-    paste0("./data/STEP_assets/",env,"/asset.meta.step.rds")
+    paste0("./data/STEP/assets/",env,"/step_asset_metadata.rds")
   var_name <-
     paste0("asset.metdata.impl.",env)
   assign(x = var_name, 
@@ -73,7 +78,8 @@ pbp <-
   dplyr::filter(doctype == "PBP") %>% 
   dplyr::arrange(id)
 
-readr::write_excel_csv(pbp, path = "./data/diff_dev_tst_pbp.csv")
+readr::write_excel_csv(pbp, 
+                       path = paste0("./data/diff_",env1, "_", env2,"_pbp.csv"))
 
 app <-
   diff %>%
@@ -81,4 +87,56 @@ app <-
   dplyr::filter(id == "Alternativeproductphotograph") %>% 
   dplyr::arrange(id)
 
-readr::write_excel_csv(app, path = "./data/diff_dev_tst_app.csv")
+readr::write_excel_csv(app, 
+                       path = paste0("./data/diff_",env1, "_", env2,"_app.csv"))
+
+################################################################################
+# check on differences between implementations II : occurances and specifications.
+#   based on https://alexsanjoseph.github.io/r/2018/10/03/comparing-dataframes-in-r-using-comparedf
+################################################################################
+
+doctypes <-
+  eval(as.name(var_name)) %>%
+  dplyr::filter(type == "asset") %>%
+  dplyr::filter(!is.na(doctype)) %>%
+  dplyr::distinct(doctype) %>%
+  dplyr::pull()
+
+for (type in doctypes) {
+  asset <-
+    diff %>%
+    dplyr::filter(doctype == type)
+  
+  diff_crossreferences <-
+    asset %>%
+    dplyr::filter(is.na(name.dev)) %>%
+    dplyr::select(id, name.tst, doctype, assetref_name.tst)
+  
+  diff_metadata <-
+    asset %>%
+    dplyr::filter(!is.na(name.dev)) %>%
+    dplyr::select(id, name.tst, doctype, assetref_name.tst)
+  
+  set.dev <-
+    asset.metdata.dev %>%
+    dplyr::filter(doctype == type) 
+
+  set.tst <-
+    asset.metdata.tst %>%
+    dplyr::filter(doctype == type) 
+  
+  ctable_environment <-
+    compareDF::compare_df(set.dev, set.tst, c("doctype"), 
+                          limit_html = 200,
+                          stop_on_error = FALSE)
+  
+  print(ctable_environment$html_output)
+  html <-
+    paste0("<html><body>",as.character(ctable_environment$html_output[1]),"</body></html>", 
+           collapse = "\n")
+  write.table(html, 
+              file = paste0("./data/STEP/assets/diff/asset_definition_diff_",env1,"_",env2,"_",type,".html"), 
+              quote = FALSE,
+              col.names = FALSE,
+              row.names = FALSE)  
+}

@@ -9,15 +9,20 @@
 library(tidyverse)
 library(readr)
 
+# start with the negative scenario
+succesfull <- FALSE
+message <- "Processing of asset metadata from STEP was not successful."
+
 # process the data exported from the different STEP environments:
-for (env in c("dev" , "tst")) {
-  
+#for (env in c("dev" , "tst")) {
+for (env in c(env1 , env2)) {
+    
   ###############################################################################
   # read asset metadata from "to-csv-format" converted STEP-export
   #
   ###############################################################################
   
-  filename <- 
+  filename <-
     paste0("./data/csv/",env,"/620_STEP_assets_metadata.csv")
   asset.meta.r <-
     readr::read_csv(file = filename)
@@ -66,13 +71,17 @@ for (env in c("dev" , "tst")) {
   
   # save for future use:
   filename <- 
-    paste0("./data/STEP_assets/",env,"/asset.meta.step.rds")
+    paste0("./data/STEP/assets/",env,"/step_asset_metadata.rds")
   saveRDS(asset.meta.c, file = filename)
   filename <- 
-    paste0("./data/STEP_assets/",env,"/asset-references.meta.step.rds")
+    paste0("./data/STEP/assets/",env,"/step_asset_references_metadata.rds")
   saveRDS(asset.reference.c, file = filename)
 }
 
 # DONE
 #
-# now start matching with meta-data from Sabine's speradsheets
+# now start matching with meta-data from Sabine's spreadsheets
+
+# if no errors, then 'return' TRUE
+succesfull <- TRUE
+message <- ""
