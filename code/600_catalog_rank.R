@@ -7,8 +7,11 @@
 library(tidyverse)
 
 ###############################################################################
-# read XML
+# read XML (transformed to csv-format)
 ###############################################################################
+
+system2(command = "./code/600_catalog_rank.bat", 
+        args = getwd())
 
 catalog.r <-
   readr::read_csv("./data/csv/600_catalog_rank.csv")
