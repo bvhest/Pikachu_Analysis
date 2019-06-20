@@ -7,6 +7,28 @@
 library(tidyverse)
 
 ###############################################################################
+# create required directories
+###############################################################################
+# define utility functions
+create_directory <-
+  function(mainDir, subDir) {
+    if (!dir.exists(file.path(mainDir, subDir))) {
+      dir.create(file.path(mainDir, subDir), 
+                 showWarnings = TRUE)
+    }
+  }
+
+mainDir <- 
+  getwd()
+
+subDirs <-
+  c("data", "data/csv", "images", "images/STEP_classifications", "analyse", "analyse/output")
+
+for (subDir in subDirs) {
+  create_directory(mainDir, subDir)
+}
+
+###############################################################################
 # read XML (transformed to csv-format)
 ###############################################################################
 
