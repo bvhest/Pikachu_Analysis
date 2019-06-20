@@ -12,15 +12,15 @@ required_packages <-
 new_packages <- 
   required_packages[!(required_packages %in% installed.packages()[,"Package"])]
 
-if(!is_empty(new_packages)) 
+if(length(new_packages) > 0) 
   install.packages(new_packages)
 
 ###############################################################################
 # define environments
-#   options: [dev, tst, uat, prd]
+#   options: [dev, tst, acc, prd]
 ###############################################################################
-env1 <- "dev"
-env2 <- "tst"
+env1 <- "tst"
+env2 <- "acc"
 
 ###############################################################################
 # call scripts
