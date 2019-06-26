@@ -44,7 +44,7 @@ catalog.r <-
 catalog.c <-
   catalog.r
 
-remove(catalog.r)
+remove(catalog.r, mainDir, subDir, subDirs, create_directory)
 ###############################################################################
 # export processed data (in csv-format suitable for spreadsheet)
 ###############################################################################
